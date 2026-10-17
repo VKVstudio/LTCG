@@ -1,0 +1,19 @@
+{
+  "name": "ltcg",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-12",
+  "assets": {
+    "directory": "./phase1",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  "routes": [
+    { "pattern": "ltcg.am", "custom_domain": true },
+    { "pattern": "www.ltcg.am", "custom_domain": true },
+    { "pattern": "ltcgarmenia.com", "custom_domain": true },
+    { "pattern": "www.ltcgarmenia.com", "custom_domain": true },
+    { "pattern": "ltcg.tax", "custom_domain": true },
+    { "pattern": "www.ltcg.tax", "custom_domain": true }
+  ]
+}
