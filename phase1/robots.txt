@@ -1,0 +1,90 @@
+# robots.txt — LTCG (Legal and Tax Consulting Group LLC)
+# https://ltcg.am/
+# Обновлено 04.09.2026
+
+# ── Общее правило ──
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# ── Яндекс: главный поисковик русской версии ──
+# Аудитория релокантов из России ищет здесь, и Алиса отвечает по индексу Яндекса.
+# Отдельная секция обязательна: Яндекс читает СВОЮ группу целиком и общую (User-agent: *)
+# игнорирует полностью — поэтому Disallow ниже дублирует общую группу построчно.
+# Иначе в день, когда появится /admin/ или /private/, для Яндекса они останутся открыты.
+User-agent: YandexBot
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# ── Классический поиск ──
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ── Разрешение использовать содержание в ответах ИИ ──
+# Это и есть GEO: без этих директив модели не имеют права опираться на наши страницы.
+# Google-Extended управляет использованием в Gemini и в обзорах ИИ отдельно от индексации.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# ── Скрейперы без пользы для GEO ──
+# Не найдено отдельного аудита защиты в docs/ (проверено 05.09.2026) — список ниже
+# составлен по собственному усмотрению: это сборщики для обучения моделей и перепродажи
+# данных (Diffbot), а не индексы, по которым пользователь находит и цитирует LTCG.
+# ClaudeBot/GPTBot/PerplexityBot и т.п. выше остаются разрешены — это и есть GEO.
+User-agent: Bytespider
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# ── Карта сайта ──
+Sitemap: https://ltcg.am/sitemap.xml

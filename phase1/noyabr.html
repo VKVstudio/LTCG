@@ -1,47 +1,113 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20260904m18" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- CSP — та же политика, что на home-ru.html (см. её комментарий): САМЫЙ первый тег
+     после charset/viewport, чтобы охватить и инлайн-скрипт темы ниже. На этой странице
+     нет формы и нет hero-scroll.js, но politика едина для обеих страниц — расходиться
+     ей незачем, а совпадение упрощает будущий перенос в phase1/_headers. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
 try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
 </script>
-<meta name="robots" content="noindex, nofollow">
+<!-- SEO: домен не подключён — сайт закрыт от индексации намеренно (аудит SEO/GEO, находка №1-2).
+     Снять при переезде на домен: заменить строку ниже на
+     content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+     ОДНИМ проходом вместе с home-ru.html, sitemap.xml и og:url/og:image (сейчас указывают на
+     vkvstudio.github.io) — не по одному файлу, иначе день-два будет рассинхрон. -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <title>ВНЖ с 1 ноября 2026: что меняет реформа закона — LTCG, Ереван</title>
-<meta name="description" content="С 1 ноября 2026 статус иностранца в Армении оформляется по новым правилам: единая электронная платформа, квота, биометрия лично, 183 дня вместо шести месяцев. Разбор по статьям закона ՀՕ-11-Ն с переводом с армянского.">
+<meta name="description" content="С 1 ноября 2026 статус иностранца меняется: единая платформа, квота, биометрия лично, 183 дня вместо полугода. Разбор по статьям закона, перевод с армянского.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="canonical" href="https://ltcg.am/noyabr.html">
+<!-- самоссылающийся hreflang рекомендован Google даже для одноязычной страницы;
+     hy/en появятся тем же приёмом, что и на home-ru.html, когда будут готовы переводы. -->
+<link rel="alternate" hreflang="ru" href="https://ltcg.am/noyabr.html">
+<link rel="alternate" hreflang="x-default" href="https://ltcg.am/noyabr.html">
 <!-- Карточка для мессенджеров -->
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
 <meta property="og:title" content="ВНЖ с 1 ноября 2026: что меняет реформа">
 <meta property="og:description" content="Пятнадцать статей закона переписаны. Перевели с армянского и сверили с действующей редакцией: под каждым сроком стоит статья, из которой он взят.">
-<meta property="og:url" content="https://vkvstudio.github.io/LTCG/phase1/noyabr.html">
-<meta property="og:image" content="https://vkvstudio.github.io/LTCG/phase1/assets/og/ltcg-og.jpg">
+<!-- даты реальные: из git log самого файла, не выдуманы -->
+<meta property="article:published_time" content="2026-09-04T19:55:58+04:00">
+<meta property="article:modified_time" content="2026-09-04T23:24:06+04:00">
+<meta property="og:url" content="https://ltcg.am/noyabr.html">
+<meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="LTCG — Legal and Tax Consulting Group, Ереван">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vkvstudio.github.io/LTCG/phase1/assets/og/ltcg-og.jpg">
+<meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 
 
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-sans-armenian-400-armenian.woff2">
-<link rel="stylesheet" href="css/fonts.css?v=20260904m18">
-<link rel="stylesheet" href="css/site.css?v=20260904m18">
-<link rel="stylesheet" href="css/site-ru.css?v=20260904m18">
-<link rel="stylesheet" href="css/home-ru.css?v=20260904m18">
-<link rel="stylesheet" href="css/noyabr.css?v=20260904m18">
-<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/menu-mobile.css?v=20260904m18">
-<script defer src="js/site.js?v=20260904m18"></script>
+<!-- JetBrains Mono — шапка (партиал) рисует телефонный номер моноширинным сразу на первом
+     экране на любой странице сайта, не только на home-ru (audit_speed.md §6). -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-latin.woff2">
+<!-- LCP — фактура .nov-art (khachkar, noyabr.css): три тира ровно на брейкпоинты самого
+     CSS (768/1024), тема — светлая по умолчанию. Тёмную системную не прелоадим — редкий
+     случай, лишняя закладка, страница не ломается, просто без прогрева кеша. -->
+<link rel="preload" as="image" type="image/avif" media="(max-width: 767px)" href="assets/patterns/khachkar-768.avif">
+<link rel="preload" as="image" type="image/avif" media="(min-width: 768px) and (max-width: 1023px)" href="assets/patterns/khachkar-1280.avif">
+<link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="assets/patterns/khachkar-1920.avif">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261018m1">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261018m1">
+<script defer src="js/site.js?v=20261018m1"></script>
 <!-- Меню узкого экрана. На этой странице нет boot.js (нет хиро и его гейтов),
      поэтому модуль подключается прямо: он сам ничего не делает, пока в шапке
      нет кнопки [data-burger]. -->
-<script defer src="js/menu-mobile.js?v=20260904m18"></script>
+<script defer src="js/menu-mobile.js?v=20261018m1"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ltcg.am/#org",
+      "name": "Legal and Tax Consulting Group LLC",
+      "alternateName": "LTCG",
+      "url": "https://ltcg.am/",
+      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://ltcg.am/noyabr.html#article",
+      "headline": "С 1 ноября статус оформляют иначе",
+      "url": "https://ltcg.am/noyabr.html",
+      "inLanguage": "ru",
+      "image": "https://ltcg.am/assets/og/ltcg-og.jpg",
+      "datePublished": "2026-09-04T19:55:58+04:00",
+      "dateModified": "2026-09-04T23:24:06+04:00",
+      "author": { "@id": "https://ltcg.am/#org" },
+      "publisher": { "@id": "https://ltcg.am/#org" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ltcg.am/noyabr.html" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ltcg.am/noyabr.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
+        { "@type": "ListItem", "position": 2, "name": "Подаю по новым правилам", "item": "https://ltcg.am/noyabr.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body class="nov">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -349,7 +415,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <picture>
             <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
             <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
-            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" decoding="async">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
           </picture>
         </a>
         <h2 class="sr-only" id="f-brand">Контакты</h2>

@@ -1,0 +1,93 @@
+# ЗАГОТОВКА НА ДЕНЬ ДОМЕНА. На GitHub Pages этот файл ничего не делает — здесь нет
+# движка, который его читает; заголовки задать нельзя в принципе (аудит защиты,
+# ограничение платформы, проверено поиском). Формат — Cloudflare Pages (`_headers`
+# в корне публикуемого каталога), потому что переезд планируется именно туда.
+# Меняете хостинг — сверьте синтаксис под него; сама политика ниже универсальна.
+#
+# Список origin'ов короче, чем в VKVstudio (образец, C:/projects/VKVstudio/public/_headers):
+# у LTCG нет своего API, нет Google-логина, нет WASM/ONNX — сайт не грузит вообще
+# ничего с чужого хоста (проверено: grep по phase1/js/*.js на fetch/Image/Audio/
+# XMLHttpRequest/WebSocket — ни одного внешнего адреса; CDN нет, GSAP/Lenis и шрифты
+# лежат в репозитории). Поэтому короткий self-only список — не недосмотр, а факт кода.
+
+/*
+  # === Content-Security-Policy ===============================================
+  # Та же политика, что в <meta http-equiv> на home-ru.html/noyabr.html (см. их
+  # комментарий в <head>), плюс три вещи, которых meta-тег НЕ умеет:
+  #   frame-ancestors — спецификация прямо запрещает этот токен в meta CSP;
+  #   это единственная директива в списке, ради которой вообще нужен заголовок,
+  #   а не тег, — она гарантирует, что сайт нельзя вставить в чужой <iframe>
+  #   (кликджекинг: невидимый фрейм поверх поддельной кнопки).
+  # 'unsafe-inline' в script-src и style-src остаются по той же причине, что и
+  # в meta-версии: два инлайн-скрипта (тема, #triGateBoot) и десятки style="".
+  # Разница с meta-версией — только в frame-ancestors и в том, что этот файл
+  # действует на ВСЕ запросы сразу, а не только на то, что идёт после тега.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+  # Обесценен спецификацией там, где есть frame-ancestors (OWASP: X-Frame-Options
+  # игнорируется современными браузерами при наличии CSP frame-ancestors), но 20
+  # байт ничего не стоят и подстраховывают древние user-agent'ы, которые CSP не читают.
+  X-Frame-Options: DENY
+
+  # Запрещает браузеру угадывать MIME-тип по содержимому — без него старый IE-стиль
+  # sniffing мог бы решить, что .svg с чужим content-type — это HTML, и исполнить его.
+  X-Content-Type-Options: nosniff
+
+  # То же, что в meta name="referrer" на самих страницах, но настоящим заголовком:
+  # при переходе на другой сайт передаём origin, а не полный путь с query.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Запрещает чужим страницам встраивать ассеты этого origin (шрифты, картинки,
+  # логотип) через no-cors запрос и читать что-то через side-channel таймингов.
+  Cross-Origin-Resource-Policy: same-origin
+
+  # same-origin (не same-origin-allow-popups, как у VKV): там это ослабление ради
+  # postMessage от Google-попапа логина. У LTCG нет ни логина, ни попапов —
+  # можно держать самый строгий вариант без исключений.
+  Cross-Origin-Opener-Policy: same-origin
+
+  # Полный запрет: сайт не использует ни одну из перечисленных возможностей —
+  # ни камеру, ни микрофон, ни геолокацию, ни оплату из браузера, ни USB/serial,
+  # ни захват экрана. Пустой список — это то, что сканеры и ищут.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), display-capture=()
+
+  # БЕЗ preload — тот же аргумент, что в audit_security.md: preload на
+  # hstspreload.org — операция practически необратимая (браузеры, где домен уже
+  # зашит, будут требовать HTTPS для него годами вперёд, даже если сайт уедет на
+  # другой хостинг без HTTPS). Год действия — сначала убедиться, что HTTPS держится
+  # стабильно на реальном трафике, потом отдельным шагом (таблица 2, п.2) подавать
+  # на preload осознанно, а не одной строкой заодно с остальными заголовками.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  # HTML — always-revalidate: черновик правится по нескольку раз в день (см. sw.js),
+  # у посетителя не должно застрять старое дыхание страницы дольше, чем на секунду
+  # разговора с сервером.
+  Cache-Control: public, max-age=0, must-revalidate
+
+# === Долгоживущие статические ассеты =========================================
+# Пути — БЕЗ префикса phase1/: sitemap.xml и canonical уже сегодня объявляют
+# страницы на корне домена (https://ltcg.am/, https://ltcg.am/noyabr.html), то
+# есть на день переезда содержимое phase1/ становится корнем публикации, а этот
+# файл переезжает вместе с ним же корнем — путь внутри правил считается ОТ ТУДА,
+# не от репозитория. Актуально проверить это единственное предположение в день
+# реального переноса (вдруг структура хостинга захочет иначе), раньше — нельзя.
+#
+# Шрифты, изображения и вендорный JS — без хеша в имени (ребилда с хешем нет,
+# инструментов сборки в проекте нет), поэтому не immutable: имя не меняется при
+# замене содержимого, а год кеша — ещё раз перечитать при обновлении файла.
+# ?v=<метка> в HTML у css/js уже даёт cache-busting без правки этого блока —
+# bump_version.py поднимает метку, и адрес с новым query браузер запросит заново
+# независимо от Cache-Control ниже.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000
+/assets/*
+  Cache-Control: public, max-age=2592000
+/css/*
+  Cache-Control: public, max-age=2592000
+/js/*
+  Cache-Control: public, max-age=2592000
+
+# Технический поддомен Cloudflare Pages (*.pages.dev) закрыт от индексации,
+# чтобы в поиске индексировался только основной домен ltcg.am.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow

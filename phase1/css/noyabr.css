@@ -114,27 +114,104 @@
   background: linear-gradient(180deg, var(--bg) 0%, transparent 22%, transparent 78%, var(--bg) 100%);
 }
 :root {
-  --tex-khachkar:  url("../../assets/patterns/khachkar.png");
-  --tex-stone:     url("../../assets/patterns/stone.png");
-  --tex-guilloche: url("../../assets/patterns/guilloche.png");
-  --tex-paper:     url("../../assets/patterns/paper.png");
+  --tex-khachkar:  url("../assets/patterns/khachkar.png");
+  --tex-stone:     url("../assets/patterns/stone.png");
+  --tex-guilloche: url("../assets/patterns/guilloche.png");
+  --tex-paper:     url("../assets/patterns/paper.png");
   --nov-art-opacity: 0.10;
 }
 @media (prefers-color-scheme: dark) {
   :root[data-skin="ru"]:not([data-theme="light"]) {
-    --tex-khachkar:  url("../../assets/patterns/khachkar_n.png");
-    --tex-stone:     url("../../assets/patterns/stone_n.png");
-    --tex-guilloche: url("../../assets/patterns/guilloche_n.png");
-    --tex-paper:     url("../../assets/patterns/paper_n.png");
+    --tex-khachkar:  url("../assets/patterns/khachkar_n.png");
+    --tex-stone:     url("../assets/patterns/stone_n.png");
+    --tex-guilloche: url("../assets/patterns/guilloche_n.png");
+    --tex-paper:     url("../assets/patterns/paper_n.png");
     --nov-art-opacity: 0.10;
   }
 }
 :root[data-skin="ru"][data-theme="dark"] {
-  --tex-khachkar:  url("../../assets/patterns/khachkar_n.png");
-  --tex-stone:     url("../../assets/patterns/stone_n.png");
-  --tex-guilloche: url("../../assets/patterns/guilloche_n.png");
-  --tex-paper:     url("../../assets/patterns/paper_n.png");
+  --tex-khachkar:  url("../assets/patterns/khachkar_n.png");
+  --tex-stone:     url("../assets/patterns/stone_n.png");
+  --tex-guilloche: url("../assets/patterns/guilloche_n.png");
+  --tex-paper:     url("../assets/patterns/paper_n.png");
   --nov-art-opacity: 0.10;
+}
+
+/* ═══ Фактура — AVIF/WebP через image-set() ═════════════════════════════════
+   PNG выше остаётся безусловным фолбэком (старый браузер просто не видит
+   этот блок — @supports проверяет саму функцию, а не формат внутри нее).
+   Три ширины на три брейкпоинта проекта (см. site.css): нет смысла тянуть
+   1920 px на телефон ради узора с непрозрачностью 10-12 % (аудит скорости,
+   правка №1) — 9,4 МБ на трёх PNG исчезают почти полностью. */
+@supports (background-image: image-set(url("a.avif") type("image/avif"))) {
+  :root {
+    --tex-khachkar:  image-set(url("../assets/patterns/khachkar-768.avif") type("image/avif"), url("../assets/patterns/khachkar-768.webp") type("image/webp"));
+    --tex-stone:     image-set(url("../assets/patterns/stone-768.avif") type("image/avif"), url("../assets/patterns/stone-768.webp") type("image/webp"));
+    --tex-guilloche: image-set(url("../assets/patterns/guilloche-768.avif") type("image/avif"), url("../assets/patterns/guilloche-768.webp") type("image/webp"));
+    --tex-paper:     image-set(url("../assets/patterns/paper-768.avif") type("image/avif"), url("../assets/patterns/paper-768.webp") type("image/webp"));
+  }
+  @media (min-width: 768px) {
+    :root {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar-1280.avif") type("image/avif"), url("../assets/patterns/khachkar-1280.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone-1280.avif") type("image/avif"), url("../assets/patterns/stone-1280.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche-1280.avif") type("image/avif"), url("../assets/patterns/guilloche-1280.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper-1280.avif") type("image/avif"), url("../assets/patterns/paper-1280.webp") type("image/webp"));
+    }
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar-1920.avif") type("image/avif"), url("../assets/patterns/khachkar-1920.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone-1920.avif") type("image/avif"), url("../assets/patterns/stone-1920.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche-1920.avif") type("image/avif"), url("../assets/patterns/guilloche-1920.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper-1920.avif") type("image/avif"), url("../assets/patterns/paper-1920.webp") type("image/webp"));
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root[data-skin="ru"]:not([data-theme="light"]) {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-768.avif") type("image/avif"), url("../assets/patterns/khachkar_n-768.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-768.avif") type("image/avif"), url("../assets/patterns/stone_n-768.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-768.avif") type("image/avif"), url("../assets/patterns/guilloche_n-768.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-768.avif") type("image/avif"), url("../assets/patterns/paper_n-768.webp") type("image/webp"));
+    }
+  }
+  @media (prefers-color-scheme: dark) and (min-width: 768px) {
+    :root[data-skin="ru"]:not([data-theme="light"]) {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1280.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1280.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-1280.avif") type("image/avif"), url("../assets/patterns/stone_n-1280.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1280.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1280.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-1280.avif") type("image/avif"), url("../assets/patterns/paper_n-1280.webp") type("image/webp"));
+    }
+  }
+  @media (prefers-color-scheme: dark) and (min-width: 1024px) {
+    :root[data-skin="ru"]:not([data-theme="light"]) {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1920.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1920.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-1920.avif") type("image/avif"), url("../assets/patterns/stone_n-1920.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1920.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1920.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-1920.avif") type("image/avif"), url("../assets/patterns/paper_n-1920.webp") type("image/webp"));
+    }
+  }
+  :root[data-skin="ru"][data-theme="dark"] {
+    --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-768.avif") type("image/avif"), url("../assets/patterns/khachkar_n-768.webp") type("image/webp"));
+    --tex-stone:     image-set(url("../assets/patterns/stone_n-768.avif") type("image/avif"), url("../assets/patterns/stone_n-768.webp") type("image/webp"));
+    --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-768.avif") type("image/avif"), url("../assets/patterns/guilloche_n-768.webp") type("image/webp"));
+    --tex-paper:     image-set(url("../assets/patterns/paper_n-768.avif") type("image/avif"), url("../assets/patterns/paper_n-768.webp") type("image/webp"));
+  }
+  @media (min-width: 768px) {
+    :root[data-skin="ru"][data-theme="dark"] {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1280.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1280.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-1280.avif") type("image/avif"), url("../assets/patterns/stone_n-1280.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1280.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1280.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-1280.avif") type("image/avif"), url("../assets/patterns/paper_n-1280.webp") type("image/webp"));
+    }
+  }
+  @media (min-width: 1024px) {
+    :root[data-skin="ru"][data-theme="dark"] {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1920.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1920.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-1920.avif") type("image/avif"), url("../assets/patterns/stone_n-1920.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1920.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1920.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-1920.avif") type("image/avif"), url("../assets/patterns/paper_n-1920.webp") type("image/webp"));
+    }
+  }
 }
 
 /* таблица «сегодня / с 1 ноября» — плитка 9 */

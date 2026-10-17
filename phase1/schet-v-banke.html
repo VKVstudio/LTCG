@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script>
+/* Тема и класс js — ДО первой отрисовки: единственный инлайновый скрипт страницы.
+   Всё остальное содержание лежит в разметке и читается без JavaScript. */
+(function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
+try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+
+<!-- Сборка для показа и вычитки клиентом, не для публикации в поиск.
+     robots снимается вместе с покупкой домена. -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- Заголовок и описание — под живой запрос, а не под бренд. title ≤ 60, description ≤ 155. -->
+<title>Счёт в банке Армении для нерезидента — LTCG</title>
+<meta name="description" content="Что требуют Ameriabank, Inecobank, Converse и Evocabank от нерезидента, где отказ бывает платным и какие переводы не пройдут. Проверено 04.09.2026.">
+<meta name="theme-color" content="#0C1B3A">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+<link rel="canonical" href="https://ltcg.am/schet-v-banke.html">
+<!-- Ветка объявляет hreflang на себя и x-default на себя же. Ссылок на /hy/ и /en/
+     нет, пока их содержание не соответствует этому адресу. -->
+<link rel="alternate" hreflang="ru" href="https://ltcg.am/schet-v-banke.html">
+<link rel="alternate" hreflang="x-default" href="https://ltcg.am/schet-v-banke.html">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
+<meta property="og:title" content="Счёт в банке Армении для нерезидента">
+<meta property="og:description" content="Требования четырёх банков строка к строке, платный отказ, запрет валютных переводов в РФ. С источниками и датой проверки.">
+<meta property="og:url" content="https://ltcg.am/schet-v-banke.html">
+<!-- Картинки ещё нет: каталог assets/og пуст. Путь стоит заранее, чтобы её не забыли. -->
+<meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LTCG — Legal and Tax Consulting Group, Ереван">
+<meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Счёт в банке Армении для нерезидента">
+<meta name="twitter:description" content="Требования четырёх банков строка к строке, платный отказ, запрет валютных переводов в РФ. С источниками и датой проверки.">
+
+<!-- Место под мета-подтверждение Яндекс.Вебмастера. Код добавляет владелец
+     после регистрации домена; строка стоит здесь, чтобы её не забыли.
+<meta name="yandex-verification" content="">
+-->
+
+<!-- Шрифты самохостом. Google Fonts не подключается: это внешний домен в
+     критическом пути, и Яндекс считает его в скорость. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
+<!-- JavaScript только надстройкой: страница работает и без него. Хиро на ветке нет,
+     поэтому boot.js с GSAP и Lenis не подключается — грузится один site.js. -->
+<script defer src="js/site.js?v=20261018m1"></script>
+
+<!-- Организация объявлена целиком ОДИН раз на / — здесь только ссылка по @id.
+     Телефон и hasOfferCatalog не дублируются. aggregateRating и Review
+     не выводятся нигде: разметку отзывов про самих себя Google считает
+     самовосхвалением. Тип организации на / — LegalService/ProfessionalService,
+     то есть подтип LocalBusiness: бизнес-навыки Алисы строятся на нём.
+     Адрес там объявлен только городом — офиса у компании нет, выдумывать нельзя. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["WebPage", "FAQPage"],
+      "@id": "https://ltcg.am/schet-v-banke.html#page",
+      "url": "https://ltcg.am/schet-v-banke.html",
+      "name": "Счёт в банке Армении: в каком порядке идут адрес, соцкарта и счёт",
+      "description": "Что требуют Ameriabank, Inecobank, Converse и Evocabank от нерезидента, где отказ бывает платным и какие переводы не пройдут. Проверено 04.09.2026.",
+      "inLanguage": "ru",
+      "dateModified": "2026-09-04",
+      "isPartOf": { "@id": "https://ltcg.am/#org" },
+      "publisher": { "@id": "https://ltcg.am/#org" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
+          { "@type": "ListItem", "position": 2, "name": "Счёт в банке", "item": "https://ltcg.am/schet-v-banke.html" }
+        ]
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Мне отказали в банке Армении. Это навсегда или можно пойти в другой?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Можно. Часть причин переезжает вместе с вами в следующий банк, часть — нет. Причины из документов банка (адрес, непонятная цель счёта, расхождения в бумагах) снимаются и в другом месте сработают иначе. Причины из требований банков-корреспондентов не снимаются, и корреспонденты у армянских банков частично общие. Разумнее сузить список до двух-трёх банков, чьи опубликованные требования совпадают с тем, что у вас на руках. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "У меня нет адреса для регистрации. Значит, счёт не откроют?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Откроют. «Без адреса ничего не двигается» — это правило одного банка, обобщённое до всех. В перечне документов Inecobank документа с адресом нет вовсе, у Ameriabank формулировка допускает документ с адресом фактического проживания, а не только регистрации. Источники: inecobank.am; ameriabank.am, редакция 12 от 28.03.2023, проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли открыть счёт в армянском банке без соцкарты?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Закон делает номер общественных услуг обязательным при открытии счёта (ст. 3 ч. 3 закона ՀՕ-288-Ն), но он же предусматривает справку о его неполучении (ст. 6 ч. 5), и банки на неё прямо ссылаются: Ameriabank принимает оригинал или копию, у Inecobank она в перечне, Converse требует сам номер только от резидентов и граждан Армении. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли открыть счёт в Армении удалённо, не приезжая?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Документально — только в Evocabank и только при одном из четырёх оснований: недвижимость в Армении, вклад, статус ИП в Армении или доля в армянском юридическом лице. Дистанционное открытие у Ameriabank в тарифах прямо ограничено гражданами Армении (тарифы ред. 49, в силе с 03.07.2026). Converse нерезиденту дистанционную идентификацию делает, но за 50 000 драмов плюс 25 000 за приём заявки, и оплата берётся до идентификации. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему у меня и у знакомого с теми же документами разный результат в банке?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Потому что часть правил, по которым решает банк, — не армянские. Converse называет три основания ограничить услугу или отказать: закон о противодействии отмыванию денег, FATCA и требования банков-корреспондентов. Последние не публикуются, различаются у разных банков и меняются без объявления. Официального разъяснения регулятора по нерезидентам нет: раздел официальных разъяснений Совета ЦБ по этой теме пуст и не пополнялся с 2022 года. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит внести наличные рубли на счёт в Армении?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Честный ответ — спросите в кассе до внесения и рассчитывайте на 10 %. В тарифах Ameriabank, вступивших в силу 3 июля 2026 года, зачисление наличных рублей стоит 5 % для всех пакетов. В объявлении того же банка от 10 июля 2026 года — 10 %. Оба документа опубликованы банком и оба висят на его сайте; какая цифра работает в кассе, из них не следует. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Смогу ли я переводить деньги из Армении в Россию?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В рублях — да, в валюте — нет. В тарифах Ameriabank стоит прямая строка: переводы в Российскую Федерацию и Республику Беларусь в иностранной валюте не осуществляются, исключение — российские рубли (редакция 49, сноска 48, в силе с 03.07.2026). С 1 сентября 2026 года международное поручение свыше 20 000 USD требует указать правовой статус получателя, его резидентство и цель операции кодом — решение Совета ЦБ РА № 150-Н от 09.09.2025. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что будет со счётом в армянском банке, если я им не пользуюсь?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "У Converse описано прямо: более двух лет без операций — списание 5 000 драмов ежемесячно, а когда остаток становится меньше 5 000 драмов, он списывается и счёт закрывается. У других банков условия свои. С начала сентября 2026 года любое физическое лицо вправе бесплатно получить от банка электронную справку о своих счетах, остатках и обязательствах в срок до пяти рабочих дней — решение Совета ЦБ РА № 222-Н от 11.08.2026. Проверено 04.09.2026."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Мне нужен счёт для приёма оплат от зарубежных заказчиков. Личного хватит?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Технически деньги придут. Проблема начинается позже: банк не обязан спрашивать документы о доходе на входе, но вправе спросить в любой момент. В перечне Ameriabank прямо сказано, что выписки по счёту в другом банке минимум за год, справка с места работы и документы о предпринимательской деятельности существенны при надлежащей проверке клиента (сноска 8). Названная сразу цель счёта делает пакет тяжелее на входе и легче потом. Проверено 04.09.2026."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://ltcg.am/schet-v-banke.html#service",
+      "name": "Сопровождение открытия счёта в банке Армении",
+      "serviceType": "Юридическое сопровождение",
+      "areaServed": { "@type": "Country", "name": "Армения" },
+      "provider": { "@id": "https://ltcg.am/#org" },
+      "audience": { "@type": "Audience", "audienceType": "Иностранцы, недавно приехавшие в Армению" }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://ltcg.am/schet-v-banke.html#howto",
+      "name": "В каком порядке открывать счёт, получать номер общественных услуг и регистрироваться по адресу в Армении",
+      "inLanguage": "ru",
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Выбрать банк под свои документы",
+          "text": "Единого государственного порядка не существует: порядок задаёт конкретный банк. У Ameriabank в перечне документов для негражданина стоит документ с адресом, у Inecobank его нет вовсе, Converse требует номер общественных услуг только от резидентов и граждан Армении." },
+        { "@type": "HowToStep", "position": 2, "name": "Договориться о письменном согласии собственника",
+          "text": "Письменное согласие собственника жилья — единственное прямо названное официальное основание отказать в регистрации по адресу. Договариваться о нём надо в момент подписания договора аренды." },
+        { "@type": "HowToStep", "position": 3, "name": "Подать заявление о регистрации по адресу",
+          "text": "Заявление подаётся в течение 10 рабочих дней, рассмотрение — 3 рабочих дня с момента получения документов. Пакет: документ, удостоверяющий личность, документ-основание занятия жилья и письменное согласие собственника." },
+        { "@type": "HowToStep", "position": 4, "name": "Получить номер общественных услуг или справку о его неполучении",
+          "text": "Орган Государственного регистра населения выдаёт справку о неполучении номера. Ameriabank принимает её в оригинале или копии, у Inecobank она стоит прямо в перечне. Отсутствие соцкарты не запирает счёт." },
+        { "@type": "HowToStep", "position": 5, "name": "Подать пакет в банк, назвав цель счёта",
+          "text": "Цель счёта называется сразу, при открытии. Решение принимает банк: часть требований приходит не из армянского закона, а от банков-корреспондентов." }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<!-- иконки: SVG-спрайт, currentColor -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="206.69" y1="971.49" x2="903.97" y2="274.21">
+      <stop offset="0.32" stop-color="#C4922B"/><stop offset="0.55" stop-color="#F2C249"/><stop offset="0.79" stop-color="#FAE0A2"/><stop offset="1.0" stop-color="#C4922B"/>
+    </linearGradient>
+    <symbol id="emblem" viewBox="70 160 875 330">
+      <g fill="url(#gold)">
+        <path d="M395.61 375.61C364.78 346.18 333.98 316.74 303.18 287.31C228.45 351.94 153.72 416.54 78.99 481.16C133.82 479.61 188.66 478.06 243.5 476.5C326.05 475.33 473.76 460.55 618.97 367.65C663.92 338.9 700.76 307.69 730.52 278.1C702.35 250.58 674.18 223.07 646 195.56C635.87 195.35 625.77 195.1 615.66 194.89C605.77 186.38 595.89 177.87 586 169.36C522.53 238.12 459.07 306.85 395.61 375.61Z"/>
+        <path d="M783.7 329.49C771.99 342.4 757.81 356.67 740.94 371.25L632.04 477.59L935.37 477.59Z"/>
+        <path d="M761.04 267.86C624.46 457.56 349.91 477.56 349.91 477.56C647.91 480.32 794.84 296.14 794.84 296.14L780.63 279.04Z"/>
+        <path d="M740.94 371.25C725.94 384.21 708.81 397.41 689.4 410.12C628.82 449.8 570.97 468.36 531.15 477.59L636.33 477.59L743.03 373.39Z"/>
+        <path d="M735.52 244.41L761.04 267.86L794.84 296.14L822.43 318.9L841.75 211.98Z"/>
+      </g>
+      <g fill="#FFFFFF">
+        <path d="M305.18 311.52C323.8 329.22 342.43 346.93 361.05 364.63C347.49 358.88 333.92 353.13 320.35 347.38C321.96 352.9 323.57 358.42 325.18 363.94C318.97 358.65 312.76 353.36 306.56 348.08C298.51 360.26 290.46 372.45 282.41 384.63L282.41 348.08C265.63 356.12 248.84 364.17 232.06 372.22C256.43 351.98 280.81 331.75 305.18 311.52Z"/>
+        <path d="M588.69 190.11C596.51 197.24 604.33 204.37 612.14 211.49C621.57 211.72 631 211.95 640.43 212.18C656.75 229.2 673.08 246.21 689.4 263.23C676.3 257.94 663.19 252.65 650.08 247.36L655.6 270.82C643.41 261.62 631.23 252.42 619.04 243.22C605.25 257.94 591.45 272.66 577.65 287.37C576.73 272.43 575.81 257.48 574.89 242.53C554.89 251.96 534.88 261.39 514.88 270.82C539.48 243.91 564.09 217.01 588.69 190.11Z"/>
+      </g>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pending" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3.2 3.2"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 7.5h7M8.5 12h2M13.5 12h2M8.5 16h2M13.5 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<!-- ═══ Шапка сайта. На ветке хиро нет, поэтому шапка показана сразу: класс
+     is-shown стоит в разметке, а не ставится скриптом. ═══════════════ -->
+<header class="hdr glass is-shown" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="home-ru.html" aria-label="LTCG — на главную">
+      <picture>
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
+    </a>
+    <nav class="hdr__nav" aria-label="Разделы страницы">
+      <a href="#answer">Короткий ответ</a>
+      <a href="#how">Как устроено</a>
+      <a href="#traps">Где ломается</a>
+      <a href="#price">Сколько стоит</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="hdr__contacts">
+      <a class="hdr__phone" href="tel:+37494184014">+374 94 184 014</a>
+      <a class="btn btn--icon btn--ghost hdr__phone-ico" href="tel:+37494184014" aria-label="Позвонить +374 94 184 014"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+      <a class="btn btn--icon btn--ghost" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
+      <!-- WhatsApp на этом номере компанией не подтверждён — снимается вместе со всеми data-wa, если не подтвердится -->
+      <a class="btn btn--icon btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+    </div>
+    <a class="btn btn--primary btn--sm hdr__cta" href="#contact">Проверить мой пакет <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    <div class="themer" role="group" aria-label="Тема оформления" data-themer>
+      <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
+      <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
+      <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
+    </div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
+      <svg data-ico="menu" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg data-ico="close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="menu glass" id="menu" hidden>
+  <nav class="menu__list" aria-label="Разделы страницы">
+    <a href="#answer">Короткий ответ</a>
+    <a href="#fork">Что у вас на руках</a>
+    <a href="#how">Как устроено</a>
+    <a href="#traps">Где ломается</a>
+    <a href="#order">Порядок шагов</a>
+    <a href="#price">Сколько стоит</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#contact">Контакт</a>
+  </nav>
+  <div class="menu__row">
+    <a class="btn btn--primary" href="#contact">Проверить мой пакет до подачи <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    <a class="btn btn--outline" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg> +374 94 184 014</a>
+  </div>
+  <div class="themer" role="group" aria-label="Тема оформления" data-themer>
+    <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
+    <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
+    <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ═══ 01 · Шапка ветки — канон, блок 01 ═══════════════════════════ -->
+<section class="section" aria-labelledby="branch-title">
+  <div class="wrap">
+    <header class="section__head section__head--wide">
+      <p class="kicker"><span class="kicker__no">Ветка 02</span> Только приехал</p>
+      <h1 class="h1" id="branch-title">Счёт в банке Армении: <em>в каком порядке идут адрес, соцкарта и счёт</em></h1>
+      <p class="lead">Вы уже здесь. Нужны счёт, регистрация по адресу и соцкарта — и непонятно, что
+        из этого первое, а что не двинется без предыдущего. Ошибка в порядке стоит не денег,
+        а недель.</p>
+
+      <p class="small measure"><b>Кому эта страница не нужна.</b> Гражданам Армении и тем, у кого
+        уже есть карта проживания с номером общественных услуг: у вас в банке обычный резидентский
+        маршрут, и половина написанного ниже про вас не работает. Тем, кто открывает счёт
+        <b>компании</b>, а не себе: это другой пакет и другой разбор. Тем, кто пришёл за видом на
+        жительство, — это <a class="lnk" href="vnzh.html">ветка «Легализуюсь»</a>. Тем, кто ещё не
+        выехал и хочет закрыть дела дома, — <a class="lnk" href="pered-pereezdom.html">«Ещё не
+        переехал»</a>. Жильё, школу и переезд вещей мы не подбираем вовсе: это не наш профиль.</p>
+
+      <nav class="pathbar" aria-label="Шесть веток">
+        <ol class="pathbar__list">
+          <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
+          <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">02</span><span>Только приехал</span></span></li>
+          <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
+          <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
+          <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
+          <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
+        </ol>
+      </nav>
+
+      <!-- {слот: кто со стороны LTCG отвечает за пересмотр этой страницы и с какой
+           периодичностью — без этого дату ставить нельзя. Отвечает Геворг.} -->
+      <p class="sign"><span>Проверил: юрист LTCG</span><span>Обновлено 04.09.2026</span></p>
+    </header>
+  </div>
+</section>
+
+<!-- ═══ 02 · Прямой ответ — канон, блок 02 ══════════════════════════
+     Абзац, который читается без остального и цитируется целиком. -->
+<section class="section section--deep section--thread section--light" id="answer" aria-labelledby="short">
+  <div class="wrap">
+    <section class="answer" aria-labelledby="short">
+      <h2 class="kicker" id="short"><span class="kicker__no">01</span> Короткий ответ</h2>
+
+      <p class="answer__p"><b>Единого государственного порядка «сначала адрес, потом соцкарта,
+        потом счёт» не существует</b> — и это главное, что стоит знать в первую неделю. Порядок
+        вам задаёт не государство, а конкретный банк. Поэтому правильный первый шаг — не «пойти
+        за пропиской», а выбрать банк под свои документы, а не документы под банк.</p>
+
+      <ol class="answer__facts" role="list">
+        <li><span>Официальных разъяснений Центрального банка Армении об открытии счетов
+          нерезидентами нет вообще. Мы проверили раздел официальных разъяснений Совета ЦБ целиком
+          — 11 документов, фильтры по годам с 1991 по 2026 и по сферам, включая валютную, — оба
+          FAQ регулятора и поиск по сайту, в том числе по армянским формулировкам: темы
+          нерезидентов там нет ни в каком виде, а сам раздел разъяснений последний раз
+          пополнялся в 2022 году.
+          <span class="src">Источник: cba.am, old.cba.am · проверено 04.09.2026.</span></span></li>
+
+        <li><span>Требования расходятся от банка к банку, и это проверяемо: у Ameriabank в перечне
+          документов для негражданина стоит документ с адресом, а в перечне Inecobank его нет
+          вовсе; Converse требует номер общественных услуг только от резидентов и граждан Армении.
+          <span class="src">Источник: перечни документов банков на их сайтах · обращение 04.09.2026.</span></span></li>
+
+        <li><span>Узкое место одно, и оно не в банке: <b>письменное согласие собственника жилья</b>
+          — единственное прямо названное официальное основание отказать вам в регистрации по
+          адресу. Договариваться о нём надо в момент подписания договора аренды, а не через месяц,
+          когда собственник уже не берёт трубку.
+          <span class="src">Источник: <a href="https://migration.e-gov.am/ru/service/registration/info" rel="noopener">migration.e-gov.am</a> · проверено 04.09.2026.</span></span></li>
+
+        <li><span>Валютный перевод в Россию и Беларусь не пройдёт вообще — исключение только
+          российские рубли. Это тарифный запрет, а не решение комплаенса.
+          <span class="src">Источник: <a href="https://www.ameriabank.am/ru" rel="noopener">Ameriabank</a>,
+          тарифы ред. 49, сноска 48, в силе с 03.07.2026.</span></span></li>
+
+        <li><span>Зачисление наличных рублей: в действующих тарифах ред. 49 стоит <b>5 %</b>, в
+          объявлении того же банка от 10.07.2026 — <b>10 %</b>. Какая цифра применяется в кассе,
+          из двух действующих документов одного банка не следует; считайте по 10 % и спрашивайте
+          в отделении до внесения.
+          <span class="src">Источник: тарифы ред. 49 и объявление от 10.07.2026, оба — Ameriabank · проверено 04.09.2026.</span></span></li>
+      </ol>
+    </section>
+  </div>
+</section>
+
+<!-- ═══ 03 · Развилка — канон, блок 03. Нативные radio, все исходы
+     раскрыты по умолчанию: краулер и модель видят их целиком. ═══════ -->
+<section class="section" id="fork" aria-labelledby="fork-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">02</span> Развилка</p>
+      <h2 class="h2" id="fork-title">Развилка здесь не про то, чего вы хотите, а про то, <em>что у вас на руках сегодня</em></h2>
+      <p class="lead">Все четыре исхода описаны целиком — выбирать вслепую не нужно.</p>
+    </div>
+
+    <form>
+    <fieldset class="fork">
+      <legend class="fork__q">Что у вас есть на руках прямо сейчас?</legend>
+
+      <input class="fork__r" type="radio" name="have" id="h1">
+      <input class="fork__r" type="radio" name="have" id="h2">
+      <input class="fork__r" type="radio" name="have" id="h3">
+      <input class="fork__r" type="radio" name="have" id="h4">
+
+      <div class="fork__opts">
+        <label class="fork__opt" for="h1"><span class="fork__box" aria-hidden="true"></span>
+          <span class="fork__t"><b>Договор аренды и согласие собственника</b>Вы сняли жильё вбелую, собственник на связи и не против регистрации</span></label>
+        <label class="fork__opt" for="h2"><span class="fork__box" aria-hidden="true"></span>
+          <span class="fork__t"><b>Жильё есть, договора или согласия нет</b>Живёте у друзей, снимаете без договора, собственник не хочет «светить» квартиру</span></label>
+        <label class="fork__opt" for="h3"><span class="fork__box" aria-hidden="true"></span>
+          <span class="fork__t"><b>Вы ещё не в Армении</b>Хотите открыть счёт удалённо, не приезжая</span></label>
+        <label class="fork__opt" for="h4"><span class="fork__box" aria-hidden="true"></span>
+          <span class="fork__t"><b>Счёт нужен под приём оплат или под ИП</b>Фрилансерам и подрядчикам, кому будут платить из-за рубежа</span></label>
+      </div>
+
+      <div class="fork__outs">
+        <article class="fork__out">
+          <p class="fork__out__k">Исход А</p>
+          <h3 class="fork__out__t">Полный маршрут: адрес → документ → счёт в любом банке</h3>
+          <p><b>Что дальше.</b> Регистрация по адресу в территориальном подразделении Службы
+            миграции и гражданства → документ с адресом → счёт в любом банке из списка, включая
+            те, что требуют подтверждения проживания. Заявление подаётся в течение 10 рабочих
+            дней, рассмотрение — 3 рабочих дня с момента получения документов; пакет: документ,
+            удостоверяющий личность, документ-основание занятия жилья и <b>письменное согласие
+            собственника</b>.</p>
+          <p><b>Чем платит.</b> Временем и зависимостью от чужой доброй воли. И ещё одним:
+            официальная страница описывает <b>гражданина Армении, сменившего место жительства</b>.
+            Применимость этих же сроков к иностранцу с картой проживания мы официально
+            подтвердить не смогли, а неофициальные источники дают разброс от трёх рабочих дней до
+            месяца-двух в Ереване. Мы закладываем верхнюю границу и говорим об этом до начала
+            работы, а не после.</p>
+          <!-- {слот: реальный срок регистрации иностранца по адресу — практика Геворга} -->
+          <p class="src">Источник: <a href="https://migration.e-gov.am/ru/service/registration/info" rel="noopener">migration.e-gov.am</a> · проверено 04.09.2026.</p>
+        </article>
+
+        <article class="fork__out">
+          <p class="fork__out__k">Исход Б</p>
+          <h3 class="fork__out__t">Счёт открывается первым, без регистрации</h3>
+          <p><b>Что дальше.</b> В перечне документов Inecobank для физического лица четыре позиции
+            — заявление-договор, документ, удостоверяющий личность, номер общественных услуг либо
+            справка о его неполучении, форма FATCA, — и документа с адресом среди них нет.
+            Ameriabank документ с адресом требует, но его собственная формулировка шире, чем
+            принято думать: «квитанция ЖКХ, справка с места жительства <b>или иной документ с
+            адресом регистрации либо фактического проживания</b>».</p>
+          <p><b>Чем платит.</b> Выбор банков сужается, и вы теряете рычаг на будущее: без
+            регистрации в Государственном регистре населения закрыт доступ к части
+            государственных и частных услуг. Регистрацию всё равно придётся делать — но уже без
+            спешки.</p>
+          <p class="src">Источники: inecobank.am, <span lang="en">LIST_<wbr>OF_<wbr>THE_<wbr>REQUIRED_<wbr>DOCUMENTS_<wbr>FOR_<wbr>ACCOUNT_<wbr>OPENING_<wbr>ENG.pdf</span>;
+            ameriabank.am, <span lang="en">Account_<wbr>openning_<wbr>required_<wbr>documents_<wbr>2_<wbr>eng.pdf</span>, редакция 12, в силе с 28.03.2023;
+            <a href="https://migration.mia.gov.am/en/registration" rel="noopener">migration.mia.gov.am</a> · проверено 04.09.2026.</p>
+        </article>
+
+        <article class="fork__out">
+          <p class="fork__out__k">Исход В</p>
+          <h3 class="fork__out__t">Удалённо — только Evocabank и только при одном из четырёх оснований</h3>
+          <p><b>Кому подходит.</b> Тем, кто уже что-то в Армении сделал: купил недвижимость,
+            зарегистрировал ИП, вошёл в капитал армянской компании либо готов разместить вклад.</p>
+          <p><b>Что дальше.</b> Единственный удалённый маршрут, который мы смогли подтвердить
+            документом самого банка, — Evocabank. Процедура: документы на электронный адрес банка
+            → удалённая видеоидентификация → активация счёта переводом не менее 50 USD со счёта в
+            другом банке.</p>
+          <p><b>Чем платит.</b> Тарифом и логическим кругом. Тариф нерезиденту-физлицу: открытие
+            50 000 драм, годовое обслуживание 250 000 драм, безналичное зачисление 0,5 %,
+            клиентские переводы 0,5 %. Круг в том, что удалённый счёт доступен тому, кто
+            <b>уже</b> что-то начал в Армении, а не тому, кто ещё ничего не начал. И честно:
+            формулировку банка про вклад — «на срок до 6 месяцев и в размере <b>до</b> 20 000 USD,
+            20 000 EUR, 1 500 000 RUB <b>и</b> 10 000 000 AMD» — мы читаем буквально и не
+            переворачиваем в «не менее 20 000», как это делают некоторые обзоры. Что она значит на
+            практике, уточняем у банка.</p>
+          <!-- {слот: смысл формулировки Evocabank по сумме вклада} -->
+          <p class="src">Источник: <a href="https://www.evoca.am/ru/remote-service-for-non-resident-clients" rel="noopener">evoca.am</a>, обе языковые версии · проверено 04.09.2026.</p>
+        </article>
+
+        <article class="fork__out">
+          <p class="fork__out__k">Исход Г</p>
+          <h3 class="fork__out__t">Цель счёта называется сразу, при открытии</h3>
+          <p><b>Что дальше.</b> Это не формальность: у Ameriabank в сноске прямо сказано, что
+            выписки по счёту в другом банке минимум за год, справка с места работы и документы о
+            предпринимательской деятельности <b>не обязательны, если банк их не запросил, но
+            существенны при надлежащей проверке клиента</b>. То есть банк не обязан просить — но
+            имеет право спросить в любой момент, и тогда объяснять придётся задним числом.</p>
+          <p><b>Чем платит.</b> Пакет тяжелее на входе. Взамен снимается самая тихая из ловушек:
+            личный счёт «для себя», на который через полгода начинают приходить оплаты клиентов,
+            комплаенс видит <b>позже и хуже</b>, чем если бы цель назвали честно в первый день.</p>
+          <p class="src">Источник: ameriabank.am, тот же PDF, сноска 8 · проверено 04.09.2026.</p>
+        </article>
+      </div>
+    </fieldset>
+    </form>
+
+    <div class="note" style="margin-top: var(--s-8)">
+      <p><b>И ещё одна развилка, которую обычно проходят молча.</b> Если вы въехали в Армению по
+        внутреннему российскому паспорту и собираетесь обслуживаться по нему же, у Ameriabank для
+        вас отдельная процедура: подписывается декларация о пересечении границы Армении с
+        национальным паспортом РФ. Несовпадение документа, по которому вы въехали, и документа,
+        который вы несёте в банк, — воспроизводимая точка отказа, и она решается заранее одной
+        бумагой, а не спором в отделении.</p>
+      <p class="src">Источник: ameriabank.am, тот же PDF · проверено 04.09.2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · Как это устроено ═══════════════════════════════════════ -->
+<section class="section section--deep section--thread section--light" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">03</span> Как это устроено</p>
+      <h2 class="h2" id="how-title">Что требует закон, что требует банк <em>и где между ними шов</em></h2>
+    </div>
+
+    <h3 class="h3">Номер общественных услуг — то, что все называют «соцкартой»</h3>
+    <p class="measure">Карточки давно нет. Закон Республики Армения «О номере общественных услуг»
+      ՀՕ-288-Ն принят 30.11.2011, вступил в силу 01.06.2012 и отменил закон «О картах социального
+      обеспечения»; номера ранее выданных соцкарт считаются номерами общественных услуг.
+      Слово осталось, документ ушёл.</p>
+    <p class="src measure">Источник: ст. 6 ч. 2 и 3 · <a href="https://www.arlis.am/DocumentView.aspx?docid=87872" rel="noopener">arlis.am, DocID 87872</a> · проверено 04.09.2026.</p>
+
+    <p class="measure" style="margin-top: var(--s-5)">Номер обязателен ровно в пяти случаях, и один
+      из них прямо про вас: выплата зарплаты и приравненного дохода, исчисление и уплата налогов,
+      <b>открытие банковского счёта</b>, ведение баз государственных органов и иные случаи,
+      предусмотренные законом.</p>
+    <p class="src measure">Источник: ст. 3 ч. 3 · arlis.am, DocID 87872 · проверено 04.09.2026.</p>
+
+    <p class="measure" style="margin-top: var(--s-5)">И тем же законом предусмотрен выход из этого
+      требования: орган Государственного регистра населения выдаёт <b>справку о неполучении
+      номера</b>, на основании которой государственные органы обязаны обеспечить реализацию прав.
+      Именно на эту справку ссылаются банки: Ameriabank принимает её в оригинале или копии, у
+      Inecobank она стоит прямо в перечне, а Converse пишет, что номер требуется «только от
+      резидентов и/или граждан Республики Армения». Отсюда практический вывод: <b>отсутствие
+      соцкарты не запирает счёт</b>.</p>
+    <p class="src measure">Источники: ст. 6 ч. 5 · arlis.am, DocID 87872; ameriabank.am, сноска 3;
+      inecobank.am; <a href="https://www.conversebank.am/en/open-account" rel="noopener">conversebank.am/en/open-account</a> · проверено 04.09.2026.</p>
+
+    <!-- Признанная граница: показываем шов, а не прячем его. -->
+    <aside class="nochange" aria-labelledby="seam" style="margin-top: var(--s-8)">
+      <p class="nochange__tag">Здесь мы обязаны показать шов</p>
+      <h3 class="nochange__t" id="seam">Действующую редакцию закона о номере официальный публикатор не отдаёт</h3>
+      <!-- без role="list": маркеры здесь нужны, а ul[role="list"] в site.css их снимает -->
+      <ul>
+        <li>По статье 2 того же закона номер присваивается гражданину Армении, <b>иностранцу с
+          правом проживания</b>, лицу без гражданства с постоянным проживанием и беженцу, а у
+          иностранца фиксируется в карте проживания (ст. 2 и ст. 3 ч. 1). По букве это значит,
+          что до вида на жительство номера у вас нет.</li>
+        <li>При этом текст, который отдаёт официальный публикатор, помечен как инкорпорация на
+          период 01.01.2014 — 01.07.2015 и не отражает <b>четыре</b> последующих закона:
+          ՀՕ-63-Ն от 18.05.2015, ՀՕ-155-Ն от 27.10.2017, ՀՕ-394-Ն от 16.07.2020 и ՀՕ-233-Ն от
+          03.07.2025.</li>
+        <li>Мы не выдаём эту редакцию за действующую и не строим на ней утверждение о вашем
+          случае.</li>
+      </ul>
+      <!-- {слот: присваивается ли номер иностранцу без карты проживания — действующая
+           редакция и практика, подтверждает юрист LTCG} -->
+      <p class="src">Проверено по тексту закона ՀՕ-288-Ն на arlis.am, DocID 87872 · 04.09.2026.</p>
+    </aside>
+
+    <p class="measure" style="margin-top: var(--s-8)"><b>Куда идти.</b> Справку и присвоение номера
+      ведёт орган Государственного регистра населения (ст. 5), справки выдают все подразделения
+      Службы миграции и гражданства МВД Армении, подача — лично, через уполномоченного
+      представителя либо онлайн при сильной аутентификации. Мелочь, о которую спотыкаются: с
+      одного адреса электронной почты нельзя записать на приём больше четырёх человек за 30 дней
+      — если вы записываете семью или коллег с одной почты, пятая запись не пройдёт.</p>
+    <p class="src measure">Источники: <a href="https://migration.mia.gov.am/en/certificates-and-documents-from-the-state-population-register" rel="noopener">migration.mia.gov.am</a>;
+      <a href="https://migration.e-gov.am/hy/service/provision_of_ssn/info" rel="noopener">migration.e-gov.am</a> · проверено 04.09.2026.</p>
+
+    <!-- ── Таблица требований четырёх банков — канон, блок 04 ─────── -->
+    <h3 class="h3" id="table-banks" style="margin-top: var(--s-10)">Что четыре банка требуют по своим же опубликованным документам</h3>
+    <div class="diy-wrap" style="margin-top: var(--s-5)">
+      <table class="diy">
+        <caption>Требования к нерезиденту по публичным перечням и тарифам самих банков.
+          Обращение — 04.09.2026. Решение в каждом случае принимает банк.</caption>
+        <colgroup><col class="c-diy"><col class="c-break"><col class="c-us"><col class="c-step"></colgroup>
+        <thead>
+          <tr><th scope="col">Банк</th><th scope="col">Что в официальном перечне</th><th scope="col">Документ с адресом</th><th scope="col">Номер общественных услуг</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Ameriabank</th>
+            <td data-l="Что в перечне">Документ, удостоверяющий личность; документ с адресом; заявление-договор, анкета и карточка образцов подписи заполняются в банке.
+              <span class="src">ameriabank.am, перечень документов, ред. 12, в силе с 28.03.2023 · проверено 04.09.2026</span></td>
+            <td data-l="Документ с адресом" class="us"><span class="part">требуется</span> — квитанция ЖКХ, справка с места жительства или иной документ с адресом регистрации либо фактического проживания</td>
+            <td data-l="Номер общественных услуг">принимается справка о неполучении</td>
+          </tr>
+          <tr>
+            <th scope="row">Inecobank</th>
+            <td data-l="Что в перечне">Четыре позиции: заявление-договор; документ, удостоверяющий личность; номер или справка о его неполучении; форма FATCA.
+              <span class="src">inecobank.am, перечень документов для открытия счёта; дата редакции в документе не указана · проверено 04.09.2026</span></td>
+            <td data-l="Документ с адресом" class="us"><span class="yes">в перечне отсутствует</span></td>
+            <td data-l="Номер общественных услуг">принимается справка о неполучении</td>
+          </tr>
+          <tr>
+            <th scope="row">Converse</th>
+            <td data-l="Что в перечне">Документы на иных языках — с переводом на армянский по Закону РА «О нотариате»; счёт открывается сразу после подачи, если не требуется дополнительная проверка.
+              <span class="src">conversebank.am, страница открытия счёта · проверено 04.09.2026</span></td>
+            <td data-l="Документ с адресом">не назван</td>
+            <td data-l="Номер общественных услуг"><span class="part">только резиденты и граждане РА</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Evocabank</th>
+            <td data-l="Что в перечне">Паспорт и загранпаспорт, документ об источнике доходов; одно из четырёх оснований — недвижимость, вклад, ИП в РА, доля в армянском юрлице. Маршрут удалённый.
+              <span class="src">evoca.am, удалённое обслуживание клиентов-нерезидентов · проверено 04.09.2026</span></td>
+            <td data-l="Документ с адресом">не назван</td>
+            <td data-l="Номер общественных услуг">не назван</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top: var(--s-5)">Читать эту таблицу нужно так: <b>общего пакета
+      «для нерезидента» не существует</b>, и утверждение «без подтверждённого адреса в Армении не
+      двигается ничего» — это правило одного банка, обобщённое до всех.</p>
+
+    <!-- ── Крупные числа — канон, приём 08 ─────────────────────────── -->
+    <div class="bignums" style="margin-top: var(--s-10)">
+      <div class="bignum">
+        <p class="bignum__n">17<small> банков</small></p>
+        <p class="bignum__u">официальный перечень · 04.09.2026</p>
+        <p class="bignum__d">Даты обновления у перечня нет. В сообщественных гайдах ходит цифра 18
+          — сверяйтесь с реестром ЦБ, а не с гайдом.
+          <span class="src">Источник: cba.am/en/licensed-banks; по-русски — old.cba.am · проверено 04.09.2026.</span></p>
+      </div>
+      <div class="bignum">
+        <p class="bignum__n">10<small> раб. дней</small></p>
+        <p class="bignum__u">срок · подать заявление о регистрации</p>
+        <p class="bignum__d">Рассмотрение — 3 рабочих дня с момента получения документов.
+          Официальная страница описывает гражданина Армении, сменившего место жительства.
+          <span class="src">Источник: migration.e-gov.am/ru/service/registration/info · проверено 04.09.2026.</span></p>
+      </div>
+      <div class="bignum">
+        <p class="bignum__n">5<small> раб. дней</small></p>
+        <p class="bignum__u">срок · справка о своих счетах</p>
+        <p class="bignum__d">Любое физлицо вправе получить её от банка бесплатно в электронном
+          виде. Простой способ проверить, что у вас вообще открыто.
+          <span class="src">Источник: решение Совета ЦБ РА № 222-Н от 11.08.2026, cba.am/hy/Board-decisions/10536 · в силе с начала сентября 2026 · проверено 04.09.2026.</span></p>
+      </div>
+    </div>
+
+    <!-- ── Что открытие счёта стоит в самом банке ──────────────────── -->
+    <h3 class="h3" id="costs-bank" style="margin-top: var(--s-10)">Что открытие счёта стоит в самом банке</h3>
+    <div class="diy-wrap" style="margin-top: var(--s-5)">
+      <table class="diy">
+        <caption>Комиссии самих банков. Это не наша цена: деньги уходят банку.
+          Обращение к тарифам — 04.09.2026.</caption>
+        <colgroup><col class="c-diy"><col class="c-break"><col class="c-us"><col class="c-step"></colgroup>
+        <thead><tr><th scope="col">Банк</th><th scope="col">За что</th><th scope="col">Сколько</th><th scope="col">Источник и дата</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">Ameriabank</th>
+            <td data-l="За что">«Изучение клиента» для негражданина, пакеты «Стандарт» и «Персона»</td>
+            <td data-l="Сколько" class="us">20 000 драм, взимается <b>только при положительном решении</b></td>
+            <td data-l="Источник">тарифы физлиц, ред. 49, п. 4.1.2 и сноска 6 · в силе с 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Ameriabank</th>
+            <td data-l="За что">Дистанционное открытие счёта</td>
+            <td data-l="Сколько" class="us">пакетное 7 000 драм, счёт «Смарт» бесплатно — <b>только для граждан РА</b></td>
+            <td data-l="Источник">тарифы, ред. 49 · 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Ameriabank</th>
+            <td data-l="За что">Идентификация по видеозвонку; рассмотрение заявки клиента без счёта</td>
+            <td data-l="Сколько" class="us">5 000 драм с НДС; 1 000 драм</td>
+            <td data-l="Источник">тарифы, ред. 49 · 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Converse</th>
+            <td data-l="За что">Открытие счёта и минимальный остаток</td>
+            <td data-l="Сколько" class="us">0 и 0; обслуживание расчётного счёта 1 200 драм в год, накопительного 0</td>
+            <td data-l="Источник">страница открытия счёта conversebank.am · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Converse</th>
+            <td data-l="За что">Нерезиденту: приём онлайн-заявки и дистанционная идентификация</td>
+            <td data-l="Сколько" class="us">приём онлайн-заявки 25 000 драм за каждую, дистанционная идентификация 50 000 драм — <span class="part">до решения</span>; идентификация проводится <b>только после поступления оплаты</b></td>
+            <td data-l="Источник">страница открытия счёта conversebank.am · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Evocabank</th>
+            <td data-l="За что">Нерезиденту-физлицу при удалённом открытии</td>
+            <td data-l="Сколько" class="us">открытие 50 000 драм, годовое обслуживание 250 000 драм, закрытие 0, зачисление и переводы по 0,5 %</td>
+            <td data-l="Источник">evoca.am · проверено 04.09.2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top: var(--s-5)">Обратите внимание на пару, которую видно только
+      рядом: у Ameriabank комиссия за изучение клиента берётся <b>при положительном решении</b>, у
+      Converse нерезидент платит <b>до</b> решения. У одного отказ бесплатный, у другого — платный.
+      Ни один обзор этого сопоставления не делает, потому что для него надо открыть два документа,
+      а не один.</p>
+
+    <!-- ── Почему банк вообще спрашивает всё это ───────────────────── -->
+    <h3 class="h3" style="margin-top: var(--s-10)">Почему банк вообще спрашивает всё это</h3>
+    <p class="measure">Ответ регулятора на «почему» существует, хотя ответа на «как открыть счёт
+      нерезиденту» у него нет. Ближайший официальный текст — FAQ Центра финансового мониторинга ЦБ:
+      разумный срок идентификации и верификации, периодичность обновления данных о клиенте,
+      установление бенефициарного владельца, первый платёж при отношениях без личного присутствия,
+      риск-рейтинг сделок без личного присутствия, сведения в платёжном поручении при переводе.
+      Базовый документ — Регламент минимальных требований к отчитывающимся лицам по
+      противодействию отмыванию; номер и дата редакции на странице-каталоге ЦБ не указаны — их
+      приходится доставать из самого файла.</p>
+    <p class="src measure">Источники: <a href="https://www.cba.am/en/fmcfaq" rel="noopener">cba.am/en/fmcfaq</a>;
+      cba.am, <span lang="en">Regulation_<wbr>Minimum_<wbr>Requirements.pdf</span> · проверено 04.09.2026.</p>
+
+    <!-- ── Что происходит со счётом дальше ─────────────────────────── -->
+    <h3 class="h3" id="after" style="margin-top: var(--s-10)">Что происходит со счётом дальше</h3>
+    <div class="diy-wrap" style="margin-top: var(--s-5)">
+      <table class="diy">
+        <caption>Условия, которые начинают работать уже после открытия счёта.
+          Обращение к тарифам и решениям — 04.09.2026.</caption>
+        <colgroup><col class="c-diy"><col class="c-break"><col class="c-us"><col class="c-step"></colgroup>
+        <thead><tr><th scope="col">Что</th><th scope="col">Где именно</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">Наличные рубли</th>
+            <td data-l="Где именно">Зачисление наличных российских рублей, Ameriabank</td>
+            <td data-l="Значение" class="us"><b>5 %</b> по тарифам · <b>10 %</b> по объявлению банка</td>
+            <td data-l="Источник">тарифы ред. 49 (в силе с 03.07.2026) · объявление банка от 10.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Наличные ֏, $, €</th>
+            <td data-l="Где именно">Внесение наличных в драмах, долларах и евро</td>
+            <td data-l="Значение" class="us">драмы до 399 000 — 500 драм, свыше — бесплатно; USD и EUR — бесплатно</td>
+            <td data-l="Источник">тарифы Ameriabank, ред. 49, разд. 3 п. 1.3 · 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Прочая валюта</th>
+            <td data-l="Где именно">Внесение наличных фунтов, франков и прочего</td>
+            <td data-l="Значение" class="us"><b>3 % с первой единицы</b> для пакетов «Стандарт» и «Персона»; льгота «бесплатно до 10 000 единиц в день» — только «Премиум/Партнёр»</td>
+            <td data-l="Источник">там же · 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Переводы в РФ и РБ</th>
+            <td data-l="Где именно">Валютные переводы в Россию и Беларусь</td>
+            <td data-l="Значение" class="us"><b>не осуществляются</b>; исключение — российские рубли</td>
+            <td data-l="Источник">тарифы Ameriabank, ред. 49, сноска 48 · 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Крупный перевод</th>
+            <td data-l="Где именно">Международное поручение свыше 20 000 USD</td>
+            <td data-l="Значение" class="us">обязательны поля о правовом статусе получателя, его резидентстве и цели операции с кодом — по решению Совета ЦБ РА № 150-Н от 09.09.2025, с 01.09.2026</td>
+            <td data-l="Источник">объявление Ameriabank от 31.08.2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Спящий счёт</th>
+            <td data-l="Где именно">Счёт без операций, Converse</td>
+            <td data-l="Значение" class="us">более двух лет без движения — списание 5 000 драм ежемесячно; при остатке меньше 5 000 остаток списывается и счёт закрывается</td>
+            <td data-l="Источник">страница открытия счёта conversebank.am · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Справка о счетах</th>
+            <td data-l="Где именно">Справка о своих счетах, остатках и обязательствах — в любом банке</td>
+            <td data-l="Значение" class="us">любое физлицо вправе получить её бесплатно в электронном виде в срок до пяти рабочих дней</td>
+            <td data-l="Источник">решение Совета ЦБ РА № 222-Н от 11.08.2026 · в силе с начала сентября 2026 · проверено 04.09.2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Выписки</th>
+            <td data-l="Где именно">Выписки и справки в Ameriabank</td>
+            <td data-l="Значение" class="us">давностью до 6 месяцев бесплатно; свыше — 3 000 драм с НДС за документ по каждому счёту за каждый год; справка по типовой форме 3 000, по нетиповой 5 000; бесплатно не более трёх экземпляров</td>
+            <td data-l="Источник">тарифы ред. 49 · 03.07.2026 · проверено 04.09.2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Цитата первоисточника — канон, приём 09 ─────────────────── -->
+    <figure class="lawquote" style="margin-top: var(--s-8)">
+      <blockquote cite="https://www.ameriabank.am/ru">
+        <p>Переводы в Российскую Федерацию и Республику Беларусь в иностранной валюте
+          не осуществляются.</p>
+      </blockquote>
+      <figcaption>
+        <span class="lawquote__art">Сноска 48</span>
+        <span>Тарифы Ameriabank, ред. 49, в силе с 03.07.2026. Исключение — российские рубли.</span>
+        <a href="https://www.ameriabank.am/ru" rel="noopener">Первоисточник</a>
+      </figcaption>
+    </figure>
+
+    <!-- ── Датированная врезка «с такого-то числа иначе» — канон, блок 06.
+         Она про СРОК, а не про момент: другой регистр, пунктир, без заливки. -->
+    <aside class="dated-box" aria-labelledby="d-swift" style="margin-top: var(--s-10)">
+      <p class="dated-box__when">С 01.09.2026 иначе</p>
+      <h3 class="dated-box__t" id="d-swift">Международное поручение свыше 20 000 USD требует трёх новых полей</h3>
+
+      <div class="shift">
+        <div class="shift__row shift__row--head">
+          <span>Что</span><span>Было</span><span>С 01.09.2026</span>
+        </div>
+        <div class="shift__row">
+          <span class="shift__k">Правовой статус получателя</span>
+          <span class="shift__was">не запрашивался</span>
+          <span class="shift__now"><b>обязательное поле</b></span>
+        </div>
+        <div class="shift__row">
+          <span class="shift__k">Резидентство получателя</span>
+          <span class="shift__was">не запрашивалось</span>
+          <span class="shift__now"><b>обязательное поле</b></span>
+        </div>
+        <div class="shift__row">
+          <span class="shift__k">Цель операции</span>
+          <span class="shift__was">свободная формулировка</span>
+          <span class="shift__now"><b>указывается кодом</b></span>
+        </div>
+        <div class="shift__row">
+          <span class="shift__k">Порог, с которого это включается</span>
+          <span class="shift__was">—</span>
+          <span class="shift__now"><b>20 000 USD</b></span>
+        </div>
+      </div>
+
+      <p class="dated-box__d">Если получатель не отвечает на эти три вопроса, платёж стоит. Здесь
+        важна не сумма комиссии, а календарь: правило уже действует.</p>
+
+      <p class="src">Проверено по решению Совета ЦБ РА № 150-Н от 09.09.2025 и объявлению
+        Ameriabank от 31.08.2026 · 04.09.2026.</p>
+    </aside>
+
+    <!-- ── Расхождение источников показывается, а не прячется ──────── -->
+    <div class="note" style="margin-top: var(--s-8)">
+      <p><b>Про наличные рубли — отдельно, потому что это редкий случай.</b> Два действующих
+        документа одного банка называют разные цифры: тарифы, вступившие в силу 3 июля 2026 года,
+        дают <b>5 %</b>, объявление того же банка от 10 июля 2026 года — <b>10 %</b>. Оба
+        опубликованы банком, ни один не отменён на его сайте. Какая цифра применяется в кассе, из
+        документов не следует. Мы не выбираем за вас удобную и не прячем неудобную: считайте по
+        10 % и спрашивайте в отделении до внесения.</p>
+      <!-- {слот: какая ставка реально работает в кассе — уточняет Геворг} -->
+      <p class="src">Источники: тарифы Ameriabank ред. 49 (03.07.2026) и объявление Ameriabank от
+        10.07.2026 · проверено 04.09.2026.</p>
+    </div>
+
+    <!-- ── Карты «Мир» и границы знания ────────────────────────────── -->
+    <div class="bento" style="margin-top: var(--s-8)">
+      <div class="tile tile--quiet" data-span="6">
+        <p class="tile__meta"><b>Осторожно</b> один источник</p>
+        <h3 class="h4">Карты «Мир» — почему мы про них пишем осторожно</h3>
+        <p class="measure">Заметка РБК от 19.03.2024 сообщала о <b>намерении</b> банков-участников
+          ArCa прекратить обслуживание карт «Мир» с 30.03.2024, речь шла в том числе о снятии
+          наличных в банкоматах других банков; исключением назывался «Банк ВТБ (Армения)». По
+          состоянию на 2026 год единственный найденный нами источник — публикация finance.mail.ru
+          от 30.01.2026: снятие только в банкоматах ВТБ, выдаются драмы, комиссия 1 %, максимум
+          150 000 драм за операцию и 4 999 999 драм в сутки, карта не работает в
+          интернет-магазинах, в транспорте и при оплате государственных услуг. Источник один,
+          официального подтверждения у нас нет, и мы это говорим прямо: планировать первые недели,
+          рассчитывая только на карту «Мир», не стоит.</p>
+        <p class="src">Источники: публикация meduza.io со ссылкой на РБК от 19.03.2024;
+          finance.mail.ru от 30.01.2026 · проверено 04.09.2026.</p>
+      </div>
+
+      <div class="tile tile--quiet" data-span="6">
+        <p class="tile__meta"><b>Граница</b></p>
+        <h3 class="h4">Чего эта страница о вас не знает</h3>
+        <p class="measure">Три вещи, названные поимённо. Мы не знаем, <b>что написано в вашем
+          договоре аренды</b> и подпишет ли собственник согласие. Мы не знаем <b>вашей истории</b>:
+          прежних отказов, прежних визитов, того, как выглядит ваша фамилия в санкционных фильтрах
+          банка-корреспондента. И мы не знаем, <b>чем именно подтверждается ваш доход</b> —
+          договором, инвойсами, выписками или перепиской. Всё остальное на этой странице можно
+          прочитать и сделать самому.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05 · Где ломается — канон, блок 05 ══════════════════════════ -->
+<section class="section" id="traps" aria-labelledby="traps-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">04</span> Где ломается</p>
+      <h2 class="h2" id="traps-title">Одинаковые документы — <em>разный результат</em></h2>
+      <p class="lead">Сразу оговорка, которая важнее списка: <b>решение принимает банк</b>, а не мы.
+        Мы не обещаем исход. Мы проверяем пакет по этому списку до подачи и говорим заранее, где
+        шансы ниже.</p>
+    </div>
+
+    <div class="note">
+      <p>И сразу — механизм, который объясняет главную несправедливость темы. Converse Bank в своих
+        же условиях называет три основания ограничить услугу или отказать в ней: закон Армении о
+        борьбе с отмыванием денег и финансированием терроризма, FATCA и <b>требования
+        банков-корреспондентов</b>. Третье — не норма армянского права. Его нельзя оспорить
+        ссылкой на закон, его не публикуют, и оно у разных банков разное. Вот почему одинаковые
+        папки документов у двух людей дают разный результат, а официального объяснения этому нигде
+        нет: у регулятора разъяснений по нерезидентам не существует вовсе, а требования
+        корреспондентов — чужие правила, которые армянский банк исполняет молча.</p>
+      <p class="src">Источник: <a href="https://www.conversebank.am/en/open-account" rel="noopener">conversebank.am/en/open-account</a> · проверено 04.09.2026.</p>
+    </div>
+
+    <!-- {слот: Геворг называет шесть-восемь реальных причин отказа из своей практики за
+         последний год и отмечает, какие снимаются до подачи. До этого ответа перечень ниже —
+         заготовка по документам банков, а не по практике LTCG, и в таком виде он не публикуется.} -->
+
+    <dl class="traps" style="margin-top: var(--s-8)">
+      <div class="tile trap">
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
+          <span class="trap__title">Адрес, который нельзя подтвердить</span></dt>
+        <dd><b>В чём ошибка</b>Вы живёте по адресу, но договора нет либо собственник против того, чтобы его имя куда-то попало. Для банка, который требует документ с адресом, это не проживание, а слово.</dd>
+        <dd><b>Чем кончается</b>Отказ в том банке, где адрес в перечне обязателен, — и потерянная неделя на попытку.</dd>
+        <dd><b>Что делаем до подачи</b>Либо приводим адрес в подтверждаемый вид, либо ведём в банк, у которого документа с адресом в перечне нет. Второе решение дешевле и почти никогда не рассматривается людьми, которые читали инструкцию под один банк.</dd>
+      </div>
+      <div class="tile trap">
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
+          <span class="trap__title">Доход есть, а показать нечем</span></dt>
+        <dd><b>В чём ошибка</b>Заказчик за рубежом, оплата приходила на карту, договор существует в переписке. Доход абсолютно легальный, подтверждения нет.</dd>
+        <dd><b>Чем кончается</b>Банк не обязан просить документы о доходе, но вправе — и тогда объяснять придётся задним числом, уже после того, как счёт открыт и по нему пошли деньги.</dd>
+        <dd><b>Что делаем до подачи</b>Собираем цепочку — договор, акты, выписки — так, чтобы каждая строка объяснялась предыдущей.</dd>
+      </div>
+      <div class="tile trap">
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
+          <span class="trap__title">Цель счёта не совпадает с профилем</span></dt>
+        <dd><b>В чём ошибка</b>Открыли личный счёт «для себя», а через полгода на него пошли оплаты от клиентов.</dd>
+        <dd><b>Чем кончается</b>Несоответствие видит комплаенс, и видит позже — когда деньги уже пришли, а объяснить их надо срочно.</dd>
+        <dd><b>Что делаем до подачи</b>Называем цель честно и подбираем тип счёта под неё — личный, для ИП, для приёма из-за рубежа.</dd>
+      </div>
+    </dl>
+
+    <details class="traps-more" style="margin-top: var(--s-5)">
+      <summary class="btn btn--outline btn--sm">Ещё три ловушки <svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+      <dl class="traps" style="margin-top: var(--s-5)">
+        <div class="tile trap">
+          <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
+            <span class="trap__title">Документы спорят друг с другом</span></dt>
+          <dd><b>В чём ошибка</b>В анкете один адрес, в справке другой; в договоре одна транслитерация имени, в паспорте другая; въехали по внутреннему паспорту, а в банк принесли загран.</dd>
+          <dd><b>Чем кончается</b>Каждое расхождение превращается в вопрос, а каждый вопрос — в дополнительный круг. Отдельный случай — граждане России, въехавшие по внутреннему паспорту: у Ameriabank для них предусмотрена отдельная декларация, и без неё разговор в отделении начинается с недоразумения.</dd>
+          <dd><b>Что делаем до подачи</b>Сверяем пакет строка к строке до того, как его увидит банк.</dd>
+        </div>
+        <div class="tile trap">
+          <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag">зависит от банка</span></span>
+            <span class="trap__title">Происхождение крупной суммы</span></dt>
+          <dd><b>В чём ошибка</b>Продали квартиру, накопили, получили наследство. Для вас это очевидно, для банка — история, которую надо рассказать документами.</dd>
+          <dd><b>Чем кончается</b>Приостановка, дополнительные запросы или отказ — и здесь заранее не скажет никто, потому что порог «крупной» суммы банки не публикуют.</dd>
+          <dd><b>Что делаем</b>Готовим объяснение происхождения средств заранее, до первого крупного зачисления, а не после запроса.</dd>
+        </div>
+        <div class="tile trap">
+          <dt><span class="trap__head"><span class="trap__no">Ловушка 06</span><span class="trap__tag">зависит от банка</span></span>
+            <span class="trap__title">Гражданство и история заявителя</span></dt>
+          <dd><b>В чём ошибка</b>То, что вы изменить не можете, — паспорт, прежние отказы, фильтры банков-корреспондентов.</dd>
+          <dd><b>Чем кончается</b>Отказ без объяснения причин. Обжаловать нечего: требование корреспондента — не норма права.</dd>
+          <dd><b>Что делаем</b>Говорим заранее, где шансы ниже, и не ведём подавать туда, где отказ предсказуем. Это единственное честное обещание, которое здесь можно дать.</dd>
+        </div>
+      </dl>
+    </details>
+
+    <h3 class="h3" style="margin-top: var(--s-10)">Четыре места, где ломается уже после открытия</h3>
+    <ol class="next" role="list" style="margin-top: var(--s-5)">
+      <li><span><b>Валютный перевод в Россию или Беларусь не пройдёт вообще</b>Не «может не пройти»
+        — не проводится по тарифам, исключение только рубли (Ameriabank, ред. 49, сноска 48 ·
+        03.07.2026). Расчёт «получаю доллары на армянский счёт и отправляю родным» упирается не в
+        комплаенс, а в прямой тарифный запрет.</span></li>
+      <li><span><b>Наличные в фунтах и франках стоят 3 % с первой единицы</b>Если у вас пакет
+        «Стандарт» или «Персона». Льготу «бесплатно до 10 000 единиц в день» часто цитируют без
+        указания пакета — а она только у «Премиум/Партнёр». Приехавший релокант почти всегда
+        «Стандарт».</span></li>
+      <li><span><b>Международное поручение свыше 20 000 USD с 1 сентября 2026 года требует новых
+        полей</b>Правового статуса получателя, его резидентства и кодированной цели операции
+        (решение Совета ЦБ РА № 150-Н от 09.09.2025; объявление Ameriabank от 31.08.2026 ·
+        проверено 04.09.2026). Если получатель не отвечает на эти три вопроса, платёж
+        стоит.</span></li>
+      <li><span><b>Счёт закрывается сам, если им не пользоваться</b>У Converse: более двух лет без
+        операций — 5 000 драм ежемесячно, при остатке меньше 5 000 драм остаток списывается и счёт
+        закрывается. Счёт, открытый «на всякий случай» и забытый, исчезает не
+        бесплатно.</span></li>
+    </ol>
+
+    <aside class="nochange" aria-labelledby="nc-appeal" style="margin-top: var(--s-8)">
+      <p class="nochange__tag">Отдельно · чего мы не знаем</p>
+      <h3 class="nochange__t" id="nc-appeal">Официального пути обжаловать отказ в открытии счёта мы не нашли</h3>
+      <ul>
+        <li>Порядок жалобы на финансовую организацию описан: сначала претензия в саму организацию,
+          у неё до 10 рабочих дней на ответ, затем Примиритель финансовой системы, третейский суд
+          или суд; параллельно можно обратиться в ЦБ, у него 15 рабочих дней.</li>
+        <li>Но в перечне компетенции Примирителя названы споры по <b>действующим</b> отношениям —
+          кредиты, депозиты, карты, переводы, страхование, кредитная история. Отказ в
+          <b>заключении</b> договора там не назван. Берётся ли он за такие обращения, из
+          опубликованного не следует, и мы не станем это додумывать.</li>
+        <li>И ещё одна честная деталь про источники: на английской странице ЦБ о жалобах инстанцией
+          для потребительского спора назван Конституционный суд Армении — это заведомо неверно,
+          потребительские споры туда не идут. Мы это заметили, поэтому английскую версию страницы
+          регулятора дословно не цитируем и вам не советуем.</li>
+      </ul>
+      <!-- {слот: были ли у Геворга случаи обращения к Примирителю по отказу в открытии счёта
+           и по закрытию действующего} -->
+      <p class="src">Источники: <a href="https://www.cba.am/en/redress-and-complaints" rel="noopener">cba.am/en/redress-and-complaints</a>;
+        fsm.am — Ереван, ул. Хоренаци 15, БЦ «Элит Плаза», 7 этаж, +374 60 70-11-11 · проверено 04.09.2026.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══ 06 · Порядок шагов — канон, блок 10 ═════════════════════════
+     Ответ этой ветки — порядок, а не выбор, поэтому шаги стоят
+     отдельным блоком и повторены в разметке HowTo. -->
+<section class="section section--deep section--thread section--light" id="order" aria-labelledby="order-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">05</span> Порядок</p>
+      <h2 class="h2" id="order-title">Порядок, который экономит недели, <em>а не деньги</em></h2>
+      <p class="lead">Счёт, соцкарта и адрес завязаны друг на друга. Единого государственного
+        порядка нет — этот собран по опубликованным требованиям банков и Службы миграции.</p>
+    </div>
+
+    <ol class="tl" role="list">
+      <li class="tl__step">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__no">Шаг 01</p>
+        <h3 class="tl__title">Выбрать банк под свои документы</h3>
+        <p class="tl__who"><span><b>Почему первым</b>Порядок задаёт не государство, а конкретный банк: у Ameriabank документ с адресом в перечне есть, у Inecobank его нет вовсе</span>
+          <span><b>Вы</b>смотрите, что у вас на руках сегодня, и выбираете банк под это, а не документы под банк</span></p>
+        <p class="tl__days">Источник: перечни документов банков · 04.09.2026</p>
+      </li>
+      <li class="tl__step">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__no">Шаг 02</p>
+        <h3 class="tl__title">Договориться о письменном согласии собственника</h3>
+        <p class="tl__who"><span><b>Почему здесь</b>Письменное согласие собственника — единственное прямо названное официальное основание отказать в регистрации по адресу</span>
+          <span><b>Вы</b>договариваетесь о нём в момент подписания договора аренды, а не через месяц</span></p>
+        <p class="tl__days">Источник: migration.e-gov.am · 04.09.2026</p>
+      </li>
+      <li class="tl__step">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__no">Шаг 03</p>
+        <h3 class="tl__title">Подать заявление о регистрации по адресу</h3>
+        <p class="tl__who"><span><b>Пакет</b>Документ, удостоверяющий личность, документ-основание занятия жилья и письменное согласие собственника</span>
+          <span><b>Где</b>Территориальное подразделение Службы миграции и гражданства</span></p>
+        <p class="tl__days">Подача — в течение 10 рабочих дней, рассмотрение — 3 рабочих дня с момента получения документов. Официальная страница описывает гражданина Армении, сменившего место жительства; для иностранца срок мы официально подтвердить не смогли и закладываем верхнюю границу</p>
+      </li>
+      <li class="tl__step">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__no">Шаг 04</p>
+        <h3 class="tl__title">Номер общественных услуг или справка о его неполучении</h3>
+        <p class="tl__who"><span><b>Что это даёт</b>Отсутствие соцкарты не запирает счёт: Ameriabank принимает справку в оригинале или копии, у Inecobank она в перечне, Converse требует номер только от резидентов и граждан РА</span>
+          <span><b>Мелочь</b>С одного адреса электронной почты нельзя записать на приём больше четырёх человек за 30 дней</span></p>
+        <p class="tl__days">Источники: ст. 6 ч. 5 закона ՀՕ-288-Ն; migration.mia.gov.am; migration.e-gov.am · 04.09.2026</p>
+      </li>
+      <li class="tl__step">
+        <span class="tl__dot" aria-hidden="true"></span>
+        <p class="tl__no">Шаг 05</p>
+        <h3 class="tl__title">Подать пакет в банк, назвав цель счёта</h3>
+        <p class="tl__who"><span><b>Мы</b>проверяем пакет по списку причин отказа до подачи и говорим заранее, где шансы ниже</span>
+          <span><b>Вы</b>называете цель счёта честно в первый день — личный, приём оплат, для ИП</span></p>
+        <p class="tl__days">Решение принимает банк, и мы не обещаем исход</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 07 · Сколько стоит — канон, блок 11 ═════════════════════════ -->
+<section class="section" id="price" aria-labelledby="price-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">06</span> Сколько стоит</p>
+      <h2 class="h2" id="price-title">Две суммы, которые путают постоянно: <em>наша работа и чужие платежи</em></h2>
+      <p class="lead">Чужие платежи мы не берём и не наценяем — они уходят банку и государству.</p>
+    </div>
+
+    <h3 class="h3">Наша работа</h3>
+    <div class="diy-wrap" style="margin-top: var(--s-5)">
+      <table class="diy">
+        <caption>Цены названы компанией 31.08.2026. Валюта явно не названа: до ответа клиента
+          пишется «драм».</caption>
+        <colgroup><col class="c-diy"><col class="c-step"><col class="c-us"></colgroup>
+        <thead><tr><th scope="col">Модуль</th><th scope="col">Цена</th><th scope="col">Что это</th></tr></thead>
+        <tbody>
+          <!-- {слот: один банк или включает вторую попытку в другом после отказа;
+               что происходит с оплатой при отказе — отвечает Геворг} -->
+          <tr>
+            <th scope="row">Счёт</th>
+            <td data-l="Цена" class="us">110 000 драм</td>
+            <td data-l="Что это">Проверка пакета до подачи по списку причин отказа, подбор банка под цель счёта, сопровождение подачи.</td>
+          </tr>
+          <!-- {слот: подтвердить формулировку по соцкарте} -->
+          <tr>
+            <th scope="row">Соцкарта</th>
+            <td data-l="Цена" class="us">35 000 драм</td>
+            <td data-l="Что это">Номер общественных услуг. Это <b>цена работы, а не государственная пошлина</b>: в законе ՀՕ-288-Ն пошлина за присвоение номера не упоминается.</td>
+          </tr>
+          <!-- {слот: что именно входит в регистрацию по адресу} -->
+          <tr>
+            <th scope="row">Адрес</th>
+            <td data-l="Цена" class="us">430 000 драм в год</td>
+            <td data-l="Что это">Юридический адрес с получением корреспонденции.</td>
+          </tr>
+          <tr>
+            <th scope="row">Регистрация ИП</th>
+            <td data-l="Цена" class="us">45 000 драм</td>
+            <td data-l="Что это">Нужна, если счёт открывается под предпринимательскую деятельность — см. ветку <a class="lnk" href="ip-i-nalogi.html">«Работаю»</a>.</td>
+          </tr>
+          <tr>
+            <th scope="row">Бухгалтерия</th>
+            <td data-l="Цена" class="us">36 000 драм в месяц</td>
+            <td data-l="Что это">Не относится к открытию счёта, но включается сразу, если появилось ИП.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top: var(--s-3)"><span class="slot">{валюта на подтверждении}</span></p>
+
+    <!-- ── Калькулятор — канон, блок 11. Предвыбор ветки 02:
+         счёт + соцкарта + адрес. Предвыбор стоит атрибутом checked
+         в разметке, а не ставится скриптом: работает без JavaScript. ── -->
+    <h3 class="h3" style="margin-top: var(--s-10)">Соберите свой состав</h3>
+    <!-- единый источник цен: отсюда читает калькулятор. publish:false — на странице
+         состав расчёта вместо сумм до подтверждения валюты (созвон 31.08.2026, §8-бис).
+         ?prices=preview показывает предварительные значения с пометкой — для внутреннего показа. -->
+    <script type="application/json" id="prices">
+    {
+      "publish": false,
+      "currency": "AMD",
+      "currencyConfirmed": false,
+      "asOf": null,
+      "modules": {
+        "ip":         { "name": "Регистрация ИП",                       "per": "once",  "amount": 45000  },
+        "account":    { "name": "Открытие счёта",                       "per": "once",  "amount": 110000 },
+        "social":     { "name": "Соцкарта",                             "per": "once",  "amount": 35000  },
+        "address":    { "name": "Юридический адрес и корреспонденция",  "per": "year",  "amount": 430000 },
+        "accounting": { "name": "Бухгалтерия",                          "per": "month", "amount": 36000  }
+      }
+    }
+    </script>
+
+    <div class="calc" id="calc-form" role="group" aria-labelledby="price-title" data-calc style="margin-top: var(--s-5)">
+      <div class="calc__mods">
+        <label class="tile mod" for="m-account">
+          <input type="checkbox" id="m-account" name="mod" value="account" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Открытие счёта</div><div class="mod__unit">единовременно · 110 000 драм</div></div>
+            <div class="mod__price" data-price="account" hidden></div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Проверка пакета до подачи по списку причин отказа</li>
+              <li>Подбор банка под цель счёта, сопровождение подачи</li>
+              <li>Не входит: комиссии банка; решение принимает банк</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-social">
+          <input type="checkbox" id="m-social" name="mod" value="social" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Соцкарта</div><div class="mod__unit">единовременно · 35 000 драм</div></div>
+            <div class="mod__price" data-price="social" hidden></div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Порядок шагов относительно адреса и статуса</li>
+              <li>Подготовка и сопровождение получения</li>
+              <li>Это цена работы: пошлина за присвоение номера в законе ՀՕ-288-Ն не упоминается</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-address">
+          <input type="checkbox" id="m-address" name="mod" value="address" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Юридический адрес и корреспонденция</div><div class="mod__unit">в год · 430 000 драм</div></div>
+            <div class="mod__price" data-price="address" hidden></div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Юридический адрес с получением корреспонденции</li>
+              <li>Приём писем и уведомлений, пересылка вам</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-ip">
+          <input type="checkbox" id="m-ip" name="mod" value="ip">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно · 45 000 драм</div></div>
+            <div class="mod__price" data-price="ip" hidden></div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Подбор налогового режима под ваш профиль дохода</li>
+              <li>Подготовка и подача документов, получение регистрации</li>
+              <li>Не входит: госпошлины и комиссии — отдельной строкой</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-accounting">
+          <input type="checkbox" id="m-accounting" name="mod" value="accounting">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц · 36 000 драм</div></div>
+            <div class="mod__price" data-price="accounting" hidden></div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Не относится к открытию счёта, но включается сразу, если появилось ИП</li>
+              <li>Учёт, отчётность в срок, контроль порога режима</li>
+            </ul>
+          </details>
+        </label>
+      </div>
+
+      <aside class="tile tile--hero total" aria-live="polite" data-total>
+        <p class="tile__meta"><b>06</b> Итог</p>
+        <p class="total__title">Состав расчёта</p>
+        <p class="total__asof" data-total-count>3<small>модуля выбрано</small></p>
+        <dl class="total__rows" data-total-rows hidden>
+          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">—</dd></div>
+          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
+          <div class="total__row"><dt>В месяц</dt><dd data-sum="month">—</dd></div>
+        </dl>
+        <div class="total__list" data-total-list>
+          <span class="chip">Открытие счёта</span><span class="chip">Соцкарта</span><span class="chip">Юридический адрес и корреспонденция</span>
+        </div>
+        <div class="total__meta">
+          <span data-total-note>Суммы стоят в таблице выше. Здесь собирается состав — он уедет вместе с заявкой.</span>
+          <span><b>Не входит:</b> госпошлины и комиссии банка.</span>
+          <span>Решение по счёту принимает банк, и мы не обещаем исход.</span>
+        </div>
+        <div class="total__cta">
+          <a class="btn btn--primary" href="#contact">Проверить мой пакет до подачи <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg> Спросить в Telegram</a>
+        </div>
+      </aside>
+    </div>
+
+    <h3 class="h3" style="margin-top: var(--s-10)">Чужие платежи, которые не входят в нашу цену</h3>
+    <p class="measure">Комиссия банка за изучение клиента (у Ameriabank 20 000 драм с негражданина,
+      только при положительном решении); плата за приём заявки и дистанционную идентификацию у
+      Converse нерезиденту (25 000 и 50 000 драм, вперёд); тарифы Evocabank при удалённом открытии
+      (50 000 при открытии и 250 000 в год); государственная пошлина за регистрацию по адресу.</p>
+    <p class="measure">Про пошлину — прямо: официальной суммы мы не получили. Три неофициальных
+      источника дают 1 000 и 1 100 драм, правовое основание известно и указано на сайте МИД
+      Армении — Закон РА «О государственной пошлине», статья 14.3, и постановление Правительства
+      № 300-N от 29.03.2019, — но самой ставки в открытом виде мы не нашли и придумывать её не
+      будем. То же с размером штрафа за отсутствие регистрации: два неофициальных источника
+      расходятся между собой в четыре с половиной раза, нормы Кодекса об административных
+      правонарушениях мы не нашли, и цифру не приводим вовсе.</p>
+    <p class="src measure">Источник по правовому основанию пошлины:
+      <a href="https://www.mfa.am/en/residency" rel="noopener">mfa.am/en/residency</a> · проверено 04.09.2026.</p>
+
+    <div class="note" style="margin-top: var(--s-8)">
+      <p><b>И дальше — разговор, а не итог.</b> Складывать это в одну сумму на странице бессмысленно,
+        и вот почему честно: в разговоре сумма меняется в обе стороны. Иногда вверх, потому что
+        выясняется второй банк или отсутствующий документ. Иногда вниз — потому что часть модулей
+        вам не нужна. Поэтому расчёт заканчивается не ценником, а его составом, который вы
+        отправляете нам и по которому мы говорим предметно.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 08 · Вопросы — канон, блок 12. Разметка FAQPage стоит в head,
+     одним узлом на адрес. Вопросы не дублируются на других ветках. ══ -->
+<section class="section section--deep section--thread section--light" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">07</span> Вопросы</p>
+      <h2 class="h2" id="faq-title">Вопросы, которые задают <em>в первую неделю</em></h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Мне отказали в банке. Это навсегда или можно пойти в другой?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>Можно. Но сначала стоит понять, на чём именно споткнулись, потому что часть причин
+            переезжает вместе с вами в следующий банк, а часть — нет. Причины из документов банка
+            (адрес, непонятная цель счёта, расхождения в бумагах) снимаются и в другом месте
+            сработают иначе. Причины из требований банков-корреспондентов — не снимаются, и
+            корреспонденты у армянских банков частично общие.</p>
+          <p>Публичного механизма, по которому один банк видел бы отказ другого, в официальных
+            источниках мы не нашли — но и обратного утверждения тоже, поэтому «идите подряд по
+            всем семнадцати» мы не советуем. Разумнее сузить список до двух-трёх банков, чьи
+            опубликованные требования совпадают с тем, что у вас на руках.</p>
+          <p class="small"><a class="lnk" href="#traps">Шесть названных ловушек</a><a class="lnk" href="#table-banks">Таблица требований четырёх банков</a></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>У меня нет адреса для регистрации. Значит, счёт не откроют?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>Откроют. «Без адреса ничего не двигается» — это правило одного банка, обобщённое до
+            всех. В перечне документов Inecobank документа с адресом нет вовсе, у Ameriabank
+            формулировка допускает документ с адресом <b>фактического проживания</b>, а не только
+            регистрации. Регистрацию по адресу всё равно стоит сделать — она открывает доступ к
+            части государственных и частных услуг, — но она не первая в очереди и не блокирует
+            счёт.</p>
+          <p class="src">Источники: inecobank.am; ameriabank.am, ред. 12 от 28.03.2023 · проверено 04.09.2026.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Можно ли открыть счёт без соцкарты?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>Да. Закон делает номер общественных услуг обязательным реквизитом при открытии счёта
+            (ст. 3 ч. 3 ՀՕ-288-Ն), но он же предусматривает справку о его неполучении (ст. 6 ч. 5),
+            и банки на неё прямо ссылаются: Ameriabank принимает оригинал или копию, у Inecobank
+            она в перечне, Converse требует сам номер только от резидентов и граждан Армении.</p>
+          <p>Отдельный вопрос — присвоят ли вам номер до получения карты проживания: по прочитанной
+            редакции закона номер полагается иностранцу <b>с правом проживания</b>, но эта редакция
+            не отражает четырёх поправок, и мы держим вопрос открытым, а не отвечаем на него
+            уверенно.</p>
+          <p class="small"><a class="lnk" href="#how">Где именно проходит этот шов</a></p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Можно ли открыть счёт удалённо, не приезжая?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>Документально — только в Evocabank и только при одном из четырёх оснований:
+            недвижимость в Армении, вклад, статус ИП в Армении или доля в армянском юридическом
+            лице. Дистанционное открытие у Ameriabank в тарифах прямо ограничено гражданами
+            Армении (тарифы ред. 49 · 03.07.2026). Converse нерезиденту дистанционную идентификацию
+            делает, но за 50 000 драм плюс 25 000 за приём заявки, и оплата берётся <b>до</b>
+            идентификации. Итог: удалённо счёт получает тот, кто уже что-то в Армении сделал.</p>
+          <p class="src">Источник: evoca.am · проверено 04.09.2026.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Почему у меня и у знакомого с теми же документами разный результат?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>Потому что часть правил, по которым решает банк, — не армянские. Converse называет три
+            основания ограничить услугу или отказать: закон о ПОД/ФТ, FATCA и требования
+            банков-корреспондентов. Последние не публикуются, различаются у разных банков и
+            меняются без объявления.</p>
+          <p>И официального разъяснения регулятора по этому поводу нет: раздел официальных
+            разъяснений Совета ЦБ по теме нерезидентов пуст, а сам раздел не пополнялся с 2022 года.
+            Непредсказуемость здесь не миф и не невезение — у неё есть документальный источник,
+            просто он чужой.</p>
+          <p class="src">Источник: <a href="https://www.conversebank.am/en/open-account" rel="noopener">conversebank.am/en/open-account</a> · проверено 04.09.2026.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Сколько стоит внести наличные рубли?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>На сегодня честный ответ — «спросите в кассе до внесения, и рассчитывайте на 10 %».
+            В тарифах Ameriabank, вступивших в силу 3 июля 2026 года, зачисление наличных рублей
+            стоит 5 % для всех пакетов. В объявлении того же банка от 10 июля 2026 года — 10 %.
+            Оба документа опубликованы банком и оба висят на его сайте. Какая цифра работает в
+            кассе, из них не следует, и мы не выбираем за вас ту, что красивее.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Смогу ли я переводить деньги из Армении в Россию?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>В рублях — да, в валюте — нет. В тарифах Ameriabank стоит прямая строка: переводы в
+            Российскую Федерацию и Республику Беларусь в иностранной валюте не осуществляются,
+            исключение — российские рубли (ред. 49, сноска 48 · 03.07.2026). Это не решение
+            комплаенса по вашей операции, а тариф, то есть спорить не с кем.</p>
+          <p>Отдельно учитывайте, что с 1 сентября 2026 года международное поручение свыше
+            20 000 USD требует указать правовой статус получателя, его резидентство и цель операции
+            кодом (решение Совета ЦБ РА № 150-Н от 09.09.2025 · проверено 04.09.2026).</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Что будет со счётом, если я им не пользуюсь?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>У Converse описано прямо: более двух лет без операций — списание 5 000 драм ежемесячно,
+            а когда остаток становится меньше 5 000 драм, он списывается и счёт закрывается. У
+            других банков условия свои, и их надо смотреть в тарифах конкретного банка.</p>
+          <p>Полезное на будущее: с начала сентября 2026 года любое физическое лицо вправе бесплатно
+            получить от банка электронную справку о своих счетах, остатках и обязательствах в срок
+            до пяти рабочих дней (решение Совета ЦБ РА № 222-Н от 11.08.2026 · проверено
+            04.09.2026) — это простой способ проверить, что у вас вообще открыто.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Мне нужен счёт для приёма оплат от зарубежных заказчиков. Личного хватит?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <div class="faq__a">
+          <p>Технически деньги придут. Проблема начинается позже: банк не обязан спрашивать
+            документы о доходе на входе, но вправе спросить в любой момент, и в перечне Ameriabank
+            прямо сказано, что выписки за год, справка с работы и документы о предпринимательской
+            деятельности существенны при надлежащей проверке клиента (сноска 8 · проверено
+            04.09.2026). Названная сразу цель счёта делает пакет тяжелее на входе и легче потом.</p>
+          <p>Если речь о регулярных поступлениях от заказчиков, разговор быстро уходит в выбор
+            налогового режима — это уже <a class="lnk" href="ip-i-nalogi.html">ветка «Работаю»</a>,
+            и там ошибка обнаруживается не сразу, а через год.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 09 · Выход — канон, блок 13. Форма со следом выбора ═════════ -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">08</span> Выход</p>
+      <h2 class="h2" id="contact-title">Повод для разговора здесь <em>не наш, а ваш</em></h2>
+      <p class="lead">Вы уже в Армении, и каждый день без счёта — это день, когда вы платите
+        наличными по невыгодному курсу и не можете принять оплату. Подгонять вас не нужно и не
+        будем: срочность у этой ветки настоящая и своя.</p>
+    </div>
+
+    <div class="contact">
+      <div class="tile">
+        <div class="ways">
+          <a class="way" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram<small>@LTCG_Armenia</small></a>
+          <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН: номер тот же, но наличие WhatsApp на нём никто
+               не проверял. Если не подтвердится — снять эту ссылку и все остальные с data-wa. -->
+          <a class="way" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<small>+374 94 184 014</small></a>
+          <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
+        </div>
+        <hr class="rule">
+
+        <!-- method="dialog" вне <dialog> — это НЕ отправка: браузер прерывает submit. Так без
+             JavaScript нажатие Enter не бросает POST в никуда (бэкенда нет) и не уносит имя и
+             контакт в строку адреса. С JavaScript отправку перехватывает js/site.js. -->
+        <form class="form" id="lead" method="dialog" data-lead novalidate>
+          <p class="tile__meta"><b>Вы выбрали</b> Только приехал → счёт, соцкарта, адрес</p>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="f-name">Как к вам обращаться</label>
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-contact">Телефон или Telegram</label>
+              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="f-msg">Что уже сделали и что не получилось <small>— необязательно</small></label>
+            <textarea id="f-msg" name="message" placeholder="Например: был в двух банках, отказали без объяснения; договор аренды есть, согласия собственника нет"></textarea>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="f-src">Как вы о нас узнали? <small>— необязательно</small></label>
+            <input class="field__input" id="f-src" name="source" type="text" placeholder="Рекомендация, поиск, Telegram…">
+          </div>
+
+          <!-- след выбора: ветка и модули калькулятора уезжают вместе с заявкой.
+               f-state читает js/site.js и подставляет в текст заявки. -->
+          <input type="hidden" id="f-state" name="state" value="Только приехал → счёт в банке">
+          <input type="hidden" name="branch" value="schet-v-banke">
+          <input type="hidden" name="page" value="schet-v-banke">
+          <input type="hidden" name="modules" data-f-modules value="account,social,address">
+
+          <!-- honeypot: отсекает только заполненное поле; отсечки по времени нет намеренно —
+               живой человек заполняет четыре поля быстрее любого разумного порога -->
+          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+          <label class="check"><input type="checkbox" name="consent" required>
+            <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <span>Согласен на обработку персональных данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст согласия от клиента</span></span></label>
+
+          <div class="form__foot">
+            <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
+            <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт выключен — напишите напрямую:
+              <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> ·
+              <a class="lnk" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> ·
+              <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
+            <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
+          </div>
+        </form>
+
+        <!-- Приёмник заявки. Telegram не подставляет текст в чат обычного аккаунта, поэтому
+             текст показан здесь целиком, с кнопкой «скопировать». Никакие данные никуда не
+             уходят до нажатия человеком. -->
+        <div class="form__done" data-form-done hidden tabindex="-1">
+          <p class="h4">Заявка собрана — осталось отправить</p>
+          <p class="measure small">Сайт статический, отправлять некому: заявка уходит вашим сообщением в мессенджер. Текст уже готов.</p>
+          <label class="sr-only" for="f-out">Текст заявки</label>
+          <textarea class="field__input form__out" id="f-out" data-form-out readonly rows="5"></textarea>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Открыть Telegram и вставить</a>
+            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> Открыть WhatsApp с текстом</a>
+            <button class="btn btn--outline" type="button" data-copy>Скопировать текст</button>
+          </div>
+          <p class="small" role="status" aria-live="polite" data-copy-msg></p>
+        </div>
+      </div>
+
+      <aside class="tile tile--hero">
+        <p class="tile__meta"><b>08</b> Что взять с собой в разговор</p>
+        <p class="state__name">Первый вопрос, который вам зададут</p>
+        <p class="state__recog">Чтобы вы знали заранее и не готовились к неизвестности:
+          <b>какой у вас адрес и чем он подтверждается?</b> Это самая частая причина отказа,
+          поэтому она идёт первой.</p>
+        <hr class="rule">
+        <p class="small"><b>Проверьте себя по шести причинам выше.</b> Напротив каждой — «есть»,
+          «нет» или «не знаю». Разговор нужен там, где стоит «не знаю»: именно эти строки и стоит
+          прислать, а не общее «интересует открытие счёта».</p>
+        <ol class="next" role="list">
+          <li><span><b>Гражданство и документ въезда</b>Внутренний паспорт или заграничный — от этого зависит, нужна ли отдельная декларация.</span></li>
+          <li><span><b>Аренда и согласие собственника</b>Есть ли договор и готов ли собственник дать письменное согласие.</span></li>
+          <li><span><b>Доход и чем он подтверждается сегодня</b>Договор, акты, выписки, переписка — что из этого у вас есть.</span></li>
+          <li><span><b>Куда уже ходили</b>В какие банки и что именно вам ответили.</span></li>
+        </ol>
+        <hr class="rule">
+        <!-- Сюда пишет клиент: одна-две фразы от Геворга о том, как проходит разбор пакета
+             и что происходит, если банк всё же отказал. Голос компании — не наш текст,
+             блок остаётся пустым до ответа. -->
+        <p class="small">Как проходит разбор пакета и что происходит, если банк всё же отказал —
+          <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст от компании</span></p>
+      </aside>
+    </div>
+
+    <div class="section__foot">
+      <p class="small measure"><b>Ничего не нужно прямо сейчас?</b> Тогда просто заберите отсюда
+        порядок шагов и таблицу требований — они полные, и по ним всё делается самому.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 10 · Соседние ветки — канон, блок 15 ════════════════════════ -->
+<section class="section section--deep section--thread section--light" id="next" aria-labelledby="next-title">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="kicker"><span class="kicker__no">09</span> Дальше по сайту</p>
+      <h2 class="h2" id="next-title">Что читать <em>до и после этого шага</em></h2>
+    </div>
+
+    <nav class="bento" aria-label="Соседние ветки">
+      <a class="tile neigh" href="pered-pereezdom.html" data-span="4">
+        <p class="neigh__when">До этого</p>
+        <h3 class="neigh__t">Что закрывается только из страны исхода</h3>
+        <p class="neigh__d">И что придётся возвращаться делать, если не закрыть до отъезда.</p>
+        <span class="neigh__go">Ещё не переехал <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      </a>
+
+      <a class="tile neigh" href="vnzh.html" data-span="4">
+        <p class="neigh__when">После этого</p>
+        <h3 class="neigh__t">Вид на жительство и карта проживания</h3>
+        <p class="neigh__d">Карта проживания и номер общественных услуг в ней — то, чем закрывается
+          шов, показанный выше.</p>
+        <span class="neigh__go">Легализуюсь <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      </a>
+
+      <a class="tile neigh" href="ip-i-nalogi.html" data-span="4">
+        <p class="neigh__when">Параллельно</p>
+        <h3 class="neigh__t">Если появились заказчики и оплаты</h3>
+        <p class="neigh__d">Разговор быстро уходит в выбор налогового режима: там ошибка
+          обнаруживается не сразу, а через год.</p>
+        <span class="neigh__go">Работаю <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      </a>
+    </nav>
+
+    <!-- ── Подпись — канон, блок 14 ─────────────────────────────── -->
+    <footer class="section__foot">
+      <p class="sign">
+        <span>Проверил: юрист LTCG</span>
+        <span>Обновлено 04.09.2026</span>
+        <span>Источники: тексты законов, официальные страницы органов, опубликованные документы четырёх банков</span>
+      </p>
+      <p class="small measure"><b>Проверено по:</b> тексту Закона РА «О номере общественных услуг»
+        ՀՕ-288-Ն (<a class="lnk" href="https://www.arlis.am/DocumentView.aspx?docid=87872" rel="noopener">arlis.am, DocID 87872</a>);
+        официальным страницам Службы миграции и гражданства МВД РА (migration.mia.gov.am,
+        migration.e-gov.am); опубликованным документам четырёх банков — Ameriabank (перечень
+        документов ред. 12 от 28.03.2023, тарифы физлиц ред. 49 в силе с 03.07.2026, объявления от
+        10.07.2026 и 31.08.2026), Inecobank, Converse Bank, Evocabank; материалам Центрального
+        банка РА (перечень лицензированных банков, FAQ Центра финансового мониторинга, Регламент
+        минимальных требований, решения Совета № 150-Н от 09.09.2025 и № 222-Н от 11.08.2026,
+        порядок обжалования); сайту Примирителя финансовой системы (fsm.am); сайту МИД РА
+        (mfa.am). <b>Обновлено:</b> 04.09.2026.</p>
+      <p class="small measure"><b>Что изменилось в этой редакции:</b> первая публикация ветки.</p>
+      <p class="small measure"><b>Политика цифр.</b> Цифры на этом сайте появляются только с
+        источником и датой. Там, где источники расходятся, мы показываем оба и говорим, из чего
+        исходим сами. Пустые места — не недоделка, а правило.</p>
+      <p class="small measure"><b>Границы.</b> Решение об открытии счёта принимает банк, решение о
+        регистрации по адресу — Служба миграции и гражданства. Мы отвечаем за подготовку пакета и
+        за то, что о рисках вы узнаёте до подачи, а не после. Исхода мы не обещаем.</p>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ Футер ═══════════════════════════════════════════════════════ -->
+<footer class="ftr" aria-label="Подвал">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div class="ftr__brand">
+        <a class="brand" href="home-ru.html" aria-label="LTCG — на главную"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
+        <address>
+          <span>Legal and Tax Consulting Group LLC · Ереван</span>
+          <a href="tel:+37494184014">+374 94 184 014</a>
+          <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
+          <span>Реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
+        </address>
+      </div>
+      <nav aria-labelledby="f-branches">
+        <h2 id="f-branches">По моменту</h2>
+        <ul role="list">
+          <li><a href="pered-pereezdom.html">Ещё не переехал</a></li>
+          <li><a href="schet-v-banke.html" aria-current="page">Только приехал</a></li>
+          <li><a href="vnzh.html">Легализуюсь</a></li>
+          <li><a href="ip-i-nalogi.html">Работаю</a></li>
+          <li><a href="rezidentstvo-i-crs.html">Живу и планирую</a></li>
+          <li><a href="spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-page">
+        <h2 id="f-page">На этой странице</h2>
+        <ul role="list">
+          <li><a href="#answer">Короткий ответ</a></li>
+          <li><a href="#fork">Что у вас на руках</a></li>
+          <li><a href="#table-banks">Требования четырёх банков</a></li>
+          <li><a href="#after">Что происходит со счётом дальше</a></li>
+          <li><a href="#traps">Шесть названных ловушек</a></li>
+          <li><a href="#order">Порядок шагов</a></li>
+          <li><a href="#price">Сколько стоит</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-site">
+        <h2 id="f-site">Сайт</h2>
+        <ul role="list">
+          <li><a href="home-ru.html">Главная</a></li>
+          <li><a href="home-ru.html#calc">Цены</a></li>
+          <li><a href="home-ru.html#diy">Самому или с нами</a></li>
+          <li><a href="#contact">Контакты</a></li>
+          <li><a href="#" aria-disabled="true">Политика обработки данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="ftr__bottom">
+      <div>
+        <p>Услуги носят консультационный и сопроводительный характер; решения о выдаче ВНЖ и открытии счетов принимают государственные органы и банки. Формулировку подтверждает клиент.</p>
+        <p style="margin-top: var(--s-2)">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- мобильный док: на ветке хиро нет, поэтому показан сразу классом в разметке -->
+<nav class="dock glass is-shown" aria-label="Быстрые действия">
+  <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+  <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+  <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="is-primary" href="#contact"><svg aria-hidden="true"><use href="#i-calc"/></svg>Проверить</a>
+</nav>
+
+</body>
+</html>

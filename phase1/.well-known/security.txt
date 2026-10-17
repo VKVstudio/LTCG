@@ -1,0 +1,11 @@
+# LTCG (Legal and Tax Consulting Group LLC) — security.txt по RFC 9116.
+# Формальный email-домен ещё не существует (в подвале сайта против "email" стоит
+# "уточняем" — правило проекта: ни одной цифры и ни одного контакта без
+# подтверждения клиентом), поэтому Contact ведёт на телефон и Telegram — оба
+# уже подтверждены и уже стоят в подвале сайта и в JSON-LD. Добавить email сюда
+# тем же приёмом, что и в подвал, как только домен и адрес появятся.
+Contact: tel:+37494184014
+Contact: https://t.me/LTCG_Armenia
+Preferred-Languages: ru, hy, en
+Expires: 2027-09-05T00:00:00Z
+Canonical: https://ltcg.am/.well-known/security.txt

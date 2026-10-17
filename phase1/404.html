@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- CSP — та же политика, что на home-ru.html/noyabr.html (см. их <head>). Первый тег
+     после charset/viewport по той же причине: meta http-equiv действует только на то,
+     что идёт после неё. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script>
+(function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
+try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<!-- Файл лежит В КОРНЕ репозитория (не в phase1/): GitHub Pages подхватывает кастомный
+     404 только с корня публикуемой ветки — иначе на любой битой ссылке отдаётся
+     стандартная страница GitHub с URL репозитория в заголовке (аудит защиты, находка
+     «сделать сейчас», п.6). Отсюда и все пути ниже с префиксом phase1/, и
+     data-site-root="./" — единственное место на сайте, где корень контента не
+     совпадает с местом самого файла. boot.js сюда намеренно не подключён (странице не
+     нужны хиро-гейты и апдейт service worker), поэтому data-path на ссылках ниже
+     переписан руками, а не скриптом — как на noyabr.html до отказа от boot.js не было. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Страница не найдена — LTCG, Ереван</title>
+<meta name="theme-color" content="#0C1B3A">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
+<!-- home-ru.css — не «домашняя» верстка, а вторая половина шапки/подвала: сетка
+     .hdr__in, размер .brand-logo, отступы .ftr, размер лого VKV в подвале
+     (.ftr__vkv img). Без него подвал и шапка ломаются визуально — заметно
+     по живому скриншоту, не по чтению кода (лого VKV рендерилось 256×180 px
+     вместо 28px высотой). noyabr.html грузит этот файл по той же причине,
+     хотя сама «домашняя» разметка на нём не используется. -->
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261018m1">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261018m1">
+<style>
+/* Только для этой страницы: крупный номер и по центру. Токены — из site.css/site-ru.css,
+   своих цветовых литералов здесь нет намеренно (правило файла, см. site-ru.css §0). */
+.e404 { min-height: calc(100svh - var(--header-h) - 12rem); display: grid; place-items: center; text-align: center; padding-block: var(--section-pad); }
+.e404__code { font: var(--fw-h1) var(--fs-big)/1 var(--font-display); color: var(--gold-text); margin: 0; }
+.e404__lead { font-size: var(--fs-h3); color: var(--text); margin: var(--s-4) 0 var(--s-2); }
+.e404__note { color: var(--text-2); max-width: 46ch; margin: 0 auto var(--s-8); }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="206.69" y1="971.49" x2="903.97" y2="274.21">
+      <stop offset="0.32" stop-color="#C4922B"/><stop offset="0.55" stop-color="#F2C249"/><stop offset="0.79" stop-color="#FAE0A2"/><stop offset="1.0" stop-color="#C4922B"/>
+    </linearGradient>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pending" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3.2 3.2"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<!-- Шапка — из phase1/partials/header.html, руками: пути assets/…, ./home-ru.html
+     переписаны на phase1/assets/…, phase1/home-ru.html (партиал уверен, что живёт
+     внутри phase1/, а этот файл — снаружи). sync_chrome.py эту страницу не трогает
+     (не добавлена в его PAGES) — при следующей правке шапки/подвала обновить и
+     здесь вручную, других мест с таким же дублированием на сайте нет. -->
+<header class="hdr glass" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="home-ru.html" aria-label="LTCG — на главную">
+      <picture>
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
+    </a>
+    <div class="hdr__mid">
+      <a class="btn btn--primary btn--sm hdr__cta" href="home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    </div>
+    <div class="themer" role="group" aria-label="Тема оформления" data-themer>
+      <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
+      <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
+      <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="e404">
+    <p class="e404__code" aria-hidden="true">404</p>
+    <h1 class="e404__lead">Страница не найдена</h1>
+    <p class="e404__note">Ссылка устарела или была набрана с опечаткой. Разделы сайта — на главной странице.</p>
+    <a class="btn btn--primary" href="home-ru.html">На главную <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+  </section>
+</main>
+
+<!-- Подвал — из phase1/partials/footer.html, те же ручные правки путей. -->
+<footer class="ftr" aria-label="Подвал">
+  <div class="wrap">
+    <div class="bento ftr__bento" role="list">
+
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+        <a class="brand ftr__brandlink" href="home-ru.html" aria-label="LTCG — на главную">
+          <picture>
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <h2 class="sr-only" id="f-brand">Контакты</h2>
+        <address class="ftr__addr">
+          <span>Legal and Tax Consulting Group LLC · Ереван</span>
+          <a class="ftr__phone" href="tel:+37494184014">+374 94 184 014</a>
+          <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
+          <span class="ftr__quiet">Реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
+        </address>
+      </section>
+
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+        <ul class="ftr__list" role="list">
+          <li><a href="home-ru.html#pre-move">Ещё не переехал</a></li>
+          <li><a href="home-ru.html#arrived">Только приехал</a></li>
+          <li><a href="home-ru.html#legalizing">Легализуюсь</a></li>
+          <li><a href="home-ru.html#working">Работаю</a></li>
+          <li><a href="home-ru.html#settled">Живу и планирую</a></li>
+          <li><a href="home-ru.html#moving-on">Двигаюсь дальше</a></li>
+          <li><a href="noyabr.html">Подаю по новым правилам</a></li>
+        </ul>
+      </nav>
+
+      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+        <h2 class="ftr__h" id="f-site">Сайт</h2>
+        <p class="ftr__quiet">Политика обработки данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст</span></p>
+        <nav class="ftr__langs" aria-label="Язык сайта">
+          <span aria-disabled="true" lang="hy">Հայերեն</span>
+          <a href="home-ru.html" lang="ru" aria-current="page">Русский</a>
+          <span aria-disabled="true" lang="en">English</span>
+        </nav>
+        <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
+      </section>
+
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+        <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
+        <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче ВНЖ и открытии счетов принимают государственные органы и банки. Формулировку подтверждает клиент.</p>
+        <div class="ftr__credit">
+          <p class="ftr__copy">© 2026 Legal and Tax Consulting Group LLC</p>
+          <p class="ftr__by">Сайт спроектирован и собран студией
+            <a class="ftr__vkv" href="https://vkvstudio.com" target="_blank" rel="noopener noreferrer">
+              <picture><source type="image/webp" srcset="assets/logo/vkv-studio.webp"><img src="assets/logo/vkv-studio.png" width="256" height="180" alt="" loading="lazy" decoding="async"></picture>
+              <span>VKV Studio</span>
+            </a>
+            <span class="ftr__dom">vkvstudio.com</span>
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</footer>
+
+<script defer src="js/site.js?v=20261018m1"></script>
+<script defer src="js/menu-mobile.js?v=20261018m1"></script>
+</body>
+</html>

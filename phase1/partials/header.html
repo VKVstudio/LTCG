@@ -1,0 +1,29 @@
+<header class="hdr glass" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+      <picture>
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
+    </a>
+    <div class="hdr__mid">
+      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="./home-ru.html#contact" data-cta>Обсудить</a></span>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    </div>
+    <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
+         меню не собирается, и мёртвой кнопки на экране быть не должно.
+         Содержимое панели js/menu-mobile.js берёт из самой страницы и из
+         подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+      <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menu-txt">Меню</span>
+    </button>
+
+    <div class="themer" role="group" aria-label="Тема оформления" data-themer>
+      <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
+      <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
+      <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
+    </div>
+  </div>
+</header>
