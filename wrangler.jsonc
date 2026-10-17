@@ -1,5 +1,6 @@
 {
   "name": "ltcg",
+  "account_id": "ea0131be69991291cce98b0cf125c87f",
   "main": "worker.js",
   "compatibility_date": "2026-10-12",
   "assets": {
