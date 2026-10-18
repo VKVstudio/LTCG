@@ -167,114 +167,11 @@
   --hs-desk-light: rgba(255, 236, 200, 0.85);
 }
 
-/* ═══ B · ТЁМНАЯ ТЕМА · системная ══════════════════════════════
+/* ═══ B+C · ТЁМНАЯ ТЕМА · по умолчанию (tech-premium) и ручной выбор ═════
    Контрасты на --bg #0C1B3A:
      --text 14.53:1 · --text-2 8.83:1 · --text-3 5.73:1 · --text-strong 17.02:1
      --gold-text #FAE0A2 13.17:1 · --gold #F2C249 10.21:1 · --control-line 3.64:1 */
-@media (prefers-color-scheme: dark) {
-  :root[data-skin="ru"]:not([data-theme="light"]) {
-    color-scheme: dark;
-
-    --bg: #0C1B3A;
-    --bg-2: #0A1631;
-    --bg-void: #07122A;
-    --surface: #112240;
-    --surface-2: #1A3050;
-    --surface-3: #243B5C;
-
-    --text: rgba(255, 255, 255, 0.92);
-    --text-2: rgba(255, 255, 255, 0.70);
-    --text-3: rgba(255, 255, 255, 0.54);
-    --text-strong: #FFFFFF;
-
-    --line: rgba(250, 224, 162, 0.14);
-    --line-strong: rgba(250, 224, 162, 0.30);
-    --control-line: rgba(250, 224, 162, 0.45);
-
-    --gold: #F2C249;
-    --gold-light: #FAE0A2;
-    --gold-mid: #C4922B;
-    --gold-dark: #593E10;
-    --gold-text: #FAE0A2;
-    --gold-line: rgba(250, 224, 162, 0.32);
-    --gold-fill: linear-gradient(180deg, #FAE0A2 0%, #F2C249 100%);
-    --gold-fill-text: #0C1B3A;
-    --gold-glow: rgba(242, 194, 73, 0.55);
-    --kicker-color: #FAE0A2;
-
-    --btn-primary-bg: var(--gold-fill);
-    --btn-primary-text: var(--gold-fill-text);
-    --btn-outline-line: var(--control-line);
-    --btn-outline-text: #FFFFFF;
-    --btn-outline-hover-bg: rgba(242, 194, 73, 0.10);
-
-    --tile-bg: linear-gradient(180deg, rgba(17, 34, 64, 0.92) 0%, rgba(13, 26, 50, 0.96) 100%);
-    --tile-line: rgba(250, 224, 162, 0.14);
-    --tile-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.65);
-
-    --field-bg: rgba(255, 255, 255, 0.04);
-    --field-line: var(--control-line);
-    --focus: #FAE0A2;
-
-    --glass-bg: rgba(12, 27, 58, 0.72);
-    --glass-blur: 22px;
-    --glass-line: rgba(250, 224, 162, 0.12);
-
-    --wash-1: rgba(255, 255, 255, 0.030);
-    --wash-2: rgba(255, 255, 255, 0.050);
-    --wash-3: rgba(255, 255, 255, 0.070);
-    --ring: rgba(242, 194, 73, 0.20);
-    --sel-bg: rgba(242, 194, 73, 0.32);
-    --sel-text: #FFFFFF;
-    --scrim: 12 27 58;
-    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23FAE0A2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    --logo-gold: block;
-    --logo-ink: none;
-
-    --ru-body-glow: rgba(89, 62, 16, 0.22);
-    --ru-grid-line: rgba(250, 224, 162, 0.035);
-    --ru-glow-blob: rgba(242, 194, 73, 0.07);
-    --ru-kicker-bar: linear-gradient(90deg, #FAE0A2, rgba(242, 194, 73, 0.4));
-    --ru-em-fill: linear-gradient(92deg, #FFF3D0 0%, #FAE0A2 45%, #F2C249 100%);
-    --ru-btn-inset: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(89, 62, 16, 0.30);
-    --ru-btn-hover-bg: linear-gradient(180deg, #FFF3D0 0%, #FAE0A2 100%);
-    --ru-btn-hover-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 12px 32px -8px rgba(242, 194, 73, 0.6);
-    --ru-outline-hover-color: #FFF3D0;
-    --ru-outline-hover-line: rgba(250, 224, 162, 0.7);
-    --ru-outline-hover-shadow: 0 10px 30px -14px rgba(242, 194, 73, 0.35);
-    --ru-glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    --ru-glass-shadow: 0 12px 44px rgba(0, 0, 0, 0.18);
-    --ru-glass-solid: rgba(12, 27, 58, 0.96);
-    --ru-grain-op: 0.34;
-    --ru-grain-blend: overlay;
-    --ru-tile-inset: inset 0 1px 0 rgba(255, 243, 208, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-    --ru-ring-fill: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
-    --ru-ring-fallback-line: rgba(250, 224, 162, 0.36);
-    --ru-hero-bg-a: rgba(89, 62, 16, 0.42);
-    --ru-hero-bg-b: rgba(242, 194, 73, 0.10);
-    --ru-hover-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 243, 208, 0.16), 0 0 0 1px rgba(250, 224, 162, 0.04);
-    --ru-on-line: rgba(250, 224, 162, 0.62);
-    --ru-on-glow: 0 30px 80px -40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 243, 208, 0.16), 0 0 48px -22px rgba(242, 194, 73, 0.45);
-    --ru-on-bar: linear-gradient(180deg, #FAE0A2, rgba(242, 194, 73, 0.35));
-    --ru-num: #FFF3D0;
-    --ru-dot-glow: 0 0 14px rgba(242, 194, 73, 0.25);
-    --ru-art-op: 0.26;
-    --ru-art-op-contact: 0.55;
-    --ru-contact-scrim: linear-gradient(180deg, var(--bg) 0%, rgba(12, 27, 58, 0.25) 35%, rgba(12, 27, 58, 0.35) 70%, var(--bg-void) 100%);
-    --ru-thread: linear-gradient(90deg, transparent 0, rgba(250, 224, 162, 0.55) 12%, rgba(242, 194, 73, 0.35) 48%, rgba(196, 146, 43, 0.12) 78%, transparent 100%);
-    --ru-light-blob: radial-gradient(ellipse at center, rgba(89, 62, 16, 0.34) 0%, rgba(242, 194, 73, 0.05) 45%, transparent 68%);
-
-    --hs-screen-core: #12264E;
-    --hs-screen-edge: #08142C;
-    --hs-brand: #FFF3D0;
-    --hs-desk-light: rgba(64, 110, 190, 0.85);
-  }
-}
-
-/* ═══ C · ТЁМНАЯ ТЕМА · ручной выбор ═══════════════════════════
-   Тот же список слово в слово: @media не умеет «включиться» руками,
-   а переключатель обязан побеждать в обе стороны.                */
-/* Второй селектор — тёмный островок каталога, та же причина, что и в блоке A. */
+:root[data-skin="ru"]:not([data-theme="light"]),
 :root[data-skin="ru"][data-theme="dark"],
 [data-skin="ru"] [data-theme-scope="dark"] {
   color-scheme: dark;
@@ -287,12 +184,12 @@
   --surface-3: #243B5C;
 
   --text: rgba(255, 255, 255, 0.92);
-  --text-2: rgba(255, 255, 255, 0.70);
-  --text-3: rgba(255, 255, 255, 0.54);
+  --text-2: rgba(255, 255, 255, 0.72);
+  --text-3: rgba(255, 255, 255, 0.56);
   --text-strong: #FFFFFF;
 
   --line: rgba(250, 224, 162, 0.14);
-  --line-strong: rgba(250, 224, 162, 0.30);
+  --line-strong: rgba(250, 224, 162, 0.32);
   --control-line: rgba(250, 224, 162, 0.45);
 
   --gold: #F2C249;
@@ -300,7 +197,7 @@
   --gold-mid: #C4922B;
   --gold-dark: #593E10;
   --gold-text: #FAE0A2;
-  --gold-line: rgba(250, 224, 162, 0.32);
+  --gold-line: rgba(250, 224, 162, 0.34);
   --gold-fill: linear-gradient(180deg, #FAE0A2 0%, #F2C249 100%);
   --gold-fill-text: #0C1B3A;
   --gold-glow: rgba(242, 194, 73, 0.55);
@@ -312,22 +209,22 @@
   --btn-outline-text: #FFFFFF;
   --btn-outline-hover-bg: rgba(242, 194, 73, 0.10);
 
-  --tile-bg: linear-gradient(180deg, rgba(17, 34, 64, 0.92) 0%, rgba(13, 26, 50, 0.96) 100%);
-  --tile-line: rgba(250, 224, 162, 0.14);
-  --tile-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.65);
+  --tile-bg: linear-gradient(180deg, rgba(19, 38, 72, 0.92) 0%, rgba(12, 25, 50, 0.96) 100%);
+  --tile-line: rgba(250, 224, 162, 0.16);
+  --tile-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.72);
 
   --field-bg: rgba(255, 255, 255, 0.04);
   --field-line: var(--control-line);
   --focus: #FAE0A2;
 
-  --glass-bg: rgba(12, 27, 58, 0.72);
+  --glass-bg: rgba(12, 27, 58, 0.76);
   --glass-blur: 22px;
-  --glass-line: rgba(250, 224, 162, 0.12);
+  --glass-line: rgba(250, 224, 162, 0.14);
 
-  --wash-1: rgba(255, 255, 255, 0.030);
-  --wash-2: rgba(255, 255, 255, 0.050);
-  --wash-3: rgba(255, 255, 255, 0.070);
-  --ring: rgba(242, 194, 73, 0.20);
+  --wash-1: rgba(255, 255, 255, 0.035);
+  --wash-2: rgba(255, 255, 255, 0.055);
+  --wash-3: rgba(255, 255, 255, 0.080);
+  --ring: rgba(242, 194, 73, 0.22);
   --sel-bg: rgba(242, 194, 73, 0.32);
   --sel-text: #FFFFFF;
   --scrim: 12 27 58;
@@ -335,9 +232,9 @@
   --logo-gold: block;
   --logo-ink: none;
 
-  --ru-body-glow: rgba(89, 62, 16, 0.22);
-  --ru-grid-line: rgba(250, 224, 162, 0.035);
-  --ru-glow-blob: rgba(242, 194, 73, 0.07);
+  --ru-body-glow: rgba(89, 62, 16, 0.24);
+  --ru-grid-line: rgba(250, 224, 162, 0.04);
+  --ru-glow-blob: rgba(242, 194, 73, 0.08);
   --ru-kicker-bar: linear-gradient(90deg, #FAE0A2, rgba(242, 194, 73, 0.4));
   --ru-em-fill: linear-gradient(92deg, #FFF3D0 0%, #FAE0A2 45%, #F2C249 100%);
   --ru-btn-inset: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(89, 62, 16, 0.30);
@@ -346,23 +243,23 @@
   --ru-outline-hover-color: #FFF3D0;
   --ru-outline-hover-line: rgba(250, 224, 162, 0.7);
   --ru-outline-hover-shadow: 0 10px 30px -14px rgba(242, 194, 73, 0.35);
-  --ru-glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  --ru-glass-shadow: 0 12px 44px rgba(0, 0, 0, 0.18);
+  --ru-glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --ru-glass-shadow: 0 12px 44px rgba(0, 0, 0, 0.24);
   --ru-glass-solid: rgba(12, 27, 58, 0.96);
-  --ru-grain-op: 0.34;
+  --ru-grain-op: 0.32;
   --ru-grain-blend: overlay;
-  --ru-tile-inset: inset 0 1px 0 rgba(255, 243, 208, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  --ru-tile-inset: inset 0 1px 0 rgba(255, 243, 208, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.025);
   --ru-ring-fill: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
   --ru-ring-fallback-line: rgba(250, 224, 162, 0.36);
   --ru-hero-bg-a: rgba(89, 62, 16, 0.42);
-  --ru-hero-bg-b: rgba(242, 194, 73, 0.10);
-  --ru-hover-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 243, 208, 0.16), 0 0 0 1px rgba(250, 224, 162, 0.04);
+  --ru-hero-bg-b: rgba(242, 194, 73, 0.12);
+  --ru-hover-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 243, 208, 0.18), 0 0 0 1px rgba(250, 224, 162, 0.06);
   --ru-on-line: rgba(250, 224, 162, 0.62);
-  --ru-on-glow: 0 30px 80px -40px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 243, 208, 0.16), 0 0 48px -22px rgba(242, 194, 73, 0.45);
+  --ru-on-glow: 0 30px 80px -40px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 243, 208, 0.18), 0 0 48px -22px rgba(242, 194, 73, 0.45);
   --ru-on-bar: linear-gradient(180deg, #FAE0A2, rgba(242, 194, 73, 0.35));
   --ru-num: #FFF3D0;
   --ru-dot-glow: 0 0 14px rgba(242, 194, 73, 0.25);
-  --ru-art-op: 0.26;
+  --ru-art-op: 0.28;
   --ru-art-op-contact: 0.55;
   --ru-contact-scrim: linear-gradient(180deg, var(--bg) 0%, rgba(12, 27, 58, 0.25) 35%, rgba(12, 27, 58, 0.35) 70%, var(--bg-void) 100%);
   --ru-thread: linear-gradient(90deg, transparent 0, rgba(250, 224, 162, 0.55) 12%, rgba(242, 194, 73, 0.35) 48%, rgba(196, 146, 43, 0.12) 78%, transparent 100%);
@@ -372,6 +269,45 @@
   --hs-screen-edge: #08142C;
   --hs-brand: #FFF3D0;
   --hs-desk-light: rgba(64, 110, 190, 0.85);
+}
+
+/* ═══ D · СВЕТЛАЯ ТЕМА: ОСТРОВКИ КОНТРАСТА (#0C1B3A) ═══════════
+   По канону docs/style_canon_tech.md §133: опорная плитка ряда (.tile--hero)
+   и итоговая панель калькулятора (.total) на светлой теме выступают
+   глубокими обсидиановыми островами (#0C1B3A) с золотой кромкой,
+   вместо бледно-бежевого пятна по белой бумаге. */
+:root[data-skin="ru"][data-theme="light"] .tile--hero,
+:root[data-skin="ru"][data-theme="light"] .total {
+  color-scheme: dark;
+  --surface: #112240;
+  --surface-2: #1A3050;
+  --surface-3: #243B5C;
+  --text: rgba(255, 255, 255, 0.92);
+  --text-2: rgba(255, 255, 255, 0.72);
+  --text-3: rgba(255, 255, 255, 0.56);
+  --text-strong: #FFFFFF;
+  --line: rgba(250, 224, 162, 0.16);
+  --line-strong: rgba(250, 224, 162, 0.34);
+  --control-line: rgba(250, 224, 162, 0.45);
+  --gold: #F2C249;
+  --gold-text: #FAE0A2;
+  --gold-line: rgba(250, 224, 162, 0.34);
+  --btn-outline-line: rgba(250, 224, 162, 0.45);
+  --btn-outline-text: #FFFFFF;
+  --tile-bg: linear-gradient(180deg, #132648 0%, #0C1B3A 100%);
+  --tile-line: rgba(250, 224, 162, 0.22);
+  --tile-shadow: 0 26px 64px -28px rgba(12, 27, 58, 0.55);
+  --wash-1: rgba(255, 255, 255, 0.04);
+  --wash-2: rgba(255, 255, 255, 0.07);
+  --scrim: 12 27 58;
+  --ru-grain-op: 0.30;
+  --ru-grain-blend: overlay;
+  --ru-tile-inset: inset 0 1px 0 rgba(255, 243, 208, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  --ru-ring-fill: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
+  --ru-hero-bg-a: rgba(89, 62, 16, 0.42);
+  --ru-hero-bg-b: rgba(242, 194, 73, 0.12);
+  --ru-num: #FFF3D0;
+  color: var(--text);
 }
 
 /* ═══ 1 · УКРАШЕНИЯ КОЖИ · только токены, ни одного литерала ═══ */
@@ -577,7 +513,20 @@ html[data-skin="ru"] body {
   transition:background-size .28s cubic-bezier(.22,1,.36,1)}
 .state__link:hover,.state__link:focus-visible{background-size:100% 1px}
 .tile__read{display:inline-flex;align-items:center;gap:.4em;margin-right:auto;
-  font-size:.875rem;font-weight:600;text-decoration:none;color:var(--gold-primary);
-  transition:color .2s ease,gap .2s ease}
-.tile__read:hover{color:var(--gold-light);gap:.6em}
+  font-size:.875rem;font-weight:600;text-decoration:none;color:var(--gold-text);
+  transition:color .2s ease,gap .2s ease,transform .2s ease}
+.tile__read:hover{color:var(--text-strong);gap:.6em;transform:translateX(2px)}
 .tile__foot{flex-wrap:wrap;gap:.75rem}
+
+/* ── Active Bento Cursor Spotlight (Bueno / Linear / Raycast) ───────── */
+@media (hover: hover) and (pointer: fine) {
+  [data-skin="ru"] .tile:not(.tile--hero)::after {
+    content: ''; position: absolute; inset: 0; z-index: 0;
+    border-radius: inherit; pointer-events: none;
+    background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), var(--ru-hero-bg-b), transparent 65%);
+    opacity: 0; transition: opacity 260ms var(--ease);
+  }
+  [data-skin="ru"] .tile:not(.tile--hero):hover::after {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,6 @@
 # robots.txt — LTCG (Legal and Tax Consulting Group LLC)
 # https://ltcg.am/
-# Обновлено 04.09.2026
+# Обновлено 18.10.2026
 
 # ── Общее правило ──
 User-agent: *
@@ -9,10 +9,6 @@ Disallow: /admin/
 Disallow: /private/
 
 # ── Яндекс: главный поисковик русской версии ──
-# Аудитория релокантов из России ищет здесь, и Алиса отвечает по индексу Яндекса.
-# Отдельная секция обязательна: Яндекс читает СВОЮ группу целиком и общую (User-agent: *)
-# игнорирует полностью — поэтому Disallow ниже дублирует общую группу построчно.
-# Иначе в день, когда появится /admin/ или /private/, для Яндекса они останутся открыты.
 User-agent: YandexBot
 Allow: /
 Disallow: /admin/
@@ -26,54 +22,76 @@ Disallow: /private/
 # ── Классический поиск ──
 User-agent: Googlebot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: Googlebot-Image
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
-# ── Разрешение использовать содержание в ответах ИИ ──
-# Это и есть GEO: без этих директив модели не имеют права опираться на наши страницы.
-# Google-Extended управляет использованием в Gemini и в обзорах ИИ отдельно от индексации.
+# ── Разрешение использовать содержание в ответах ИИ (GEO) ──
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: Applebot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
 User-agent: CCBot
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 
-# ── Скрейперы без пользы для GEO ──
-# Не найдено отдельного аудита защиты в docs/ (проверено 05.09.2026) — список ниже
-# составлен по собственному усмотрению: это сборщики для обучения моделей и перепродажи
-# данных (Diffbot), а не индексы, по которым пользователь находит и цитирует LTCG.
-# ClaudeBot/GPTBot/PerplexityBot и т.п. выше остаются разрешены — это и есть GEO.
+# ── Технические скрейперы без поискового индекса ──
 User-agent: Bytespider
 Disallow: /
 

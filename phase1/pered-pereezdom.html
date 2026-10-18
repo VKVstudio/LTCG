@@ -1,40 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m5" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
-/* Тема и класс js — ДО первой отрисовки: иначе на светлой машине страница мигнёт тёмным.
-   Единственный инлайновый скрипт страницы, вся остальная логика — во внешних файлах. */
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
 try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<!-- Сборка для показа и вычитки клиентом. Строку robots снять при публикации домена. -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-<!-- Заголовок и описание — под живой запрос («что сделать перед переездом в Армению»),
-     а не под бренд. title 49 знаков, description 154. -->
-<title>Что сделать до переезда в Армению — чек-лист LTCG</title>
-<meta name="description" content="Доверенности, апостиль, уведомление налоговой о счёте: что закрывается только до вылета. Сроки, пошлины и нормы с источниками. Проверено 04.09.2026.">
+<title>До переезда в Армению 2026: документы, апостиль, счёт — LTCG</title>
+<meta name="description" content="Что подготовить до переезда в Армению в 2026 году: 180 дней без визы, апостиль за 2 500 руб., выписка за 1 год для банка, доверенности и правила ФЗ-173.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 <link rel="canonical" href="https://ltcg.am/pered-pereezdom.html">
-<!-- Ветка объявляет hreflang на себя и x-default на себя же. Ссылок на /hy/ и /en/ нет,
-     пока их содержание не соответствует этому адресу. -->
 <link rel="alternate" hreflang="ru" href="https://ltcg.am/pered-pereezdom.html">
 <link rel="alternate" hreflang="x-default" href="https://ltcg.am/pered-pereezdom.html">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="Что сделать до переезда в Армению">
-<meta property="og:description" content="Три корзины дел: что можно только из страны исхода, что только из Армении и что и там и там. Нормы, сроки и пошлины с источниками и датой проверки.">
+<meta property="og:title" content="До переезда в Армению 2026: чек-лист документов, апостиль и дистанционный старт">
+<meta property="og:description" content="Какие документы, апостили и банковские выписки за 1 год собрать до вылета в Ереван и что можно запустить дистанционно по доверенности с юристами LTCG.">
 <meta property="og:url" content="https://ltcg.am/pered-pereezdom.html">
-<!-- Своей OG-картинки у ветки пока нет: assets/og/ пуст. Временно общий кадр сайта. -->
 <meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -43,114 +35,95 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Место под мета-подтверждение Яндекс.Вебмастера. Код добавляет владелец после
-     регистрации домена; строка стоит здесь, чтобы её не забыли.
-<meta name="yandex-verification" content="">
--->
-
-<!-- Шрифты самохостом. Google Fonts не подключается: внешний домен в критическом пути. -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
-<!-- JavaScript только надстройкой: страница читается и работает без него -->
-<script defer src="js/boot.js?v=20261018m1"></script>
-
-<style>
-/* ЕДИНСТВЕННОЕ страничное правило. Ветка идёт без хиро, а .hdr в site.css с включённым
-   скриптом становится position: fixed и накрывает первый экран. Отбивка равна высоте
-   шапки — значение из токена, своих размеров не заводим. Без скрипта шапка sticky и
-   занимает место сама, поэтому отбивка снимается.
-   Просьба ведущему: перенести эти две строки в site.css §21 — задача общая для всех
-   шести веток, здесь она лежит локально только чтобы не править общий файл. */
-.hdr-gap { height: var(--header-h); }
-.no-js .hdr-gap { display: none; }
-</style>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-latin.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m7">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
+<script defer src="js/boot.js?v=20261019m7"></script>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ltcg.am/#org",
+      "name": "Legal and Tax Consulting Group LLC",
+      "alternateName": "LTCG",
+      "url": "https://ltcg.am/",
+      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+    },
+    {
       "@type": ["WebPage", "FAQPage"],
       "@id": "https://ltcg.am/pered-pereezdom.html#page",
       "url": "https://ltcg.am/pered-pereezdom.html",
-      "name": "Что сделать в России до переезда в Армению",
+      "name": "До переезда в Армению 2026: документы, апостиль, счёт — LTCG",
+      "description": "Что подготовить до переезда в Армению в 2026 году: 180 дней без визы, апостиль за 2 500 руб., выписка за 1 год для банка, доверенности и правила ФЗ-173.",
       "inLanguage": "ru",
-      "dateModified": "2026-09-04",
-      "isPartOf": { "@id": "https://ltcg.am/#website" },
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-10-18",
+      "isPartOf": { "@type": "WebSite", "@id": "https://ltcg.am/#website", "url": "https://ltcg.am/", "name": "LTCG — Legal & Tax Consulting Group" },
       "publisher": { "@id": "https://ltcg.am/#org" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
-          { "@type": "ListItem", "position": 2, "name": "Ещё не переехал", "item": "https://ltcg.am/pered-pereezdom.html" }
+          { "@type": "ListItem", "position": 2, "name": "Ещё не переехал: подготовка до вылета", "item": "https://ltcg.am/pered-pereezdom.html" }
         ]
       },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Можно ли открыть ИП в Армении, не приезжая?",
+          "name": "Сколько дней можно находиться в Армении без визы и ВНЖ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Портал e-register.moj.am позволяет регистрировать ИП и юридические лица онлайн — это официальная функция Агентства государственного регистра при Министерстве юстиции РА. Вход идёт через платформу идентификации, и какие способы идентификации доступны иностранцу без армянского ID, на стартовой странице портала не сказано; подтвердить это мы не смогли. О подаче представителем по доверенности там тоже ничего нет. Техническая возможность онлайн-регистрации существует, а доступна ли она лично вам до приезда — вопрос, на который нельзя ответить, не посмотрев на ваши документы. Проверено 04.09.2026."
+            "text": "Граждане государств с безвизовым режимом вправе находиться в Республике Армения максимум 180 дней в течение 1 года. Для проживания дольше 180 дней оформляется временный или постоянный вид на жительство; с 1 ноября 2026 года заявления подаются через единую электронную платформу со сроком рассмотрения 30 дней."
           }
         },
         {
           "@type": "Question",
-          "name": "Я ещё не уехал, а счёт в армянском банке уже открыл. Уведомлять налоговую сейчас или после переезда?",
+          "name": "Сколько стоит и сколько занимает проставление апостиля в РФ до отъезда?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Сейчас. Срок — не позднее одного месяца со дня открытия счёта (ч. 2 ст. 12 Федерального закона от 10.12.2003 № 173-ФЗ), и он не связан ни с переездом, ни с получением статуса, ни с тем, пользуетесь ли вы счётом. Валютное резидентство у гражданина России не зависит от места жительства (подп. «а» п. 6 ч. 1 ст. 1 того же закона). Штраф за непредставление уведомления для граждан — 4 000 – 5 000 рублей (ч. 2.1 ст. 15.25 КоАП РФ). Проверено 04.09.2026."
+            "text": "Государственная пошлина за проставление апостиля в РФ составляет 2 500 руб. за каждый документ. Базовый срок проставления апостиля не превышает 5 рабочих дней, при необходимости запроса образца подписи — до 30 рабочих дней, а по документам об образовании — до 45 рабочих дней."
           }
         },
         {
           "@type": "Question",
-          "name": "Я уезжаю — надо ли что-то делать с воинским учётом?",
+          "name": "Какие банковские документы нужно выгрузить до вылета в Ереван?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Здесь мы не дадим точного ответа, и это честнее, чем дать неточный. Подтверждено: не подлежат воинскому учёту граждане, постоянно проживающие за пределами Российской Федерации (п. 15 подп. «д» Положения о воинском учёте, утв. постановлением Правительства РФ от 27.11.2006 № 719). Не подтверждено: порог «более шести месяцев» в обязанности сообщить о выезде. Подпункт «г» п. 50 того же Положения на всех проверенных нами адресах обрывается на середине фразы — проверено пять источников, порог не читается ни в одном. Пока текст нормы не прочитан целиком, ни срока, ни ответственности мы называть не будем."
+            "text": "Для прохождения банковского комплаенса (KYC) в Армении необходимо заранее выгрузить банковскую выписку о движении средств минимум за 1 год, а также подготовить действующие трудовые или сервисные договоры и справки о доходах."
           }
         },
         {
           "@type": "Question",
-          "name": "Какие документы апостилировать до отъезда?",
+          "name": "Что важно проверить в нотариальной доверенности перед отъездом?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ответа «вот список» не существует: форму легализации определяет тот, кто будет документ принимать. Твёрдо известно другое: апостиль в России проставляется за 5 рабочих дней, до 30 рабочих дней при необходимости запроса и до 45 рабочих дней для документов об образовании (ст. 6 Федерального закона от 28.11.2015 № 330-ФЗ), пошлина — 2 500 рублей за документ (пп. 48 п. 1 ст. 333.33 НК РФ). Практическое правило звучит не «апостилируйте всё», а «выясните форму заранее и заложите срок по самому долгому документу». Проверено 04.09.2026."
+            "text": "Доверенность, в которой не указана дата её совершения, ничтожна; если в доверенности не указан срок действия, она сохраняет силу только в течение 1 года со дня совершения. Если планируется передоверие полномочий представителям, право передоверия должно быть прямо прописано в тексте."
           }
         },
         {
           "@type": "Question",
-          "name": "Можно ли оформить одну доверенность на всё и больше не возвращаться?",
+          "name": "В какой срок нужно уведомить ФНС РФ об открытии счёта в банке Армении?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Нет — и не из-за качества доверенности, а из-за трёх норм, которые её обходят. Договор об отчуждении недвижимости, находящейся в России, не удостоверит консул (п. 1 ст. 38 Основ законодательства о нотариате). Завещание совершается только лично (п. 3 ст. 1118 ГК РФ). Расторжение брака по п. 2 ст. 160 СК РФ работает лишь тогда, когда за пределами России находится и ваш супруг. Всё остальное доверенностью закрывается, если полномочия написаны под конкретный список действий и вопрос передоверия решён заранее (ст. 187 ГК РФ). Проверено 04.09.2026."
+            "text": "Валютный резидент РФ, находящийся за пределами РФ менее 183 дней в календарном году, обязан уведомить налоговый орган об открытии или закрытии счёта в иностранном банке не позднее 1 месяца. За просрочку предусмотрен штраф 1 000–1 500 руб., за неуведомление — 4 000–5 000 руб."
           }
         },
         {
           "@type": "Question",
-          "name": "Стоит ли открывать счёт в Армении удалённо, пока я ещё здесь?",
+          "name": "Какие шаги в Армении можно подготовить дистанционно с LTCG до прилёта?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Удалённое открытие счёта нерезиденту-физлицу документально подтверждено у Evocabank и только при одном из четырёх оснований: вы собственник недвижимости в РА, готовы разместить вклад, уже имеете статус ИП в РА или участвуете в зарегистрированном в РА юридическом лице (evoca.am, проверено 04.09.2026). Каждое основание означает, что вы уже что-то в Армении сделали. Процедура: документы на электронный адрес банка, удалённая видеоидентификация, активация переводом не менее 50 USD со счёта в другом банке. Стоимость владения: 50 000 драмов открытие, 250 000 драмов в год обслуживание, по 0,5 % на зачисления и переводы."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Я приеду в ноябре или позже. Что для меня изменится?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Три вещи, каждая из текста закона ՀՕ-11-Ն от 20.01.2026 (arlis.am/hy/acts/220874, проверено 04.09.2026). Первая: с 01.11.2026 производство по временному и постоянному статусу пребывания идёт только через единую электронную платформу (новая ч. 3 ст. 14), и сама платформа вводится в действие с этой даты (ст. 30 ч. 3). Вторая: заявления, поданные до вступления закона в силу, рассматриваются по прежним нормам (ст. 30 ч. 4) — дата подачи определяет правила. Третья: специальный статус отменён (ст. 11 закона признаёт ст. 18 утратившей силу), а это было единственное основание, ходатайство по которому подавалось через дипломатическое или консульское учреждение Армении за границей. Чего мы не утверждаем: что после 1 ноября подать можно будет из-за границы. Перечень документов и порядок регистрации на платформе устанавливает Правительство, и на 04.09.2026 такого акта не опубликовано."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Отличается ли эта страница от вашей страницы про отъезд из Армении?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Да, и предметом. Здесь речь о стране, из которой вы уезжаете: доверенности, документы, которые выдают только по месту, и обязанности, которые остаются за вами после переезда. На странице «Двигаюсь дальше» речь об Армении и о том, что после отъезда отсюда становится дольше и дороже: справки, апостиль, закрытие ИП, выписки по счетам. Общее у страниц одно: и там, и здесь окно закрывается вместе с вылетом, только вылеты разные."
+            "text": "До вашего вылета юристы LTCG проводят предпроверку выписок и договоров для банковского комплаенса (сопровождение открытия счёта — 110 000 ֏), готовят пакет документов для регистрации ИП (45 000 ֏, госпошлина оплачивается отдельно), проверяют применимость спецрежима с окном 20 дней и организуют нотариальные переводы в Ереване для подачи на 10-значный ПСН (госпошлина 0 ֏)."
           }
         }
       ]
@@ -158,37 +131,14 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     {
       "@type": "Service",
       "@id": "https://ltcg.am/pered-pereezdom.html#service",
-      "name": "Сопровождение подготовки к переезду в Армению",
-      "serviceType": "Юридическое сопровождение",
+      "name": "Юридическая подготовка к релокации и открытию бизнеса в Армении",
+      "serviceType": "Юридическое и налоговое консультирование до переезда",
       "areaServed": { "@type": "Country", "name": "Армения" },
-      "provider": { "@id": "https://ltcg.am/#org" },
-      "audience": { "@type": "Audience", "audienceType": "Те, кто ещё не переехал в Армению" }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://ltcg.am/pered-pereezdom.html#howto",
-      "name": "Что закрыть до переезда в Армению",
-      "inLanguage": "ru",
-      "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Разложить дела по трём корзинам",
-          "text": "Что можно только из страны исхода, что только из Армении и что и там, и там. Место дела в корзине определяет, до какого дня оно вообще может быть сделано." },
-        { "@type": "HowToStep", "position": 2, "name": "Решить вопрос представителя",
-          "text": "Есть ли дома человек, которому можно доверить. Доверенность выписывается под конкретный список действий, а не общей, и вопрос передоверия решается заранее (ст. 187 ГК РФ)." },
-        { "@type": "HowToStep", "position": 3, "name": "Заказать документы и апостиль заранее",
-          "text": "Апостиль на документы об образовании занимает до 45 рабочих дней (ст. 6 Федерального закона от 28.11.2015 № 330-ФЗ). Форму легализации спрашивают у принимающей стороны." },
-        { "@type": "HowToStep", "position": 4, "name": "Закрыть валютную обязанность",
-          "text": "Об открытии зарубежного счёта налоговую уведомляют не позднее одного месяца со дня открытия (ч. 2 ст. 12 Федерального закона от 10.12.2003 № 173-ФЗ). Срок считается от даты открытия, а не от даты переезда." }
-      ]
+      "provider": { "@id": "https://ltcg.am/#org" }
     }
   ]
 }
 </script>
-<!-- Организация объявлена целиком ОДИН раз на / — здесь только ссылка по @id.
-     Телефон и hasOfferCatalog не дублируются. Тип на главной — LegalService; адрес
-     компании ждёт клиента, поэтому LocalBusiness-узла с выдуманным адресом здесь нет.
-     aggregateRating и Review о самих себе не выводятся нигде: Google считает это
-     самовосхвалением. Отзывы будут цитатами со ссылкой на Карты.
-     totalTime и estimatedCost в HowTo не выводятся: подтверждённых значений нет. -->
 </head>
 <body>
 
@@ -221,22 +171,21 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
     <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 7.5h7M8.5 12h2M13.5 12h2M8.5 16h2M13.5 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
     <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+    <!-- знак хиро: заполняется из assets/hero/logo.svg скриптом -->
+    <symbol id="hsLogoLetters" viewBox="67 524 889 236"></symbol>
+    <symbol id="hsLogoMark" viewBox="67 169 889 590"></symbol>
   </defs>
 </svg>
 
-<!-- ═══ Шапка ветки. Хиро здесь нет: is-shown стоит в разметке, чтобы шапка не
-     появлялась рывком и была на месте до прихода скрипта. ═════════════════ -->
-<header class="hdr glass is-shown" id="hdr">
+<header class="hdr glass" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="./" data-path="" aria-label="LTCG — на главную">
-      <!-- Знак выбирается по ТЕМЕ через --logo-gold / --logo-ink из site.css §0:
-           тёмная — золото #F2C249 (10.2:1 на navy), светлая — бронза #593E10 (8.8:1
-           на бумаге). Золото на бумаге дало бы 1.5:1, поэтому вариантов ровно два. -->
+    <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
       <picture data-logo="gold">
         <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
         <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
@@ -248,1236 +197,516 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
       </picture>
     </a>
-    <!-- Навигации по разделам в шапке нет намеренно: на ≥1024 её работу делает рейка
-         разделов справа (js/railnav.js строит её из data-rail-label), на узком —
-         мобильное меню ниже. Дубль тех же якорей в строке шапки отбирал ширину
-         у кнопки и ломал строку при 1440. -->
-    <div class="hdr__contacts">
-      <a class="hdr__phone" href="tel:+37494184014">+374 94 184 014</a>
-      <a class="btn btn--icon btn--ghost hdr__phone-ico" href="tel:+37494184014" aria-label="Позвонить +374 94 184 014"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
-      <a class="btn btn--icon btn--ghost" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
-      <!-- WhatsApp на этом номере не подтверждён — см. комментарий у формы -->
-      <a class="btn btn--icon btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+    <div class="hdr__mid">
+      <nav class="hdr__nav" aria-label="Разделы">
+        <a href="./home-ru.html#where">Этапы</a>
+        <a href="./home-ru.html#calc">Калькулятор</a>
+        <a href="./home-ru.html#services">Услуги</a>
+        <a href="./noyabr.html">С 1 ноября</a>
+        <a href="./home-ru.html#contact">Контакты</a>
+      </nav>
+      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
-    <a class="btn btn--primary btn--sm hdr__cta" href="#contact">Составить план до отъезда <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <nav class="lang" aria-label="Язык сайта">
-      <a href="hy/" data-path="hy/" lang="hy" hreflang="hy"><span class="lang__code" aria-hidden="true">HY</span><span class="lang__name">Հայերեն</span></a>
-      <a href="./" data-path="" lang="ru" aria-current="page"><span class="lang__code" aria-hidden="true">RU</span><span class="lang__name">Русский</span></a>
-      <a href="en/" data-path="en/" lang="en" hreflang="en"><span class="lang__code" aria-hidden="true">EN</span><span class="lang__name">English</span></a>
-    </nav>
+    <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
+         меню не собирается, и мёртвой кнопки на экране быть не должно.
+         Содержимое панели js/menu-mobile.js берёт из самой страницы и из
+         подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+      <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menu-txt">Меню</span>
+    </button>
+
     <div class="themer" role="group" aria-label="Тема оформления" data-themer>
       <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
       <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
       <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
-      <svg data-ico="menu" aria-hidden="true"><use href="#i-menu"/></svg>
-      <svg data-ico="close" aria-hidden="true"><use href="#i-close"/></svg>
-    </button>
   </div>
 </header>
-
-<div class="menu glass" id="menu" hidden>
-  <nav class="menu__list" aria-label="Разделы страницы">
-    <a href="#answer">Короткий ответ</a>
-    <a href="#korziny">Три корзины</a>
-    <a href="#ustroystvo">Как это устроено</a>
-    <a href="#noyabr">С 1 ноября 2026</a>
-    <a href="#lomaetsya">Где ломается</a>
-    <a href="#skolko">Сколько стоит</a>
-    <a href="#faq">Вопросы</a>
-    <a href="#contact">Написать</a>
-  </nav>
-  <div class="menu__row">
-    <a class="btn btn--primary" href="#contact">Составить план до отъезда <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <a class="btn btn--outline" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
-  </div>
-  <div class="themer" role="group" aria-label="Тема оформления" data-themer>
-    <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
-    <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
-    <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
-  </div>
-  <nav class="menu__langs" aria-label="Язык сайта">
-    <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-    <a href="./" data-path="" lang="ru" aria-current="page">Русский</a>
-    <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-  </nav>
-</div>
 
 <div class="hdr-gap" aria-hidden="true"></div>
 
 <main id="main">
 
-<!-- ═══ 01 · Шапка ветки ══════════════════════════════════════════════════ -->
-<header class="section section--art" id="branch">
-  <div class="art" aria-hidden="true">
-    <picture>
-      <source type="image/webp" srcset="assets/bg/desk-documents.webp">
-      <img src="assets/bg/desk-documents-1280.jpg" srcset="assets/bg/desk-documents-1280.jpg 1280w, assets/bg/desk-documents.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
+<!-- ═══ 01 · Hero (Ветка 01) ═════════════════════════════════════ -->
+<section class="section section--grid section--art" id="start" data-rail-label="Короткий ответ" aria-labelledby="branch-title">
+  <div class="nov-art" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">Ветка 01</span> Ещё не переехал</p>
-      <h1 class="h1" id="branch-title">Что сделать в России <em>до переезда в Армению</em></h1>
-      <p class="lead">Вы ещё дома. Билеты куплены или почти куплены, и непонятно, что успеть здесь,
-        а что спокойно делается уже там.</p>
-
-      <p class="small measure"><b>Кому эта страница не нужна.</b> Если вы уже в Ереване — вам нужен
-        <a class="lnk" href="schet-v-banke.html">порядок первых шагов: счёт, соцкарта, адрес</a>,
-        а не этот список. Если вы, наоборот, уезжаете <b>из</b> Армении дальше — справки, апостиль
-        и закрытие ИП собраны на <a class="lnk" href="spravki-i-zakrytie.html">отдельной странице</a>:
-        там предмет — Армения и то, что после отъезда отсюда уже не достать. Здесь предмет
-        обратный — <b>страна, из которой вы уезжаете</b>, и то, что закрывается только пока вы в ней.</p>
-
-      <!-- Ссылки внутри ветки ведут на соседние файлы сборки. В проде адреса
-           /schet-v-banke/, /vnzh/, /ip-i-nalogi/, /rezidentstvo-i-crs/,
-           /spravki-i-zakrytie/ — канонический адрес уже объявлен в <head>. -->
-      <nav class="pathbar" aria-label="Шесть веток">
-        <ol class="pathbar__list">
-          <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">01</span><span>Ещё не переехал</span></span></li>
-          <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
-          <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
-          <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
-          <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
-          <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
-        </ol>
-      </nav>
-
-      <!-- Имя юриста ставит клиент: слот 1 сводки публикации. -->
-      <p class="sign"><span>Проверил: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>имя юриста LTCG</span></span><span>Обновлено 04.09.2026</span></p>
-
-      <p class="note measure">Эта страница написана про Россию, потому что российские нормы мы
-        прочитали по первоисточникам и можем показать каждую. Логика трёх корзин ниже работает
-        для любой страны исхода, а конкретные сроки, пошлины и формы — нет. Если вы уезжаете
-        не из России, читайте корзины, а нормы спрашивайте отдельно.</p>
-    </div>
-  </div>
-</header>
-
-<!-- ═══ 02 · Прямой ответ ═════════════════════════════════════════════════ -->
-<section class="section" id="answer" aria-labelledby="short" data-rail-label="Короткий ответ">
-  <div class="wrap">
-    <div class="answer">
-      <h2 class="kicker" id="short"><span class="kicker__no">01</span> Короткий ответ</h2>
-
-      <p class="answer__p"><b>До переезда в Армению закрывается не Армения, а страна, из которой
-        вы уезжаете.</b> Место дела в одной из трёх корзин определяет, до какого дня оно вообще
-        может быть сделано.</p>
-
-      <ol class="answer__facts" role="list">
-        <li><span>Только там и только пока вы там делаются три вещи: нотариальная доверенность
-          на человека, который останется; документы, которые выдаются по месту, — дубликаты,
-          архивные справки, документы об образовании; и апостиль на них, если он вам вообще
-          понадобится.</span></li>
-
-        <li><span>Всё остальное — счёт, номер общественных услуг, регистрация по адресу, статус
-          пребывания — делается уже в Армении и почти всегда требует, чтобы вы там физически
-          были.</span></li>
-
-        <li><span>Единственная обязанность, которая едет с вами и не отменяется переездом, —
-          валютная: гражданин России остаётся валютным резидентом независимо от того, где живёт.
-          <span class="src">Источник: подп. «а» п. 6 ч. 1 ст. 1 Федерального закона от 10.12.2003
-          № 173-ФЗ · consultant.ru, cons_doc_LAW_45458 · проверено 04.09.2026.</span></span></li>
-
-        <li><span>Об открытии счёта в зарубежном банке налоговую нужно уведомить <b>не позднее
-          одного месяца со дня открытия</b>.
-          <span class="src">Источник: ч. 2 ст. 12 Федерального закона от 10.12.2003 № 173-ФЗ ·
-          consultant.ru, cons_doc_LAW_45458 · проверено 04.09.2026.</span></span></li>
-
-        <li><span>Месяц считается от даты открытия счёта, а не от даты переезда — и это ровно
-          та ошибка, которую совершают, открыв счёт в первую неделю и решив разобраться
-          «когда осядем».</span></li>
+    <nav class="pathbar" aria-label="Шесть веток">
+      <ol class="pathbar__list">
+        <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">01</span><span>Ещё не переехал</span></span></li>
+        <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
+        <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
+        <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
+        <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
+        <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
       </ol>
+    </nav>
 
-      <div class="bignums">
+    <div class="branch-hero" data-reveal>
+      <div class="section__head section__head--wide">
+        <p class="kicker"><span class="kicker__no">01 · Ветка 01</span> Ещё не переехал · Документы до вылета и дистанционный старт</p>
+        <h1 class="h1" id="branch-title">До переезда в Армению: <em>документы дома и старт удалённо</em></h1>
+        <p class="lead">Половина задержек в банках и госорганах Еревана возникает из-за бумаг, которые проще взять за <b>5 рабочих дней</b> до вылета: выписка по счёту за <b>1 год</b>, апостиль на свидетельствах ЗАГС и выверенная доверенность. Юристы LTCG проверяют досье дистанционно и готовят нотариальные переводы к вашему рейсу.</p>
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--primary" href="#contact">Составить план до вылета <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="#skolko">Рассчитать пакет старта <svg aria-hidden="true"><use href="#i-calc"/></svg></a>
+        </div>
+      </div>
+      <aside class="branch-visual" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/img/nov-hero-1280.webp">
+          <img src="assets/img/nov-hero-1280.jpg" width="1280" height="853" alt="" fetchpriority="high">
+        </picture>
+        <div class="branch-visual__hud">
+          <span><b>Ветка 01 · До вылета</b>Апостиль, выписка за 1 год и доверенность</span>
+          <span>Ереван · LTCG</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="answer" data-reveal>
+      <div class="bignums" data-stagger aria-label="Ключевые сроки и пошлины до вылета">
         <div class="bignum">
-          <p class="bignum__n">1<small> месяц</small></p>
-          <p class="bignum__u">срок · уведомление налоговой</p>
-          <p class="bignum__d">Столько есть на уведомление об открытии, закрытии или изменении
-            реквизитов зарубежного счёта. Считается от даты события, а не от даты переезда.
-            <span class="src">Источник: ч. 2 ст. 12 ФЗ № 173-ФЗ · проверено 04.09.2026.</span></p>
+          <span class="bignum__val">180 <small>дней</small></span>
+          <span class="bignum__lbl">максимальный срок пребывания в Армении без визы в течение <b>1 года</b></span>
+          <span class="src">ст. 7 ч. 1 ՀՕ-47-Ն</span>
         </div>
         <div class="bignum">
-          <p class="bignum__n">45<small> рабочих дней</small></p>
-          <p class="bignum__u">срок · апостиль на диплом</p>
-          <p class="bignum__d">Предельный срок для документов об образовании. Обычный срок —
-            5 рабочих дней, при необходимости запроса — до 30.
-            <span class="src">Источник: ст. 6 ФЗ от 28.11.2015 № 330-ФЗ · проверено 04.09.2026.</span></p>
+          <span class="bignum__val">2 500 <small>руб.</small></span>
+          <span class="bignum__lbl">госпошлина за апостиль в РФ и базовый срок до <b>5 рабочих дней</b></span>
+          <span class="src">ст. 333.33 НК РФ · ст. 6 ФЗ-330</span>
         </div>
         <div class="bignum">
-          <p class="bignum__n">183<small> дня</small></p>
-          <p class="bignum__u">порог · освобождение</p>
-          <p class="bignum__d">Столько нужно провести за пределами РФ в истекшем календарном году
-            в совокупности, чтобы освободиться от уведомлений и отчётов.
-            <span class="src">Источник: ч. 8 ст. 12 ФЗ № 173-ФЗ · проверено 04.09.2026.</span></p>
+          <span class="bignum__val">1 <small>год</small></span>
+          <span class="bignum__lbl">минимальный период банковской выписки для KYC в Ереване</span>
+          <span class="src">Перечень документов Ameriabank ред. 12</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">1 <small>месяц</small></span>
+          <span class="bignum__lbl">срок уведомления ФНС о зарубежном счёте при пребывании вне РФ менее <b>183 дней</b></span>
+          <span class="src">ч. 2, ч. 8 ст. 12 ФЗ-173</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 03 · Развилка: три корзины ════════════════════════════════════════ -->
-<section class="section" id="korziny" aria-labelledby="korziny-t" data-rail-label="Три корзины">
+<!-- ═══ 02 · Интерактивная развилка (.fork) ══════════════════════ -->
+<section class="section section--deep section--thread section--light" id="zadacha" data-rail-label="Ваша ситуация" aria-labelledby="fork-t">
   <div class="wrap">
-    <div class="section__head section__head--split">
-      <div>
-        <p class="kicker"><span class="kicker__no">02</span> Развилка</p>
-        <h2 class="h2" id="korziny-t">Три корзины, и место дела в корзине <em>решает срок</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">02</span> Цель переезда</p>
+      <h2 class="h2" id="fork-t">Зачем вы едете в Армению — <em>список документов до вылета</em></h2>
+    </div>
+
+    <fieldset class="fork" data-reveal>
+      <legend class="sr-only">Выберите цель поездки в Армению</legend>
+      <input class="fork__r" type="radio" name="pre-fork" id="pf-biz" checked>
+      <input class="fork__r" type="radio" name="pre-fork" id="pf-bank">
+      <input class="fork__r" type="radio" name="pre-fork" id="pf-fam">
+      <input class="fork__r" type="radio" name="pre-fork" id="pf-poa">
+
+      <div class="fork__opts" aria-label="Сценарий подготовки">
+        <label class="fork__opt" for="pf-biz"><span class="fork__tag">Открыть ИП / ООО и ВНЖ</span><span class="fork__sub">Контракты, порог 1 000 000 ֏ и окно 20 дней</span></label>
+        <label class="fork__opt" for="pf-bank"><span class="fork__tag">Открыть счёт в банке</span><span class="fork__sub">Выписка за 1 год, договоры и дистанционный KYC</span></label>
+        <label class="fork__opt" for="pf-fam"><span class="fork__tag">Переезд с семьёй или по корням</span><span class="fork__sub">Оригиналы ЗАГС, апостиль и биометрия от 16 лет</span></label>
+        <label class="fork__opt" for="pf-poa"><span class="fork__tag">Дела и доверенности в РФ</span><span class="fork__sub">Срок доверенности, передоверие и ФЗ-173</span></label>
       </div>
-      <p class="lead">Люди приезжают с одним из двух убеждений — либо «всё решается удалённо»,
-        либо «ничего не решается удалённо». Оба неверны, и дорого стоит каждое.</p>
-    </div>
 
-    <h3 class="h3">Корзина A. Только оттуда — окно закрывается в день вылета</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Пять дел, которые после посадки в самолёт делаются либо через представителя,
-          либо не делаются вовсе. Нормы проверены по первоисточникам 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Дело</th><th scope="col">Почему только там</th><th scope="col">Что дальше</th><th scope="col">Чем платите, если не сделали</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Доверенность</th>
-            <td data-l="Почему только там"><b>Нотариальная доверенность на того, кто остаётся.</b>
-              Российский нотариус рядом, и он оформит любой объём полномочий. Консул РФ за границей
-              может меньше — см. корзину C</td>
-            <td data-l="Что дальше">Оформить до вылета, отдельным списком полномочий, а не «общей»</td>
-            <td data-l="Чем платите">Придётся идти в консульство в Ереване, платить по консульскому
-              тарифу и упереться в то, чего консул не удостоверяет</td>
-          </tr>
-          <tr>
-            <th scope="row">Дубликаты и справки</th>
-            <td data-l="Почему только там"><b>Свидетельства, выписки, справки с прежних мест.</b>
-              Выдаёт орган по месту, лично или по доверенности</td>
-            <td data-l="Что дальше">Заказать заранее, с запасом на сроки выдачи</td>
-            <td data-l="Чем платите">Заказ уходит через представителя, а без доверенности —
-              не уходит вообще</td>
-          </tr>
-          <tr>
-            <th scope="row">Диплом и апостиль</th>
-            <td data-l="Почему только там"><b>Документы об образовании и апостиль на них.</b>
-              Апостиль проставляют российские органы, и по документам об образовании срок
-              отдельный: <b>до 45 рабочих дней</b> (ст. 6 Федерального закона от 28.11.2015
-              № 330-ФЗ)</td>
-            <td data-l="Что дальше">Заказывать за два месяца, а не за неделю</td>
-            <td data-l="Чем платите">Уезжаете без диплома. Догонять его придётся через представителя</td>
-          </tr>
-          <tr>
-            <th scope="row">Недвижимость</th>
-            <td data-l="Почему только там"><b>Распоряжение недвижимостью в России.</b> Договор
-              об отчуждении недвижимости, находящейся в РФ, консул удостоверить <b>не вправе</b>
-              (п. 1 ст. 38 Основ законодательства о нотариате)</td>
-            <td data-l="Что дальше">Либо закрыть сделку до отъезда, либо оставить доверенность
-              и понимать, что сам договор подпишет представитель у российского нотариуса</td>
-            <td data-l="Чем платите">Возврат в Россию ради одной подписи</td>
-          </tr>
-          <tr>
-            <th scope="row">Завещание</th>
-            <td data-l="Почему только там">Совершается только лично; через представителя
-              не допускается (п. 3 ст. 1118 ГК РФ)</td>
-            <td data-l="Что дальше">Если тема стоит — до вылета</td>
-            <td data-l="Чем платите">Возврат, других вариантов норма не оставляет</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="fork__outs">
+        <article class="tile fork__out" data-for="pf-biz">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+              <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Бизнес и легализация</b> Регистрация ИП — 45 000 ֏ · Счёт — 110 000 ֏</p>
+          <h3 class="h3">Согласуйте предмет договоров и налоговый режим до регистрации</h3>
+          <p>После регистрации ИП или ООО есть <b>20 дней</b> на выбор налога с оборота до <b>115 000 000 ֏</b> или микробизнеса до <b>24 000 000 ֏</b>. Для ВНЖ по бизнесу с 01.11.2026 нужен остаток или оборот <b>1 000 000 ֏</b> за <b>60 дней</b> по счёту ИП либо капитал от <b>2 000 000 ֏</b> в ООО и налоги в КГД за <b>180 дней</b>. <span class="src">ст. 254, 267 НК РА · ст. 29.4 ч. 3, 5 ՀՕ-11-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#skolko">Рассчитать запуск бизнеса <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
 
-    <h3 class="h3">Корзина B. Только отсюда — не начнётся, пока вы не приехали</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Четыре дела, которые нельзя начать из дома, — и это ровно те четыре,
-          которые чаще всего пытаются начать. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Дело</th><th scope="col">Почему только здесь</th><th scope="col">Что дальше</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Счёт в банке</th>
-            <td data-l="Почему только здесь"><b>Счёт в большинстве армянских банков.</b> Требуется
-              личная явка и идентификация. Документально подтверждённое исключение одно,
-              оно в корзине C</td>
-            <td data-l="Что дальше">Первая неделя после приезда —
-              <a class="lnk" href="schet-v-banke.html">порядок шагов</a></td>
-          </tr>
-          <tr>
-            <th scope="row">Соцкарта и адрес</th>
-            <td data-l="Почему только здесь"><b>Номер общественных услуг и регистрация по адресу.</b>
-              Выдаются по месту, по вашему документу</td>
-            <td data-l="Что дальше">Там же</td>
-          </tr>
-          <tr>
-            <th scope="row">Карта статуса</th>
-            <td data-l="Почему только здесь">С 01.11.2026 карту статуса и свидетельство о законности
-              проживания иностранец получает <b>лично</b>, сдавая отпечатки пальцев и электронный
-              образец подписи
-              <span class="src">Новая ст. 17 ч. 7 закона «Об иностранцах» в редакции закона
-              ՀՕ-11-Ն от 20.01.2026 · <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am</a> ·
-              проверено 04.09.2026.</span></td>
-            <td data-l="Что дальше">Планировать присутствие, а не «подам и прилечу за картой»</td>
-          </tr>
-          <tr>
-            <th scope="row">Сертификат резидентства</th>
-            <td data-l="Почему только здесь"><b>Сертификат о налоговом резидентстве Армении.</b>
-              Выдаёт Комитет государственных доходов, вход в кабинет — через платформу
-              идентификации «Ես Եմ»</td>
-            <td data-l="Что дальше">Это уже следующий год жизни, не переезд</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <article class="tile fork__out" data-for="pf-bank">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+              <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Банковское досье до вылета</b> Сопровождение LTCG — 110 000 ֏</p>
+          <h3 class="h3">Выписка за 1 год и справки о доходах из домашнего банка</h3>
+          <p>До вылета выгрузите выписку по счёту минимум за <b>1 год</b> и договоры по доходам. Для удалённого открытия: в Evocabank для ФЛ — <b>50 000 ֏</b> (ведение <b>250 000 ֏/год</b>), для ЮЛ — <b>100 000 ֏</b> (ведение <b>500 000 ֏/год</b>); в Converse Bank онлайн-заявка ФЛ — <b>25 000 ֏</b>, видеоидентификация — <b>50 000 ֏</b>. <span class="src">Ameriabank ред. 12 · Evocabank ред. 01.10.2026 · Converse Bank ред. 03.09.2026</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Прислать документы на предпроверку <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
 
-    <h3 class="h3">Корзина C. И там, и там — но не одинаково</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Самая опасная корзина: дело выглядит выполнимым откуда угодно, а ломается
-          в конкретном месте. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Дело</th><th scope="col">Как это выглядит</th><th scope="col">Где ломается</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Уведомление ФНС</th>
-            <td data-l="Как это выглядит"><b>Уведомление налоговой об открытии зарубежного счёта.</b>
-              Обязанность одна, каналов подачи несколько; срок — месяц со дня открытия
-              (ч. 2 ст. 12 ФЗ № 173-ФЗ)</td>
-            <td data-l="Где ломается">Люди считают срок от переезда, а не от открытия счёта</td>
-          </tr>
-          <tr>
-            <th scope="row">Счёт до приезда</th>
-            <td data-l="Как это выглядит">Удалённое открытие счёта нерезиденту-физлицу документально
-              подтверждено у <b>Evocabank</b> и только при одном из четырёх оснований: вы собственник
-              недвижимости в РА; готовы разместить вклад; уже имеете статус ИП в РА; участвуете
-              в зарегистрированном в РА юрлице
-              <span class="src">Источник: <a href="https://www.evoca.am/" rel="noopener">evoca.am</a>,
-              русская и английская версии · проверено 04.09.2026.</span></td>
-            <td data-l="Где ломается">Все четыре основания означают, что вы <b>уже что-то сделали
-              в Армении</b>. Тому, кто ещё ничего не начал, удалённый счёт не открывается</td>
-          </tr>
-          <tr>
-            <th scope="row">Перевод документов</th>
-            <td data-l="Как это выглядит"><b>Перевод и заверение документов.</b> Перевод можно
-              сделать и там, и здесь</td>
-            <td data-l="Где ломается">Форму решает принимающая сторона, а не вы.
-              См. <a class="lnk" href="#lomaetsya">ловушку 06</a></td>
-          </tr>
-          <tr>
-            <th scope="row">Консульский нотариат</th>
-            <td data-l="Как это выглядит"><b>Нотариальные действия через консульство.</b> Консул РФ
-              вправе удостоверять сделки, верность копий, подлинность подписи, верность перевода,
-              факт нахождения в живых и в определённом месте, тождественность лица с фотографией,
-              время предъявления документов (ст. 38 Основ законодательства о нотариате)</td>
-            <td data-l="Где ломается">Из этого перечня выпадают ровно те действия, ради которых
-              обычно и приходят: отчуждение российской недвижимости, завещание, типовой развод</td>
-          </tr>
-          <tr>
-            <th scope="row">Подача из-за границы</th>
-            <td data-l="Как это выглядит"><b>Подача на статус пребывания в Армении из-за границы.</b>
-              До 01.11.2026 через дипломатическое или консульское учреждение РА подавалось
-              ходатайство только о <b>специальном</b> статусе (ст. 18 закона «Об иностранцах»);
-              временный и постоянный — в орган в сфере полиции (ст. 17)</td>
-            <td data-l="Где ломается">Ст. 11 закона ՀՕ-11-Ն признаёт ст. 18 утратившей силу
-              с 01.11.2026. Консульского канала в законе после этой даты не остаётся</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <article class="tile fork__out" data-for="pf-fam">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+              <img src="assets/img/nov-shot-1100.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Семья и армянское происхождение</b> Закон РА ՀՕ-11-Ն с 01.11.2026</p>
+          <h3 class="h3">Оригиналы свидетельств о рождении и браке</h3>
+          <p>Для ВНЖ по семье или ПМЖ по армянским корням на <b>5 лет</b> (пошлина <b>250 000 ֏</b>) нужны оригиналы свидетельств ЗАГС. Для дальнейшего использования в ЕС поставьте апостиль в РФ за <b>2 500 руб.</b> и <b>5 рабочих дней</b>. Карту ВНЖ или ПМЖ лица от <b>16 лет</b> получают лично с биометрией. <span class="src">ст. 15 ч. 1 п. «г», ст. 16 ч. 1 п. «б», ст. 17 ч. 7 ՀՕ-11-Ն · ст. 333.33 НК РФ</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Проверить документы семьи <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
 
-    <!-- Вторая развилка: нативные radio, все исходы лежат в разметке и читаются
-         краулером целиком. Ни одной строки JavaScript. -->
-    <form>
-      <fieldset class="fork">
-        <legend class="fork__q">Есть ли дома человек, которому можно доверить?</legend>
+        <article class="tile fork__out" data-for="pf-poa">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
+              <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Доверенности и валютный контроль</b> ГК РФ ст. 186 · ФЗ-173 ст. 12</p>
+          <h3 class="h3">Полномочия для представителя дома и календарь уведомлений</h3>
+          <p>Доверенность без указания срока действует только <b>1 год</b> со дня совершения, а без даты совершения ничтожна. При пребывании вне РФ менее <b>183 дней</b> в году об открытии счёта в РА нужно уведомить ФНС за <b>1 месяц</b>. <span class="src">п. 1 ст. 186 ГК РФ · ч. 2, ч. 8 ст. 12 ФЗ-173</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Составить перечень полномочий <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
+      </div>
+    </fieldset>
 
-        <input class="fork__r" type="radio" name="trustee" id="t1">
-        <input class="fork__r" type="radio" name="trustee" id="t2">
-        <input class="fork__r" type="radio" name="trustee" id="t3">
-
-        <div class="fork__opts">
-          <label class="fork__opt" for="t1"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Есть</b>Родственник или друг, который останется и готов ходить по органам</span></label>
-          <label class="fork__opt" for="t2"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Нет</b>Поручить некому, всё придётся закрыть самому</span></label>
-          <label class="fork__opt" for="t3"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Не уверены, что доверять</b>Человек есть, но объём полномочий вызывает сомнения</span></label>
+    <aside class="dated-box" aria-label="Почему важна проверка до вылета">
+        <div class="dated-box__head">
+          <span class="dated-box__badge"><svg aria-hidden="true"><use href="#i-check"/></svg> Проверка на 18.10.2026</span>
+          <span class="src">ГК РФ · ФЗ-173 · ՀՕ-11-Ն</span>
         </div>
-
-        <div class="fork__outs">
-          <article class="fork__out">
-            <p class="fork__out__k">Исход 01</p>
-            <h3 class="fork__out__t">Часть корзины A перестаёт быть срочной</h3>
-            <p>Их доделает представитель. Цена: доверенность должна быть выписана <b>под конкретный
-              список действий</b>, а не «общей», и в ней надо сознательно решить вопрос передоверия.</p>
-            <p class="src">Основание: ст. 185.1 и ст. 187 ГК РФ. Разбор — в разделе
-              «Как это устроено». Проверено 04.09.2026.</p>
-          </article>
-
-          <article class="fork__out">
-            <p class="fork__out__k">Исход 02</p>
-            <h3 class="fork__out__t">Корзина A целиком становится списком «до вылета»</h3>
-            <p>Второй попытки не будет: оформлять доверенность придётся уже в консульстве,
-              по консульскому тарифу и в пределах того, что консул вправе удостоверить.</p>
-            <p class="src">Основание: перечень консульских нотариальных действий, ст. 38 Основ
-              законодательства о нотариате. Проверено 04.09.2026.</p>
-          </article>
-
-          <article class="fork__out">
-            <p class="fork__out__k">Исход 03</p>
-            <h3 class="fork__out__t">Это нормальный ответ, и он не про юриспруденцию</h3>
-            <p>Доверенность на сбор справок и доверенность на распоряжение имуществом — два разных
-              решения, и второе можно не принимать сейчас.</p>
-            <p class="src">Эта развилка переписывает корзину A целиком: до вылета закрывается
-              только то, что представитель сделать не сможет.</p>
-          </article>
+        <p class="dated-box__title">Что сделать дома, чтобы не потерять две недели в Ереване</p>
+        <div class="shift" role="group" aria-label="Сравнение: дома или в Ереване">
+          <div class="shift__col shift__col--was">
+            <span class="shift__tag">Закрывается только дома</span>
+            <p class="shift__val">Выписка за 1 год, апостиль и доверенность</p>
+            <p class="shift__note">Апостиль на российские документы ставится только в РФ за <b>2 500 руб.</b> и <b>5 рабочих дней</b>; выписку за <b>1 год</b> и доверенность с передоверием оформляют до вылета.</p>
+          </div>
+          <div class="shift__col shift__col--becomes">
+            <span class="shift__tag">Готовим в Ереване к рейсу</span>
+            <p class="shift__val">Переводы на армянский, ПСН, ИП и банк</p>
+            <p class="shift__note">По сканам паспорта готовим перевод у армянского нотариуса, оформляем <b>10-значный</b> ПСН и регистрируем ИП с окном <b>20 дней</b> на выбор спецрежима.</p>
+          </div>
         </div>
-      </fieldset>
-    </form>
+      </aside>
   </div>
 </section>
 
-<!-- ═══ 04 · Как это устроено ═════════════════════════════════════════════ -->
-<section class="section" id="ustroystvo" aria-labelledby="ust-t" data-rail-label="Как устроено">
+<!-- ═══ 03 · Сравнительная таблица: До вылета vs В Ереване ═══════ -->
+<section class="section section--grid section--thread section--art" id="sravnenie" data-rail-label="Дома и в Ереване" aria-labelledby="tbl-t">
+  <div class="nov-art nov-art--guilloche" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">03</span> Как это устроено</p>
-      <h2 class="h2" id="ust-t">Нормы, из которых <em>складывается вся конструкция</em></h2>
-      <p class="lead">Ниже — только то, что мы прочитали по первоисточникам и можем показать.
-        Где источник не прочитан целиком, об этом сказано прямо в том же блоке.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">03</span> Порядок действий</p>
+      <h2 class="h2" id="tbl-t">Что сделать дома до отъезда и <em>что оформляется в Ереване</em></h2>
     </div>
 
-    <h3 class="h3">Доверенность: четыре нормы, из которых складывается вся конструкция</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Все нормы проверены 04.09.2026 по первоисточникам.</caption>
+    <div class="table-wrap" role="region" aria-labelledby="tbl-t" tabindex="0" data-reveal>
+      <table class="tbl">
         <thead>
-          <tr><th scope="col">Что</th><th scope="col">Как в законе</th><th scope="col">Зачем это вам</th></tr>
+          <tr>
+            <th scope="col">Задача и документ</th>
+            <th scope="col">До вылета (в стране исхода)</th>
+            <th scope="col">В Ереване (с сопровождением LTCG)</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Нотариальная форма</th>
-            <td data-l="Как в законе"><b>Когда обязательна нотариальная форма.</b> Доверенность
-              на сделки, требующие нотариальной формы, на подачу заявлений о государственной
-              регистрации прав или сделок, на распоряжение зарегистрированными в госреестрах
-              правами
-              <span class="src">п. 1 ст. 185.1 ГК РФ · <a href="https://zakonrf.info/gk/185.1" rel="noopener">zakonrf.info/gk/185.1</a></span></td>
-            <td data-l="Зачем это вам">Всё, что касается недвижимости и реестров, — только
-              к нотариусу</td>
+            <td><b>Апостиль и переводы</b></td>
+            <td>Апостиль в РФ: пошлина <b>2 500 руб.</b>, срок до <b>5 рабочих дней</b> (при запросе подписи — до <b>30 рабочих дней</b>, образование — до <b>45 рабочих дней</b>). <span class="src">ст. 333.33 НК РФ · ст. 6 ФЗ-330</span></td>
+            <td>Нотариальный перевод на армянский язык в РА и получение <b>10-значного</b> ПСН (пошлина <b>0 ֏</b>, в LTCG — <b>35 000 ֏</b>). <span class="src">migration.e-gov.am</span></td>
           </tr>
           <tr>
-            <th scope="row">Упрощённая форма</th>
-            <td data-l="Как в законе">Доверенность на получение зарплаты, пенсий, пособий,
-              стипендий и корреспонденции, <b>кроме ценной</b>, может быть удостоверена
-              организацией, где доверитель работает или учится, и администрацией стационарного
-              лечебного учреждения, где он находится на излечении
-              <span class="src">п. 3 ст. 185.1 ГК РФ</span></td>
-            <td data-l="Зачем это вам">Оговорка «кроме ценной корреспонденции» отсекает ровно тот
-              случай, ради которого доверенность на почту чаще всего и оформляют</td>
+            <td><b>Выписка и счёт в банке</b></td>
+            <td>Выписка минимум за <b>1 год</b> и договоры; онлайн-подача: Evocabank от <b>50 000 ֏</b>, Converse Bank от <b>25 000 ֏</b> + <b>50 000 ֏</b>. <span class="src">Ameriabank ред. 12 · Evocabank · Converse Bank</span></td>
+            <td>Очное сопровождение KYC (<b>110 000 ֏</b>): в Ameriabank изучение негражданина РА — <b>20 000 ֏</b> при одобрении, пакет «Смарт» — <b>7 000 ֏</b>. <span class="src">Ameriabank ред. 51</span></td>
           </tr>
           <tr>
-            <th scope="row">Срок</th>
-            <td data-l="Как в законе">Без указания срока — один год. Нотариальная доверенность,
-              предназначенная для действий <b>за границей</b> и не содержащая срока, действует
-              до её отмены
-              <span class="src">ст. 186 ГК РФ · consultant.ru, cons_doc_LAW_5142 и base.garant.ru/10164072</span></td>
-            <td data-l="Зачем это вам">Срок пишется осознанно, а не «по умолчанию»</td>
+            <td><b>ПСН и адрес</b></td>
+            <td>Проверка написания ФИО в загранпаспорте и сканы для перевода до вылета.</td>
+            <td>Оформление ПСН (<b>35 000 ֏</b>); онлайн-заявка по адресу (пошлина <b>1 000 ֏</b>): обращение за <b>10 рабочих дней</b>, решение за <b>3 рабочих дня</b>. <span class="src">migration.e-gov.am</span></td>
           </tr>
           <tr>
-            <th scope="row">Дата совершения</th>
-            <td data-l="Как в законе">Доверенность, в которой не указана дата совершения,
-              <b>ничтожна</b>
-              <span class="src">п. 1 ст. 186 ГК РФ</span></td>
-            <td data-l="Зачем это вам">Самая дешёвая проверка в этом списке: посмотреть, стоит ли
-              дата</td>
-          </tr>
-          <tr>
-            <th scope="row">Передоверие</th>
-            <td data-l="Как в законе">Нотариальная форма обязательна; срок не может превышать срок
-              основной доверенности; последующее передоверие не допускается, если иное не указано;
-              о передоверии надо известить доверителя, иначе представитель отвечает за действия
-              того, кому передоверил
-              <span class="src">ст. 187 ГК РФ · <a href="https://zakonrf.info/gk/187" rel="noopener">zakonrf.info/gk/187</a></span></td>
-            <td data-l="Зачем это вам">Если представитель заболел или уехал — заменить его
-              без заранее разрешённого передоверия нельзя</td>
+            <td><b>ИП / ООО и ВНЖ с 01.11.2026</b></td>
+            <td>Разбор кодов деятельности и договоров: выбор спецрежима — в первые <b>20 дней</b> после регистрации. <span class="src">ст. 254, 267 НК РА</span></td>
+            <td>Регистрация ИП (<b>45 000 ֏</b>), счёт ИП, порог <b>1 000 000 ֏</b> за <b>60 дней</b> и подача на ВНЖ (пошлина <b>150 000 ֏</b>, срок <b>30 дней</b>). <span class="src">ст. 17 ч. 1, ст. 29.4 ч. 3 ՀՕ-11-Ն</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h3 class="h3">Апостиль в России: сроки и пошлина</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Проверено 04.09.2026 · legalacts.ru и garant.ru.</caption>
-        <thead>
-          <tr><th scope="col">Позиция</th><th scope="col">Значение</th><th scope="col">Источник</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Обычный срок</th>
-            <td data-l="Значение" class="us">не более <b>5 рабочих дней</b></td>
-            <td data-l="Источник">ст. 6 ФЗ от 28.11.2015 № 330-ФЗ</td>
-          </tr>
-          <tr>
-            <th scope="row">При запросе</th>
-            <td data-l="Значение">до <b>30 рабочих дней</b>, о продлении уведомляют в течение одного
-              рабочего дня</td>
-            <td data-l="Источник">там же</td>
-          </tr>
-          <tr>
-            <th scope="row">Об образовании</th>
-            <td data-l="Значение" class="us">до <b>45 рабочих дней</b></td>
-            <td data-l="Источник">там же</td>
-          </tr>
-          <tr>
-            <th scope="row">Госпошлина</th>
-            <!-- слот 4 сводки публикации: актуальность редакции нормы на 2026 подтверждает юрист -->
-            <td data-l="Значение"><b>2 500 рублей за каждый документ</b></td>
-            <td data-l="Источник">пп. 48 п. 1 ст. 333.33 НК РФ · consultant.ru, cons_doc_LAW_28165 ·
-              <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>подтвердить редакцию на 2026</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Кто проставляет</th>
-            <td data-l="Значение">федеральные органы исполнительной власти, органы исполнительной
-              власти субъектов РФ, органы прокуратуры. <b>Поимённое распределение по видам
-              документов мы не подтверждали и здесь не приводим</b></td>
-            <td data-l="Источник">ст. 4 ФЗ № 330-ФЗ</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="h3">Валютные обязанности гражданина России после переезда</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Проверено 04.09.2026 · consultant.ru, cons_doc_LAW_45458.</caption>
-        <thead>
-          <tr><th scope="col">Обязанность</th><th scope="col">Норма</th><th scope="col">Срок</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Уведомление о счёте</th>
-            <td data-l="Норма"><b>Уведомить об открытии, закрытии или изменении реквизитов
-              зарубежного счёта.</b> ч. 2 ст. 12 ФЗ № 173-ФЗ</td>
-            <td data-l="Срок" class="us">не позднее <b>одного месяца</b> со дня события</td>
-          </tr>
-          <tr>
-            <th scope="row">ОДДС</th>
-            <td data-l="Норма"><b>Отчёт о движении средств по зарубежному счёту.</b>
-              ч. 7 ст. 12 ФЗ № 173-ФЗ</td>
-            <td data-l="Срок" class="us">до <b>1 июня</b> года, следующего за отчётным</td>
-          </tr>
-          <tr>
-            <th scope="row">Освобождение</th>
-            <td data-l="Норма">ч. 8 ст. 12 ФЗ № 173-ФЗ: у тех, чей срок пребывания за пределами РФ
-              в истекшем календарном году в совокупности превысил <b>183 дня</b></td>
-            <td data-l="Срок">—</td>
-          </tr>
-          <tr>
-            <th scope="row">При возвращении</th>
-            <!-- слот 2 сводки публикации: формулировку визирует юрист LTCG -->
-            <td data-l="Норма">ч. 8 ст. 12: кто 183 дня в истекшем году <b>не набрал</b>, уведомляет
-              о счетах, открытых в период освобождения</td>
-            <td data-l="Срок"><b>до 1 июня</b> следующего календарного года ·
-              <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>формулировку визирует юрист</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="note measure"><b>Где мы показываем разрыв, а не прячем его.</b> Про освобождение
-      от ОДДС по порогу 600 000 рублей и по членству Армении в ЕАЭС пишут все. Мы проверили:
-      в тексте нормы на consultant.ru предложение обрывается многоточием ровно на конструкции
-      про остаток по счёту, и прочитать её целиком ни в одной из двух выдач не удалось. Поэтому
-      здесь стоит не утверждение, а честное состояние: <b>порог 600 000 рублей и членство Армении
-      в ЕАЭС мы видели в справочных разборах, но не в дословном тексте нормы, и до подтверждения
-      не превращаем это в правило.</b> Что подтверждено твёрдо: освобождение по порогу касается
-      только отчёта о движении средств и <b>не отменяет само уведомление об открытии счёта</b>.</p>
-
-    <h3 class="h3">Штрафы: единственный блок, где сходится всё</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Весь массив ст. 15.25 КоАП РФ перечитан по частям 04.09.2026
-          (<a href="https://zakonrf.info/koap/15.25" rel="noopener">zakonrf.info/koap/15.25</a>), суммы сошлись без расхождений.</caption>
-        <thead>
-          <tr><th scope="col">Норма</th><th scope="col">Нарушение</th><th scope="col">Для граждан</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">ч. 2</th><td data-l="Нарушение">Просрочка или неверная форма уведомления</td><td data-l="Для граждан">1 000 – 1 500 руб.</td></tr>
-          <tr><th scope="row">ч. 2.1</th><td data-l="Нарушение">Непредставление уведомления</td><td data-l="Для граждан" class="us">4 000 – 5 000 руб.</td></tr>
-          <tr><th scope="row">ч. 6.1</th><td data-l="Нарушение">ОДДС: просрочка до 10 дней</td><td data-l="Для граждан">300 – 500 руб.</td></tr>
-          <tr><th scope="row">ч. 6.2</th><td data-l="Нарушение">ОДДС: просрочка от 10 до 30 дней</td><td data-l="Для граждан">1 000 – 1 500 руб.</td></tr>
-          <tr><th scope="row">ч. 6.3</th><td data-l="Нарушение">ОДДС: просрочка свыше 30 дней</td><td data-l="Для граждан">2 500 – 3 000 руб.</td></tr>
-          <tr><th scope="row">ч. 6</th><td data-l="Нарушение">Нарушение порядка представления</td><td data-l="Для граждан">2 000 – 3 000 руб.</td></tr>
-          <tr><th scope="row">ч. 6.5</th><td data-l="Нарушение">Повторное нарушение</td><td data-l="Для граждан" class="us">20 000 руб.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="measure">Суммы небольшие. Ценность этой таблицы не в них, а в том, что она показывает:
-      обязанность существует, она отслеживаемая и дешевле её исполнить.</p>
-
-    <h3 class="h3">Консульские учреждения России в Армении</h3>
-    <p class="measure">Посольство: Ереван, ул. Сурб Григор Лусаворич, 13/3,
-      <a class="lnk" href="tel:+37410567427">+374-10-56-74-27</a>,
-      <a class="lnk" href="tel:+37410545218">+374-10-54-52-18</a>. Консульский отдел:
-      пн–чт 09:00–13:00 и 14:00–18:00, пт 09:00–13:00 и 14:00–17:00. Генеральное консульство
-      в Гюмри: ул. Гарегина Нжде, 1, <a class="lnk" href="tel:+37431234533">+374-312-3-45-33</a>,
-      пн–пт 09:00–13:00. Запись — через
-      <a class="lnk" href="https://yerevan.kdmid.ru/queue/" rel="noopener">yerevan.kdmid.ru/queue/</a>,
-      <a class="lnk" href="https://armenia.kdmid.ru/queue/" rel="noopener">armenia.kdmid.ru/queue/</a>,
-      <a class="lnk" href="https://gyumri.kdmid.ru/queue/" rel="noopener">gyumri.kdmid.ru/queue/</a>.
-      <span class="src">Источник: <a href="https://www.kdmid.ru/" rel="noopener">kdmid.ru</a> · проверено 04.09.2026.</span></p>
-
-    <p class="measure">Порядок консульского нотариата установлен инструкцией, утверждённой
-      совместным приказом МИД и Минюста от 29.09.2022 № 20795/209, применяется с 01.07.2024
-      (base.garant.ru/405365695). Дословный текст инструкции мы не читали и её содержание здесь
-      не пересказываем.</p>
-
-    <p class="note measure"><b>Часы приёма меняются чаще, чем обновляются сайты.</b> Перед поездкой
-      в консульство проверьте расписание на дату — это единственная строка на этой странице,
-      где мы просим не верить нам на слово.</p>
+    <figure class="lawquote" data-reveal>
+      <blockquote>«Граждане государств, для которых установлен безвизовый режим въезда в Республику Армения, могут находиться на территории Республики Армения не более 180 дней в течение одного года, если международными договорами Республики Армения не установлены иные сроки».</blockquote>
+      <figcaption>Закон РА «Об иностранцах» ՀՕ-47-Ն, статья 7, часть 1 · <a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a></figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ═══ 05 · Датированная врезка про 1 ноября ═════════════════════════════ -->
-<section class="section" id="noyabr" aria-labelledby="nov-t" data-rail-label="С 1 ноября">
+<!-- ═══ 04 · 5 ошибок при подготовке к переезду + Timeline ═══════ -->
+<section class="section section--deep section--thread section--light" id="lovushki" data-rail-label="Пять ошибок" aria-labelledby="traps-t">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">04</span> Срок, а не момент</p>
-      <h2 class="h2" id="nov-t">Что меняется в Армении 1 ноября 2026 — <em>только то, что задевает вас до переезда</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">04</span> Где теряют недели</p>
+      <h2 class="h2" id="traps-t">Пять ошибок до вылета, <em>из-за которых платят дважды</em></h2>
     </div>
 
-    <aside class="dated-box" aria-labelledby="nov-box">
-      <p class="dated-box__when">С 01.11.2026 иначе</p>
-      <h3 class="dated-box__t" id="nov-box">Дата подачи определяет правила, по которым вас рассмотрят</h3>
-
-      <div class="shift">
-        <div class="shift__row shift__row--head">
-          <span>Что</span><span>Норма</span><span>Что это значит</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Производство по временному и постоянному статусу идёт <b>только</b>
-            через единую электронную платформу</span>
-          <span class="shift__was">новая ч. 3 ст. 14 закона «Об иностранцах» (ст. 7 закона ՀՕ-11-Ն от 20.01.2026)</span>
-          <span class="shift__now"><b>Бумажный и очный канал в законе не описан</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Платформа вводится в действие с 01.11.2026</span>
-          <span class="shift__was">ст. 30 ч. 3 закона ՀՕ-11-Ն</span>
-          <span class="shift__now"><b>До этой даты она не работает</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Заявления, поданные <b>до</b> вступления закона в силу,
-            рассматриваются по прежним нормам</span>
-          <span class="shift__was">ст. 30 ч. 4</span>
-          <span class="shift__now"><b>Дата подачи определяет правила, по которым вас рассмотрят</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Специальный статус (ст. 18) отменён</span>
-          <span class="shift__was">ст. 11 закона ՀՕ-11-Ն</span>
-          <span class="shift__now"><b>Исчезает единственное основание, ходатайство по которому
-            подавалось через посольство или консульство РА за границей</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Решение — в 30-дневный срок со дня подачи</span>
-          <span class="shift__was">новая ст. 17 ч. 4</span>
-          <span class="shift__now">—</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Пять дней на устранение недостатков</span>
-          <span class="shift__was">новая ст. 17 ч. 9: если заявитель не выполнил указанное
-            в пятидневный срок, платформа <b>в автоматическом режиме</b> приостанавливает
-            производство; через месяц бездействия — прекращает (ч. 10)</span>
-          <span class="shift__now"><b>Дело замораживает не человек, а система, и без вашего
-            участия оно не оживёт</b></span>
-        </div>
+    <dl class="traps" data-stagger>
+      <div class="trap">
+        <dt><span class="trap__tag">Переводы</span> Перевод паспорта у нотариуса вне Армении</dt>
+        <dd>Банки и госорганы РА требуют перевод, удостоверенный армянским нотариусом. Без него не примут заявление на <b>10-значный</b> ПСН (пошлина <b>0 ֏</b>) и регистрацию по адресу за <b>3 рабочих дня</b>. Готовим переводы в Ереване по сканам к прилёту. <span class="src">migration.e-gov.am</span></dd>
       </div>
 
-      <p class="src">Источник по всем строкам: закон ՀՕ-11-Ն от 20.01.2026 ·
-        <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-        проверено 04.09.2026. Язык оригинала армянский, официальных русских текстов не существует;
-        формулировки на этой странице — рабочий перевод,
-        <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>вычитка носителем + подпись юриста</span>.
-        <!-- слот 12 сводки публикации: армянские формулировки вычитывает носитель --></p>
-    </aside>
-
-    <aside class="nochange" aria-labelledby="nov-nc">
-      <p class="nochange__tag">Не утверждаем</p>
-      <h3 class="nochange__t" id="nov-nc">Чего мы про 1 ноября не утверждаем</h3>
-      <!-- без role="list": маркеры здесь нужны, а ul[role="list"] в site.css их снимает -->
-      <ul>
-        <li>Подзаконных актов Правительства во исполнение реформы на 04.09.2026 не опубликовано.
-          Это значит: перечень документов к заявлению, порядок регистрации на платформе и порядок
-          заполнения заявок ещё не установлены.</li>
-        <li>Поэтому мы <b>не говорим</b>, что после 1 ноября подать заявление можно будет
-          из-за границы, и <b>не говорим</b>, что нельзя. Этого сейчас не знает никто, включая тех,
-          кто уже написал об этом на своих сайтах.</li>
-        <li>Отдельно: по словам практикующего юриста, запись на подачу сейчас закрыта совсем —
-          это состояние на дату, а не норма закона.</li>
-      </ul>
-      <p class="src">Проверено по тексту закона ՀՕ-11-Ն от 20.01.2026 и по отсутствию
-        опубликованных подзаконных актов на 04.09.2026.</p>
-    </aside>
-  </div>
-</section>
-
-<!-- ═══ 06 · Где ломается ═════════════════════════════════════════════════ -->
-<section class="section" id="lomaetsya" aria-labelledby="traps-t" data-rail-label="Где ломается">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">05</span> Где ломается</p>
-      <h2 class="h2" id="traps-t">Двенадцать названных ловушек, <em>и девять из них снимаются</em></h2>
-      <p class="lead">Тег в конце каждого пункта говорит, можно ли снять причину заранее.
-        Решение по вашим документам принимают нотариус, консульство, банк и государственные
-        органы — мы не обещаем чужого решения.</p>
-    </div>
-
-    <!-- Строки «что делаем» здесь нет намеренно: состав работ компании до переезда
-         ещё не назван клиентом (слот 10 сводки публикации). Вместо неё стоит
-         дословный тег снятия из текста ветки. -->
-    <dl class="traps">
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">Доверенность без даты совершения</span></dt>
-        <dd><b>Ошибка</b>в бланке нет даты.</dd>
-        <dd><b>Кончается</b>доверенность ничтожна (п. 1 ст. 186 ГК РФ), представитель приходит
-          в орган и уходит ни с чем, а вы уже за границей.</dd>
-        <dd><b>Снимается</b>до отъезда — достаточно посмотреть на документ.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Выписка 1 год</span> Прилёт без банковской выписки за 1 год</dt>
+        <dd>Для открытия счёта негражданину РА банк запрашивает выписку минимум за <b>1 год</b> и договоры о доходе. Проверяем выписки до вашего вылета. <span class="src">Сноска 8 перечня Ameriabank, ред. 12</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">Доверенность выписана «общей» и не покрывает нужное действие</span></dt>
-        <dd><b>Ошибка</b>полномочия сформулированы широко и красиво, но конкретного действия —
-          подать заявление о государственной регистрации, получить дубликат, распорядиться правом
-          в реестре — в ней нет.</dd>
-        <dd><b>Кончается</b>переделывать приходится уже из-за границы, через консульство
-          и по консульскому тарифу.</dd>
-        <dd><b>Снимается</b>до отъезда — доверенность пишется под список задач, а не наоборот.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Срок 1 год</span> Доверенность со сроком по умолчанию в 1 год и без передоверия</dt>
+        <dd>Без указания срока доверенность действует только <b>1 год</b>, а без права передоверия представитель не передаст полномочия юристу. Даём текст доверенности до визита к нотариусу. <span class="src">п. 1 ст. 186, ст. 187 ГК РФ</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">В доверенности не разрешено передоверие</span></dt>
-        <dd><b>Ошибка</b>не решён вопрос, что делать, если представитель заболеет, уедет
-          или откажется.</dd>
-        <dd><b>Кончается</b>заменить его нельзя — передоверие требует нотариальной формы,
-          не может превышать срок основной доверенности, а последующее передоверие запрещено,
-          если прямо не разрешено (ст. 187 ГК РФ).</dd>
-        <dd><b>Снимается</b>до отъезда.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">1 месяц ФНС</span> Пропуск 1 месяца на уведомление ФНС о счёте в РА</dt>
+        <dd>При пребывании вне РФ менее <b>183 дней</b> в году уведомить ФНС о счёте нужно за <b>1 месяц</b> (штраф за просрочку — <b>1 000–1 500 руб.</b>, за неуведомление — <b>4 000–5 000 руб.</b>). <span class="src">ч. 2, ч. 8 ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag trap__tag--fix">снимается только до отъезда</span></span>
-          <span class="trap__title">Рассчитывали доделать через консульство то, что консул не делает</span></dt>
-        <dd><b>Ошибка</b>план «оформлю на месте».</dd>
-        <dd><b>Кончается</b>тремя тупиками, каждый из которых прямо в норме: договор об отчуждении
-          недвижимости, находящейся в РФ, консул не удостоверяет (п. 1 ст. 38 Основ законодательства
-          о нотариате); завещание совершается только лично (п. 3 ст. 1118 ГК РФ); расторжение брака
-          по п. 2 ст. 160 СК РФ работает при разводе <b>с супругом, тоже проживающим за пределами
-          РФ</b>, и только там, где по российскому законодательству развод допускается через ЗАГС —
-          типовой случай «уехал один, супруг остался» под норму не подпадает.</dd>
-        <dd><b>Снимается</b>только до отъезда.</dd>
-      </div>
-
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag trap__tag--fix">снимается за два месяца</span></span>
-          <span class="trap__title">Апостиль на документ об образовании заказан в последнюю неделю</span></dt>
-        <dd><b>Ошибка</b>планировали по «пяти дням».</dd>
-        <dd><b>Кончается</b>до 45 рабочих дней (ст. 6 ФЗ № 330-ФЗ), и вы уезжаете без диплома.</dd>
-        <dd><b>Снимается</b>до отъезда, если начать за два месяца.</dd>
-      </div>
-
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 06</span><span class="trap__tag">зависит от принимающей стороны</span></span>
-          <span class="trap__title">Апостиль поставили зря — или не поставили там, где потребовали</span></dt>
-        <dd>Здесь мы обязаны сказать не ответ, а правду о состоянии вопроса. В сети широко ходит
-          утверждение, что статья 13 Минской конвенции 1993 года освобождает доверенность
-          с нотариально заверенным переводом от апостиля. Мы прочитали статью 13 дословно по двум
-          правовым базам: <b>такого положения в ней нет</b>, слов «доверенность» и «перевод»
-          в тексте статьи не встречается. Одновременно армянская юридическая фирма публично пишет
-          обратное — что для документов стран — участниц Гаагской конвенции нужен апостиль.</dd>
-        <dd><b>Поэтому</b>мы не даём здесь правила. Практический вывод, который правилом
-          не является: спрашивайте форму у той стороны, которая будет документ принимать, —
-          у конкретного банка, нотариуса или органа, — и закладывайте срок и 2 500 рублей пошлины
-          как возможные, а не как обязательные.
-          <!-- слот 3 сводки публикации: разбор соотношения Минской и Гаагской конвенций — юрист LTCG.
-               До закрытия слота на странице стоит именно этот абзац, а не вывод. -->
-          <span class="src">Соотношение Минской и Гаагской конвенций разбирает юрист LTCG ·
-          <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>слот открыт</span></span></dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Окно 180 дней</span> Откладывание ВНЖ на конец 180-дневного срока</dt>
+        <dd>Безвизовый срок — <b>180 дней</b> в году; рассмотрение ВНЖ занимает <b>30 дней</b>, а по ИП нужен остаток или оборот <b>1 000 000 ֏</b> за <b>60 дней</b>. Запускаем процесс с первой недели. <span class="src">ст. 7 ч. 1 ՀՕ-47-Ն · ст. 17 ч. 1, ст. 29.4 ч. 3 ՀՕ-11-Ն</span></dd>
       </div>
     </dl>
 
-    <details class="traps-more">
-      <summary class="btn btn--outline btn--sm">Ещё шесть ловушек <svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-      <dl class="traps">
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 07</span><span class="trap__tag trap__tag--fix">снимается</span></span>
-            <span class="trap__title">Не уведомили налоговую об открытии счёта в месячный срок</span></dt>
-          <dd><b>Ошибка</b>срок отсчитывают от переезда или от «когда осядем».</dd>
-          <dd><b>Кончается</b>4 000 – 5 000 рублей за непредставление уведомления
-            (ч. 2.1 ст. 15.25 КоАП РФ), 1 000 – 1 500 за просрочку или неверную форму (ч. 2).</dd>
-          <dd><b>Снимается</b>обязанность закрывается в месяц с даты открытия счёта.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 08</span><span class="trap__tag trap__tag--fix">снимается знанием</span></span>
-            <span class="trap__title">Решили, что переезд снимает обязанности</span></dt>
-          <dd><b>Ошибка</b>смешаны валютное и налоговое резидентство — это самая частая путаница
-            темы.</dd>
-          <dd><b>Кончается</b>обязанности остаются. Валютным резидентом гражданин России остаётся
-            независимо от места жительства (подп. «а» п. 6 ч. 1 ст. 1 ФЗ № 173-ФЗ); освобождение
-            даёт только фактическое пребывание за пределами РФ более 183 дней в истекшем календарном
-            году (ч. 8 ст. 12).</dd>
-          <dd><b>Снимается</b>но только знанием, а не действием.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 09</span><span class="trap__tag trap__tag--fix">снимается счётом дней</span></span>
-            <span class="trap__title">Вернулись — и задним числом стали обязаны отчитаться</span></dt>
-          <dd><b>Ошибка</b>год, проведённый преимущественно в России, воспринимается как год
-            без обязанностей.</dd>
-          <dd><b>Кончается</b>по ч. 8 ст. 12 ФЗ № 173-ФЗ тот, кто 183 дня за пределами РФ в истекшем
-            календарном году не набрал, уведомляет о счетах, открытых в период освобождения,
-            до 1 июня следующего календарного года. Обязанность возникает не в момент открытия
-            счёта, а в момент возвращения.
-            <!-- слот 2 сводки публикации: формулировку визирует юрист LTCG перед публикацией -->
-            <span class="src">Формулировку визирует юрист LTCG ·
-            <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>слот открыт</span></span></dd>
-          <dd><b>Снимается</b>если считать дни заранее.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 10</span><span class="trap__tag">зависит от банка</span></span>
-            <span class="trap__title">Ждали, что счёт откроют удалённо «как всем»</span></dt>
-          <dd><b>Ошибка</b>удалённое открытие считают общим правилом рынка.</dd>
-          <dd><b>Кончается</b>маршрут документально подтверждён у одного банка и только при одном
-            из четырёх оснований — недвижимость в РА, вклад, статус ИП в РА, участие в армянском
-            юрлице. То есть удалённый счёт доступен тому, кто <b>уже</b> что-то сделал в Армении.</dd>
-          <dd><b>Отдельно</b>стоимость владения. У Evocabank открытие 50 000 драм, годовое
-            обслуживание 250 000 драм, закрытие 0, безналичное зачисление 0,5 %, клиентские
-            переводы 0,5 %; активация счёта — переводом не менее 50 USD со счёта в другом банке.
-            <!-- слот 5 сводки публикации: банковские тарифы подтверждаются на дату публикации -->
-            <span class="src">Источник: <a href="https://www.evoca.am/" rel="noopener">evoca.am</a> ·
-            проверено 04.09.2026 ·
-            <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>тарифы подтверждаются на дату публикации</span></span></dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 11</span><span class="trap__tag trap__tag--fix">снимается порядком шагов</span></span>
-            <span class="trap__title">План «приеду и разберусь»</span></dt>
-          <dd><b>Ошибка</b>первые шаги считают независимыми.</dd>
-          <dd><b>Кончается</b>часть из них требует адреса и документа, которых ещё нет, цепочка
-            встаёт, а безвизовое пребывание идёт — иностранцы из безвизовых стран находятся в РА
-            не более 180 дней в течение одного года.
-            <!-- слот 8 сводки публикации: положение России в перечне безвизовых стран РА -->
-            <span class="src">Источник: ст. 7 ч. 1 закона «Об иностранцах» ·
-            <a href="https://www.arlis.am/DocumentView.aspx?docid=173412" rel="noopener">arlis.am, DocID=173412</a> ·
-            проверено 04.09.2026 ·
-            <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>подтвердить положение России в перечне безвизовых стран</span></span></dd>
-          <dd><b>Снимается</b>порядком шагов — он разобран на странице
-            <a class="lnk" href="schet-v-banke.html">«Только приехал»</a>.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 12</span><span class="trap__tag">переносится в другую ветку</span></span>
-            <span class="trap__title">Налоговый режим выбран в голове до того, как стало ясно, кто заказчики</span></dt>
-          <dd><b>Ошибка</b>режим выбирают по совету в чате, до переезда и до первого договора.</dd>
-          <dd><b>Кончается</b>обнаруживается через год, и стоит денег, а не отказа.</dd>
-          <dd><b>Снимается</b>эта ошибка не лечится подготовкой к вылету — она лечится тем,
-            что вы не принимаете решение раньше времени. Разбор —
-            <a class="lnk" href="ip-i-nalogi.html">в ветке «Работаю»</a>.</dd>
-        </div>
-      </dl>
-    </details>
+    <div style="margin-top: var(--s-6)" data-reveal>
+      <h3 class="h3" style="margin-bottom: var(--s-4)">Пять шагов подготовки до и после прилёта</h3>
+      <ol class="tl" data-stagger>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 01 · Дома</span>
+          <h4 class="tl__t">Выписка за 1 год и апостиль</h4>
+          <p class="tl__d">Выгружаете выписку за <b>12 месяцев</b>, договоры и подаёте документы ЗАГС на апостиль (<b>2 500 руб.</b>, до <b>5 рабочих дней</b>).</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 02 · Проверка</span>
+          <h4 class="tl__t">Предпроверка KYC и доверенность</h4>
+          <p class="tl__d">Проверяем выписки под комплаенс банка РА и передаём формулировки доверенности (ст. 186 ГК РФ).</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 03 · Переводы</span>
+          <h4 class="tl__t">Переводы на армянский в Ереване</h4>
+          <p class="tl__d">По сканам паспорта готовим нотариальный перевод у армянского нотариуса к прилёту.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 04 · Прилёт в РА</span>
+          <h4 class="tl__t">ПСН, регистрация ИП и заявление в КГД</h4>
+          <p class="tl__d">Оформляем <b>10-значный</b> ПСН (<b>35 000 ֏</b>), регистрируем ИП (<b>45 000 ֏</b>) и подаём заявление на спецрежим за <b>20 дней</b>.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 05 · Банк и ВНЖ</span>
+          <h4 class="tl__t">Счёт в банке РА и календарь ВНЖ</h4>
+          <p class="tl__d">Проходим KYC в отделении (<b>110 000 ֏</b>), контролируем уведомление ФНС за <b>1 месяц</b> и порог <b>1 000 000 ֏</b>.</p>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
-<!-- ═══ 07 · Границы знания ═══════════════════════════════════════════════ -->
-<section class="section" id="granicy" aria-labelledby="gran-t" data-rail-label="Что не знаем">
+<!-- ═══ 05 · Сколько стоит (Калькулятор) ═════════════════════════ -->
+<section class="section section--glow section--thread" id="skolko" data-rail-label="Калькулятор" aria-labelledby="sk-t">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">06</span> Границы</p>
-      <h2 class="h2" id="gran-t">Что эта страница <em>не знает</em></h2>
-      <p class="lead">Две группы, и обе названы, а не спрятаны за «всё индивидуально».
-        Признанная граница — это то, по чему проверяется всё остальное.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">05</span> Калькулятор услуг</p>
+      <h2 class="h2" id="sk-t">Соберите стартовый пакет в Армении <em>до покупки билета</em></h2>
+      <p class="lead">Отметьте нужные модули в драмах РА — проверим выписки и подготовим переводы к вашему рейсу.</p>
     </div>
 
-    <div class="bento">
-      <div class="tile tile--hero" data-span="6">
-        <p class="tile__meta"><b>01</b> Чего эта страница не знает о вас</p>
-        <ol class="next" role="list">
-          <li><span><b>Что именно вы собираетесь поручить представителю</b>От этого зависит
-            формулировка полномочий, и она не пишется по шаблону.</span></li>
-          <li><span><b>Какой орган или банк будет принимать ваши документы</b>Форма легализации
-            и перевода — их решение, а не наше и не ваше.</span></li>
-          <li><span><b>Сколько дней в этом календарном году вы фактически провели за пределами
-            России</b>От этого числа зависит, есть ли у вас освобождение по ч. 8 ст. 12,
-            и его считают по календарю, а не по ощущению.</span></li>
-        </ol>
+    <script type="application/json" id="prices">
+    {
+      "publish": true,
+      "currency": "֏",
+      "currencyConfirmed": true,
+      "asOf": "2026-10-18",
+      "modules": {
+        "ip":         { "name": "Регистрация ИП",       "per": "once",  "amount": 45000  },
+        "account":    { "name": "Открытие счёта",       "per": "once",  "amount": 110000 },
+        "social":     { "name": "Соцкарта",             "per": "once",  "amount": 35000  },
+        "address":    { "name": "Адрес",                "per": "year",  "amount": 430000 },
+        "accounting": { "name": "Бухгалтерия",          "per": "month", "amount": 36000, "from": true }
+      }
+    }
+    </script>
+
+    <div class="calc" data-calc data-reveal>
+      <div class="calc__mods">
+        <label class="tile mod" for="m-ip">
+          <input type="checkbox" id="m-ip" name="mod" value="ip" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно · пошлина отдельно</div></div>
+            <div class="mod__price" data-price="ip">45 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul><li>Подбор кодов до приезда, регистрация ИП и заявление на спецрежим за 20 дней</li></ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-account">
+          <input type="checkbox" id="m-account" name="mod" value="account" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Открытие счёта</div><div class="mod__unit">единовременно · тариф банка отдельно</div></div>
+            <div class="mod__price" data-price="account">110 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul><li>Предпроверка выписок за 1 год и договоров, подбор банка и сопровождение</li></ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-social">
+          <input type="checkbox" id="m-social" name="mod" value="social" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Номер общественных услуг (ПСН)</div><div class="mod__unit">единовременно</div></div>
+            <div class="mod__price" data-price="social">35 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul><li>Нотариальный перевод паспорта к прилёту и сопровождение получения ПСН</li></ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-address">
+          <input type="checkbox" id="m-address" name="mod" value="address">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Адрес и корреспонденция</div><div class="mod__unit">в год · опционально</div></div>
+            <div class="mod__price" data-price="address">430 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul><li>Адрес для регистрации и корреспонденции (для ИП юрадрес по закону не обязателен)</li></ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-accounting">
+          <input type="checkbox" id="m-accounting" name="mod" value="accounting">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц · под ваш режим</div></div>
+            <div class="mod__price" data-price="accounting">от 36 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul><li>Ежемесячный налоговый учёт в КГД и контроль правила 180 дней для ВНЖ</li></ul>
+          </details>
+        </label>
       </div>
 
-      <div class="tile tile--quiet" data-span="6">
-        <p class="tile__meta"><b>02</b> Чего мы не знаем сами</p>
-        <p class="small">Это не оговорка вежливости, а список открытых мест, которые мы вели
-          отдельно.</p>
-        <dl class="traps">
-          <div class="trap">
-            <dt><span class="trap__title">Порог «более 6 месяцев» в обязанности сообщить в военкомат о выезде</span></dt>
-            <dd>Подпункт «г» п. 50 Положения о воинском учёте (утв. постановлением Правительства РФ
-              от 27.11.2006 № 719) на всех проверенных адресах обрывается на середине фразы; порог
-              не читается ни в одном источнике, срок подачи сообщения не установлен, ответственность
-              мы не проверяли. Подтверждено твёрдо только одно: не подлежат воинскому учёту граждане,
-              <b>постоянно проживающие за пределами РФ</b> (п. 15 подп. «д» того же Положения),
-              а «постоянно проживающие» — это юридическая квалификация, а не факт покупки билета.</dd>
-          </div>
-          <div class="trap">
-            <dt><span class="trap__title">Требование к переводчикам в Армении</span></dt>
-            <dd>Утверждение, что перевод должен быть выполнен переводчиком, зарегистрированным
-              при Министерстве юстиции РА, встречается в публикации армянской юридической фирмы.
-              Официального подтверждения мы не нашли. Поэтому мы не утверждаем ни что российский
-              нотариальный перевод примут, ни что не примут, — мы говорим: спросите заранее
-              у принимающей стороны, потому что цена ошибки здесь — выброшенный перевод.</dd>
-          </div>
-          <div class="trap">
-            <dt><span class="trap__title">Действующая редакция тарифа консульских сборов России</span></dt>
-            <dd>Найденная нами страница помечена как утративший силу документ, при этом цифры с неё
-              расходятся по сети как актуальные. Ни одной суммы российских консульских сборов
-              на этой странице нет и не будет, пока не найдётся действующий тариф.</dd>
-          </div>
-          <div class="trap">
-            <dt><span class="trap__title">Идентификация иностранца на портале регистрации бизнеса</span></dt>
-            <dd>Портал <a class="lnk" href="https://e-register.moj.am/" rel="noopener">e-register.moj.am</a>
-              (Агентство государственного регистра при Минюсте РА) позволяет регистрировать ИП
-              и юридические лица онлайн, вход — через платформу идентификации. Какие способы
-              идентификации доступны иностранцу без армянского ID и можно ли подать
-              через представителя по доверенности — на стартовой странице не сказано,
-              и мы это не подтвердили.</dd>
-          </div>
+      <aside class="tile tile--hero total" aria-labelledby="total" data-total>
+        <p class="total__title" id="total">Ваш расчёт</p>
+        <ul class="total__list chips" role="list" data-total-list>
+          <li class="chip">Регистрация ИП</li><li class="chip">Открытие счёта</li><li class="chip">Соцкарта</li>
+        </ul>
+        <dl class="total__rows" data-total-rows>
+          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">190 000 ֏</dd></div>
+          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
+          <div class="total__row"><dt>Ежемесячно</dt><dd data-sum="month">—</dd></div>
         </dl>
-      </div>
+        <div class="total__meta">
+          <p><b>Не входит:</b> госпошлины (<b>1 000 ֏</b> за адрес на <code>migration.e-gov.am</code>), тарифы банков и переводы. <b>ВНЖ оформляем в комплексе</b>.</p>
+        </div>
+        <div class="total__cta">
+          <a class="btn btn--primary" href="#contact">Согласовать план до приезда <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ═══ 08 · Сколько стоит ════════════════════════════════════════════════ -->
-<section class="section" id="skolko" aria-labelledby="skolko-t" data-rail-label="Сколько стоит">
+<!-- ═══ 06 · Вопросы (FAQ, синхронно с JSON-LD) ══════════════════ -->
+<section class="section section--deep section--thread section--light" id="voprosy" data-rail-label="Частые вопросы" aria-labelledby="faq-t">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">07</span> Деньги</p>
-      <h2 class="h2" id="skolko-t">Сколько это стоит <em>до вылета</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">06</span> Частые вопросы</p>
+      <h2 class="h2" id="faq-t">Шесть вопросов о подготовке <em>до переезда в Армению</em></h2>
     </div>
 
-    <p class="note measure">На этой ветке нет калькулятора, и это не недоделка. Модулей, которые
-      он считает, — ИП, счёт, соцкарта, адрес — до переезда просто не бывает: все четыре начинаются
-      после приезда. Считать здесь нечего, и подставлять сумму ради суммы мы не будем.</p>
-
-    <h3 class="h3">Что вы платите сами, до отъезда</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Три позиции, и по двум из трёх суммы мы не публикуем — с объяснением почему.</caption>
-        <thead>
-          <tr><th scope="col">Позиция</th><th scope="col">Сумма</th><th scope="col">Источник и дата</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Апостиль в России</th>
-            <td data-l="Сумма" class="us"><b>2 500 руб.</b> за документ</td>
-            <!-- слот 4 сводки публикации: актуальность редакции нормы на 2026 -->
-            <td data-l="Источник">пп. 48 п. 1 ст. 333.33 НК РФ · проверено 04.09.2026 ·
-              <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>актуальность редакции на 2026</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Доверенность</th>
-            <td data-l="Сумма"><span class="part">по тарифу нотариуса</span></td>
-            <td data-l="Источник">Нотариальная доверенность у российского нотариуса.
-              Не публикуем: единого тарифа нет</td>
-          </tr>
-          <tr>
-            <th scope="row">Консульские сборы</th>
-            <td data-l="Сумма"><span class="part">—</span></td>
-            <td data-l="Источник">Консульские сборы России. Не публикуем: действующая редакция
-              тарифа не найдена</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="h3">Что вы платите, если оформляете через Посольство Армении в России</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <!-- слот 6 сводки публикации: 14 сумм на одной странице, подтверждаются на дату публикации -->
-        <caption>По странице сборов посольства (<a href="https://russia.mfa.am/ru/fees" rel="noopener">russia.mfa.am/ru/fees</a>) · проверено 04.09.2026 ·
-          суммы подтверждаются на дату публикации.</caption>
-        <thead>
-          <tr><th scope="col">Действие</th><th scope="col">Сбор</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Доверенность на недвижимость</th><td data-l="Сбор" class="us">30 000 драм</td></tr>
-          <tr><th scope="row">Прочие доверенности</th><td data-l="Сбор" class="us">15 000 драм</td></tr>
-          <tr><th scope="row">Легализация: физлица</th><td data-l="Сбор">5 000 драм</td></tr>
-          <tr><th scope="row">Легализация: юрлица</th><td data-l="Сбор">15 000 драм</td></tr>
-          <tr><th scope="row">Копия документа</th><td data-l="Сбор">10 000 драм за страницу</td></tr>
-          <tr><th scope="row">Справки</th><td data-l="Сбор">25 000 драм — о судимости, семейном положении и гражданстве</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="measure">Бесплатно то же посольство делает: постановку на консульский учёт и снятие
-      с него, удостоверение доверенностей для пенсионеров и получателей пособий, информационные
-      справки.
-      <span class="src">Источник: <a href="https://russia.mfa.am/ru/free-consular" rel="noopener">russia.mfa.am/ru/free-consular</a> · проверено 04.09.2026.</span></p>
-
-    <h3 class="h3">Что вы заплатите в Армении за перевод</h3>
-    <div class="diy-wrap">
-      <table class="diy">
-        <!-- слот 7 сводки публикации: тарифы нотариального перевода меняются -->
-        <caption>Государственный портал административных процедур РА <a href="https://armenia.eregulations.org/" rel="noopener">armenia.eregulations.org</a> ·
-          проверено 04.09.2026 · тарифы меняются.</caption>
-        <thead>
-          <tr><th scope="col">Действие</th><th scope="col">Тариф</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Пошлина за перевод</th><td data-l="Тариф">500 драм — государственная пошлина за удостоверение перевода</td></tr>
-          <tr><th scope="row">Нотариус: перевод</th><td data-l="Тариф" class="us">2 000 – 8 000 драм за документ</td></tr>
-          <tr><th scope="row">Нотариус: подписи</th><td data-l="Тариф">500 – 1 000 драм за удостоверение подписей</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="h3">Что стоит первая неделя после приезда</h3>
-    <p class="measure">Это уже не эта ветка, но спрашивают здесь, поэтому отвечаем здесь.</p>
-    <div class="diy-wrap">
-      <table class="diy">
-        <!-- Цены названы Геворгом 31.08.2026. Валюта явно не названа — поставлена как драмы,
-             слот 9 сводки публикации: валюту подтверждает клиент. -->
-        <caption>Наши услуги. Цены названы компанией 31.08.2026; валюта на подтверждении.
-          Государственные пошлины и банковские комиссии в эти суммы не входят.</caption>
-        <thead>
-          <tr><th scope="col">Услуга</th><th scope="col">Цена</th><th scope="col">Единица</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Регистрация ИП</th><td data-l="Цена" class="us">45 000 ֏</td><td data-l="Единица">единовременно</td></tr>
-          <tr><th scope="row">Открытие счёта</th><td data-l="Цена" class="us">110 000 ֏</td><td data-l="Единица">единовременно</td></tr>
-          <tr><th scope="row">Номер общественных услуг</th><td data-l="Цена">35 000 ֏</td><td data-l="Единица">единовременно</td></tr>
-          <tr><th scope="row">Юридический адрес</th><td data-l="Цена">430 000 ֏</td><td data-l="Единица">в год</td></tr>
-          <tr><th scope="row">Бухгалтерия</th><td data-l="Цена">36 000 ֏</td><td data-l="Единица">в месяц</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="measure">Полный расчёт с выбором модулей — на
-      <a class="lnk" href="schet-v-banke.html">странице «Только приехал»</a>.</p>
-
-    <h3 class="h3">Сколько стоит сопровождение до переезда</h3>
-    <!-- Голос компании. Сюда пишет клиент: слоты 10 и 11 сводки публикации.
-         Ничего про состав работ, схему оплаты и цену мы не придумываем. -->
-    <div class="tile tile--quiet measure">
-      <p><span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>цена консультации и сопровождения до переезда</span> —
-        консульское и нотариальное направление. Состав и сумму называет компания.</p>
-      <p><span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>берём ли мы клиента, который ещё не приехал</span> —
-        что можем начать без него и по какой схеме оплаты.</p>
-    </div>
-
-    <p class="measure"><b>И почему здесь нет итоговой строки.</b> Потому что сумма до разговора
-      всегда неверная. В разговоре она меняется в обе стороны: что-то из списка вам не нужно
-      и уходит, что-то, наоборот, обнаруживается. Правильный следующий шаг — не «оплатить»,
-      а показать нам свой список.</p>
-  </div>
-</section>
-
-<!-- ═══ 09 · Вопросы ══════════════════════════════════════════════════════ -->
-<section class="section" id="faq" aria-labelledby="faq-t" data-rail-label="Вопросы">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">08</span> Вопросы</p>
-      <h2 class="h2" id="faq-t">Вопросы, которые задают <em>до вылета</em></h2>
-    </div>
-
-    <div class="faq">
+    <div class="faq" data-stagger>
       <details>
-        <summary>Можно ли открыть ИП в Армении, не приезжая?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Сколько дней можно находиться в Армении без визы и ВНЖ?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Портал <a class="lnk" href="https://e-register.moj.am/" rel="noopener">e-register.moj.am</a>
-            позволяет регистрировать ИП и юридические лица онлайн — это официальная функция
-            Агентства государственного регистра при Министерстве юстиции РА. Вход идёт через
-            платформу идентификации, и вот здесь начинается неизвестность: какие способы
-            идентификации доступны иностранцу, у которого ещё нет армянского ID, на стартовой
-            странице портала не сказано, и подтвердить это мы не смогли. О подаче представителем
-            по доверенности там тоже ничего нет.</p>
-          <p>Поэтому честный ответ такой: техническая возможность онлайн-регистрации существует,
-            а доступна ли она лично вам до приезда — вопрос, на который нельзя ответить,
-            не посмотрев на ваши документы. Проверено 04.09.2026.</p>
+          <p>При безвизовом въезде можно находиться в РА максимум <b>180 дней</b> в течение <b>1 года</b>. Для проживания свыше <b>180 дней</b> оформляется ВНЖ или ПМЖ; с 01.11.2026 подача идёт через электронную платформу со сроком рассмотрения <b>30 дней</b>. <span class="src">ст. 7 ч. 1 ՀՕ-47-Ն · ст. 17 ч. 1 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Я ещё не уехал, а счёт в армянском банке уже открыл. Уведомлять налоговую сейчас или после переезда?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Сколько стоит и сколько занимает проставление апостиля в РФ до отъезда?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Сейчас. Срок — не позднее одного месяца со дня открытия счёта (ч. 2 ст. 12 ФЗ
-            от 10.12.2003 № 173-ФЗ), и он не связан ни с переездом, ни с получением статуса,
-            ни с тем, пользуетесь ли вы счётом. Валютное резидентство у гражданина России
-            не зависит от места жительства (подп. «а» п. 6 ч. 1 ст. 1 того же закона). Штраф
-            за непредставление уведомления для граждан — 4 000 – 5 000 рублей
-            (ч. 2.1 ст. 15.25 КоАП РФ).</p>
-          <p class="small"><a class="lnk" href="#ustroystvo">Валютные обязанности целиком</a><a class="lnk" href="#lomaetsya">Ловушка 07</a></p>
+          <p>Госпошлина за апостиль в РФ — <b>2 500 руб.</b> за документ. Базовый срок — до <b>5 рабочих дней</b>, при запросе образца подписи — до <b>30 рабочих дней</b>, по документам об образовании — до <b>45 рабочих дней</b>. <span class="src">пп. 48 п. 1 ст. 333.33 НК РФ · ст. 6 ФЗ-330</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Я уезжаю — надо ли что-то делать с воинским учётом?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Какие банковские документы нужно выгрузить до вылета в Ереван?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Здесь мы не дадим вам точного ответа, и это честнее, чем дать неточный. Подтверждено:
-            не подлежат воинскому учёту граждане, постоянно проживающие за пределами Российской
-            Федерации (п. 15 подп. «д» Положения о воинском учёте, утв. постановлением Правительства
-            РФ от 27.11.2006 № 719).</p>
-          <p>Не подтверждено: порог «более шести месяцев» в обязанности сообщить о выезде.
-            Подпункт «г» п. 50 того же Положения на всех проверенных нами адресах обрывается
-            на середине фразы — мы проверили пять источников, порог не читается ни в одном.
-            Пока текст нормы не прочитан целиком, ни срока, ни ответственности мы называть
-            не будем.</p>
+          <p>Для KYC в банках РА нужно выгрузить банковскую выписку минимум за <b>1 год</b>, а также подготовить действующие трудовые или сервисные договоры и справки о доходах. <span class="src">п. 8 перечня документов Ameriabank, ред. 12</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Какие документы апостилировать до отъезда?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Что важно проверить в нотариальной доверенности перед отъездом?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Ответа «вот список» не существует, и любой сайт, который его даёт, отвечает не на ваш
-            вопрос. Форму легализации определяет тот, кто будет документ принимать.</p>
-          <p>Что мы можем сказать твёрдо: апостиль в России проставляется за 5 рабочих дней,
-            до 30 при необходимости запроса и <b>до 45 рабочих дней для документов
-            об образовании</b> (ст. 6 ФЗ от 28.11.2015 № 330-ФЗ), пошлина — 2 500 рублей
-            за документ. Поэтому практическое правило звучит не «апостилируйте всё»,
-            а «выясните форму заранее и заложите срок по самому долгому документу».</p>
-          <p class="small"><a class="lnk" href="#ustroystvo">Сроки и пошлина таблицей</a></p>
+          <p>Доверенность без даты совершения ничтожна; без указания срока действия она действует только <b>1 год</b> со дня совершения. Право передоверия должно быть прямо прописано в тексте. <span class="src">п. 1 ст. 186, ст. 187 ГК РФ</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Можно ли оформить одну доверенность на всё и больше не возвращаться?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>В какой срок нужно уведомить ФНС РФ об открытии счёта в банке Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Нет — и не из-за качества доверенности, а из-за трёх норм, которые её обходят.
-            Договор об отчуждении недвижимости, находящейся в России, не удостоверит консул
-            (п. 1 ст. 38 Основ законодательства о нотариате) — представитель по вашей доверенности
-            подпишет его у российского нотариуса, но это уже другой сценарий. Завещание совершается
-            только лично (п. 3 ст. 1118 ГК РФ). Расторжение брака по п. 2 ст. 160 СК РФ работает
-            лишь тогда, когда за пределами России находится <b>и</b> ваш супруг.</p>
-          <p>Всё остальное доверенностью закрывается — если полномочия написаны под конкретный
-            список действий и вопрос передоверия решён заранее (ст. 187 ГК РФ).</p>
+          <p>При пребывании вне РФ менее <b>183 дней</b> в календарном году нужно уведомить ФНС об открытии счёта не позднее <b>1 месяца</b>. Штраф за просрочку — <b>1 000–1 500 руб.</b>, за неуведомление — <b>4 000–5 000 руб.</b> <span class="src">ч. 2, ч. 8 ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Стоит ли открывать счёт в Армении удалённо, пока я ещё здесь?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Какие шаги в Армении можно подготовить дистанционно с LTCG до прилёта?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Удалённое открытие счёта нерезиденту-физлицу документально подтверждено у Evocabank,
-            и только при одном из четырёх оснований: вы собственник недвижимости в РА, готовы
-            разместить вклад, уже имеете статус ИП в РА или участвуете в зарегистрированном в РА
-            юридическом лице (evoca.am · проверено 04.09.2026). Обратите внимание на устройство
-            этого списка: каждое основание означает, что вы уже что-то в Армении сделали.</p>
-          <p>Процедура — документы на электронный адрес банка, удалённая видеоидентификация,
-            активация переводом не менее 50 USD со счёта в другом банке. Стоимость владения:
-            50 000 драм открытие, 250 000 драм в год обслуживание, по 0,5 % на зачисления
-            и переводы.</p>
-          <p>Отдельно: в описании условия про вклад банк пишет «на срок <b>до</b> 6 месяцев
-            и в размере <b>до</b> 20 000 USD, 20 000 EUR, 1 500 000 RUB <b>и</b> 10 000 000 AMD».
-            Мы читаем эту формулировку как неоднозначную и не превращаем её в «нужно положить
-            20 000 долларов» — так пишут, но в источнике этого нет. Что банк имеет в виду,
-            стоит спросить у банка.
-            <!-- слот 5 сводки публикации -->
-            <span class="src">Тарифы и формулировка подтверждаются на дату публикации ·
-            <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>слот открыт</span></span></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Я приеду в ноябре или позже. Что для меня изменится?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Три вещи, каждая из текста закона ՀՕ-11-Ն от 20.01.2026
-            (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>,
-            проверено 04.09.2026). Первая: с 01.11.2026 производство по временному и постоянному
-            статусу пребывания идёт <b>только</b> через единую электронную платформу
-            (новая ч. 3 ст. 14), и сама платформа вводится в действие с этой даты (ст. 30 ч. 3).</p>
-          <p>Вторая: заявления, поданные <b>до</b> вступления закона в силу, рассматриваются
-            по прежним нормам (ст. 30 ч. 4) — то есть дата подачи определяет правила. Третья:
-            специальный статус отменён (ст. 11 закона признаёт ст. 18 утратившей силу), а это было
-            единственное основание, ходатайство по которому подавалось через дипломатическое
-            или консульское учреждение Армении за границей.</p>
-          <p>Чего мы не утверждаем: что после 1 ноября подать можно будет из-за границы. Перечень
-            документов и порядок регистрации на платформе устанавливает Правительство,
-            и на 04.09.2026 такого акта не опубликовано.</p>
-          <p class="small"><a class="lnk" href="#noyabr">Что меняется 1 ноября — таблицей</a></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Отличается ли эта страница от вашей страницы про отъезд из Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Да, и предметом. Здесь речь о стране, из которой вы уезжаете: доверенности, документы,
-            которые выдают только по месту, и обязанности, которые остаются за вами после переезда.
-            Там — <a class="lnk" href="spravki-i-zakrytie.html">«Двигаюсь дальше»</a> — речь
-            об Армении и о том, что после отъезда отсюда становится дольше и дороже: справки,
-            апостиль, закрытие ИП, выписки по счетам.</p>
-          <p>Общее у страниц одно: и там, и здесь окно закрывается вместе с вылетом, только вылеты
-            разные.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Вы работаете с теми, кто ещё не приехал?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <!-- Голос компании: сюда пишет клиент — состав работ до переезда, схема оплаты,
-               и консультируем ли мы по российским налоговым обязанностям или только
-               предупреждаем о том, что они существуют. Слоты 10 и 11 сводки публикации.
-               Вопрос намеренно НЕ включён в разметку FAQPage: ответа пока нет. -->
-          <p><span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>ответ пишет компания</span> —
-            состав работ до переезда, схема оплаты, и консультируем ли мы по российским налоговым
-            обязанностям или только предупреждаем о том, что они существуют.</p>
+          <p>До вылета проверяем выписки и договоры для банка (сопровождение — <b>110 000 ֏</b>), готовим пакет для ИП (<b>45 000 ֏</b>, пошлина отдельно), сверяем спецрежим с окном <b>20 дней</b> и готовим переводы для <b>10-значного</b> ПСН (пошлина <b>0 ֏</b>). <span class="src">migration.e-gov.am · Прайс LTCG</span></p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ 10 · Выход ════════════════════════════════════════════════════════ -->
-<section class="section section--art section--contact" id="contact" aria-labelledby="contact-t" data-rail-label="Написать">
+<!-- ═══ 07 · Контакты и лид-форма ════════════════════════════════ -->
+<section class="section section--art section--contact" id="contact" data-rail-label="Контакт" aria-labelledby="cnt-t">
   <div class="art art--center" aria-hidden="true">
     <picture>
-      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh.webp">
+      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
+      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
       <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">09</span> Выход</p>
-      <h2 class="h2" id="contact-t">Повод для разговора здесь — <em>ваш календарь, а не наш</em></h2>
-      <p class="lead">Часть дел из корзины A закрывается только до вылета, и после посадки
-        в самолёт список не переписывается. Мы ничего не ускоряем и никуда не торопим:
-        дата уже назначена, и назначили её не мы.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">07</span> План до вылета</p>
+      <h2 class="h2" id="cnt-t">Проверим ваши документы <em>пока вы ещё дома</em></h2>
+      <p class="lead">Напишите предполагаемую дату прилёта и цель (счёт, ИП/ООО, ВНЖ) — скажем, какие справки и выписки взять с собой и что подготовим к вашему приезду.</p>
     </div>
 
-    <div class="contact">
+    <div class="contact" data-reveal>
       <div class="tile">
-        <!-- Эта ветка — единственная, где звонок не предлагается первым: человек в другом
-             часовом поясе. Порядок способов связи отражает это решение. -->
         <div class="ways">
           <a class="way" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram<small>@LTCG_Armenia</small></a>
-          <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН: номер тот же, но наличие WhatsApp на нём
-               никто не проверял. Если не подтвердится — снять эту ссылку и все остальные
-               с data-wa на странице. -->
           <a class="way" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<small>+374 94 184 014</small></a>
           <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
         </div>
-        <p class="small measure"><b>Как удобнее связаться.</b> Эта ветка — единственная, где мы
-          не предлагаем звонок первым: вы в другом часовом поясе, и звонить за границу ради первого
-          вопроса никто не станет. Пишите в Telegram или WhatsApp: <b>+374 94 184 014</b>,
-          <b>@LTCG_Armenia</b>. Списком, как есть. Звонок — если захотите, вторым шагом.</p>
-
         <hr class="rule">
 
-        <!-- method="dialog" вне <dialog> — это НЕ отправка: браузер прерывает submit.
-             Так без JavaScript нажатие Enter в поле не бросает POST в никуда (бэкенда нет)
-             и не уносит имя и контакт в строку адреса. С JavaScript отправку перехватывает
-             js/site.js и собирает готовый текст сообщения. -->
+        <span class="state sr-only" data-state="pre-move" data-name="Ещё не переехал" aria-hidden="true"></span>
+
         <form class="form" id="lead" method="dialog" data-lead novalidate>
-          <p class="tile__meta"><b>Вы выбрали</b> Ещё не переехал → до переезда</p>
+          <p class="tile__meta"><b>Вы выбрали</b> Ещё не переехал → Подготовка документов и дистанционный старт</p>
 
           <div class="form__row">
             <div class="field">
@@ -1486,55 +715,39 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
             </div>
             <div class="field">
               <label class="field__label" for="f-contact">Телефон или Telegram</label>
-              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" spellcheck="false" required placeholder="+7… или @ник">
+              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник">
             </div>
           </div>
 
           <div class="field">
-            <label class="field__label" for="f-state">Где вы сейчас?</label>
-            <select id="f-state" name="state" required>
-              <option value="Ещё не переехал — до переезда" selected>Ещё не переехал — до переезда</option>
-              <option value="Только приехал">Только приехал</option>
-              <option value="Легализуюсь">Легализуюсь</option>
-              <option value="Работаю">Работаю</option>
-              <option value="Живу и планирую">Живу и планирую</option>
-              <option value="Двигаюсь дальше">Двигаюсь дальше</option>
-            </select>
+            <label class="field__label" for="f-msg">Когда планируете приезд и какая задача <small>— необязательно</small></label>
+            <textarea id="f-msg" name="message" placeholder="Одной фразой: открыть счёт, зарегистрировать ИП/ООО, подать на ВНЖ по бизнесу или семье"></textarea>
           </div>
 
-          <div class="field">
-            <label class="field__label" for="f-msg">Что не сделано <small>— своими словами, без формулировок</small></label>
-            <textarea id="f-msg" name="message" placeholder="Дата вылета, есть ли возможность вернуться, что осталось…"></textarea>
-          </div>
-
-          <!-- след выбора: ветка и ответ развилки уезжают вместе с заявкой -->
+          <input type="hidden" id="f-state" name="state" value="pre-move">
           <input type="hidden" name="branch" value="pered-pereezdom">
-          <input type="hidden" name="page" value="pered-pereezdom">
+          <input type="hidden" name="fork" value="" data-f-fork>
+          <input type="hidden" name="modules" data-f-modules value="ip,account,social">
 
-          <!-- honeypot: отсекает только заполненное поле; отсечки по времени нет намеренно -->
           <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
           <label class="check"><input type="checkbox" name="consent" required>
             <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <span>Согласен на обработку персональных данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст согласия от клиента</span></span></label>
+            <span>Согласен на обработку персональных данных для ответа по моему запросу</span></label>
 
           <div class="form__foot">
-            <button class="btn btn--primary js-only" type="submit">Составить план до отъезда <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
             <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
             <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт выключен — напишите напрямую:
               <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> ·
-              <a class="lnk" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> ·
               <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
             <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
           </div>
         </form>
 
-        <!-- Приёмник заявки. Telegram не подставляет текст в чат обычного аккаунта
-             (?text= работает только у ботов и у WhatsApp), поэтому текст показан здесь
-             целиком, с кнопкой «скопировать». Никакие данные никуда не уходят до нажатия. -->
         <div class="form__done" data-form-done hidden tabindex="-1">
           <p class="h4">Заявка собрана — осталось отправить</p>
-          <p class="measure small">Сайт статический, отправлять некому: заявка уходит вашим сообщением в мессенджер. Текст уже готов.</p>
+          <p class="measure small">Сайт статический, заявка уходит вашим сообщением в выбранный мессенджер. Текст уже подготовлен.</p>
           <label class="sr-only" for="f-out">Текст заявки</label>
           <textarea class="field__input form__out" id="f-out" data-form-out readonly rows="5"></textarea>
           <div class="btn-row">
@@ -1547,144 +760,166 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       </div>
 
       <aside class="tile tile--hero">
-        <p class="tile__meta"><b>09</b> Что имеет смысл принести</p>
-        <p>Четыре вещи, и все они у вас уже есть.</p>
-        <ol class="next" role="list">
-          <li><span><b>Дату вылета</b>и то, есть ли у вас возможность вернуться.</span></li>
-          <li><span><b>Гражданство и календарь</b>сколько дней в этом календарном году вы фактически провели за пределами России.</span></li>
-          <li><span><b>Представителя</b>есть ли дома человек, которому можно оформить доверенность, и что именно вы готовы ему поручить.</span></li>
-          <li><span><b>Список того, что не сделано</b>своими словами, без формулировок.</span></li>
-        </ol>
+        <div class="tile__art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+          </picture>
+        </div>
+        <p class="tile__meta"><b>До покупки билета</b> Три шага с юристом LTCG</p>
+        <p class="state__recog"><b>Один день проверки документов дома экономит две недели в Ереване:</b> <em>мы заранее сверяем выписки и договоры по требованиям конкретного банка и госоргана.</em></p>
         <hr class="rule">
-        <p class="small"><b>Первый вопрос, который вам зададут,</b> напечатан здесь заранее,
-          чтобы разговор не начинался с неизвестности:</p>
-        <p class="h4">«Когда вылет и есть ли у вас возможность вернуться?»</p>
-        <p class="small">От ответа зависит, в какую корзину попадает половина вашего списка.</p>
+        <ol class="next" role="list">
+          <li><span><b>Аудит сканов и выписок</b>Проверяем выписку за <b>1 год</b>, договоры и свидетельства ЗАГС до вашего вылета.</span></li>
+          <li><span><b>Нотариальные переводы к прилёту</b>Готовим переводы на армянский язык в Ереване, чтобы в первый день подать на ПСН и ИП.</span></li>
+          <li><span><b>Запись и сопровождение</b>Встречаем в Ереване и проходим банк, госрегистр и подачу по чёткому графику.</span></li>
+        </ol>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- ═══ 11 · Соседние ветки и подпись ═════════════════════════════════════ -->
-<section class="section" id="dalshe" aria-labelledby="next-t" data-rail-label="Дальше">
+<!-- ═══ 08 · Соседние ветки и подпись ════════════════════════════ -->
+<section class="section section--deep section--thread" id="dalee" data-rail-label="Что дальше" aria-labelledby="neigh-t">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">10</span> Дальше</p>
-      <h2 class="h2" id="next-t">Ничего не нужно прямо сейчас — <em>вот что почитать дальше</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">08</span> Следующие шаги по приезде</p>
+      <h2 class="h2" id="neigh-t">Что вы делаете сразу после прилёта <em>в Ереван</em></h2>
     </div>
 
-    <nav class="bento" aria-label="Соседние ветки">
+    <nav class="bento" data-stagger aria-label="Соседние ветки">
       <a class="tile neigh" href="schet-v-banke.html" data-span="4">
-        <p class="neigh__when">После этого</p>
-        <h3 class="neigh__t">Только приехал: порядок первых шагов</h3>
-        <p class="neigh__d">Счёт, номер общественных услуг, адрес и почему очерёдность стоит
-          недель. Это то, что начнётся на следующий день после прилёта.</p>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+            <img src="assets/img/nov-shot-1100.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 02 · Банки и KYC</span>
+        </div>
+        <p class="neigh__when">Первая неделя</p>
+        <h3 class="neigh__t">Счёт в банке РА, ПСН и комплаенс</h3>
+        <p class="neigh__d">Официальные тарифы Ameriabank, Converse Bank и Evocabank и очное сопровождение KYC (110 000 ֏).</p>
         <span class="neigh__go">Только приехал <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
       <a class="tile neigh" href="ip-i-nalogi.html" data-span="4">
-        <p class="neigh__when">Параллельно</p>
-        <h3 class="neigh__t">Работаю: ИП, режим и заказчики</h3>
-        <p class="neigh__d">Если налоговый режим вы уже выбрали в голове, здесь стоит проверить,
-          под чей профиль дохода он выбран.</p>
-        <span class="neigh__go">Работаю <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 04 · ИП и налоги</span>
+        </div>
+        <p class="neigh__when">Запуск работы</p>
+        <h3 class="neigh__t">Регистрация ИП, ООО и налог с оборота</h3>
+        <p class="neigh__d">20 дней на выбор спецрежима до 115 млн ֏ и связка налоговых начислений с сохранением ВНЖ.</p>
+        <span class="neigh__go">Работаю: ИП и налоги <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
-      <a class="tile neigh" href="spravki-i-zakrytie.html" data-span="4">
-        <p class="neigh__when">Зеркально</p>
-        <h3 class="neigh__t">Двигаюсь дальше: справки и закрытие дел</h3>
-        <p class="neigh__d">Та же логика «пока вы ещё здесь», но про Армению и на выходе,
-          а не на входе.</p>
-        <span class="neigh__go">Двигаюсь дальше <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      <a class="tile neigh" href="vnzh.html" data-span="4">
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/ltcg-branch-november-1280.webp">
+            <img src="assets/img/ltcg-branch-november-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 03 · ВНЖ и ПМЖ</span>
+        </div>
+        <p class="neigh__when">Легализация</p>
+        <h3 class="neigh__t">ВНЖ и ПМЖ в Армении с 01.11.2026</h3>
+        <p class="neigh__d">Единая электронная платформа, пошлины 150 000 ֏ и 250 000 ֏ и оформление статуса в комплексе.</p>
+        <span class="neigh__go">Легализуюсь: ВНЖ <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
     </nav>
 
     <footer class="section__foot">
       <p class="sign">
-        <span>Проверил: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>имя юриста LTCG</span></span>
-        <span>Обновлено 04.09.2026</span>
+        <span>Проверили: Юристы LTCG</span>
+        <span>Обновлено 18.10.2026</span>
+        <span>Первоисточники: arlis.am, migration.e-gov.am, hartak.am, consultant.ru · 18.10.2026</span>
       </p>
-      <p class="small measure"><b>Проверено по первоисточникам:</b> Федеральный закон
-        от 10.12.2003 № 173-ФЗ (ст. 1, 12) · КоАП РФ, ст. 15.25 · ГК РФ, ст. 185.1, 186, 187, 1118 ·
-        Основы законодательства РФ о нотариате, ст. 38 · Семейный кодекс РФ, ст. 160 · Федеральный
-        закон от 28.11.2015 № 330-ФЗ, ст. 4, 6 · Налоговый кодекс РФ, пп. 48 п. 1 ст. 333.33 ·
-        Положение о воинском учёте (постановление Правительства РФ от 27.11.2006 № 719) · закон РА
-        «Об иностранцах» и закон РА ՀՕ-11-Ն от 20.01.2026
-        (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>) ·
-        kdmid.ru · russia.mfa.am · armenia.eregulations.org · e-register.moj.am · evoca.am.</p>
-      <p class="small measure"><b>Что изменилось в этой редакции:</b> первая публикация страницы.</p>
-      <p class="small measure"><b>Политика цифр.</b> Цифры на этом сайте появляются только
-        с источником и датой. Пустые места и пометки «уточняем» — не недоделка, а правило: там,
-        где источник не прочитан целиком или нормы разошлись, мы показываем это, а не сглаживаем.
-        Решение по вашим документам принимают банк, нотариус, консульство и государственные
-        органы — мы готовим пакет и не обещаем чужого решения.</p>
+      <p class="small measure"><b>Правовая база:</b> Закон РА «Об иностранцах» ՀՕ-47-Ն и ред. ՀՕ-11-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a>), порталы государственных услуг РА (<a class="lnk" href="https://migration.e-gov.am/ru/service/registration/info" target="_blank" rel="noopener noreferrer">migration.e-gov.am/ru/service/registration/info</a>, <a class="lnk" href="https://migration.e-gov.am/hy/service/provision_of_ssn/info" target="_blank" rel="noopener noreferrer">migration.e-gov.am/hy/service/provision_of_ssn/info</a>), ФЗ от 10.12.2003 № 173-ФЗ и ст. 15.25 КоАП РФ (<a class="lnk" href="https://www.consultant.ru/document/cons_doc_LAW_45458/" target="_blank" rel="noopener noreferrer">consultant.ru</a>), НК РФ ст. 333.33, ФЗ № 330-ФЗ и ГК РФ ст. 186 (<a class="lnk" href="https://www.consultant.ru/document/cons_doc_LAW_28165/" target="_blank" rel="noopener noreferrer">consultant.ru</a>).</p>
     </footer>
   </div>
 </section>
 
 </main>
 
-<!-- ═══ Футер ═══════════════════════════════════════════════════════════ -->
+<!-- ═══ Футер ════════════════════════════════════════════════════ -->
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="ftr__grid">
-      <div class="ftr__brand">
-        <a class="brand" href="./" data-path="" aria-label="LTCG — на главную"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
-        <address>
+    <div class="bento ftr__bento" role="list">
+
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+        <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+          <picture data-logo="gold">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+          <picture data-logo="ink">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <h2 class="sr-only" id="f-brand">Контакты</h2>
+        <address class="ftr__addr">
           <span>Legal and Tax Consulting Group LLC · Ереван</span>
-          <a href="tel:+37494184014">+374 94 184 014</a>
+          <a class="ftr__phone" href="tel:+37494184014">+374 94 184 014</a>
           <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
-          <span>Реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
         </address>
-      </div>
-      <nav aria-labelledby="f-moments">
-        <h2 id="f-moments">По моменту</h2>
-        <ul role="list">
-          <li><a href="pered-pereezdom.html" aria-current="page">Ещё не переехал</a></li>
-          <li><a href="schet-v-banke.html">Только приехал</a></li>
-          <li><a href="vnzh.html">Легализуюсь</a></li>
-          <li><a href="ip-i-nalogi.html">Работаю</a></li>
-          <li><a href="rezidentstvo-i-crs.html">Живу и планирую</a></li>
-          <li><a href="spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+      </section>
+
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+        <ul class="ftr__list" role="list">
+          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
+          <li><a href="./schet-v-banke.html">Только приехал</a></li>
+          <li><a href="./vnzh.html">Легализуюсь</a></li>
+          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
         </ul>
       </nav>
-      <nav aria-labelledby="f-page">
-        <h2 id="f-page">На этой странице</h2>
-        <ul role="list">
-          <li><a href="#answer">Короткий ответ</a></li>
-          <li><a href="#korziny">Три корзины</a></li>
-          <li><a href="#ustroystvo">Как это устроено</a></li>
-          <li><a href="#noyabr">С 1 ноября 2026</a></li>
-          <li><a href="#lomaetsya">Где ломается</a></li>
-          <li><a href="#skolko">Сколько стоит</a></li>
-          <li><a href="#faq">Вопросы</a></li>
-        </ul>
-      </nav>
-      <nav aria-labelledby="f-site">
-        <h2 id="f-site">Сайт</h2>
-        <ul role="list">
-          <li><a href="./" data-path="">Главная</a></li>
-          <li><a href="#contact">Контакты</a></li>
-          <li><a href="#dalshe">Источники и дата проверки</a></li>
-          <li><a href="#" aria-disabled="true">Политика обработки данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст</span></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="ftr__bottom">
-      <div>
-        <p>Услуги носят консультационный и сопроводительный характер; решения о выдаче ВНЖ,
-          удостоверении документов и открытии счетов принимают государственные органы, нотариусы,
-          консульские учреждения и банки. Формулировку подтверждает клиент.</p>
-        <p style="margin-top: var(--s-2)">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
-      </div>
-      <nav class="ftr__langs" aria-label="Язык сайта">
-        <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-        <a href="./" data-path="" lang="ru" aria-current="page">Русский</a>
-        <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-      </nav>
+
+      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+        <h2 class="ftr__h" id="f-site">Сайт</h2>
+        <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
+        <nav class="ftr__langs" aria-label="Язык сайта">
+          <span aria-disabled="true" lang="hy">Հայերեն</span>
+          <span lang="ru" aria-current="page">Русский</span>
+          <span aria-disabled="true" lang="en">English</span>
+        </nav>
+        <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
+      </section>
+
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+        <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
+        <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
+        <div class="ftr__credit">
+          <p class="ftr__copy">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+          <p class="ftr__by">Сайт спроектирован и собран студией
+            <a class="ftr__vkv" href="https://vkvstudio.com" target="_blank" rel="noopener noreferrer">
+              <picture><source type="image/webp" srcset="assets/logo/vkv-studio.webp"><img src="assets/logo/vkv-studio.png" width="256" height="180" alt="" loading="lazy" decoding="async"></picture>
+              <span>VKV Studio</span>
+            </a>
+            <span class="ftr__dom">vkvstudio.com</span>
+          </p>
+        </div>
+      </section>
+
     </div>
   </div>
 </footer>
+
+<!-- Мобильная нижняя панель -->
+<nav class="dock glass is-shown" aria-label="Быстрые действия">
+  <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+  <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+  <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="is-primary" href="#skolko"><svg aria-hidden="true"><use href="#i-calc"/></svg>Рассчитать</a>
+</nav>
 
 </body>
 </html>

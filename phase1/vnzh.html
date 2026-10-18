@@ -1,42 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m5" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
-/* Тема и класс js — ДО первой отрисовки: единственный инлайновый скрипт страницы. */
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
 try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<!-- Сборка для показа и вычитки клиентом, не для поиска. Строку robots снимает
-     владелец при выкладке на боевой домен. -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-<!-- Заголовок и описание написаны под живой запрос, а не под бренд. -->
-<title>ВНЖ в Армении 2026: подача, пошлины, основания — LTCG</title>
-<meta name="description" content="Запись на подачу закрыта, подача уходит в электронную платформу. Что меняется не позднее 1 ноября 2026: пошлины, сроки, четыре основания. С источниками.">
+<title>ВНЖ и ПМЖ в Армении с 01.11.2026: основания — LTCG</title>
+<meta name="description" content="Оформление ВНЖ и ПМЖ в Армении с 1 ноября 2026: ценз 1 000 000 ֏ для ИП и 2 000 000 ֏ для ООО, госпошлины 150 000 ֏ и 250 000 ֏, воссоединение семьи.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
-<!-- Адреса продакшена. Файлы этой сборки лежат плоско в phase1/, поэтому CSS, шрифты
-     и скрипт подключены относительными путями, а canonical и ссылки между ветками —
-     боевые, как в каноне (phase1/canon.html, блок 16). -->
 <link rel="canonical" href="https://ltcg.am/vnzh.html">
-<!-- Ветка объявляет hreflang на себя и x-default на себя же. Ссылок на /hy/ и /en/
-     нет, пока их содержание не соответствует этому адресу. -->
 <link rel="alternate" hreflang="ru" href="https://ltcg.am/vnzh.html">
 <link rel="alternate" hreflang="x-default" href="https://ltcg.am/vnzh.html">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="ВНЖ в Армении: запись закрыта, подача уходит в платформу">
-<meta property="og:description" content="Восемь законов включаются на десятый день после объявления Миграционной службы, но не позднее 1 ноября 2026. Что меняется — с номерами статей и датой проверки.">
+<meta property="og:title" content="ВНЖ и ПМЖ в Армении с 1 ноября 2026: основания, пошлины и подача">
+<meta property="og:description" content="Пять оснований ВНЖ и условия ПМЖ по Закону РА ՀՕ-11-Ն с 01.11.2026: финансовый ценз ИП и ООО, воссоединение семьи, квоты, правило 180 и 183 дней.">
 <meta property="og:url" content="https://ltcg.am/vnzh.html">
-<!-- Картинка ветки ещё не сделана: см. issues сборки. До неё OG отдаёт общий кадр главной. -->
 <meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -45,119 +35,95 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Место под мета-подтверждение Яндекс.Вебмастера. Код добавляет владелец
-     после регистрации домена; строка стоит здесь, чтобы её не забыли.
-<meta name="yandex-verification" content="">
--->
-
-<!-- Шрифты самохостом. Google Fonts не подключается: это внешний домен в
-     критическом пути, и Яндекс считает его в скорость. -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
-<!-- JavaScript только надстройкой: страница работает и без него -->
-<script defer src="js/site.js?v=20261018m1"></script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-latin.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m7">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
+<script defer src="js/boot.js?v=20261019m7"></script>
 
-<!-- Организация объявлена целиком ОДИН раз на / — здесь только ссылка по @id.
-     Телефон и hasOfferCatalog не дублируются. aggregateRating и Review не выводятся
-     нигде: разметку отзывов о себе Google считает самовосхвалением, отзывы живут
-     на картах со ссылкой на оригинал (docs/trust_doctrine.md).
-     Тип узла организации на / — LegalService, это подтип LocalBusiness, которого
-     ждёт Алиса. Адрес у узла пока только город: офиса у компании нет, выдумывать
-     адрес нельзя (docs/seo_geo_2026.md §2). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ltcg.am/#org",
+      "name": "Legal and Tax Consulting Group LLC",
+      "alternateName": "LTCG",
+      "url": "https://ltcg.am/",
+      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+    },
+    {
       "@type": ["WebPage", "FAQPage"],
       "@id": "https://ltcg.am/vnzh.html#page",
       "url": "https://ltcg.am/vnzh.html",
-      "name": "ВНЖ в Армении: запись закрыта, подача уходит в электронную платформу",
-      "description": "Что меняется в порядке получения вида на жительство в Армении не позднее 1 ноября 2026 года: пошлины, сроки, четыре основания, квоты и правило 180 дней. С номерами статей и датой проверки.",
+      "name": "ВНЖ и ПМЖ в Армении с 01.11.2026: основания — LTCG",
+      "description": "Оформление ВНЖ и ПМЖ в Армении с 1 ноября 2026: ценз 1 000 000 ֏ для ИП и 2 000 000 ֏ для ООО, госпошлины 150 000 ֏ и 250 000 ֏, воссоединение семьи.",
       "inLanguage": "ru",
-      "dateModified": "2026-09-04",
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-10-18",
+      "isPartOf": { "@type": "WebSite", "@id": "https://ltcg.am/#website", "url": "https://ltcg.am/", "name": "LTCG — Legal & Tax Consulting Group" },
       "publisher": { "@id": "https://ltcg.am/#org" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
-          { "@type": "ListItem", "position": 2, "name": "Легализуюсь: ВНЖ", "item": "https://ltcg.am/vnzh.html" }
+          { "@type": "ListItem", "position": 2, "name": "Легализуюсь: ВНЖ и ПМЖ", "item": "https://ltcg.am/vnzh.html" }
         ]
       },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Можно ли подать на ВНЖ в Армении прямо сейчас, в сентябре 2026?",
+          "name": "Как подаётся заявление на ВНЖ с 1 ноября 2026 года?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Записаться на подачу нельзя — запись закрыта. Подача переезжает в единую электронную платформу, которая ещё не запущена; ориентир 1 ноября 2026, и он может наступить раньше, если Миграционная служба опубликует объявление о запуске платформы: восемь законов майского пакета включаются на десятый день после такой публикации, но не позднее 1 ноября. На 04.09.2026 объявления нет — просмотрена лента migration.mia.gov.am за 25.08–03.09.2026."
+            "text": "С 1 ноября 2026 года подача переходит в единую электронную платформу миграционной службы, а срок рассмотрения составляет 30 дней. Готовую карту заявитель старше 16 лет получает лично со сдачей биометрии и образца подписи. Ст. 17 ч. 1, 4, 7 ՀՕ-11-Ն."
           }
         },
         {
           "@type": "Question",
-          "name": "У меня была запись на ВНЖ на дату после 1 ноября 2026. Что с ней будет?",
+          "name": "Какой оборот или остаток нужен для ВНЖ по ИП и ООО с 1 ноября 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Миграционная служба в публикации от 19.06.2026 сообщила, что с 1 ноября 2026 приём заявлений идёт через новую электронную систему, платформа migration.e-gov.am и мобильное приложение Early One становятся недоступны, а лица, записанные на приём после 1 ноября, подают заявления в новой системе. Утверждения, что ранее забронированные талоны перестанут действовать, на странице органа нет. Механизм переноса записей официально не опубликован."
+            "text": "Для первичного ВНЖ по ИП нужен остаток на счетах ИП от 1 000 000 ֏ либо оборот 1 000 000 ֏ за предшествующие 60 дней; для участника ООО или АО — вклад в уставный капитал либо акции от 2 000 000 ֏. При оформлении повторного статуса этот порог не требуется при действующем ВНЖ и уплаченных налогах в базе КГД. Ст. 29.4 ч. 3–4 ՀՕ-11-Ն."
           }
         },
         {
           "@type": "Question",
-          "name": "ВНЖ в Армении теперь дают на год — как его продлевать?",
+          "name": "Могут ли супруг, дети и родители обладателя временного ВНЖ получить статус по воссоединению семьи?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Пока не известно. Формулировка о предоставлении статуса на срок до 1 года с возможностью продления каждый раз на 1 год и требование подать заявление о продлении не позднее чем за 30 дней из статьи 15 в новой редакции удалены, а статья 24 признана утратившей силу. Порядок должно установить Правительство — акта на 04.09.2026 нет."
+            "text": "Да. Право на ВНЖ по воссоединению семьи имеют супруг, родитель или ребёнок гражданина РА, обладателя статуса пребывания в РА или беженца. Братья, сёстры, бабушки, дедушки и внуки с 1 ноября 2026 года из перечня исключены. Ст. 15 ч. 1 п. «г», ст. 29.5 ч. 1 ՀՕ-11-Ն."
           }
         },
         {
           "@type": "Question",
-          "name": "Когда предприниматель сможет получить ПМЖ в Армении?",
+          "name": "Кто может получить ПМЖ на 5 лет сразу, а кому нужны 3 года временного ВНЖ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Не раньше, чем накопится три года временного статуса в течение последних пяти лет (новая статья 16 часть 1 пункт «գ»). До реформы предпринимательство было самостоятельным основанием постоянного статуса без стажа. Прямой доступ без ценза сохраняют армяне по национальности, инвесторы и лица, оказавшие РА исключительные услуги."
+            "text": "Для получения ПМЖ по предпринимательству и по семье гражданина РА необходимы минимум 3 года временного ВНЖ за последние 5 лет. Сразу на 5 лет без предварительного стажа ПМЖ выдаётся этническим армянам, инвесторам и лицам за исключительные услуги РА. Ст. 16 ч. 1 ՀՕ-11-Ն."
           }
         },
         {
           "@type": "Question",
-          "name": "Правда ли, что подача на ВНЖ в Армении будет полностью онлайн?",
+          "name": "Что произойдёт со статусом при отсутствии в Армении 183 дня и более?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Нет. Онлайн уходят подача и делопроизводство: производство по предоставлению статуса осуществляется только через единую электронную платформу. Но карту статуса иностранец получает лично, сдавая отпечатки пальцев обеих рук и электронный образец подписи (новая статья 17 часть 7). Правильная формулировка: подача — онлайн, биометрия и получение документа — лично."
+            "text": "Обладатель ВНЖ или ПМЖ при отсутствии в Армении 183 дня и более обязан уведомить миграционный орган через электронную платформу в течение 10 дней после истечения 183 дней, иначе статус аннулируется. Освобождены только обладатели ПМЖ по инвестициям и за исключительные заслуги. Ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն."
           }
         },
         {
           "@type": "Question",
-          "name": "Сколько будет стоить пошлина за ВНЖ в Армении и с какого дня?",
+          "name": "Сколько составляет госпошлина за ВНЖ и ПМЖ и оформляет ли LTCG ВНЖ отдельно от бизнеса?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Закон оперирует кратностью базовой пошлины: 150-кратная за рассмотрение заявления о временном статусе, 250-кратная за постоянный, 5,95-кратная за карту (ՀՕ-215-Ն, статья 1). В драмах цифры называло МВД в релизе от 21.01.2026: 150 тысяч и 250 тысяч. Дата 1 января 2027, которая встречается в обзорах, получается, если не учесть закон ՀՕ-213-Ն от 11.05.2026, отменивший прежнюю шкалу до того, как она заработала."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Рабочая виза в Армению на 120 дней действует с 1 ноября 2026?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Нет. Новый вид визы — рабочая въездная, до 120 дней, без продления, выдаётся один раз в календарном году — в законе появился, но по статье 30 части 7 положения о рабочей визе вступают в силу после внедрения новой системы электронной въездной визы РА, срок которой в законе не назван вообще."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Отменят ли специальный статус и специальный паспорт Армении?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Упраздняется само основание: статья 18 закона «Об иностранцах» признана утратившей силу, новые спецстатусы не выдаются, содержание поглощается постоянным статусом по основанию «исключительные услуги РА». Переходные положения сохраняют права действующих обладателей до истечения срока имеющегося статуса (статья 30 часть 6)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Может ли дата 1 ноября 2026 снова сдвинуться?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Позже 1 ноября 2026 — нет: формула «не позднее» этого не позволяет, а у январского пакета дата жёсткая. Раньше — да, если Миграционная служба опубликует объявление о запуске платформы. На 04.09.2026 в Национальном собрании нет законопроекта, переносящего или отменяющего эту дату: просмотрены списки принятых, включённых и невключённых вопросов. Самый свежий закон, менявший закон «Об иностранцах», — ՀՕ-428-Ն от 27.08.2026 — чисто редакционный."
+            "text": "Госпошлина за временный ВНЖ составляет 150 000 ֏ вместо прежних 105 000 ֏, а за ПМЖ на 5 лет — 250 000 ֏ вместо 140 000 ֏. LTCG оформляет ВНЖ только в комплексе с регистрацией бизнеса или бухгалтерским сопровождением у нас, чтобы статус опирался на реальные налоговые начисления в базе КГД за 180 дней. Закон ՀՕ-215-Ն, ст. 29.4 ч. 5 ՀՕ-11-Ն."
           }
         }
       ]
@@ -165,35 +131,14 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     {
       "@type": "Service",
       "@id": "https://ltcg.am/vnzh.html#service",
-      "name": "Сопровождение получения вида на жительство в Армении",
-      "serviceType": "Юридическое сопровождение",
+      "name": "Комплексное сопровождение бизнеса и ВНЖ в Армении",
+      "serviceType": "Юридическое и налоговое сопровождение",
       "areaServed": { "@type": "Country", "name": "Армения" },
-      "provider": { "@id": "https://ltcg.am/#org" },
-      "audience": { "@type": "Audience", "audienceType": "Иностранцы, легализующие пребывание в Армении" }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://ltcg.am/vnzh.html#howto",
-      "name": "Как подаётся заявление о статусе пребывания после включения реформы",
-      "inLanguage": "ru",
-      "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Регистрация на платформе",
-          "text": "Предварительная регистрация на единой электронной платформе и запись в очередь. Бумажный и очный канал подачи закон не предусматривает." },
-        { "@type": "HowToStep", "position": 2, "name": "Предварительное изучение документов",
-          "text": "Уполномоченный орган подтверждает полноту документов до записи на приём." },
-        { "@type": "HowToStep", "position": 3, "name": "Подача и уплата пошлины",
-          "text": "Заявление подаётся через платформу, пошлину можно уплатить в том числе онлайн. Пошлина уплачивается за рассмотрение и при отказе не возвращается." },
-        { "@type": "HowToStep", "position": 4, "name": "Рассмотрение",
-          "text": "Решение принимается в 30-дневный срок со дня подачи. На донесение документов после уведомления через платформу даётся 5 дней." },
-        { "@type": "HowToStep", "position": 5, "name": "Биометрия и получение карты",
-          "text": "Личная явка: отпечатки пальцев обеих рук и электронный образец подписи. За детей до 16 лет получает родитель или законный представитель." }
-      ]
+      "provider": { "@id": "https://ltcg.am/#org" }
     }
   ]
 }
 </script>
-<!-- totalTime и estimatedCost НЕ выводятся: подтверждённых значений нет.
-     Поле, которого нет, честнее поля с догадкой. -->
 </head>
 <body>
 
@@ -232,1018 +177,441 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
     <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+    <!-- знак хиро: заполняется из assets/hero/logo.svg скриптом -->
+    <symbol id="hsLogoLetters" viewBox="67 524 889 236"></symbol>
+    <symbol id="hsLogoMark" viewBox="67 169 889 590"></symbol>
   </defs>
 </svg>
 
-<!-- ═══ Шапка ветки. Хиро здесь нет: LCP — это h1, а не картинка, поэтому шапка
-     видна сразу (site.js ищет #hero, не находит и показывает её без ожидания). ═══ -->
 <header class="hdr glass" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="home-ru.html" aria-label="LTCG — на главную">
-      <picture>
+    <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+      <picture data-logo="gold">
         <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
         <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
         <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
       </picture>
+      <picture data-logo="ink">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
     </a>
-    <nav class="hdr__nav" aria-label="Разделы страницы">
-      <a href="#sroki">1 ноября</a>
-      <a href="#osnovanie">Основание</a>
-      <a href="#lomaetsya">Ловушки</a>
-      <a href="#skolko">Цены</a>
-      <a href="#voprosy">Вопросы</a>
-    </nav>
-    <div class="hdr__contacts">
-      <a class="hdr__phone" href="tel:+37494184014">+374 94 184 014</a>
-      <a class="btn btn--icon btn--ghost hdr__phone-ico" href="tel:+37494184014" aria-label="Позвонить +374 94 184 014"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
-      <a class="btn btn--icon btn--ghost" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
-      <!-- WhatsApp на этом номере компанией не подтверждён: если не подтвердится, снять все ссылки с data-wa -->
-      <a class="btn btn--icon btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+    <div class="hdr__mid">
+      <nav class="hdr__nav" aria-label="Разделы">
+        <a href="./home-ru.html#where">Этапы</a>
+        <a href="./home-ru.html#calc">Калькулятор</a>
+        <a href="./home-ru.html#services">Услуги</a>
+        <a href="./noyabr.html">С 1 ноября</a>
+        <a href="./home-ru.html#contact">Контакты</a>
+      </nav>
+      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
-    <a class="btn btn--primary btn--sm hdr__cta" href="#contact">Проверить основание <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <!-- Переключатель языков на ветке ведёт на главную соответствующей версии:
-         армянского и английского эквивалента у этого адреса нет (docs/ru_branches.md §7). -->
-    <nav class="lang" aria-label="Язык сайта">
-      <a href="hy/" data-path="hy/" lang="hy" hreflang="hy" title="Армянская версия — главная"><span class="lang__code" aria-hidden="true">HY</span><span class="lang__name">Հայերեն</span></a>
-      <a href="vnzh.html" lang="ru" aria-current="page"><span class="lang__code" aria-hidden="true">RU</span><span class="lang__name">Русский</span></a>
-      <a href="en/" data-path="en/" lang="en" hreflang="en" title="English version — home"><span class="lang__code" aria-hidden="true">EN</span><span class="lang__name">English</span></a>
-    </nav>
+    <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
+         меню не собирается, и мёртвой кнопки на экране быть не должно.
+         Содержимое панели js/menu-mobile.js берёт из самой страницы и из
+         подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+      <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menu-txt">Меню</span>
+    </button>
+
     <div class="themer" role="group" aria-label="Тема оформления" data-themer>
       <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
       <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
       <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
-      <svg data-ico="menu" aria-hidden="true"><use href="#i-menu"/></svg>
-      <svg data-ico="close" aria-hidden="true"><use href="#i-close"/></svg>
-    </button>
   </div>
 </header>
 
-<div class="menu glass" id="menu" hidden>
-  <nav class="menu__list" aria-label="Разделы страницы">
-    <a href="#answer">Короткий ответ</a>
-    <a href="#sroki">Что меняется 1 ноября</a>
-    <a href="#osnovanie">Четыре основания</a>
-    <a href="#ustroystvo">Как это устроено</a>
-    <a href="#lomaetsya">Где ломается</a>
-    <a href="#poryadok">Порядок шагов</a>
-    <a href="#skolko">Сколько стоит</a>
-    <a href="#voprosy">Вопросы</a>
-    <a href="#contact">Контакты</a>
-  </nav>
-  <div class="menu__row">
-    <a class="btn btn--primary" href="#contact">Проверить основание <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <a class="btn btn--outline" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg> +374 94 184 014</a>
-  </div>
-  <div class="themer" role="group" aria-label="Тема оформления" data-themer>
-    <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
-    <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
-    <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
-  </div>
-  <nav class="menu__langs" aria-label="Язык сайта">
-    <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-    <a href="vnzh.html" lang="ru" aria-current="page">Русский</a>
-    <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-  </nav>
-</div>
+<div class="hdr-gap" aria-hidden="true"></div>
 
 <main id="main">
 
-<!-- ═══ 01 · Шапка ветки ═════════════════════════════════════════ -->
-<section class="section" aria-labelledby="branch-title">
+<!-- ═══ 01 · Hero (Ветка 03) ═════════════════════════════════════ -->
+<section class="section section--grid section--art" id="start" aria-labelledby="branch-title" data-rail-label="ВНЖ и ПМЖ">
+  <div class="nov-art" aria-hidden="true"></div>
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">Ветка 03</span> Легализуюсь</p>
-      <h1 class="h1" id="branch-title">ВНЖ в Армении: <em>запись закрыта, подача уходит в электронную платформу</em></h1>
-      <p class="lead">Записаться на подачу сейчас нельзя, а новые правила включаются не по календарю,
-        а по объявлению Миграционной службы. Ниже — что именно меняется, какие четыре основания
-        остаются и что из этого снимается до подачи.</p>
-
-      <p class="small measure"><b>Кому эта страница не нужна.</b> Если вы гражданин страны ЕАЭС и
-        приехали работать по трудовому договору — вам, скорее всего, нужен не этот маршрут, а
-        справка о законности проживания; про неё ниже отдельным вопросом. Если вы ищете
-        «1 ноября 2026», потому что вам сказали про декларацию о доходах за 2025 год — это другая
-        тема и другая дата в том же дне: срок корректировки декларации, а не миграционная реформа;
-        вам на страницу про <a class="lnk" href="ip-i-nalogi.html">ИП и налоги</a>. Если вы уже
-        получили отказ — эта страница объяснит, почему отказывают, но не заменит разбор вашего
-        конкретного решения. И если вам нужна виза в третью страну — мы этого не делаем и не будем
-        делать вид, что делаем.</p>
-
-      <nav class="pathbar" aria-label="Шесть веток">
-        <ol class="pathbar__list">
-          <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
-          <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
-          <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">03</span><span>Легализуюсь</span></span></li>
-          <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
-          <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
-          <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
-        </ol>
-      </nav>
-
-      <p class="sign"><span>Проверил: юрист LTCG</span><span>Обновлено 04.09.2026</span></p>
-    </header>
-  </div>
-</section>
-
-<!-- ═══ 02 · Прямой ответ ════════════════════════════════════════ -->
-<section class="section" id="answer" aria-labelledby="short">
-  <div class="wrap">
-    <div class="answer">
-      <h2 class="kicker" id="short"><span class="kicker__no">01</span> Короткий ответ</h2>
-
-      <p class="answer__p"><b>На 04.09.2026 записаться на подачу заявления о виде на жительство в
-        Армении нельзя:</b> запись закрыта, а новая подача будет идти <b>только через единую
-        электронную платформу</b>, которая ещё не запущена.</p>
-
-      <ol class="answer__facts" role="list">
-        <li><span>Ориентир — <b>1 ноября 2026</b>, и это <b>потолок, а не расписание</b>. Восемь
-          законов майского пакета, включая новые размеры пошлин, вступают в силу «на десятый день
-          после публикации объявления Миграционной службы о запуске платформы, но не позднее
-          1 ноября 2026 года». То есть час икс назначает не календарь, а публикация на сайте
-          migration.mia.gov.am плюс десять дней — и на 04.09.2026 такого объявления нет.
-          <span class="src">Источник: закон ՀՕ-215-Ն от 11.05.2026, ст. 3 ·
-          <a href="https://www.arlis.am/hy/acts/225847" rel="noopener">arlis.am/hy/acts/225847</a> ·
-          проверено 04.09.2026.</span></span></li>
-
-        <li><span>Головной закон реформы <b>ՀՕ-11-Ն от 20.01.2026</b> при этом привязан к 1 ноября
-          жёстко. Дату уже двигали один раз: в сравнительной редакции второго чтения «1 августа»
-          зачёркнуто и заменено на «1 ноября».
-          <span class="src">Источник: ст. 30 ч. 1 ·
-          <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>;
-          сравнительная редакция —
-          <a href="https://old.parliament.am/draftreading_docs8/K-1172_DR2.pdf" rel="noopener">old.parliament.am, законопроект Կ-1172</a> ·
-          04.09.2026.</span></span></li>
-
-        <li><span>Временный статус выдаётся <b>до одного года</b>, и норма о продлении из статьи
-          исчезла. Постоянный статус по предпринимательству — <b>только после трёх лет временного
-          статуса в течение последних пяти</b>.
-          <span class="src">Источник: ст. 8 закона ՀՕ-11-Ն, меняющая ст. 15; новая ст. 16 ч. 1
-          п. «գ», вводится ст. 9 того же закона · 04.09.2026.</span></span></li>
-
-        <li><span>Появляются <b>квоты</b> как самостоятельное основание отказа; появляются
-          <b>финансовые пороги</b> — 2 000 000 драмов в уставный капитал либо 1 000 000 драмов на
-          счетах ИП; появляется <b>правило 180 дней</b>, по которому статус аннулируется, если в
-          базе Комитета государственных доходов нет сведений об исчисленных налогах.
-          <span class="src">Источник: новая ст. 19 ч. 1 п. 13; новая ст. 29.4 ч. 3 и ч. 5 закона
-          «Об иностранцах», вводятся законом ՀՕ-11-Ն · 04.09.2026.</span></span></li>
-
-        <li><span>Пошлина за рассмотрение заявления, по данным МВД, вырастает со <b>105 000</b> до
-          <b>150 000</b> драмов за временный статус и со <b>140 000</b> до <b>250 000</b> за
-          постоянный.
-          <span class="src">Источник: релиз МВД РА
-          <a href="https://www.mia.gov.am/2026/01/21/azh-30/" rel="noopener">от 21.01.2026</a>;
-          кратность — ՀՕ-215-Ն, ст. 1 · 04.09.2026.</span></span></li>
+    <nav class="pathbar" aria-label="Шесть веток">
+      <ol class="pathbar__list">
+        <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
+        <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
+        <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">03</span><span>Легализуюсь</span></span></li>
+        <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
+        <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
+        <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
       </ol>
+    </nav>
+
+    <div class="branch-hero" data-reveal>
+      <div class="section__head section__head--wide">
+        <p class="kicker"><span class="kicker__no">01 · Ветка 03</span> Легализуюсь · Закон РА «Об иностранцах»</p>
+        <h1 class="h1" id="branch-title">ВНЖ и ПМЖ в Армении с 1 ноября 2026: <em>платформа, ценз и квоты</em></h1>
+        <p class="lead">С 1 ноября 2026 года подача на ВНЖ и ПМЖ переходит в электронную платформу Миграционной службы МВД РА. По бизнесу вводится финансовый ценз и проверка налоговых начислений за первые <b>180 дней</b>. Мы в LTCG оформляем ВНЖ только в комплексе с открытием и бухгалтерским ведением бизнеса — чтобы статус опирался на реальный учёт в базе КГД.</p>
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--primary" href="#contact">Проверить основание в комплексе <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="#skolko">Рассчитать ИП + учёт <svg aria-hidden="true"><use href="#i-calc"/></svg></a>
+        </div>
+      </div>
+      <aside class="branch-visual" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/img/ltcg-branch-november-1280.webp">
+          <img src="assets/img/ltcg-branch-november-1280.jpg" width="1280" height="853" alt="" fetchpriority="high">
+        </picture>
+        <div class="branch-visual__hud">
+          <span><b>Ветка 03 · ВНЖ и ПМЖ</b>Реформа ՀՕ-11-Ն · В комплексе с бизнесом</span>
+          <span>Ереван · LTCG</span>
+        </div>
+      </aside>
     </div>
 
-    <p class="note" style="margin-top: var(--s-8)">Практический вывод один: <b>следить надо не за
-      календарём, а за лентой объявлений Миграционной службы.</b> Пока объявления нет, действует
-      прежний порядок — с прежними пошлинами и прежним кругом оснований.</p>
-
-    <div class="bignums" style="margin-top: var(--s-10)">
-      <div class="bignum">
-        <p class="bignum__n">3<small> года</small></p>
-        <p class="bignum__u">ценз · с 01.11.2026</p>
-        <p class="bignum__d">Столько временного статуса в течение последних пяти лет требуется для
-          постоянного статуса по семье и по предпринимательству.
-          <span class="src">Источник: новая ст. 16 ч. 1 п. «ա» и «գ», вводится ст. 9 закона
-          ՀՕ-11-Ն · 04.09.2026.</span></p>
-      </div>
-
-      <div class="bignum">
-        <p class="bignum__n">2 000 000<small> ֏</small></p>
-        <p class="bignum__u">порог · с 01.11.2026</p>
-        <p class="bignum__d">В уставный капитал коммерческой организации либо в акциях и ценных
-          бумагах. Для ИП порог другой: 1 000 000 драмов на счетах либо такой же оборот за 60 дней
-          до подачи.
-          <span class="src">Источник: новая ст. 29.4 ч. 3 закона «Об иностранцах» · 04.09.2026.</span></p>
-      </div>
-
-      <div class="bignum">
-        <p class="bignum__n">5<small> дней</small></p>
-        <p class="bignum__u">срок · платформа</p>
-        <p class="bignum__d">Столько есть на то, чтобы донести документ или исправить ошибку после
-          уведомления. Не успели — платформа приостанавливает производство сама, без человека.
-          <span class="src">Источник: новая ст. 17 ч. 9 закона «Об иностранцах» · 04.09.2026.</span></p>
+    <div class="answer" data-reveal>
+      <div class="bignums" aria-label="Ключевые цифры реформы ВНЖ" data-stagger>
+        <div class="bignum">
+          <span class="bignum__val">150 000 <small>֏</small></span>
+          <span class="bignum__lbl">госпошлина за ВНЖ до <b>1 года</b> с 01.11.2026; за ПМЖ на <b>5 лет</b> — <b>250 000 ֏</b> вместо 105 000 ֏ и 140 000 ֏</span>
+          <span class="src">Закон РА ՀՕ-215-Ն · релиз МВД РА от 21.01.2026</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">1 млн / 2 млн <small>֏</small></span>
+          <span class="bignum__lbl">ценз для первичного ВНЖ: остаток или оборот за <b>60 дней</b> у ИП либо вклад от <b>2 000 000 ֏</b> в ООО / АО</span>
+          <span class="src">ст. 29.4 ч. 3 ՀՕ-11-Ն</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">180 <small>дней</small></span>
+          <span class="bignum__lbl">срок после выдачи ВНЖ по бизнесу, за который в базе КГД должны появиться начисленные налоги</span>
+          <span class="src">ст. 29.4 ч. 5 ՀՕ-11-Ն</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">30 / 5 <small>дней</small></span>
+          <span class="bignum__lbl"><b>30 дней</b> на решение, <b>5 дней</b> на правки в платформе; уведомление после <b>183 дней</b> отсутствия — за <b>10 дней</b></span>
+          <span class="src">ст. 17 ч. 4, 8, 9 ՀՕ-11-Ն</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 05-бис + 05-тер · Что меняется и чего не происходит ══════
-     Двухслойность «основа + датированная врезка»: основной текст остаётся
-     действующим правом, будущее живёт во врезке и не смешивается с ним. -->
-<section class="section" id="sroki" aria-labelledby="sroki-t">
+<!-- ═══ 02 · Интерактивная развилка (.fork) ══════════════════════ -->
+<section class="section section--deep section--thread section--light" id="osnovanie" aria-labelledby="fork-t" data-rail-label="Выбор основания">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">02</span> Время</p>
-      <h2 class="h2" id="sroki-t">Что меняется <em>и чего пока нет</em></h2>
-      <p class="lead">Первая врезка — про срок, а не про момент: она сообщает дату и норму, а не
-        торопит. Вторая — обратная её сторона: перечень того, чего на 04.09.2026 не существует.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">02</span> Выбор маршрута</p>
+      <h2 class="h2" id="fork-t">Выберите основание — <em>покажем норму с 01.11.2026</em></h2>
+      <p class="lead">Основание из ст. 15 ч. 1 нельзя сменить внутри поданной заявки: ошибка стоит пошлины <b>150 000 ֏</b> и паузы до <b>1 года</b>.</p>
     </div>
 
-    <aside class="dated-box" aria-labelledby="d1">
-      <p class="dated-box__when">Не позднее 01.11.2026 — иначе</p>
-      <h3 class="dated-box__t" id="d1">Пошлины растут, продление исчезает из закона, а быстрый путь
-        к ПМЖ через бизнес закрывается</h3>
+    <fieldset class="fork" data-reveal>
+      <legend class="fork__q">По какому основанию вы планируете оформлять статус?</legend>
+      <input class="fork__r" type="radio" name="vnzh-fork" id="vf-biz" checked>
+      <input class="fork__r" type="radio" name="vnzh-fork" id="vf-fam">
+      <input class="fork__r" type="radio" name="vnzh-fork" id="vf-work">
+      <input class="fork__r" type="radio" name="vnzh-fork" id="vf-pmzh">
 
-      <div class="shift">
-        <div class="shift__row shift__row--head">
-          <span>Что</span><span>Сейчас</span><span>После включения</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Пошлина за рассмотрение · временный статус</span>
-          <span class="shift__was">105 000 ֏</span>
-          <span class="shift__now"><b>150 000 ֏</b> по данным МВД</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Пошлина за рассмотрение · постоянный статус</span>
-          <span class="shift__was">140 000 ֏</span>
-          <span class="shift__now"><b>250 000 ֏</b> по данным МВД</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Уведомление об отсутствии в стране</span>
-          <span class="shift__was">только у обладателей постоянного статуса, порог «более 6 месяцев», уведомление письменное, санкции в законе не было</span>
-          <span class="shift__now"><b>183 дня</b> и <b>10 дней</b> на уведомление через платформу — и для временного статуса тоже</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Срок временного статуса</span>
-          <span class="shift__was">до 1 года, продление ежегодно; заявление не позднее чем за 30 дней</span>
-          <span class="shift__now"><b>до 1 года</b>; нормы о продлении в статье больше нет</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Путь предпринимателя к ПМЖ</span>
-          <span class="shift__was">самостоятельное основание без стажа</span>
-          <span class="shift__now"><b>сначала три года временного статуса</b> в течение последних пяти</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Круг родственников по семейному основанию</span>
-          <span class="shift__was">супруг или близкий родственник, включая брата, сестру, бабушку, деда, внука</span>
-          <span class="shift__now"><b>только супруг, родитель, ребёнок</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Квота как основание отказа</span>
-          <span class="shift__was">не существовала</span>
-          <span class="shift__now"><b>прямое основание отказа</b>, не зависящее от качества пакета</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Канал подачи</span>
-          <span class="shift__was">запись на подачу закрыта</span>
-          <span class="shift__now"><b>единая электронная платформа</b>; migration.e-gov.am и приложение Early One становятся недоступны</span>
-        </div>
-      </div>
-
-      <p class="dated-box__d">Дата в законе стоит с оговоркой «но не позднее», поэтому включение
-        может наступить и раньше — на десятый день после объявления Миграционной службы о запуске
-        платформы. Позже 1 ноября 2026 — нет: формула «не позднее» этого не позволяет, а у
-        январского пакета дата жёсткая. Заявление, поданное по действующим правилам, по ст. 30 ч. 4
-        и рассматривается по действующим правилам. Пошлина уплачивается за рассмотрение заявления и
-        при отказе не возвращается.</p>
-
-      <p class="src">Проверено по текстам законов ՀՕ-11-Ն и ՀՕ-215-Ն на
-        <a href="https://www.arlis.am/" rel="noopener">arlis.am</a>, публикации Миграционной службы
-        от 19.06.2026 и релизу МВД РА от 21.01.2026 · 04.09.2026.
-        <!-- Название платформы в текстах законов не фигурирует вовсе — там только родовое
-             «единая электронная платформа». Домены, которые называют в частных публикациях,
-             не резолвятся, поэтому имени платформы на странице нет. -->
-      </p>
-    </aside>
-
-    <aside class="nochange" aria-labelledby="nc" style="margin-top: var(--s-6)">
-      <p class="nochange__tag">Не существует на 04.09.2026</p>
-      <h3 class="nochange__t" id="nc">Чего вы не найдёте ни у кого, потому что этого пока нет</h3>
-      <!-- без role="list": маркеры здесь нужны, а ul[role="list"] в site.css их снимает -->
-      <ul>
-        <li><b>Объявления Миграционной службы о запуске платформы</b> — того самого, от которого
-          юридически считается десятидневный отсчёт. Просмотрены лента migration.mia.gov.am за
-          25.08–03.09.2026, migration.am (там вообще нет новостей за 2026 год) и
-          migration.e-gov.am. Не опубликовано.</li>
-        <li><b>Ни одного подзаконного акта Правительства</b> во исполнение реформы, хотя ст. 30 ч. 2
-          требует принять их до вступления закона в силу. Закон отсылает к решениям Правительства
-          минимум по двенадцати позициям: квоты, суммы инвестиций для ПМЖ, перечень документов к
-          заявлению, порядок подтверждения непрерывности предпринимательской деятельности, порядок
-          запросов в госбазы, техническое описание платформы. Запрос к arlis по
-          «կացության կարգավիճակ» за 14.02–04.09.2026 — ноль актов. На e-draft.am — ни одного
-          проекта.</li>
-        <li><b>Числовых значений квот</b> — ни на 2026, ни на 2027 год. Любая цифра квоты, которую
-          вы сегодня где-то увидите, выдумана.</li>
-        <li><b>Новой формы заявления.</b> Ни на migration.am, ни на migration.e-gov.am, ни на
-          police.mia.gov.am, ни на e-draft.am.</li>
-        <li><b>FAQ, инструкции или разъяснения</b> для иностранцев по существу реформы — ни от МВД,
-          ни от Службы миграции, ни от МИД: ничего ни про квоты, ни про отмену спецстатуса, ни про
-          183 дня, ни про новый ценз.</li>
-        <li><b>Объявления о переходном периоде</b> — ни на одном госсайте, хотя ст. 30 ч. 4 такой
-          режим устанавливает.</li>
-        <li><b>Размера базовой пошлины по первоисточнику.</b> Все суммы в драмах, которые считают
-          умножением кратности на 1 000, арифметически сходятся с релизом МВД, но саму норму,
-          устанавливающую базовую величину, мы по оригиналу не открыли: у нас расходятся указания
-          на ст. 7 и ст. 8 закона «О государственной пошлине» ՀՕ-186 от 27.12.1997. Поэтому
-          150 000 и 250 000 мы называем как данные МВД, а не как собственный расчёт.</li>
-      </ul>
-      <p class="small measure">Что известно про саму платформу: 27.08.2026 на рабочем обсуждении в
-        МВД была представлена <b>предварительная версия</b> внедряемой онлайн-платформы. Министр
-        внутренних дел на том же обсуждении заявила, что к концу года все направления Службы
-        миграции и гражданства будут оцифрованы и изменения срока не предусматривается.</p>
-      <p class="src">Проверено по лентам migration.mia.gov.am, migration.am, migration.e-gov.am,
-        police.mia.gov.am и e-draft.am, по запросу к
-        <a href="https://www.arlis.am/" rel="noopener">arlis.am</a> и по публикации
-        <a href="https://www.mia.gov.am/2026/08/29/mia-139/" rel="noopener">МВД от 29.08.2026</a> ·
-        04.09.2026.</p>
-    </aside>
-  </div>
-</section>
-
-<!-- ═══ 03 · Развилка: четыре основания ══════════════════════════ -->
-<section class="section" id="osnovanie" aria-labelledby="osn-t">
-  <div class="wrap">
-    <div class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">03</span> Развилка</p>
-      <h2 class="h2" id="osn-t">Четыре основания, <em>и выбирают его один раз</em></h2>
-      <p class="lead measure">Основание — это не строчка в анкете. Это то, чем вы подтверждаете
-        своё право находиться здесь, и от него зависит весь пакет документов. Сменить основание
-        посреди производства — значит собирать пакет заново и платить пошлину заново. Поэтому
-        начинать надо не с «как подать», а с «что у меня подтверждается бумагами сегодня».</p>
-      <p class="small measure">Ниже все четыре исхода целиком. Выберите свой не потому, что он
-        удобнее, а потому, что документы под него у вас есть. Выбор ничего не отправляет и ничего
-        не открывает: все четыре разбора лежат на странице и читаются без клика.</p>
-    </div>
-
-    <!-- Развилка на нативных radio: подсветку выбранного и подъём нужного исхода
-         делает :checked, а не скрипт. -->
-    <form>
-    <fieldset class="fork">
-      <legend class="fork__q">Чем подтверждается ваше основание сегодня?</legend>
-
-      <input class="fork__r" type="radio" name="osnovanie" id="osn-1">
-      <input class="fork__r" type="radio" name="osnovanie" id="osn-2">
-      <input class="fork__r" type="radio" name="osnovanie" id="osn-3">
-      <input class="fork__r" type="radio" name="osnovanie" id="osn-4">
-
-      <div class="fork__opts">
-        <label class="fork__opt" for="osn-1"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Наём — работа по трудовому договору</b>Вас нанимает армянский работодатель, и он же ведёт процедуру</span></label>
-        <label class="fork__opt" for="osn-2"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>ИП или доля в компании</b>У вас зарегистрировано ИП в Армении либо вы участник, акционер или владелец ценных бумаг армянской коммерческой организации</span></label>
-        <label class="fork__opt" for="osn-3"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Семья — супруг, родитель, ребёнок</b>Вы супруг, родитель или ребёнок гражданина Армении либо иностранца, имеющего здесь статус пребывания или статус беженца</span></label>
-        <label class="fork__opt" for="osn-4"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Корни — армянин по национальности</b>Единственное основание, которое даёт прямой постоянный статус без трёхлетнего ценза</span></label>
+      <div class="fork__opts" aria-label="Основания статуса">
+        <label class="fork__opt" for="vf-biz"><span class="fork__tag">Бизнес (ИП / ООО)</span><span class="fork__sub">1 000 000 ֏ / 2 000 000 ֏ и налоги за 180 дней</span></label>
+        <label class="fork__opt" for="vf-fam"><span class="fork__tag">Семья и учёба</span><span class="fork__sub">Супруг, родитель, ребёнок и студенты</span></label>
+        <label class="fork__opt" for="vf-work"><span class="fork__tag">Работа и ЕАЭС</span><span class="fork__sub">Квоты, 15 рабочих дней и справка ЕАЭС</span></label>
+        <label class="fork__opt" for="vf-pmzh"><span class="fork__tag">ПМЖ (5 лет) и корни</span><span class="fork__sub">Стаж 3 года из 5 лет или прямая подача</span></label>
       </div>
 
       <div class="fork__outs">
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 01 · Наём</p>
-          <p class="fork__out__t">Прежний режим разрешения на работу упраздняется, а новый включается не одновременно</p>
-          <p>Здесь самая недооценённая норма всего пакета. С 1 ноября упраздняется весь прежний
-            режим разрешения на работу: утратили силу ст. 24 (ВНЖ по трудовому основанию и его
-            продление), ст. 25, ст. 28, ст. 29.1 и части ст. 22 — включая требование публиковать
-            вакансию минимум на 15 рабочих дней для изучения рынка труда.</p>
-          <p>Но нормы, которые приходят взамен — рабочая виза на 120 дней и электронное
-            «разрешение», — <b>1 ноября не включаются</b>: по ст. 30 ч. 7 они вступают в силу
-            «после внедрения новой системы электронной въездной визы РА», а календарной даты у неё
-            в законе нет вообще. Это значит, что между включением нового порядка статуса и
-            включением нового порядка трудового въезда возникает зазор, и как в нём себя ведёт
-            workpermit.am, официально не разъяснено ни одним органом.</p>
-          <p><b>Чем платит.</b> Неопределённостью. Это единственное основание, по которому мы
-            сегодня честно не можем сказать, как оно будет работать в ноябре, и не собираемся
-            угадывать.</p>
-          <p><b>Отдельно про граждан ЕАЭС.</b> Россияне, белорусы, казахстанцы, киргизы и члены их
-            семей по Договору о ЕАЭС от разрешения на работу освобождены, и им оформляется не ВНЖ,
-            а справка о законности проживания. Мы приводим это как ориентир, а не как проверенную
-            норму: единственный найденный официальный документ — FAQ Министерства экономики РА, в
-            котором фигурируют требование ПЦР за 72 часа и подоходный налог 23 %, то есть это
-            документ примерно 2021–2022 годов.
-            <!-- слот: .tbc здесь не годится — он nowrap и рвёт колонку исходов -->
-            <span class="slot">проверку и действующую формулировку по ЕАЭС даёт юрист LTCG</span></p>
-          <p class="src">Источник: ст. 19 и др. закона ՀՕ-11-Ն ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>;
-            ст. 30 ч. 7 того же закона; Договор о ЕАЭС · проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="vf-biz">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+              <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Предпринимательство</b> ВНЖ до 1 года</p>
+          <h3 class="h3">ИП или ООО: входной порог и правило 180 дней</h3>
+          <p>Для первичного ВНЖ ИП подтверждает остаток на счёте ИП от <b>1 000 000 ֏</b> либо оборот <b>1 000 000 ֏</b> за <b>60 дней</b>; участник ООО или АО — вклад в капитал от <b>2 000 000 ֏</b>. Для повторного статуса порог не требуется при действующем ВНЖ и уплаченных налогах.</p>
+          <p>Если за <b>180 дней</b> после выдачи ВНЖ в базе КГД нет начисленных налогов или капитал снизился ниже <b>1 000 000 ֏</b> без пополнения за <b>1 месяц</b>, статус аннулируется. <span class="src">ст. 15 ч. 1 п. «в», ст. 29.4 ч. 3–5 ՀՕ-11-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#skolko">Собрать ИП + учёт <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 02 · ИП или доля в компании</p>
-          <p class="fork__out__t">Впервые в законе появились цифры — и вход с удержанием стоят разного</p>
-          <p>Основание возникает, если вы: внесли в уставный капитал коммерческой организации не
-            менее <b>2 000 000 драмов</b> либо приобрели акции или ценные бумаги на ту же сумму;
-            <b>либо</b> являетесь ИП и имеете на счетах ИП в пересчёте на драмы не менее
-            <b>1 000 000 драмов</b>; <b>либо</b> имеете за 60 дней, предшествующих дню подачи,
-            оборот <b>1 000 000 драмов</b> или эквивалент в валюте.</p>
-          <p>Здесь мы обязаны показать своё же расхождение, а не сгладить его. Слово, от которого
-            зависит смысл, — <span lang="hy">առնվազն</span> («не менее») против
-            <span lang="hy">մինչև</span> («до»). Четыре независимых прочтения армянского оригинала
-            дали «не менее двух миллионов», одно — «до двух миллионов». Это противоположные
-            смыслы, и цифра слишком дорогая, чтобы публиковать её без вычитки носителем по
-            оригиналу arlis. Мы приводим чтение большинства и помечаем это прямо. Так же обстоит
-            дело с адресом нормы: три прочтения дают новую ст. 29.4, одно — новую редакцию ст. 19
-            ч. 3.</p>
-          <p><b>Чем платит.</b> Тем, что вход и удержание — разные суммы. Порог входа —
-            2 000 000, а порог удержания — 1 000 000: статус аннулируется, если капитал выведен,
-            либо если он стал меньше миллиона, либо если стоимость акций упала ниже миллиона. Спасает
-            эквивалентное вложение в другую действующую армянскую организацию в течение следующего
-            месяца. И главное: <b>предпринимательство больше не даёт прямого ПМЖ.</b> Раньше это
-            было самостоятельное основание без стажа; с 1 ноября постоянный статус по
-            предпринимательству требует, чтобы вы «в течение последних пяти лет имели в РА статус
-            временного пребывания не менее трёх лет».</p>
-          <p class="src">Источник: новая ст. 29.4 ч. 3 и ч. 5 закона «Об иностранцах», вводится
-            ст. 25 закона ՀՕ-11-Ն; новая ст. 16 ч. 1 п. «գ», вводится ст. 9 того же закона ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-            проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="vf-fam">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+              <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Семья и учёба</b> Воссоединение и обучение</p>
+          <h3 class="h3">Семья гражданина РА или обладателя статуса</h3>
+          <p>С 1 ноября 2026 года право на ВНЖ по семье имеют <b>супруг, родитель или ребёнок</b> гражданина РА либо иностранца со статусом пребывания (временным, постоянным, специальным) или беженца. Братья, сёстры, бабушки, дедушки и внуки исключены.</p>
+          <p>По учёбе ВНЖ выдаётся до <b>1 года</b> учащимся аккредитованных школ и вузов РА. <span class="src">ст. 15 ч. 1 п. «а», «г», ст. 29.3, ст. 29.5 ч. 1 ՀՕ-11-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Проверить документы семьи <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 03 · Семья</p>
-          <p class="fork__out__t">Круг родственников сужается до супруга, родителя и ребёнка</p>
-          <p>В действующей редакции ст. 15 основанием служит «супруг или близкий родственник» —
-            включая брата, сестру, бабушку, деда, внука. С 1 ноября остаются только <b>супруг,
-            родитель, ребёнок</b>. Отдельно исчезает основание «родственник обладателя временного
-            статуса» — прежний п. «գ» признан утратившим силу. Для постоянного статуса круг такой
-            же и только для родственников <b>граждан РА</b>, плюс требование обеспеченности жильём
-            и средствами к существованию, плюс те же три года из пяти.</p>
-          <p>Процедурная деталь, которую легко пропустить: по семейному основанию заявление подаёт
-            <b>сам гражданин РА</b> либо член семьи, имеющий статус, а не иностранец.</p>
-          <p><b>Чем платит.</b> Тем, что если ваше родство — не супруг, не родитель и не ребёнок,
-            после 1 ноября это перестаёт быть основанием вообще, и искать придётся другое.</p>
-          <p class="src">Источник: ст. 8 закона ՀՕ-11-Ն, меняющая ст. 15 закона «Об иностранцах»;
-            новая ст. 16 ч. 1 п. «ա»; новая ст. 29.5 ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-            проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="vf-work">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+              <img src="assets/img/nov-shot-1100.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Труд и ЕАЭС</b> Трудовой договор и справка</p>
+          <h3 class="h3">Работа по квоте и справка о законности проживания ЕАЭС</h3>
+          <p>ВНЖ по труду оформляется в пределах квоты (кроме исключений ст. 23). Работодатель заключает договор за <b>15 рабочих дней</b> после выдачи статуса; при расторжении даётся <b>15 рабочих дней</b> на новый контракт.</p>
+          <p>Граждане <b>ЕАЭС</b> работают без квоты и оформляют через платформу справку о законности проживания с биометрией с <b>16 лет</b>. <span class="src">ст. 14.1, ст. 17 ч. 7, ст. 21 ч. 1 п. 5–6, ст. 27 ч. 1 ՀՕ-11-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Оформить кадровый пакет <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 04 · Корни</p>
-          <p class="fork__out__t">Прямой постоянный статус без трёхлетнего ценза</p>
-          <p>Это единственное основание, которое даёт прямой постоянный статус без трёхлетнего
-            ценза: никаких дополнительных требований в норме нет. Подача — лично, после
-            предварительной регистрации на платформе и записи в очередь, и только если
-            уполномоченный орган предварительным изучением подтвердил полноту документов.</p>
-          <p><b>Чем платит.</b> Документами о происхождении: их нужно легализовать и перевести в
-            той форме, которую принимает армянский орган, и это делается заранее, а не в очереди.</p>
-          <p class="src">Источник: новая ст. 16 ч. 1 п. «բ»; новая ст. 29.5 закона «Об иностранцах»,
-            вводятся законом ՀՕ-11-Ն ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-            проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="vf-pmzh">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
+              <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>ПМЖ на 5 лет</b> Постоянный статус</p>
+          <h3 class="h3">Кому нужен стаж 3 года ВНЖ из 5 лет, а кто подаёт сразу</h3>
+          <p>Для ПМЖ на <b>5 лет</b> (пошлина <b>250 000 ֏</b>) стаж минимум <b>3 года</b> ВНЖ за последние <b>5 лет</b> обязателен для предпринимателей и членов семьи гражданина РА при наличии жилья и средств.</p>
+          <p><b>Без 3-летнего стажа ВНЖ</b> на ПМЖ подают этнические армяне, инвесторы и лица за исключительные услуги РА. Спецпаспорта на <b>10 лет</b> действуют до конца срока. <span class="src">ст. 16 ч. 1–2, ст. 30 ч. 6 ՀՕ-11-Ն · Закон РА ՀՕ-215-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Проверить основание ПМЖ <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
       </div>
     </fieldset>
-    </form>
 
-    <div class="note" style="margin-top: var(--s-8)">
-      <p><b>Чего на этой развилке больше нет.</b> Специальный статус упраздняется как отдельный вид.
-        Ст. 11 закона ՀՕ-11-Ն признаёт утратившей силу ст. 18 закона «Об иностранцах» — ту самую, по
-        которой этническим армянам и иностранцам, ведущим в РА экономическую или культурную
-        деятельность, давался статус на 10 лет со специальным паспортом. Взамен появляется основание
-        постоянного статуса «оказал РА исключительные услуги», решение по нему принимает
-        Премьер-министр. У тех, кто спецстатус уже имеет, он <b>не аннулируется</b>: переходные
-        положения сохраняют права до истечения срока имеющегося статуса (ст. 30 ч. 6).</p>
-      <p>И сразу о чужой ошибке, чтобы вы на неё не попались. В публикациях встречается утверждение,
-        что «последний день подачи заявления на специальный статус — 1 ноября 2026». Такой нормы мы
-        не нашли: четыре независимых прочтения текстов всех одиннадцати актов пакета её не
-        обнаружили. Мы не утверждаем, что её нет нигде — мы утверждаем, что в прочитанных текстах её
-        нет, и поэтому не повторяем.</p>
-    </div>
+    <aside class="dated-box" aria-label="Сравнение старой и новой редакции закона" data-reveal>
+      <div class="dated-box__head">
+        <span class="dated-box__badge">Сверка норм · с 01.11.2026</span>
+        <h2 class="h3">Что изменилось в Законе РА «Об иностранцах» (<a class="lnk" href="./noyabr.html">разбор реформы ՀՕ-11-Ն →</a>)</h2>
+      </div>
+      <div class="shift" role="table" aria-label="До 1 ноября 2026 и с 1 ноября 2026">
+        <div class="shift__row shift__row--head" role="row">
+          <div class="shift__cell" role="columnheader">Что</div>
+          <div class="shift__cell" role="columnheader">До 01.11.2026</div>
+          <div class="shift__cell" role="columnheader">С 01.11.2026 (ՀՕ-11-Ն / ՀՕ-215-Ն)</div>
+        </div>
+        <div class="shift__row" role="row">
+          <div class="shift__cell" role="rowheader" data-l="Что">Пошлина ВНЖ / ПМЖ</div>
+          <div class="shift__cell" role="cell" data-l="До 01.11.2026"><b>105 000 ֏</b> за ВНЖ (1 год) · <b>140 000 ֏</b> за ПМЖ (5 лет).</div>
+          <div class="shift__cell" role="cell" data-l="С 01.11.2026"><b>150 000 ֏</b> за ВНЖ · <b>250 000 ֏</b> за ПМЖ. Спецпаспорта на <b>10 лет</b> действуют до конца срока (ст. 30 ч. 6).</div>
+        </div>
+        <div class="shift__row" role="row">
+          <div class="shift__cell" role="rowheader" data-l="Что">Ценз по бизнесу</div>
+          <div class="shift__cell" role="cell" data-l="До 01.11.2026">Фиксированная сумма оборота или капитала в законе не указывалась.</div>
+          <div class="shift__cell" role="cell" data-l="С 01.11.2026"><b>1 000 000 ֏</b> на счёте ИП или оборот за 60 дней; <b>2 000 000 ֏</b> в ООО/АО; налоги за <b>180 дней</b> (ст. 29.4 ч. 3–5).</div>
+        </div>
+        <div class="shift__row" role="row">
+          <div class="shift__cell" role="rowheader" data-l="Что">ПМЖ на 5 лет</div>
+          <div class="shift__cell" role="cell" data-l="До 01.11.2026">Бизнес позволял подавать на ПМЖ без 3-летнего стажа ВНЖ.</div>
+          <div class="shift__cell" role="cell" data-l="С 01.11.2026">Для бизнеса и семьи гражданина РА нужны <b>3 года ВНЖ за 5 лет</b>. Без стажа — этнические армяне, инвесторы и лица за заслуги (ст. 16 ч. 1).</div>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
-<!-- ═══ 05 · Как это устроено ════════════════════════════════════ -->
-<section class="section" id="ustroystvo" aria-labelledby="ust-t">
+<!-- ═══ 03 · Сравнительная таблица оснований и пошлин ════════════ -->
+<section class="section section--grid section--thread section--art" id="sravnenie" aria-labelledby="tbl-t" data-rail-label="Матрица статусов">
+  <div class="nov-art nov-art--guilloche" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">04</span> Как это устроено</p>
-      <h2 class="h2" id="ust-t">Два порядка рядом: <em>тот, что включится, и тот, что действует</em></h2>
-      <p class="lead">Источник и номер нормы стоят у каждой строки, а не одной сноской внизу:
-        строку можно проверить, не читая всю страницу.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">03</span> Матрица статусов</p>
+      <h2 class="h2" id="tbl-t">Основания ВНЖ и ПМЖ <em>по Закону РА ՀՕ-11-Ն (с 01.11.2026)</em></h2>
     </div>
 
-    <h3 class="h3" id="ust-new">Порядок после включения реформы</h3>
-    <div class="diy-wrap" style="margin-top: var(--s-5)">
-      <table class="diy">
-        <caption>Что предусмотрено законами майского и январского пакетов. Тексты прочитаны на
-          arlis.am, суммы в драмах — по релизу МВД. Проверено 04.09.2026.</caption>
+    <div class="table-wrap" role="region" aria-labelledby="tbl-t" tabindex="0" data-reveal>
+      <table class="tbl">
         <thead>
           <tr>
-            <th scope="col">Позиция</th>
-            <th scope="col">Что требуется и чем подтверждается</th>
-            <th scope="col">Сколько стоит</th>
-            <th scope="col">Сколько длится</th>
+            <th scope="col">Статус и основание</th>
+            <th scope="col">Норма (ՀՕ-11-Ն)</th>
+            <th scope="col">Срок и пошлина</th>
+            <th scope="col">Условие выдачи и сохранения</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Канал подачи</th>
-            <td data-l="Что требуется">Подача только через единую электронную платформу; бумажный и очный канал подачи закон не предусматривает.
-              <span class="src">Новая ч. 3 ст. 14 (ст. 7 ՀՕ-11-Ն); ст. 30 ч. 3 · arlis.am/hy/acts/220874 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">пошлину можно уплатить в том числе онлайн</td>
-            <td data-l="Сколько длится">платформа вводится в действие с 01.11.2026</td>
+            <td><b>ВНЖ по ИП (ԱՁ)</b></td>
+            <td>ст. 15 ч. 1 п. «в», ст. 29.4</td>
+            <td>до <b>1 года</b> · <b>150 000 ֏</b></td>
+            <td>Остаток на счетах ИП ≥ <b>1 000 000 ֏</b> или оборот за <b>60 дней</b>; налоги в КГД за <b>180 дней</b>.</td>
           </tr>
           <tr>
-            <th scope="row">Один статус</th>
-            <td data-l="Что требуется">Один статус на человека: иностранец может иметь только один документ, подтверждающий законное проживание.
-              <span class="src">Новая ч. 2.2 ст. 14 закона «Об иностранцах» · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится">у кого сейчас несколько — пользуются до истечения срока документов (ст. 30 ч. 5)</td>
+            <td><b>ВНЖ по ООО / АО</b></td>
+            <td>ст. 15 ч. 1 п. «в», ст. 29.4</td>
+            <td>до <b>1 года</b> · <b>150 000 ֏</b></td>
+            <td>Вклад в капитал ≥ <b>2 000 000 ֏</b>; порог не ниже <b>1 000 000 ֏</b> и налоги за <b>180 дней</b>.</td>
           </tr>
           <tr>
-            <th scope="row">Временный статус</th>
-            <td data-l="Что требуется">Рассмотрение заявления о <b>временном</b> статусе.
-              <span class="src">ՀՕ-215-Ն, ст. 1 · arlis.am/hy/acts/225847; сумма — mia.gov.am/2026/01/21/azh-30/ от 21.01.2026 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us">150-кратная базовая пошлина; <b>по данным МВД — 150 000 драмов</b></td>
-            <td data-l="Сколько длится">решение в 30-дневный срок со дня подачи</td>
+            <td><b>ВНЖ по семье</b></td>
+            <td>ст. 15 ч. 1 п. «г», ст. 29.5</td>
+            <td>до <b>1 года</b> · <b>150 000 ֏</b></td>
+            <td>Супруг, родитель или ребёнок гражданина РА либо иностранца со статусом пребывания / беженца.</td>
           </tr>
           <tr>
-            <th scope="row">Постоянный статус</th>
-            <td data-l="Что требуется">Рассмотрение заявления о <b>постоянном</b> статусе.
-              <span class="src">Там же · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us">250-кратная базовая; <b>по данным МВД — 250 000 драмов</b></td>
-            <td data-l="Сколько длится">те же 30 дней</td>
+            <td><b>ВНЖ по учёбе / труду</b></td>
+            <td>ст. 15 ч. 1 п. «а»–«б», ст. 27</td>
+            <td>до <b>1 года</b> · <b>150 000 ֏</b></td>
+            <td>Учёба в РА (ст. 29.3) либо квота и трудовой/ГПХ договор за <b>15 рабочих дней</b>.</td>
           </tr>
           <tr>
-            <th scope="row">Карта</th>
-            <td data-l="Что требуется">Выдача карты временного или постоянного пребывания.
-              <span class="src">ՀՕ-215-Ն, ст. 1 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">5,95-кратная базовая; в драмах МВД эту позицию не называло</td>
-            <td data-l="Сколько длится">—</td>
+            <td><b>ПМЖ по бизнесу / семье</b></td>
+            <td>ст. 16 ч. 1 п. «а», п. «в»</td>
+            <td><b>5 лет</b> · <b>250 000 ֏</b></td>
+            <td>Семья гражданина РА или бизнес: стаж ВНЖ ≥ <b>3 лет</b> за последние <b>5 лет</b>.</td>
           </tr>
           <tr>
-            <th scope="row">Свидетельство</th>
-            <td data-l="Что требуется">Рассмотрение заявления о выдаче свидетельства о праве законного проживания.
-              <span class="src">ՀՕ-215-Ն, ст. 1 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">30-кратная базовая; выдача — 5,95-кратная</td>
-            <td data-l="Сколько длится">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Донести документы</th>
-            <td data-l="Что требуется">Донести документы или исправить ошибки после уведомления через платформу.
-              <span class="src">Новая ст. 17 ч. 9 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится" class="us"><b>5 дней</b>, иначе платформа приостанавливает производство автоматически</td>
-          </tr>
-          <tr>
-            <th scope="row">Возобновление</th>
-            <td data-l="Что требуется">Возобновить приостановленное производство.
-              <span class="src">Новая ст. 17 ч. 10 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится" class="us"><b>1 месяц</b>, иначе платформа прекращает производство автоматически</td>
-          </tr>
-          <tr>
-            <th scope="row">Биометрия</th>
-            <td data-l="Что требуется">Биометрия и получение карты — <b>лично</b>: отпечатки пальцев обеих рук и электронный образец подписи.
-              <span class="src">Новая ст. 17 ч. 7; ՀՕ-210-Ն · arlis.am/hy/acts/225852 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится">за детей до 16 лет получает родитель или законный представитель</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок ВНЖ</th>
-            <td data-l="Что требуется">Срок временного статуса.
-              <span class="src">Ст. 8 ՀՕ-11-Ն, меняющая ст. 15 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится" class="us"><b>до одного года</b>; нормы о продлении в статье больше нет</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок ПМЖ</th>
-            <td data-l="Что требуется">Срок постоянного статуса.
-              <span class="src">Новая ст. 16 ч. 2; обоснование Правительства к законопроекту Կ-1172 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится"><b>5 лет</b> — это не нововведение: пять лет действуют и сейчас</td>
-          </tr>
-          <tr>
-            <th scope="row">Ценз для ПМЖ</th>
-            <td data-l="Что требуется">Ценз для постоянного статуса по семье и по предпринимательству.
-              <span class="src">Новая ст. 16 ч. 1 п. «ա» и «գ» · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится" class="us"><b>не менее трёх лет</b> временного статуса в течение последних пяти</td>
-          </tr>
-          <tr>
-            <th scope="row">Порог · компания</th>
-            <td data-l="Что требуется">Финансовый порог: участник или акционер организации.
-              <span class="src">Новая ст. 29.4 ч. 3 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us"><b>2 000 000 драмов</b> в уставный капитал либо в акциях и ценных бумагах</td>
-            <td data-l="Сколько длится">проверяется на дату подачи</td>
-          </tr>
-          <tr>
-            <th scope="row">Порог · ИП</th>
-            <td data-l="Что требуется">Финансовый порог: индивидуальный предприниматель.
-              <span class="src">Новая ст. 29.4 ч. 3 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us"><b>1 000 000 драмов</b> на счетах ИП <b>либо</b> оборот 1 000 000 драмов за 60 дней до подачи</td>
-            <td data-l="Сколько длится">оборот считается за 60 дней, предшествующих дню подачи</td>
-          </tr>
-          <tr>
-            <th scope="row">Квота</th>
-            <td data-l="Что требуется">Квота на год по видам, количеству и основаниям статусов.
-              <span class="src">Новая ст. 3 (ст. 2 ՀՕ-11-Ն), новая ст. 17 ч. 4, новая ст. 19 ч. 1 п. 13 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится">учитывается при принятии решения; исчерпание квоты — прямое основание отказа</td>
-          </tr>
-          <tr>
-            <th scope="row">183 дня</th>
-            <td data-l="Что требуется">Уведомление об отсутствии в РА 183 дня и более.
-              <span class="src">Новая ст. 17 ч. 8 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится" class="us"><b>10 дней</b> с момента истечения 183-дневного срока, через платформу</td>
-          </tr>
-          <tr>
-            <th scope="row">180 дней</th>
-            <td data-l="Что требуется">Удержание предпринимательского основания.
-              <span class="src">Новая ст. 29.4 ч. 5 · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">капитал не ниже <b>1 000 000 драмов</b></td>
-            <td data-l="Сколько длится" class="us">в базе КГД должны появиться сведения об исчисленных налогах <b>в течение 180 дней</b> после получения статуса</td>
+            <td><b>ПМЖ без стажа ВНЖ</b></td>
+            <td>ст. 16 ч. 1 п. «б», «г», «д»</td>
+            <td><b>5 лет</b> · <b>250 000 ֏</b></td>
+            <td>Армянские корни (п. «б»), инвестиции (п. «г») или заслуги (п. «д») — без ценза <b>3 лет</b> ВНЖ.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h3 class="h3" id="ust-now" style="margin-top: var(--s-10)">Порядок, который действует прямо сейчас</h3>
-    <div class="diy-wrap" style="margin-top: var(--s-5)">
-      <table class="diy">
-        <caption>Действующие пошлины и сроки. Раздел госпошлин на сайте Миграционной службы
-          опубликован только на армянском. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr>
-            <th scope="col">Позиция</th>
-            <th scope="col">Что требуется и чем подтверждается</th>
-            <th scope="col">Сколько стоит</th>
-            <th scope="col">Сколько длится</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Временный статус</th>
-            <td data-l="Что требуется">Временный статус: карта и учёт.
-              <span class="src">migration.mia.gov.am, раздел «<span lang="hy">Պետական տուրքեր</span>» (только на армянском); ст. 15 закона «Об иностранцах» · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us">105 000 драмов</td>
-            <td data-l="Сколько длится">до 1 года, продление ежегодно; заявление не позднее чем за 30 дней до истечения</td>
-          </tr>
-          <tr>
-            <th scope="row">Продление</th>
-            <td data-l="Что требуется">Продление временного статуса.
-              <span class="src">Там же · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us">105 000 драмов</td>
-            <td data-l="Сколько длится">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Постоянный статус</th>
-            <td data-l="Что требуется">Постоянный статус.
-              <span class="src">Там же; ст. 16 закона «Об иностранцах» · 04.09.2026</span></td>
-            <td data-l="Сколько стоит" class="us">140 000 драмов</td>
-            <td data-l="Сколько длится">5 лет</td>
-          </tr>
-          <tr>
-            <th scope="row">Обмен карты</th>
-            <td data-l="Что требуется">Обмен карты постоянного пребывания или восстановление карты.
-              <span class="src">migration.mia.gov.am; карточки услуг hartak.am · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">20 000 / 12 000 драмов</td>
-            <td data-l="Сколько длится">5–10 дней</td>
-          </tr>
-          <tr>
-            <th scope="row">Решение</th>
-            <td data-l="Что требуется">Решение по заявлению.
-              <span class="src">Ст. 17 ч. 3 закона «Об иностранцах» · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">—</td>
-            <td data-l="Сколько длится">30 дней со дня подачи</td>
-          </tr>
-          <tr>
-            <th scope="row">Повторная подача</th>
-            <td data-l="Что требуется">Повторная подача после отказа.
-              <span class="src">Ст. 20 ч. 4 закона «Об иностранцах» · 04.09.2026</span></td>
-            <td data-l="Сколько стоит">пошлина не возвращается</td>
-            <td data-l="Сколько длится" class="us"><b>через один год</b></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="note" style="margin-top: var(--s-8)">Строка, которую стоит прочитать дважды:
-      <b>пошлина уплачивается за рассмотрение заявления и при отказе не возвращается.</b> После
-      включения реформы цена одной неудачной подачи — это 150 000 или 250 000 драмов плюс год
-      ожидания.</p>
-
-    <!-- Цитата первоисточника. Правило канона жёсткое: в blockquote попадает только
-         дословный текст. Язык оригинала — армянский, русских официальных текстов не
-         существует, все переводы в этом разборе машинные. Пока дословная цитата не
-         выверена носителем, в блоке стоит слот — пустое место честнее пересказа. -->
-    <figure class="lawquote" style="margin-top: var(--s-10)">
-      <blockquote cite="https://www.arlis.am/hy/acts/225847">
-        <p><span class="slot">дословный текст части, устанавливающей срок вступления в силу</span></p>
-      </blockquote>
-      <figcaption>
-        <span class="lawquote__art">Ст. 3 · ՀՕ-215-Ն от 11.05.2026</span>
-        <span>Именно эта норма даёт формулу «на десятый день после публикации объявления
-          Миграционной службы о запуске платформы, но не позднее 1 ноября 2026 года». Русского
-          официального текста не существует; цитата ставится после вычитки носителем по оригиналу.</span>
-        <a href="https://www.arlis.am/hy/acts/225847" rel="noopener">Первоисточник на arlis.am</a>
-      </figcaption>
+    <figure class="lawquote" data-reveal>
+      <blockquote>Если в течение 180 дней после получения временного статуса пребывания на основании осуществления предпринимательской деятельности в налоговом органе отсутствует информация о начисленных налогах от предпринимательской деятельности, временный статус пребывания признаётся утратившим силу.</blockquote>
+      <figcaption><b>Закон РА «Об иностранцах» (в ред. ՀՕ-11-Ն от 20.01.2026)</b> · статья 29.4 часть 5 · <a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a></figcaption>
     </figure>
   </div>
 </section>
 
-<!-- ═══ 06 · Где ломается ════════════════════════════════════════ -->
-<section class="section" id="lomaetsya" aria-labelledby="lom-t">
+<!-- ═══ 04 · 5 правовых ловушек + маршрут 5 шагов ════════════════ -->
+<section class="section section--deep section--thread section--light" id="lovushki" aria-labelledby="traps-t" data-rail-label="Ловушки и шаги">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">05</span> Где ломается</p>
-      <h2 class="h2" id="lom-t">Десять названных ловушек, <em>а не рассуждение о сложности</em></h2>
-      <p class="lead">Решение принимает Миграционная служба. Мы проверяем пакет по этому списку и
-        снимаем те причины, которые снимаются до подачи. Исхода мы не обещаем — на юридическом
-        сайте такое обещание стоит дороже, чем даёт.</p>
-      <p class="small measure">Пометка у каждой ловушки говорит, снимается ли причина <b>до
-        подачи</b> — потому что после подачи цена ошибки другая.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">04</span> Практика и риски отказа</p>
+      <h2 class="h2" id="traps-t">Пять ловушек реформы ВНЖ, <em>где теряют пошлину и статус</em></h2>
+      <p class="lead">С 1 ноября 2026 года подача идёт через электронную платформу Миграционной службы; в октябре 2026 года записаться по прежней очереди до запуска платформы было нельзя.</p>
     </div>
 
-    <dl class="traps">
+    <dl class="traps" data-stagger>
       <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-          <span class="trap__title">Основание выбрано по удобству, а не по документам</span></dt>
-        <dd>Человек выбирает то основание, которое звучит проще, и обнаруживает нехватку документа
-          уже внутри производства. Сменить основание посреди дела — значит собрать пакет заново и
-          заплатить пошлину заново. Кончается потерей нескольких недель и денег.</dd>
-        <dd><b>Снимается ли</b>Снимается до подачи, и это самое дешёвое из всего списка.</dd>
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">проверяем до подачи</span></span><span class="trap__title">Деньги на личной карте вместо счёта ИП</span></dt>
+        <dd>Нужен остаток <b>1 000 000 ֏</b> именно на счетах ИП либо оборот за <b>60 дней</b>. Выписка с карты физлица ведёт к отказу, потере <b>150 000 ֏</b> и паузе на <b>1 год</b>. <span class="src">ст. 29.4 ч. 3, ст. 20 ч. 4 ՀՕ-11-Ն</span></dd>
+        <dd><b>В LTCG:</b> открываем счёт ИП и выверяем выписку до подачи.</dd>
       </div>
 
       <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag">снимается наполовину</span></span>
-          <span class="trap__title">ИП зарегистрировано, деятельности нет</span></dt>
-        <dd>Компания или ИП, открытые непосредственно перед подачей, без оборотов и без уплаченных
-          налогов, читаются органом как формальное использование основания. В действующем законе это
-          подпадает под ст. 19 п. «е» — ложные сведения либо скрытая настоящая цель пребывания.
-          После включения реформы к этому добавляется прямая норма: если в течение <b>180 дней</b>
-          после получения статуса в базе Комитета государственных доходов нет сведений об
-          исчисленных налогах по результатам предпринимательской деятельности, статус аннулируется.
-          А платформа получает автоматический доступ к базе КГД, включая сведения об исчисленных
-          налогах и о регистрации иностранца как работника. Кончается тем, что «спящее» ИП перестаёт
-          работать как схема: важно не зарегистрироваться, а начислить.
-          <span class="src">Источник: новая ст. 29.4 ч. 5 и новая ст. 42.2 закона «Об иностранцах» · 04.09.2026.</span></dd>
-        <dd><b>Снимается ли</b>До подачи снимается наполовину: дать бизнесу поработать до подачи
-          можно, а вот держать его живым после получения статуса придётся всё время; это уже не
-          миграционная, а бухгалтерская работа.</dd>
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag trap__tag--fix">контролируем в учёте</span></span><span class="trap__title">«Спящее» ИП без налогов за 180 дней</span></dt>
+        <dd>Без начисленных налогов в базе КГД за <b>180 дней</b> ВНЖ аннулируется, а при лишении статуса новый ВНЖ не выдают <b>3 года</b>. <span class="src">ст. 29.4 ч. 5, ст. 19 ч. 1 п. 1 ՀՕ-11-Ն</span></dd>
+        <dd><b>В LTCG:</b> ведём учёт от <b>36 000 ֏/мес</b> и контролируем начисления в КГД.</dd>
       </div>
 
       <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-          <span class="trap__title">Родство, которое перестало быть основанием</span></dt>
-        <dd>Брат, сестра, бабушка, дед, внук сегодня входят в круг «близких родственников» по ст. 15,
-          а с включением реформы из него выпадают: остаются супруг, родитель, ребёнок. Человек,
-          который планировал подаваться по брату, после 1 ноября обнаруживает, что основания нет
-          вообще. Кончается тем, что придётся искать другое основание с нуля.</dd>
-        <dd><b>Снимается ли</b>Снимается до подачи — если успеть подать по действующим правилам:
-          ст. 30 ч. 4 привязывает применимый режим к моменту <b>подачи</b> заявления, а не к моменту
-          решения. Оговорка, которую мы обязаны сделать: эта же часть говорит о порядке рассмотрения
-          поданных заявлений и не гарантирует, что выданный статус потом не попадёт под новые
-          правила продления.</dd>
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимаем до подачи</span></span><span class="trap__title">Всего 5 дней на исправление дефектов анкеты</span></dt>
+        <dd>На устранение неполноты в платформе даётся <b>5 дней</b>, после чего дело приостанавливается на <b>1 месяц</b> и прекращается без возврата пошлины. <span class="src">ст. 17 ч. 9–10 ՀՕ-11-Ն</span></dd>
+        <dd><b>В LTCG:</b> готовим переводы, апостили и НОУ до загрузки анкеты.</dd>
+      </div>
+
+      <div class="tile trap">
+        <div class="tile__art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+          </picture>
+        </div>
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag">контроль сроков выезда</span></span><span class="trap__title">Отъезд на 183 дня без уведомления за 10 дней</span></dt>
+        <dd>До реформы порог <b>6 месяцев</b> касался только ПМЖ; с 01.11.2026 уведомление за <b>10 дней</b> после <b>183 дней</b> отсутствия обязательно для ВНЖ и ПМЖ. <span class="src">ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն</span></dd>
+        <dd><b>В LTCG:</b> отслеживаем календарь поездок и подаём уведомление.</dd>
+      </div>
+
+      <div class="tile trap" data-span="12">
+        <div class="tile__art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+            <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+          </picture>
+        </div>
+        <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag">личная биометрия с 16 лет</span></span><span class="trap__title">Попытка получить карту ВНЖ полностью дистанционно</span></dt>
+        <dd>Онлайн подаётся заявление, а карту статуса или справку ЕАЭС заявитель старше <b>16 лет</b> получает лично со сдачей отпечатков и подписи. <span class="src">ст. 17 ч. 7 ՀՕ-11-Ն · Закон РА ՀՕ-210-Ն</span></dd>
+        <dd><b>В LTCG:</b> готовим ИП (<b>45 000 ֏</b>), НОУ (<b>35 000 ֏</b>) и счёт (<b>110 000 ֏</b>) под точный график вашего визита.</dd>
       </div>
     </dl>
 
-    <!-- .traps-more в site.css не объявлен (его нет и в каноне): отступы заданы токенами
-         на месте, чтобы не заводить новый класс. См. issues сборки. -->
-    <details class="traps-more" style="margin-top: var(--gap)">
-      <summary class="btn btn--outline btn--sm">Ещё семь ловушек <svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-      <dl class="traps" style="margin-top: var(--gap)">
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag">до подачи не снимается</span></span>
-            <span class="trap__title">Пятидневная автоматика платформы</span></dt>
-          <dd>Если в ходе производства нужно донести документ или исправить ошибку, вас уведомляют
-            через платформу; не выполнили в <b>пятидневный</b> срок — платформа приостанавливает
-            производство <b>сама, без человека</b>. Не совершили действий по возобновлению в течение
-            <b>месяца</b> — платформа производство прекращает. Кончается тем, что дело закрывается
-            не решением чиновника, а истечением таймера, и обжаловать тут нечего.
-            <span class="src">Источник: новая ст. 17 ч. 9 и ч. 10 закона «Об иностранцах» · 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>До подачи не снимается, снимается дисциплиной: почта, к которой
-            есть доступ, и человек, который смотрит в платформу каждый день.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag">до подачи не снимается</span></span>
-            <span class="trap__title">Квота исчерпана</span></dt>
-          <dd>Новое, ранее не существовавшее основание отказа: «квота, установленная Правительством
-            на данный год, исчерпана». Отказ не зависит от качества вашего пакета. Единственное
-            смягчение — при отказе по квоте годичный запрет на повторную подачу не применяется,
-            подать можно, как только отпали обстоятельства отказа. Кончается потерей пошлины и
-            времени при безупречных документах.
-            <span class="src">Источник: новая ст. 19 ч. 1 п. 13; ст. 20 ч. 4 закона «Об иностранцах» · 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>До подачи не снимается никак. Цифр квот не существует, и мы не
-            знаем, насколько это будет реальной проблемой.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 06</span><span class="trap__tag">режим жизни со статусом</span></span>
-            <span class="trap__title">Две похожие цифры: 180 и 183</span></dt>
-          <dd>Это разные обязанности и разные последствия. <b>180 дней</b> — срок, в течение которого
-            после получения статуса в базе КГД должны появиться сведения об исчисленных налогах,
-            иначе предпринимательское основание аннулируется. <b>183 дня</b> — срок отсутствия в
-            стране, после которого обладатель временного или постоянного статуса обязан уведомить
-            уполномоченный орган через платформу <b>в течение 10 дней</b>; освобождены только
-            обладатели статуса по основаниям «инвестиция» и «исключительные услуги». Раньше такая
-            обязанность была только у обладателей постоянного статуса, порог был «более 6 месяцев»,
-            уведомление письменное и санкции в законе не было. Кончается для живущих на два дома
-            тем, что молчание становится нарушением.
-            <span class="src">Источник: новая ст. 29.4 ч. 5 и новая ст. 17 ч. 8 закона «Об иностранцах» · 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>До подачи не снимается, это режим жизни со статусом, а не подачи.
-            Отдельно и честно: санкцию за неуведомление — признание статуса утратившим силу по новой
-            ст. 21 ч. 1 п. 7 — из пяти независимых прочтений текста нашло одно. Мы приводим её как
-            требующую подтверждения, а не как установленный факт. И ещё: 183 дня здесь — <b>не
-            налоговое резидентство</b>, хотя порог совпадает. Это другой институт, и смешивать их —
-            самая частая ошибка темы.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 07</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Приехали не по тому адресу</span></dt>
-          <dd>Два официальных источника указывают разные адреса. Портал migration.e-gov.am даёт
-            «Ереван, Давташен, 4-й квартал, 17/10» — это административное здание Службы, куда по ВНЖ
-            идти не надо. Фактическая подача — <b>ул. Тайрова, 14</b>, выдача карты —
-            <b>ул. Вазгена Саргсяна, 3</b>. Правительственный портал eRegulations вдобавок до сих пор
-            указывает несуществующее паспортно-визовое управление. Кончается потерянным днём и, если
-            у вас была запись, потерянной записью.
-            <span class="src">Источник: migration.e-gov.am и портал eRegulations, обращение 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>Снимается до подачи.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 08</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Расчёт по тридцати дням</span></dt>
-          <dd>Закон даёт <b>30 дней</b> на решение со дня подачи, и норма прямо страхует заявителя:
-            если в ходе производства истёк срок вашего законного нахождения, до принятия решения
-            нахождение считается законным. Но тридцать дней — это срок решения, а не срок всего пути:
-            к нему добавляется ожидание записи, а сейчас записи нет вовсе. Человек, купивший обратные
-            билеты «по тридцати дням», попадает в разрыв.
-            <span class="src">Источник: новая ст. 17 ч. 4 закона «Об иностранцах» · 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>Снимается до подачи — планированием, а не документами.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 09</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Подача впритык к концу законного пребывания</span></dt>
-          <dd>Безвизовое пребывание — не более 180 дней в течение одного года. Если подаваться в
-            последнюю неделю, времени на донесение документов по пятидневному правилу не остаётся.
-            За превышение срока пребывания в Армении установлен штраф, и уплата штрафа не освобождает
-            от обязанности выехать — <b>размер и номер статьи КоАП РА мы по первоисточнику не
-            подтвердили и поэтому не называем.</b>
-            <span class="src">Источник: ст. 7 ч. 1 закона «Об иностранцах» · 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>Снимается до подачи.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 10</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Один отказ — год ожидания</span></dt>
-          <dd>Повторно обратиться можно только через год, пошлина не возвращается. После включения
-            реформы годичный срок не распространяется на отказы по ряду оснований, включая квоту,
-            отпадение основания и нарушения трудового трека. Кончается тем, что цена плохо собранного
-            пакета измеряется не пошлиной, а годом жизни.
-            <span class="src">Источник: ст. 20 ч. 4 закона «Об иностранцах» · 04.09.2026.</span></dd>
-          <dd><b>Снимается ли</b>Снимается до подачи — тем, что пакет проверяется целиком до того,
-            как заявление ушло в платформу.</dd>
-        </div>
-      </dl>
-    </details>
-
-    <div class="bento" style="margin-top: var(--s-10)">
-      <div class="tile tile--quiet" data-span="6">
-        <p class="tile__meta"><b>Граница</b> что решается только разговором</p>
-        <h3 class="h4">Чего эта страница о вас не знает</h3>
-        <p>Мы не знаем, что у вас написано в документах о родстве и в какой форме они легализованы.
-          Мы не знаем, сколько дней вы фактически провели в Армении и за её пределами по календарю,
-          а не по памяти. Мы не знаем, есть ли по вашему ИП начисления в базе КГД сегодня. Три этих
-          вещи решают, какое основание вам подходит, и ни одну из них нельзя вычитать со страницы.</p>
-      </div>
-      <div class="tile tile--quiet" data-span="6">
-        <p class="tile__meta"><b>Граница</b> чего не знает никто</p>
-        <h3 class="h4">И то, чего никто не знает</h3>
-        <p>Как устроено продление временного статуса после 1 ноября. Норма о продлении из ст. 15
-          удалена, ст. 24 признана утратившей силу, а решение Правительства о порядке не
-          опубликовано. Подавать заново каждый год? Продлевать по какому-то не описанному в законе
-          механизму? Это первый вопрос, который задаёт каждый, и честный ответ на 04.09.2026 —
-          «нормы нет, ждём подзаконный акт». Мы следим за этим еженедельно.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 05 · Порядок шагов ═══════════════════════════════════════ -->
-<section class="section" id="poryadok" aria-labelledby="por-t">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">06</span> Порядок</p>
-      <h2 class="h2" id="por-t">Как пойдёт подача <em>после включения платформы</em></h2>
-      <p class="lead">Пять шагов, как они описаны в законе. Слева — что делает орган или платформа,
-        справа — что требуется от вас. Сроки, которых в источнике нет, стоят слотом: непроверенное
-        не должно выглядеть готовым.</p>
-    </div>
-
-    <ol class="tl" role="list">
+    <ol class="tl" role="list" data-stagger style="margin-top: var(--s-6)">
       <li class="tl__step">
         <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 01</p>
-        <h3 class="tl__title">Регистрация на платформе</h3>
-        <p class="tl__who"><span><b>Орган</b>ведёт единую электронную платформу; бумажный и очный канал подачи закон не предусматривает</span>
-          <span><b>Вы</b>регистрируетесь предварительно и встаёте в очередь</span></p>
-        <p class="tl__days">Срок: <span class="slot">порядок устанавливает Правительство, акта нет</span></p>
+        <span class="tl__no">Шаг 01</span>
+        <span class="tl__title">Сверка основания</span>
+        <span class="tl__who"><span><b>От вас:</b> паспорт и договоры</span><span><b>От нас:</b> выбор статьи и расчёт порогов</span></span>
       </li>
       <li class="tl__step">
         <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 02</p>
-        <h3 class="tl__title">Предварительное изучение документов</h3>
-        <p class="tl__who"><span><b>Орган</b>подтверждает полноту документов до записи на приём</span>
-          <span><b>Вы</b>загружаете пакет по основанию, которое подтверждается бумагами</span></p>
-        <p class="tl__days">Срок: <span class="slot">в законе не назван</span></p>
+        <span class="tl__no">Шаг 02</span>
+        <span class="tl__title">ПСН, ИП и банк</span>
+        <span class="tl__who"><span><b>От вас:</b> визит с паспортом</span><span><b>От нас:</b> НОУ, регистрация ИП и счёт</span></span>
       </li>
       <li class="tl__step">
         <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 03</p>
-        <h3 class="tl__title">Подача и уплата пошлины</h3>
-        <p class="tl__who"><span><b>Орган</b>принимает заявление только через платформу</span>
-          <span><b>Вы</b>платите пошлину — её можно уплатить в том числе онлайн</span></p>
-        <p class="tl__days">Пошлина за рассмотрение при отказе не возвращается</p>
+        <span class="tl__no">Шаг 03</span>
+        <span class="tl__title">Финансовый ценз</span>
+        <span class="tl__who"><span><b>От вас:</b> остаток или оборот</span><span><b>От нас:</b> сверка выписки 1 млн / 2 млн ֏</span></span>
       </li>
       <li class="tl__step">
         <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 04</p>
-        <h3 class="tl__title">Рассмотрение</h3>
-        <p class="tl__who"><span><b>Орган</b>решает в 30-дневный срок; квота учитывается при принятии решения</span>
-          <span><b>Вы</b>отвечаете на уведомления платформы: 5 дней на донесение, месяц на возобновление</span></p>
-        <p class="tl__days">30 дней со дня подачи</p>
+        <span class="tl__no">Шаг 04</span>
+        <span class="tl__title">Подача и биометрия</span>
+        <span class="tl__who"><span><b>От вас:</b> отпечатки при получении</span><span><b>От нас:</b> подача в платформу</span></span>
+        <span class="tl__days">До 30 дней</span>
       </li>
       <li class="tl__step">
         <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 05</p>
-        <h3 class="tl__title">Биометрия и карта</h3>
-        <p class="tl__who"><span><b>Орган</b>снимает отпечатки пальцев обеих рук и электронный образец подписи</span>
-          <span><b>Вы</b>приходите лично; за детей до 16 лет получает родитель или законный представитель</span></p>
-        <p class="tl__days">Срок: <span class="slot">в законе не назван</span></p>
+        <span class="tl__no">Шаг 05</span>
+        <span class="tl__title">Учёт (180 дней)</span>
+        <span class="tl__who"><span><b>От вас:</b> операции по счёту</span><span><b>От нас:</b> отчётность в КГД</span></span>
       </li>
     </ol>
-
-    <p class="src" style="margin-top: var(--s-6)">Источник: новые ст. 14 ч. 3, ст. 17 ч. 4, 7, 9, 10
-      и ст. 29.5 закона «Об иностранцах», вводятся законом ՀՕ-11-Ն; закон
-      «Об удостоверяющем личность документе» ՀՕ-210-Ն ·
-      <a href="https://www.arlis.am/hy/acts/225852" rel="noopener">arlis.am/hy/acts/225852</a> ·
-      проверено 04.09.2026.</p>
   </div>
 </section>
 
-<!-- ═══ 08 · Сколько стоит ═══════════════════════════════════════ -->
-<section class="section" id="skolko" aria-labelledby="sk-t">
+<!-- ═══ 05 · Сколько стоит (Калькулятор) ═════════════════════════ -->
+<section class="section section--glow section--thread" id="skolko" aria-labelledby="sk-t" data-rail-label="Калькулятор">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">07</span> Сколько стоит</p>
-      <h2 class="h2" id="sk-t">Государственные пошлины и наша работа — <em>это разные деньги</em></h2>
-      <p class="lead">Пошлины — выше в таблицах: 105 000 и 140 000 драмов сейчас, по данным МВД
-        150 000 и 250 000 после включения новой шкалы, плюс карта. Они платятся государству, не нам,
-        и при отказе не возвращаются.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">05</span> Калькулятор комплекса</p>
+      <h2 class="h2" id="sk-t">Стоимость запуска бизнеса и учёта в LTCG <em>под ВНЖ</em></h2>
+      <p class="lead">Госпошлины — <b>150 000 ֏</b> за ВНЖ и <b>250 000 ֏</b> за ПМЖ — уплачиваются отдельно. ВНЖ оформляем в комплексе с открытием или ведением бизнеса в LTCG.</p>
     </div>
 
-    <!-- Цены названы Геворгом на созвоне 31.08.2026: ИП 45 000, счёт 110 000, соцкарта 35 000,
-         адрес 430 000 в год, бухгалтерия 36 000 в месяц. Валюта явно не названа —
-         уточняется у компании, поставлена как драмы.
-         #prices — единый источник цен для js/site.js: суммы в итоге пересчитываются
-         скриптом, а в разметке уже стоят готовыми, чтобы страница читалась без него. -->
     <script type="application/json" id="prices">
     {
       "publish": true,
       "currency": "֏",
       "currencyConfirmed": true,
-      "asOf": "2026-08-31",
+      "asOf": "2026-10-18",
       "modules": {
         "ip":         { "name": "Регистрация ИП",       "per": "once",  "amount": 45000  },
         "account":    { "name": "Открытие счёта",       "per": "once",  "amount": 110000 },
         "social":     { "name": "Соцкарта",             "per": "once",  "amount": 35000  },
         "address":    { "name": "Адрес",                "per": "year",  "amount": 430000 },
-        "accounting": { "name": "Бухгалтерия",          "per": "month", "amount": 36000  }
+        "accounting": { "name": "Бухгалтерия",          "per": "month", "amount": 36000, "from": true }
       }
     }
     </script>
 
     <div class="calc" data-calc>
-      <div class="calc__mods">
+      <div class="calc__mods" data-stagger>
         <label class="tile mod" for="m-ip">
           <input type="checkbox" id="m-ip" name="mod" value="ip" checked>
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно</div></div>
-            <div class="mod__price">45 000 ֏</div>
+            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно · пошлина отдельно</div></div>
+            <div class="mod__price" data-price="ip">45 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
-            <ul>
-              <li>Подбор налогового режима под ваш профиль дохода</li>
-              <li>Подготовка и подача документов, получение регистрации</li>
-              <li>Не входит: госпошлины и комиссии — отдельной строкой</li>
-            </ul>
+            <ul><li>Подбор налогового режима и подача в госреестр (госпошлина отдельно)</li></ul>
           </details>
         </label>
 
         <label class="tile mod" for="m-address">
-          <input type="checkbox" id="m-address" name="mod" value="address" checked>
+          <input type="checkbox" id="m-address" name="mod" value="address">
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Адрес — регистрация и сопровождение</div><div class="mod__unit">в год</div></div>
-            <div class="mod__price">430 000 ֏</div>
+            <div><div class="mod__name">Адрес и корреспонденция</div><div class="mod__unit">в год · опционально</div></div>
+            <div class="mod__price" data-price="address">430 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
-            <ul>
-              <li>Адрес и обслуживание корреспонденции в течение года</li>
-              <li>Подтверждаемый адрес нужен раньше, чем кажется: для регистрации ИП и соцкарты</li>
-              <li>Не входит: госпошлины и нотариальные расходы</li>
-            </ul>
+            <ul><li>Подтверждаемый адрес и приём писем (для ИП юрадрес по закону не обязателен)</li></ul>
           </details>
         </label>
 
@@ -1252,15 +620,11 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
             <div><div class="mod__name">Открытие счёта</div><div class="mod__unit">единовременно</div></div>
-            <div class="mod__price">110 000 ֏</div>
+            <div class="mod__price" data-price="account">110 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
-            <ul>
-              <li>Проверка пакета до подачи по списку причин отказа</li>
-              <li>Подбор банка под цель счёта, сопровождение подачи</li>
-              <li>Не входит: комиссии банка; решение принимает банк</li>
-            </ul>
+            <ul><li>Предпроверка досье под комплаенс и сопровождение (комиссии банка отдельно)</li></ul>
           </details>
         </label>
 
@@ -1268,33 +632,25 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <input type="checkbox" id="m-social" name="mod" value="social">
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Номер общественных услуг</div><div class="mod__unit">единовременно</div></div>
-            <div class="mod__price">35 000 ֏</div>
+            <div><div class="mod__name">Номер общественных услуг (ПСН)</div><div class="mod__unit">единовременно</div></div>
+            <div class="mod__price" data-price="social">35 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
-            <ul>
-              <li>Порядок шагов относительно адреса и статуса</li>
-              <li>Подготовка и сопровождение получения</li>
-              <li>Это цена работы: госпошлина за присвоение номера в законе не установлена</li>
-            </ul>
+            <ul><li>Перевод паспорта и сопровождение получения ПСН в МВД РА</li></ul>
           </details>
         </label>
 
         <label class="tile mod" for="m-accounting">
-          <input type="checkbox" id="m-accounting" name="mod" value="accounting">
+          <input type="checkbox" id="m-accounting" name="mod" value="accounting" checked>
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц</div></div>
-            <div class="mod__price">36 000 ֏</div>
+            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц · под ваш режим</div></div>
+            <div class="mod__price" data-price="accounting">от 36 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
-            <ul>
-              <li>Отчётность и начисления по выбранному режиму</li>
-              <li>После 1 ноября это же и удержание миграционного основания: в базе КГД должны быть сведения об исчисленных налогах</li>
-              <li>Не входит: налоги и взносы — они платятся государству</li>
-            </ul>
+            <ul><li>Отчётность в КГД и контроль правила 180 дней для сохранения ВНЖ</li></ul>
           </details>
         </label>
       </div>
@@ -1302,251 +658,111 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       <aside class="tile tile--hero total" aria-labelledby="total" data-total>
         <p class="total__title" id="total">Ваш расчёт</p>
         <ul class="total__list chips" role="list" data-total-list>
-          <li class="chip">Регистрация ИП</li><li class="chip">Адрес</li>
+          <li class="chip">Регистрация ИП</li><li class="chip">Бухгалтерия</li>
         </ul>
         <dl class="total__rows" data-total-rows>
-          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">45 000<span class="cur">֏</span></dd></div>
-          <div class="total__row"><dt>В год</dt><dd data-sum="year">430 000<span class="cur">֏</span></dd></div>
-          <div class="total__row"><dt>Ежемесячно</dt><dd data-sum="month">—</dd></div>
+          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">45 000 ֏</dd></div>
+          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
+          <div class="total__row"><dt>Ежемесячно</dt><dd data-sum="month">от 36 000 ֏</dd></div>
         </dl>
         <div class="total__meta">
-          <p><b>Не входит:</b> государственные пошлины. <b>Сопровождение самого ВНЖ в эти модули не
-            входит</b> — оно считается отдельно и по-разному в зависимости от основания.
-            <span class="slot">цена сопровождения по основаниям — от клиента</span></p>
-          <p>Решение принимает Миграционная служба, и мы не обещаем исход.</p>
+          <p><b>Не входит:</b> госпошлины <b>150 000 ֏</b> (ВНЖ) и <b>250 000 ֏</b> (ПМЖ). <b>ВНЖ оформляем в комплексе</b> с бизнесом или бухгалтерией в LTCG.</p>
         </div>
         <div class="total__cta">
           <a class="btn btn--primary" href="#contact">Проверить основание <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
         </div>
       </aside>
     </div>
-
-    <p class="note" style="margin-top: var(--s-8)">И ещё одна честная строка, которая обычно не
-      нравится маркетологам, но она правда. Эта сумма — не счёт. Она показывает состав, а не итог: в
-      разговоре она меняется в обе стороны, и вниз тоже — потому что часть модулей у конкретного
-      человека уже закрыта, а часть не нужна вовсе. Поэтому расчёт заканчивается не цифрой, а
-      разговором, в котором видно, что из этого списка вам действительно нужно.
-      <!-- валюта на подтверждении: на созвоне 31.08.2026 она явно не названа --></p>
   </div>
 </section>
 
-<!-- ═══ 11 · Вопросы ═════════════════════════════════════════════ -->
-<section class="section" id="voprosy" aria-labelledby="faq-t">
+<!-- ═══ 06 · Вопросы (FAQ, синхронно с JSON-LD) ══════════════════ -->
+<section class="section section--deep section--thread section--light" id="voprosy" aria-labelledby="faq-t" data-rail-label="Вопросы">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">08</span> Вопросы</p>
-      <h2 class="h2" id="faq-t">Девять вопросов, <em>которые задают про 1 ноября</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">06</span> Частые вопросы</p>
+      <h2 class="h2" id="faq-t">Шесть вопросов о ВНЖ и ПМЖ <em>по закону ՀՕ-11-Ն</em></h2>
     </div>
 
-    <div class="faq">
+    <div class="faq" data-faq data-reveal>
       <details>
-        <summary>Можно ли подать на ВНЖ прямо сейчас, в сентябре?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Как подаётся заявление на ВНЖ с 1 ноября 2026 года?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Записаться на подачу нельзя — запись закрыта. Подача переезжает в единую электронную
-            платформу, которая ещё не запущена; ориентир 1 ноября 2026, и он может наступить раньше,
-            если Миграционная служба опубликует объявление о запуске платформы: восемь законов
-            майского пакета включаются на десятый день после такой публикации, но не позднее
-            1 ноября.</p>
-          <p>На 04.09.2026 объявления нет — мы смотрели ленту migration.mia.gov.am за
-            25.08–03.09.2026. Ни объявления о закрытии записи, ни объявления о переходном периоде на
-            государственных сайтах мы тоже не нашли, хотя ст. 30 ч. 4 переходный режим
-            устанавливает.</p>
-          <p class="src">Источник: ՀՕ-215-Ն, ст. 3; ՀՕ-210-Ն ·
-            <a href="https://www.arlis.am/hy/acts/225852" rel="noopener">arlis.am/hy/acts/225852</a> ·
-            проверено 04.09.2026.</p>
+          <p>Подача переходит в единую электронную платформу МВД РА, срок рассмотрения — <b>30 дней</b>. Карту заявитель старше <b>16 лет</b> получает лично со сдачей биометрии и подписи. <span class="src">ст. 17 ч. 1, 4, 7 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>У меня была запись на дату после 1 ноября. Что с ней?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Какой оборот или остаток нужен для ВНЖ по ИП и ООО с 1 ноября 2026?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Миграционная служба в публикации от 19.06.2026 сообщила три вещи: с 1 ноября 2026 приём
-            заявлений идёт через новую электронную систему; платформа migration.e-gov.am и мобильное
-            приложение <b>Early One</b> становятся недоступны; лица, записанные на приём после
-            1 ноября, подают заявления в новой системе.</p>
-          <p>Чего в этой публикации <b>нет</b>: утверждения, что ранее забронированные талоны
-            перестанут действовать и заявление придётся подавать заново. Это утверждение ходит по
-            обзорам как факт, но на странице органа его нет — это пересказ, а не источник. Механизм
-            переноса записей официально не опубликован.</p>
-          <p class="src">Источник: migration.mia.gov.am, публикация от 19.06.2026, раздел о статусе
-            проживания · проверено 04.09.2026.</p>
+          <p>Для первичного ВНЖ по ИП нужен остаток на счетах ИП от <b>1 000 000 ֏</b> или оборот за <b>60 дней</b>; для ООО/АО — вклад от <b>2 000 000 ֏</b>. При продлении действующего статуса с налогами в КГД финансовый порог повторно не подтверждается. <span class="src">ст. 29.4 ч. 3–4 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>ВНЖ теперь дают на год — а как продлевать?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Могут ли супруг, дети и родители обладателя временного ВНЖ получить статус по воссоединению семьи?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Ответ, который мы можем дать честно: <b>пока никак не известно.</b> Формулировка
-            «предоставляется на срок до 1 года с возможностью продлевать каждый раз на 1 год» и
-            требование подать заявление о продлении не позднее чем за 30 дней из ст. 15 в новой
-            редакции <b>удалены</b>, а ст. 24 (продление ВНЖ по трудовому основанию) признана
-            утратившей силу отдельной статьёй закона ՀՕ-11-Ն.</p>
-          <p>Порядок должно установить Правительство — акта нет. Всё, что вы прочитаете сейчас про
-            «продление по новым правилам», написано не по норме.</p>
-          <p class="src">Источник: ст. 15 закона «Об иностранцах» в новой редакции; ст. 24
-            признана утратившей силу отдельной статьёй закона ՀՕ-11-Ն ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-            проверено 04.09.2026.</p>
+          <p>Да: супруг, родитель или ребёнок гражданина РА, обладателя статуса пребывания или беженца. Братья, сёстры, бабушки, дедушки и внуки с 01.11.2026 исключены. <span class="src">ст. 15 ч. 1 п. «г», ст. 29.5 ч. 1 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Я предприниматель. Когда я смогу получить ПМЖ?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Кто может получить ПМЖ на 5 лет сразу, а кому нужны 3 года временного ВНЖ?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Не раньше, чем у вас накопится <b>три года временного статуса в течение последних пяти
-            лет</b>. До реформы предпринимательство было самостоятельным основанием постоянного
-            статуса без стажа — эта дорога закрывается.</p>
-          <p>Считать надо пятилетнее окно, а не «сколько я тут живу»: закон говорит не «прожил», а
-            «имел статус временного пребывания», и это не одно и то же. Прямой доступ к постоянному
-            статусу без ценза сохраняют только армяне по национальности, инвесторы (сумму
-            устанавливает Правительство, её ещё нет) и лица, оказавшие РА исключительные услуги.</p>
-          <p class="small"><a class="lnk" href="#osnovanie">Развилка: четыре основания</a><a class="lnk" href="ip-i-nalogi.html">Работаю: режим и обороты</a></p>
-          <p class="src">Источник: новая ст. 16 ч. 1 п. «գ» закона «Об иностранцах» · 04.09.2026.</p>
+          <p>По бизнесу и семье гражданина РА нужны <b>3 года</b> ВНЖ за <b>5 лет</b>. Без стажа ПМЖ на <b>5 лет</b> получают этнические армяне, инвесторы и лица за заслуги. <span class="src">ст. 16 ч. 1 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Правда, что теперь всё будет полностью онлайн?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Что произойдёт со статусом при отсутствии в Армении 183 дня и более?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Нет, и это важная неточность. Онлайн уходят <b>подача и делопроизводство</b>:
-            производство по предоставлению статуса осуществляется только через единую электронную
-            платформу.</p>
-          <p>Но карту статуса иностранец получает <b>лично</b>, сдавая отпечатки пальцев обеих рук и
-            электронный образец подписи, а закон «Об удостоверяющем личность документе» ՀՕ-210-Ն
-            описывает всю процедуру как «подача через платформу → сверка с госрегистром → уплата
-            пошлины → бронирование визита → <b>личная явка и сдача биометрии</b>». Армяне по
-            национальности вдобавок подают заявление лично после записи через платформу. Правильная
-            формулировка: подача — онлайн, биометрия и получение документа — лично.</p>
-          <p class="src">Источник: новая ч. 3 ст. 14 и новая ст. 17 ч. 7 закона «Об иностранцах»;
-            ՀՕ-210-Ն ·
-            <a href="https://www.arlis.am/hy/acts/225852" rel="noopener">arlis.am/hy/acts/225852</a> ·
-            проверено 04.09.2026.</p>
+          <p>При отсутствии в РА <b>183 дня</b> и более нужно уведомить орган через платформу за <b>10 дней</b>, иначе статус аннулируется (кроме ПМЖ по инвестициям и заслугам). <span class="src">ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Сколько будет стоить пошлина и с какого дня?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Сколько составляет госпошлина за ВНЖ и ПМЖ и оформляет ли LTCG ВНЖ отдельно от бизнеса?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Закон оперирует кратностью базовой пошлины: 150-кратная за рассмотрение заявления о
-            временном статусе, 250-кратная за постоянный, 5,95-кратная за карту. В драмах цифры
-            называло МВД в релизе от 21.01.2026: 150 тысяч и 250 тысяч.</p>
-          <p>Здесь есть ловушка, на которой ошибаются публикации. Сначала закон ՀՕ-12-Ն от 20.01.2026
-            ввёл новую шкалу со сроком 1 января 2027. Потом закон ՀՕ-213-Ն от 11.05.2026 признал
-            утратившим силу тот самый пункт — шкалу отменили до того, как она заработала. И только
-            потом закон ՀՕ-215-Ն изложил пункт о пошлинах в новой редакции со сроком «не позднее
-            1 ноября 2026». Поэтому дата «1 января 2027», которую вы встретите в обзорах, получается,
-            если не учесть отменяющий закон. Мы говорим это без имён и с номером нормы — проверить
-            может кто угодно.</p>
-          <p class="src">Источник: ՀՕ-215-Ն, ст. 1 ·
-            <a href="https://www.arlis.am/hy/acts/225847" rel="noopener">arlis.am/hy/acts/225847</a>;
-            ՀՕ-213-Ն ·
-            <a href="https://www.arlis.am/hy/acts/225850" rel="noopener">arlis.am/hy/acts/225850</a>;
-            релиз МВД
-            <a href="https://www.mia.gov.am/2026/01/21/azh-30/" rel="noopener">от 21.01.2026</a> ·
-            проверено 04.09.2026.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>А что с рабочей визой на 120 дней? Пишут, что она с 1 ноября<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Она не с 1 ноября. Новый вид визы — рабочая въездная, до 120 дней, без возможности
-            продления, выдаётся только один раз в календарном году — в законе действительно появился
-            (п. «ե» ч. 1 ст. 10).</p>
-          <p>Но по ст. 30 ч. 7 положения о рабочей визе и о разрешении на нахождение или проживание
-            в целях трудовой деятельности вступают в силу <b>после внедрения новой системы
-            электронной въездной визы РА</b>, а срок её внедрения в законе не назван вообще.
-            Визовые пошлины при этом сидят в законе ՀՕ-12-Ն со сроком 1 января 2027. Итог: новый
-            порядок статуса пребывания включается, новый порядок трудового въезда — ещё нет, и это
-            зазор, который органы публично не разъяснили.</p>
-          <p class="src">Источник: п. «ե» ч. 1 ст. 10 и ст. 30 ч. 7 закона ՀՕ-11-Ն ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-            проверено 04.09.2026.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>У меня спецпаспорт. Его отменят?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Ваш — нет. Упраздняется само основание: ст. 18 закона «Об иностранцах» признана
-            утратившей силу (ст. 11 закона ՀՕ-11-Ն), новые спецстатусы не выдаются, а его содержание
-            поглощается постоянным статусом по основанию «исключительные услуги РА». Переходные
-            положения прямо сохраняют права действующих обладателей до истечения срока имеющегося
-            статуса (ст. 30 ч. 6).</p>
-          <p>Отдельно стоит знать про землю: земельные права, которые раньше давал спецстатус,
-            законодатель переписал на «иностранцев с постоянным статусом по основанию оказания РА
-            исключительных услуг» — так изменены Земельный кодекс и закон о государственной
-            регистрации прав на имущество. Это касается <b>земли</b>, а не квартир и зданий: их
-            иностранцы приобретают на общих основаниях, и этого реформа не меняет. Полный разбор
-            земельного блока мы не публикуем: мы читали изменяющие акты, а не итоговый текст кодекса,
-            и общий конституционный режим собственности на землю — отдельный слой, который надо
-            разобрать до того, как что-то утверждать.</p>
-          <p class="src">Источник: ст. 11 и ст. 30 ч. 6 закона ՀՕ-11-Ն; ՀՕ-13-Ն ·
-            <a href="https://www.arlis.am/hy/acts/220884" rel="noopener">arlis.am/hy/acts/220884</a>;
-            ՀՕ-15-Ն ·
-            <a href="https://www.arlis.am/hy/acts/220882" rel="noopener">arlis.am/hy/acts/220882</a> ·
-            проверено 04.09.2026.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Может ли эта дата снова сдвинуться?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Позже 1 ноября 2026 — нет: формула «не позднее» этого не позволяет, а у январского
-            пакета дата жёсткая. Раньше — да, если Миграционная служба опубликует объявление о
-            запуске платформы.</p>
-          <p>Мы проверили, что в Национальном собрании на 04.09.2026 нет законопроекта, переносящего
-            или отменяющего эту дату: просмотрены списки принятых, включённых и невключённых
-            вопросов. Самый свежий закон, менявший закон «Об иностранцах», — ՀՕ-428-Ն от 27.08.2026 —
-            чисто редакционный: в одной части заменено название ведомства.</p>
-          <p class="src">Источник: списки вопросов Национального собрания; ՀՕ-428-Ն ·
-            <a href="https://www.arlis.am/hy/acts/230406" rel="noopener">arlis.am/hy/acts/230406</a> ·
-            проверено 04.09.2026.</p>
+          <p>Пошлина за ВНЖ — <b>150 000 ֏</b> (было <b>105 000 ֏</b>), за ПМЖ на <b>5 лет</b> — <b>250 000 ֏</b> (было <b>140 000 ֏</b>). Оформляем ВНЖ только в комплексе с бизнесом или бухгалтерией в LTCG для соблюдения правила <b>180 дней</b>. <span class="src">Закон ՀՕ-215-Ն · ст. 29.4 ч. 5 ՀՕ-11-Ն</span></p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ 12 · Разговор и равноправный выход ═══════════════════════ -->
-<section class="section" id="contact" aria-labelledby="cnt-t">
+<!-- ═══ 07 · Контакты и лид-форма ════════════════════════════════ -->
+<section class="section section--art section--contact" id="contact" aria-labelledby="cnt-t" data-rail-label="Контакты">
+  <div class="art art--center" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
+      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
+      <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" loading="lazy" decoding="async">
+    </picture>
+  </div>
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">09</span> Что делать дальше</p>
-      <h2 class="h2" id="cnt-t">Повод для разговора здесь свой, <em>и он не наш, а календарный</em></h2>
-      <p class="lead">До включения реформы и после неё правила разные: разный круг родственников,
-        разный путь к постоянному статусу, разная пошлина, разный порядок подачи. Заявление,
-        поданное по действующим правилам, по ст. 30 ч. 4 и рассматривается по действующим правилам.
-        Значит, проверить своё основание имеет смысл сейчас — не потому, что мы торопим, а потому,
-        что после включения платформы часть оснований у части людей просто исчезнет.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">07</span> Разбор случая</p>
+      <h2 class="h2" id="cnt-t">Проверим основание ВНЖ и соберём <em>комплекс до уплаты пошлины</em></h2>
+      <p class="lead">Напишите в Telegram или оставьте контакт — разберём ситуацию по ИП, ООО, семье или ЕАЭС и проверим выписку.</p>
     </div>
 
     <div class="contact">
-      <div class="tile">
+      <div class="tile" data-reveal>
         <div class="ways">
           <a class="way" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram<small>@LTCG_Armenia</small></a>
-          <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН: номер тот же, но наличие WhatsApp на нём
-               никто не проверял. Если не подтвердится — снять все ссылки с data-wa. -->
           <a class="way" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<small>+374 94 184 014</small></a>
           <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
         </div>
         <hr class="rule">
 
-        <!-- Регистр момента для js/site.js: скрипт собирает имена состояний из
-             элементов .state[data-state]. На ветке состояние одно и оно известно,
-             поэтому здесь только регистр, без видимой плитки. -->
         <span class="state sr-only" data-state="legalizing" data-name="Легализуюсь" aria-hidden="true"></span>
 
-        <!-- method="dialog" вне <dialog> — это НЕ отправка: браузер прерывает submit.
-             Так без JavaScript нажатие Enter в поле не бросает POST в никуда (бэкенда нет)
-             и не уносит имя и контакт в строку адреса. С JavaScript отправку перехватывает
-             js/site.js и собирает готовое сообщение. -->
         <form class="form" id="lead" method="dialog" data-lead novalidate>
-          <p class="tile__meta"><b>Вы выбрали</b> Легализуюсь → ВНЖ → расчёт: ИП и адрес</p>
+          <p class="tile__meta"><b>Вы выбрали</b> Легализуюсь → ВНЖ и ПМЖ → комплекс</p>
 
           <div class="form__row">
             <div class="field">
-              <label class="field__label" for="f-name">Как к вам обращаться</label>
+              <label class="field__label" for="f-name">Имя</label>
               <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
             </div>
             <div class="field">
@@ -1556,131 +772,117 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           </div>
 
           <div class="field">
-            <label class="field__label" for="f-msg">Чем подтверждается основание сегодня <small>— необязательно</small></label>
-            <textarea id="f-msg" name="message" placeholder="Одной фразой: наём, ИП, семья или корни — и что уже есть на руках"></textarea>
+            <label class="field__label" for="f-msg">Основание <small>— необязательно</small></label>
+            <textarea id="f-msg" name="message" placeholder="ИП, ООО, семья или работа в РА"></textarea>
           </div>
 
-          <!-- след выбора: ветка и модули калькулятора уезжают вместе с заявкой.
-               Ответ развилки пока не подхватывается: site.js собирает текст из
-               состояния и модулей, значения radio он не читает — см. issues сборки. -->
           <input type="hidden" id="f-state" name="state" value="legalizing">
           <input type="hidden" name="branch" value="vnzh">
-          <input type="hidden" name="modules" data-f-modules value="ip,address">
+          <input type="hidden" name="fork" value="" data-f-fork>
+          <input type="hidden" name="modules" data-f-modules value="ip,accounting">
 
-          <!-- honeypot: отсекает только заполненное поле; отсечки по времени нет намеренно -->
-          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="hp" aria-hidden="true"><label>Не заполняйте <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
           <label class="check"><input type="checkbox" name="consent" required>
             <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <span>Согласен на обработку персональных данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст согласия от клиента</span></span></label>
+            <span>Согласен на обработку персональных данных</span></label>
 
           <div class="form__foot">
             <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
-            <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
-            <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт выключен — напишите напрямую:
-              <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> ·
+            <span class="small js-only">или <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram</a></span>
+            <p class="form__nojs nojs-only small">Напишите напрямую:
+              <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">@LTCG_Armenia</a> ·
               <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
             <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
           </div>
         </form>
 
-        <!-- Приёмник заявки: бэкенда у сайта нет, заявка уходит сообщением в мессенджер. -->
         <div class="form__done" data-form-done hidden tabindex="-1">
-          <p class="h4">Заявка собрана — осталось отправить</p>
-          <p class="measure small">Сайт статический, отправлять некому: заявка уходит вашим сообщением в мессенджер. Текст уже готов.</p>
+          <p class="h4">Заявка собрана</p>
+          <p class="measure small">Текст готов для отправки в мессенджер.</p>
           <label class="sr-only" for="f-out">Текст заявки</label>
           <textarea class="field__input form__out" id="f-out" data-form-out readonly rows="5"></textarea>
           <div class="btn-row">
-            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Открыть Telegram и вставить</a>
-            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> Открыть WhatsApp с текстом</a>
-            <button class="btn btn--outline" type="button" data-copy>Скопировать текст</button>
+            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</a>
+            <button class="btn btn--outline" type="button" data-copy>Скопировать</button>
           </div>
           <p class="small" role="status" aria-live="polite" data-copy-msg></p>
         </div>
       </div>
 
-      <aside class="tile tile--hero">
-        <p class="tile__meta"><b>09</b> К чему готовиться</p>
-        <p class="state__recog"><b>Первый вопрос, который вам зададут</b> — чтобы вы знали заранее:
-          <em>чем вы подтверждаете основание сегодня — не чем собираетесь.</em></p>
+      <aside class="tile tile--hero" data-reveal>
+        <p class="tile__meta"><b>К разбору</b> Три проверки</p>
+        <p class="state__recog"><b>Принцип LTCG:</b> <em>оформляем ВНЖ в комплексе с бизнесом и бухгалтерией для контроля начислений в КГД.</em></p>
         <hr class="rule">
-        <p class="small">Что стоит принести с собой:</p>
         <ol class="next" role="list">
-          <li><span><b>Гражданство и как вы въехали</b>По какой визе или без неё.</span></li>
-          <li><span><b>Дата въезда</b>И сколько дней вы уже здесь — по календарю, а не по памяти.</span></li>
-          <li><span><b>ИП или доля в армянской компании</b>И есть ли по ним обороты и начисления.</span></li>
-          <li><span><b>Документы о родстве</b>Какие у вас на руках и в какой форме они легализованы.</span></li>
-          <li><span><b>Была ли уже подача</b>И был ли отказ.</span></li>
+          <li><span><b>Въезд</b>Безвизовый лимит — до <b>180 дней</b> в <b>1 году</b>. <span class="src">ст. 7 ч. 1 Закона РА</span></span></li>
+          <li><span><b>ИП или ООО</b>Счёт ИП с порогом <b>1 000 000 ֏</b> либо капитал ООО от <b>2 000 000 ֏</b>.</span></li>
+          <li><span><b>Семья</b>Апостилированные свидетельства по ст. 29.5.</span></li>
         </ol>
-        <hr class="rule">
-        <p class="small">Ничего не нужно прямо сейчас — тогда почитайте, <a class="lnk" href="#sroki">что меняется 1 ноября</a>: до включения реформы и после неё правила разные.</p>
-        <!-- Голос компании. Клиент на созвоне 31.08.2026 сказал, что миграционные дела
-             берёт теперь только для комплексных клиентов и бережёт репутацию в органах.
-             Точную формулировку даёт клиент; без неё ветка не публикуется. -->
-        <p class="small">Здесь встанет строка компании о том, что миграционные дела берутся
-          выборочно: <span class="slot">формулировка про выборочность миграционки — от клиента</span></p>
       </aside>
     </div>
   </div>
 </section>
 
-<!-- ═══ 13 · Соседние ветки и подпись ════════════════════════════ -->
-<section class="section" aria-labelledby="neigh-t">
+<!-- ═══ 08 · Соседние ветки и подпись ════════════════════════════ -->
+<section class="section section--grid" id="sosednie" aria-labelledby="neigh-t" data-rail-label="Связанные этапы">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">10</span> Куда дальше</p>
-      <h2 class="h2" id="neigh-t">Три соседние ветки, <em>подписанные тем, что вы там найдёте</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">08</span> Связанные этапы</p>
+      <h2 class="h2" id="neigh-t">Счёт в банке, налоги <em>и сводка реформы</em></h2>
     </div>
 
-    <nav class="bento" aria-label="Соседние ветки">
+    <nav class="bento" aria-label="Соседние ветки" data-stagger>
       <a class="tile neigh" href="schet-v-banke.html" data-span="4">
-        <p class="neigh__when">До этого</p>
-        <h3 class="neigh__t">Порядок трёх шагов: счёт, соцкарта, адрес</h3>
-        <p class="neigh__d">Если у вас ещё нет счёта, соцкарты и адреса — начинать надо не отсюда:
-          порядок этих трёх шагов важнее, чем кажется, и его лучше не угадывать.</p>
-        <span class="neigh__go">Только приехал <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+            <img src="assets/img/nov-shot-1100.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 02 · Банки и KYC</span>
+        </div>
+        <p class="neigh__when">До подачи</p>
+        <h3 class="neigh__t">Банковский счёт ФЛ и ИП</h3>
+        <p class="neigh__d">Счёт ИП под порог 1 000 000 ֏ и прохождение KYC в Ереване.</p>
+        <span class="neigh__go">Счёт в банке <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
       <a class="tile neigh" href="ip-i-nalogi.html" data-span="4">
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 04 · ИП и налоги</span>
+        </div>
         <p class="neigh__when">Параллельно</p>
-        <h3 class="neigh__t">Режим и обороты — теперь это один вопрос с ВНЖ</h3>
-        <p class="neigh__d">Если ваше основание — ИП, читайте про режим и обороты: после 1 ноября
-          миграционное основание и бухгалтерия становятся одним вопросом, а не двумя.</p>
-        <span class="neigh__go">Работаю <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <h3 class="neigh__t">ИП, ООО и налоги РА</h3>
+        <p class="neigh__d">Налог с оборота, микробизнес и окно 20 дней после регистрации.</p>
+        <span class="neigh__go">ИП и налоги <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
-      <a class="tile neigh" href="rezidentstvo-i-crs.html" data-span="4">
-        <p class="neigh__when">После этого</p>
-        <h3 class="neigh__t">183 дня в двух разных смыслах</h3>
-        <p class="neigh__d">Если вы живёте на два дома — 183 дня в миграционном законе и налоговое
-          резидентство считаются по-разному, и это отдельная тема.</p>
-        <span class="neigh__go">Живу и планирую <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      <a class="tile neigh" href="noyabr.html" data-span="4">
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/nov-hero-1280.webp">
+            <img src="assets/img/nov-hero-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Реформа · 01.11.2026</span>
+        </div>
+        <p class="neigh__when">Сводка</p>
+        <h3 class="neigh__t">Реформа 01.11.2026</h3>
+        <p class="neigh__d">Таблица «было / стало» по пошлинам, квотам и платформе.</p>
+        <span class="neigh__go">Разбор 01.11.2026 <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
     </nav>
 
-    <footer class="section__foot">
+    <footer class="section__foot" data-reveal>
       <p class="sign">
-        <span>Проверил: юрист LTCG</span>
-        <span>Обновлено 04.09.2026</span>
-        <span>Проверено по arlis.am, old.parliament.am, migration.mia.gov.am, mia.gov.am и hartak.am · 04.09.2026</span>
+        <span>Проверили: Юристы LTCG</span>
+        <span>Обновлено 18.10.2026</span>
       </p>
-      <p class="small measure"><b>Проверено по первоисточникам:</b> тексты законов ՀՕ-11-Ն, ՀՕ-13-Ն,
-        ՀՕ-15-Ն, ՀՕ-210-Ն, ՀՕ-213-Ն, ՀՕ-215-Ն, ՀՕ-428-Ն на правовой системе Минюста
-        <a class="lnk" href="https://www.arlis.am/" rel="noopener">arlis.am</a> и в архиве
-        Национального собрания
-        <a class="lnk" href="https://old.parliament.am/" rel="noopener">old.parliament.am</a>;
-        сравнительная редакция второго чтения законопроекта Կ-1172; релиз МВД РА от 21.01.2026;
-        публикации Миграционной службы от 19.06.2026 и МВД от 29.08.2026; страницы услуг и раздел
-        госпошлин migration.mia.gov.am; карточки услуг hartak.am. Язык оригинала — армянский; русских
-        официальных текстов не существует, все переводы в этом разборе машинные, цитаты выверяются
-        носителем до публикации.</p>
-      <p class="small measure"><b>Что изменилось в этой редакции:</b> страница создана.</p>
-      <p class="small measure">Цифры на этом сайте появляются только с источником и датой. Пустые
-        места — не недоделка, а правило: там, где акт не опубликован или где наши собственные
-        прочтения оригинала разошлись, мы пишем об этом прямо, а не подставляем правдоподобную
-        цифру.</p>
-      <p class="small measure">Проверил: юрист LTCG ·
-        <span class="slot">подпись ставится после сверки — от клиента</span></p>
+      <p class="small measure"><b>Правовая база:</b> Закон РА ՀՕ-11-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a>), Закон РА ՀՕ-215-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/225847" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/225847</a>), Закон РА ՀՕ-210-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/225852" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/225852</a>), МВД РА (<a class="lnk" href="https://mia.gov.am/2026/01/21/azh-30/" target="_blank" rel="noopener noreferrer">mia.gov.am</a>).</p>
     </footer>
   </div>
 </section>
@@ -1690,69 +892,78 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <!-- ═══ Футер ════════════════════════════════════════════════════ -->
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="ftr__grid">
-      <div class="ftr__brand">
-        <a class="brand" href="home-ru.html" aria-label="LTCG — на главную"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
-        <address>
+    <div class="bento ftr__bento" role="list">
+
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+        <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+          <picture data-logo="gold">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+          <picture data-logo="ink">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <h2 class="sr-only" id="f-brand">Контакты</h2>
+        <address class="ftr__addr">
           <span>Legal and Tax Consulting Group LLC · Ереван</span>
-          <a href="tel:+37494184014">+374 94 184 014</a>
+          <a class="ftr__phone" href="tel:+37494184014">+374 94 184 014</a>
           <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
-          <span>Реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
         </address>
-      </div>
-      <nav aria-labelledby="f-moments">
-        <h2 id="f-moments">По моменту</h2>
-        <ul role="list">
-          <li><a href="pered-pereezdom.html">Ещё не переехал</a></li>
-          <li><a href="schet-v-banke.html">Только приехал</a></li>
-          <li><a href="vnzh.html" aria-current="page">Легализуюсь</a></li>
-          <li><a href="ip-i-nalogi.html">Работаю</a></li>
-          <li><a href="rezidentstvo-i-crs.html">Живу и планирую</a></li>
-          <li><a href="spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+      </section>
+
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+        <ul class="ftr__list" role="list">
+          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
+          <li><a href="./schet-v-banke.html">Только приехал</a></li>
+          <li><a href="./vnzh.html">Легализуюсь</a></li>
+          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
         </ul>
       </nav>
-      <nav aria-labelledby="f-page">
-        <h2 id="f-page">На этой странице</h2>
-        <ul role="list">
-          <li><a href="#answer">Короткий ответ</a></li>
-          <li><a href="#sroki">Что меняется 1 ноября</a></li>
-          <li><a href="#osnovanie">Четыре основания</a></li>
-          <li><a href="#ustroystvo">Как это устроено</a></li>
-          <li><a href="#lomaetsya">Где ломается</a></li>
-          <li><a href="#poryadok">Порядок шагов</a></li>
-          <li><a href="#skolko">Сколько стоит</a></li>
-          <li><a href="#voprosy">Вопросы</a></li>
-        </ul>
-      </nav>
-      <nav aria-labelledby="f-site">
-        <h2 id="f-site">Сайт</h2>
-        <ul role="list">
-          <li><a href="home-ru.html">Главная — «Где вы сейчас?»</a></li>
-          <li><a href="#contact">Контакты</a></li>
-          <li><a href="#" aria-disabled="true">Политика обработки данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст</span></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="ftr__bottom">
-      <div>
-        <p>Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания принимает Миграционная служба. Формулировку подтверждает клиент.</p>
-        <p style="margin-top: var(--s-2)">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
-      </div>
-      <nav class="ftr__langs" aria-label="Язык сайта">
-        <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-        <a href="vnzh.html" lang="ru" aria-current="page">Русский</a>
-        <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-      </nav>
+
+      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+        <h2 class="ftr__h" id="f-site">Сайт</h2>
+        <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
+        <nav class="ftr__langs" aria-label="Язык сайта">
+          <span aria-disabled="true" lang="hy">Հայերեն</span>
+          <span lang="ru" aria-current="page">Русский</span>
+          <span aria-disabled="true" lang="en">English</span>
+        </nav>
+        <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
+      </section>
+
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+        <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
+        <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
+        <div class="ftr__credit">
+          <p class="ftr__copy">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+          <p class="ftr__by">Сайт спроектирован и собран студией
+            <a class="ftr__vkv" href="https://vkvstudio.com" target="_blank" rel="noopener noreferrer">
+              <picture><source type="image/webp" srcset="assets/logo/vkv-studio.webp"><img src="assets/logo/vkv-studio.png" width="256" height="180" alt="" loading="lazy" decoding="async"></picture>
+              <span>VKV Studio</span>
+            </a>
+            <span class="ftr__dom">vkvstudio.com</span>
+          </p>
+        </div>
+      </section>
+
     </div>
   </div>
 </footer>
 
-<!-- мобильный док: на ветке хиро нет, поэтому он показан сразу -->
+<!-- Мобильная нижняя панель -->
 <nav class="dock glass is-shown" aria-label="Быстрые действия">
   <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
   <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
   <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
-  <a class="is-primary" href="#skolko"><svg aria-hidden="true"><use href="#i-calc"/></svg>Расчёт</a>
+  <a class="is-primary" href="#skolko"><svg aria-hidden="true"><use href="#i-calc"/></svg>Рассчитать</a>
 </nav>
 
 </body>

@@ -22,7 +22,7 @@
     a.setAttribute('href', DEV && LANGS[p] !== undefined ? SITE_ROOT + LANGS[p] : SITE_ROOT + p);
   });
 
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]motion=0/.test(location.search);
   var mobile = matchMedia('(max-width: 767px), ((max-height: 767px) and (pointer: coarse))').matches;
   var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   var motion = !reduce && !mobile;   /* пересчитывается ниже, после splash */
@@ -53,6 +53,7 @@
   motion = motion && !splash;
 
   var hasHero = !!d.querySelector('[data-hero-scroll]');
+  var hasReveal = !!d.querySelector('[data-reveal], [data-stagger]');
   var hasSite = h.hasAttribute('data-site');
 
   function load(src) {
@@ -66,7 +67,7 @@
   function seq(list) { return list.reduce(function (p, s) { return p.then(function () { return load(s); }); }, Promise.resolve()); }
 
   var chain = Promise.resolve();
-  if (motion) {
+  if (motion && (hasHero || hasReveal)) {
     chain = seq(['js/vendor/gsap.min.js', 'js/vendor/ScrollTrigger.min.js'].concat(fine ? ['js/vendor/lenis.min.js'] : []))
       .then(function () {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
@@ -176,18 +177,6 @@
       }
       rows.push(['скрипты', Array.prototype.map.call(d.querySelectorAll('script[src]'),
         function (x) { return x.src.split('/').pop().split('?')[0]; }).join(' ')]);
-      // (проверка версии добавляется после создания плашки — см. ниже)
-      fetch(SITE_ROOT + 'version.json', { cache: 'no-store' })
-        .then(function (r) { return r.json(); })
-        .then(function (j) {
-          var el = d.createElement('div');
-          el.style.marginTop = '6px';
-          el.innerHTML = (j.v === V)
-            ? '<b style="color:#7CE0A0">версия свежая</b>'
-            : '<b style="color:#FF8A8A">УСТАРЕЛА: на сервере ' + j.v + '</b>';
-          box.appendChild(el);
-        })
-        .catch(function () {});
       var box = d.createElement('div');
       box.setAttribute('style', 'position:fixed;inset:auto 8px 8px 8px;z-index:99999;' +
         'background:#0b1a36;color:#FAE0A2;border:1px solid #F2C249;border-radius:12px;' +

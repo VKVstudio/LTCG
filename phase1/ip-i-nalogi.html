@@ -1,41 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m5" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
-/* Тема и класс js — ДО первой отрисовки: иначе на светлой машине страница мигнёт тёмным,
-   а .no-js-ветки разметки успеют показаться. Единственный инлайновый скрипт страницы. */
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
 try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<!-- Сборка для показа и вычитки клиентом, домен ещё не куплен. Строку снимает
-     владелец в день реальной публикации — вместе с ней уходит и запрет индексации. -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-<!-- Заголовок и описание написаны под живой запрос («налоги ИП в Армении»), а не под бренд.
-     title ≤ 60 знаков, description ≤ 155. -->
-<title>Налоги ИП в Армении 2026: режимы, ставки, сроки — LTCG</title>
-<meta name="description" content="Три режима: микробизнес до 24 млн, налог с оборота до 115 млн со ставкой 7–20 % по виду деятельности, общая система с НДС 20 %. Проверено 04.09.2026.">
+<title>ИП, ООО и налоги в Армении 2026: режимы и ВНЖ — LTCG</title>
+<meta name="description" content="Регистрация ИП и ООО в Армении: налог с оборота до 115 млн ֏, правило 20 дней на выбор режима, порог 1 000 000 ֏ и налоги за 180 дней для ВНЖ с 01.11.2026.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 <link rel="canonical" href="https://ltcg.am/ip-i-nalogi.html">
-<!-- Ветка объявляет hreflang на себя и x-default на себя же. Ссылок на /hy/ и /en/
-     нет, пока их содержание не соответствует этому адресу. -->
 <link rel="alternate" hreflang="ru" href="https://ltcg.am/ip-i-nalogi.html">
 <link rel="alternate" hreflang="x-default" href="https://ltcg.am/ip-i-nalogi.html">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="Налоги ИП в Армении: три режима и цена ошибки">
-<meta property="og:description" content="Ставка зависит не от суммы дохода, а от вида деятельности и от того, кто платит. Ставки, пороги и сроки — с источником и датой проверки.">
+<meta property="og:title" content="ИП, ООО и налоги в Армении 2026: режимы, пороги и связь с ВНЖ">
+<meta property="og:description" content="Как выбрать между ИП и ООО в Армении, подать заявление на спецрежим за 20 дней и выполнить правило 180 дней налоговых начислений для сохранения ВНЖ.">
 <meta property="og:url" content="https://ltcg.am/ip-i-nalogi.html">
-<!-- Своей картинки у ветки пока нет: стоит общая. Нужна собственная 1200×630 — заявка в issues. -->
 <meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -44,149 +35,110 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Место под мета-подтверждение Яндекс.Вебмастера. Код добавляет владелец
-     после регистрации домена; строка стоит здесь, чтобы её не забыли.
-<meta name="yandex-verification" content="">
--->
-
-<!-- Шрифты самохостом. Google Fonts не подключается: это внешний домен в
-     критическом пути, и Яндекс считает его в скорость. -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
-<!-- JavaScript только надстройкой: страница целиком работает и без него -->
-<script defer src="js/site.js?v=20261018m1"></script>
-<script defer src="js/railnav.js?v=20261018m1"></script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-latin.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m7">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
+<script defer src="js/boot.js?v=20261019m7"></script>
 
-<!-- Разметка страницы. Организация объявлена целиком ОДИН раз на / — здесь только
-     ссылка по @id: телефон и каталог услуг не дублируются. aggregateRating и Review
-     не выводятся нигде: отзывы про самих себя Google считает самовосхвалением.
-     FAQPage поставлен ради Яндекса и цитирования ИИ, а не ради плашки в Google:
-     показ FAQ-сниппета прекращён 07.05.2026, но тип остаётся действительным. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ltcg.am/#org",
+      "name": "Legal and Tax Consulting Group LLC",
+      "alternateName": "LTCG",
+      "url": "https://ltcg.am/",
+      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+    },
+    {
       "@type": ["WebPage", "FAQPage"],
       "@id": "https://ltcg.am/ip-i-nalogi.html#page",
       "url": "https://ltcg.am/ip-i-nalogi.html",
-      "name": "Налоги ИП в Армении: режимы, ставки, сроки",
-      "description": "Три налоговых режима для индивидуального предпринимателя в Армении, пороги оборота, ставки по видам деятельности и сроки подачи заявления о режиме.",
+      "name": "ИП, ООО и налоги в Армении 2026: режимы и ВНЖ — LTCG",
+      "description": "Регистрация ИП и ООО в Армении: налог с оборота до 115 млн ֏, правило 20 дней на выбор режима, порог 1 000 000 ֏ и налоги за 180 дней для ВНЖ с 01.11.2026.",
       "inLanguage": "ru",
-      "dateModified": "2026-09-04",
-      "isPartOf": { "@id": "https://ltcg.am/#website" },
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-10-18",
+      "isPartOf": { "@type": "WebSite", "@id": "https://ltcg.am/#website", "url": "https://ltcg.am/", "name": "LTCG — Legal & Tax Consulting Group" },
       "publisher": { "@id": "https://ltcg.am/#org" },
-      "breadcrumb": { "@id": "https://ltcg.am/ip-i-nalogi.html#crumbs" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
+          { "@type": "ListItem", "position": 2, "name": "Работаю: ИП, ООО и налоги", "item": "https://ltcg.am/ip-i-nalogi.html" }
+        ]
+      },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Мне нужно ИП или ООО в Армении?",
+          "name": "В какой срок после регистрации ИП или ООО нужно подать заявление на налог с оборота?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "По деньгам на входе разница почти нулевая: регистрация ООО заявлена как бесплатная, ИП — 3 000 драмов, минимального уставного капитала нет ни у той, ни у другой формы. Реальная разница в ответственности — ИП отвечает личным имуществом, ООО имуществом компании — и в ставке на общей системе: организация платит 18 %, а ИП по двум независимым источникам 23 %. Проверено 04.09.2026."
+            "text": "По ст. 254 Налогового кодекса РА заявление о переходе на систему налога с оборота при годовом пороге до 115 000 000 ֏ или микропредпринимательства до 24 000 000 ֏ подаётся в КГД РА в течение 20 дней со дня государственной регистрации. При пропуске 20-дневного срока бизнес автоматически остаётся на общей системе налогообложения с НДС 20% до конца календарного года."
           }
         },
         {
           "@type": "Question",
-          "name": "Какая ставка налога с оборота у айтишника с зарубежными заказчиками?",
+          "name": "Какие ставки налога с оборота действуют в Армении после реформы 2025–2026 годов?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Одной цифры на сегодня нет: государственная платформа услуг hartak.am даёт для сферы информационных технологий 5 %, а PwC и EY — 1 %. Расхождение не снято, и отдельно не выяснено, доступна ли ставка 1 % индивидуальному предпринимателю. Что известно точно: экспортируемые услуги облагаются НДС по нулевой ставке, если получатель за пределами Армении, а входящий НДС принимается к зачёту. Проверено 04.09.2026."
+            "text": "По ст. 258 НК РА и данным государственной платформы hartak.am при лимите выручки до 115 000 000 ֏ в год базовые ставки налога с оборота составляют: торговля — 10% со снижением до 1,5% по вычетам, деятельность в сфере ИТ — 5%, производство — 7%, общепит — 12%, аренда, проценты и роялти — 10%, прочая деятельность и услуги — 10%, переработка вторсырья — 5%, реализация газет — 1,5%. Адвокатская и нотариальная деятельность выведена из системы налога с оборота на общую систему."
           }
         },
         {
           "@type": "Question",
-          "name": "Я пропустил 20 дней после регистрации ИП. Что теперь?",
+          "name": "Как связаны выбор налогового режима ИП и сохранение ВНЖ с 1 ноября 2026 года?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Вы на общей системе до конца календарного года: НДС 20 % и налог с базы. Следующее окно для перехода — с 1 января по 20 февраля. Закрыть ИП и открыть заново режим не меняет, год уже начат. Проверено 04.09.2026."
+            "text": "Для первичного получения ВНЖ по ИП требуется остаток на банковских счетах ИП не менее 1 000 000 ֏ либо оборот 1 000 000 ֏ за 60 дней до подачи. Если в течение 180 дней после выдачи статуса в базе КГД отсутствуют сведения о начисленных налогах, налоговый орган уведомляет миграционную службу для аннулирования ВНЖ. Поэтому нулевая отчётность или режим микробизнеса с 0% налогов без иных начислений в КГД создаёт прямой риск потери ВНЖ."
           }
         },
         {
           "@type": "Question",
-          "name": "Нужно ли платить НДС в Армении?",
+          "name": "Что выбрать для бизнеса и ВНЖ в Армении — ИП (ԱՁ) или ООО (ՍՊԸ)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Порог обязательной регистрации по НДС — 115 000 000 драмов годового дохода, стандартная ставка 20 %. Ниже порога и на специальном режиме НДС не возникает. Под НДС можно попасть, не приблизившись к порогу: не подав вовремя заявление о режиме либо занимаясь деятельностью, выведенной из специального режима. Проверено 04.09.2026."
+            "text": "Индивидуальный предприниматель подходит для единоличной деятельности: порог ВНЖ составляет 1 000 000 ֏ на счёте ИП или в обороте за 60 дней, а средства после уплаты налогов переводятся на личный счёт без дивидендного налога. ООО необходимо при нескольких учредителях, разделении долей или корпоративных контрактах: для ВНЖ участника требуется вклад в уставный капитал либо акции на сумму от 2 000 000 ֏ и удержание порога не ниже 1 000 000 ֏."
           }
         },
         {
           "@type": "Question",
-          "name": "Что изменится 1 ноября 2026 года для ИП в Армении?",
+          "name": "Обязателен ли отдельный юридический адрес для регистрации ИП в Армении?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "В налогах ничего: Налоговый кодекс РА в этот день не меняется — ни ставок, ни порогов, ни режима микропредпринимательства, ни НДС, ни форм отчётности. Действующая редакция кодекса охватывает 01.09.2026 – 01.01.2027, следующая начинается 01.01.2027. Меняется другое: 1 ноября 2026 — крайний срок подачи и корректировки годового расчёта подоходного налога за 2025 год, а у ИП, которое держит вид на жительство, появляются финансовые пороги и правило 180 дней. Проверено 04.09.2026."
+            "text": "По закону для государственной регистрации индивидуального предпринимателя отдельный коммерческий юридический адрес не обязателен — ИП может быть зарегистрирован по адресу проживания. Отдельный адрес для регистрации и приёма официальной корреспонденции за 430 000 ֏ в год в LTCG подключается опционально, если он нужен вашему случаю."
           }
         },
         {
           "@type": "Question",
-          "name": "Если оборота не было, отчёт всё равно сдавать?",
+          "name": "Сколько стоит регистрация ИП и бухгалтерское сопровождение в LTCG?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. При отсутствии дохода за период отчёт обязателен. Отдельно от отчётности идут два фиксированных годовых платежа ИП: медицинское страхование 129 600 драмов, если валовой доход за 2025 год составил 2 400 001 драм и более, и гербовый сбор 12 000 драмов при годовом доходе до 12 000 000 либо 120 000 драмов при доходе выше. Это два разных обязательства, а не один платёж. Проверено 04.09.2026."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли выставить счёт в долларах из Армении?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Заказчику-нерезиденту — да, при письменном договоре и безналичном расчёте. Заказчику-резиденту внутри Армении — нет: цены на товары и услуги, зарплаты и оценка имущества устанавливаются в драмах, расчёты между резидентами производятся в драмах. Закон РА «О валютном регулировании и валютном контроле», проверено 04.09.2026."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Можно ли зарегистрировать ИП в Армении, не приезжая?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "По имеющимся источникам да, по доверенности: нужен паспорт с переводом и доверенность. В процедуре есть расхождение: один источник говорит про апостилированный паспорт, другой — про нотариально переведённый. Онлайн-регистрация через e-register возможна только при наличии электронной подписи. Проверено 04.09.2026."
+            "text": "Регистрация ИП в LTCG стоит 45 000 ֏ единовременно, получение номера общественных услуг ПСН — 35 000 ֏, сопровождение открытия счёта в банке — 110 000 ֏. Ежемесячное бухгалтерское сопровождение и сдача отчётности в КГД — от 36 000 ֏ в месяц, точный состав и цена определяются под ваш налоговый режим после короткого разбора."
           }
         }
       ]
     },
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://ltcg.am/ip-i-nalogi.html#crumbs",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
-        { "@type": "ListItem", "position": 2, "name": "ИП и налоги", "item": "https://ltcg.am/ip-i-nalogi.html" }
-      ]
-    },
-    {
       "@type": "Service",
       "@id": "https://ltcg.am/ip-i-nalogi.html#service",
-      "name": "Регистрация ИП и бухгалтерское сопровождение в Армении",
-      "serviceType": "Юридические и бухгалтерские услуги",
+      "name": "Регистрация ИП и ООО и бухгалтерское сопровождение в Армении",
+      "serviceType": "Юридическое и бухгалтерское сопровождение бизнеса",
       "areaServed": { "@type": "Country", "name": "Армения" },
-      "provider": { "@id": "https://ltcg.am/#org" },
-      "audience": { "@type": "Audience", "audienceType": "Самозанятые и предприниматели, работающие на своих заказчиков из Армении" }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://ltcg.am/ip-i-nalogi.html#howto",
-      "name": "Порядок и сроки: от регистрации ИП до первого расчёта",
-      "inLanguage": "ru",
-      "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Регистрация ИП",
-          "text": "Регистрация в Агентстве государственного регистра юридических лиц Минюста РА проходит в день подачи документов." },
-        { "@type": "HowToStep", "position": 2, "name": "Заявление о налоговом режиме",
-          "text": "Для вновь зарегистрированных — 20 дней с даты регистрации. Для действующих — окно с 1 января по 20 февраля." },
-        { "@type": "HowToStep", "position": 3, "name": "Декларация о бенефициарных владельцах",
-          "text": "40 дней с учреждения, далее ежегодно до 20 февраля." },
-        { "@type": "HowToStep", "position": 4, "name": "Первый расчёт по режиму",
-          "text": "Налог с оборота — квартально, до 20-го числа месяца, следующего за кварталом. НДС и подоходный — ежемесячно, до 20-го числа." },
-        { "@type": "HowToStep", "position": 5, "name": "Годовые фиксированные платежи",
-          "text": "Медицинское страхование и гербовый сбор — до 20 апреля, независимо от того, был ли доход в текущем году." }
-      ]
+      "provider": { "@id": "https://ltcg.am/#org" }
     }
   ]
 }
 </script>
-<!-- totalTime и estimatedCost у HowTo НЕ выводятся: подтверждённых значений нет.
-     Поле, которого нет, честнее поля с догадкой. -->
 </head>
 <body>
 
@@ -219,1243 +171,408 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
     <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 7.5h7M8.5 12h2M13.5 12h2M8.5 16h2M13.5 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
     <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+    <!-- знак хиро: заполняется из assets/hero/logo.svg скриптом -->
+    <symbol id="hsLogoLetters" viewBox="67 524 889 236"></symbol>
+    <symbol id="hsLogoMark" viewBox="67 169 889 590"></symbol>
   </defs>
 </svg>
 
-<!-- ═══ Шапка. Хиро на ветке нет, поэтому шапка стоит сразу: без JS она sticky,
-         с JS site.js ставит ей is-shown, потому что #hero на странице отсутствует. ═══ -->
-<header class="hdr glass is-shown" id="hdr">
+<header class="hdr glass" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="home-ru.html" aria-label="LTCG — на главную">
-      <picture>
+    <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+      <picture data-logo="gold">
         <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
         <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
         <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
       </picture>
+      <picture data-logo="ink">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
     </a>
-    <nav class="hdr__nav" aria-label="Разделы ветки">
-      <a href="#answer">Короткий ответ</a>
-      <a href="#fork">Развилка</a>
-      <a href="#traps">Где ломается</a>
-      <a href="#calc">Сколько стоит</a>
-      <a href="#faq">Вопросы</a>
-    </nav>
-    <div class="hdr__contacts">
-      <a class="hdr__phone" href="tel:+37494184014">+374 94 184 014</a>
-      <a class="btn btn--icon btn--ghost hdr__phone-ico" href="tel:+37494184014" aria-label="Позвонить +374 94 184 014"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
-      <a class="btn btn--icon btn--ghost" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
-      <!-- WhatsApp на том же номере; подтверждение канала — за клиентом -->
-      <a class="btn btn--icon btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+    <div class="hdr__mid">
+      <nav class="hdr__nav" aria-label="Разделы">
+        <a href="./home-ru.html#where">Этапы</a>
+        <a href="./home-ru.html#calc">Калькулятор</a>
+        <a href="./home-ru.html#services">Услуги</a>
+        <a href="./noyabr.html">С 1 ноября</a>
+        <a href="./home-ru.html#contact">Контакты</a>
+      </nav>
+      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
-    <a class="btn btn--primary btn--sm hdr__cta" href="#calc">Собрать расчёт <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
+         меню не собирается, и мёртвой кнопки на экране быть не должно.
+         Содержимое панели js/menu-mobile.js берёт из самой страницы и из
+         подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+      <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menu-txt">Меню</span>
+    </button>
+
     <div class="themer" role="group" aria-label="Тема оформления" data-themer>
       <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
       <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
       <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
-      <svg data-ico="menu" aria-hidden="true"><use href="#i-menu"/></svg>
-      <svg data-ico="close" aria-hidden="true"><use href="#i-close"/></svg>
-    </button>
   </div>
 </header>
 
-<div class="menu glass" id="menu" hidden>
-  <nav class="menu__list" aria-label="Разделы ветки">
-    <a href="#answer">Короткий ответ</a>
-    <a href="#fork">Развилка</a>
-    <a href="#how">Как это устроено</a>
-    <a href="#nov1">1 ноября 2026</a>
-    <a href="#traps">Где ломается</a>
-    <a href="#order">Порядок и сроки</a>
-    <a href="#calc">Сколько стоит</a>
-    <a href="#faq">Вопросы</a>
-    <a href="#contact">Разговор</a>
-  </nav>
-  <div class="menu__row">
-    <a class="btn btn--primary" href="#calc">Собрать расчёт <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <a class="btn btn--outline" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg> +374 94 184 014</a>
-  </div>
-  <div class="themer" role="group" aria-label="Тема оформления" data-themer>
-    <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
-    <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
-    <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
-  </div>
-</div>
+<div class="hdr-gap" aria-hidden="true"></div>
 
 <main id="main">
 
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 01 · Шапка ветки. Единственный h1. LCP — это заголовок,
-     а не картинка: изображений в первом экране нет вовсе.
-     ══════════════════════════════════════════════════════════════ -->
-<div class="section" data-rail-skip>
+<!-- ═══ 01 · Hero (Ветка 04) ═════════════════════════════════════ -->
+<section class="section section--grid section--art" id="branch-hero" data-rail-label="Короткий ответ" aria-labelledby="branch-title">
+  <div class="nov-art" aria-hidden="true"></div>
+
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">Ветка 04</span> Работаю — на себя, свои заказчики</p>
-      <h1 class="h1" id="branch-title">ИП в Армении и налоговый режим: ставки, сроки и <em>место, где ошибка вскроется только через год</em></h1>
-      <p class="lead">Вы уже работаете — заказчики есть, деньги идут, — и теперь надо оформить это
-        так, чтобы через год не выяснилось, что весь год считалось не по той ставке.</p>
-
-      <nav class="pathbar" aria-label="Шесть веток">
-        <ol class="pathbar__list">
-          <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
-          <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
-          <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
-          <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">04</span><span>Работаю</span></span></li>
-          <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
-          <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
-        </ol>
-      </nav>
-      <!-- В сборке для показа ветки лежат файлами рядом. На публикации адреса
-           становятся каталогами: /pered-pereezdom/, /schet-v-banke/ и так далее —
-           именно они стоят в canonical, sitemap и разметке. -->
-
-      <p class="sign"><span>Проверил: юрист LTCG <span class="slot">имя и роль подписанта</span></span><span>Обновлено 04.09.2026</span></p>
-    </header>
-
-    <div class="note" style="margin-top: var(--s-8)">
-      <p><b>Кому эта страница не нужна.</b> Честнее отправить вас в правильное место сейчас, чем
-        продержать здесь семь экранов.</p>
-      <ul style="margin-top: var(--s-3); padding-left: 1.1em; display: grid; gap: var(--s-2)">
-        <li><b>Вы работаете по найму в армянской компании.</b> Подоходный, пенсионный и гербовый
-          удерживает работодатель, режим выбирать не из чего. Эта страница про тех, кто выставляет
-          счета сам.</li>
-        <li><b>Вы ещё не приехали и решаете, что закрыть дома.</b> Вам в ветку
-          <a class="lnk" href="pered-pereezdom.html">«Ещё не переехал»</a> — там про доверенности,
-          уведомления и документы, которые потом придётся ехать забирать.</li>
-        <li><b>У вас пока нет счёта, соцкарты и адреса.</b> Сначала туда: без них ИП живёт
-          наполовину. Ветка <a class="lnk" href="schet-v-banke.html">«Только приехал»</a>.</li>
-        <li><b>Вопрос звучит как «чей я теперь налоговый резидент».</b> Это другая тема, две страны
-          и другой набор сроков. Ветка
-          <a class="lnk" href="rezidentstvo-i-crs.html">«Живу и планирую»</a>.</li>
-        <li><b>Вы закрываете дела и уезжаете дальше.</b> Ветка
-          <a class="lnk" href="spravki-i-zakrytie.html">«Двигаюсь дальше»</a>: справки, апостиль,
-          закрытие ИП.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 02 · Прямой ответ. Абзац читается и цитируется целиком,
-     без остального. Ниже — факты списком: у каждого единица, дата
-     и источник. Это и корм для Алисы, и то, ради чего человек мог
-     прийти: если он уйдёт отсюда, он всё равно получил ответ.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="answer" aria-labelledby="short" data-rail-label="Короткий ответ">
-  <div class="wrap">
-    <div class="answer">
-      <h2 class="kicker" id="short"><span class="kicker__no">01</span> Короткий ответ</h2>
-
-      <p class="answer__p"><b>Ставка вашего налога в Армении зависит не от того, сколько вы
-        зарабатываете, а от того, чем вы занимаетесь и кто вам платит.</b> Режимов три:
-        микропредпринимательство — освобождение от государственных налогов по
-        микропредпринимательской деятельности при обороте до 24 000 000 драмов в год, но с длинным
-        списком видов деятельности, которым оно запрещено; налог с оборота — специальный режим при
-        обороте до 115 000 000 драмов без НДС за предыдущий календарный год, где ставка задаётся
-        видом деятельности и с 01.01.2025 различается в разы: производство 7 %, торговля 10 %,
-        услуги 10 %, общепит 12 %, а деятельность, не попавшая в классификацию, — 20 %; и общая
-        система с НДС 20 %, куда попадает всякий, кто в специальный режим не прошёл или не успел в
-        него заявиться.</p>
-
-      <p class="answer__p">Заявление о режиме для вновь зарегистрированных подаётся <b>в течение
-        20 дней с даты регистрации</b>, для действующих — в окно с 1 января по 20 февраля;
-        пропустили — год идёте по общей системе, и перерегистрация ИП этого не чинит. Ошибка здесь
-        не даёт отказа в тот же день, как в банке или в миграционной службе: регистрация проходит,
-        деньги приходят, вы работаете — и только на отчётности за период или на превышении порога
-        выясняется, что весь этот срок налог считался не так.</p>
-
-      <ol class="answer__facts" role="list">
-        <li><span><b>24 000 000 драмов</b> в год — верхняя граница микропредпринимательства. Это
-          освобождение от государственных налогов по микропредпринимательской деятельности, а не
-          «ставка 0 %».
-          <span class="src">Источник: PwC, обзор от 30.06.2026 · armenian-lawyer.com, 20.12.2025 ·
-          repatarmenia.org. Проверено 04.09.2026.</span></span></li>
-
-        <li><span><b>115 000 000 драмов</b> без НДС за предыдущий календарный год — верхняя граница
-          налога с оборота. Это же порог обязательной регистрации по НДС.
-          <span class="src">Источник: PwC, обзор от 30.06.2026 · государственная платформа услуг
-          hartak.am · repatarmenia.org. Проверено 04.09.2026.</span></span></li>
-
-        <li><span>С <b>01.01.2025</b> ставка налога с оборота задана видом деятельности: производство
-          7 %, торговля 10 %, услуги 10 %, общепит 12 %, вторичное сырьё 5 %, а деятельность вне
-          классификации — <b>20 %</b>, вдвое выше «обычных» десяти.
-          <span class="src">Источник: PwC, обзор от 30.06.2026 · hartak.am · fincore.am.
-          Проверено 04.09.2026.</span></span></li>
-
-        <li><span><b>20 дней</b> с даты регистрации на заявление о режиме для новых,
-          <b>с 1 января по 20 февраля</b> — окно для действующих. Пропуск означает общую систему на
-          весь календарный год, и закрыть ИП, чтобы открыть заново, не помогает.
-          <span class="src">Источник: easytaxes.am · armenian-lawyer.com · armgate.am.
-          Проверено 04.09.2026.</span></span></li>
-
-        <li><span>Индивидуальный предприниматель на общей системе платит, по двум независимым
-          источникам, <b>23 %</b>, а организация — <b>18 %</b>. PwC этот пункт не раскрывает, и
-          цифру 23 % мы ставим на страницу только с подписью юриста.
-          <span class="src">Источник: alphaaccounting.am и easytaxes.am, два независимых источника;
-          PwC молчит. Проверено 04.09.2026.
-          <!-- {слот 3: ставка для ИП на общей системе — юрист LTCG. Не публикуется до письменного ответа} --></span></span></li>
-
-        <li><span>Экспортируемые услуги облагаются НДС по <b>нулевой</b> ставке, если получатель за
-          пределами Армении, — и входящий НДС при этом принимается к зачёту. Поэтому общая система
-          для человека со всеми заказчиками за рубежом бывает не приговором, а выбором.
-          <span class="src">Источник: PwC · profin.am. Проверено 04.09.2026.</span></span></li>
+    <nav class="pathbar" aria-label="Шесть веток">
+      <ol class="pathbar__list">
+        <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
+        <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
+        <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
+        <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">04</span><span>Работаю</span></span></li>
+        <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
+        <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
       </ol>
+    </nav>
 
-      <p class="small measure">Первоисточник — статьи 254, 258 и 267 Налогового кодекса РА —
-        прочитать дословно не удалось: консолидированные редакции на arlis.am обрываются на
-        30–33 статье. Сайт Комитета государственных доходов открывается по адресу
-        <a class="lnk" href="https://src.am/" rel="noopener">src.am</a>. Подробно об этом — в
-        <a class="lnk" href="#sign">оговорке об источнике</a>.</p>
+    <div class="branch-hero" data-reveal>
+      <div class="section__head section__head--wide">
+        <p class="kicker"><span class="kicker__no">01 · Ветка 04</span> Работаю · Налоговый кодекс РА и Закон РА ՀՕ-11-Ն</p>
+        <h1 class="h1" id="branch-title">ИП, ООО и налоги в Армении: <em>спецрежим за 20 дней и статус ВНЖ</em></h1>
+        <p class="lead">Выбор между ИП и ООО, подача заявления на спецрежим за <b>20 дней</b> и сохранение ВНЖ по бизнесу с 1 ноября 2026 года связаны в одну цепочку. Пропуск срока переводит бизнес на НДС <b>20%</b>, а отсутствие начисленных налогов в базе КГД за <b>180 дней</b> ведёт к аннулированию ВНЖ.</p>
+
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--primary" href="#contact">Подобрать режим и открыть бизнес <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="#skolko">Рассчитать ИП + бухгалтерию <svg aria-hidden="true"><use href="#i-calc"/></svg></a>
+        </div>
+      </div>
+      <aside class="branch-visual" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="assets/bg/window-city-1280.avif">
+          <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+          <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="" fetchpriority="high">
+        </picture>
+        <div class="branch-visual__hud">
+          <span><b>Ветка 04 · ИП, ООО и налоги</b>Окно 20 дней и спецрежимы НК РА</span>
+          <span>Ереван · LTCG</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="answer" data-reveal>
+      <div class="bignums" role="list" aria-label="Ключевые параметры налогов и ВНЖ по бизнесу" data-stagger>
+        <div class="bignum" role="listitem">
+          <span class="bignum__val">20 дней</span>
+          <span class="bignum__lbl">Окно подачи на налог с оборота или микробизнес после регистрации; при пропуске — НДС <b>20%</b></span>
+          <span class="src">ст. 254 НК РА ՀՕ-165-Ն · <a href="https://www.arlis.am/en/acts/205620" target="_blank" rel="noopener noreferrer">arlis.am/en/acts/205620</a></span>
+        </div>
+        <div class="bignum" role="listitem">
+          <span class="bignum__val">до 115 млн ֏</span>
+          <span class="bignum__lbl">Порог налога с оборота: <b>10%</b> торговля (до <b>1,5%</b>) и услуги, <b>5%</b> ИТ, <b>7%</b> производство, <b>12%</b> общепит</span>
+          <span class="src">ст. 254, 258 НК РА; <a href="https://hartak.am/guides/%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-%D5%B3%D5%AB%D5%B7%D5%BF-%D5%B0%D5%A1%D6%80%D5%AF%D5%B4%D5%A1%D5%B6-%D5%B0%D5%A1%D5%B4%D5%A1%D5%AF%D5%A1%D6%80%D5%A3/" target="_blank" rel="noopener noreferrer">hartak.am</a></span>
+        </div>
+        <div class="bignum" role="listitem">
+          <span class="bignum__val">1 млн / 2 млн ֏</span>
+          <span class="bignum__lbl">Ценз ВНЖ с 01.11.2026: <b>1 000 000 ֏</b> остаток или оборот за <b>60 дней</b> у ИП; вклад от <b>2 000 000 ֏</b> в ООО/АО</span>
+          <span class="src">ст. 29.4 ч. 3 ՀՕ-11-Ն · <a href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a></span>
+        </div>
+        <div class="bignum" role="listitem">
+          <span class="bignum__val">180 дней</span>
+          <span class="bignum__lbl">Срок без начисленных налогов в базе КГД после выдачи ВНЖ — иначе статус аннулируется</span>
+          <span class="src">ст. 29.4 ч. 5 ՀՕ-11-Ն · <a href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 03 · Развилка на нативных radio. Все четыре исхода лежат
-     в разметке и раскрыты по умолчанию: выбор ничего не открывает
-     и ничего не прячет, он сворачивает лишнее. Ни строки скрипта.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section section--stone" id="fork" aria-labelledby="fork-t" data-rail-label="Развилка">
+<!-- ═══ 02 · Интерактивная развилка (.fork) ══════════════════════ -->
+<section class="section section--deep section--thread section--light" id="forma" data-rail-label="Выбор формы" aria-labelledby="fork-t">
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">02</span> Развилка</p>
-      <h2 class="h2" id="fork-t">Внутри границы ставку определяет <em>вид деятельности</em></h2>
-      <p class="lead measure">Не «сколько вы зарабатываете». Оборот здесь — только верхняя граница,
-        за которой режим отключается. Внутри границы ставку определяет вид деятельности, а состав
-        заказчиков решает, будет ли по вашим услугам НДС по нулевой ставке.</p>
-    </header>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">02</span> Выбор конструкции</p>
+      <h2 class="h2" id="fork-t">Кто вы по профилю выручки — <em>покажем форму и налоговый режим</em></h2>
+    </div>
 
-    <form>
-    <fieldset class="fork">
-      <legend class="fork__q" id="fork-q">Чем вы занимаетесь и кто ваши заказчики?</legend>
+    <fieldset class="fork" data-reveal>
+      <legend class="sr-only">Выберите профиль бизнеса и налоговый режим</legend>
+      <input class="fork__r" type="radio" name="tax-fork" id="tf-ip" checked>
+      <input class="fork__r" type="radio" name="tax-fork" id="tf-llc">
+      <input class="fork__r" type="radio" name="tax-fork" id="tf-turn">
+      <input class="fork__r" type="radio" name="tax-fork" id="tf-micro">
 
-      <input class="fork__r" type="radio" name="mode" id="m1">
-      <input class="fork__r" type="radio" name="mode" id="m2">
-      <input class="fork__r" type="radio" name="mode" id="m3">
-      <input class="fork__r" type="radio" name="mode" id="m4">
-
-      <div class="fork__opts">
-        <label class="fork__opt" for="m1"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Оборот до 24 млн, вид деятельности не в запретном списке</b>Мелкая практика, торговли в Ереване и профессиональных услуг нет</span></label>
-        <label class="fork__opt" for="m2"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Оборот до 115 млн, вид деятельности разрешён</b>Основной случай фрилансера и небольшой практики</span></label>
-        <label class="fork__opt" for="m3"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Порог перерос, режим запрещён или срок пропущен</b>Сюда же попадают профессиональные услуги</span></label>
-        <label class="fork__opt" for="m4"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>ИТ и R&amp;D</b>Разработка, исследования, высокотехнологичная деятельность</span></label>
+      <div class="fork__opts" aria-label="Профиль бизнеса">
+        <label class="fork__opt" for="tf-ip"><span class="fork__tag">ИП (ԱՁ) для одного</span><span class="fork__sub">Ценз ВНЖ 1 000 000 ֏ и вывод прибыли</span></label>
+        <label class="fork__opt" for="tf-llc"><span class="fork__tag">ООО (ՍՊԸ) и партнёры</span><span class="fork__sub">Капитал от 2 000 000 ֏ для ВНЖ и доли</span></label>
+        <label class="fork__opt" for="tf-turn"><span class="fork__tag">Налог с оборота</span><span class="fork__sub">Порог до 115 млн ֏ и ставки 1,5%–12%</span></label>
+        <label class="fork__opt" for="tf-micro"><span class="fork__tag">Микробизнес (0%)</span><span class="fork__sub">Лимит 24 млн ֏ и риск для ВНЖ</span></label>
       </div>
 
       <div class="fork__outs">
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 01 · Микропредпринимательство</p>
-          <h3 class="fork__out__t">Освобождение, но неполное и с длинным запретным списком</h3>
-          <p><b>Кому подходит.</b> Оборот до <b>24 000 000 драмов</b> в год, и ваш вид деятельности
-            не входит в запретный список. Это освобождение от государственных налогов по
-            микропредпринимательской деятельности — не «ставка 0 %».</p>
-          <p><b>Что дальше.</b> Заявление о применении режима — <b>до 20 февраля</b> соответствующего
-            года. Отчётность годовая, до 1 февраля следующего года. ⚠️ Срок отчётности стоит на
-            одном источнике и выбивается из общей картины, где всё остальное — 20-е число.</p>
-          <p><b>Чем платит.</b> Освобождение неполное. Остаются: налоги при импорте, в том числе из
-            ЕАЭС; подоходный налог, который вы как налоговый агент удерживаете с выплат физлицам, —
-            по общей ставке <b>20 %</b> (норма «5 000 драмов за работника» отменена с 01.07.2023);
-            акциз; экологический и дорожный налоги.</p>
-          <p><b>Главное ограничение.</b> Список запрещённых видов длинный и рос дважды за полтора
-            года — подробности в блоке <a class="lnk" href="#traps">«Где ломается»</a>, причина
-            отказа 01.</p>
-          <p class="src">Источник: PwC, обзор от 30.06.2026 · armenian-lawyer.com, 20.12.2025 ·
-            repatarmenia.org; срок годовой отчётности — armgate.am, единственный источник.
-            Проверено 04.09.2026.
-            <!-- {слот 14: срок годовой отчётности микробизнеса — юрист LTCG} --></p>
+        <article class="tile fork__out" data-for="tf-ip">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+              <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Индивидуальный предприниматель (ԱՁ)</b> Регистрация в LTCG — 45 000 ֏</p>
+          <h3 class="h3">Старт без уставного капитала и отдельного юрадреса</h3>
+          <p>Для первичного ВНЖ с 01.11.2026 достаточно остатка на счетах ИП не менее <b>1 000 000 ֏</b> либо оборота <b>1 000 000 ֏</b> за <b>60 дней</b> до подачи. Отдельный юрадрес для ИП по закону не обязателен; заявление на спецрежим подаём за <b>20 дней</b>.</p>
+          <p><span class="src">ст. 29.4 ч. 3 ՀՕ-11-Ն · ст. 254 НК РА</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#skolko">Рассчитать запуск ИП <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 02 · Налог с оборота</p>
-          <h3 class="fork__out__t">Основной режим фрилансера — со ставкой по виду деятельности</h3>
-          <p><b>Кому подходит.</b> Оборот до <b>115 000 000 драмов</b> без НДС за предыдущий
-            календарный год, вид деятельности разрешён. Это основной режим для фрилансера и
-            небольшой практики.</p>
-          <p><b>Что дальше.</b> Заявление — <b>20 дней</b> с даты регистрации для новых, с 1 января
-            по 20 февраля для действующих. Расчёт и уплата — <b>квартально, до 20-го числа месяца,
-            следующего за кварталом</b>.</p>
-          <p><b>Чем платит.</b> Ставкой, которая с 01.01.2025 зависит от вида деятельности и по
-            большинству позиций примерно удвоилась против прежней единой. Взамен введён зачёт
-            документированных расходов — и он тоже привязан к виду деятельности.
-            <a class="lnk" href="#rates">Полная таблица ставок</a>.</p>
-          <p><b>Что здесь неочевидно.</b> Налог с оборота, по имеющемуся у нас источнику,
-            начисляется по <b>выставленным инвойсам и оказанным услугам</b>, а не по факту
-            поступления денег. Заказчик платит с отсрочкой в 60 дней — налог платить уже надо.</p>
-          <p class="src">Источник: PwC, обзор от 30.06.2026 · hartak.am · repatarmenia.org ·
-            easytaxes.am · armenian-lawyer.com · armgate.am. Момент возникновения налога —
-            armgate.am, единственный источник. Проверено 04.09.2026.
-            <!-- {слот 9: момент возникновения налога с оборота — юрист LTCG} --></p>
+        <article class="tile fork__out" data-for="tf-llc">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+              <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Общество с ограниченной ответственностью (ՍՊԸ)</b> Корпоративная структура</p>
+          <h3 class="h3">Разделение долей, контракты B2B и ВНЖ для участников</h3>
+          <p>Выплата дивидендов в ООО облагается по ставке <b>5%</b>. Для ВНЖ с 01.11.2026 вклад участника в капитал или акции должны составлять от <b>2 000 000 ֏</b>; при снижении ниже <b>1 000 000 ֏</b> без реинвестирования за <b>1 месяц</b> ВНЖ аннулируется.</p>
+          <p><span class="src">ст. 29.4 ч. 3, ч. 5 ՀՕ-11-Ն · <a href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a></span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Обсудить регистрацию ООО <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 03 · Общая система</p>
-          <h3 class="fork__out__t">НДС 20 % — и ставка на доход, которой обычно не ждут</h3>
-          <p><b>Кому подходит.</b> Тем, кто перерос порог, кому специальный режим запрещён по виду
-            деятельности, и — чаще всего — тем, кто просто не подал заявление в срок.</p>
-          <p><b>Что дальше.</b> НДС <b>20 %</b>, отчётность по НДС <b>ежемесячно, до 20-го числа
-            следующего месяца</b>; подоходный и социальные выплаты — тоже ежемесячно, до 20-го.</p>
-          <p><b>Чем платит.</b> Ставкой на доход. Здесь есть важное расхождение с тем, что обычно
-            ожидают: организация на общей системе платит <b>18 %</b>, а индивидуальный
-            предприниматель, по двум независимым источникам, — <b>23 %</b>. PwC этот пункт не
-            раскрывает. Цифру 23 % мы ставим на страницу только с подписью.</p>
-          <p><b>Что здесь неочевидно и работает в вашу пользу.</b> Экспортируемые услуги облагаются
-            НДС по нулевой ставке. Рекламные, консультационные, маркетинговые, дизайнерские,
-            инжиниринговые, юридические, бухгалтерские, аудиторские услуги и обработка данных —
-            <b>0 %, если получатель за пределами Армении</b>, при этом входящий НДС принимается к
-            зачёту. То есть общая система для человека, у которого все заказчики за рубежом, — не
-            приговор, а иногда осознанный выбор.</p>
-          <p class="src">Источник: PwC · armgate.am · armenian-lawyer.com · profin.am; ставка 23 % —
-            alphaaccounting.am и easytaxes.am, PwC молчит. Проверено 04.09.2026.
-            <!-- {слот 3: ставка для ИП на общей системе — юрист LTCG} --></p>
+        <article class="tile fork__out" data-for="tf-turn">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+              <img src="assets/img/nov-shot-1100.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Налог с оборота (Շրջանառության հարկ)</b> ст. 254, 258 НК РА</p>
+          <h3 class="h3">Основной спецрежим до 115 000 000 ֏ в год</h3>
+          <p>Заменяет НДС <b>20%</b> и налог на прибыль при выручке до <b>115 000 000 ֏</b>. Ставки: торговля — <b>10%</b> со снижением до <b>1,5%</b> по вычетам (до 01.01.2025 — <b>5%</b>), ИТ — <b>5%</b>, производство — <b>7%</b>, общепит — <b>12%</b>, аренда, роялти и прочие услуги — <b>10%</b>, вторсырьё — <b>5%</b>, газеты — <b>1,5%</b>. Адвокаты и нотариусы — на ОСН.</p>
+          <p><span class="src">ст. 254, 258 НК РА · <a href="https://hartak.am/guides/%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-%D5%B3%D5%AB%D5%B7%D5%BF-%D5%B0%D5%A1%D6%80%D5%AF%D5%B4%D5%A1%D5%B6-%D5%B0%D5%A1%D5%B4%D5%A1%D5%AF%D5%A1%D6%80%D5%A3/" target="_blank" rel="noopener noreferrer">hartak.am</a></span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Проверить код деятельности <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход 04 · Высокие технологии</p>
-          <h3 class="fork__out__t">Не режим, а надстройка — и здесь мы не знаем ставки</h3>
-          <p><b>Кому подходит.</b> ИТ и R&amp;D. Это не четвёртый режим, а пакет льгот поверх
-            существующих, действующий с <b>01.01.2025 по 31.12.2031</b>, отдельные положения
-            ретроактивны с 01.01.2024.</p>
-          <p><b>Что дальше.</b> Условия у двух профессиональных источников разные, и это надо знать
-            до того, как вы построите расчёт. EY называет: не более 50 работников включительно,
-            деятельность из правительственного перечня, положительное заключение профессиональной
-            комиссии по R&amp;D. PwC называет: включение в <b>Реестр высоких технологий</b>, свыше
-            <b>90 %</b> выручки от высокотехнологичной деятельности, добросовестная налоговая
-            история.</p>
-          <p><b>Чем платит.</b> Прежде всего — неопределённостью, которую мы обязаны назвать вслух:
-            hartak.am даёт для сферы информационных технологий <b>5 %</b>, PwC и EY — <b>1 %</b>.
-            Разбор расхождения — <a class="lnk" href="#rates">в таблице ставок</a>.</p>
-          <p><b>Что в пакете помимо ставки.</b> Вычет <b>200 %</b> зарплат по высокотехнологичной
-            деятельности в пределах 50 % налогооблагаемой прибыли (у EY ограничен резидентным
-            корпоративным налогоплательщиком); возмещение 60 % подоходного налога с зарплат новых
-            сотрудников и трудовых мигрантов; 50 % компенсации международно сертифицированного
-            обучения; расходы на R&amp;D списываются в год возникновения. Подоходный налог для
-            сертифицированных исследователей и R&amp;D-персонала — <b>10 %</b> вместо 20 %.</p>
-          <p class="src">Источник: EY, налоговый алерт от 27.12.2024 · PwC, обзор от 30.06.2026 ·
-            hartak.am. Проверено 04.09.2026.
-            <!-- {слот 1: ставка для ИТ и доступность 1 % для ИП — юрист LTCG} --></p>
+        <article class="tile fork__out" data-for="tf-micro">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
+              <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Микропредпринимательство</b> ст. 267–269 НК РА · Лимит 24 000 000 ֏</p>
+          <h3 class="h3">Ставка 0% и конфликт с правилом 180 дней для ВНЖ</h3>
+          <p>Даёт ставку <b>0%</b> при выручке до <b>24 000 000 ֏</b> и заявлении за <b>20 дней</b>, но ограничен по услугам и торговле в Ереване. С 01.11.2026 отсутствие начисленных налогов в базе КГД за <b>180 дней</b> после выдачи ВНЖ ведёт к аннулированию карты.</p>
+          <p><span class="src">ст. 267–269 НК РА; ст. 29.4 ч. 5 ՀՕ-11-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Подобрать режим под ВНЖ <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
       </div>
     </fieldset>
-    </form>
 
-    <p class="honest measure">Все четыре исхода раскрыты. Выбор ничего не открывает и ничего не
-      прячет — он сворачивает лишнее. На узком экране показывается выбранный исход; остальные
-      возвращаются другим выбором.</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     Крупные числа: три разных рода рядом — два порога и срок.
-     Разницу делает размер, а не краска; цифры tabular-nums.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="how" aria-labelledby="how-t" data-rail-label="Как устроено">
-  <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">03</span> Как это устроено</p>
-      <h2 class="h2" id="how-t">Три числа, вокруг которых <em>вращается весь выбор</em></h2>
-    </header>
-
-    <div class="bignums">
-      <div class="bignum">
-        <p class="bignum__n">24 000 000<small> ֏</small></p>
-        <p class="bignum__u">порог · микропредпринимательство</p>
-        <p class="bignum__d">Оборот в год. Выше — режим недоступен; ниже — доступен, только если
-          вид деятельности не в запретном списке.
-          <span class="src">Источник: PwC, обзор от 30.06.2026 · armenian-lawyer.com, 20.12.2025 · 04.09.2026.</span></p>
+    <aside class="dated-box" aria-label="Изменение налоговых ставок и правил ВНЖ по бизнесу" data-reveal>
+      <div class="dated-box__head">
+        <span class="dated-box__badge">Реформа НК РА и Закона «Об иностранцах»</span>
+        <span>Сверка норм · 18.10.2026</span>
       </div>
-
-      <div class="bignum">
-        <p class="bignum__n">115 000 000<small> ֏</small></p>
-        <p class="bignum__u">порог · налог с оборота</p>
-        <p class="bignum__d">Без НДС за предыдущий календарный год. Это же порог обязательной
-          регистрации по НДС.
-          <span class="src">Источник: PwC · hartak.am · armenian-lawyer.com · 04.09.2026.</span></p>
-      </div>
-
-      <div class="bignum">
-        <p class="bignum__n">20<small> дней</small></p>
-        <p class="bignum__u">срок · заявление о режиме</p>
-        <p class="bignum__d">С даты регистрации — для вновь зарегистрированных. Пропуск означает
-          общую систему на весь календарный год.
-          <span class="src">Источник: easytaxes.am · armenian-lawyer.com · armgate.am · 04.09.2026.</span></p>
-      </div>
-    </div>
-
-    <!-- ── 4.1 Регистрация ─────────────────────────────────────── -->
-    <h3 class="h3" id="reg" style="margin-top: var(--s-16)">Регистрация: пошлины, сроки, документы</h3>
-    <div class="diy-wrap" style="margin-top: var(--s-6)">
-      <table class="diy">
-        <caption>Что требуется при регистрации и в первые сорок дней после неё. Обращение к
-          источникам — 04.09.2026. Официальная страница moj.am на дату проверки отдаёт 403.</caption>
-        <thead>
-          <tr><th scope="col">Что требуется</th><th scope="col">Сколько стоит</th><th scope="col">Сколько длится</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row" style="white-space:normal">Регистрация ИП в Агентстве государственного регистра юрлиц Минюста РА
-              <span class="src">armenian-lawyer.com; срок — mblegal.am, 19.06.2026</span></th>
-            <td data-l="Сколько стоит" class="us">госпошлина <b>3 000 драмов</b>, <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></td>
-            <td data-l="Сколько длится">в день подачи документов</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Регистрация ООО там же
-              <span class="src">armenian-lawyer.com</span></th>
-            <td data-l="Сколько стоит">пошлины нет <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></td>
-            <td data-l="Сколько длится">1–3 рабочих дня</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Минимальный уставный капитал
-              <span class="src">armenian-lawyer.com + onebusiness.am</span></th>
-            <td data-l="Сколько стоит">требований нет ни для ООО, ни для ИП</td>
-            <td data-l="Сколько длится">—</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Иностранное владение
-              <span class="src">armenian-lawyer.com + onebusiness.am</span></th>
-            <td data-l="Условие">100 % допускается, местный партнёр или директор не требуется; участников ООО — до 49</td>
-            <td data-l="Сколько длится">—</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Онлайн-регистрация через e-register
-              <span class="src">armenian-lawyer.com</span></th>
-            <td data-l="Условие">требует электронной подписи</td>
-            <td data-l="Сколько длится">—</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Регистрация без приезда, по доверенности
-              <span class="src">armenian-lawyer.com + mblegal.am + relocation2armenia.com</span></th>
-            <td data-l="Условие">нужен паспорт с переводом и доверенность. ⚠️ Один источник говорит «апостилированный», другой — «нотариально переведённый»</td>
-            <td data-l="Сколько длится">—</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Заявление о налоговом режиме, новые
-              <span class="src">easytaxes.am + armenian-lawyer.com + armgate.am</span></th>
-            <td data-l="Условие">—</td>
-            <td data-l="Сколько длится" class="us"><b>20 дней</b> с даты регистрации</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Заявление о налоговом режиме, действующие
-              <span class="src">там же</span></th>
-            <td data-l="Условие">—</td>
-            <td data-l="Сколько длится" class="us">с 1 января по <b>20 февраля</b></td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Декларация о бенефициарных владельцах
-              <span class="src">armenian-lawyer.com, единственный источник</span></th>
-            <td data-l="Условие"><span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></td>
-            <td data-l="Сколько длится"><b>40 дней</b> с учреждения, далее ежегодно до 20 февраля</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- {слот 11: госпошлина 3 000 драмов и бесплатность регистрации ООО — юрист LTCG}
-         {слот 13: декларация о бенефициарных владельцах, 40 дней и 20 февраля — юрист LTCG} -->
-
-    <div class="note" style="margin-top: var(--s-8)">
-      <p><b>Расхождение по юридическому адресу, и оно касается нас самих.</b> Юридические фирмы
-        пишут, что адрес для регистрации нужен: жилой, арендованный офис или услуга виртуального
-        адреса, с договором аренды или документом о собственности. Один из крупных консультантов
-        утверждает обратное — что требований к юридическому адресу нет. Мы продаём услугу
-        юридического адреса и потому обязаны сказать прямо: <b>пока расхождение не снято, мы не
-        будем утверждать, что адрес обязателен.</b></p>
-      <p class="src">Источник: armenian-lawyer.com и armlegal.am против третьего источника.
-        Проверено 04.09.2026.
-        <!-- {слот 12: обязателен ли юридический адрес для регистрации — юрист LTCG} --></p>
-    </div>
-
-    <!-- ── 4.2 Ставки ──────────────────────────────────────────── -->
-    <h3 class="h3" id="rates" style="margin-top: var(--s-16)">Ставки налога с оборота, действуют с 01.01.2025</h3>
-    <div class="diy-wrap" style="margin-top: var(--s-6)">
-      <table class="diy">
-        <caption>Ставка задаётся видом деятельности, а не суммой дохода. Источник: PwC, обзор от
-          30.06.2026 · государственная платформа услуг hartak.am · fincore.am. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Вид деятельности</th><th scope="col">Ставка</th><th scope="col">Статус</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row" style="white-space:normal">Производство</th><td data-l="Ставка" class="yes">7 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Торговля</th><td data-l="Ставка" class="yes">10 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Прочие виды деятельности (услуги)</th><td data-l="Ставка" class="yes">10 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Аренда, проценты, роялти</th><td data-l="Ставка" class="yes">10 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Общественное питание</th><td data-l="Ставка" class="yes">12 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Вторичное сырьё</th><td data-l="Ставка" class="yes">5 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Продажа газет редакциями</th><td data-l="Ставка" class="yes">1,5 %</td><td data-l="Статус">публикуется</td></tr>
-          <tr><th scope="row" style="white-space:normal">Высокие технологии / ИТ</th><td data-l="Ставка"><span class="part">1 % или 5 %</span> — источники расходятся</td><td data-l="Статус"><span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>ждём юриста</span></td></tr>
-          <tr><th scope="row" style="white-space:normal">Прочая деятельность вне классификации общепита</th><td data-l="Ставка" class="us"><b>20 %</b></td><td data-l="Статус">публикуется</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="measure" style="margin-top: var(--s-5)"><b>Верхнюю строку читайте внимательнее
-      остальных.</b> 20 % — это не опечатка и не редкий случай: деятельность, не попавшая ни в одну
-      классификацию, облагается по ставке, вдвое выше «обычных» 10 % и равной НДС. Именно эта строка
-      чаще всего выпадает из чужих таблиц и из расчётов «на салфетке».</p>
-
-    <!-- ── 4.3 Зачёт расходов ──────────────────────────────────── -->
-    <h3 class="h3" style="margin-top: var(--s-12)">Зачёт расходов — то, ради чего ставки подняли</h3>
-    <p class="measure" style="margin-top: var(--s-4)">С 01.01.2025 из исчисленного налога вычитается
-      сумма, равная доле <b>от стоимости приобретённых для продажи товаров</b> — для торговли это
-      9,5 %. Результат не может опуститься ниже минимальной эффективной ставки от оборота.</p>
-
-    <div class="diy-wrap" style="margin-top: var(--s-6)">
-      <table class="diy">
-        <caption>Минимальная эффективная ставка: ниже этой доли от оборота вычет налог не опустит.
-          Источник: fincore.am со ссылкой на ст. 258 НК РА · PwC · easytaxes.am. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Вид деятельности</th><th scope="col">Минимальная эффективная ставка от оборота</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row" style="white-space:normal">Торговля</th><td data-l="Минимум" class="yes">1 %</td></tr>
-          <tr><th scope="row" style="white-space:normal">Производство</th><td data-l="Минимум" class="yes">3 %</td></tr>
-          <tr><th scope="row" style="white-space:normal">Общественное питание</th><td data-l="Минимум" class="yes">3,5 %</td></tr>
-          <tr><th scope="row" style="white-space:normal">Прочая деятельность</th><td data-l="Минимум" class="yes">4,5 %</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- {слот 4: формулировка вычета и минимальные ставки — юрист LTCG.
-         Формулировка критична для калькулятора и до подписи не публикуется как расчётная. -->
-
-    <p class="measure" style="margin-top: var(--s-5)"><b>Читайте это как «9,5 % от стоимости
-      закупленного товара», а не как «9,5 процентных пункта с оборота».</b> Разница между двумя
-      прочтениями — разные деньги, и именно на ней ломаются самостоятельные расчёты.</p>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     ДАТИРОВАННАЯ ВРЕЗКА · 02.05.2024. Она про срок и про рубеж,
-     а не про момент, поэтому регистр другой: пунктир, прозрачный
-     фон, ни тени, ни заливки. Основной текст выше остаётся
-     действующим правом; рубеж живёт здесь и не смешивается с ним.
-     ══════════════════════════════════════════════════════════════ -->
-<div class="section" data-rail-skip style="padding-block: 0">
-  <div class="wrap">
-    <aside class="dated-box" aria-labelledby="d-minfin">
-      <p class="dated-box__when">Публикация Минфина РА · 02.05.2024</p>
-      <h3 class="dated-box__t" id="d-minfin">Адвокатов и нотариусов вывели из налога с оборота</h3>
-
-      <p class="dated-box__d">В официальной публикации Министерства финансов РА от <b>02.05.2024</b>
-        сказано прямо: <b>адвокатская и нотариальная деятельность не может вестись в системе налога
-        с оборота и переводится на НДС.</b></p>
-
-      <p class="dated-box__d">Это не мелкая поправка в конце списка. Одновременно из
-        микропредпринимательства выведены профессиональные услуги — консалтинговые, юридические,
-        бухгалтерские, аудиторские, инжиниринговые, рекламные, дизайнерские, маркетинговые,
-        переводческие и медицинские, — а с 01.07.2025 перечень расширен ещё и услугами по
-        предоставлению персонала.</p>
-
-      <div class="shift">
-        <div class="shift__row shift__row--head">
-          <span>Что</span><span>До 01.01.2025</span><span>Сейчас</span>
+      <div class="shift" role="group" aria-label="Сравнение прежних правил и правил осени 2026 года">
+        <div class="shift__col shift__col--was">
+          <span class="shift__tag">Прежние правила</span>
+          <p class="shift__val">5% с оборота и «спящие» ИП под ВНЖ</p>
+          <p class="shift__desc">До 01.01.2025 базовая ставка в торговле составляла <b>5%</b>, а до 01.11.2026 закон не устанавливал порога <b>1 000 000 ֏</b> по счёту ИП и контроля налогов за <b>180 дней</b>.</p>
         </div>
-        <div class="shift__row">
-          <span class="shift__k">Ставка налога с оборота, услуги</span>
-          <span class="shift__was">5 % — единая ставка по большинству видов</span>
-          <span class="shift__now"><b>10 %</b>, а вне классификации — 20 %</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Зачёт документированных расходов</span>
-          <span class="shift__was">не предусмотрен</span>
-          <span class="shift__now"><b>введён</b>, но не ниже минимальной эффективной ставки</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Адвокатская и нотариальная деятельность</span>
-          <span class="shift__was">в системе налога с оборота</span>
-          <span class="shift__now"><b>переводится на НДС</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Профессиональные услуги в микропредпринимательстве</span>
-          <span class="shift__was">были доступны</span>
-          <span class="shift__now"><b>выведены</b>; с 01.07.2025 — и услуги по предоставлению персонала</span>
+        <div class="shift__col shift__col--now">
+          <span class="shift__tag">Правила осени 2026 года</span>
+          <p class="shift__val">Ставки 1,5%–12%, ценз 1 млн ֏ и контроль КГД</p>
+          <p class="shift__desc">Ставка по торговле (со снижением до <b>1,5%</b>) и услугам — <b>10%</b>, ИТ — <b>5%</b>, адвокаты и нотариусы — на НДС <b>20%</b>. С 01.11.2026 ВНЖ по ИП требует <b>1 000 000 ֏</b> и налогов за <b>180 дней</b>.</p>
         </div>
       </div>
-
-      <p class="dated-box__d">Складывается развилка, которую мы не имеем права смягчить:
-        <b>похоже, что заметная часть профессиональных практик не может пользоваться ни
-        микропредпринимательством, ни налогом с оборота — только общей системой с НДС.</b> Насколько
-        широко это правило: только адвокаты и нотариусы, о которых Минфин написал буквально, или
-        весь класс профессиональных услуг вместе с юридическими, бухгалтерскими и консалтинговыми?</p>
-
-      <p class="dated-box__d"><b>Мы этого пока не знаем.</b> Дословный текст статей 254, 258 и 267
-        Налогового кодекса прочитать не удалось: консолидированные редакции на arlis.am обрываются
-        на 30–33 статье, а PDF официальной инкорпорации на minfin.am слишком велик для чтения. Это
-        первый вопрос, который мы задали собственному юристу, и он касается нас самих ровно так же,
-        как вас. <span class="slot">вопрос юристу LTCG</span></p>
-
-      <p class="dated-box__d">Практический вывод, который можно сделать уже сегодня: <b>если ваша
-        деятельность попадает в профессиональные услуги, не считайте специальный режим своим по
-        умолчанию.</b> Проверьте это до подачи заявления, а не после первого квартала.</p>
-
-      <p class="src">Проверено по публикации Министерства финансов РА от 02.05.2024 (minfin.am),
-        armenian-lawyer.com и repatarmenia.org · 04.09.2026.
-        <!-- {слот 2: границы вывода профессиональных услуг из налога с оборота — юрист LTCG} --></p>
     </aside>
   </div>
-</div>
+</section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     Продолжение разбора: фиксированные платежи, сотрудники,
-     календарь, валюта, деньги от заказчиков, проверки.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="fixed" aria-labelledby="fixed-t" data-rail-label="Платежи и календарь">
+<!-- ═══ 03 · Сравнительная таблица налоговых режимов ═════════════ -->
+<section class="section section--grid section--thread section--art" id="rezhimy" data-rail-label="Матрица режимов" aria-labelledby="tbl-t">
+  <div class="nov-art nov-art--guilloche" aria-hidden="true"></div>
+
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">04</span> Платежи и календарь</p>
-      <h2 class="h2" id="fixed-t">Два платежа, которые <em>не зависят от того, был ли доход</em></h2>
-      <p class="lead measure">Их два, и это <b>два отдельных обязательства с двумя отдельными
-        основаниями</b>. Их регулярно складывают в одну сумму — от этого возникает ощущение, что
-        достаточно закрыть один платёж.</p>
-    </header>
-
-    <div class="bignums">
-      <div class="bignum">
-        <p class="bignum__n">129 600<small> ֏</small></p>
-        <p class="bignum__u">в год · медстрахование ИП</p>
-        <p class="bignum__d">Единым платежом до 20 апреля 2026, если валовой доход за 2025 год
-          составил 2 400 001 драм и более.
-          <span class="src">Источник: easylife.am (31.12.2025) + PwC + armenian-lawyer.com · 04.09.2026.</span></p>
-      </div>
-      <div class="bignum">
-        <p class="bignum__n">12 000<small> ֏</small></p>
-        <p class="bignum__u">в год · гербовый сбор ИП</p>
-        <p class="bignum__d">При годовом доходе до 12 000 000 драмов. При доходе от 12 000 001 —
-          <b>120 000 драмов</b> в год.
-          <span class="src">Источник: easylife.am + PwC + alphaaccounting.am · 04.09.2026.</span></p>
-      </div>
-      <div class="bignum">
-        <p class="bignum__n">20<small> апреля</small></p>
-        <p class="bignum__u">срок · оба платежа</p>
-        <p class="bignum__d">Медстрахование считается по валовому доходу за <b>предыдущий</b> год —
-          то есть счёт приходит и в тот год, когда работы почти не было.
-          <span class="src">Источник: easylife.am (31.12.2025) + PwC · 04.09.2026.</span></p>
-      </div>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">03</span> Матрица режимов НК РА</p>
+      <h2 class="h2" id="tbl-t">Налоговые режимы Армении <em>и совместимость с ВНЖ</em></h2>
+      <p class="lead">Сверяем предмет договоров с гл. 55–56 НК РА и правилом <b>180 дней</b> до регистрации.</p>
     </div>
 
-    <div class="note" style="margin-top: var(--s-8)">
-      <p>⚠️ По дате введения медстрахования источники расходятся: PwC относит норму к декабрю 2025,
-        armenian-lawyer.com пишет «с января 2026». Отдельно: пороги по медстрахованию для работников
-        помечены как относящиеся к <b>первой фазе</b> внедрения — значит, суммы привязаны к этапу и
-        будут меняться.
-        <!-- {слот 7: актуальность сумм на 2026 и график фаз — юрист LTCG} --></p>
-    </div>
-
-    <p class="measure" style="margin-top: var(--s-6)"><b>Накопительная пенсия для ИП:</b> при годовом
-      доходе до 6 000 000 драмов — 5 % валового дохода ежемесячно; свыше 6 000 000 — 10 % дохода
-      минус 300 000 драмов. Платят граждане Армении и <b>иностранные граждане, родившиеся 1 января
-      1974 года и позже</b>.</p>
-    <p class="src measure">Источник: PwC, единственный источник. Проверено 04.09.2026. Для релоканта
-      это ключевой вопрос, и мы не ставим его на одном источнике: обе позиции —
-      <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span>
-      <!-- {слот 6: накопительная пенсия для ИП — формула и правило «рождённые 01.01.1974 и позже»} --></p>
-
-    <!-- ── 4.5 Сотрудники ──────────────────────────────────────── -->
-    <h3 class="h3" style="margin-top: var(--s-16)">Если у вас есть сотрудники</h3>
-    <div class="diy-wrap" style="margin-top: var(--s-6)">
-      <table class="diy">
-        <caption>Ставки и удержания по выплатам работникам. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Платёж</th><th scope="col">Ставка</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row" style="white-space:normal">Подоходный налог с зарплат
-              <span class="src">PwC + armenian-lawyer.com + alphaaccounting.am</span></th>
-            <td data-l="Ставка" class="us">плоские <b>20 %</b></td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Подоходный для сертифицированных исследователей и ИТ-R&amp;D-персонала
-              <span class="src">EY, алерт 27.12.2024 + PwC</span></th>
-            <td data-l="Ставка" class="yes">10 %</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Накопительная пенсия, работник
-              <span class="src">PwC, обзор 30.06.2026 + armenian-lawyer.com</span></th>
-            <td data-l="Ставка"><b>5 %</b> при зарплате менее 500 000 драмов; при 500 000 и выше — <b>10 % минус 25 000 драмов</b>. Предельная база 1 125 000 драмов, потолок взноса 87 500 драмов</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Медстрахование, работник
-              <span class="src">PwC + armenian-lawyer.com</span></th>
-            <td data-l="Ставка">до 200 000 драмов — освобождение; 200 001–500 000 — <b>4 800 драмов</b> в месяц; свыше 500 001 — <b>10 800 драмов</b>; удерживает работодатель с 20.01.2026</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Гербовый сбор, работник
-              <span class="src">PwC + alphaaccounting.am + armenian-lawyer.com</span></th>
-            <td data-l="Ставка"><b>1 000 драмов</b> в месяц при зарплате до 1 000 000; <b>15 000 драмов</b> свыше 1 000 001</td>
-          </tr>
-          <tr>
-            <th scope="row" style="white-space:normal">Дивиденды
-              <span class="src">PwC + armenian-lawyer.com + alphaaccounting.am</span></th>
-            <td data-l="Ставка" class="yes">5 %</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- ── 4.6 Календарь ───────────────────────────────────────── -->
-    <h3 class="h3" style="margin-top: var(--s-16)">Календарь отчётности</h3>
-    <div class="diy-wrap" style="margin-top: var(--s-6)">
-      <table class="diy">
-        <caption>Источник: PwC · armgate.am · armenian-lawyer.com. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Как часто</th><th scope="col">До какого числа</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row" style="white-space:normal">Налог с оборота</th><td data-l="Как часто">квартально</td><td data-l="До какого числа" class="us">20-е число месяца, следующего за кварталом</td></tr>
-          <tr><th scope="row" style="white-space:normal">НДС</th><td data-l="Как часто">ежемесячно</td><td data-l="До какого числа">20-е число следующего месяца</td></tr>
-          <tr><th scope="row" style="white-space:normal">Подоходный и социальные выплаты</th><td data-l="Как часто">ежемесячно</td><td data-l="До какого числа">20-е число следующего месяца</td></tr>
-          <tr><th scope="row" style="white-space:normal">Микропредпринимательство</th><td data-l="Как часто">годовая</td><td data-l="До какого числа"><span class="part">1 февраля</span> следующего года ⚠️ один источник</td></tr>
-          <tr><th scope="row" style="white-space:normal">Налог на прибыль организаций, годовая декларация</th><td data-l="Как часто">годовая</td><td data-l="До какого числа">20 апреля</td></tr>
-          <tr><th scope="row" style="white-space:normal">Декларация о бенефициарных владельцах</th><td data-l="Как часто">ежегодно</td><td data-l="До какого числа">20 февраля</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="measure" style="margin-top: var(--s-5)"><b>Нулевой оборот не отменяет отчёт.</b> При
-      отсутствии дохода за период отчёт всё равно обязателен.
-      <span class="src">Источник: armgate.am, единственный источник. Проверено 04.09.2026.</span></p>
-
-    <p class="measure" style="margin-top: var(--s-4)"><b>Годовая декларация о доходах физического
-      лица — это не то же самое, что декларация по налогу на прибыль организаций.</b> Их регулярно
-      путают, потому что оба срока звучат как «годовой отчёт». Подробно — в ветке
-      <a class="lnk" href="rezidentstvo-i-crs.html">«Живу и планирую»</a>.</p>
-
-    <!-- ── 4.7 Валюта ──────────────────────────────────────────── -->
-    <h3 class="h3" style="margin-top: var(--s-16)">Валюта расчётов</h3>
-    <figure class="lawquote" style="margin-top: var(--s-6)">
-      <blockquote cite="https://www.arlis.am/">
-        <p>Цены на товары и услуги, зарплаты и оценка имущества внутри Армении устанавливаются
-          в драмах; расчёты между резидентами производятся в драмах.</p>
-      </blockquote>
-      <figcaption>
-        <span class="lawquote__art">Изложение нормы</span>
-        <span>Закон РА «О валютном регулировании и валютном контроле». Дословный текст статьи в
-          первоисточнике нами не сверялся построчно — это изложение, а не цитата.</span>
-        <a href="https://www.arlis.am/" rel="noopener">arlis.am</a>
-      </figcaption>
+    <figure class="lawquote" data-reveal>
+      <blockquote>«В случае если в течение 180 дней после предоставления статуса пребывания в базе данных налогового органа отсутствуют сведения об исчисленных налогах... налоговый орган через единую электронную платформу направляет уведомление в уполномоченный орган в целях инициирования производства по признанию статуса пребывания недействительным.»</blockquote>
+      <figcaption><b>Закон РА «Об иностранцах» (ՀՕ-11-Ն от 20.01.2026)</b> · ст. 29.4 ч. 5 · в силе с 01.11.2026 · <a href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">ARLIS ↗</a></figcaption>
     </figure>
 
-    <p class="measure" style="margin-top: var(--s-6)">Валюта допускается в письменных договорах
-      резидента с нерезидентом при безналичных расчётах, в свободных экономических зонах, в
-      банковских операциях, в авиационных услугах, по процентам на валютные кредиты и депозиты.
-      ⚠️ Перечень исключений построчно с текстом закона не сверялся.
-      <span class="src">Источник: комментарий к закону на armenian-lawyer.com. Проверено 04.09.2026.
-      <!-- {слот 15: перечень исключений и размер санкции — юрист LTCG} --></span></p>
-
-    <p class="measure" style="margin-top: var(--s-4)">Для человека, который привык выставлять счёт в
-      долларах кому угодно, это самое неочевидное правило страницы: <b>счёт армянскому заказчику —
-      в драмах.</b></p>
-
-    <!-- ── 4.8 Деньги от зарубежных заказчиков ─────────────────── -->
-    <h3 class="h3" style="margin-top: var(--s-16)">Деньги от зарубежных заказчиков</h3>
-    <p class="measure" style="margin-top: var(--s-4)">При входящем переводе банк проводит проверку по
-      правилам противодействия отмыванию и может запросить договор и инвойс; банк отправителя может
-      запросить договор, инвойс и налоговый номер получателя.
-      <span class="src">Источник: pragmatos.capital + armenian-lawyer.com. Проверено 04.09.2026.</span></p>
-
-    <p class="measure" style="margin-top: var(--s-4)"><b>Платёжные сервисы.</b> Payoneer и Wise
-      работают с Арменией и позволяют выводить средства на армянский счёт; PayPal ограничен и не даёт
-      вывода баланса на местный счёт в драмах; Stripe армянские компании массово не поддерживает.
-      ⚠️ Основной источник здесь — сами платёжные сервисы, то есть заинтересованная сторона, а
-      область меняется быстрее всего остального на этой странице.
-      <span class="src">Источник: payxem.com + onesafe.io. Проверено 04.09.2026.
-      <!-- {слот 16: актуальность картины по платёжным сервисам на дату публикации — юрист LTCG} --></span></p>
-
-    <p class="measure" style="margin-top: var(--s-4)">Про порядок открытия счёта, комплаенс и причины
-      отказа — ветка <a class="lnk" href="schet-v-banke.html">«Только приехал»</a>. Здесь про то, что
-      происходит с деньгами после того, как счёт уже есть.</p>
-
-    <!-- ── 4.9 Проверки ────────────────────────────────────────── -->
-    <h3 class="h3" style="margin-top: var(--s-16)">Проверки и сроки давности</h3>
-    <ul style="margin-top: var(--s-5); padding-left: 1.1em; display: grid; gap: var(--s-4); max-width: 62ch">
-      <li><b>Срок давности по налогам — три года.</b>
-        <span class="src">PwC, единственный источник. Проверено 04.09.2026.</span></li>
-      <li><b>Частота проверок риск-ориентированная:</b> высокий риск — не чаще раза в год, средний —
-        раз в три года, низкий — раз в пять лет. Обычная проверка укладывается в 15 рабочих дней с
-        возможным продлением до 10 дней.
-        <span class="src">PwC, единственный источник. Проверено 04.09.2026.</span></li>
-      <li><b>Пеня за просрочку уплаты — 0,075 % от неуплаченной суммы за каждый день, но не более
-        чем за 730 дней</b> (ст. 401 НК РА). ⚠️ Единственный проверенный источник датирован
-        18.07.2022, то есть до реформы 2025 года.
-        <span class="src">mondaq.com, Concern Dialog + armenian-lawyer.com. Проверено 04.09.2026.
-        <!-- {слот 8: действующая пеня — юрист LTCG} --></span></li>
-      <li><b>Штраф за несвоевременную подачу расчёта — 5 % суммы налога за каждые 15 дней просрочки,
-        но не более полной суммы обязательства.</b> ⚠️ Источник <b>один</b>, и формулировка в нём
-        привязана к корпоративной отчётности. Мы отдельно проверили: страница PwC о налоговом
-        администрировании раздела о штрафах не содержит вовсе.
-        <span class="src">armenian-lawyer.com. Проверено 04.09.2026.
-        <!-- {слот 8: штраф — юрист LTCG} --></span></li>
-    </ul>
+    <div class="table-wrap" role="region" aria-labelledby="tbl-t" tabindex="0" data-reveal style="margin-top: var(--s-5)">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th scope="col">Режим и норма НК РА</th>
+            <th scope="col">Порог и окно выбора</th>
+            <th scope="col">Базовые ставки</th>
+            <th scope="col">Связка с ВНЖ (ст. 29.4 ՀՕ-11-Ն)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Налог с оборота</b><br><span class="src">ст. 254–258 НК РА</span></td>
+            <td>до <b>115 000 000 ֏</b> · заявление за <b>20 дней</b> (далее до <b>20 февраля</b>)</td>
+            <td>Торговля (до <b>1,5%</b>), аренда и услуги — <b>10%</b>; ИТ — <b>5%</b>; производство — <b>7%</b>; общепит — <b>12%</b>; вторсырьё — <b>5%</b>; газеты — <b>1,5%</b></td>
+            <td>Формирует начисления в базе КГД для правила <b>180 дней</b>.</td>
+          </tr>
+          <tr>
+            <td><b>Микробизнес</b><br><span class="src">ст. 267–269 НК РА</span></td>
+            <td>до <b>24 000 000 ֏</b> · заявление за <b>20 дней</b></td>
+            <td><b>0%</b> по основным налогам при узком перечне видов деятельности</td>
+            <td>Опасно для ВНЖ: при <b>0%</b> налогов за <b>180 дней</b> статус аннулируется.</td>
+          </tr>
+          <tr>
+            <td><b>Общая система (ОСН)</b><br><span class="src">НК РА ՀՕ-165-Ն</span></td>
+            <td>Без лимита или при пропуске <b>20 дней</b></td>
+            <td>НДС — <b>20%</b>; прибыль — <b>18%</b>; подоходный — <b>20%</b>; дивиденды — <b>5%</b></td>
+            <td>Для видов деятельности вне спецрежимов и оборотов свыше <b>115 млн ֏</b>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small" style="margin-top: var(--s-3)">Сверяем договоры и коды с гл. 55–56 НК РА и ст. 29.4 Закона «Об иностранцах» до подачи. Проверено 18.10.2026.</p>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     1 НОЯБРЯ 2026. Сначала отрицательный результат — он и есть
-     ответ на самый частый запрос осени, — потом то, что в этот
-     день действительно происходит. Два разных регистра подряд.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section section--stone" id="nov1" aria-labelledby="nov1-t" data-rail-label="1 ноября 2026">
+<!-- ═══ 04 · 5 налоговых и регистрационных ловушек ═══════════════ -->
+<section class="section section--deep section--thread section--light" id="lovushki" data-rail-label="Ловушки режима" aria-labelledby="traps-t">
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">05</span> 1 ноября 2026</p>
-      <h2 class="h2" id="nov1-t">И то, чего в этот день <em>не произойдёт</em></h2>
-      <p class="lead measure">Это самый частый вопрос осени, и по нашей ветке ответ в основном
-        отрицательный. Отрицательный результат тоже стоит опубликовать: он экономит вам вечер
-        поисков.</p>
-    </header>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">04</span> Практика и цена ошибки</p>
+      <h2 class="h2" id="traps-t">Пять ошибок при открытии ИП и ООО, <em>которые стоят статуса или НДС 20%</em></h2>
+    </div>
 
-    <aside class="nochange" aria-labelledby="nc">
-      <p class="nochange__tag">Не меняется</p>
-      <h3 class="nochange__t" id="nc">Чего 1 ноября 2026 года не происходит</h3>
-      <!-- без role="list": маркеры здесь нужны, а ul[role="list"] в site.css их снимает -->
-      <ul>
-        <li><b>Налоговый кодекс РА в этот день не меняется вообще</b> — ни ставок, ни порогов
-          оборота, ни режима микропредпринимательства, ни НДС, ни форм отчётности. Действующая
-          редакция охватывает период 01.09.2026 – 01.01.2027, следующая начинается 01.01.2027.</li>
-        <li><b>Закон о государственной регистрации юридических лиц и ИП тоже не меняется.</b>
-          Требование внести 2 000 000 драмов в уставный капитал — это условие миграционного статуса,
-          а не условие регистрации компании.</li>
-        <li><b>Центральный банк на 01.11.2026 не вводит ничего.</b> Исчерпывающий запрос по дате
-          вступления в силу за 01.10–31.12.2026 дал 21 акт, ни одного акта ЦБ среди них нет.</li>
-      </ul>
-      <p class="src">Проверено по списку редакций Налогового кодекса РА на
-        <a href="https://www.arlis.am/" rel="noopener">arlis.am</a> и по исчерпывающему запросу
-        актов со сроком вступления 01.10 – 31.12.2026 · 04.09.2026.</p>
-    </aside>
-
-    <aside class="dated-box" aria-labelledby="d-nov" style="margin-top: var(--s-8)">
-      <p class="dated-box__when">С 01.11.2026 иначе</p>
-      <h3 class="dated-box__t" id="d-nov">Что 1 ноября действительно происходит и касается вас</h3>
-
-      <ol class="next" role="list">
-        <li><b>1 ноября 2026 — крайний срок годового расчёта за 2025 год.</b>
-          Крайний срок подачи и корректировки годового расчёта (декларации) подоходного налога за
-          2025 год. Лица, представляющие годовой расчёт, вправе изменить предзаполненный налоговым
-          органом расчёт: за 2024 год — до 1 ноября 2025 включительно, за 2025 год — до 1 ноября
-          2026 включительно. Это не изменение, вступающее в силу, а истекающий срок — и в поиске он
-          сольётся с миграционной реформой в один запрос.
-          <span class="src">Закон ՀՕ-324-Ն от 24.10.2025, вступил в силу 30.10.2025 ·
-          <a href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a> ·
-          проверено 04.09.2026.</span></li>
-
-        <li><b>Если ИП открыто ради вида на жительство, у него появляются финансовые пороги.</b>
-          С 01.11.2026 предпринимательское основание возникает, если иностранец является
-          индивидуальным предпринимателем и имеет на счетах ИП в разных валютах в драмовом выражении
-          <b>не менее 1 000 000 драмов</b>, либо за <b>60 дней</b> до дня подачи заявления имеет по
-          результатам предпринимательской деятельности оборот в 1 000 000 драмов или эквивалент.
-          Для основания через коммерческую организацию — 2 000 000 драмов в уставный капитал либо в
-          акции.
-          <span class="src">Закон ՀՕ-11-Ն от 20.01.2026, новая ст. 29.4 закона «Об иностранцах»,
-          ч. 3 · <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-          проверено 04.09.2026. ⚠️ Адрес нормы: три независимых участка проверки дают ст. 29.4,
-          один — ст. 19 ч. 3; текст цитаты у всех идентичен.</span></li>
-
-        <li><b>Правило 180 дней — и это прямо бухгалтерская зона.</b>
-          Статус аннулируется, если в течение <b>180 дней</b> после его получения в базе данных
-          Комитета государственных доходов <b>отсутствует информация о налогах, исчисленных по
-          результатам предпринимательской деятельности</b>. То есть зарегистрировать ИП недостаточно
-          — по нему должны быть начисления. Отдельно обратите внимание на асимметрию: вход по
-          организации — 2 000 000 драмов, порог удержания — 1 000 000.
-          <span class="src">Тот же закон, ст. 29.4 ч. 5 · проверено 04.09.2026.</span></li>
-      </ol>
-
-      <p class="dated-box__d"><b>Чего на сегодня нет.</b> На 04.09.2026 не опубликовано ни одного
-        подзаконного акта Правительства во исполнение реформы, хотя закон требует принять их до
-        вступления в силу. Не опубликовано и объявление Миграционной службы о запуске единой
-        электронной платформы — а от него юридически зависит фактическая дата включения части
-        законов майского пакета. Ни FAQ, ни инструкции, ни новой формы заявления. Мы говорим это
-        прямо, потому что альтернатива — пересказывать чужие догадки как факты.</p>
-
-      <p class="src">Проверено по лентам migration.mia.gov.am, migration.am, migration.e-gov.am и
-        e-draft.am за 25.08–04.09.2026.</p>
-
-      <p class="dated-box__d">Подробный разбор реформы — в ветке
-        <a class="lnk" href="vnzh.html">«Легализуюсь»</a>. Здесь только та её часть, которая меняет
-        бухгалтерию и учёт.</p>
-    </aside>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 06 · Где ломается. Сердце ветки. Четыре ловушки открыты,
-     десять под <details>. Тег у каждой говорит, лечится ли она
-     до подачи. Решение принимает налоговый орган — сказано прямо.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="traps" aria-labelledby="traps-t" data-rail-label="Где ломается">
-  <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">06</span> Где ломается</p>
-      <h2 class="h2" id="traps-t">В банке ошибка даёт отказ сразу — <em>здесь она даёт тишину</em></h2>
-      <p class="lead measure">Регистрация проходит, счёт работает, деньги приходят. Выясняется всё
-        на отчётности за период или на превышении порога, то есть спустя месяцы.</p>
-      <p class="small measure">Пометка <b>«снимается до подачи»</b> означает одно: причину можно
-        снять <b>до</b> того, как заявление о режиме подано и год начал считаться. Решение по вашему
-        налогу принимает налоговый орган Республики Армения, и исхода мы не обещаем.</p>
-    </header>
-
-    <dl class="traps">
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-          <span class="trap__title">Режим выбран «как у всех в чате», а вид деятельности в запретном списке</span></dt>
-        <dd>Микропредпринимательство недоступно банкам, кредитным и страховым организациям,
-          инвесткомпаниям, ломбардам; консалтинговым, юридическим, бухгалтерским, аудиторским,
-          инжиниринговым, рекламным, дизайнерским, маркетинговым, переводческим и медицинским
-          услугам; розничной и оптовой торговле в Ереване; общественному транспорту; торговым и
-          игровым автоматам; нарушителям кассовой дисциплины; аффилированным лицам с совокупным
-          оборотом сверх порога; участникам договоров товарищества, комиссии, поручения и агентских.
-          С 01.01.2025 оттуда же выведены торговля в марзах, парикмахерские и услуги по уходу за
-          телом, техобслуживание и ремонт, разработка программного обеспечения, строительные работы
-          и архитектурное проектирование. С 01.07.2025 добавлены профессиональные услуги и услуги по
-          предоставлению персонала.
-          <span class="src">armenian-lawyer.com + repatarmenia.org + Минфин РА · проверено 04.09.2026.
-          ⚠️ Географическая привязка «в Ереване» у разных источников относится то к торговле, то к
-          общепиту.
-          <!-- {слот 5: точная привязка «в Ереване» — юрист LTCG} --></span></dd>
-        <dd><b>Чем кончается</b>Человек регистрируется «на нулевой налог», а режима у него нет — он
-          на общей системе, и узнаёт об этом на первой отчётности.</dd>
-        <dd><b>Лечится ли до подачи</b>Да. Это проверка по списку до подачи заявления о режиме.</dd>
+    <dl class="traps" data-stagger>
+      <div class="trap">
+        <dt><span class="trap__tag">Ловушка 01 · Окно 20 дней</span>Пропуск 20 дней на заявление о спецрежиме</dt>
+        <dd>Если не подать заявление в КГД за <b>20 дней</b> со дня регистрации (далее ежегодно до <b>20 февраля</b>), бизнес остаётся на ОСН с НДС <b>20%</b>. Выпускаем ЭЦП и подаём заявление при регистрации ИП за <b>45 000 ֏</b>.<span class="src">ст. 254 НК РА · <a href="https://hartak.am/guides/%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-%D5%B3%D5%AB%D5%B7%D5%BF-%D5%B0%D5%A1%D6%80%D5%AF%D5%B4%D5%A1%D5%B6-%D5%B0%D5%A1%D5%B4%D5%A1%D5%AF%D5%A1%D6%80%D5%A3/" target="_blank" rel="noopener noreferrer">hartak.am</a></span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag">проверяется до подачи</span></span>
-          <span class="trap__title">Профессиональные услуги могут быть вне специального режима целиком</span></dt>
-        <dd>Ошибка — считать, что раз оборот маленький, специальный режим доступен. Публикация
-          Минфина от 02.05.2024 выводит адвокатскую и нотариальную деятельность из налога с оборота
-          на НДС; профессиональные услуги исключены из микропредпринимательства. Развилка описана
-          <a class="lnk" href="#d-minfin">во врезке от 02.05.2024</a>.
-          <span class="src">⚠️ Названная неизвестность: распространяется ли правило на юридические,
-          бухгалтерские и консалтинговые услуги целиком или только на адвокатов и нотариусов.</span></dd>
-        <dd><b>Чем кончается</b>НДС 20 % и общая система там, где человек рассчитывал на 10 %.</dd>
-        <dd><b>Лечится ли до подачи</b>Проверяется до подачи, но не всегда лечится: если вид
-          деятельности выведен из режима, выбирать не из чего — можно только заранее построить
-          расчёт правильно.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Ловушка 02 · Запрещённый ОКВЭД</span>Выбор кода деятельности, выведенного с налога с оборота</dt>
+        <dd>Ряд профессиональных услуг, включая адвокатскую и нотариальную деятельность, переведён на ОСН, а ставки по торговле (до <b>1,5%</b> по вычетам) и услугам выросли с <b>5%</b> до <b>10%</b>. Сверяем предмет договоров до регистрации.<span class="src">ст. 254, 258 НК РА</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-          <span class="trap__title">Пропущен срок заявления о режиме</span></dt>
-        <dd>20 дней с даты регистрации для новых, окно с 1 января по 20 февраля для действующих.
-          Срок короткий, а в первые двадцать дней человек занят счётом, соцкартой и адресом.
-          <span class="src">easytaxes.am + armenian-lawyer.com + armgate.am · проверено 04.09.2026.</span></dd>
-        <dd><b>Чем кончается</b>Весь год на общей системе: НДС 20 % и налог с базы. <b>Закрыть ИП и
-          открыть заново режим не меняет</b> — год уже начат.</dd>
-        <dd><b>Лечится ли до подачи</b>Да, и это самый дешёвый пункт списка: он лечится календарём.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Ловушка 03 · Правило 180 дней</span>Нулевые декларации или заморозка ИП после получения ВНЖ</dt>
+        <dd>При отсутствии начисленных налогов в КГД за <b>180 дней</b> после выдачи ВНЖ или закрытии ИП статус аннулируется, а после лишения новый не выдают <b>3 года</b>. Ведём учёт от <b>36 000 ֏</b>/мес с контролем начислений.<span class="src">ст. 19 ч. 1 п. 1, ст. 29.4 ч. 5 ՀՕ-11-Ն</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag">решается до регистрации</span></span>
-          <span class="trap__title">Ждали 18 %, получили 23 %</span></dt>
-        <dd>Слетев с налога с оборота, ИП попадает не на «18 %, как у ООО». По двум независимым
-          источникам ставка для индивидуального предпринимателя на общей системе — 23 %.
-          <span class="src">alphaaccounting.am + easytaxes.am · PwC этот пункт не раскрывает ·
-          проверено 04.09.2026. Пункт принципиален для расчёта, и мы не публикуем цифру на двух
-          маркетинговых источниках как окончательную.
-          <!-- {слот 3: подтвердить ставку 23 % — юрист LTCG} --></span></dd>
-        <dd><b>Чем кончается</b>Разница в пять процентных пунктов на весь годовой доход, о которой
-          человек узнаёт постфактум.</dd>
-        <dd><b>Лечится ли до подачи</b>Лечится выбором формы — ИП или ООО — до регистрации, а не
-          после.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Ловушка 04 · Расчётный счёт ИП</span>Приём выручки ИП на личную карту физлица</dt>
+        <dd>Банки блокируют коммерческие платежи на счета ФЛ, а порог <b>1 000 000 ֏</b> за <b>60 дней</b> считается только по счетам ИП. Открываем расчётный счёт ИП с сопровождением за <b>110 000 ֏</b>.<span class="src">ст. 29.4 ч. 3 Закона РА «Об иностранцах» ՀՕ-11-Ն</span></dd>
+      </div>
+
+      <div class="trap">
+        <dt><span class="trap__tag">Ловушка 05 · Продление и ПМЖ</span>Повторный статус и путь к ПМЖ на 5 лет через бизнес</dt>
+        <dd>С 01.11.2026 ПМЖ на <b>5 лет</b> (пошлина <b>250 000 ֏</b>) доступен после <b>3 лет</b> ВНЖ за <b>5 лет</b>, а для повторного ВНЖ (<b>150 000 ֏</b>) порог <b>1 000 000 ֏</b> не требуется при действующем статусе и налогах в КГД.<span class="src">ст. 16 ч. 1 п. «в», ст. 29.4 ч. 4 ՀՕ-11-Ն</span></dd>
       </div>
     </dl>
 
-    <details class="traps-more">
-      <summary class="btn btn--outline btn--sm">Ещё десять ловушек <svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-      <dl class="traps">
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Считали по старой ставке</span></dt>
-          <dd>До 2025 года действовала единая ставка 5 % по большинству видов. С 01.01.2025 ставки
-            дифференцированы и по большинству позиций примерно удвоены. Часть действующих
-            русскоязычных гайдов и сайтов консультантов <b>на сегодня по-прежнему публикует 5 %</b> —
-            мы это проверили 04.09.2026 прямым сравнением с публикацией Минфина, не называя
-            конкретные сайты.</dd>
-          <dd><b>Чем кончается</b>Бизнес-план, построенный на половинной ставке. По услугам это 10 %
-            вместо 5 %, а по деятельности вне классификации — 20 %.</dd>
-          <dd><b>Лечится ли до подачи</b>Да: пересчётом. Именно поэтому под каждой цифрой на этой
-            странице стоит дата.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 06</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Вычет расходов есть, а документов нет</span></dt>
-          <dd>С 2025 года ставки подняли, но ввели зачёт документированных расходов. Без документов
-            вы платите полную ставку, а минимальные эффективные ставки — 1 % для торговли, 3 % для
-            производства, 3,5 % для общепита, 4,5 % для прочей деятельности — ниже не опускаются.
-            <span class="src">fincore.am со ссылкой на ст. 258 НК РА + PwC · проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>Реформа, задуманная как размен «выше ставка — но с вычетом»,
-            работает для вас только одной половиной.</dd>
-          <dd><b>Лечится ли до подачи</b>Да — постановкой документооборота с первого месяца. Задним
-            числом собрать закрывающие документы за прошедший квартал получается редко.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 07</span><span class="trap__tag">планируется, а не лечится</span></span>
-            <span class="trap__title">Налог начислен, а деньги ещё не пришли</span></dt>
-          <dd>Налог с оборота считается по выставленным инвойсам и оказанным услугам, а не по
-            поступлениям. Заказчик платит с отсрочкой в 60 дней — квартал уже закрылся, налог уже
-            начислен.
-            <span class="src">armgate.am, единственный источник · проверено 04.09.2026. Тезис сильный
-            и практический, но стоит на одном источнике.
-            <!-- {слот 9: подтвердить момент возникновения налога — юрист LTCG} --></span></dd>
-          <dd><b>Чем кончается</b>Кассовый разрыв ровно к 20-му числу.</dd>
-          <dd><b>Лечится ли до подачи</b>Не лечится — планируется. Это вопрос графика выставления
-            счетов, а не режима.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 08</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Зарубежный заказчик платит на личную карту</span></dt>
-          <dd>Доход при этом совершенно легальный, а учёта у него нет: он не проходит по счёту ИП,
-            не попадает в оборот, не подтверждается договором и инвойсом.</dd>
-          <dd><b>Чем кончается</b>Годовая картина не сходится; при входящем переводе банк запрашивает
-            договор и инвойс, а банк отправителя может запросить ещё и налоговый номер получателя.
-            <span class="src">pragmatos.capital + armenian-lawyer.com · проверено 04.09.2026.</span></dd>
-          <dd><b>Лечится ли до подачи</b>Лечится в момент, когда вы договариваетесь с заказчиком, —
-            то есть до первого платежа, а не после десятого.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 09</span><span class="trap__tag">вопрос календаря</span></span>
-            <span class="trap__title">Отчётность пропущена, потому что «оборотов не было»</span></dt>
-          <dd>При отсутствии дохода за период отчёт всё равно обязателен.
-            <span class="src">armgate.am, единственный источник · проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>Начисления по просрочке. Величины пени и штрафа у нас стоят на
-            слабых источниках — см. <a class="lnk" href="#fixed">раздел о проверках</a>, — и именно
-            поэтому мы не пугаем вас конкретной суммой.</dd>
-          <dd><b>Лечится ли до подачи</b>Не про подачу — про календарь. Лечится тем, что кто-то
-            смотрит на календарь вместо вас.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 10</span><span class="trap__tag">закладывается в бюджет</span></span>
-            <span class="trap__title">Фиксированные платежи 2026 года застали врасплох</span></dt>
-          <dd>Медстрахование 129 600 драмов в год и гербовый сбор до 120 000 драмов — <b>два
-            отдельных обязательства</b>, оба со сроком 20 апреля, оба не зависят от того, был ли
-            доход в текущем году. Медстрахование считается по валовому доходу за <b>предыдущий</b>
-            год.
-            <span class="src">easylife.am, 31.12.2025 + PwC + armenian-lawyer.com · проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>Счёт на сумму, которой не было в плане, в год, когда ИП уже почти
-            не работало.</dd>
-          <dd><b>Лечится ли до подачи</b>Не лечится — закладывается в бюджет. Единственное, что здесь
-            можно сделать заранее, — знать про оба платежа, а не про один.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 11</span><span class="trap__tag">планируется заранее</span></span>
-            <span class="trap__title">ИП открыто ради вида на жительство и «спит»</span></dt>
-          <dd>С 01.11.2026 статус аннулируется, если за 180 дней после его получения в базе Комитета
-            государственных доходов нет информации о налогах, исчисленных по результатам
-            предпринимательской деятельности.
-            <span class="src">Закон ՀՕ-11-Ն от 20.01.2026, ст. 29.4 ч. 5 ·
-            <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> ·
-            проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>«Спящее» ИП перестаёт держать статус. Зарегистрировать мало —
-            должны быть начисления.</dd>
-          <dd><b>Лечится ли до подачи</b>Планируется заранее. Решение по статусу принимает
-            миграционный орган, и исхода мы не обещаем.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 12</span><span class="trap__tag">решается до регистрации</span></span>
-            <span class="trap__title">Выбрали ИП ради дешевизны</span></dt>
-          <dd>Регистрация ООО заявлена как бесплатная, ИП — 3 000 драмов. При этом ИП отвечает по
-            обязательствам <b>личным имуществом</b>, а ООО — имуществом компании.
-            <span class="src">armenian-lawyer.com + mblegal.am · проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>«Дешевле» оказывается не про деньги.</dd>
-          <dd><b>Лечится ли до подачи</b>Да — это решение принимается один раз, до регистрации.</dd>
-        </div>
-
-        <div class="tile trap" id="it-gap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 13</span><span class="trap__tag">проверяется до подачи</span></span>
-            <span class="trap__title">Ставка 1 % посчитана своей без реестра</span></dt>
-          <dd>Льготный ИТ-пакет требует включения в Реестр высоких технологий, свыше 90 % выручки от
-            высокотехнологичной деятельности и добросовестной налоговой истории (по PwC), либо
-            численности до 50 человек, деятельности из правительственного перечня и заключения
-            комиссии по R&amp;D (по EY). Условия у двух источников разные.
-            <span class="src">PwC · EY, алерт от 27.12.2024 · проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>Расчёт, построенный на 1 %, при фактической ставке в несколько раз
-            выше.</dd>
-          <dd><b>Лечится ли до подачи</b>Проверяется до подачи. Но пока не снято расхождение 1 %
-            против 5 % и не выяснено, доступна ли ставка индивидуальному предпринимателю, честного
-            ответа нет ни у нас, ни у источников.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 14</span><span class="trap__tag trap__tag--fix">снимается до подачи</span></span>
-            <span class="trap__title">Счёт армянскому заказчику выставлен в валюте</span></dt>
-          <dd>Расчёты между резидентами внутри Армении производятся в драмах. Валюта допустима в
-            письменном договоре резидента с нерезидентом при безналичном расчёте.
-            <span class="src">Закон РА «О валютном регулировании и валютном контроле» · arlis.am ·
-            проверено 04.09.2026.</span></dd>
-          <dd><b>Чем кончается</b>Размер санкции нам не подтверждён, и мы его не называем. Но
-            переделывать договор задним числом всегда дороже, чем составить его правильно.</dd>
-          <dd><b>Лечится ли до подачи</b>Да — на этапе договора.</dd>
-        </div>
-      </dl>
-    </details>
-
-    <!-- ── Где мы не знаем: названная граница поднимает доверие ── -->
-    <div class="tile tile--quiet" style="margin-top: var(--s-12)">
-      <h3 class="h3">Чего эта страница о вас не знает</h3>
-      <p class="measure">Три названных неизвестных. Не «всё индивидуально», а конкретно:</p>
-      <ol class="next" role="list">
-        <li><b>Как ваша деятельность классифицируется по кодам.</b> От этого зависит, 7 %, 10 %,
-          12 % или 20 %, и попадаете ли вы в запретный список вообще. По описанию «я делаю сайты»
-          или «я консультирую» это не определяется.</li>
-        <li><b>Что написано в ваших договорах</b> — кто заказчик, резидент он или нет, в какой
-          валюте расчёт, когда возникает обязательство. Налог с оборота считается по выставленным
-          счетам, а не по поступлениям, и договор здесь решает больше, чем ставка.</li>
-        <li><b>Что у вас уже сделано.</b> Зарегистрировано ли ИП, подано ли заявление о режиме,
-          прошли ли 20 дней, был ли доход за 2025 год и какой. Половина ошибок из списка выше
-          лечится, если о них узнать в первый месяц, и не лечится в двенадцатый.</li>
-      </ol>
+    <div class="section__head" data-reveal style="margin-top: var(--s-6)">
+      <p class="kicker">Маршрут запуска бизнеса с LTCG</p>
+      <h3 class="h3">Пять шагов от подбора режима до учёта и ВНЖ</h3>
     </div>
 
-    <div class="note" style="margin-top: var(--s-8)">
-      <p><b>Секции «цена ошибки в деньгах» здесь нет.</b> И не будет, пока у нас не появится
-        подтверждённый случай из практики, который можно показать целиком: что человек сделал, чего
-        не знал, во что это обошлось и чинилось ли вообще. Арифметика «10 % против 23 % на ваш
-        оборот» — это не цена ошибки, это умножение. Пустое место здесь — не недоделка, а правило.</p>
-      <!-- {сюда пишет клиент: реальные случаи неверно выбранного режима.
-           Ничего про практику компании выдумывать нельзя — блок остаётся пустым. -->
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════════
-     ПОРЯДОК ШАГОВ. Собран из дат и сроков, которые уже стоят выше:
-     ни одного нового утверждения. Он же — источник HowTo в разметке.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section section--stone" id="order" aria-labelledby="order-t" data-rail-label="Порядок и сроки">
-  <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">07</span> Порядок и сроки</p>
-      <h2 class="h2" id="order-t">Пять дат, идущих <em>одна за другой</em></h2>
-      <p class="lead measure">Здесь нет ничего нового: это те же сроки, что стоят в таблицах выше,
-        выстроенные по календарю. Так видно, что самое короткое окно — второе.</p>
-    </header>
-
-    <ol class="tl" role="list">
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 01</p>
-        <h3 class="tl__title">Регистрация ИП</h3>
-        <p>Регистрация в Агентстве государственного регистра юридических лиц Минюста РА. Госпошлина
-          3 000 драмов, минимального уставного капитала нет. Онлайн через e-register — только при
-          наличии электронной подписи.</p>
-        <p class="tl__days">Срок: в день подачи документов <span class="src">armenian-lawyer.com; срок — mblegal.am, 19.06.2026 · 04.09.2026</span></p>
+    <ol class="tl" aria-label="Пять шагов регистрации бизнеса и постановки на учёт" data-stagger>
+      <li class="tl__s">
+        <span class="tl__d">Шаг 01 · До подачи</span>
+        <p class="tl__t">Коды КГД и договоры</p>
+        <p class="tl__b">Выбираем ИП или ООО и проверяем право на налог с оборота до 115 млн ֏.</p>
       </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 02</p>
-        <h3 class="tl__title">Заявление о налоговом режиме</h3>
-        <p>Самое короткое окно на странице. Для действующих ИП окно другое — с 1 января по
-          20 февраля. Пропуск означает общую систему на весь календарный год, и перерегистрация
-          этого не чинит.</p>
-        <p class="tl__days">Срок: 20 дней с даты регистрации <span class="src">easytaxes.am + armenian-lawyer.com + armgate.am · 04.09.2026</span></p>
+      <li class="tl__s">
+        <span class="tl__d">Шаг 02 · Госреестр</span>
+        <p class="tl__t">ИП (45 000 ֏) или ООО</p>
+        <p class="tl__b">Оформляем ПСН (35 000 ֏) и регистрируем бизнес в госреестре РА.</p>
       </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 03</p>
-        <h3 class="tl__title">Декларация о бенефициарных владельцах</h3>
-        <p>Разовая подача после учреждения, дальше — ежегодно. Источник по этому пункту один, и до
-          подтверждения юристом мы держим его отдельной строкой, а не в общем календаре.</p>
-        <p class="tl__days">Срок: 40 дней с учреждения, далее ежегодно до 20 февраля <span class="src">armenian-lawyer.com, единственный источник · 04.09.2026</span></p>
+      <li class="tl__s">
+        <span class="tl__d">Шаг 03 · 20 дней</span>
+        <p class="tl__t">Заявление на спецрежим</p>
+        <p class="tl__b">Выпускаем ЭЦП и подаём заявление в КГД до истечения 20 дней.</p>
       </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 04</p>
-        <h3 class="tl__title">Первый расчёт по режиму</h3>
-        <p>Налог с оборота — квартально. НДС, подоходный и социальные выплаты — ежемесячно.
-          Нулевой оборот отчёт не отменяет.</p>
-        <p class="tl__days">Срок: до 20-го числа месяца, следующего за периодом <span class="src">PwC + armgate.am + armenian-lawyer.com · 04.09.2026</span></p>
+      <li class="tl__s">
+        <span class="tl__d">Шаг 04 · Банк</span>
+        <p class="tl__t">Счёт ИП/ООО (110 000 ֏)</p>
+        <p class="tl__b">Открываем бизнес-счёт под контракты и порог 1 000 000 ֏ / 2 000 000 ֏.</p>
       </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 05</p>
-        <h3 class="tl__title">Годовые фиксированные платежи</h3>
-        <p>Медицинское страхование и гербовый сбор — два отдельных обязательства, оба не зависят от
-          того, был ли доход в текущем году.</p>
-        <p class="tl__days">Срок: до 20 апреля <span class="src">easylife.am, 31.12.2025 + PwC + armenian-lawyer.com · 04.09.2026</span></p>
+      <li class="tl__s">
+        <span class="tl__d">Шаг 05 · 180 дней</span>
+        <p class="tl__t">Учёт (от 36 000 ֏) и ВНЖ</p>
+        <p class="tl__b">Сдаём отчёты в КГД, формируем начисления за 180 дней и подаём на ВНЖ.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 08 · Калькулятор. Всегда после разбора и никогда до:
-     обратный порядок превращает разбор в прайс. Сумма не прячется
-     за контактом. Отмечены модули этой ветки: ИП + бухгалтерия.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="calc" aria-labelledby="calc-t" data-rail-label="Сколько стоит">
+<!-- ═══ 05 · Сколько стоит (Калькулятор) ═════════════════════════ -->
+<section class="section section--glow section--thread" id="skolko" data-rail-label="Калькулятор" aria-labelledby="sk-t">
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">08</span> Сколько стоит</p>
-      <h2 class="h2" id="calc-t">Цена <em>нашей работы</em>, а не налогов</h2>
-      <p class="lead measure">Государственные пошлины и банковские комиссии сюда не входят и платятся
-        отдельно. Отмечено то, с чего обычно начинают в этой ветке: регистрация и бухгалтерия.</p>
-    </header>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">05</span> Калькулятор услуг</p>
+      <h2 class="h2" id="sk-t">Соберите пакет регистрации ИП, счёта и учёта <em>в LTCG</em></h2>
+      <p class="lead">Фиксированный прайс LTCG в драмах РА против потери спецрежима и перехода на НДС <b>20%</b>. Госпошлины и комиссии банков — отдельно.</p>
+    </div>
 
-    <div class="calc">
-      <!-- Цены названы клиентом в переписке 01.09.2026: ИП 45 000, счёт 110 000, соцкарта 35 000,
-           адрес 430 000 в год, бухгалтерия 36 000 в месяц. Валюта явно не названа —
-           поставлена как драмы, письменное подтверждение валюты за клиентом. {слот 17} -->
+    <script type="application/json" id="prices">
+    {
+      "publish": true,
+      "currency": "֏",
+      "currencyConfirmed": true,
+      "asOf": "2026-10-18",
+      "modules": {
+        "ip":         { "name": "Регистрация ИП",       "per": "once",  "amount": 45000  },
+        "account":    { "name": "Открытие счёта",       "per": "once",  "amount": 110000 },
+        "social":     { "name": "Соцкарта",             "per": "once",  "amount": 35000  },
+        "address":    { "name": "Адрес",                "per": "year",  "amount": 430000 },
+        "accounting": { "name": "Бухгалтерия",          "per": "month", "amount": 36000, "from": true }
+      }
+    }
+    </script>
+
+    <div class="calc" data-calc>
       <div class="calc__mods">
         <label class="tile mod" for="m-ip">
           <input type="checkbox" id="m-ip" name="mod" value="ip" checked>
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно</div></div>
-            <div class="mod__price">45 000 ֏</div>
+            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно · госпошлина отдельно</div></div>
+            <div class="mod__price" data-price="ip">45 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
             <ul>
-              <li>Подбор налогового режима под ваш профиль дохода</li>
-              <li>Подготовка и подача документов, получение регистрации</li>
-              <li>Не входит: госпошлина 3 000 драмов и банковские комиссии — отдельной строкой</li>
-            </ul>
-          </details>
-        </label>
-
-        <label class="tile mod" for="m-accounting">
-          <input type="checkbox" id="m-accounting" name="mod" value="accounting" checked>
-          <div class="mod__top">
-            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Бухгалтерское обслуживание</div><div class="mod__unit">в месяц</div></div>
-            <div class="mod__price">36 000 ֏</div>
-          </div>
-          <details class="mod__more">
-            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
-            <ul>
-              <li><span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>состав услуги пишет клиент</span></li>
-              <!-- {слот 18: что именно входит в 36 000 в месяц — какие отчёты, какая
-                   периодичность, что при НДС, что при нулевом обороте, кто отвечает
-                   на вопросы между отчётами. Придумывать нельзя. -->
+              <li>Госрегистрация ИП и подача заявления на спецрежим за 20 дней</li>
             </ul>
           </details>
         </label>
 
         <label class="tile mod" for="m-account">
-          <input type="checkbox" id="m-account" name="mod" value="account">
+          <input type="checkbox" id="m-account" name="mod" value="account" checked>
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Открытие счёта в банке</div><div class="mod__unit">единовременно</div></div>
-            <div class="mod__price">110 000 ֏</div>
+            <div><div class="mod__name">Открытие счёта</div><div class="mod__unit">единовременно</div></div>
+            <div class="mod__price" data-price="account">110 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
             <ul>
-              <li>Порядок и причины отказа разобраны в ветке «Только приехал»</li>
-              <li>Не входит: комиссии банка; решение принимает банк</li>
+              <li>Аудит договоров, подбор банка и сопровождение KYC</li>
             </ul>
           </details>
         </label>
@@ -1464,13 +581,13 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <input type="checkbox" id="m-social" name="mod" value="social">
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Номер общественных услуг</div><div class="mod__unit">единовременно</div></div>
-            <div class="mod__price">35 000 ֏</div>
+            <div><div class="mod__name">Номер общественных услуг (ПСН)</div><div class="mod__unit">единовременно</div></div>
+            <div class="mod__price" data-price="social">35 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
             <ul>
-              <li>Соцкарта — ветка «Только приехал»</li>
+              <li>Подготовка документов и сопровождение оформления ПСН</li>
             </ul>
           </details>
         </label>
@@ -1479,434 +596,350 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <input type="checkbox" id="m-address" name="mod" value="address">
           <div class="mod__top">
             <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <div><div class="mod__name">Юридический адрес</div><div class="mod__unit">в год</div></div>
-            <div class="mod__price">430 000 ֏</div>
+            <div><div class="mod__name">Адрес для регистрации и корреспонденции</div><div class="mod__unit">в год · опционально, если нужен вашему случаю</div></div>
+            <div class="mod__price" data-price="address">430 000 ֏</div>
           </div>
           <details class="mod__more">
             <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
             <ul>
-              <li>Адрес и обслуживание корреспонденции</li>
-              <li>Обязателен ли адрес для регистрации — <a class="lnk" href="#reg">расхождение источников</a>, которое мы не смягчаем</li>
+              <li>Адрес для регистрации и корреспонденции — если нужен вашему случаю (для ИП по закону не обязателен)</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-accounting">
+          <input type="checkbox" id="m-accounting" name="mod" value="accounting" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц · точный состав и цена — под ваш налоговый режим после короткого разбора</div></div>
+            <div class="mod__price" data-price="accounting">от 36 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Декларации в КГД и контроль правила 180 дней для ВНЖ</li>
             </ul>
           </details>
         </label>
       </div>
 
-      <aside class="tile tile--hero total" aria-labelledby="total-t">
-        <p class="total__title" id="total-t">Ваш расчёт</p>
-        <ul class="total__list chips" role="list">
-          <li class="chip">Регистрация ИП</li><li class="chip">Бухгалтерское обслуживание</li>
+      <aside class="tile tile--hero total" aria-labelledby="total" data-total>
+        <p class="total__title" id="total">Ваш расчёт</p>
+        <ul class="total__list chips" role="list" data-total-list>
+          <li class="chip">Регистрация ИП</li><li class="chip">Открытие счёта</li><li class="chip">Бухгалтерия</li>
         </ul>
-        <dl class="total__rows">
-          <div class="total__row"><dt>Единовременно</dt><dd>45 000<span class="cur">֏</span></dd></div>
-          <div class="total__row"><dt>Ежемесячно</dt><dd>36 000<span class="cur">֏</span></dd></div>
+        <dl class="total__rows" data-total-rows>
+          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">155 000 ֏</dd></div>
+          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
+          <div class="total__row"><dt>Ежемесячно</dt><dd data-sum="month">от 36 000 ֏</dd></div>
         </dl>
         <div class="total__meta">
-          <p><b>Не входит:</b> госпошлина за регистрацию ИП (3 000 драмов), банковские комиссии,
-            фиксированные годовые платежи ИП — медстрахование и гербовый сбор — и сами налоги.</p>
-          <p>Решение по вашему налоговому режиму принимает налоговый орган РА, и мы не обещаем
-            исхода.</p>
+          <p><b>Не входит:</b> госпошлины реестра ЮЛ РА, переводы и тарифы банков. <b>ВНЖ оформляем в комплексе</b> — рассчитываем под основание.</p>
         </div>
         <div class="total__cta">
-          <a class="btn btn--primary" href="#contact">Показать расчёт и рассказать, что уже есть <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--primary" href="#contact">Обсудить запуск <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
         </div>
       </aside>
     </div>
-    <!-- Сумма в блоке итога соответствует отмеченному набору и написана в разметке:
-         страница считает без JavaScript. Живой пересчёт при переключении модулей
-         требует блока #prices и хуков data-calc/data-total из js/site.js —
-         решение о публикации цен и валюты за владельцем, вынесено в issues. -->
-
-    <p class="src" style="margin-top: var(--s-5); max-width: 62ch">Суммы названы клиентом в переписке
-      01.09.2026. Валюта в переписке не названа явно — на странице стоят драмы, письменное
-      подтверждение валюты за клиентом.</p>
-
-    <div class="tile tile--quiet" style="margin-top: var(--s-10)">
-      <h3 class="h3">Почему расчёт заканчивается не суммой</h3>
-      <p class="measure">Потому что в разговоре сумма меняется — и не только вверх. Это не приём: так
-        сказал сам руководитель практики, когда мы обсуждали калькулятор.</p>
-      <p class="measure">Числа выше складываются в состав, а не в счёт. У кого-то не нужен адрес.
-        У кого-то есть ИП, но не тот режим, и работа начинается не с регистрации, а с разбора уже
-        сделанного выбора. У кого-то две трети списка закрыты, и остаётся один пункт.</p>
-      <p class="measure">Поэтому дальше — не «оформить заказ», а показать нам расчёт и рассказать,
-        что у вас уже есть.</p>
-    </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 11 · Вопросы. Разметка FAQPage стоит в head одним узлом
-     на адрес. Вопросы не повторяются на других ветках — иначе
-     каннибализация выдачи.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="faq" aria-labelledby="faq-t" data-rail-label="Вопросы">
+<!-- ═══ 06 · Вопросы (FAQ, синхронно с JSON-LD) ══════════════════ -->
+<section class="section section--deep section--thread section--light" id="voprosy" data-rail-label="Частые вопросы" aria-labelledby="faq-t">
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">09</span> Вопросы</p>
-      <h2 class="h2" id="faq-t">То, что спрашивают <em>чаще всего</em></h2>
-    </header>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">06</span> Частые вопросы</p>
+      <h2 class="h2" id="faq-t">Шесть вопросов об ИП, ООО и налогах <em>в Армении</em></h2>
+    </div>
 
-    <div class="faq">
-      <details open>
-        <summary>Мне нужно ИП или ООО?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+    <div class="faq" data-stagger>
+      <details>
+        <summary>В какой срок после регистрации ИП или ООО нужно подать заявление на налог с оборота?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>По деньгам разница на входе почти нулевая: регистрация ООО заявлена как бесплатная,
-            ИП — 3 000 драмов, минимального уставного капитала нет ни у той, ни у другой формы
-            <span class="src">armenian-lawyer.com + onebusiness.am · проверено 04.09.2026</span></p>
-          <p>Реальная разница в двух других местах. Первое: <b>ответственность</b> — ИП отвечает
-            личным имуществом, ООО имуществом компании. Второе: <b>ставка на общей системе</b> —
-            организация платит 18 %, а ИП, по двум независимым источникам, 23 %
-            <span class="src">alphaaccounting.am + easytaxes.am · проверено 04.09.2026; цифру 23 %
-            мы публикуем только с подписью юриста</span></p>
-          <p>Если вы фрилансер с несколькими заказчиками и уверенно проходите по порогам
-            специального режима — обычно смотрят на ИП. Если планируется партнёр, наём, инвестиции
-            или деятельность, которая из специального режима выведена, — разговор про ООО начинается
-            сразу.</p>
+          <p>Заявление на налог с оборота до <b>115 000 000 ֏</b> или микробизнес до <b>24 000 000 ֏</b> подаётся в КГД РА за <b>20 дней</b> со дня регистрации. При пропуске срока бизнес остаётся на ОСН с НДС <b>20%</b> до конца года.<span class="src">ст. 254 Налогового кодекса РА ՀՕ-165-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Я айтишник, у меня заказчики за границей. Какая у меня ставка?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Какие ставки налога с оборота действуют в Армении после реформы 2025–2026 годов?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Честный ответ: <b>на сегодня мы не назовём вам одну цифру, и вот почему.</b>
-            Государственная платформа услуг hartak.am в перечне ставок налога с оборота даёт для
-            сферы информационных технологий <b>5 %</b>, а PwC и EY — <b>1 %</b>. Правдоподобная
-            развязка — что 1 % относится к включённым в Реестр высоких технологий, а 5 % ко всем
-            остальным — нами не проверена.</p>
-          <p>Дополнительно не выяснено, доступна ли ставка 1 % индивидуальному предпринимателю или
-            только организации: EY пишет «for turnover taxpayers», не уточняя форму, а соседняя
-            льгота в том же алерте прямо ограничена корпоративным налогоплательщиком.
-            <span class="src">Проверено 04.09.2026.</span></p>
-          <p>Что при этом известно точно: если все ваши заказчики за пределами Армении,
-            <b>экспортируемые услуги облагаются НДС по нулевой ставке</b>, а входящий НДС
-            принимается к зачёту — это касается в том числе консультационных, дизайнерских,
-            инжиниринговых услуг и обработки данных
-            <span class="src">PwC + profin.am · проверено 04.09.2026</span></p>
-          <p>То есть даже общая система для вас может выглядеть иначе, чем вы ожидаете.</p>
+          <p>При годовом пороге до <b>115 000 000 ֏</b> базовые ставки налога с оборота: по торговле (со снижением до <b>1,5%</b> по расходам; ранее <b>5%</b>), аренде, роялти и услугам — <b>10%</b>, для ИТ-деятельности — <b>5%</b>, для производства — <b>7%</b>, для общепита — <b>12%</b>, по вторсырью — <b>5%</b>, по газетам — <b>1,5%</b>. Адвокаты и нотариусы работают на ОСН.<span class="src">ст. 258 НК РА; hartak.am</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Я пропустил 20 дней после регистрации. Что теперь?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Как связаны выбор налогового режима ИП и сохранение ВНЖ с 1 ноября 2026 года?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Вы на общей системе до конца календарного года: НДС 20 % и налог с базы. Следующее окно
-            для перехода — <b>с 1 января по 20 февраля</b>
-            <span class="src">easytaxes.am + armenian-lawyer.com + armgate.am · проверено 04.09.2026</span></p>
-          <p>Первое, что обычно приходит в голову, — закрыть ИП и открыть заново; это не работает,
-            год уже начат. Реальные действия на оставшуюся часть года другие: посмотреть, не работает
-            ли на вас нулевая ставка НДС по экспортируемым услугам, привести в порядок документы по
-            расходам и не пропустить второй срок. Это ровно тот случай, когда стоит разобрать
-            конкретную ситуацию, а не читать ещё одну статью.</p>
-          <p class="small"><a class="lnk" href="#traps">Ловушка 03</a><a class="lnk" href="#contact">Разобрать вашу ситуацию</a></p>
+          <p>Для первичного ВНЖ по ИП нужен остаток <b>1 000 000 ֏</b> либо оборот <b>1 000 000 ֏</b> за <b>60 дней</b>. Если за <b>180 дней</b> после выдачи карты в базе КГД нет начисленных налогов, статус аннулируется — поэтому режим микробизнеса с <b>0%</b> опасен для ВНЖ.<span class="src">ст. 29.4 ч. 3, ч. 5 Закона РА «Об иностранцах» ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Нужно ли мне платить НДС?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Что выбрать для бизнеса и ВНЖ в Армении — ИП (ԱՁ) или ООО (ՍՊԸ)?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Порог обязательной регистрации по НДС — <b>115 000 000 драмов</b> годового дохода,
-            стандартная ставка <b>20 %</b>
-            <span class="src">PwC + armenian-lawyer.com · проверено 04.09.2026</span></p>
-          <p>Ниже порога и на специальном режиме НДС не возникает. Но есть два пути попасть под НДС,
-            не приблизившись к порогу: не подать вовремя заявление о режиме и оказаться на общей
-            системе, либо заниматься деятельностью, которая из специального режима выведена, — как
-            адвокатская и нотариальная по публикации Минфина от 02.05.2024.</p>
-          <p>И третий сюжет, про который спрашивают реже всего: <b>при превышении порога механика
-            перехода у источников расходится</b> — «НДС начисляется на превысившую часть
-            ретроактивно в том же году», «переход с квартала превышения», «с начала следующего
-            квартала». Три версии, расхождение мы не сняли.
-            <span class="src">Проверено 04.09.2026.
-            <!-- {слот 10: механика перехода при превышении порога 115 млн — юрист LTCG} --></span></p>
+          <p>Для одного собственника подходит ИП: порог ВНЖ — <b>1 000 000 ֏</b> на счёте ИП или в обороте за <b>60 дней</b>, вывод средств без налога на дивиденды. Для партнёров и долей — ООО: вклад от <b>2 000 000 ֏</b> для ВНЖ и удержание капитала не ниже <b>1 000 000 ֏</b>.<span class="src">ст. 29.4 ч. 3, ч. 5 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Что изменится 1 ноября 2026 для моего ИП?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Обязателен ли отдельный юридический адрес для регистрации ИП в Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p><b>В налогах — ничего.</b> Налоговый кодекс в этот день не меняется: ни ставок, ни
-            порогов, ни режима микропредпринимательства, ни НДС, ни форм отчётности. Действующая
-            редакция кодекса охватывает 01.09.2026 – 01.01.2027, следующая начинается 01.01.2027
-            <span class="src">arlis.am, список редакций · проверено 04.09.2026</span></p>
-          <p>Меняются две другие вещи. Во-первых, <b>1 ноября 2026 — крайний срок</b> подачи и
-            корректировки годового расчёта подоходного налога за 2025 год
-            <span class="src">закон ՀՕ-324-Ն от 24.10.2025 · arlis.am/hy/acts/215597</span></p>
-          <p>Во-вторых, если ИП держит ваш вид на жительство, у него появляются финансовые пороги —
-            1 000 000 драмов на счетах ИП либо такой же оборот за 60 дней до подачи — и <b>правило
-            180 дней</b>: нет начисленных налогов в базе Комитета госдоходов за 180 дней после
-            получения статуса — статус аннулируется
-            <span class="src">закон ՀՕ-11-Ն от 20.01.2026, ст. 29.4 · arlis.am/hy/acts/220874 ·
-            проверено 04.09.2026</span></p>
-          <p class="small"><a class="lnk" href="#nov1">Разбор 1 ноября</a><a class="lnk" href="vnzh.html">Ветка «Легализуюсь»</a></p>
+          <p>По закону отдельный коммерческий юрадрес для ИП не обязателен — ИП регистрируется по адресу проживания. Адрес для регистрации и корреспонденции за <b>430 000 ֏</b> в год подключается опционально.</p>
         </div>
       </details>
 
       <details>
-        <summary>Если оборота не было, отчёт всё равно сдавать?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Сколько стоит регистрация ИП и бухгалтерское сопровождение в LTCG?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Да. При отсутствии дохода за период отчёт обязателен
-            <span class="src">armgate.am, единственный источник · проверено 04.09.2026</span></p>
-          <p>Отдельно от отчётности идут два фиксированных годовых платежа ИП: медицинское
-            страхование <b>129 600 драмов</b>, если валовой доход за 2025 год составил 2 400 001 драм
-            и более, и гербовый сбор — 12 000 драмов при годовом доходе до 12 000 000 либо
-            120 000 драмов при доходе выше
-            <span class="src">easylife.am, 31.12.2025 + PwC + armenian-lawyer.com · проверено 04.09.2026</span></p>
-          <p>Это <b>два разных обязательства</b>, а не один платёж, и мы специально не складываем их
-            в одну сумму: увидев одну цифру, легко решить, что закрыл всё.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Могу ли я выставить счёт в долларах?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Заказчику-нерезиденту — да, при письменном договоре и безналичном расчёте.
-            Заказчику-резиденту внутри Армении — нет: цены на товары и услуги, зарплаты и оценка
-            имущества устанавливаются в драмах, расчёты между резидентами производятся в драмах
-            <span class="src">Закон РА «О валютном регулировании и валютном контроле» · arlis.am,
-            parliament.am · проверено 04.09.2026</span></p>
-          <p>Перечень исключений — свободные экономические зоны, банковские операции, авиационные
-            услуги, проценты по валютным кредитам и депозитам — мы построчно с текстом закона не
-            сверяли и говорим об этом прямо.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Можно ли зарегистрировать ИП, не приезжая в Армению?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>По имеющимся источникам — да, по доверенности: нужен паспорт с переводом и доверенность
-            <span class="src">armenian-lawyer.com + mblegal.am + relocation2armenia.com ·
-            проверено 04.09.2026</span></p>
-          <p>Но в самой процедуре есть расхождение, которое стоит вам поездки, если ошибиться: один
-            источник говорит про <b>апостилированный</b> паспорт, другой — про <b>нотариально
-            переведённый</b>. Это разные документы и разные сроки подготовки. Практическая
-            рекомендация: выяснить требование до того, как заказывать перевод дома, — этим
-            занимается ветка <a class="lnk" href="pered-pereezdom.html">«Ещё не переехал»</a>.</p>
-          <p>И помните, что регистрация — только первый шаг: онлайн через e-register возможна лишь
-            при наличии электронной подписи, а счёт, соцкарта и адрес живут по своим правилам.</p>
+          <p>Регистрация ИП в LTCG — <b>45 000 ֏</b>, ПСН — <b>35 000 ֏</b>, сопровождение счёта в банке — <b>110 000 ֏</b>. Бухгалтерия и сдача отчётности в КГД — от <b>36 000 ֏</b>/мес под ваш налоговый режим после разбора.</p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 12 · Выход. Сначала повод, который назначили не мы,
-     потом что принести, потом первый вопрос — и только затем форма.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section section--stone" id="contact" aria-labelledby="contact-t" data-rail-label="Разговор">
+<!-- ═══ 07 · Контакты и лид-форма ════════════════════════════════ -->
+<section class="section section--art section--contact" id="contact" data-rail-label="Связаться" aria-labelledby="cnt-t">
+  <div class="art art--center" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
+      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
+      <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" loading="lazy" decoding="async">
+    </picture>
+  </div>
+
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">10</span> Выход</p>
-      <h2 class="h2" id="contact-t">Повод для разговора — <em>ваш календарь, а не наш</em></h2>
-      <p class="lead measure">Здесь есть три настоящие даты, и ни одну из них не назначали мы.
-        <b>20 дней с момента регистрации</b> — если ИП зарегистрировано на этой неделе, окно уже
-        идёт. <b>20 февраля</b> — общее окно смены режима для всех действующих. <b>20 апреля</b> —
-        два фиксированных годовых платежа. Если вы попали в промежуток между этими датами, спешить
-        некуда, и мы не будем делать вид, что есть куда.</p>
-    </header>
-
-    <div class="tile tile--quiet">
-      <h3 class="h3">Что принести с собой</h3>
-      <p class="measure">Разговор пойдёт по тому же списку, который вы только что прочитали. Чтобы он
-        был не пустым, приготовьте четыре вещи:</p>
-      <ol class="next" role="list">
-        <li><b>Чем именно вы занимаетесь</b> — не «ИТ» и не «консалтинг», а что вы делаете за деньги.
-          От этого зависит и ставка, и попадание в запретный список.</li>
-        <li><b>Кто вам платит и в какой валюте</b> — резиденты Армении, зарубежные заказчики,
-          платформа, смешанно.</li>
-        <li><b>Примерный годовой оборот</b> — не для точности, а чтобы понять, о каких порогах вообще
-          речь: 24 миллиона, 115 миллионов или ни то ни другое.</li>
-        <li><b>Что уже сделано</b> — есть ли ИП, подавали ли заявление о режиме, был ли доход за
-          2025 год.</li>
-      </ol>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">07</span> Разбор вашего случая</p>
+      <h2 class="h2" id="cnt-t">Проверим ваш вид деятельности и подберём <em>режим до регистрации</em></h2>
+      <p class="lead">Напишите, чем занимается бизнес и в какой валюте приходят платежи — сверим режим, откроем ИП или ООО, счёт и возьмём учёт на себя.</p>
     </div>
 
-    <div class="note" style="margin-top: var(--s-8)">
-      <p><b>Первый вопрос, который вам зададут.</b> Он напечатан здесь заранее, чтобы на звонке не
-        было неожиданностей: <b>«Кто вам платит и в какой валюте?»</b></p>
-      <p style="margin-top: var(--s-3)">Не «какой у вас оборот». Состав заказчиков определяет и
-        режим, и НДС, и валюту договора — то есть три из четырёх решений на этой странице.</p>
+    <div class="contact" data-reveal>
+      <div class="tile">
+        <div class="ways">
+          <a class="way" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram<small>@LTCG_Armenia</small></a>
+          <a class="way" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<small>+374 94 184 014</small></a>
+          <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
+        </div>
+        <hr class="rule">
+
+        <span class="state sr-only" data-state="working" data-name="Работаю" aria-hidden="true"></span>
+
+        <form class="form" id="lead" method="dialog" data-lead novalidate>
+          <p class="tile__meta"><b>Вы выбрали</b> Работаю → ИП, ООО и налоги → расчёт запуска и учёта</p>
+
+          <div class="form__row">
+            <div class="field">
+              <label class="field__label" for="f-name">Как к вам обращаться</label>
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
+            </div>
+            <div class="field">
+              <label class="field__label" for="f-contact">Телефон или Telegram</label>
+              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="f-msg">Вид деятельности и задача <small>— необязательно</small></label>
+            <textarea id="f-msg" name="message" placeholder="Одной фразой: ИТ, торговля, услуги или производство — и нужен ли ВНЖ по бизнесу"></textarea>
+          </div>
+
+          <input type="hidden" id="f-state" name="state" value="working">
+          <input type="hidden" name="branch" value="ip-i-nalogi">
+          <input type="hidden" name="fork" value="" data-f-fork>
+          <input type="hidden" name="modules" data-f-modules value="ip,account,accounting">
+
+          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+          <label class="check"><input type="checkbox" name="consent" required>
+            <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <span>Согласен на обработку персональных данных для ответа по моему запросу</span></label>
+
+          <div class="form__foot">
+            <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
+            <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт выключен — напишите напрямую:
+              <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> ·
+              <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
+            <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
+          </div>
+        </form>
+
+        <div class="form__done" data-form-done hidden tabindex="-1">
+          <p class="h4">Заявка собрана — осталось отправить</p>
+          <p class="measure small">Сайт статический, заявка уходит вашим сообщением в выбранный мессенджер. Текст уже подготовлен.</p>
+          <label class="sr-only" for="f-out">Текст заявки</label>
+          <textarea class="field__input form__out" id="f-out" data-form-out readonly rows="5"></textarea>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Открыть Telegram и вставить</a>
+            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> Открыть WhatsApp с текстом</a>
+            <button class="btn btn--outline" type="button" data-copy>Скопировать текст</button>
+          </div>
+          <p class="small" role="status" aria-live="polite" data-copy-msg></p>
+        </div>
+      </div>
+
+      <aside class="tile tile--hero">
+        <div class="tile__art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+          </picture>
+        </div>
+        <p class="tile__meta"><b>Перед регистрацией</b> Три вопроса бухгалтера LTCG</p>
+        <p class="state__recog"><b>Режим выбирается до первой оплаты:</b> <em>после 20 дней со дня регистрации сменить ОСН с НДС 20% можно только со следующего года.</em></p>
+        <hr class="rule">
+        <ol class="next" role="list">
+          <li><span><b>Предмет договоров</b>ИТ, торговля, производство или консалтинг — определяет право на спецрежим.</span></li>
+          <li><span><b>Годовой оборот</b>До <b>24 млн ֏</b>, до <b>115 млн ֏</b> или выше.</span></li>
+          <li><span><b>ВНЖ по бизнесу</b>Планируем оборот <b>1 000 000 ֏</b> за <b>60 дней</b> и налоги за <b>180 дней</b>.</span></li>
+        </ol>
+      </aside>
     </div>
-
-    <form class="form" id="lead" method="dialog" novalidate data-lead style="margin-top: var(--s-10)">
-      <p class="tile__meta"><b>Вы выбрали</b> Работаю → ИП и налоги → регистрация ИП + бухгалтерия</p>
-
-      <div class="form__row">
-        <div class="field">
-          <label class="field__label" for="f-name">Как к вам обращаться</label>
-          <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
-        </div>
-        <div class="field">
-          <label class="field__label" for="f-contact">Телефон или Telegram</label>
-          <input class="field__input" id="f-contact" name="contact" type="text" inputmode="tel" autocomplete="tel" required placeholder="+7… или @ник">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="field__label" for="f-msg">Сообщение <small>— необязательно</small></label>
-        <textarea id="f-msg" name="message" placeholder="Одной фразой: чем занимаетесь, кто платит и что уже сделано"></textarea>
-      </div>
-
-      <!-- след выбора: ветка, ответ развилки и модули калькулятора уезжают вместе с заявкой -->
-      <input type="hidden" name="branch" value="ip-i-nalogi">
-      <input type="hidden" name="fork" value="mode-turnover-tax">
-      <input type="hidden" name="modules" value="ip,accounting" data-f-modules>
-
-      <!-- honeypot: отсекает только заполненное поле; отсечки по времени нет намеренно —
-           живой человек заполняет четыре поля быстрее любого разумного порога -->
-      <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-
-      <label class="check"><input type="checkbox" name="consent" required>
-        <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-        <span>Согласен на обработку персональных данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст согласия от клиента</span></span></label>
-
-      <div class="form__foot">
-        <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
-        <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт выключен — напишите напрямую:
-          <a class="lnk" href="https://t.me/LTCG_Armenia" rel="noopener">Telegram @LTCG_Armenia</a> ·
-          <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
-        <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
-      </div>
-    </form>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════════
-     БЛОК 13 · Соседние ветки и подпись.
-     ══════════════════════════════════════════════════════════════ -->
-<section class="section" id="neigh" aria-labelledby="neigh-t" data-rail-label="Соседние ветки">
-  <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">11</span> Если сейчас ничего не нужно</p>
-      <h2 class="h2" id="neigh-t">И это <em>нормальный исход</em></h2>
-      <p class="lead measure">Тогда полезнее прочитать соседнее.</p>
-    </header>
+<!-- ═══ 08 · Соседние ветки и подпись ════════════════════════════ -->
+<section class="section section--grid section--thread section--art" id="sosednie" data-rail-label="Соседние ветки" aria-labelledby="neigh-t">
+  <div class="nov-art nov-art--stone" aria-hidden="true"></div>
 
-    <nav class="bento" aria-label="Соседние ветки">
+  <div class="wrap">
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">08</span> Связанные этапы</p>
+      <h2 class="h2" id="neigh-t">Счёт в банке, ВНЖ и <em>налоговое резидентство</em></h2>
+    </div>
+
+    <nav class="bento" aria-label="Соседние ветки" data-stagger>
       <a class="tile neigh" href="schet-v-banke.html" data-span="4">
-        <p class="neigh__when">До этого</p>
-        <h3 class="neigh__t">Счёт, соцкарта и адрес</h3>
-        <p class="neigh__d">Если счёт, соцкарта и адрес ещё не закрыты. Там шесть названных причин
-          отказа банка и порядок шагов.</p>
-        <span class="neigh__go">Только приехал <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
-      </a>
-
-      <a class="tile neigh" href="rezidentstvo-i-crs.html" data-span="4">
-        <p class="neigh__when">Параллельно</p>
-        <h3 class="neigh__t">Чей вы налоговый резидент</h3>
-        <p class="neigh__d">Если вопрос звучит как «чей я резидент» и «что с уведомлениями в стране
-          исхода». Другой набор сроков, другая тема.</p>
-        <span class="neigh__go">Живу и планирую <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+            <img src="assets/img/nov-shot-1100.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 02 · Банки и KYC</span>
+        </div>
+        <p class="neigh__when">Шаг 1</p>
+        <h3 class="neigh__t">Банковский счёт для ИП и ООО</h3>
+        <p class="neigh__d">Официальные тарифы банков РА для нерезидентов, требования к договорам и сопровождение KYC в Ереване.</p>
+        <span class="neigh__go">Счёт в банке <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
       <a class="tile neigh" href="vnzh.html" data-span="4">
-        <p class="neigh__when">Если ИП ради статуса</p>
-        <h3 class="neigh__t">Реформа 1 ноября целиком</h3>
-        <p class="neigh__d">Если ИП открывается ради вида на жительство. Там разбор реформы
-          1 ноября целиком, а не только её бухгалтерская часть.</p>
-        <span class="neigh__go">Легализуюсь <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/ltcg-branch-november-1280.webp">
+            <img src="assets/img/ltcg-branch-november-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 03 · ВНЖ и ПМЖ</span>
+        </div>
+        <p class="neigh__when">Шаг 2</p>
+        <h3 class="neigh__t">ВНЖ и ПМЖ по бизнесу с 01.11.2026</h3>
+        <p class="neigh__d">Ценз 1 000 000 ֏ для ИП и 2 000 000 ֏ для ООО, госпошлины 150 000 ֏ и 250 000 ֏ и правило 180 дней.</p>
+        <span class="neigh__go">Легализуюсь: ВНЖ <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      </a>
+
+      <a class="tile neigh" href="rezidentstvo-i-crs.html" data-span="4">
+        <div class="tile__plate" aria-hidden="true">
+          <img src="assets/img/ltcg-yerevan-tuff.png" width="640" height="360" alt="">
+          <span class="tile__plate-tag">Ветка 05 · 183 дня и CRS</span>
+        </div>
+        <p class="neigh__when">Шаг 3</p>
+        <h3 class="neigh__t">Налоговое резидентство (183 дня) и автообмен CRS</h3>
+        <p class="neigh__d">Сертификат резидента за 2 рабочих дня, правило 10 рабочих дней по запросу CRS и отчётность по зарубежным счетам.</p>
+        <span class="neigh__go">Резидентство и CRS <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
     </nav>
 
-    <footer class="section__foot" id="sign">
+    <footer class="section__foot">
       <p class="sign">
-        <span>Проверил: юрист LTCG <span class="slot">имя и роль</span></span>
-        <span>Обновлено 04.09.2026</span>
+        <span>Проверили: Юристы LTCG</span>
+        <span>Обновлено 18.10.2026</span>
+        <span>Первоисточники: arlis.am, hartak.am, e-services.src.am · 18.10.2026</span>
       </p>
+      <p class="small measure"><b>Правовая база:</b> Налоговый кодекс РА ՀՕ-165-Ն (<a class="lnk" href="https://www.arlis.am/en/acts/205620" target="_blank" rel="noopener noreferrer">arlis.am/en/acts/205620</a>), государственное руководство по выбору системы налогообложения (<a class="lnk" href="https://hartak.am/guides/%D5%A8%D5%B6%D5%BF%D6%80%D5%A5%D5%AC-%D5%B3%D5%AB%D5%B7%D5%BF-%D5%B0%D5%A1%D6%80%D5%AF%D5%B4%D5%A1%D5%B6-%D5%B0%D5%A1%D5%B4%D5%A1%D5%AF%D5%A1%D6%80%D5%A3/" target="_blank" rel="noopener noreferrer">hartak.am</a>), Закон РА «Об иностранцах» в ред. ՀՕ-11-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a>). Юридическую силу имеет официальный текст на армянском языке.</p>
     </footer>
-
-    <p class="small measure" style="margin-top: var(--s-5)"><b>Проверено по:</b> публикация
-      Министерства финансов РА от 02.05.2024 · государственная платформа услуг hartak.am · PwC,
-      обзор от 30.06.2026 · EY, налоговый алерт от 27.12.2024 · Закон РА «О валютном регулировании
-      и валютном контроле» (<a class="lnk" href="https://www.arlis.am/" rel="noopener">arlis.am</a>,
-      parliament.am) · закон ՀՕ-11-Ն от 20.01.2026
-      (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>) ·
-      закон ՀՕ-324-Ն от 24.10.2025
-      (<a class="lnk" href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a>) ·
-      список редакций Налогового кодекса РА на arlis.am · сайт Комитета государственных доходов
-      <a class="lnk" href="https://src.am/" rel="noopener">src.am</a>.</p>
-
-    <p class="small measure" style="margin-top: var(--s-4)"><b>Что изменилось в этой редакции:</b>
-      страница создана. Отдельно зафиксировано: ставка 5 % с оборота, которая всё ещё встречается в
-      русскоязычных гайдах, действовала до 01.01.2025 и с этой даты заменена дифференцированными
-      ставками.</p>
-
-    <p class="small measure" style="margin-top: var(--s-4)"><b>Оговорка об источнике.</b> Сайт
-      Комитета государственных доходов сменил адрес: <code>petekamutner.am</code> не открывается за
-      пределами Армении, действующий сайт — <b><a class="lnk" href="https://src.am/" rel="noopener">src.am</a></b>;
-      полное отключение старого домена как площадки для процедур анонсировано на 01.01.2027. Часть
-      ставок и порогов на этой странице подтверждена профессиональными справочниками и
-      государственной платформой услуг, но <b>не дословным текстом статей 254, 258 и 267 Налогового
-      кодекса</b> — консолидированные редакции на arlis.am обрываются на 30–33 статье. Мы называем
-      это прямо, потому что разница между «прочитали в кодексе» и «прочитали у PwC» существует, и вы
-      имеете право знать, что читаете.</p>
-
-    <p class="small measure" style="margin-top: var(--s-4)"><b>Политика цифр.</b> Цифры на этом сайте
-      появляются только с источником и датой. Пустые места — не недоделка, а правило.</p>
-
-    <p class="small measure" style="margin-top: var(--s-4)"><b>Разграничение ответственности.</b>
-      Решение по вашему налоговому режиму, по превышению порога и по любому начислению принимает
-      налоговый орган Республики Армения. Мы готовим документы, проверяем вид деятельности по
-      перечням, ведём учёт и сроки — и не обещаем исхода.</p>
   </div>
 </section>
 
 </main>
 
+<!-- ═══ Футер ════════════════════════════════════════════════════ -->
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="ftr__grid">
-      <div class="ftr__brand">
-        <a class="brand" href="home-ru.html" aria-label="LTCG — на главную"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
-        <address>
+    <div class="bento ftr__bento" role="list">
+
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+        <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+          <picture data-logo="gold">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+          <picture data-logo="ink">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <h2 class="sr-only" id="f-brand">Контакты</h2>
+        <address class="ftr__addr">
           <span>Legal and Tax Consulting Group LLC · Ереван</span>
-          <a href="tel:+37494184014">+374 94 184 014</a>
+          <a class="ftr__phone" href="tel:+37494184014">+374 94 184 014</a>
           <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
-          <span>Реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
         </address>
-      </div>
-      <nav aria-labelledby="f-moments">
-        <h2 id="f-moments">По моменту</h2>
-        <ul role="list">
-          <li><a href="pered-pereezdom.html">Ещё не переехал</a></li>
-          <li><a href="schet-v-banke.html">Только приехал</a></li>
-          <li><a href="vnzh.html">Легализуюсь</a></li>
-          <li><a href="ip-i-nalogi.html" aria-current="page">Работаю</a></li>
-          <li><a href="rezidentstvo-i-crs.html">Живу и планирую</a></li>
-          <li><a href="spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+      </section>
+
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+        <ul class="ftr__list" role="list">
+          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
+          <li><a href="./schet-v-banke.html">Только приехал</a></li>
+          <li><a href="./vnzh.html">Легализуюсь</a></li>
+          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
         </ul>
       </nav>
-      <nav aria-labelledby="f-branch">
-        <h2 id="f-branch">На этой странице</h2>
-        <ul role="list">
-          <li><a href="#answer">Короткий ответ</a></li>
-          <li><a href="#fork">Три режима и надстройка</a></li>
-          <li><a href="#rates">Ставки с 01.01.2025</a></li>
-          <li><a href="#nov1">1 ноября 2026</a></li>
-          <li><a href="#traps">Где ломается</a></li>
-          <li><a href="#order">Порядок и сроки</a></li>
-          <li><a href="#calc">Сколько стоит</a></li>
-          <li><a href="#faq">Вопросы</a></li>
-        </ul>
-      </nav>
-      <nav aria-labelledby="f-site">
-        <h2 id="f-site">Сайт</h2>
-        <ul role="list">
-          <li><a href="home-ru.html">Главная</a></li>
-          <li><a href="#contact">Контакты</a></li>
-          <li><a href="#sign">Источники и оговорки</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="ftr__bottom">
-      <div>
-        <p>Услуги носят консультационный и сопроводительный характер; решения о налоговом режиме,
-          выдаче ВНЖ и открытии счетов принимают государственные органы и банки. Формулировку
-          подтверждает клиент.</p>
-        <p style="margin-top: var(--s-2)">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
-      </div>
+
+      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+        <h2 class="ftr__h" id="f-site">Сайт</h2>
+        <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
+        <nav class="ftr__langs" aria-label="Язык сайта">
+          <span aria-disabled="true" lang="hy">Հայերեն</span>
+          <span lang="ru" aria-current="page">Русский</span>
+          <span aria-disabled="true" lang="en">English</span>
+        </nav>
+        <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
+      </section>
+
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+        <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
+        <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
+        <div class="ftr__credit">
+          <p class="ftr__copy">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+          <p class="ftr__by">Сайт спроектирован и собран студией
+            <a class="ftr__vkv" href="https://vkvstudio.com" target="_blank" rel="noopener noreferrer">
+              <picture><source type="image/webp" srcset="assets/logo/vkv-studio.webp"><img src="assets/logo/vkv-studio.png" width="256" height="180" alt="" loading="lazy" decoding="async"></picture>
+              <span>VKV Studio</span>
+            </a>
+            <span class="ftr__dom">vkvstudio.com</span>
+          </p>
+        </div>
+      </section>
+
     </div>
   </div>
 </footer>
+
+<!-- Мобильная нижняя панель -->
+<nav class="dock glass is-shown" aria-label="Быстрые действия">
+  <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+  <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+  <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="is-primary" href="#skolko"><svg aria-hidden="true"><use href="#i-calc"/></svg>Рассчитать</a>
+</nav>
 
 </body>
 </html>

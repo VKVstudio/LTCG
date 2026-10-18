@@ -11,18 +11,14 @@
 
   var secs = Array.prototype.slice.call(d.querySelectorAll('section[id], [data-rail-item][id]'))
     .filter(function (el) {
-      if (el.hasAttribute('data-rail-skip')) return false;
+      if (el.hasAttribute('data-rail-skip') || el.hasAttribute('hidden')) return false;
+      if (el.id === 'hero' || el.classList.contains('hs')) return false;
       // вложенные секции в рейку не идут: экран — это верхний уровень
       return !el.parentElement.closest('section[id]');
     });
   if (secs.length < 2) return;
 
   function labelOf(el) {
-    // порядок важен: явная метка раздела сильнее первого попавшегося заголовка.
-    // У хиро h1 — это название компании, и в рейке оно читалось как «LTCG — Legal and Tax…».
-    // 1) явная короткая метка для рейки, 2) метка раздела, 3) заголовок, 4) id.
-    // Заголовки на этом сайте — предложения, и обрезанное предложение в рейке читается неряшливо,
-    // поэтому у каждого экрана должна быть своя короткая метка data-rail-label.
     var explicit = el.getAttribute('data-rail-label');
     if (explicit) return explicit.trim();
     var by = el.getAttribute('aria-labelledby');
@@ -31,6 +27,12 @@
       : (el.getAttribute('aria-label') || (el.querySelector('h1, h2') || {}).textContent || el.id || '');
     t = t.replace(/\s+/g, ' ').trim();
     return t.length > 26 ? t.slice(0, 25).replace(/[\s,–—-]+$/, '') + '…' : t;
+  }
+
+  function numOf(el, idx) {
+    var kn = el.querySelector('.kicker__no');
+    if (kn && kn.textContent.trim()) return kn.textContent.trim();
+    return String(idx + 1).padStart(2, '0');
   }
 
   var nav = d.createElement('nav');
@@ -45,7 +47,7 @@
     a.className = 'railnav__item';
     a.href = '#' + el.id;
     a.innerHTML = '<span class="railnav__label">' +
-      '<span class="railnav__no">' + String(i + 1).padStart(2, '0') + '</span>' +
+      '<span class="railnav__no">' + numOf(el, i) + '</span>' +
       '<span class="railnav__text"></span></span><span class="railnav__dot" aria-hidden="true"></span>';
     a.querySelector('.railnav__text').textContent = labelOf(el);
     li.appendChild(a); ol.appendChild(li);
@@ -86,17 +88,5 @@
   }, { passive: true });
   addEventListener('resize', pick, { passive: true });
   pick();
-
-  // переход: поверх настоящей ссылки. Без Lenis — обычный якорь, ничего не ломается.
-  nav.addEventListener('click', function (e) {
-    var a = e.target.closest('.railnav__item');
-    if (!a) return;
-    var el = d.getElementById(a.getAttribute('href').slice(1));
-    if (!el || !window.__lenis) return;
-    e.preventDefault();
-    window.__lenis.scrollTo(el, { duration: 1.1 });
-    history.replaceState(null, '', a.getAttribute('href'));
-    el.setAttribute('tabindex', '-1');
-    el.focus({ preventScroll: true });
-  });
 })();
+

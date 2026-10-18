@@ -1,0 +1,337 @@
+/* ============================================================
+   LTCG — плашка hero · канон C «Технологический премиум» · KEY = tech
+   Подключать ПОСЛЕ hero.css. Все правила живут под [data-style="tech"],
+   атрибут ставится на <html>, <body> или на .hs — три варианта сосуществуют.
+
+   Шрифты (Google Fonts, кириллица проверена по METADATA.pb 03.09.2026):
+     display  Onest          wght 100–900, subsets cyrillic + cyrillic-ext
+     body     Golos Text     wght 400–900, subsets cyrillic + cyrillic-ext
+     accent   JetBrains Mono wght 100–800, subsets cyrillic + cyrillic-ext
+     hy       Noto Sans Armenian — под :lang(hy)
+   Разметка не меняется: .hs__copy > .hs__kicker, .hs__title (em), .hs__lead,
+   .hs__actions > .btn.btn--primary + .btn.btn--outline
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400..700&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@500&family=Noto+Sans+Armenian:wght@400;500;600&display=swap');
+
+/* ── Токены канона (scoped) ───────────────────────────────── */
+[data-style="tech"] {
+  --tp-font-display: 'Onest', 'Golos Text', system-ui, sans-serif;
+  --tp-font-body: 'Golos Text', 'Onest', system-ui, sans-serif;
+  --tp-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+  --tp-navy: #0C1B3A;
+  --tp-gold-hi: #FFF3D0;      /* ядро луча по хребту (hero.css .hs__edge) */
+  --tp-gold-light: #FAE0A2;
+  --tp-gold: #F2C249;
+  --tp-gold-mid: #C4922B;
+  --tp-gold-deep: #593E10;    /* --gold-dark: тёплая тень, единственное применение */
+
+  --tp-ink: #FFFFFF;
+  --tp-ink-2: rgba(255, 255, 255, 0.90);
+  --tp-line: rgba(250, 224, 162, 0.16);
+
+  /* «одно золото»: те же стопы, что у #hsGold в SVG знака */
+  --tp-alloy-text: linear-gradient(100deg, #FFF3D0 0%, #FAE0A2 34%, #F2C249 100%);
+  --tp-alloy-edge: linear-gradient(150deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
+  --tp-alloy-fill: linear-gradient(180deg, #FAE0A2 0%, #F2C249 58%);
+
+  --tp-r-panel: 1.125rem;     /* 18px — плавающая панель */
+  --tp-r-sheet: 1.25rem;      /* 20px — верхние углы мобильного листа */
+  --tp-r-btn: 0.625rem;       /* 10px — кнопки; не pill */
+  --tp-gutter: clamp(1rem, 5vw, 5rem);
+
+  --tp-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --tp-t-fast: 180ms;
+  --tp-t-base: 320ms;
+  --tp-t-reveal: 720ms;
+}
+
+/* Армянская версия: Onest/Golos армянский не покрывают */
+[data-style="tech"]:lang(hy) {
+  --tp-font-display: 'Noto Sans Armenian', 'Onest', system-ui, sans-serif;
+  --tp-font-body: 'Noto Sans Armenian', 'Golos Text', system-ui, sans-serif;
+}
+
+/* ── Панель: mobile-first = нижний лист ───────────────────── */
+[data-style="tech"] .hs__copy {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: none;
+  /* низ резервирует место под .hs__hint («листайте», bottom: 1.25rem, ~3rem высотой) + 1rem воздуха */
+  padding: 1.5rem 1.25rem 5.5rem;
+  border-radius: var(--tp-r-sheet) var(--tp-r-sheet) 0 0;
+  color: var(--tp-ink);
+  /* navy-стекло, к низу теплеет; альфа ≥ .72 держит золото на ≥ 4.5:1 поверх фото до L≈0.3 */
+  background: linear-gradient(180deg, rgba(12, 27, 58, 0.72) 0%, rgba(11, 19, 36, 0.84) 100%);
+  -webkit-backdrop-filter: blur(22px) saturate(1.35);
+  backdrop-filter: blur(22px) saturate(1.35);
+  /* тёмное кольцо снаружи золотой кромки — кромка читается и на светлом небе */
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.28),
+    0 -24px 64px -16px rgba(0, 0, 0, 0.55);
+  isolation: isolate;
+}
+
+/* слой фактуры: блик по верхней кромке + тёплая тень + зерно */
+[data-style="tech"] .hs__copy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 243, 208, 0) 0%, rgba(255, 243, 208, 0.55) 28%, rgba(255, 243, 208, 0.55) 46%, rgba(255, 243, 208, 0) 82%) top left / 100% 1px no-repeat,
+    radial-gradient(120% 90% at 100% 112%, rgba(89, 62, 16, 0.42) 0%, rgba(89, 62, 16, 0) 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.09'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E") 0 0 / 180px 180px repeat;
+}
+
+/* подсвеченная кромка: 1px градиентное кольцо, золото собрано в левом верхнем углу */
+[data-style="tech"] .hs__copy::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--tp-alloy-edge);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 600ms var(--tp-ease);
+}
+[data-style="tech"] .hs__copy:focus-within::after { opacity: 1; }
+
+/* ── Кикер: моно-метка со строкой-индексом ───────────────── */
+[data-style="tech"] .hs__kicker {
+  font: 500 0.6875rem/1.45 var(--tp-font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tp-gold-light);
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+[data-style="tech"] .hs__kicker::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  margin-right: 0.75rem;
+  vertical-align: 0.3em;
+  background: linear-gradient(90deg, var(--tp-gold) 0%, rgba(242, 194, 73, 0.15) 100%);
+}
+[data-style="tech"] .hs__kicker:lang(hy) {
+  font-family: var(--tp-font-body);
+  text-transform: none;
+  letter-spacing: 0.06em;
+}
+
+/* ── Заголовок: плотный гротеск, акцент — сплавом, не курсивом ── */
+[data-style="tech"] .hs__title {
+  font-family: var(--tp-font-display);
+  font-weight: 640;
+  font-size: clamp(2rem, 1.15rem + 3.4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.028em;
+  max-width: 18ch;                      /* ≈ 20 кириллических знаков в строке: строчные уже «0», по которому меряется ch */
+  margin: 0 0 1rem;
+  color: var(--tp-ink);
+  text-shadow: none;
+  text-wrap: balance;
+}
+[data-style="tech"] .hs__title em {
+  font-style: normal;
+  font-weight: inherit;
+  color: transparent;
+  background: var(--tp-alloy-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+[data-style="tech"] .hs__title:lang(hy) {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  max-width: 20ch;
+}
+
+/* ── Лид ──────────────────────────────────────────────────── */
+[data-style="tech"] .hs__lead {
+  font: 400 clamp(1rem, 0.93rem + 0.3vw, 1.125rem)/1.55 var(--tp-font-body);
+  letter-spacing: 0;
+  color: var(--tp-ink-2);
+  max-width: 42ch;
+  margin: 0 0 1.25rem;
+  text-shadow: none;
+}
+
+/* ── Действия: разделитель-градиент + две кнопки ─────────── */
+[data-style="tech"] .hs__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.625rem 0.75rem;
+}
+[data-style="tech"] .hs__actions::before {
+  content: '';
+  flex: 0 0 100%;
+  height: 1px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, rgba(250, 224, 162, 0.32) 0%, rgba(250, 224, 162, 0.04) 100%);
+}
+
+[data-style="tech"] .hs__actions .btn {
+  flex: 1 1 100%;
+  min-height: 3rem;                     /* 48px ≥ 44px */
+  padding: 0 1.25rem;
+  border-radius: var(--tp-r-btn);
+  font: 600 0.9375rem/1 var(--tp-font-display);
+  letter-spacing: -0.005em;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--tp-t-fast) var(--tp-ease),
+    box-shadow var(--tp-t-base) var(--tp-ease),
+    background-color var(--tp-t-base) var(--tp-ease),
+    border-color var(--tp-t-base) var(--tp-ease),
+    color var(--tp-t-base) var(--tp-ease);
+}
+[data-style="tech"] .hs__actions .btn:focus-visible {
+  outline: 2px solid var(--tp-gold-light);
+  outline-offset: 3px;
+}
+
+/* primary: литое золото, navy-текст (10.2:1), верхний блик, шеврон */
+[data-style="tech"] .hs__actions .btn--primary {
+  color: var(--tp-navy);
+  background: var(--tp-alloy-fill);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 rgba(89, 62, 16, 0.30),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 8px 24px -8px rgba(242, 194, 73, 0.45);
+}
+[data-style="tech"] .hs__actions .btn--primary::before { display: none; }   /* без «блика-пробега» из style.css */
+[data-style="tech"] .hs__actions .btn--primary::after {
+  content: '';
+  width: 0.4em;
+  height: 0.4em;
+  margin-left: 0.1em;
+  border: solid currentColor;
+  border-width: 1.5px 1.5px 0 0;
+  transform: rotate(45deg);
+  transition: transform var(--tp-t-fast) var(--tp-ease);
+}
+[data-style="tech"] .hs__actions .btn--primary:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(89, 62, 16, 0.30),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* outline: стекло с золотой линией */
+[data-style="tech"] .hs__actions .btn--outline {
+  color: var(--tp-ink);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(250, 224, 162, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+[data-style="tech"] .hs__actions .btn--outline:active { transform: translateY(0); }
+
+/* ── Микродвижение — только на устройствах с hover ───────── */
+@media (hover: hover) {
+  [data-style="tech"] .hs__copy:hover::after { opacity: 1; }
+
+  [data-style="tech"] .hs__actions .btn--primary:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(180deg, #FFF3D0 0%, #FAE0A2 58%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      inset 0 -1px 0 rgba(89, 62, 16, 0.30),
+      0 2px 4px rgba(0, 0, 0, 0.25),
+      0 12px 32px -8px rgba(242, 194, 73, 0.60);
+  }
+  [data-style="tech"] .hs__actions .btn--primary:hover::after {
+    transform: translateX(3px) rotate(45deg);
+  }
+  [data-style="tech"] .hs__actions .btn--outline:hover {
+    transform: translateY(-1px);
+    color: var(--tp-gold-hi);
+    border-color: rgba(250, 224, 162, 0.70);
+    background: rgba(242, 194, 73, 0.10);
+  }
+}
+
+/* ── Появление: один каскад при загрузке, дети — не родитель (родителя ведёт GSAP) ── */
+@keyframes tpRise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+[data-style="tech"] .hs__kicker,
+[data-style="tech"] .hs__title,
+[data-style="tech"] .hs__lead,
+[data-style="tech"] .hs__actions {
+  animation: tpRise var(--tp-t-reveal) var(--tp-ease) both;
+}
+[data-style="tech"] .hs__kicker  { animation-delay: 80ms; }
+[data-style="tech"] .hs__title   { animation-delay: 160ms; }
+[data-style="tech"] .hs__lead    { animation-delay: 260ms; }
+[data-style="tech"] .hs__actions { animation-delay: 360ms; }
+
+/* ── ≥ 640px: кнопки в ряд ───────────────────────────────── */
+@media (min-width: 640px) {
+  [data-style="tech"] .hs__actions .btn { flex: 0 1 auto; }
+}
+
+/* ── ≥ 768px: лист становится плавающей панелью ──────────── */
+@media (min-width: 768px) {
+  [data-style="tech"] .hs__copy {
+    left: var(--tp-gutter);
+    right: auto;
+    bottom: clamp(5.5rem, 9vh, 6.5rem);  /* над .hs__hint (верх ≈ 4.3rem), не поверх него */
+    width: min(46rem, calc(100% - 2 * var(--tp-gutter)));
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    border-radius: var(--tp-r-panel);
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.28),
+      0 30px 80px -24px rgba(0, 0, 0, 0.65);
+  }
+  [data-style="tech"] .hs__kicker { font-size: 0.75rem; margin-bottom: 1.125rem; }
+  [data-style="tech"] .hs__title  { margin-bottom: 1.125rem; }
+  [data-style="tech"] .hs__lead   { margin-bottom: 1.5rem; }
+  [data-style="tech"] .hs__actions::before { margin-bottom: 0.625rem; }
+}
+
+/* ── Фолбэки ─────────────────────────────────────────────── */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  [data-style="tech"] .hs__copy {
+    background: linear-gradient(180deg, rgba(12, 27, 58, 0.92) 0%, rgba(11, 19, 36, 0.95) 100%);
+  }
+}
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  [data-style="tech"] .hs__copy { border: 1px solid rgba(250, 224, 162, 0.26); }
+  [data-style="tech"] .hs__copy::after { display: none; }
+}
+@media (forced-colors: active) {
+  [data-style="tech"] .hs__title em {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+  }
+  [data-style="tech"] .hs__copy::after { display: none; }
+  [data-style="tech"] .hs__copy { border: 1px solid CanvasText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-style="tech"] .hs__kicker,
+  [data-style="tech"] .hs__title,
+  [data-style="tech"] .hs__lead,
+  [data-style="tech"] .hs__actions { animation: none; }
+  [data-style="tech"] .hs__copy::after,
+  [data-style="tech"] .hs__actions .btn,
+  [data-style="tech"] .hs__actions .btn--primary::after { transition: none; }
+  [data-style="tech"] .hs__actions .btn:hover { transform: none; }
+}

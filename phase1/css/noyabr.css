@@ -120,15 +120,7 @@
   --tex-paper:     url("../assets/patterns/paper.png");
   --nov-art-opacity: 0.10;
 }
-@media (prefers-color-scheme: dark) {
-  :root[data-skin="ru"]:not([data-theme="light"]) {
-    --tex-khachkar:  url("../assets/patterns/khachkar_n.png");
-    --tex-stone:     url("../assets/patterns/stone_n.png");
-    --tex-guilloche: url("../assets/patterns/guilloche_n.png");
-    --tex-paper:     url("../assets/patterns/paper_n.png");
-    --nov-art-opacity: 0.10;
-  }
-}
+:root[data-skin="ru"]:not([data-theme="light"]),
 :root[data-skin="ru"][data-theme="dark"] {
   --tex-khachkar:  url("../assets/patterns/khachkar_n.png");
   --tex-stone:     url("../assets/patterns/stone_n.png");
@@ -166,30 +158,7 @@
       --tex-paper:     image-set(url("../assets/patterns/paper-1920.avif") type("image/avif"), url("../assets/patterns/paper-1920.webp") type("image/webp"));
     }
   }
-  @media (prefers-color-scheme: dark) {
-    :root[data-skin="ru"]:not([data-theme="light"]) {
-      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-768.avif") type("image/avif"), url("../assets/patterns/khachkar_n-768.webp") type("image/webp"));
-      --tex-stone:     image-set(url("../assets/patterns/stone_n-768.avif") type("image/avif"), url("../assets/patterns/stone_n-768.webp") type("image/webp"));
-      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-768.avif") type("image/avif"), url("../assets/patterns/guilloche_n-768.webp") type("image/webp"));
-      --tex-paper:     image-set(url("../assets/patterns/paper_n-768.avif") type("image/avif"), url("../assets/patterns/paper_n-768.webp") type("image/webp"));
-    }
-  }
-  @media (prefers-color-scheme: dark) and (min-width: 768px) {
-    :root[data-skin="ru"]:not([data-theme="light"]) {
-      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1280.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1280.webp") type("image/webp"));
-      --tex-stone:     image-set(url("../assets/patterns/stone_n-1280.avif") type("image/avif"), url("../assets/patterns/stone_n-1280.webp") type("image/webp"));
-      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1280.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1280.webp") type("image/webp"));
-      --tex-paper:     image-set(url("../assets/patterns/paper_n-1280.avif") type("image/avif"), url("../assets/patterns/paper_n-1280.webp") type("image/webp"));
-    }
-  }
-  @media (prefers-color-scheme: dark) and (min-width: 1024px) {
-    :root[data-skin="ru"]:not([data-theme="light"]) {
-      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1920.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1920.webp") type("image/webp"));
-      --tex-stone:     image-set(url("../assets/patterns/stone_n-1920.avif") type("image/avif"), url("../assets/patterns/stone_n-1920.webp") type("image/webp"));
-      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1920.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1920.webp") type("image/webp"));
-      --tex-paper:     image-set(url("../assets/patterns/paper_n-1920.avif") type("image/avif"), url("../assets/patterns/paper_n-1920.webp") type("image/webp"));
-    }
-  }
+  :root[data-skin="ru"]:not([data-theme="light"]),
   :root[data-skin="ru"][data-theme="dark"] {
     --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-768.avif") type("image/avif"), url("../assets/patterns/khachkar_n-768.webp") type("image/webp"));
     --tex-stone:     image-set(url("../assets/patterns/stone_n-768.avif") type("image/avif"), url("../assets/patterns/stone_n-768.webp") type("image/webp"));
@@ -197,6 +166,7 @@
     --tex-paper:     image-set(url("../assets/patterns/paper_n-768.avif") type("image/avif"), url("../assets/patterns/paper_n-768.webp") type("image/webp"));
   }
   @media (min-width: 768px) {
+    :root[data-skin="ru"]:not([data-theme="light"]),
     :root[data-skin="ru"][data-theme="dark"] {
       --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1280.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1280.webp") type("image/webp"));
       --tex-stone:     image-set(url("../assets/patterns/stone_n-1280.avif") type("image/avif"), url("../assets/patterns/stone_n-1280.webp") type("image/webp"));
@@ -205,6 +175,7 @@
     }
   }
   @media (min-width: 1024px) {
+    :root[data-skin="ru"]:not([data-theme="light"]),
     :root[data-skin="ru"][data-theme="dark"] {
       --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1920.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1920.webp") type("image/webp"));
       --tex-stone:     image-set(url("../assets/patterns/stone_n-1920.avif") type("image/avif"), url("../assets/patterns/stone_n-1920.webp") type("image/webp"));
@@ -222,6 +193,9 @@
 .cmp tbody th { font-weight: 500; color: var(--text-2); width: 30%; }
 .cmp td b { color: var(--gold-text); font-weight: 500; }
 .cmp tr:last-child th, .cmp tr:last-child td { border-bottom: 0; }
+@media (max-width: 639px) {
+  .cmp { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
 
 /* список «что становится легче» */
 .gains { list-style: none; margin: var(--s-3,0.75rem) 0 0; padding: 0; display: grid; gap: 0.7rem; }
@@ -231,7 +205,7 @@
   font-family: var(--font-mono); font-weight: 500; }
 .gains b { color: var(--text); font-weight: 600; }
 
-/* ГРАФИТ ВЫКЛЮЧЕН по просьбе 04.09. Чтобы вернуть — снять обёртку /* ... */ ниже.
+/* ГРАФИТ ВЫКЛЮЧЕН по просьбе 04.09. Чтобы вернуть — снять обёртку (/ * ... * /) ниже.
 (* ═══ Графит вместо синевы ════════════════════════════════════════════════
    Тон H216 сохранён — тёмная тема остаётся синей, но насыщенность падает
    с 44-66 до 20-26. По Иттену это включает шестой контраст (насыщенности):
@@ -263,67 +237,45 @@
   --ru-grid-line: transparent;
   --ru-glow-blob: rgba(242, 194, 73, 0.06);
 }
-
 */
 
 /* ─── золото видно там, где число ───────────────────────────────────────
    Не на рамках и не на подложках: только на цифре и на действии.
    Так бюджет площади остаётся в 1-2 %, а золото читается как золото. */
-.tile p b, .nov-figs b { color: var(--gold-text); font-weight: 600; }
-.gains b { color: var(--text); }                 /* зачины пунктов — не золото */
+body.nov .tile p:not(.tile__meta) b,
+body.nov .cmp td b,
+.nov-figs b {
+  color: var(--gold-text);
+  font-weight: 600;
+  background: none;
+  padding-inline: 0;
+}
+body.nov .gains b,
+.gains b {
+  color: var(--text-strong);
+  font-weight: 600;
+  background: none;
+  padding-inline: 0;
+}
 .cmp tbody th { color: var(--text-2); }
 
 /* Сетка секций гасится на всей странице, в обеих темах: под фактурой два фона
    спорят между собой. Свойство наследуемое, поэтому хватает объявления на body. */
 body.nov { --ru-grid-line: transparent; }
 
-/* ═══ Золото, которое видно ═══════════════════════════════════════════════
-   Замер: золото буквой на светлом фоне даёт 1,66:1 и нечитаемо, поэтому
-   в светлой теме --gold-text намеренно сделан коричневым #593E10 (9,9:1) —
-   и золотом не выглядит. Выход: в светлой теме золото становится ЗАЛИВКОЙ
-   под тёмным текстом (9,57:1) — подчерк маркером. В тёмной теме наоборот,
-   буква: #FAE0A2 на графите читается как металл. Один цвет, две роли. */
-.tile p:not(.tile__meta) b,
-.gains b,
-.cmp td b {
-  color: var(--text-strong);
-  background-image: var(--gold-fill);
-  background-repeat: no-repeat;
-  background-position: 0 92%;
-  background-size: 100% 0.34em;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-  padding-inline: 0.12em;
-  font-weight: 600;
-}
-@media (prefers-color-scheme: dark) {
-  :root[data-skin="ru"]:not([data-theme="light"]) .tile p:not(.tile__meta) b,
-  :root[data-skin="ru"]:not([data-theme="light"]) .gains b,
-  :root[data-skin="ru"]:not([data-theme="light"]) .cmp td b {
-    color: var(--gold-text); background-image: none; padding-inline: 0;
-  }
-}
-:root[data-skin="ru"][data-theme="dark"] .tile p:not(.tile__meta) b,
-:root[data-skin="ru"][data-theme="dark"] .gains b,
-:root[data-skin="ru"][data-theme="dark"] .cmp td b {
-  color: var(--gold-text); background-image: none; padding-inline: 0;
-}
-
 /* ═══ Фактура на тёмном ═══════════════════════════════════════════════════
    Тёмная картинка (L 10-15) поверх тёмного фона через прозрачность не читается
    в принципе: разница светлот меньше единицы. Приём другой — screen: чёрные
    участки уходят в ноль и фон не сереет, а светлые (рельеф, золотая нить)
    проступают. Поэтому в тёмной теме прозрачность выше, а вклад всё равно мал. */
-@media (prefers-color-scheme: dark) {
-  :root[data-skin="ru"]:not([data-theme="light"]) .nov-art {
-    mix-blend-mode: screen; opacity: 0.42;
-  }
-  :root[data-skin="ru"]:not([data-theme="light"]) .nov-art::after { mix-blend-mode: normal; }
-}
+:root[data-skin="ru"]:not([data-theme="light"]) .nov-art,
 :root[data-skin="ru"][data-theme="dark"] .nov-art {
   mix-blend-mode: screen; opacity: 0.42;
 }
-:root[data-skin="ru"][data-theme="dark"] .nov-art::after { mix-blend-mode: normal; }
+:root[data-skin="ru"]:not([data-theme="light"]) .nov-art::after,
+:root[data-skin="ru"][data-theme="dark"] .nov-art::after {
+  mix-blend-mode: normal;
+}
 
 /* ─── переключатель тем на странице ─────────────────────────────────────── */
 .nov-themer { display: inline-flex; gap: 2px; padding: 3px; margin-left: auto;

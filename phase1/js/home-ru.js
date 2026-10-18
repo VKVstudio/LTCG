@@ -16,10 +16,13 @@
   function setY(y) {
     var l = window.__lenis;
     y = Math.max(0, Math.round(y));
+    if (l && typeof l.resize === 'function') l.resize();
     if (l && typeof l.scrollTo === 'function') {
       l.scrollTo(y, { immediate: true, force: true });
-    } else {
-      window.scrollTo(0, y);
+    }
+    window.scrollTo(0, y);
+    if (window.ScrollTrigger && typeof window.ScrollTrigger.update === 'function') {
+      window.ScrollTrigger.update();
     }
   }
   function goTo(y, seconds) {
@@ -52,8 +55,8 @@
      блок. Всё, что дальше этой отметки, программной прокруткой не достигалось
      вовсе и молча игнорировалось. Один пересчёт после полной загрузки лечит. */
   function remeasure() {
-    if (window.__lenis && typeof window.__lenis.resize === 'function') window.__lenis.resize();
     if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') window.ScrollTrigger.refresh();
+    if (window.__lenis && typeof window.__lenis.resize === 'function') window.__lenis.resize();
   }
   if (document.readyState === 'complete') setTimeout(remeasure, 300);
   else window.addEventListener('load', function () { setTimeout(remeasure, 300); });
@@ -101,35 +104,24 @@
     window.addEventListener('scroll', function () {
       if (!document.body.classList.contains('is-landed')) return;
       var bottom = hs2.getBoundingClientRect().bottom;
-      if (bottom > 80) document.body.classList.remove('is-landed');
+      if (bottom > 120) document.body.classList.remove('is-landed');
     }, { passive: true });
-  
-  /* ── 4. Рейка гаснет над подвалом ───────────────────────────────────────
-     В подвале секций нет, показывать ей нечего, и она наезжает на правую
-     плитку. Наблюдатель ставит признак на body, CSS гасит с переходом. */
-  (function railOverFooter() {
-    var foot = document.querySelector('.ftr');
-    if (!foot || !('IntersectionObserver' in window)) return;
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        document.body.classList.toggle('is-at-footer', e.isIntersecting);
-      });
-    }, { threshold: 0 }).observe(foot);
   })();
-})();
+
   var ru = document.querySelector('.tri__part--ru');
   if (ru) {
     ru.addEventListener('click', function () {
-      // Не ждём чужую анимацию и не прыгаем после неё: ведём прокрутку сами,
-      // начиная со следующего кадра — штатный обработчик к этому моменту уже
-      // снял замок ворот. Одно движение вместо «пауза, потом рывок».
-      // Через таймер, а не rAF: если кадры не выдаются (фон, свёрнутое окно),
-      // rAF не вызовется вовсе и посадка не начнётся. Таймер идёт всегда.
       setTimeout(function () {
         var where = document.getElementById('where');
         if (!where) return;
-        goTo(where.getBoundingClientRect().top + window.scrollY + 2, 1.1);
-        setTimeout(showChrome, 1200);
+        var hdr = document.getElementById('hdr');
+        var hdrH = (hdr && hdr.offsetHeight) ? hdr.offsetHeight : 72;
+        showChrome();
+        goTo(where.getBoundingClientRect().top + window.scrollY - hdrH, 0);
+        setTimeout(function () {
+          showChrome();
+          goTo(where.getBoundingClientRect().top + window.scrollY - hdrH, 0);
+        }, 60);
       }, 16);
     }, true);
   }

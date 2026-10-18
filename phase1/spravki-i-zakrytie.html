@@ -1,41 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m5" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
-/* Тема и класс js — ДО первой отрисовки: иначе на светлой машине страница мигнёт тёмным,
-   а ветки разметки для «без скрипта» успеют показаться. Единственный инлайновый скрипт
-   на странице, вся остальная логика — во внешних файлах. */
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
 try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<!-- Сборка для показа и вычитки клиентом, не публикация в поиск. Строка снимается
-     вместе с покупкой домена. -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-<title>Справка о несудимости и апостиль в Армении — LTCG</title>
-<meta name="description" content="Сколько стоит справка о несудимости с апостилем, за сколько дней её делают, как взять сертификат резидентства и закрыть ИП. Проверено 04.09.2026.">
+<title>Справки и закрытие ИП в Армении 2026: МИД, КГД — LTCG</title>
+<meta name="description" content="Справка о несудимости МИД РА (7 000 ֏ в Ереване vs 25 000 ֏ в консульстве), сертификат налогового резидента КГД за 2 рабочих дня и закрытие ИП в Армении.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 <link rel="canonical" href="https://ltcg.am/spravki-i-zakrytie.html">
-<!-- Ветка объявляет hreflang на себя и x-default на себя же. Ссылок на /hy/ и /en/ нет,
-     пока их содержание не соответствует этому адресу. -->
 <link rel="alternate" hreflang="ru" href="https://ltcg.am/spravki-i-zakrytie.html">
 <link rel="alternate" hreflang="x-default" href="https://ltcg.am/spravki-i-zakrytie.html">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="Справка о несудимости, апостиль и закрытие ИП в Армении">
-<meta property="og:description" content="Что успеть, пока вы ещё здесь: 7 000 драм против 25 000 после отъезда. Расхождение двух официальных страниц МИД по сроку показано, а не спрятано.">
+<meta property="og:title" content="Справки, сертификат резидента и закрытие ИП в Армении 2026 — LTCG">
+<meta property="og:description" content="Как получить справку о несудимости МИД РА и сертификат налогового резидента КГД РА, закрыть ИП и счета без штрафов и сохранить статус ВНЖ.">
 <meta property="og:url" content="https://ltcg.am/spravki-i-zakrytie.html">
-<!-- Своей карточки у ветки пока нет: стоит общий кадр. Нужен отдельный OG 1200x630
-     под эту ветку, заявка на графику — в отчёте сборщика. -->
 <meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -44,110 +35,95 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Место под мета-подтверждение Яндекс.Вебмастера. Код добавляет владелец после
-     регистрации домена; строка стоит здесь, чтобы её не забыли.
-<meta name="yandex-verification" content="">
--->
-
-<!-- Шрифты самохостом. Google Fonts не подключается: это внешний домен в критическом
-     пути, и Яндекс считает его в скорость. -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
-<!-- JavaScript только надстройкой: страница читается и работает без него -->
-<script defer src="js/boot.js?v=20261018m1"></script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-latin.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m7">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
+<script defer src="js/boot.js?v=20261019m7"></script>
 
-<!-- Организация объявлена целиком ОДИН раз на / — здесь только ссылка по @id.
-     Телефон и hasOfferCatalog не дублируются. Полный узел на главной — LocalBusiness,
-     и адрес в нём ждёт клиента: офиса у компании нет, выдумывать адрес нельзя.
-     aggregateRating и speakable не выводятся нигде до реальных отзывов со ссылкой
-     на оригинал. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ltcg.am/#org",
+      "name": "Legal and Tax Consulting Group LLC",
+      "alternateName": "LTCG",
+      "url": "https://ltcg.am/",
+      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+    },
+    {
       "@type": ["WebPage", "FAQPage"],
       "@id": "https://ltcg.am/spravki-i-zakrytie.html#page",
       "url": "https://ltcg.am/spravki-i-zakrytie.html",
-      "name": "Справка о несудимости, апостиль и закрытие ИП в Армении",
-      "description": "Какие документы Армения выдаёт уезжающему, кто их выдаёт, сколько это стоит, сколько идёт и в каком порядке делается.",
+      "name": "Справки и закрытие ИП в Армении 2026: МИД, КГД — LTCG",
+      "description": "Справка о несудимости МИД РА (7 000 ֏ в Ереване vs 25 000 ֏ в консульстве), сертификат налогового резидента КГД за 2 рабочих дня и закрытие ИП в Армении.",
       "inLanguage": "ru",
-      "dateModified": "2026-09-04",
-      "isPartOf": { "@id": "https://ltcg.am/#website" },
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-10-18",
+      "isPartOf": { "@type": "WebSite", "@id": "https://ltcg.am/#website", "url": "https://ltcg.am/", "name": "LTCG — Legal & Tax Consulting Group" },
       "publisher": { "@id": "https://ltcg.am/#org" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
-          { "@type": "ListItem", "position": 2, "name": "Справки и закрытие", "item": "https://ltcg.am/spravki-i-zakrytie.html" }
+          { "@type": "ListItem", "position": 2, "name": "Двигаюсь дальше: справки и закрытие дел", "item": "https://ltcg.am/spravki-i-zakrytie.html" }
         ]
       },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Можно ли получить армянскую справку о несудимости, уже уехав из страны?",
+          "name": "Сколько стоит справка об отсутствии судимости в Армении при подаче в Ереване и через консульство?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Да. Заявление подаётся через дипломатическое представительство или консульское учреждение РА за границей либо электронно через consular.e-gov.am — единственный найденный государственный сервис Армении, вход в который не требует ни армянской ID-карты, ни армянской SIM. Цена вопроса: 25 000 драмов через диппредставительство против 7 000 драмов при подаче в Армении, плюс пересылка 11 000–30 000 драмов против 430 драмов внутри страны. Проверено 04.09.2026."
+            "text": "Государственная пошлина за справку об отсутствии судимости с апостилем при подаче в Ереване или онлайн составляет 7 000 ֏ со сроком выдачи до 5 рабочих дней (почтовая доставка по Армении — 430 ֏). При запросе через консульство Республики Армения за рубежом сбор составляет 25 000 ֏."
           }
         },
         {
           "@type": "Question",
-          "name": "Сколько делают справку о несудимости в Армении — два дня или пять?",
+          "name": "Как и в какой срок выдаётся сертификат налогового резидента Армении?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "На двух официальных страницах одного ведомства стоят разные сроки: mfa.am — 5 рабочих дней, consular.e-gov.am — 2 рабочих дня. Какая страница устарела, по самим страницам не определить. Планируйте по пяти рабочим дням. Обе страницы проверены 04.09.2026."
+            "text": "Сертификат налогового резидента Республики Армения оформляется Комитетом государственных доходов электронно через систему «Ես Եմ» за 2 рабочих дня бесплатно (госпошлина 0 ֏) при фактическом пребывании от 183 дней в налоговом году либо наличии центра жизненных интересов в Армении."
           }
         },
         {
           "@type": "Question",
-          "name": "Сколько действует справка о несудимости из Армении?",
+          "name": "Что произойдёт с ВНЖ Армении при закрытии ИП или ликвидации ООО после 1 ноября 2026 года?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Законодательством Армении срок действия не установлен — его нет ни на mfa.am, ни на hartak.am. Свежесть требует принимающая сторона: Испания для визы цифрового кочевника называет 6 месяцев, если в самом документе не указан иной срок; у Португалии на официальной странице национальной визы срока годности нет, зато требуется справка страны происхождения либо страны, где вы прожили более года. Проверено 04.09.2026."
+            "text": "С 1 ноября 2026 года при государственной регистрации прекращения деятельности ИП, ликвидации ООО либо отсутствии в базе КГД начисленных налогов за 180 дней после выдачи карты вид на жительство по предпринимательскому основанию подлежит аннулированию."
           }
         },
         {
           "@type": "Question",
-          "name": "Что будет, если просто бросить ИП в Армении и уехать?",
+          "name": "Нужно ли уведомлять миграционную службу Армении при отъезде из страны более чем на 183 дня?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Оно останется в реестре, а обязанность отчитываться — за вами; нулевые декларации подаются даже тогда, когда дохода не было. На неуплаченный налог начисляется пеня 0,075 % за каждый день просрочки с потолком в 730 дней (ст. 401 Налогового кодекса РА). Годовая декларация физлица за 2025 год подаётся и корректируется до 1 ноября 2026 включительно (закон ՀՕ-324-Ն от 24.10.2025); штраф за неподачу — 50 000 драмов для предпринимателей и 5 000 драмов для прочих граждан. Существует заморозка — обратимая приостановка, при которой всё за период до заморозки должно быть закрыто. Проверено 04.09.2026."
+            "text": "Да: с 1 ноября 2026 года обладатель временного или постоянного статуса пребывания при отсутствии в Республике Армения 183 дня и более обязан уведомить уполномоченный орган через электронную платформу за 10 дней после истечения 183 дней, иначе статус пребывания аннулируется."
           }
         },
         {
           "@type": "Question",
-          "name": "Смогу ли я зайти в армянские государственные кабинеты, потеряв армянскую SIM?",
+          "name": "На каких языках выдаётся справка о несудимости МИД РА и сколько стоит электронный апостиль в Армении?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Портал государственного реестра e-register.moj.am и кабинет налоговой self-portal.taxservice.am работают через логин платформы «Ես Եմ», а декларация подаётся только электронно с подписью: eID — чиповая ID-карта плюс картридер, mID — ID-SIM армянского оператора. Облачная подпись CoSign названа вариантом для иностранных граждан, но можно ли оформить её уже находясь за границей, официально не подтверждено. Надёжная мера: пока вы здесь и SIM работает, зайти в оба кабинета своими руками. Проверено 04.09.2026."
+            "text": "Справка об отсутствии судимости МИД РА выдаётся сразу на 2 языках (армянском и одном из 5 иностранных языков: русском, английском, немецком, испанском или французском), при этом апостиль включён в пошлину 7 000 ֏. Электронный апостиль Министерства юстиции РА на иные документы стоит 7 000 ֏ за 2 рабочих дня или 10 000 ֏ за 1 рабочий день."
           }
         },
         {
           "@type": "Question",
-          "name": "Апостиль или консульская легализация — как понять, что нужно моей стране?",
+          "name": "Что произойдёт с банковским счётом в Армении, если оставить его без операций после отъезда?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Апостиль признаётся только между участниками Гаагской конвенции — на 30.06.2026 их 130, Армения участвует с 14.08.1994. Если страна назначения в списке, апостиля достаточно; если нет — нужна полная консульская легализация. ОАЭ вне конвенции: армянский апостиль там силы не имеет. Проверка занимает минуту на официальном сайте конвенции hcch.net. Проверено 04.09.2026."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Соберёт ли LTCG пакет документов для Португалии, Испании или ОАЭ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Нет. Виз третьих стран и их иммиграционных программ компания не ведёт, и перечень документов под конкретное консульство задаёт само консульство. Армянская половина: какие документы выдаёт Армения, кто их выдаёт, сколько это стоит, сколько идёт и в каком порядке делается. Требования принимающей стороны берутся на официальном сайте её МИД или консульства."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Как сохранить армянский ВНЖ, уезжая надолго?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "С 1 ноября 2026 обладатель временного или постоянного статуса, отсутствуя в Армении 183 дня и более, обязан уведомить об этом миграционный орган через единую электронную платформу не позднее 10 дней с момента истечения 183-дневного срока — новая ст. 17 ч. 8 Закона «Об иностранцах» в редакции закона ՀՕ-11-Ն от 20.01.2026. Раньше такая обязанность лежала только на обладателях постоянного статуса и порог был другой. Подзаконных актов во исполнение реформы на 04.09.2026 не опубликовано."
+            "text": "По неактивным счетам банки удерживают комиссии: в Converse Bank спящий счёт без операций более 2 лет стоит 5 000 ֏ в месяц, а годовое ведение счёта физлица — 1 200 ֏ (юрлица — 4 800 ֏). В Ameriabank выписка за период старше 6 месяцев стоит 3 000 ֏, нетиповая справка — 5 000 ֏."
           }
         }
       ]
@@ -155,35 +131,14 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     {
       "@type": "Service",
       "@id": "https://ltcg.am/spravki-i-zakrytie.html#service",
-      "name": "Армянские справки, апостилирование и закрытие ИП перед отъездом",
-      "serviceType": "Юридическое и бухгалтерское сопровождение",
+      "name": "Истребование справок, сертификатов резидентства и закрытие ИП в Армении",
+      "serviceType": "Юридическое и налоговое сопровождение при релокации из Армении",
       "areaServed": { "@type": "Country", "name": "Армения" },
-      "provider": { "@id": "https://ltcg.am/#org" },
-      "audience": { "@type": "Audience", "audienceType": "Иностранцы, уезжающие из Армении дальше" }
-    },
-    {
-      "@type": "HowTo",
-      "@id": "https://ltcg.am/spravki-i-zakrytie.html#howto",
-      "name": "В каком порядке собирать армянские документы перед отъездом",
-      "inLanguage": "ru",
-      "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Узнать требования принимающей стороны",
-          "text": "Выяснить у принимающей стороны, что она попросит и какой свежести. Срок годности справки о судимости задаёт она, а не Армения." },
-        { "@type": "HowToStep", "position": 2, "name": "Заказать армянские документы, пока вы здесь",
-          "text": "Справка о судимости — апостиль в пошлине уже есть; сертификат налогового резидентства за закрытый год; бумажная выписка из государственного реестра." },
-        { "@type": "HowToStep", "position": 3, "name": "Проверить вход в кабинеты своими руками",
-          "text": "Зайти в кабинет налоговой и в портал государственного реестра, пока вы в стране и пока работает армянская SIM." },
-        { "@type": "HowToStep", "position": 4, "name": "Закрыть отчётные хвосты",
-          "text": "Закрыть все периоды и подать декларацию, если срок подходит. Годовая декларация физлица за 2025 год подаётся до 1 ноября 2026 включительно." },
-        { "@type": "HowToStep", "position": 5, "name": "Решить, что делать с ИП или компанией",
-          "text": "Закрыть, заморозить или оставить работающим. Это решение идёт последним: закрытие дел может изменить и статус, и доступ к порталам." }
-      ]
+      "provider": { "@id": "https://ltcg.am/#org" }
     }
   ]
 }
 </script>
-<!-- totalTime и estimatedCost у HowTo НЕ выводятся: подтверждённых значений нет.
-     Поле, которого нет, честнее поля с догадкой. -->
 </head>
 <body>
 
@@ -216,21 +171,21 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
     <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 7.5h7M8.5 12h2M13.5 12h2M8.5 16h2M13.5 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
     <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+    <!-- знак хиро: заполняется из assets/hero/logo.svg скриптом -->
+    <symbol id="hsLogoLetters" viewBox="67 524 889 236"></symbol>
+    <symbol id="hsLogoMark" viewBox="67 169 889 590"></symbol>
   </defs>
 </svg>
 
-<!-- ═══ Шапка сайта ══════════════════════════════════════════════
-     На ветке хиро нет: LCP — это h1, а не картинка. Шапка показывается сразу,
-     потому что site.js не находит #hero и включает её без наблюдателя. -->
 <header class="hdr glass" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="./" data-path="" aria-label="LTCG — на главную">
-      <!-- знак выбирается по ТЕМЕ через  logo-gold / logo-ink: золото на бумаге дало бы 1.5:1 -->
+    <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
       <picture data-logo="gold">
         <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
         <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
@@ -242,1306 +197,537 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
       </picture>
     </a>
-    <nav class="hdr__nav" aria-label="Разделы страницы">
-      <a href="#answer">Ответ</a>
-      <a href="#traps">Где ломается</a>
-      <a href="#price">Цены</a>
-      <a href="#faq">Вопросы</a>
-    </nav>
-    <div class="hdr__contacts">
-      <a class="hdr__phone" href="tel:+37494184014">+374 94 184 014</a>
-      <a class="btn btn--icon btn--ghost hdr__phone-ico" href="tel:+37494184014" aria-label="Позвонить +374 94 184 014"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
-      <a class="btn btn--icon btn--ghost" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
-      <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН: номер тот же, наличие WhatsApp на нём никто
-           не проверял. Не подтвердится — снимаются все ссылки с data-wa. -->
-      <a class="btn btn--icon btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+    <div class="hdr__mid">
+      <nav class="hdr__nav" aria-label="Разделы">
+        <a href="./home-ru.html#where">Этапы</a>
+        <a href="./home-ru.html#calc">Калькулятор</a>
+        <a href="./home-ru.html#services">Услуги</a>
+        <a href="./noyabr.html">С 1 ноября</a>
+        <a href="./home-ru.html#contact">Контакты</a>
+      </nav>
+      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
-    <a class="btn btn--primary btn--sm hdr__cta" href="#contact">Обсудить <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <nav class="lang" aria-label="Язык сайта">
-      <!-- Переключатель языков на ветке ведёт на ГЛАВНУЮ соответствующей версии:
-           армянского и английского эквивалента у этой ветки нет. -->
-      <a href="hy/" data-path="hy/" lang="hy" hreflang="hy"><span class="lang__code" aria-hidden="true">HY</span><span class="lang__name">Հայերեն</span></a>
-      <a href="./" data-path="" lang="ru" aria-current="page"><span class="lang__code" aria-hidden="true">RU</span><span class="lang__name">Русский</span></a>
-      <a href="en/" data-path="en/" lang="en" hreflang="en"><span class="lang__code" aria-hidden="true">EN</span><span class="lang__name">English</span></a>
-    </nav>
+    <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
+         меню не собирается, и мёртвой кнопки на экране быть не должно.
+         Содержимое панели js/menu-mobile.js берёт из самой страницы и из
+         подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+      <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menu-txt">Меню</span>
+    </button>
+
     <div class="themer" role="group" aria-label="Тема оформления" data-themer>
       <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
       <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
       <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
-      <svg data-ico="menu" aria-hidden="true"><use href="#i-menu"/></svg>
-      <svg data-ico="close" aria-hidden="true"><use href="#i-close"/></svg>
-    </button>
   </div>
 </header>
 
-<div class="menu glass" id="menu" hidden>
-  <nav class="menu__list" aria-label="Разделы страницы">
-    <a href="#answer">Короткий ответ</a>
-    <a href="#fork">Где вы будете</a>
-    <a href="#spravka">Справка о несудимости</a>
-    <a href="#apostil">Апостиль и перевод</a>
-    <a href="#nalogi">Налоговые справки</a>
-    <a href="#zakrytie">Закрытие ИП</a>
-    <a href="#traps">Где ломается</a>
-    <a href="#order">Порядок</a>
-    <a href="#price">Сколько стоит</a>
-    <a href="#faq">Вопросы</a>
-    <a href="#contact">Контакты</a>
-  </nav>
-  <div class="menu__row">
-    <a class="btn btn--primary" href="#contact">Обсудить отъезд <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <a class="btn btn--outline" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg> +374 94 184 014</a>
-  </div>
-  <div class="themer" role="group" aria-label="Тема оформления" data-themer>
-    <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
-    <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
-    <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
-  </div>
-  <nav class="menu__langs" aria-label="Язык сайта">
-    <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-    <a href="./" data-path="" lang="ru" aria-current="page">Русский</a>
-    <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-  </nav>
-</div>
+<div class="hdr-gap" aria-hidden="true"></div>
 
 <main id="main">
 
-<!-- ═══ Блок 01 · Шапка ветки ════════════════════════════════════ -->
-<!-- data-rail-skip: шапка ветки в рейку не идёт, иначе её нумерация разойдётся
-     с номерами в кикерах разделов. -->
-<section class="section" id="start" data-rail-skip aria-labelledby="branch-title">
+<!-- ═══ 01 · Hero (Ветка 06) ═════════════════════════════════════ -->
+<section class="section section--grid section--art" id="start" data-rail-label="Короткий ответ" aria-labelledby="branch-title">
+  <div class="nov-art nov-art--guilloche" aria-hidden="true"></div>
   <div class="wrap">
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">Ветка 06</span> Двигаюсь дальше</p>
-      <h1 class="h1" id="branch-title">Справка о несудимости, апостиль и закрытие ИП в Армении: <em>что успеть, пока вы ещё здесь</em></h1>
-      <p class="lead">Вы уезжаете из Армении дальше — и вдруг выясняется, что часть бумаг выдают
-        только здесь, часть теряет силу к моменту, когда понадобится, а ИП, которое вы «просто
-        перестали использовать», продолжает начислять.</p>
-
-      <p class="small measure"><b>Кому эта страница не нужна.</b> Если вы только приехали и вам
-        нужен счёт, соцкарта и адрес — это не сюда, это ветка
-        <a class="lnk" href="schet-v-banke.html">«Только приехал»</a>. Если вы остаётесь и
-        разбираетесь, чей вы налоговый резидент и что делать с обменом данными, — ветка
-        <a class="lnk" href="rezidentstvo-i-crs.html">«Живу и планирую»</a>. Если вы ещё в стране
-        исхода и не знаете, что закрыть до вылета, — ветка
-        <a class="lnk" href="pered-pereezdom.html">«Ещё не переехал»</a>. Эта страница про один
-        момент: вы уже жили в Армении, у вас здесь остались документы и обязанности, и вы отсюда
-        уезжаете.</p>
-
-      <p class="note measure"><b>Чего на этой странице нет — и не будет.</b> Мы не подаём на визы
-        третьих стран, не ведём их иммиграционные программы и не составляем перечень документов
-        под требования конкретного консульства. Перечень задаёт принимающая сторона, и он у неё
-        меняется. Наша половина — армянская: какие документы Армения выдаёт, кто их выдаёт,
-        сколько это стоит, сколько идёт и в каком порядке это надо делать, чтобы не пришлось
-        повторять из-за границы.</p>
-
-      <nav class="pathbar" aria-label="Шесть веток">
-        <ol class="pathbar__list">
-          <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
-          <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
-          <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
-          <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
-          <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
-          <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></span></li>
-        </ol>
-      </nav>
-
-      <!-- Слот: «Проверил: имя юриста LTCG и дата подписи». Без закрытого слота дата
-           проверки на странице не публикуется — до тех пор стоит мягкая метка. -->
-      <p class="sign">
-        <span>Источники проверены 04.09.2026</span>
-        <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>подпись юриста LTCG</span>
-        <span><a class="lnk" href="home-ru.html#where">Посмотреть, как устроен весь путь</a></span>
-      </p>
-    </header>
-  </div>
-</section>
-
-<!-- ═══ Блок 02 · Прямой ответ ═══════════════════════════════════ -->
-<section class="section" id="answer" data-rail-label="Короткий ответ" aria-labelledby="answer-t">
-  <div class="wrap">
-    <div class="answer" data-reveal>
-      <h2 class="kicker" id="answer-t"><span class="kicker__no">01</span> Короткий ответ</h2>
-
-      <p class="answer__p"><b>Пока вы физически в Армении, три вещи стоят дёшево и идут дни.</b>
-        После отъезда те же документы дорожают в разы и начинают зависеть от доверенности: та же
-        справка через посольство или консульство РА за границей стоит 25 000 драм плюс пересылка,
-        а к электронным сервисам — реестру юрлиц и кабинету налоговой — вход идёт через армянскую
-        платформу идентификации, и без армянской ID-карты или SIM в них можно просто не попасть.</p>
-
-      <ol class="answer__facts" role="list">
-        <li><span>Справка об отсутствии судимости — <b>7 000 драм</b> с уже включённым апостилем.
-          <span class="src">Источник: <a href="https://www.mfa.am/ru/criminal-record-certificate" rel="noopener">mfa.am/ru/criminal-record-certificate</a> · проверено 04.09.2026.</span></span></li>
-
-        <li><span>Сертификат о статусе налогового резидента РА — <b>бесплатно и за 2 рабочих дня</b>
-          через <span class="mono">e-services.src.am</span>.
-          <span class="src">Форма утверждена приказом председателя Комитета госдоходов
-          <b>№345-Ն от 08.06.2018</b> · проверено 04.09.2026.</span></span></li>
-
-        <li><span>Выписка из государственного реестра — <b>3 000 драм</b>.
-          <span class="src">Источник: <a href="https://www.e-register.am/" rel="noopener">e-register.moj.am</a> · 04.09.2026.</span></span></li>
-
-        <li><span>Отдельно от справок стоит вторая половина: ИП или компания, которые остались
-          открытыми. Пока ИП не снято с учёта, обязанность отчитываться сохраняется, а на
-          неуплаченный налог начисляется пеня <b>0,075 % за каждый день просрочки, но не более
-          чем за 730 дней</b>.
-          <span class="src">Ст. 401 Налогового кодекса РА. Текст статьи первоисточником не
-          подтверждён — см. <a href="#trap-07">раздел «Где ломается»</a> · 04.09.2026.</span></span></li>
-
-        <li><span>Поэтому правильный порядок такой: сначала выясняете, что от вас потребует
-          принимающая сторона, потом — пока вы здесь — заказываете армянские документы и
-          закрываете отчётные хвосты, и только потом уезжаете. Обратный порядок работает тоже,
-          но стоит дороже и занимает месяцы вместо дней.
-          <span class="src">Разбор порядка — <a href="#order">раздел «В каком порядке всё это
-          делать»</a>.</span></span></li>
+    <nav class="pathbar" aria-label="Шесть веток">
+      <ol class="pathbar__list">
+        <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
+        <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
+        <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
+        <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
+        <li class="pathbar__i"><a href="rezidentstvo-i-crs.html"><span class="pathbar__n">05</span><span>Живу и планирую</span></a></li>
+        <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></span></li>
       </ol>
+    </nav>
+
+    <div class="branch-hero" data-reveal>
+      <div class="section__head section__head--wide">
+        <p class="kicker"><span class="kicker__no">01 · Ветка 06</span> Двигаюсь дальше · Справки МИД и КГД РА, закрытие ИП и счетов</p>
+        <h1 class="h1" id="branch-title">Справки и закрытие дел в Армении: <em>МИД, КГД и выход без долгов</em></h1>
+        <p class="lead">При переезде из Армении важно собрать справки до вылета или по доверенности и закрыть бизнес без долгов. Справка о несудимости с апостилем в Ереване стоит <b>7 000 ֏</b> за <b>5 рабочих дней</b> против <b>25 000 ֏</b> в консульстве, а закрытие ИП или <b>180 дней</b> без налогов после 01.11.2026 прекращает ВНЖ по бизнесу.</p>
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--primary" href="#contact">Собрать пакет справок и закрыть хвосты <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="#skolko">Рассчитать сопровождение <svg aria-hidden="true"><use href="#i-calc"/></svg></a>
+        </div>
+      </div>
+      <aside class="branch-visual" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+          <img src="assets/img/nov-shot-1100.jpg" width="1100" height="733" alt="" fetchpriority="high">
+        </picture>
+        <div class="branch-visual__hud">
+          <span><b>Ветка 06 · Справки и закрытие</b>Несудимость МИД РА, апостиль и ликвидация ИП</span>
+          <span>Ереван · LTCG</span>
+        </div>
+      </aside>
     </div>
 
-    <div class="bignums" style="margin-top: var(--s-10)" data-reveal>
-      <div class="bignum">
-        <p class="bignum__n">7 000<small> ֏</small></p>
-        <p class="bignum__u">справка · пока вы здесь</p>
-        <p class="bignum__d">Справка об отсутствии судимости в Армении, и апостиль уже включён —
-          отдельно за него платить не нужно.
-          <span class="src">Источник: mfa.am · 04.09.2026.</span></p>
-      </div>
-      <div class="bignum">
-        <p class="bignum__n">25 000<small> ֏</small></p>
-        <p class="bignum__u">та же справка · оттуда</p>
-        <p class="bignum__d">Через посольство или консульство РА за рубежом. Тариф в силе
-          с 01.01.2026.
-          <span class="src">Источник: mfa.am/en/fees · 04.09.2026.</span></p>
-      </div>
-      <div class="bignum">
-        <p class="bignum__n">430<small> ֏</small></p>
-        <p class="bignum__u">доставка · внутри Армении</p>
-        <p class="bignum__d">За границу — 11 000–25 000 либо 16 000–30 000 драм: две официальные
-          страницы называют разные вилки.
-          <span class="src">Источники: mfa.am и consular.e-gov.am · 04.09.2026.</span></p>
+    <div class="answer" data-reveal>
+      <div class="bignums" data-stagger aria-label="Ключевые пошлины и сроки">
+        <div class="bignum">
+          <span class="bignum__val">7 000 <small>֏</small></span>
+          <span class="bignum__lbl">справка о несудимости МИД РА с апостилем за <b>5 рабочих дней</b> в Ереване (доставка <b>430 ֏</b>; в консульстве — <b>25 000 ֏</b>)</span>
+          <span class="src">МИД РА · mfa.am · hartak.am</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">2 <small>р. д. · 0 ֏</small></span>
+          <span class="bignum__lbl">бесплатная электронная выдача сертификата резидента КГД РА через «Ես Եմ»</span>
+          <span class="src">ст. 25 НК РА · e-services.src.am</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">180 <small>дней</small></span>
+          <span class="bignum__lbl">закрытие ИП или <b>180 дней</b> без налогов отменяют бизнес-ВНЖ (по ООО — <b>1 месяц</b> на реинвестирование)</span>
+          <span class="src">ст. 29.4 ч. 5 ՀՕ-11-Ն</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">10 <small>дней</small></span>
+          <span class="bignum__lbl">срок уведомления через платформу после <b>183 дней</b> отсутствия в РА для сохранения ВНЖ или ПМЖ</span>
+          <span class="src">ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ Блок 03 · Развилка ═══════════════════════════════════════ -->
-<section class="section" id="fork" data-rail-label="Где вы будете" aria-labelledby="fork-t">
+<!-- ═══ 02 · Интерактивная развилка (.fork) ══════════════════════ -->
+<section class="section section--deep section--thread section--light" id="zadacha" data-rail-label="Ваша задача" aria-labelledby="fork-t">
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker" id="fork-t"><span class="kicker__no">02</span> Развилка</p>
-      <p class="lead">Все четыре исхода расписаны ниже целиком — не для того, чтобы вы выбрали
-        один, а чтобы вы увидели, чем один отличается от другого. Ничего не отправляется и ни
-        у кого не спрашивается.</p>
+      <p class="kicker"><span class="kicker__no">02</span> Ваша задача перед отъездом</p>
+      <h2 class="h2" id="fork-t">Что нужно оформить — <em>покажем сроки, пошлины и порядок</em></h2>
     </div>
 
-    <!-- Развилка живёт в своём теге form, как в каноне: приёмник заявки — отдельная форма
-         ниже, и её скрипт прячет только себя. -->
-    <form method="dialog">
-      <fieldset class="fork">
-        <legend class="fork__q">Где вы будете, когда эти документы понадобятся?</legend>
+    <fieldset class="fork" data-reveal>
+      <legend class="sr-only">Выберите задачу перед отъездом из Армении</legend>
+      <input class="fork__r" type="radio" name="exit-fork" id="ef-cert" checked>
+      <input class="fork__r" type="radio" name="exit-fork" id="ef-tax">
+      <input class="fork__r" type="radio" name="exit-fork" id="ef-ip">
+      <input class="fork__r" type="radio" name="exit-fork" id="ef-bank">
 
-        <input class="fork__r" type="radio" name="fork" id="fk-a" value="a-date-known">
-        <input class="fork__r" type="radio" name="fork" id="fk-b" value="b-country-unknown">
-        <input class="fork__r" type="radio" name="fork" id="fk-c" value="c-already-left">
-        <input class="fork__r" type="radio" name="fork" id="fk-d" value="d-business-stays">
+      <div class="fork__opts" aria-label="Задача перед отъездом">
+        <label class="fork__opt" for="ef-cert"><span class="fork__tag">Справка о несудимости и легализация</span><span class="fork__sub">7 000 ֏ с апостилем в МИД РА за 5 р. дней</span></label>
+        <label class="fork__opt" for="ef-tax"><span class="fork__tag">Сертификат налогового резидента</span><span class="fork__sub">КГД РА за 2 рабочих дня бесплатно (0 ֏)</span></label>
+        <label class="fork__opt" for="ef-ip"><span class="fork__tag">Закрытие ИП или ООО и ВНЖ</span><span class="fork__sub">Ликвидационная отчётность и влияние на карту ВНЖ</span></label>
+        <label class="fork__opt" for="ef-bank"><span class="fork__tag">Закрытие или сохранение счетов</span><span class="fork__sub">Выписки (3 000 ֏) и уведомление ФНС за 1 месяц</span></label>
+      </div>
 
-        <div class="fork__opts">
-          <label class="fork__opt" for="fk-a"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Дата отъезда известна, до неё есть хотя бы месяц</b>Виза или программа уже понятна, билеты куплены или почти куплены, вы ещё в Армении</span></label>
-          <label class="fork__opt" for="fk-b"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Уезжаю, но дата и страна ещё не определились</b>Решение принято, направление — нет. Или направлений два-три и они конкурируют</span></label>
-          <label class="fork__opt" for="fk-c"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Я уже уехал, документы нужны оттуда</b>Уехали и обнаружили недостающую бумагу на этапе подачи</span></label>
-          <label class="fork__opt" for="fk-d"><span class="fork__box" aria-hidden="true"></span>
-            <span class="fork__t"><b>Уезжаю, а ИП или компания остаются здесь</b>ВНЖ был получен под предпринимательскую деятельность, бизнес остаётся работающим, или «пока не стал закрывать»</span></label>
+      <div class="fork__outs">
+        <article class="tile fork__out" data-for="ef-cert">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+              <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Справка об отсутствии судимости и консульские сборы</b> МИД РА · mfa.am · hartak.am</p>
+          <h3 class="h3">Оформите в Ереване за 7 000 ֏ или по доверенности через юриста LTCG</h3>
+          <p>Справка о несудимости в Ереване или онлайн стоит <b>7 000 ֏</b> с апостилем за <b>5 рабочих дней</b> на <b>2 языках</b> — армянском и одном из <b>5 иностранных языков</b> (доставка по РА — <b>430 ֏</b>; в консульстве — <b>25 000 ֏</b>). Консульская легализация в МИД РА с 01.01.2026 стоит <b>5 000 ֏</b> (ФЛ) и <b>15 000 ֏</b> (ЮЛ), подпись — <b>7 000 ֏</b>, перевод — <b>7 000 ֏</b>, <b>10 000 ֏</b> или <b>15 000 ֏</b> за стр. <span class="src">mfa.am/ru/criminal-record-certificate · mfa.am/en/fees · hartak.am</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Заказать справку и перевод <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
+
+        <article class="tile fork__out" data-for="ef-tax">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+              <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Сертификат налогового резидента РА</b> ст. 25 НК РА · e-services.src.am</p>
+          <h3 class="h3">Электронная выдача за 2 рабочих дня бесплатно (0 ֏)</h3>
+          <p>При пребывании в Армении <b>183 дня</b> и более в году (<b>12 месяцев</b>) либо центре интересов в РА вы признаётесь резидентом за весь год. Сертификат выдаётся КГД РА через «Ես Եմ» за <b>2 рабочих дня</b> бесплатно (<b>0 ֏</b>). <span class="src">ст. 25 ч. 1, ч. 5 НК РА · e-services.src.am</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Оформить сертификат резидента <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
+
+        <article class="tile fork__out" data-for="ef-ip">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+              <img src="assets/img/nov-shot-1100.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Прекращение деятельности ИП / ликвидация ООО</b> КГД РА и ст. 29.4 ч. 5 ՀՕ-11-Ն</p>
+          <h3 class="h3">Сначала финальные декларации и расчёт по налогам, затем госрегистр</h3>
+          <p>Снятие ИП с учёта в госрегистре без закрытия обязательств в КГД оставляет пени. С 01.11.2026 регистрация прекращения ИП или ликвидации компании (а при выходе из ООО — без реинвестирования за <b>1 месяц</b>) ведёт к отмене ВНЖ. <span class="src">ст. 29.4 ч. 5 ՀՕ-11-Ն · КГД РА</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Разобрать закрытие ИП или ООО <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
+
+        <article class="tile fork__out" data-for="ef-bank">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
+              <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Банковские счета, архивные выписки и ФЗ-173</b> Тарифы банков РА</p>
+          <h3 class="h3">Возьмите справки об остатке и закройте ненужные счета до отъезда</h3>
+          <p>В Ameriabank выписка старше <b>6 месяцев</b> стоит <b>3 000 ֏</b>, нетиповая справка — <b>5 000 ֏</b>; в Converse Bank спящий счёт более <b>2 лет</b> списывает <b>5 000 ֏</b>/мес, а годовое ведение ФЛ — <b>1 200 ֏</b> (ЮЛ — <b>4 800 ֏</b>). О закрытии счёта резидент РФ (менее <b>183 дней</b> вне РФ) уведомляет ФНС за <b>1 месяц</b>. <span class="src">Ameriabank ред. 51 от 11.09.2026 · Converse Bank от 03.09.2026 · ч. 2 ст. 12 ФЗ-173</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Подготовить банковские справки <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
+        </article>
+      </div>
+    </fieldset>
+
+    <aside class="dated-box" aria-label="В Ереване по доверенности или через консульство">
+        <div class="dated-box__head">
+          <span class="dated-box__badge"><svg aria-hidden="true"><use href="#i-check"/></svg> Проверка на 18.10.2026</span>
+          <span class="src">МИД РА · КГД РА · ՀՕ-11-Ն</span>
         </div>
-
-        <div class="fork__outs">
-          <article class="fork__out">
-            <p class="fork__out__k">Исход A</p>
-            <h3 class="fork__out__t">Всё по государственному тарифу и по официальным срокам</h3>
-            <p>Сначала выясняете срок годности, который принимающая сторона ставит справке
-              о судимости, — и от него считаете назад. Испания для визы цифрового кочевника
-              требует справку <b>не старше 6 месяцев</b>, если в самом документе не указан иной
-              срок. У Португалии на официальной странице национальной визы срока годности нет
-              вообще — там требование другое: справка страны происхождения <b>либо страны, где
-              вы прожили больше года</b>. То есть если вы прожили в Армении больше года,
-              армянская справка — не «дополнительная», а основная.</p>
-            <p>Дальше — заказываете справку с апостилем, сертификат резидентства, выписку из
-              реестра, закрываете отчётность и снимаете ИП с учёта, если оно вам дальше не нужно.</p>
-            <p class="src"><b>Чем платит.</b> Ничем, кроме дисциплины. Это единственный исход,
-              в котором всё стоит по государственному тарифу и идёт по официальным срокам.
-              Источники: exteriores.gob.es, консульская инструкция, и vistos.mne.gov.pt ·
-              оба проверены 04.09.2026.</p>
-          </article>
-
-          <article class="fork__out">
-            <p class="fork__out__k">Исход B</p>
-            <h3 class="fork__out__t">Заказать всё заранее — ловушка, но кое-что не протухает</h3>
-            <p>Соблазн — «закажу всё заранее, пусть лежит». Это ловушка: справка о судимости не
-              имеет установленного законом РА срока годности, но принимающая сторона считает
-              свежесть сама, и документ, взятый за год до подачи, у половины консульств
-              не пройдёт.</p>
-            <p>Разумный минимум, который не протухает: <b>сертификат налогового резидентства
-              за уже закрытый календарный год</b> (он привязан к году, а не к дате выдачи),
-              <b>выписка из государственного реестра на бумаге</b> и порядок в отчётности.
-              Справку о судимости оставляете на момент, когда страна определилась.</p>
-            <p class="src"><b>Чем платит.</b> Вторым заходом. Часть документов вы, скорее всего,
-              закажете дважды, и второй раз может прийтись уже на зарубежный тариф.</p>
-          </article>
-
-          <article class="fork__out">
-            <p class="fork__out__k">Исход C</p>
-            <h3 class="fork__out__t">Одна дверь остаётся открытой, остальные требуют армянского входа</h3>
-            <p>Справка о судимости заказывается через дипломатическое представительство или
-              консульское учреждение РА — <b>25 000 драм</b> против 7 000 в Ереване, плюс
-              пересылка. Электронная консульская система <span class="mono">consular.e-gov.am</span>
-              — единственный найденный государственный сервис Армении, вход в который
-              <b>не требует</b> ни армянской ID-карты, ни армянской SIM: регистрация через
-              <span class="mono">nid.e-gov.am</span> по имени, фамилии, номеру документа и email.</p>
-            <p>Для всего остального — реестра юрлиц, кабинета налоговой, годовой декларации —
-              нужен вход через армянскую платформу идентификации и электронная подпись, и вот
-              здесь уехавший обычно и упирается.</p>
-            <p class="src"><b>Чем платит.</b> Деньгами и временем. Плюс тем, что часть действий
-              из-за границы делается только через представителя, а доверенность на него сама
-              требует нотариуса, апостиля и перевода. Источник тарифа: mfa.am/en/fees, в силе
-              с 01.01.2026 · проверено 04.09.2026.</p>
-          </article>
-
-          <article class="fork__out">
-            <p class="fork__out__k">Исход D</p>
-            <h3 class="fork__out__t">Закрыть, заморозить или оставить работающим — три разных решения</h3>
-            <p>Это не одно решение, а три, и их надо развести. <b>Закрыть</b> — снять ИП с учёта
-              в Агентстве государственного регистра (Минюст РА), после чего обязанности
-              прекращаются. <b>Заморозить</b> — обратимая приостановка, не требует ни
-              ликвидационной комиссии, ни налоговой проверки, но все налоги, взносы и отчёты
-              <b>за период до заморозки должны быть закрыты</b>. <b>Оставить работающим</b> —
-              законно, но тогда отчётность идёт и вести её надо из-за границы, а доступ
-              к порталам — см. исход C.</p>
-            <p class="src"><b>Чем платит.</b> Двумя рисками сразу. Первый: брошенное ИП тихо
-              накапливает пеню и штрафы. Второй: если ваш вид на жительство выдан под
-              предпринимательскую деятельность, закрытие ИП может затронуть сам статус — это
-              утверждение стоит на одном коммерческом источнике и требует подтверждения юристом;
-              ставим его как вопрос, а не как факт. Про заморозку: сводно по нескольким
-              коммерческим источникам, официальной страницы услуги найти не удалось · 04.09.2026.</p>
-          </article>
+        <p class="dated-box__title">Почему выгоднее получить справки и закрыть ИП в Ереване по доверенности</p>
+        <div class="shift" role="group" aria-label="Сравнение: консульство за рубежом vs Ереван по доверенности">
+          <div class="shift__col shift__col--was">
+            <span class="shift__tag">После отъезда без доверенности</span>
+            <p class="shift__val">25 000 ֏ в консульстве и спящие счета</p>
+            <p class="shift__note">Справка через консульство стоит <b>25 000 ֏</b>, брошенный ИП копит требования КГД, а спящий счёт в Converse Bank списывает <b>5 000 ֏</b>/мес после <b>2 лет</b>.</p>
+          </div>
+          <div class="shift__col shift__col--becomes">
+            <span class="shift__tag">В Ереване с юристом LTCG</span>
+            <p class="shift__val">7 000 ֏ за 5 р. дней и чистый баланс КГД</p>
+            <p class="shift__note">По доверенности получаем справку МИД РА с апостилем на <b>2 языках</b> за <b>7 000 ֏</b>, сертификат КГД за <b>2 рабочих дня</b> (<b>0 ֏</b>), сдаём отчёты и закрываем счета.</p>
+          </div>
         </div>
-      </fieldset>
-    </form>
+      </aside>
   </div>
 </section>
 
-<!-- ═══ Блок 05 · Как это устроено · Справка о несудимости ═══════ -->
-<section class="section" id="spravka" data-rail-label="Справка" aria-labelledby="spravka-t">
+<!-- ═══ 03 · Таблица пошлин, сроков и органов РА ═════════════════ -->
+<section class="section section--grid section--thread section--art" id="sroki" data-rail-label="Сроки и пошлины" aria-labelledby="tbl-t">
+  <div class="nov-art nov-art--stone" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">03</span> Как это устроено</p>
-      <h2 class="h2" id="spravka-t">Справка об отсутствии судимости: <em>МИД, а не полиция</em></h2>
-      <p class="lead">Все суммы — в драмах: это государственные пошлины и тарифы, и они названы
-        в драмах в самих источниках. Дата у строки — день, когда мы открывали источник.</p>
+      <p class="kicker"><span class="kicker__no">03</span> Регламенты и тарифы</p>
+      <h2 class="h2" id="tbl-t">Справки, легализация и закрытие дел: <em>официальные сроки и пошлины</em></h2>
     </div>
 
-    <div class="bignums" data-reveal>
-      <div class="bignum">
-        <p class="bignum__n">2<small> рабочих дня</small></p>
-        <p class="bignum__u">срок · consular.e-gov.am</p>
-        <p class="bignum__d">Так написано на электронной консульской странице услуги.
-          <span class="src">Источник официальный · проверено 04.09.2026.</span></p>
-      </div>
-      <div class="bignum">
-        <p class="bignum__n">5<small> рабочих дней</small></p>
-        <p class="bignum__u">срок · mfa.am</p>
-        <p class="bignum__d">Так написано на странице услуги того же ведомства.
-          <span class="src">Источник официальный · проверено 04.09.2026.</span></p>
-      </div>
-    </div>
-
-    <p class="note measure" style="margin-top: var(--s-6)" data-reveal><b>Про расхождение по сроку — прямо.</b>
-      На двух официальных страницах одного и того же государственного органа срок выдачи указан
-      по-разному: <b>2 и 5 рабочих дней</b>. Мы не знаем, какая из них устарела, и выдумывать
-      среднее не будем. Планируйте по пяти: если получится за два — вы выиграли три дня, а не
-      потеряли неделю. Тот же принцип с доставкой за границу: берите верхнюю границу —
-      30 000 драм.</p>
-
-    <div class="diy-wrap" style="margin-top: var(--s-8)" data-reveal>
-      <table class="diy">
-        <caption>Справка об отсутствии судимости: кто выдаёт, сколько стоит и сколько идёт.
-          Обращение к официальным страницам — 04.09.2026.</caption>
+    <div class="table-wrap" role="region" aria-labelledby="tbl-t" tabindex="0" data-reveal>
+      <table class="tbl">
         <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr>
+          <tr>
+            <th scope="col">Документ или процедура</th>
+            <th scope="col">Орган / банк РА</th>
+            <th scope="col">Пошлина / тариф</th>
+            <th scope="col">Срок и условия</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Кто выдаёт</th>
-            <td data-l="Значение" class="us">Консульское управление МИД РА — <b>не полиция</b>. Проверка данных идёт через информационный центр полиции, но заявитель имеет дело только с МИД</td>
-            <td data-l="Источник">mfa.am/ru/criminal-record-certificate · 04.09.2026</td>
+            <td><b>Справка об отсутствии судимости (в Ереване или онлайн)</b></td>
+            <td>МИД РА (<code>mfa.am</code> / <code>hartak.am</code>)</td>
+            <td><b>7 000 ֏</b> (с апостилем; доставка <b>430 ֏</b>)</td>
+            <td>До <b>5 рабочих дней</b> на <b>2 языках</b> (армянском и одном из <b>5 иностранных языков</b>); с <b>16 лет</b> лично или по доверенности (<b>14–16 лет</b> — через родителя). <span class="src">mfa.am · hartak.am</span></td>
           </tr>
           <tr>
-            <th scope="row">Пошлина в Армении</th>
-            <td data-l="Значение" class="us"><b>7 000 драм</b>, и апостиль уже включён — отдельно за него платить не нужно</td>
-            <td data-l="Источник">mfa.am · 04.09.2026</td>
+            <td><b>Справка о несудимости (через консульство за рубежом)</b></td>
+            <td>Консульства РА (<code>mfa.am/en/fees</code>)</td>
+            <td><b>25 000 ֏</b></td>
+            <td>Тариф с 01.01.2026; дольше, чем подача в Ереване по доверенности. <span class="src">mfa.am/en/fees</span></td>
           </tr>
           <tr>
-            <th scope="row">Пошлина из-за рубежа</th>
-            <td data-l="Значение"><b>25 000 драм</b> через посольство или консульство РА за рубежом; тариф в силе с 01.01.2026</td>
-            <td data-l="Источник">mfa.am/en/fees · 04.09.2026</td>
+            <td><b>Консульская легализация МИД и электронный апостиль Минюста РА</b></td>
+            <td>МИД РА и Минюст РА (<code>hartak.am</code>)</td>
+            <td>МИД: <b>5 000 ֏</b> (ФЛ) / <b>15 000 ֏</b> (ЮЛ); подпись — <b>7 000 ֏</b>; перевод — <b>7 000 ֏</b> / <b>10 000 ֏</b> / <b>15 000 ֏</b></td>
+            <td>Электронный апостиль через <code>hartak.am</code>: <b>7 000 ֏</b> за <b>2 рабочих дня</b>, за <b>1 рабочий день</b> — <b>10 000 ֏</b>. <span class="src">mfa.am/en/fees · hartak.am</span></td>
           </tr>
           <tr>
-            <th scope="row">Срок выдачи</th>
-            <td data-l="Значение"><b>Расхождение двух официальных страниц.</b> mfa.am: <b>5 рабочих дней</b>. consular.e-gov.am: <b>2 рабочих дня</b></td>
-            <td data-l="Источник">оба источника официальные · 04.09.2026</td>
+            <td><b>Сертификат налогового резидента РА</b></td>
+            <td>КГД РА (<code>e-services.src.am</code>, «Ես Եմ»)</td>
+            <td><b>0 ֏</b> (бесплатно)</td>
+            <td><b>2 рабочих дня</b> при наличии <b>183 дней</b> в году (<b>12 месяцев</b>) или центра интересов. <span class="src">ст. 25 НК РА · e-services.src.am</span></td>
           </tr>
           <tr>
-            <th scope="row">Доставка по Армении</th>
-            <td data-l="Значение"><b>430 драм</b> — обе официальные страницы сходятся</td>
-            <td data-l="Источник">mfa.am + consular.e-gov.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Доставка за границу</th>
-            <td data-l="Значение"><b>Второе расхождение.</b> mfa.am: 16 000–30 000 драм. consular.e-gov.am и hartak.am: 11 000–25 000 драм в зависимости от страны</td>
-            <td data-l="Источник">оба источника официальные · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Кто может подать</th>
-            <td data-l="Значение">С 16 лет — лично; за вас — родитель, брат, сестра, супруг, ребёнок или доверенное лицо; за 14–16-летних — законный представитель</td>
-            <td data-l="Источник">mfa.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Языки</th>
-            <td data-l="Значение">Армянский плюс один иностранный на выбор: английский, немецкий, испанский, русский, французский</td>
-            <td data-l="Источник">mfa.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Пакет</th>
-            <td data-l="Значение">Заявление установленной формы, действительный паспорт или ID и копия, квитанция об оплате. При подаче через родственника или представителя — дополнительно свидетельство о рождении или браке либо доверенность</td>
-            <td data-l="Источник">mfa.am + consular.e-gov.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Приём в Ереване</th>
-            <td data-l="Значение">Консульское управление МИД, ул. Вазгена Саргсяна 3, Дом правительства 2. Приём заявлений — понедельник, вторник, четверг, пятница, 10:00–12:00</td>
-            <td data-l="Источник">consular.e-gov.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Другие каналы</th>
-            <td data-l="Значение">Электронно через consular.e-gov.am; по почте; через операторов: <b>все отделения «Հայփոստ» (Haypost)</b>, <b>Ардшинбанк — один адрес</b> (Ереван, Тигран Мец 24), <b>Конверс банк — один адрес</b> (Ереван, Хаязнуни 4/6)</td>
-            <td data-l="Источник">consular.e-gov.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок действия</th>
-            <td data-l="Значение">Законодательством РА <b>не установлен</b>. Свежесть требует принимающая сторона, и требование у неё своё</td>
-            <td data-l="Источник">вывод по mfa.am и hartak.am: срок не указан ни там, ни там · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Бланк заявления</th>
-            <td data-l="Значение">Готового бланка в открытом доступе нет: заполняется на месте либо в электронной форме; PDF-бланка не публикуют ни МИД, ни hartak.am</td>
-            <td data-l="Источник">mfa.am, hartak.am · 04.09.2026</td>
+            <td><b>Банковские справки и закрытие счетов</b></td>
+            <td>Ameriabank и Converse Bank</td>
+            <td>Ameriabank: выписка старше <b>6 месяцев</b> — <b>3 000 ֏</b>, справка — <b>5 000 ֏</b>; Converse: спящий счёт более <b>2 лет</b> — <b>5 000 ֏</b>/мес.</td>
+            <td>При закрытии счёта и пребывании вне РФ менее <b>183 дней</b> в году — уведомление ФНС за <b>1 месяц</b>. <span class="src">Ameriabank · Converse Bank · ч. 2 ст. 12 ФЗ-173</span></td>
           </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Блок 05 · Апостиль и перевод ═════════════════════════════ -->
-<section class="section" id="apostil" data-rail-label="Апостиль" aria-labelledby="apostil-t">
-  <div class="wrap">
-    <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">04</span> Как это устроено</p>
-      <h2 class="h2" id="apostil-t">Апостиль и перевод: <em>два органа и один обязательный порядок</em></h2>
     </div>
 
     <figure class="lawquote" data-reveal>
-      <blockquote cite="https://www.moj.am/">
-        <p>Апостилем заверяются только официальные документы, составленные и выданные в РА.</p>
-      </blockquote>
-      <figcaption>
-        <span class="lawquote__art">moj.gov.am</span>
-        <span>Страница услуги Министерства юстиции РА. Иностранные документы в Армении
-          не заверяются. Проверено 04.09.2026.</span>
-        <a href="https://www.moj.am/" rel="noopener">Первоисточник</a>
-      </figcaption>
+      <blockquote>«Справка об отсутствии судимости выдаётся Министерством иностранных дел Республики Армения с проставлением штампа "Апостиль" на двух языках — армянском и одном из пяти иностранных языков (русском, английском, немецком, испанском или французском) — в течение пяти рабочих дней».</blockquote>
+      <figcaption>Регламент МИД РА и портала госуслуг · <a class="lnk" href="https://www.mfa.am/ru/criminal-record-certificate/" target="_blank" rel="noopener noreferrer">mfa.am/ru/criminal-record-certificate</a> · <a class="lnk" href="https://hartak.am/" target="_blank" rel="noopener noreferrer">hartak.am</a></figcaption>
     </figure>
-
-    <div class="diy-wrap" style="margin-top: var(--s-8)" data-reveal>
-      <table class="diy">
-        <caption>Апостиль: правовая база, органы, тарифы и все найденные расхождения.
-          Обращение — 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Правовая база</th>
-            <td data-l="Значение">Закон РА «Об апостилировании официальных документов» ՀՕ-18-Ն от 19.01.2021. Закон <b>только что изменён</b>: поправка ՀՕ-434-Ն принята 27.08.2026 и вступила в силу <b>01.09.2026</b>. Содержание поправки мы не разбирали — <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>что изменилось, разбирает юрист</span></td>
-            <td data-l="Источник"><a href="https://www.arlis.am/hy/acts/230441" rel="noopener">arlis.am/hy/acts/230441</a> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Кто ставит</th>
-            <td data-l="Значение" class="us">Министерство юстиции РА — на обычные официальные документы. <b>Исключение: справки об отсутствии судимости, розыска и уголовного преследования апостилирует Министерство иностранных дел</b> — это прямо написано на официальной странице услуги</td>
-            <td data-l="Источник">moj.gov.am, hartak.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Пошлина и срок</th>
-            <td data-l="Значение"><b>7 000 драм — обычная процедура, 2 рабочих дня</b>; <b>10 000 драм — ускоренная, 1 рабочий день</b></td>
-            <td data-l="Источник">hartak.am, государственный портал услуг, карточка услуги апостиля · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Расхождение по тарифу</th>
-            <td data-l="Значение">Три неофициальных источника (НКО и два коммерческих) сходятся на другой цифре: 7 000 за обычный и <b>доплата 8 000, итого 15 000</b> за ускоренный. Официальная карточка услуги называет 10 000. На страницах Минюста тариф отдельно получить не удалось — 403 и 404</td>
-            <td data-l="Источник">hartak.am против repatarmenia.org, armenian-lawyer.com, alba-translating.ru · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Расхождение по срокам</th>
-            <td data-l="Значение">У неофициальных источников: 1 рабочий день · 2–5 рабочих дней с задержкой до 15 · 2–15 рабочих дней. Официальный ответ — 2 дня обычно, 1 ускоренно</td>
-            <td data-l="Источник">три коммерческих и НКО-источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Онлайн-апостиль</th>
-            <td data-l="Значение">Только для <b>электронных</b> документов, выданных <b>после 16.05.2021</b>, с 16-значным контрольным номером. Документы более ранние — только личным визитом: Минюст, ул. Вазгена Саргсяна 3/8, Ереван 0010</td>
-            <td data-l="Источник">hartak.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Электронный апостиль</th>
-            <td data-l="Значение">Действует с 26.04.2021, выдаётся двуязычным, приходит на почту, распечатывается самостоятельно</td>
-            <td data-l="Источник">armenian-lawyer.com — единственный источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Проверка подлинности</th>
-            <td data-l="Значение">В тексте официальной страницы адрес назван как <span class="mono">www.e-verify.am</span>, а сама ссылка ведёт на <b>другой домен</b> — <span class="mono">verify.e-gov.am</span>. Проверяйте по ссылке, а не по подписи</td>
-            <td data-l="Источник">hartak.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок действия</th>
-            <td data-l="Значение">Апостиль бессрочен: действует столько, сколько действителен сам заверяемый документ</td>
-            <td data-l="Источник">armenian-lawyer.com — единственный источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Что не апостилируется</th>
-            <td data-l="Значение">Документы дипломатических и консульских учреждений, советские документы других республик СССР, документы из Арцаха</td>
-            <td data-l="Источник">armenian-lawyer.com + repatarmenia.org · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Выписка из госреестра</th>
-            <td data-l="Значение">Апостиль на электронную выписку по состоянию на январь 2026 поставить нельзя — нужна бумажная выписка</td>
-            <td data-l="Источник">alba-translating.ru — единственный источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Гаагская конвенция</th>
-            <td data-l="Значение">Армения присоединилась 19.11.1993, конвенция в силе с <b>14.08.1994</b>; всего <b>130 договаривающихся сторон</b> на 30.06.2026</td>
-            <td data-l="Источник"><a href="https://www.hcch.net/en/instruments/conventions/status-table/?cid=41" rel="noopener">hcch.net</a>, статусная таблица · 04.09.2026</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="h3" style="margin-top: var(--s-10)" data-reveal>Перевод — до апостиля, а не после</h3>
-
-    <div class="diy-wrap" style="margin-top: var(--s-5)" data-reveal>
-      <table class="diy">
-        <caption>Нотариальный перевод: порядок и тарифы здесь и за рубежом. Обращение — 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Порядок</th>
-            <td data-l="Значение" class="us">Перевод должен быть <b>нотариально удостоверен до</b> проставления апостиля, а не после. Министерство юстиции переводы не выполняет</td>
-            <td data-l="Источник">armenian-lawyer.com — единственный источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Тариф в Армении</th>
-            <td data-l="Значение">Государственная пошлина за удостоверение перевода — <b>500 драм</b>; тариф нотариуса за удостоверение перевода — <b>2 000–8 000 драм</b> за документ; за удостоверение подписей — 500–1 000 драм</td>
-            <td data-l="Источник">armenia.eregulations.org, государственный портал административных процедур РА · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Тариф в консульстве</th>
-            <td data-l="Значение">С иностранного на армянский — <b>10 000 драм за страницу</b>; с армянского на иностранный — <b>15 000 за страницу</b>; <b>7 000 за страницу</b> — перевод паспортов и документов актов гражданского состояния на иностранный язык. Заверение подписи — 7 000. Легализация: физлицо 5 000, юрлицо 15 000. Запрос и передача документов — 10 000</td>
-            <td data-l="Источник">mfa.am/en/fees, тариф с 01.01.2026 · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Реестр переводчиков</th>
-            <td data-l="Значение">Утверждается, что Минюст РА ведёт реестр аттестованных нотариальных переводчиков (экзамен, сертификат, присяга), а нотариус заверяет подпись переводчика и сшивает документ с переводом. Список аттестованных переводчиков действительно опубликован на сайте Минюста, но текстового описания порядка мы получили только из коммерческого источника — <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>подтверждает юрист</span></td>
-            <td data-l="Источник">moj.gov.am (список) + коммерческий источник (порядок) · 04.09.2026</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
-<!-- ═══ Блок 05 · Налоговые справки ══════════════════════════════ -->
-<section class="section" id="nalogi" data-rail-label="Налоговые справки" aria-labelledby="nalogi-t">
+<!-- ═══ 04 · 5 ловушек при отъезде и закрытии дел + Timeline ═════ -->
+<section class="section section--deep section--thread section--light" id="lovushki" data-rail-label="Пять ошибок" aria-labelledby="traps-t">
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">05</span> Как это устроено</p>
-      <h2 class="h2" id="nalogi-t">Сертификат резидентства: <em>бесплатно, два дня, форма №345-Ն</em></h2>
-      <p class="lead">Действующий сайт налоговой — <span class="mono">src.am</span>. Старый адрес
-        <span class="mono">petekamutner.am</span> не открывается из-за пределов Армении: его
-        собственный DNS отдаёт частный адрес. Гайды, которые ведут на старый домен, устарели.</p>
+      <p class="kicker"><span class="kicker__no">04</span> Цена незакрытых хвостов</p>
+      <h2 class="h2" id="traps-t">Пять ошибок при отъезде из Армении, <em>которые всплывают через полгода</em></h2>
     </div>
 
-    <div class="diy-wrap" data-reveal>
-      <table class="diy">
-        <caption>Справки Комитета государственных доходов РА. Обращение — 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Сертификат резидента</th>
-            <td data-l="Значение" class="us">Выдаёт Комитет государственных доходов. <b>Форма утверждена приказом председателя КГД №345-Ն от 08.06.2018</b> «Об утверждении формы справки, подтверждающей статус резидента РА, для организаций и физических лиц»</td>
-            <td data-l="Источник">src.am, раздел внутренних правовых актов · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок и стоимость</th>
-            <td data-l="Значение"><b>2 рабочих дня, бесплатно</b>; заполнение формы 5–15 минут. Эти параметры проверены на карточке услуги <b>для иностранных граждан</b>; на портале три отдельные услуги (для организаций и ИП, для граждан РА, для иностранных граждан), и переносить цифры между ними без проверки нельзя</td>
-            <td data-l="Источник">e-services.src.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Как подать</th>
-            <td data-l="Значение">Электронно через <span class="mono">e-services.src.am</span>, вход — логин платформы «Ես Եմ» (EsEm)</td>
-            <td data-l="Источник">e-services.src.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Что содержит</th>
-            <td data-l="Значение">QR-код и код проверки, подлинность — на <span class="mono">verify.e-gov.am</span>; может выдаваться на русском и английском. Состав сведений, которые просят у физлица (вид и размер зарубежного дохода, копии подтверждающих документов, копии всех страниц паспорта, расчёт срока пребывания либо обоснование центра жизненных интересов), взят из пересказа разъяснения КГД <b>от 22.08.2018</b> — документу восемь лет</td>
-            <td data-l="Источник">ilex.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Справка о налоге</th>
-            <td data-l="Значение">Справка об уплаченном нерезидентом налоге: форма утверждена приказом председателя КГД <b>№344-Ն от 08.06.2018</b> — той же датой, что и справка о резидентстве. Срок выдачи — 10 рабочих дней; используется для зачёта иностранного налога. Срок стоит на одном коммерческом источнике</td>
-            <td data-l="Источник">src.am (реквизиты приказа) + armenian-lawyer.com (срок) · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Бланки форм</th>
-            <td data-l="Значение">Ни форма №345-Ն, ни форма №344-Ն отдельным файлом на сайте КГД не выложены — только упоминание приказа. Бланк достаётся через карточку приказа на <span class="mono">arlis.am</span></td>
-            <td data-l="Источник">src.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Ловушка домена</th>
-            <td data-l="Значение">Старый адрес налоговой <span class="mono">petekamutner.am</span> <b>не открывается из-за пределов Армении</b> (собственный DNS отдаёт частный адрес). Действующий сайт — <b>src.am</b></td>
-            <td data-l="Источник">проверено напрямую · 04.09.2026</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Блок 05 · Закрытие ИП и ликвидация ═══════════════════════ -->
-<section class="section" id="zakrytie" data-rail-label="Закрытие ИП" aria-labelledby="zakrytie-t">
-  <div class="wrap">
-    <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">06</span> Как это устроено</p>
-      <h2 class="h2" id="zakrytie-t">Закрытие ИП и ликвидация компании: <em>где источники расходятся вдвое и вчетверо</em></h2>
-      <p class="lead">Это единственный раздел ветки, который официальными источниками закрыть
-        не удалось: соответствующие страницы Минюста отдают 403 и 404. Там, где мы опираемся
-        на коммерческие публикации, это сказано прямо в строке.</p>
-    </div>
-
-    <div class="diy-wrap" data-reveal>
-      <table class="diy">
-        <caption>Снятие ИП с учёта и ликвидация ООО: органы, сроки, пошлины и расхождения
-          источников. Обращение — 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Орган</th>
-            <td data-l="Значение" class="us">Агентство государственного регистра юридических лиц при Министерстве юстиции РА. Центр — Ереван, Комитаса 49/3, плюс 10 областных отделов</td>
-            <td data-l="Источник">moj.gov.am, страница адресов агентства · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Онлайн</th>
-            <td data-l="Значение">На <span class="mono">e-register.moj.am</span> есть регистрация, перерегистрация, изменение данных и снятие с учёта ИП; вход через платформу идентификации «Ես Եմ»; интерфейс на армянском, русском и английском</td>
-            <td data-l="Источник">e-register.moj.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Справка из реестра</th>
-            <td data-l="Значение">Справка о регистрации или ликвидации — <b>бесплатно, 3 дня</b></td>
-            <td data-l="Источник">e-register.moj.am, карточка услуги · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Выписка о компании</th>
-            <td data-l="Значение"><b>3 000 драм</b></td>
-            <td data-l="Источник">e-register.moj.am, карточка услуги · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Документы для ИП</th>
-            <td data-l="Значение">Достаточно паспорта; возможно закрытие удалённо при наличии доверенности. Только коммерческие источники, официальной страницы услуги получить не удалось — 403</td>
-            <td data-l="Источник">три коммерческих источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок закрытия ИП</th>
-            <td data-l="Значение"><b>Расхождение.</b> Один источник: подготовка документов 2–3 дня, проверка налоговой 3–5 дней, решение госреестра 5 дней, «около 10 дней» — <b>слово «рабочих» в источнике отсутствует</b>. Другой: 5–10 рабочих дней в идеальном случае, 2–4 недели и дольше при недосданных отчётах</td>
-            <td data-l="Источник">два коммерческих источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Этапы ликвидации ООО</th>
-            <td data-l="Значение">Решение общего собрания и назначение ликвидационной комиссии → запись о ликвидации в госреестре → публикация уведомления на <span class="mono">azdarar.am</span> → законный <b>двухмесячный</b> срок для требований кредиторов → промежуточный ликвидационный баланс → расчёты с кредиторами → финальный баланс и исключение из реестра</td>
-            <td data-l="Источник">armenian-lawyer.com, обновлено 26.08.2026 · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Длительность ООО</th>
-            <td data-l="Значение"><b>Расхождение принципиальное.</b> Один источник: <b>3–6 месяцев</b> (2 месяца окно кредиторов плюс 1–3 месяца налоговая проверка). Другой: около <b>45 дней</b>. Разница почти вчетверо</td>
-            <td data-l="Источник">два коммерческих источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Налоговая проверка</th>
-            <td data-l="Значение">Запускается автоматически при внесении записи о ликвидации в госреестр; сама проверка — около 15 рабочих дней, основная задержка это очередь на её назначение (второй источник называет в среднем 20 рабочих дней)</td>
-            <td data-l="Источник">два коммерческих источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Госпошлина ООО</th>
-            <td data-l="Значение"><b>Расхождение вдвое.</b> Один источник: регистрация ликвидации <b>20 000 драм</b>, финальное исключение из реестра бесплатно. Другой: <b>10 000 драм</b>; для ИП пошлины нет вовсе</td>
-            <td data-l="Источник">два коммерческих источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Публикация azdarar.am</th>
-            <td data-l="Значение">10 драм за символ, минимум 2 000, максимум 100 000 драм</td>
-            <td data-l="Источник">armenian-lawyer.com · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Заморозка</th>
-            <td data-l="Значение">Обратимая приостановка; не требует ликвидационной комиссии и налоговой проверки; после заморозки отчёты не подаются и налоги не начисляются, <b>но всё за период до заморозки должно быть закрыто</b></td>
-            <td data-l="Источник">три коммерческих источника, включая конкурента · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Банковский счёт</th>
-            <td data-l="Значение">При ликвидации бизнеса автоматически не закрывается — это отдельное действие</td>
-            <td data-l="Источник">один коммерческий источник · 04.09.2026</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ Блок 05 · Отчётные хвосты + датированная врезка ══════════ -->
-<section class="section" id="hvosty" data-rail-label="Отчётные хвосты" aria-labelledby="hvosty-t">
-  <div class="wrap">
-    <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">07</span> Как это устроено</p>
-      <h2 class="h2" id="hvosty-t">Отчётные хвосты, <em>которые тянутся за вами</em></h2>
-    </div>
-
-    <div class="diy-wrap" data-reveal>
-      <table class="diy">
-        <caption>Пени, штрафы, сроки и электронная подпись. Обращение — 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник и дата</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Пеня за просрочку</th>
-            <td data-l="Значение" class="us"><b>0,075 % за каждый день просрочки, не более чем за 730 дней</b> — ст. 401 Налогового кодекса РА. База — не уплаченная в срок сумма налога, авансовые платежи и суммы, выявленные проверкой. Дословный текст статьи получить не удалось: arlis.am отдаёт только первые статьи документа. Единственная прочитанная страница-пересказ датирована 18.07.2022</td>
-            <td data-l="Источник">профессиональный источник, пересказ · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Штраф за расчёт</th>
-            <td data-l="Значение">Штраф за несвоевременную подачу расчёта — 5 % суммы налога за каждые 15 дней просрочки, но не более полной суммы обязательства. <b>Один источник</b>, и в нём формулировка привязана к корпоративной отчётности — распространять на любой расчёт мы не будем</td>
-            <td data-l="Источник">один коммерческий источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Годовая декларация</th>
-            <td data-l="Значение">Декларация физлица за 2025 год: крайний срок подачи и корректировки — <b>1 ноября 2026 включительно</b>. Это не миграционная реформа, это истекающий налоговый срок: закон ՀՕ-324-Ն от 24.10.2025, вступил в силу 30.10.2025. Базовый срок — 1 мая, 1 ноября — продление этой конкретной кампании</td>
-            <td data-l="Источник"><a href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a>, текст закона · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Штраф за неподачу</th>
-            <td data-l="Значение"><b>50 000 драм</b> для предпринимателей и <b>5 000 драм</b> для прочих граждан; по одному источнику первое нарушение — предупреждение с 30-дневным сроком</td>
-            <td data-l="Источник">заявление зампреда КГД в новостном пересказе + коммерческий источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Способ подачи</th>
-            <td data-l="Значение">Только электронно, через <span class="mono">self-portal.taxservice.am</span>, с электронной подписью</td>
-            <td data-l="Источник">два источника · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Электронная подпись</th>
-            <td data-l="Значение">eID — чиповая ID-карта плюс картридер; mID — ID-SIM армянского оператора; облачная подпись <b>CoSign</b> — вариант, обозначенный для иностранных граждан. Инфраструктуру ведёт ЭКЕНГ</td>
-            <td data-l="Источник">ekeng.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">CoSign из-за границы</th>
-            <td data-l="Значение">Может ли иностранец оформить CoSign, находясь уже за границей, <b>не подтверждено</b>. Это ключевой вопрос для уехавшего, и честного ответа у нас пока нет — <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>проверяет юрист</span></td>
-            <td data-l="Источник">источника нет · 04.09.2026</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Датированная врезка: другой РОД — про срок, а не про момент. Регистр другой:
-         пунктир, прозрачный фон, ни тени, ни заливки. -->
-    <aside class="dated-box" style="margin-top: var(--s-10)" aria-labelledby="d183" data-reveal>
-      <p class="dated-box__when">С 01.11.2026 иначе</p>
-      <h3 class="dated-box__t" id="d183">Отсутствие 183 дня и более придётся объявлять самому</h3>
-
-      <div class="shift">
-        <div class="shift__row shift__row--head">
-          <span>Что</span><span>Было</span><span>С 01.11.2026</span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Кого касается обязанность</span>
-          <span class="shift__was">только обладателей постоянного статуса</span>
-          <span class="shift__now"><b>временный и постоянный статус</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Порог отсутствия</span>
-          <span class="shift__was">порог был другой</span>
-          <span class="shift__now"><b>183 дня и более</b></span>
-        </div>
-        <div class="shift__row">
-          <span class="shift__k">Срок на уведомление</span>
-          <span class="shift__was">—</span>
-          <span class="shift__now"><b>не позднее 10 дней с момента истечения 183-дневного срока</b></span>
-        </div>
+    <dl class="traps" data-stagger>
+      <div class="trap">
+        <dt><span class="trap__tag">ВНЖ и ИП</span> Закрытие ИП до истечения необходимости в армянском ВНЖ</dt>
+        <dd>С 01.11.2026 при прекращении ИП или отсутствии в базе КГД начисленных налогов за <b>180 дней</b> после выдачи ВНЖ статус аннулируется. Синхронизируем закрытие ИП с получением визы следующей страны. <span class="src">ст. 29.4 ч. 5 Закона РА «Об иностранцах» ՀՕ-11-Ն</span></dd>
       </div>
 
-      <p class="dated-box__d">Уведомление подаётся в миграционный орган через единую электронную
-        платформу. Санкция за неисполнение — статус признаётся утратившим силу (новая ст. 21 ч. 1
-        п. 7). Эту норму прочитал <b>один участок разбора из пяти</b>, и до подтверждения юристом
-        мы подаём её как требующую сверки.</p>
-
-      <p class="src">Новая ст. 17 ч. 8 Закона «Об иностранцах» в редакции закона <b>ՀՕ-11-Ն</b>
-        от 20.01.2026. Текст закона прочитан на
-        <a href="https://www.arlis.am/" rel="noopener">arlis.am</a> · 04.09.2026.</p>
-    </aside>
-
-    <!-- Врезка отрицательного результата: тихий род, сплошная линия, ни пунктира,
-         ни золота. Она сообщает об ОТСУТСТВИИ события. -->
-    <aside class="nochange" style="margin-top: var(--gap)" aria-labelledby="nc-183" data-reveal>
-      <p class="nochange__tag">Чего на 04.09.2026 ещё нет</p>
-      <h3 class="nochange__t" id="nc-183">Как именно уведомлять — не знает пока никто, включая нас</h3>
-      <ul>
-        <li>Подзаконных актов во исполнение реформы на 04.09.2026 не опубликовано ни одного.</li>
-        <li>Объявления Миграционной службы о запуске единой электронной платформы тоже нет.</li>
-        <li>Что именно и как будет выглядеть в платформе на 1 ноября, из опубликованного
-          не следует.</li>
-      </ul>
-      <p class="src">Проверено по arlis.am и по публикациям миграционного органа · 04.09.2026.
-        Дата и содержание нормы ставятся только вместе с реквизитами акта; всё, чего нет
-        в опубликованном, здесь названо отсутствующим, а не пересказано.</p>
-    </aside>
-  </div>
-</section>
-
-<!-- ═══ Блок 06 · Где ломается ═══════════════════════════════════ -->
-<section class="section" id="traps" data-rail-label="Где ломается" aria-labelledby="traps-t">
-  <div class="wrap">
-    <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">08</span> Где ломается</p>
-      <h2 class="h2" id="traps-t">Двенадцать мест, где <em>это ломается</em></h2>
-      <p class="lead">По каждому: в чём ошибка, чем кончается и лечится ли это <b>до</b> того, как
-        вы уехали. Порядок — от самого частого. Решение в каждом случае принимает орган или
-        принимающая страна, и мы не обещаем исход.</p>
-    </div>
-
-    <dl class="traps" data-reveal>
-      <div class="tile trap" id="trap-01">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">Справка о судимости заказана не в тот момент</span></dt>
-        <dd>Документ берут «заранее, чтобы был», за полгода-год до подачи. Или наоборот —
-          вспоминают о нём уже из другой страны.</dd>
-        <dd><b>Чем кончается</b>Испания официально требует справку не старше 6 месяцев, если
-          в самом документе не указан иной срок. Просроченная справка заказывается заново, и уже
-          по зарубежному тарифу: <b>25 000 драм вместо 7 000</b>, плюс пересылка 11 000–30 000
-          вместо 430.
-          <span class="src">Источник: exteriores.gob.es · 04.09.2026.</span></dd>
-        <dd><b>Лечится до отъезда</b>Да, полностью. Единственное, что для этого нужно, — узнать
-          требование принимающей стороны раньше, чем заказывать документ.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Отъезд 183+ дней</span> Отъезд более чем на 183 дня без электронного уведомления</dt>
+        <dd>Если обладатель ВНЖ (до <b>1 года</b>) или ПМЖ (на <b>5 лет</b>) отсутствует в Армении <b>183 дня</b> и более без уведомления через платформу за <b>10 дней</b>, статус аннулируется. <span class="src">ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն</span></dd>
       </div>
 
-      <div class="tile trap" id="trap-02">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">Справку понесли апостилировать не в тот орган</span></dt>
-        <dd>Логика подсказывает: апостиль ставит Министерство юстиции. Для справки о судимости
-          это неверно.</dd>
-        <dd><b>Чем кончается</b>Человек с готовой справкой едет в офис апостилирования Минюста
-          на ул. Вазгена Саргсяна 3/8, и его разворачивают: справки об отсутствии судимости,
-          розыска и уголовного преследования апостилирует <b>Министерство иностранных дел</b>,
-          это прямо написано на официальной странице услуги. Потерянный день — если вы ещё здесь;
-          потерянная неделя и деньги — если уже нет.
-          <span class="src">Источник: hartak.am · 04.09.2026.</span></dd>
-        <dd><b>Лечится до отъезда</b>Да, и лечится знанием: при подаче справки в Армении
-          за 7 000 драм апостиль <b>уже включён в пошлину</b>, отдельного похода не требуется
-          вовсе.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">7 000 ֏ vs 25 000 ֏</span> Запрос справки о несудимости через консульство вместо подачи в Ереване</dt>
+        <dd>В консульстве РА за рубежом справка стоит <b>25 000 ֏</b> вместо <b>7 000 ֏</b> в Ереване, где в <b>7 000 ֏</b> включён апостиль, а выдача занимает до <b>5 рабочих дней</b> на <b>2 языках</b> (армянском и одном из <b>5 иностранных языков</b>). Получаем справку в Ереване по доверенности. <span class="src">МИД РА · mfa.am · hartak.am</span></dd>
       </div>
 
-      <div class="tile trap" id="trap-03">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">Улица Вазгена Саргсяна оказалась четырьмя разными адресами</span></dt>
-        <dd>Адрес записывают по названию улицы.</dd>
-        <dd><b>Чем кончается</b>На ул. Вазгена Саргсяна в Ереване находятся минимум четыре разные
-          точки: дом 3/8 — офис апостилирования Минюста; дом 3, Дом правительства 2 — консульское
-          управление МИД, где принимают заявления на справку о судимости; тот же дом 3 — адрес
-          как минимум одного частного нотариуса из государственного реестра; и он же фигурирует
-          как точка выдачи ID-карт. Название улицы не идентифицирует кабинет.</dd>
-        <dd><b>Лечится до отъезда</b>Да. Записывайте номер дома и название органа, а не улицу.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Отчётность КГД</span> Брошенный ИП без сдачи финальных деклараций в КГД</dt>
+        <dd>Брошенный ИП копит налоговые требования и блокирует справку об отсутствии долгов. Бухгалтеры LTCG сдают ликвидационные расчёты и закрывают учёт в КГД. <span class="src">КГД РА · petekamutner.am</span></dd>
       </div>
 
-      <div class="tile trap" id="trap-04">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-          <span class="trap__title">Онлайн-апостиль не подходит вашему документу</span></dt>
-        <dd>Считают, что апостиль оформляется электронно всегда.</dd>
-        <dd><b>Чем кончается</b>Онлайн-заверение работает <b>только для электронных документов,
-          выданных после 16.05.2021 и имеющих 16-значный контрольный номер</b>. Всё, что старше
-          или существует только на бумаге, апостилируется личным визитом в Минюст. Отдельная
-          разновидность той же ловушки: на электронную выписку из государственного реестра
-          апостиль поставить нельзя — нужна бумажная (по состоянию на январь 2026, один источник).
-          <span class="src">Источник: hartak.am · 04.09.2026.</span></dd>
-        <dd><b>Лечится до отъезда</b>Да — тем, что вы заранее проверяете дату выдачи документа
-          и заказываете бумажный экземпляр, пока вы в стране.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Спящий счёт</span> Комиссии за спящие счета и штраф за неуведомление о закрытии счёта</dt>
+        <dd>Счёт без операций списывает годовое ведение (<b>1 200 ֏</b>/год ФЛ и <b>4 800 ֏</b>/год ЮЛ в Converse Bank, либо <b>250 000 ֏</b>/год для дистанционных ФЛ в Evocabank) и плату за спящий счёт (<b>5 000 ֏</b>/мес после <b>2 лет</b> в Converse Bank). О закрытии счёта резидент РФ (менее <b>183 дней</b> вне РФ) уведомляет ФНС за <b>1 месяц</b> (штраф <b>1 000–1 500 руб.</b> за просрочку, <b>4 000–5 000 руб.</b> за неуведомление). <span class="src">Converse Bank от 03.09.2026 · Evocabank от 01.10.2026 · ч. 2 ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</span></dd>
       </div>
     </dl>
 
-    <details class="traps-more" data-reveal>
-      <summary class="btn btn--outline btn--sm">Ещё восемь ловушек <svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-      <dl class="traps" style="margin-top: var(--gap)">
-        <div class="tile trap" id="trap-05">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-            <span class="trap__title">Апостиль не имеет силы в стране назначения</span></dt>
-          <dd>Апостиль считают универсальным заверением.</dd>
-          <dd><b>Чем кончается</b>Апостиль работает только между участниками Гаагской конвенции —
-            на 30.06.2026 их 130. <b>ОАЭ в их число не входят</b>: армянский апостиль там силы
-            не имеет, требуется полная консульская легализация, а это другая процедура, другие
-            сроки и другие деньги. Проверяется за минуту по статусной таблице конвенции.
-            <span class="src">Источник: <a href="https://www.hcch.net/en/instruments/conventions/status-table/?cid=41" rel="noopener">hcch.net</a> · 04.09.2026.</span></dd>
-          <dd><b>Лечится до отъезда</b>Да, и проверка бесплатная. Это ровно тот случай, когда одна
-            минута до подачи экономит месяц после.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-06">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 06</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-            <span class="trap__title">Перевод сделан после апостиля, а не до</span></dt>
-          <dd>Порядок кажется произвольным.</dd>
-          <dd><b>Чем кончается</b>Перевод должен быть нотариально удостоверен <b>до</b>
-            проставления апостиля; Министерство юстиции переводы не выполняет (единственный
-            источник — коммерческий, поэтому подаём как практику, а не как норму). Сделали
-            наоборот — заверять придётся заново. За рубежом та же операция стоит 10 000–15 000
-            драм за страницу по консульскому тарифу против 500 драм пошлины плюс 2 000–8 000
-            тарифа нотариуса в Армении.
-            <span class="src">Проверено 04.09.2026.</span></dd>
-          <dd><b>Лечится до отъезда</b>Да, если порядок известен заранее. Здесь же честная
-            оговорка: требование, что армянские органы принимают переводы только от переводчиков,
-            зарегистрированных при Минюсте РА, встречается в коммерческих публикациях,
-            а официального описания порядка мы не получили. Список аттестованных переводчиков
-            на сайте Минюста опубликован — сам порядок нет.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-07">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 07</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-            <span class="trap__title">Брошенное ИП продолжает начислять</span></dt>
-          <dd>«Оборотов нет — значит, и отчитываться не о чем». Человек перестаёт пользоваться ИП
-            и уезжает, не сняв его с учёта и не заморозив.</dd>
-          <dd><b>Чем кончается</b>Пока ИП в реестре, обязанность отчётности сохраняется, и нулевые
-            декларации подаются даже при отсутствии дохода. На неуплаченное начисляется пеня
-            0,075 % в день с потолком в 730 дней, плюс штраф за несвоевременную подачу расчёта.
-            Отдельно — годовая декларация физлица за 2025 год: последний день подачи и
-            корректировки <b>1 ноября 2026</b>, штраф за неподачу — 50 000 драм для
-            предпринимателей и 5 000 для прочих граждан.
-            <span class="src">Источник: закон ՀՕ-324-Ն · <a href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a> · 04.09.2026.</span></dd>
-          <dd><b>Лечится до отъезда</b>Да — но только до. После отъезда та же задача превращается
-            в дистанционное ведение дела через представителя.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-08">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 08</span><span class="trap__tag">снимается частично</span></span>
-            <span class="trap__title">Потерян вход в собственные дела</span></dt>
-          <dd>Не учитывают, что армянские государственные сервисы завязаны на армянскую
-            идентификацию.</dd>
-          <dd><b>Чем кончается</b>Портал государственного реестра и кабинет налоговой работают
-            через логин платформы «Ես Եմ», а декларация подаётся исключительно электронно
-            с подписью: eID — это физическая чиповая ID-карта, mID — это армянская SIM. Уехали,
-            SIM отключилась, карта осталась в ящике — и вы не можете ни подать декларацию,
-            ни снять ИП с учёта. Облачная подпись CoSign обозначена как вариант для иностранных
-            граждан, но можно ли её оформить, уже находясь за границей, официально
-            не подтверждено — и мы этого не знаем.</dd>
-          <dd><b>Лечится до отъезда</b>Частично и только заранее: проверить вход в оба кабинета
-            своими руками, пока вы здесь и пока SIM работает. Одно исключение приятное:
-            электронная консульская система consular.e-gov.am, через которую заказывается справка
-            о судимости, <b>входа с армянским ID не требует</b> — регистрация через nid.e-gov.am
-            по имени, фамилии, номеру документа и email.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-09">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 09</span><span class="trap__tag">зависит от даты отъезда</span></span>
-            <span class="trap__title">Сертификата резидентства за год отъезда может не быть</span></dt>
-          <dd>Считают, что справка о налоговом резидентстве выдаётся «за текущий момент».</dd>
-          <dd><b>Чем кончается</b>Резидентство считается по календарному году. Уехав в середине
-            года, за этот год можно просто не набрать нужного количества дней — и сертификата
-            за него не получить. А просят его, как правило, именно за последний год.</dd>
-          <dd><b>Лечится до отъезда</b>Не всегда. Это один из немногих пунктов, который лечится
-            не порядком действий, а датой отъезда — и именно поэтому его стоит посчитать до,
-            а не после. Подробный разбор критериев резидентства — ветка
-            <a class="lnk" href="rezidentstvo-i-crs.html">«Живу и планирую»</a>.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-10">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 10</span><span class="trap__tag">не снимается</span></span>
-            <span class="trap__title">Ликвидация компании не бывает быстрой</span></dt>
-          <dd>Планируют закрыть ООО «за пару недель перед вылетом».</dd>
-          <dd><b>Чем кончается</b>Двухмесячное окно для требований кредиторов — законный минимум,
-            его нельзя сократить. К нему добавляется налоговая проверка, которая запускается
-            автоматически при внесении записи о ликвидации. Оценки полной длительности расходятся
-            между источниками почти вчетверо: 3–6 месяцев против примерно 45 дней. Госпошлина
-            расходится вдвое: 20 000 против 10 000 драм. Мы честно не знаем, какая цифра верна,
-            и обе публикуем именно как расхождение.</dd>
-          <dd><b>Лечится до отъезда</b>Нет — процедуру нельзя ускорить. Лечится только
-            планированием: либо начинать сильно заранее, либо принимать, что процесс пойдёт
-            без вашего личного присутствия.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-11">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 11</span><span class="trap__tag">требует сверки юристом</span></span>
-            <span class="trap__title">Закрытие ИП может задеть вид на жительство</span></dt>
-          <dd>Закрытие бизнеса рассматривают как чисто налоговое действие.</dd>
-          <dd><b>Чем кончается</b>Если ВНЖ выдан под предпринимательскую деятельность, ликвидация
-            может затронуть сам статус пребывания. Это утверждение стоит на <b>одном коммерческом
-            источнике</b>, и оно относится к зоне прямой юридической ответственности — поэтому
-            мы ставим его как вопрос, а не как факт:
-            <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>подтверждает юрист LTCG</span>.
-            Отдельно, и это уже прочитано в тексте закона: с <b>01.11.2026</b> отсутствие
-            в Армении 183 дня и более требует уведомить миграционный орган через электронную
-            платформу в <b>10-дневный срок</b>, а неисполнение этой обязанности названо основанием
-            утраты статуса. Норму о санкции прочитал один участок разбора из пяти — до
-            подтверждения юристом сверяйте её сами.
-            <span class="src">Источник: ՀՕ-11-Ն от 20.01.2026, новая ст. 17 ч. 8 и ст. 21 ч. 1 п. 7 · <a href="https://www.arlis.am/" rel="noopener">arlis.am</a> · 04.09.2026.</span></dd>
-          <dd><b>Лечится до отъезда</b>Порядок действий — да: сначала получить всё, что вам нужно,
-            пока статус действует, потом закрывать. Сам правовой вопрос — нет, он требует разбора
-            вашего основания.</dd>
-        </div>
-
-        <div class="tile trap" id="trap-12">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 12</span><span class="trap__tag trap__tag--fix">снимается до отъезда</span></span>
-            <span class="trap__title">Реквизиты пошлины разошлись между двумя официальными страницами</span></dt>
-          <dd>Платят по номеру счёта, записанному в чужом гайде.</dd>
-          <dd><b>Чем кончается</b>Армянская страница hartak.am про справку о судимости называет
-            казначейский счёт <span class="mono">900005163515400</span>; русская страница mfa.am
-            для той же пошлины — <span class="mono">900005163515</span>, без последних трёх цифр.
-            Мы не знаем, какой из них действующий. Платёж по неверному счёту — это
-            не «переделать», это возврат.
-            <span class="src">Оба источника официальные · 04.09.2026.</span></dd>
-          <dd><b>Лечится до отъезда</b>Да: реквизиты снимаются с официальной страницы
-            непосредственно перед платежом, а не из записей — в том числе не из наших.</dd>
-        </div>
-      </dl>
-    </details>
+    <div style="margin-top: var(--s-6)" data-reveal>
+      <h3 class="h3" style="margin-bottom: var(--s-4)">Пять шагов получения справок и закрытия ИП в Ереване</h3>
+      <ol class="tl" data-stagger>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 01 · День 1</span>
+          <h4 class="tl__t">Доверенность и сверка</h4>
+          <p class="tl__d">Проверяем кабинет ИП в «Ես Եմ» и оформляем доверенность на юриста LTCG.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 02 · Дни 1–2</span>
+          <h4 class="tl__t">Сертификат за 2 р. дня</h4>
+          <p class="tl__d">Получаем сертификат резидента КГД РА (<b>0 ֏</b>) при наличии <b>183+ дней</b> в году.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 03 · Дни 1–5</span>
+          <h4 class="tl__t">Справка МИД РА и апостиль</h4>
+          <p class="tl__d">Забираем справку с апостилем на <b>2 языках</b> (<b>7 000 ֏</b>, до <b>5 р. д.</b>) и апостиль Минюста (<b>7 000 ֏</b> за <b>2 р. д.</b>).</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 04 · Закрытие ИП</span>
+          <h4 class="tl__t">Финальные отчёты и реестр</h4>
+          <p class="tl__d">Сдаём расчёты в КГД, закрываем бизнес-счёт и прекращаем ИП.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 05 · Банк и курьер</span>
+          <h4 class="tl__t">Выписки и закрытие счёта</h4>
+          <p class="tl__d">Берём выписки (<b>3 000 ֏</b>) и справки о закрытии (<b>5 000 ֏</b>) для уведомления за <b>1 месяц</b>.</p>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 
-<!-- ═══ Блок 05 · Порядок шагов ══════════════════════════════════ -->
-<section class="section" id="order" data-rail-label="Порядок" aria-labelledby="order-t">
+<!-- ═══ 05 · Сколько стоит (Калькулятор) ═════════════════════════ -->
+<section class="section section--glow section--thread" id="skolko" data-rail-label="Калькулятор" aria-labelledby="sk-t">
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">09</span> Порядок</p>
-      <h2 class="h2" id="order-t">В каком порядке <em>всё это делать</em></h2>
-      <p class="lead">Обратный порядок опасен ровно одним: часть справок вы получаете, пока
-        действует статус и пока у вас есть доступ, — а закрытие дел и статус, и доступ может
-        изменить.</p>
+      <p class="kicker"><span class="kicker__no">05</span> Калькулятор услуг</p>
+      <h2 class="h2" id="sk-t">Рассчитайте бухгалтерскую сверку <em>и модули сопровождения LTCG</em></h2>
+      <p class="lead">Фиксированный прайс LTCG в драмах РА. Справки МИД/КГД и закрытие ИП по доверенности рассчитываем под ваш пакет.</p>
     </div>
 
-    <ol class="tl" role="list" data-reveal>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 01</p>
-        <h3 class="tl__title">Узнать требования принимающей стороны</h3>
-        <p class="tl__who"><span><b>Что</b>что она попросит и какой свежести</span>
-          <span><b>Где</b>официальный сайт её МИД или консульства, а не чужой гайд</span></p>
-        <p class="tl__days">До заказа любого документа</p>
-      </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 02</p>
-        <h3 class="tl__title">Заказать армянские документы, пока вы здесь</h3>
-        <p class="tl__who"><span><b>Что</b>справка о судимости (апостиль в пошлине уже есть), сертификат налогового резидентства за закрытый год, бумажная выписка из государственного реестра</span>
-          <span><b>Сколько</b>7 000 + 0 + 3 000 драм по государственному тарифу</span></p>
-        <p class="tl__days">Закладывайте 5 рабочих дней на справку</p>
-      </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 03</p>
-        <h3 class="tl__title">Проверить вход в кабинеты своими руками</h3>
-        <p class="tl__who"><span><b>Что</b>кабинет налоговой и портал государственного реестра</span>
-          <span><b>Когда</b>пока вы в стране и пока работает армянская SIM</span></p>
-        <p class="tl__days">Две минуты сейчас против месяцев потом</p>
-      </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 04</p>
-        <h3 class="tl__title">Закрыть отчётные хвосты</h3>
-        <p class="tl__who"><span><b>Что</b>закрыть все периоды, подать декларацию, если срок подходит</span>
-          <span><b>Срок</b>годовая декларация физлица за 2025 год — до 1 ноября 2026 включительно</span></p>
-        <p class="tl__days">Пеня 0,075 % в день, потолок 730 дней</p>
-      </li>
-      <li class="tl__step">
-        <span class="tl__dot" aria-hidden="true"></span>
-        <p class="tl__no">Шаг 05</p>
-        <h3 class="tl__title">Решить, что делать с ИП или компанией</h3>
-        <p class="tl__who"><span><b>Что</b>закрыть, заморозить или оставить работающим</span>
-          <span><b>Почему последним</b>закрытие дел может изменить и статус, и доступ к порталам</span></p>
-        <p class="tl__days">Ликвидация ООО — от 45 дней до 6 месяцев по разным источникам</p>
-      </li>
-    </ol>
-  </div>
-</section>
+    <script type="application/json" id="prices">
+    {
+      "publish": true,
+      "currency": "֏",
+      "currencyConfirmed": true,
+      "asOf": "2026-10-18",
+      "modules": {
+        "ip":         { "name": "Регистрация ИП",       "per": "once",  "amount": 45000  },
+        "account":    { "name": "Открытие счёта",       "per": "once",  "amount": 110000 },
+        "social":     { "name": "Соцкарта",             "per": "once",  "amount": 35000  },
+        "address":    { "name": "Адрес",                "per": "year",  "amount": 430000 },
+        "accounting": { "name": "Бухгалтерия",          "per": "month", "amount": 36000, "from": true }
+      }
+    }
+    </script>
 
-<!-- ═══ Блок 08 · Сколько стоит ══════════════════════════════════ -->
-<section class="section" id="price" data-rail-label="Сколько стоит" aria-labelledby="price-t">
-  <div class="wrap">
-    <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">10</span> Сколько стоит</p>
-      <h2 class="h2" id="price-t">Здесь <em>две разные суммы</em>, и путать их нельзя</h2>
-      <p class="lead">Первая — государству. Это фиксированные пошлины и тарифы, они не зависят
-        от того, идёте вы сами или с сопровождением.</p>
-    </div>
+    <div class="calc" data-calc data-reveal>
+      <div class="calc__mods">
+        <label class="tile mod" for="m-accounting">
+          <input type="checkbox" id="m-accounting" name="mod" value="accounting" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц · точный состав и цена — под ваш налоговый режим после короткого разбора</div></div>
+            <div class="mod__price" data-price="accounting">от 36 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Сдача деклараций в КГД, сверка с бюджетом и отчётность перед закрытием ИП</li>
+            </ul>
+          </details>
+        </label>
 
-    <!-- Калькулятора на этой ветке нет намеренно: модулей ИП / счёт / соцкарта / адрес
-         здесь не бывает. Вместо суммы — состав государственных платежей. -->
-    <div class="diy-wrap" data-reveal>
-      <table class="diy">
-        <caption>Государственные пошлины и тарифы по состоянию на 04.09.2026. Каждая сумма
-          с источником — в разделах выше. Пошлины меняются: перед платежом сверяйтесь
-          с официальной страницей.</caption>
-        <thead>
-          <tr><th scope="col">Действие</th><th scope="col">Пошлина или тариф</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Справка в Армении</th><td data-l="Пошлина или тариф" class="us"><b>7 000 драм</b> — апостиль включён</td></tr>
-          <tr><th scope="row">Справка из-за рубежа</th><td data-l="Пошлина или тариф"><b>25 000 драм</b> через посольство или консульство РА</td></tr>
-          <tr><th scope="row">Доставка по Армении</th><td data-l="Пошлина или тариф"><b>430 драм</b></td></tr>
-          <tr><th scope="row">Доставка за границу</th><td data-l="Пошлина или тариф">11 000–25 000 либо 16 000–30 000 драм — источники расходятся, закладывайте верхнюю границу</td></tr>
-          <tr><th scope="row">Апостиль обычный</th><td data-l="Пошлина или тариф"><b>7 000 драм</b> в Минюсте</td></tr>
-          <tr><th scope="row">Апостиль ускоренный</th><td data-l="Пошлина или тариф"><b>10 000 драм</b> по официальной карточке услуги; 15 000 по трём неофициальным источникам</td></tr>
-          <tr><th scope="row">Нотариальный перевод</th><td data-l="Пошлина или тариф">500 драм пошлины + 2 000–8 000 драм тарифа нотариуса за документ</td></tr>
-          <tr><th scope="row">Перевод в консульстве</th><td data-l="Пошлина или тариф">10 000–15 000 драм за страницу; 7 000 за страницу для паспортов и актов гражданского состояния</td></tr>
-          <tr><th scope="row">Сертификат резидентства</th><td data-l="Пошлина или тариф" class="us"><b>бесплатно</b></td></tr>
-          <tr><th scope="row">Справка из госреестра</th><td data-l="Пошлина или тариф"><b>бесплатно</b> — о регистрации или ликвидации</td></tr>
-          <tr><th scope="row">Выписка о компании</th><td data-l="Пошлина или тариф"><b>3 000 драм</b></td></tr>
-          <tr><th scope="row">Снятие ИП с учёта</th><td data-l="Пошлина или тариф">пошлины нет — по коммерческому источнику; официальной страницы услуги получить не удалось</td></tr>
-          <tr><th scope="row">Ликвидация ООО</th><td data-l="Пошлина или тариф">10 000 либо 20 000 драм — источники расходятся вдвое</td></tr>
-          <tr><th scope="row">Публикация azdarar.am</th><td data-l="Пошлина или тариф">10 драм за символ, минимум 2 000, максимум 100 000</td></tr>
-        </tbody>
-      </table>
-    </div>
+        <label class="tile mod" for="m-address">
+          <input type="checkbox" id="m-address" name="mod" value="address">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Адрес для регистрации и корреспонденции</div><div class="mod__unit">в год · опционально, если нужен вашему случаю</div></div>
+            <div class="mod__price" data-price="address">430 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Адрес для регистрации и корреспонденции — если нужен вашему случаю (для ИП по закону не обязателен)</li>
+            </ul>
+          </details>
+        </label>
 
-    <div class="bento" style="margin-top: var(--gap)" data-reveal>
-      <div class="tile" data-span="6">
-        <p class="tile__meta"><b>Вторая</b> за работу</p>
-        <p class="h4">Наши цены на справки, апостиль и закрытие ИП</p>
-        <!-- Слот: {цены LTCG на сопровождение по этой ветке — подтверждает клиент}.
-             Пустое место честнее выдуманной цифры. -->
-        <p><span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>цены подтверждает клиент</span></p>
-        <p>Единственная известная позиция, которая упирается в эту ветку напрямую, —
-          <!-- Цена названа Геворгом 31.08.2026. Валюта явно не названа: уточняется у компании,
-               поставлена как драмы. -->
-          бухгалтерское сопровождение <b>36 000 драм в месяц</b>: если хвост по отчётности
-          тянется с прошлых периодов, закрывать его придётся именно этой работой, а не одним
-          визитом.</p>
+        <label class="tile mod" for="m-ip">
+          <input type="checkbox" id="m-ip" name="mod" value="ip">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно · госпошлина отдельно</div></div>
+            <div class="mod__price" data-price="ip">45 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Госрегистрация ИП и подача заявления на спецрежим за 20 дней</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-account">
+          <input type="checkbox" id="m-account" name="mod" value="account">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Открытие счёта</div><div class="mod__unit">единовременно · тариф банка отдельно</div></div>
+            <div class="mod__price" data-price="account">110 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Подбор банка, предпроверка документов и сопровождение KYC</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-social">
+          <input type="checkbox" id="m-social" name="mod" value="social">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Номер общественных услуг (ПСН)</div><div class="mod__unit">единовременно</div></div>
+            <div class="mod__price" data-price="social">35 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Получение ПСН для электронной авторизации в КГД («Ես Եմ»)</li>
+            </ul>
+          </details>
+        </label>
       </div>
-      <div class="tile tile--quiet" data-span="6">
-        <p class="tile__meta"><b>Честно</b> границы расчёта</p>
-        <p class="h4">Суммой этот разговор не заканчивается</p>
-        <p>Состав вашего случая мы не знаем — не знаем, сколько периодов не закрыто, есть ли
-          доверенное лицо, куда вы едете и что там попросят. Сумма после разбора двигается
-          в обе стороны, в том числе вниз, — так это и работает.</p>
-        <!-- Блок «цена ошибки» в деньгах физически отсутствует: до подтверждённого клиентом
-             кейса денежная цифра на юридическом сайте не ставится даже с пометкой. -->
-      </div>
+
+      <aside class="tile tile--hero total" aria-labelledby="total" data-total>
+        <p class="total__title" id="total">Ваш расчёт</p>
+        <ul class="total__list chips" role="list" data-total-list>
+          <li class="chip">Бухгалтерия</li>
+        </ul>
+        <dl class="total__rows" data-total-rows>
+          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">—</dd></div>
+          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
+          <div class="total__row"><dt>Ежемесячно</dt><dd data-sum="month">от 36 000 ֏</dd></div>
+        </dl>
+        <div class="total__meta">
+          <p><b>Не входит:</b> пошлины МИД РА (<b>7 000 ֏</b> за справку о несудимости с апостилем в Ереване за <b>5 рабочих дней</b>), электронный апостиль Минюста РА через <code>hartak.am</code> (<b>7 000 ֏</b> за <b>2 рабочих дня</b>, за <b>1 рабочий день</b> — <b>10 000 ֏</b>) и тарифы банков. <b>ВНЖ оформляем в комплексе</b> — рассчитываем под основание.</p>
+        </div>
+        <div class="total__cta">
+          <a class="btn btn--primary" href="#contact">Запросить расчёт по справкам и закрытию <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ═══ Блок 11 · Вопросы ════════════════════════════════════════ -->
-<section class="section" id="faq" data-rail-label="Вопросы" aria-labelledby="faq-t">
+<!-- ═══ 06 · Вопросы (FAQ, синхронно с JSON-LD) ══════════════════ -->
+<section class="section section--deep section--thread section--light" id="voprosy" data-rail-label="Частые вопросы" aria-labelledby="faq-t">
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">11</span> Вопросы</p>
-      <h2 class="h2" id="faq-t">Вопросы <em>этой ветки</em></h2>
+      <p class="kicker"><span class="kicker__no">06</span> Частые вопросы</p>
+      <h2 class="h2" id="faq-t">Шесть вопросов о справках, резидентстве <em>и закрытии ИП в Армении</em></h2>
     </div>
 
-    <div class="faq" data-reveal>
+    <div class="faq" data-stagger>
       <details>
-        <summary>Могу ли я получить армянскую справку о несудимости, уже уехав из страны?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Сколько стоит справка об отсутствии судимости в Армении при подаче в Ереване и через консульство?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Да. Заявление подаётся через дипломатическое представительство или консульское
-            учреждение РА за границей, либо электронно через
-            <span class="mono">consular.e-gov.am</span> — и это единственный найденный нами
-            государственный сервис Армении, вход в который не требует ни армянской ID-карты,
-            ни армянской SIM: регистрация идёт через <span class="mono">nid.e-gov.am</span>
-            по имени, фамилии, номеру документа и email (проверено 04.09.2026).</p>
-          <p>Цена вопроса — разница тарифов: 25 000 драм через диппредставительство против
-            7 000 драм при подаче в Армении, плюс пересылка 11 000–30 000 драм против 430 драм
-            внутри страны.</p>
-          <p>Отдельно есть утверждение, что справку, выданную консульским учреждением РА
-            за рубежом, апостилировать нельзя. Это тезис <b>коммерческого бюро документов</b>,
-            а не позиция МИД. МИД говорит только, что апостилированную справку предоставляет
-            МИД РА, — а консульские учреждения являются его же подразделениями, и это не одно
-            и то же. Официального подтверждения запрета мы не нашли, поэтому не утверждаем его:
-            <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>проверяет юрист LTCG</span>.</p>
+          <p>Госпошлина за справку о несудимости с апостилем при подаче в Ереване или онлайн составляет <b>7 000 ֏</b> за <b>5 рабочих дней</b> (доставка по РА — <b>430 ֏</b>). Через консульство РА за рубежом сбор составляет <b>25 000 ֏</b>. <span class="src">МИД РА · mfa.am · mfa.am/en/fees · hartak.am</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Сколько на самом деле делают справку — два дня или пять?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Как и в какой срок выдаётся сертификат налогового резидента Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Мы не знаем, и говорим об этом прямо. На двух официальных страницах одного и того же
-            ведомства стоят разные сроки: <span class="mono">mfa.am</span> — <b>5 рабочих
-            дней</b>, <span class="mono">consular.e-gov.am</span> — <b>2 рабочих дня</b>
-            (обе проверены 04.09.2026). Какая из страниц устарела, по самим страницам
-            не определить. Планируйте по пяти рабочим дням.</p>
-          <p>Отдельно есть практическое наблюдение коммерческого бюро, что реально выходит дольше
-            официального срока, — источник маркетинговый, поэтому берём из него только сам факт
-            «на практике дольше», без цифр.</p>
-          <p class="small"><a class="lnk" href="#spravka">Таблица по справке</a></p>
+          <p>На портале КГД РА сертификат налогового резидента оформляется через систему «Ես Եմ» за <b>2 рабочих дня</b> бесплатно (<b>0 ֏</b>) при пребывании от <b>183 дней</b> в году либо центре интересов в РА. <span class="src">ст. 25 НК РА · e-services.src.am</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Сколько живёт справка о несудимости?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Что произойдёт с ВНЖ Армении при закрытии ИП или ликвидации ООО после 1 ноября 2026 года?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Законодательством Армении срок действия <b>не установлен</b> — его нет ни
-            на <span class="mono">mfa.am</span>, ни на <span class="mono">hartak.am</span>
-            (проверено 04.09.2026). Свежесть требует принимающая сторона, и требование у каждой
-            своё.</p>
-          <p>Испания для визы цифрового кочевника прямо называет <b>6 месяцев</b>, если в самом
-            документе не указан иной срок (<span class="mono">exteriores.gob.es</span>).
-            У Португалии на официальной странице национальной визы срока годности нет вообще,
-            зато есть другое требование: справка страны происхождения <b>либо страны, где вы
-            прожили более года</b> (<span class="mono">vistos.mne.gov.pt</span>).</p>
-          <p>Широко гуляющая цифра «три месяца» происходит из коммерческой публикации
-            HR-провайдера и ни к какой норме не привязана — мы её не повторяем.</p>
+          <p>При регистрации прекращения ИП, ликвидации ООО либо отсутствии в базе КГД начисленных налогов за <b>180 дней</b> после выдачи карты ВНЖ по бизнесу аннулируется. <span class="src">ст. 29.4 ч. 5 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Что будет, если просто бросить ИП и уехать?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Нужно ли уведомлять миграционную службу Армении при отъезде из страны более чем на 183 дня?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Оно останется в реестре, а обязанность отчитываться — за вами. Нулевые декларации
-            подаются даже тогда, когда дохода не было. На неуплаченный налог начисляется пеня
-            0,075 % за каждый день просрочки с потолком в 730 дней (ст. 401 Налогового кодекса
-            РА — дословный текст статьи получить не удалось,
-            <span class="mono">arlis.am</span> отдаёт только начало документа), плюс штраф
-            за несвоевременно поданный расчёт.</p>
-          <p>Ближайший конкретный срок, который стоит проверить прямо сейчас: годовая декларация
-            физлица за 2025 год подаётся и корректируется <b>до 1 ноября 2026 включительно</b>
-            (закон ՀՕ-324-Ն от 24.10.2025 ·
-            <a class="lnk" href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a>);
-            штраф за неподачу — 50 000 драм для предпринимателей и 5 000 драм для прочих
-            граждан.</p>
-          <p>Если ИП нужно сохранить — существует заморозка: обратимая приостановка, не требующая
-            ни ликвидационной комиссии, ни налоговой проверки, но всё за период <b>до</b>
-            заморозки должно быть закрыто.</p>
-          <p class="small"><a class="lnk" href="#zakrytie">Таблица по закрытию</a><a class="lnk" href="ip-i-nalogi.html">Работаю</a></p>
+          <p>Да: с 01.11.2026 обладатель ВНЖ или ПМЖ при отсутствии в РА <b>183 дня</b> и более обязан уведомить уполномоченный орган через платформу за <b>10 дней</b>, иначе статус аннулируется. <span class="src">ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Я уеду и потеряю армянскую SIM. Смогу я вообще зайти в свои дела?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>На каких языках выдаётся справка о несудимости МИД РА и сколько стоит электронный апостиль в Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Это главный технический риск отъезда, и ответ у нас неполный. Портал государственного
-            реестра <span class="mono">e-register.moj.am</span> и кабинет налоговой
-            <span class="mono">self-portal.taxservice.am</span> работают через логин платформы
-            «Ես Եմ», а декларация подаётся только электронно, с подписью: eID — это чиповая
-            ID-карта плюс картридер, mID — это ID-SIM армянского оператора.</p>
-          <p>Облачная подпись <b>CoSign</b> названа вариантом для иностранных граждан,
-            но <b>можно ли оформить её, уже находясь за границей, официально не подтверждено</b> —
-            <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>проверяет юрист LTCG</span>.</p>
-          <p>Единственная надёжная мера, которая доступна прямо сейчас: пока вы ещё здесь
-            и SIM работает, зайти в оба кабинета своими руками и убедиться, что вход
-            открывается.</p>
+          <p>Справка о несудимости МИД РА выдаётся на <b>2 языках</b> (армянском и одном из <b>5 иностранных языков</b>: RU, EN, DE, ES, FR), апостиль включён в пошлину <b>7 000 ֏</b>. Электронный апостиль Минюста РА стоит <b>7 000 ֏</b> за <b>2 рабочих дня</b> или <b>10 000 ֏</b> за <b>1 рабочий день</b>. <span class="src">МИД РА · mfa.am · Минюст РА · hartak.am</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Апостиль или консульская легализация — как понять, что нужно моей стране?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Что произойдёт с банковским счётом в Армении, если оставить его без операций после отъезда?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>По одной таблице. Апостиль признаётся только между участниками Гаагской конвенции —
-            на 30.06.2026 их 130, Армения участвует с 14.08.1994
-            (<a class="lnk" href="https://www.hcch.net/en/instruments/conventions/status-table/?cid=41" rel="noopener">hcch.net</a>,
-            статусная таблица · проверено 04.09.2026).</p>
-          <p>Если страна назначения в списке — апостиля достаточно. Если нет — нужна полная
-            консульская легализация, другая процедура и другие сроки. Самый частый случай
-            в нашей аудитории: <b>ОАЭ вне конвенции</b>, армянский апостиль там силы не имеет.
-            Проверка занимает минуту и делается на официальном сайте конвенции без чьей-либо
-            помощи.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Вы соберёте мне пакет документов для Португалии, Испании или ОАЭ?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Нет, и это осознанная граница. Виз третьих стран и их иммиграционных программ мы
-            не ведём — этого нет в нашем профиле, и перечень документов под конкретное консульство
-            задаёт само консульство.</p>
-          <p>Наша половина — армянская: какие документы выдаёт Армения, кто их выдаёт, сколько это
-            стоит, сколько идёт и в каком порядке делается, чтобы вам не пришлось повторять
-            процедуру из-за границы.</p>
-          <p>Требования принимающей стороны берите у неё же — на официальном сайте её МИД или
-            консульства, а не в чужих гайдах: мы проверили три страны и в одном популярном
-            материале уже нашли требование, приписанное МИД Португалии, которого на его странице
-            нет вовсе.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Я уезжаю надолго, но ВНЖ хочу сохранить. Что мне нужно знать?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Одну норму, которая начинает работать с <b>1 ноября 2026</b>. Обладатель временного
-            или постоянного статуса пребывания, отсутствуя в Армении <b>183 дня и более</b>,
-            обязан уведомить об этом миграционный орган через единую электронную платформу
-            <b>не позднее 10 дней</b> с момента истечения 183-дневного срока — новая ст. 17 ч. 8
-            Закона «Об иностранцах» в редакции закона <b>ՀՕ-11-Ն</b> от 20.01.2026 (текст прочитан
-            на <a class="lnk" href="https://www.arlis.am/" rel="noopener">arlis.am</a> ·
-            04.09.2026). Раньше такая обязанность лежала только на обладателях постоянного статуса
-            и порог был другой.</p>
-          <p>Санкция — статус признаётся утратившим силу (новая ст. 21 ч. 1 п. 7) — прочитана
-            одним участком разбора из пяти, и до подтверждения юристом мы подаём её как требующую
-            сверки.</p>
-          <p>Отдельно: подзаконных актов во исполнение реформы на 04.09.2026 не опубликовано
-            ни одного, объявления Миграционной службы о запуске электронной платформы тоже нет.
-            Что именно и как будет выглядеть в платформе на 1 ноября, не знает пока никто,
-            включая нас.</p>
-          <p class="small"><a class="lnk" href="#hvosty">Что меняется с 1 ноября</a><a class="lnk" href="vnzh.html">Легализуюсь</a></p>
+          <p>В Converse Bank спящий счёт более <b>2 лет</b> стоит <b>5 000 ֏</b>/мес, годовое ведение ФЛ — <b>1 200 ֏</b>/год (ЮЛ — <b>4 800 ֏</b>/год). В Ameriabank выписка старше <b>6 месяцев</b> стоит <b>3 000 ֏</b>, нетиповая справка — <b>5 000 ֏</b>. <span class="src">Converse Bank от 03.09.2026 · Ameriabank ред. 51 от 11.09.2026</span></p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ Блок 12 · Выход ══════════════════════════════════════════ -->
-<section class="section" id="contact" data-rail-label="Выход" aria-labelledby="contact-t">
+<!-- ═══ 07 · Контакты и лид-форма ════════════════════════════════ -->
+<section class="section section--art section--contact" id="contact" data-rail-label="Контакт" aria-labelledby="cnt-t">
+  <div class="art art--center" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
+      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
+      <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" loading="lazy" decoding="async">
+    </picture>
+  </div>
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">12</span> Выход</p>
-      <h2 class="h2" id="contact-t">Повод у этой ветки один, и он честный: <em>пока вы ещё здесь</em></h2>
-      <p class="lead">Это не срочность, которую придумали мы, — это разница между 7 000 и 25 000
-        драм, между 430 и 30 000 драм за доставку, между днями и месяцами. После отъезда те же
-        самые действия делаются через представителя, а доверенность на него сама требует
-        нотариуса, апостиля и перевода.</p>
+      <p class="kicker"><span class="kicker__no">07</span> Поручить юристам LTCG</p>
+      <h2 class="h2" id="cnt-t">Соберём справки и закроем ИП <em>очно или по доверенности</em></h2>
+      <p class="lead">Напишите, в Ереване ли вы или уже уехали, и какие документы нужны — рассчитаем сроки и стоимость сопровождения.</p>
     </div>
 
-    <div class="contact">
-      <div class="tile" data-reveal>
+    <div class="contact" data-reveal>
+      <div class="tile">
         <div class="ways">
           <a class="way" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram<small>@LTCG_Armenia</small></a>
-          <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН: номер тот же, наличие WhatsApp на нём никто
-               не проверял. Не подтвердится — снимаются все ссылки с data-wa. -->
           <a class="way" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<small>+374 94 184 014</small></a>
           <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
         </div>
         <hr class="rule">
 
-        <!-- method="dialog" вне <dialog> — это НЕ отправка: браузер прерывает submit.
-             Так без JavaScript нажатие Enter в поле не бросает POST в никуда (бэкенда нет)
-             и не уносит имя и контакт в строку адреса. С JavaScript отправку перехватывает
-             js/site.js и собирает сообщение. -->
+        <span class="state sr-only" data-state="moving-on" data-name="Двигаюсь дальше" aria-hidden="true"></span>
+
         <form class="form" id="lead" method="dialog" data-lead novalidate>
-          <!-- След выбора: ветка уже выбрана человеком на главной или в поиске, второй раз
-               о ней не спрашиваем. Ответ развилки уезжает полем fork ниже. -->
-          <p class="tile__meta"><b>Вы выбрали</b> Двигаюсь дальше → справки и закрытие</p>
+          <p class="tile__meta"><b>Вы выбрали</b> Двигаюсь дальше → Справки МИД/КГД, закрытие ИП и счетов</p>
 
           <div class="form__row">
             <div class="field">
@@ -1554,271 +740,202 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
             </div>
           </div>
 
-          <div class="form__row">
-            <div class="field">
-              <label class="field__label" for="f-when">Когда вы физически уезжаете <small>— хотя бы приблизительно</small></label>
-              <input class="field__input" id="f-when" name="departure" type="text" inputmode="numeric" placeholder="Ноябрь 2026 или 14.12.2026">
-            </div>
-            <div class="field">
-              <label class="field__label" for="f-country">Куда <small>— если страна уже определилась</small></label>
-              <input class="field__input" id="f-country" name="country" type="text" placeholder="Португалия, Испания, ОАЭ…">
-            </div>
-          </div>
-
           <div class="field">
-            <label class="field__label" for="f-msg">Сообщение <small>— необязательно</small></label>
-            <textarea id="f-msg" name="message" placeholder="Одной фразой: что уже сделали, что не получилось"></textarea>
+            <label class="field__label" for="f-msg">Какие справки нужны или что нужно закрыть <small>— необязательно</small></label>
+            <textarea id="f-msg" name="message" placeholder="Одной фразой: справка о несудимости, сертификат резидента КГД, закрытие ИП или банковского счёта"></textarea>
           </div>
 
-          <div class="field">
-            <label class="field__label" for="f-src">Как вы о нас узнали? <small>— необязательно</small></label>
-            <input class="field__input" id="f-src" name="source" type="text" placeholder="Рекомендация, поиск, Telegram…">
-          </div>
+          <input type="hidden" id="f-state" name="state" value="moving-on">
+          <input type="hidden" name="branch" value="spravki-i-zakrytie">
+          <input type="hidden" name="fork" value="" data-f-fork>
+          <input type="hidden" name="modules" data-f-modules value="accounting">
 
-          <!-- honeypot: отсекает только заполненное поле; отсечки по времени нет намеренно —
-               живой человек заполняет четыре поля быстрее любого разумного порога. -->
           <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
-          <!-- След выбора в скрытых полях: ветка, страница и ответ развилки. Поле state
-               читает js/site.js и подставляет строку в текст заявки. -->
-          <input type="hidden" id="f-state" name="state" value="Двигаюсь дальше — справки и закрытие">
-          <input type="hidden" name="branch" value="spravki-i-zakrytie">
-          <input type="hidden" name="page" value="spravki-i-zakrytie">
-
-          <label class="check"><input type="checkbox" name="consent" required><span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Согласен на обработку персональных данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст согласия от клиента</span></span></label>
+          <label class="check"><input type="checkbox" name="consent" required>
+            <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <span>Согласен на обработку персональных данных для ответа по моему запросу</span></label>
 
           <div class="form__foot">
-            <!-- Бэкенда у сайта нет: статические страницы. Кнопка собирает текст заявки
-                 и открывает мессенджер компании. Без JavaScript она скрыта, а человек видит
-                 прямые ссылки ниже — без подстановки, но рабочие. -->
             <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
             <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
-            <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт выключен — напишите напрямую:
+            <p class="form__nojs nojs-only small">Без JS:
               <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> ·
-              <a class="lnk" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> ·
               <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
             <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
           </div>
         </form>
 
-        <!-- Приёмник заявки. Telegram не умеет подставлять текст в чат обычного аккаунта
-             (?text= работает только у ботов и у WhatsApp), поэтому текст показан здесь целиком,
-             с кнопкой «скопировать». Никакие данные никуда не уходят до нажатия человеком. -->
         <div class="form__done" data-form-done hidden tabindex="-1">
-          <p class="h4">Заявка собрана — осталось отправить</p>
-          <p class="measure small">Сайт статический, отправлять некому: заявка уходит вашим сообщением в мессенджер. Текст уже готов.</p>
+          <p class="h4">Заявка готова</p>
+          <p class="measure small">Отправьте подготовленный текст в выбранный мессенджер.</p>
           <label class="sr-only" for="f-out">Текст заявки</label>
           <textarea class="field__input form__out" id="f-out" data-form-out readonly rows="5"></textarea>
           <div class="btn-row">
-            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Открыть Telegram и вставить</a>
-            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> Открыть WhatsApp с текстом</a>
-            <button class="btn btn--outline" type="button" data-copy>Скопировать текст</button>
+            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</a>
+            <button class="btn btn--outline" type="button" data-copy>Скопировать</button>
           </div>
           <p class="small" role="status" aria-live="polite" data-copy-msg></p>
         </div>
       </div>
 
-      <aside class="tile tile--hero" data-reveal>
-        <p class="tile__meta"><b>12</b> Что взять на разговор</p>
-        <ol class="next" role="list">
-          <li><span><b>Дату отъезда</b>Хотя бы приблизительную, и страну, если она уже определилась.</span></li>
-          <li><span><b>Статус ИП или компании</b>Работает, простаивает, заморожено.</span></li>
-          <li><span><b>Отчётность</b>За какие периоды точно сдана, а за какие вы не уверены.</span></li>
-          <li><span><b>Основание ВНЖ</b>На каком основании выдан ваш вид на жительство и до какой даты он действует.</span></li>
-          <li><span><b>Доверенное лицо</b>Остаётся ли в Армении человек, которому можно доверить действия по доверенности.</span></li>
-          <li><span><b>Работающий вход</b>Открывается ли кабинет налоговой и портал государственного реестра — проверьте прямо сейчас, это две минуты.</span></li>
-        </ol>
-        <hr class="rule">
-        <p class="note"><b>Первый вопрос, который вам зададут,</b> напечатан здесь заранее, чтобы
-          разговор не начинался с неизвестности: <b>«Когда вы физически уезжаете и остаётся ли
-          здесь доверенное лицо?»</b> От ответа на него зависит всё остальное — что успеваем
-          сделать здесь, а что придётся делать оттуда.</p>
-      </aside>
-    </div>
-
-    <div class="bento" style="margin-top: var(--gap)" data-reveal>
-      <div class="tile" data-span="6">
-        <p class="tile__meta"><b>Границы</b> что делаем и чего не делаем</p>
-        <p class="h4">Делаем</p>
-        <p>Армянские справки и их апостилирование, закрытие отчётных хвостов, снятие ИП с учёта,
-          сопровождение ликвидации компании.</p>
-        <p>Доверенность оформляется у армянского нотариуса — мы можем помочь с формулировкой
-          полномочий под ваш список задач,
-          <!-- Слот: {берём ли мы это отдельной услугой и на каких условиях — подтверждает клиент} -->
-          <span class="tbc"><svg aria-hidden="true"><use href="#i-pending"/></svg>условия подтверждает клиент</span>.</p>
-        <div class="notdo">
-          <p class="h4">Не делаем</p>
-          <ul role="list">
-            <li>визы третьих стран</li>
-            <li>иммиграционные программы третьих стран</li>
-            <li>подбор жилья</li>
-            <li>подбор школ</li>
-            <li>билеты</li>
-          </ul>
+      <aside class="tile tile--hero">
+        <div class="tile__art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+          </picture>
         </div>
-      </div>
-      <div class="tile tile--quiet" data-span="6">
-        <p class="tile__meta"><b>Честно</b> кто принимает решение</p>
-        <p class="h4">Решение в любом случае принимает не консультант</p>
-        <p>Справку выдаёт МИД, апостиль ставит МИД или Минюст, ИП снимает с учёта Агентство
-          государственного регистра, а требования к документам устанавливает принимающая страна.
-          Мы отвечаем за порядок, сроки и за то, чтобы вам не пришлось делать одно и то же
-          дважды, — исхода в чужом органе никто обещать не может.</p>
-      </div>
+        <p class="tile__meta"><b>Если вы уже уехали</b> Работа по доверенности</p>
+        <p class="state__recog"><b>Не обязательно лететь в Ереван ради справки или закрытия ИП:</b> <em>по доверенности получаем документы в МИД и КГД РА и отправляем курьером.</em></p>
+        <hr class="rule">
+        <ol class="next" role="list">
+          <li><span><b>Сверка в КГД</b>Проверяем отчёты и начисления перед закрытием ИП.</span></li>
+          <li><span><b>Справки в Ереване</b>Несудимость за <b>7 000 ֏</b> (вместо <b>25 000 ֏</b> в консульстве) и сертификат резидента за <b>2 рабочих дня</b>.</span></li>
+          <li><span><b>Перевод и отправка</b>Удостоверяем переводы у нотариуса РА и передаём комплект.</span></li>
+        </ol>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ═══ Блок 13 · Соседние ветки и подпись ═══════════════════════ -->
-<section class="section" id="neigh" data-rail-label="Дальше" aria-labelledby="neigh-t">
+<!-- ═══ 08 · Соседние ветки и подпись ════════════════════════════ -->
+<section class="section section--deep section--thread" id="dalee" data-rail-label="Что дальше" aria-labelledby="neigh-t">
   <div class="wrap">
     <div class="section__head" data-reveal>
-      <p class="kicker"><span class="kicker__no">13</span> Равноправный выход</p>
-      <h2 class="h2" id="neigh-t">Ничего не нужно прямо сейчас — <em>вот что почитать дальше</em></h2>
+      <p class="kicker"><span class="kicker__no">08</span> Связанные темы</p>
+      <h2 class="h2" id="neigh-t">Резидентство, <em>отчётность ИП и ВНЖ</em></h2>
     </div>
 
-    <nav class="bento" aria-label="Соседние ветки" data-reveal>
+    <nav class="bento" data-stagger aria-label="Соседние ветки">
       <a class="tile neigh" href="rezidentstvo-i-crs.html" data-span="4">
-        <p class="neigh__when">До этого</p>
-        <h3 class="neigh__t">Чей вы резидент за год отъезда</h3>
-        <p class="neigh__d">Если вопрос в том, чей вы налоговый резидент за год отъезда и когда
-          именно заказывать сертификат резидентства. Это соседняя тема, и она про то, что
-          происходит до этой страницы.</p>
-        <span class="neigh__go">Живу и планирую <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <img src="assets/img/ltcg-yerevan-tuff.png" width="640" height="360" alt="">
+          <span class="tile__plate-tag">Ветка 05 · 183 дня и CRS</span>
+        </div>
+        <p class="neigh__when">Налоги и CRS</p>
+        <h3 class="neigh__t">Резидентство (183 дня) и CRS</h3>
+        <p class="neigh__d">Расчёт 183 дней по ст. 25 НК РА и автообмен CRS.</p>
+        <span class="neigh__go">Перейти <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
       <a class="tile neigh" href="ip-i-nalogi.html" data-span="4">
-        <p class="neigh__when">Параллельно</p>
-        <h3 class="neigh__t">ИП остаётся работать, а вы уезжаете</h3>
-        <p class="neigh__d">Режимы, отчётность, сроки — всё, что продолжает идти, пока ИП
-          в реестре, независимо от того, в какой вы стране.</p>
-        <span class="neigh__go">Работаю <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 04 · ИП и налоги</span>
+        </div>
+        <p class="neigh__when">Отчётность бизнеса</p>
+        <h3 class="neigh__t">ИП, ООО и налоги в Армении</h3>
+        <p class="neigh__d">Налог с оборота до 115 млн ֏ и учёт от 36 000 ֏/мес.</p>
+        <span class="neigh__go">Перейти <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
-      <a class="tile neigh" href="pered-pereezdom.html" data-span="4">
-        <p class="neigh__when">Зеркально</p>
-        <h3 class="neigh__t">Что закрыть, пока вы ещё там</h3>
-        <p class="neigh__d">Если рядом с вами есть кто-то, кто только собирается: там ровно та же
-          логика, только зеркальная — что закрыть, пока вы ещё в стране исхода.</p>
-        <span class="neigh__go">Ещё не переехал <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+      <a class="tile neigh" href="noyabr.html" data-span="4">
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/nov-hero-1280.webp">
+            <img src="assets/img/nov-hero-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Реформа · 01.11.2026</span>
+        </div>
+        <p class="neigh__when">Реформа 01.11.2026</p>
+        <h3 class="neigh__t">Отсутствие 183+ дней и пошлины</h3>
+        <p class="neigh__d">Закон РА ՀՕ-11-Ն: 10 дней на уведомление и правило 180 дней.</p>
+        <span class="neigh__go">Перейти <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
     </nav>
 
-    <footer class="section__foot" data-reveal>
+    <footer class="section__foot">
       <p class="sign">
-        <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>подпись юриста LTCG</span>
-        <span>Обновлено 04.09.2026</span>
-        <span>Источники проверены 04.09.2026</span>
+        <span>Проверили: Юристы LTCG</span>
+        <span>Обновлено 18.10.2026</span>
       </p>
-
-      <p class="small measure"><b>Проверено по:</b>
-        <a class="lnk" href="https://www.mfa.am/ru/criminal-record-certificate" rel="noopener">mfa.am</a>
-        (справка о судимости, консульские тарифы с 01.01.2026),
-        <span class="mono">consular.e-gov.am</span> (каналы подачи, часы приёма, сроки),
-        <span class="mono">hartak.am</span> (карточки услуг «Апостиль» и «Справка о судимости
-        и розыске»), <a class="lnk" href="https://www.moj.am/" rel="noopener">moj.gov.am</a>
-        (апостиль, нотариат, список аттестованных переводчиков, адреса Агентства государственного
-        регистра), <span class="mono">e-register.moj.am</span> (услуги по ИП и компаниям, тарифы
-        выписок), <span class="mono">src.am</span> и <span class="mono">e-services.src.am</span>
-        (сертификат налогового резидентства, приказы председателя КГД <b>№345-Ն</b>
-        и <b>№344-Ն</b> от 08.06.2018),
-        <a class="lnk" href="https://www.arlis.am/" rel="noopener">arlis.am</a>
-        (Закон «Об апостилировании официальных документов РА» ՀՕ-18-Ն; закон ՀՕ-11-Ն
-        от 20.01.2026; закон ՀՕ-324-Ն от 24.10.2025), <span class="mono">ekeng.am</span>
-        (электронная подпись),
-        <a class="lnk" href="https://www.hcch.net/en/instruments/conventions/status-table/?cid=41" rel="noopener">hcch.net</a>
-        (статусная таблица Гаагской конвенции), <span class="mono">armenia.eregulations.org</span>
-        (нотариальные тарифы), <span class="mono">vistos.mne.gov.pt</span>
-        и <span class="mono">exteriores.gob.es</span> (требования Португалии и Испании).
-        Часть сведений о закрытии ИП и ликвидации компании официальными источниками закрыть
-        не удалось — соответствующие страницы Минюста отдают 403 и 404; там, где мы опираемся
-        на коммерческие публикации, это сказано прямо в строке.</p>
-
-      <p class="small measure"><b>Что изменилось в этой редакции:</b> первая публикация ветки.</p>
-
-      <p class="small measure"><b>Политика цифр на этом сайте.</b> Каждая цифра стоит с источником
-        и датой проверки. Где два официальных источника расходятся — показаны оба и названа
-        величина, по которой стоит планировать. Пустые места и пометки «требует подтверждения» —
-        не недоделка, а правило: мы не ставим цифру, которую не смогли проверить.</p>
+      <p class="small measure"><b>Правовая база:</b> Регламент МИД РА по справке о несудимости (<a class="lnk" href="https://www.mfa.am/ru/criminal-record-certificate/" target="_blank" rel="noopener noreferrer">mfa.am/ru/criminal-record-certificate</a>) и ставки консульских сборов (<a class="lnk" href="https://www.mfa.am/en/fees" target="_blank" rel="noopener noreferrer">mfa.am/en/fees</a>), портал госуслуг РА (<a class="lnk" href="https://hartak.am/" target="_blank" rel="noopener noreferrer">hartak.am</a>), портал КГД РА (<a class="lnk" href="https://e-services.src.am/" target="_blank" rel="noopener noreferrer">e-services.src.am</a>), НК РА ՀՕ-165-Ն ст. 25 (<a class="lnk" href="https://www.arlis.am/en/acts/205620" target="_blank" rel="noopener noreferrer">arlis.am/en/acts/205620</a>), Закон РА ՀՕ-11-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a>).</p>
     </footer>
   </div>
 </section>
 
 </main>
 
+<!-- ═══ Футер ════════════════════════════════════════════════════ -->
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="ftr__grid">
-      <div class="ftr__brand">
-        <a class="brand" href="./" data-path="" aria-label="LTCG — на главную"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
-        <address>
+    <div class="bento ftr__bento" role="list">
+
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+        <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+          <picture data-logo="gold">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+          <picture data-logo="ink">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <h2 class="sr-only" id="f-brand">Контакты</h2>
+        <address class="ftr__addr">
           <span>Legal and Tax Consulting Group LLC · Ереван</span>
-          <a href="tel:+37494184014">+374 94 184 014</a>
+          <a class="ftr__phone" href="tel:+37494184014">+374 94 184 014</a>
           <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
-          <span>Адрес, реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
         </address>
-      </div>
-      <nav aria-labelledby="f-branches">
-        <h2 id="f-branches">Шесть веток</h2>
-        <ul role="list">
-          <li><a href="pered-pereezdom.html">Ещё не переехал</a></li>
-          <li><a href="schet-v-banke.html">Только приехал</a></li>
-          <li><a href="vnzh.html">Легализуюсь</a></li>
-          <li><a href="ip-i-nalogi.html">Работаю</a></li>
-          <li><a href="rezidentstvo-i-crs.html">Живу и планирую</a></li>
-          <li><a href="spravki-i-zakrytie.html" aria-current="page">Двигаюсь дальше</a></li>
+      </section>
+
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+        <ul class="ftr__list" role="list">
+          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
+          <li><a href="./schet-v-banke.html">Только приехал</a></li>
+          <li><a href="./vnzh.html">Легализуюсь</a></li>
+          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
         </ul>
       </nav>
-      <nav aria-labelledby="f-page">
-        <h2 id="f-page">На этой странице</h2>
-        <ul role="list">
-          <li><a href="#answer">Короткий ответ</a></li>
-          <li><a href="#spravka">Справка о несудимости</a></li>
-          <li><a href="#apostil">Апостиль и перевод</a></li>
-          <li><a href="#nalogi">Налоговые справки</a></li>
-          <li><a href="#zakrytie">Закрытие ИП</a></li>
-          <li><a href="#traps">Где ломается</a></li>
-          <li><a href="#price">Сколько стоит</a></li>
-        </ul>
-      </nav>
-      <nav aria-labelledby="f-site">
-        <h2 id="f-site">Сайт</h2>
-        <ul role="list">
-          <li><a href="home-ru.html#where">Где вы сейчас?</a></li>
-          <li><a href="home-ru.html#calc">Цены</a></li>
-          <li><a href="home-ru.html#services">Услуги</a></li>
-          <li><a href="#faq">Вопросы</a></li>
-          <li><a href="#contact">Контакты</a></li>
-          <li><a href="#" aria-disabled="true">Политика обработки данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст</span></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="ftr__bottom">
-      <div>
-        <p>Услуги носят консультационный и сопроводительный характер; решения о выдаче документов,
-          о снятии с учёта и о признании статуса принимают государственные органы Армении,
-          а требования к документам устанавливает принимающая страна. Формулировку подтверждает
-          клиент.</p>
-        <p style="margin-top: var(--s-2)">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
-      </div>
-      <nav class="ftr__langs" aria-label="Язык сайта">
-        <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-        <a href="./" data-path="" lang="ru" aria-current="page">Русский</a>
-        <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-      </nav>
+
+      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+        <h2 class="ftr__h" id="f-site">Сайт</h2>
+        <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
+        <nav class="ftr__langs" aria-label="Язык сайта">
+          <span aria-disabled="true" lang="hy">Հայերեն</span>
+          <span lang="ru" aria-current="page">Русский</span>
+          <span aria-disabled="true" lang="en">English</span>
+        </nav>
+        <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
+      </section>
+
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+        <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
+        <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
+        <div class="ftr__credit">
+          <p class="ftr__copy">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+          <p class="ftr__by">Сайт спроектирован и собран студией
+            <a class="ftr__vkv" href="https://vkvstudio.com" target="_blank" rel="noopener noreferrer">
+              <picture><source type="image/webp" srcset="assets/logo/vkv-studio.webp"><img src="assets/logo/vkv-studio.png" width="256" height="180" alt="" loading="lazy" decoding="async"></picture>
+              <span>VKV Studio</span>
+            </a>
+            <span class="ftr__dom">vkvstudio.com</span>
+          </p>
+        </div>
+      </section>
+
     </div>
   </div>
 </footer>
 
-<!-- Мобильный док: четыре действия под большим пальцем. На ветке хиро нет, и наблюдателю
-     нечего наблюдать, поэтому is-shown стоит прямо в разметке — так док работает и без
-     JavaScript. На ширине от 1024 px он скрыт правилом site.css. -->
+<!-- Мобильная нижняя панель -->
 <nav class="dock glass is-shown" aria-label="Быстрые действия">
   <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
   <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
-  <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН — см. комментарий у формы -->
   <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
-  <a class="is-primary" href="#contact"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Обсудить</a>
+  <a class="is-primary" href="#skolko"><svg aria-hidden="true"><use href="#i-calc"/></svg>Рассчитать</a>
 </nav>
 
 </body>

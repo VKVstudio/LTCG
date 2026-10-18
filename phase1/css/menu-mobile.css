@@ -144,8 +144,8 @@ html.mnav-on body .hdr { z-index: 130; }
   flex: none;
   font-family: var(--font-mono, ui-monospace, monospace);
   font-size: 0.75rem;
-  color: var(--gold-primary, #F2C249);
-  opacity: 0.75;
+  color: var(--gold-text);
+  opacity: 0.85;
 }
 .mnav__item.is-here .mnav__t { color: var(--text-2); }
 .mnav__item.is-here::after {

@@ -1,0 +1,279 @@
+/* ============================================================
+   LTCG — site-ru.css · кожа RU «тёмный tech-premium»
+   navy · стекло с толщиной · зерно двух масштабов · одна золотая
+   кромка на экран. Подключать после site.css.
+   Шрифты: Onest 500..700 (display) · Golos Text 400;500 (body) ·
+   JetBrains Mono 500 (метки, цифры) · Noto Sans Armenian 500 (:lang(hy)).
+   Канон: docs/style_system.md §4.1 · планка: docs/vkv_bar.md §1
+   ============================================================ */
+
+[data-skin="ru"] {
+  color-scheme: dark;
+
+  --bg: #0C1B3A;
+  --bg-2: #0A1631;
+  --bg-void: #07122A;
+  --surface: #112240;
+  --surface-2: #1A3050;
+  --surface-3: #243B5C;
+
+  --text: rgba(255, 255, 255, 0.92);
+  --text-2: rgba(255, 255, 255, 0.70);
+  --text-3: rgba(255, 255, 255, 0.54);
+  --text-strong: #FFFFFF;
+
+  --line: rgba(250, 224, 162, 0.14);
+  --line-strong: rgba(250, 224, 162, 0.30);
+
+  --gold: #F2C249;
+  --gold-light: #FAE0A2;
+  --gold-mid: #C4922B;
+  --gold-dark: #593E10;
+  --gold-text: #FAE0A2;
+  --gold-line: rgba(250, 224, 162, 0.32);
+  --gold-fill: linear-gradient(180deg, #FAE0A2 0%, #F2C249 100%);
+  --gold-fill-text: #0C1B3A;
+  --gold-glow: rgba(242, 194, 73, 0.55);
+
+  --btn-primary-bg: var(--gold-fill);
+  --btn-primary-text: var(--gold-fill-text);
+  --btn-outline-line: rgba(250, 224, 162, 0.28);
+  --btn-outline-text: #FFFFFF;
+  --btn-outline-hover-bg: rgba(242, 194, 73, 0.10);
+
+  --font-display: 'Onest', 'Segoe UI', Tahoma, sans-serif;
+  --font-body: 'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --fw-h1: 640;
+  --fw-h: 600;
+  --lh-h1: 1.05;
+  --ls-h1: -0.028em;
+  --ls-h: -0.02em;
+  --fs-body: 1rem;
+
+  --kicker-font: 500 var(--fs-xs)/1.45 var(--font-mono);
+  --kicker-ls: 0.14em;
+  --kicker-transform: uppercase;
+  --kicker-color: #FAE0A2;
+
+  --r-tile: 22px;
+  --r-card: 16px;
+  --r-btn: 10px;
+  --r-field: 10px;
+  --r-chip: 6px;
+
+  --tile-bg: linear-gradient(180deg, rgba(17, 34, 64, 0.92) 0%, rgba(13, 26, 50, 0.96) 100%);
+  --tile-line: rgba(250, 224, 162, 0.14);
+  --tile-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.65);
+
+  --field-bg: rgba(255, 255, 255, 0.04);
+  --field-line: rgba(250, 224, 162, 0.16);
+  --focus: #FAE0A2;
+
+  --glass-bg: rgba(12, 27, 58, 0.72);
+  --glass-blur: 22px;
+  --glass-line: rgba(250, 224, 162, 0.12);
+
+  /* зерно — два масштаба, overlay; только на стекле и тёмных плоскостях */
+  --grain-a: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.55'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='90' height='90' filter='url(%23g)'/%3E%3C/svg%3E");
+  --grain-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='2' stitchTiles='stitch' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.4'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ── фон страницы: navy с одним тёплым пятном слева-сверху,
+      секции дышат ступенями, финал уходит в пустоту ───────────── */
+html[data-skin="ru"] body {
+  background:
+    radial-gradient(70rem 44rem at -12% -8%, rgba(89, 62, 16, 0.22), transparent 60%),
+    var(--bg);
+}
+[data-skin="ru"] .section--deep { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg) 100%); }
+[data-skin="ru"] .section--grid::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(250, 224, 162, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250, 224, 162, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%);
+}
+[data-skin="ru"] .section--glow, [data-skin="ru"] .section--grid { overflow: clip; }
+[data-skin="ru"] .section--glow::after {
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  width: 60rem; height: 36rem; right: -20rem; top: -10rem;
+  background: radial-gradient(ellipse at center, rgba(242, 194, 73, 0.07) 0%, transparent 65%);
+}
+
+/* ── кикер: моно-метка с золотой чертой ──────────────────────── */
+[data-skin="ru"] .kicker::before { background: linear-gradient(90deg, #FAE0A2, rgba(242, 194, 73, 0.4)); }
+
+/* ── акцент в заголовке: 1–2 слова сплавом, не наклоном ──────── */
+[data-skin="ru"] .h1 em, [data-skin="ru"] .h2 em {
+  font-style: normal;
+  background: linear-gradient(92deg, #FFF3D0 0%, #FAE0A2 45%, #F2C249 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* ── кнопки: отливка, блик, свет на hover; шеврон +3 px ──────── */
+[data-skin="ru"] .btn--primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(89, 62, 16, 0.30);
+  overflow: hidden;
+}
+[data-skin="ru"] .btn--primary::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.28) 50%, transparent 70%);
+  background-size: 250% 100%; background-position: 120% 0;
+  opacity: 0;
+}
+@media (hover: hover) {
+  [data-skin="ru"] .btn--primary:hover {
+    background: linear-gradient(180deg, #FFF3D0 0%, #FAE0A2 100%);
+    transform: translateY(-1px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 12px 32px -8px rgba(242, 194, 73, 0.6);
+  }
+  [data-skin="ru"] .btn--outline:hover { color: #FFF3D0; border-color: rgba(250, 224, 162, 0.7); box-shadow: 0 10px 30px -14px rgba(242, 194, 73, 0.35); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-skin="ru"] .btn--primary::before { opacity: 1; animation: ruShimmer 5s ease-in-out 2.5s infinite; }
+  @keyframes ruShimmer { 0%, 70% { background-position: 120% 0; } 100% { background-position: -30% 0; } }
+}
+
+/* ── стекло: шапка, док, меню — толщина + блик кромки ────────── */
+[data-skin="ru"] .glass {
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 12px 44px rgba(0, 0, 0, 0.18);
+}
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  [data-skin="ru"] .glass {
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  }
+}
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  [data-skin="ru"] .glass { background: rgba(12, 27, 58, 0.96); }
+}
+[data-skin="ru"] .dock { border-top: 1px solid var(--glass-line); border-bottom: 0; }
+
+/* ── плитка: стекло с зерном двух масштабов, блик по верхнему ребру,
+      косой блик — «толщина», не «блюр 2017 года» ───────────────── */
+[data-skin="ru"] .tile::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  border-radius: inherit;
+  background-image: var(--grain-a), var(--grain-b);
+  background-size: 90px 90px, 260px 260px;
+  mix-blend-mode: overlay;
+  opacity: 0.34;
+  pointer-events: none;
+}
+[data-skin="ru"] .tile {
+  box-shadow: var(--tile-shadow), inset 0 1px 0 rgba(255, 243, 208, 0.10), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+[data-skin="ru"] .tile--quiet::before, [data-skin="ru"] .diy-wrap::before { display: none; }
+[data-skin="ru"] .diy-wrap { box-shadow: var(--tile-shadow), inset 0 1px 0 rgba(255, 243, 208, 0.10); }
+
+/* главная плитка: подсвеченная кромка — кольцо 1 px через mask,
+   золото собрано в левом верхнем углу, гаснет к правому нижнему;
+   тёплая тень #593E10 в углу. Одна такая плитка на ряд. */
+[data-skin="ru"] .tile--hero { border-color: transparent; }
+[data-skin="ru"] .tile--hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 2;
+  border-radius: inherit; padding: 1px;
+  background: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+[data-skin="ru"] .tile--hero {
+  background:
+    radial-gradient(30rem 20rem at 100% 100%, rgba(89, 62, 16, 0.42), transparent 70%),
+    radial-gradient(22rem 14rem at 0% 0%, rgba(242, 194, 73, 0.10), transparent 70%),
+    var(--tile-bg);
+}
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  [data-skin="ru"] .tile--hero { border-color: rgba(250, 224, 162, 0.36); }
+  [data-skin="ru"] .tile--hero::after { display: none; }
+}
+
+/* косой блик стекла по hover — только у кликабельных плиток */
+[data-skin="ru"] .state, [data-skin="ru"] .svc, [data-skin="ru"] .mod { transition: transform var(--t-fast) var(--ease), border-color var(--t-slow) var(--ease), box-shadow var(--t-slow) var(--ease); }
+@media (hover: hover) {
+  [data-skin="ru"] .state:hover, [data-skin="ru"] .svc:hover, [data-skin="ru"] .mod:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+    box-shadow: var(--tile-shadow), inset 0 1px 0 rgba(255, 243, 208, 0.16), 0 0 0 1px rgba(250, 224, 162, 0.04);
+  }
+  [data-skin="ru"] .tile--hero:hover { transform: translateY(-2px); }
+}
+
+/* ВЫБРАННОЕ СОСТОЯНИЕ — сильнее украшения.
+   Правило канона: опорная плитка ряда носит золотую кромку как ЯКОРЬ композиции, но выбор
+   человека обязан читаться сильнее любого украшения — иначе оформление врёт о состоянии.
+   Поэтому у выбранной плитки не «кромка чуть теплее», а сплошная золотая рамка и метка слева.
+   Работает и на опорной плитке тоже — раньше она была исключена и выбор на ней не читался. */
+[data-skin="ru"] .state.is-on {
+  border-color: rgba(250, 224, 162, 0.62);
+  box-shadow: var(--tile-shadow), inset 0 1px 0 rgba(255, 243, 208, 0.16), 0 0 48px -22px rgba(242, 194, 73, 0.45);
+}
+[data-skin="ru"] .state.is-on::before {
+  content: ''; position: absolute; z-index: 3;
+  inset-block: var(--tile-pad); inset-inline-start: 0;
+  width: 2px; border-radius: 2px;
+  background: linear-gradient(180deg, #FAE0A2, rgba(242, 194, 73, 0.35));
+}
+[data-skin="ru"] .tile--hero.is-on::after { opacity: 0.35; }
+
+/* итог калькулятора: строки со сплавом на числах */
+[data-skin="ru"] .total__row dd { color: #FFF3D0; }
+
+/* таймлайн: узел светится золотом — свет у предмета, не под карточкой */
+[data-skin="ru"] .tl__dot { box-shadow: inset 0 0 0 3px var(--bg), inset 0 0 0 5px var(--gold), 0 0 14px rgba(242, 194, 73, 0.25); }
+
+/* арт под секциями — по коже: тише, чем в светлых */
+[data-skin="ru"] .art img { --art-opacity: 0.26; }
+[data-skin="ru"] .section--contact .art img { --art-opacity: 0.55; }
+[data-skin="ru"] .section--contact .art::after {
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(12, 27, 58, 0.25) 35%, rgba(12, 27, 58, 0.35) 70%, var(--bg-void) 100%);
+}
+
+/* ── армянский внутри RU-страницы ────────────────────────────── */
+[data-skin="ru"] :lang(hy) { font-family: 'Noto Sans Armenian', var(--font-body); letter-spacing: 0; }
+
+/* принудительные цвета */
+@media (forced-colors: active) {
+  [data-skin="ru"] .h1 em, [data-skin="ru"] .h2 em { background: none; color: CanvasText; -webkit-text-fill-color: currentColor; }
+  [data-skin="ru"] .tile--hero::after, [data-skin="ru"] .tile::before { display: none; }
+  [data-skin="ru"] .tile--hero { border-color: CanvasText; }
+}
+
+/* ── хиро в коже RU: экран просыпается в navy, акцент заголовка — сплав, панели — стекло ── */
+[data-skin="ru"] {
+  --hs-screen-core: #12264E;
+  --hs-screen-edge: #08142C;
+  --hs-brand: #FFF3D0;
+  --hs-desk-light: rgba(64, 110, 190, 0.85);
+}
+[data-skin="ru"] .hs__screen-title em {
+  background: linear-gradient(92deg, #FFF3D0 0%, #FAE0A2 45%, #F2C249 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* ── носители хиро ниже по странице: золотая нить-кромка между секциями (гаснет вправо),
+      свет из предмета — одно тёплое пятно у края каждой второй секции, а не под карточками ── */
+[data-skin="ru"] .section--thread::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px; z-index: 0; pointer-events: none;
+  background: linear-gradient(90deg, transparent 0, rgba(250, 224, 162, 0.55) 12%, rgba(242, 194, 73, 0.35) 48%, rgba(196, 146, 43, 0.12) 78%, transparent 100%);
+}
+[data-skin="ru"] .section--light::after {
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  width: 58rem; height: 40rem; left: -22rem; bottom: -16rem;
+  background: radial-gradient(ellipse at center, rgba(89, 62, 16, 0.34) 0%, rgba(242, 194, 73, 0.05) 45%, transparent 68%);
+}
+[data-skin="ru"] .section--light { overflow: clip; }
+/* цифра/дата актуальности — единственный крупный объект секции цены */
+[data-skin="ru"] .total__asof { font-family: var(--font-display); font-weight: 640; font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem); letter-spacing: -0.02em; line-height: 1.05; color: #FFF3D0; font-variant-numeric: tabular-nums; }
+[data-skin="ru"] .total__asof small { display: block; font-family: var(--font-mono); font-weight: 500; font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 0.4rem; }

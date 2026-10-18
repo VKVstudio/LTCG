@@ -1,40 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m1" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m5" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
-/* Тема и класс js — ДО первой отрисовки: иначе на светлой машине страница мигнёт тёмным.
-   Единственный инлайновый скрипт страницы, вся остальная логика — во внешних файлах. */
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
 try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
 </script>
 
-<!-- Сборка для показа и вычитки клиентом, домен не куплен: индексация закрыта.
-     Снимается ОДНОЙ строкой при публикации. -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-<!-- Заголовок и описание — под живой запрос, а не под бренд. title ≤ 60, description ≤ 155. -->
-<title>Налоговое резидентство Армении и обмен данными — LTCG</title>
-<meta name="description" content="183 дня, договор 1996 года, CRS с сентября 2025, уведомление ФНС и ОДДС: кто чей резидент и какие сроки. Источники и дата проверки — 04.09.2026.">
+<title>Налоговое резидентство Армении и автообмен CRS — LTCG</title>
+<meta name="description" content="Правило 183 дней в Армении (ст. 25 НК РА), сертификат резидента за 2 рабочих дня, автообмен CRS и валютные отчёты по ФЗ-173. Разбор юристов LTCG в Ереване.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
 <link rel="canonical" href="https://ltcg.am/rezidentstvo-i-crs.html">
-<!-- Ветка объявляет hreflang на себя и x-default на себя же. Ссылок на /hy/ и /en/ нет,
-     пока их содержание не соответствует этому адресу. -->
 <link rel="alternate" hreflang="ru" href="https://ltcg.am/rezidentstvo-i-crs.html">
 <link rel="alternate" hreflang="x-default" href="https://ltcg.am/rezidentstvo-i-crs.html">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="Налоговое резидентство Армении и обмен данными с Россией">
-<meta property="og:description" content="Две страны считают резидентство по-разному, и в год переезда можно оказаться резидентом обеих. Что говорит договор, что уходит по CRS, какие сроки у ФНС.">
+<meta property="og:title" content="Налоговое резидентство Армении и автообмен CRS — LTCG">
+<meta property="og:description" content="Как считается налоговое резидентство РА (183 дня и правило 1 дня за весь год), сертификат КГД за 2 рабочих дня, анкета CRS за 10 рабочих дней и отчёты по ФЗ-173.">
 <meta property="og:url" content="https://ltcg.am/rezidentstvo-i-crs.html">
-<!-- Картинки og для этой ветки ещё нет: assets/og/ пуст. См. issues сборки. -->
 <meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -43,116 +35,95 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta name="twitter:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Место под мета-подтверждение Яндекс.Вебмастера. Код добавляет владелец после
-     регистрации домена; строка стоит здесь, чтобы её не забыли.
-<meta name="yandex-verification" content="">
--->
-
-<!-- Шрифты самохостом. Google Fonts не подключается: внешний домен в критическом пути,
-     и Яндекс считает его в скорость. -->
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/onest-500-700-cyrillic.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/golos-text-400-cyrillic.woff2">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261018m1">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261018m1">
-<!-- Один загрузчик на весь сайт (закон импорта). JavaScript только надстройкой. -->
-<script defer src="js/boot.js?v=20261018m1"></script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-cyrillic.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/jetbrains-mono-500-latin.woff2">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m7">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
+<script defer src="js/boot.js?v=20261019m7"></script>
 
-<!-- Организация объявлена целиком ОДИН раз на / — здесь только ссылка по @id.
-     Телефон и hasOfferCatalog не дублируются. aggregateRating и speakable не выводятся:
-     реальных отзывов у компании нет. HowTo на этой ветке нет намеренно — это не процедура. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://ltcg.am/#org",
+      "name": "Legal and Tax Consulting Group LLC",
+      "alternateName": "LTCG",
+      "url": "https://ltcg.am/",
+      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+    },
+    {
       "@type": ["WebPage", "FAQPage"],
       "@id": "https://ltcg.am/rezidentstvo-i-crs.html#page",
       "url": "https://ltcg.am/rezidentstvo-i-crs.html",
-      "name": "Налоговое резидентство Армении и обмен данными с Россией",
-      "description": "Как Армения и Россия считают налоговое резидентство, что говорит договор от 28.12.1996, что уходит по автоматическому обмену и какие сроки у уведомлений и отчётов.",
+      "name": "Налоговое резидентство Армении и автообмен CRS — LTCG",
+      "description": "Налоговое резидентство физлиц в Армении (ст. 25 НК РА), сертификат резидента КГД за 2 рабочих дня, самосертификация CRS (ст. 80.2 НК РА) и валютные уведомления по ФЗ-173.",
       "inLanguage": "ru",
-      "dateModified": "2026-09-04",
-      "isPartOf": { "@id": "https://ltcg.am/#website" },
+      "datePublished": "2026-09-04",
+      "dateModified": "2026-10-18",
+      "isPartOf": { "@type": "WebSite", "@id": "https://ltcg.am/#website", "url": "https://ltcg.am/", "name": "LTCG — Legal & Tax Consulting Group" },
       "publisher": { "@id": "https://ltcg.am/#org" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
-          { "@type": "ListItem", "position": 2, "name": "Резидентство и обмен данными", "item": "https://ltcg.am/rezidentstvo-i-crs.html" }
+          { "@type": "ListItem", "position": 2, "name": "Резидентство и CRS", "item": "https://ltcg.am/rezidentstvo-i-crs.html" }
         ]
       },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Я уехал в апреле. Я где налоговый резидент за этот год?",
+          "name": "Как считается налоговое резидентство физического лица в Армении по ст. 25 НК РА?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Возможно, в обеих странах сразу, и это нормальный результат, а не ошибка. Если вы набрали в Армении 183 дня к 31 декабря, вы резидент Армении за весь год, включая месяцы до переезда (ст. 25 ч. 5 НК РА). Россия фиксирует свой статус за календарный год по правилу 183 дней в течение 12 следующих подряд месяцев (п. 2 ст. 207 НК РФ). Когда обе страны признали вас своим, включается договор: постоянное местожительство, затем гражданство, затем согласование между органами. Проверено 04.09.2026."
+            "text": "Физическое лицо признаётся налоговым резидентом Республики Армения при фактическом пребывании 183 дня и более в налоговом году (12 месяцев) либо по центру жизненных интересов в Армении. Признание резидентом хотя бы на 1 день делает лицо налоговым резидентом за весь календарный год."
           }
         },
         {
           "@type": "Question",
-          "name": "Нужно ли уведомлять российскую налоговую о счёте в армянском банке?",
+          "name": "Означает ли наличие карты ВНЖ или ПМЖ Армении автоматическое налоговое резидентство?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Обязанность уведомить об открытии, закрытии или изменении реквизитов зарубежного счёта есть у граждан России и не зависит от того, где вы живёте: валютными резидентами закон называет физических лиц, являющихся гражданами Российской Федерации (подп. «а» п. 6 ч. 1 ст. 1 ФЗ 173-ФЗ). Срок — не позднее одного месяца со дня открытия (ч. 2 ст. 12). Освобождение даётся тому, чей срок пребывания за пределами России в истекшем календарном году превысил 183 дня (ч. 8 ст. 12). LTCG — армянская компания и российское право не практикует: мы даём норму и ссылку. Проверено 04.09.2026."
+            "text": "Нет. Карта ВНЖ (до 1 года) или ПМЖ (на 5 лет) — это миграционный статус, тогда как налоговое резидентство определяется 183 днями присутствия или центром жизненных интересов. С 1 ноября 2026 года при отсутствии в Армении 183 дня и более обладатель статуса пребывания обязан уведомить миграционную службу через платформу за 10 дней."
           }
         },
         {
           "@type": "Question",
-          "name": "Отчёт о движении средств — это то же самое, что уведомление об открытии счёта?",
+          "name": "Что произойдёт со счётом в армянском банке, если не заполнить анкету самосертификации CRS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Нет, это две разные обязанности с разными сроками. Уведомление подаётся один раз по событию — открыли, закрыли, изменили реквизиты — в течение месяца (ч. 2 ст. 12 ФЗ 173-ФЗ). Отчёт о движении средств по счёту подаётся ежегодно, до 1 июня года, следующего за отчётным (ч. 7 ст. 12). Освобождения от отчёта по счетам в банках стран ЕАЭС существуют, но точную формулировку нормы мы первоисточником не подтвердили и поэтому её не приводим. Проверено 04.09.2026."
+            "text": "Без предоставления анкеты самосертификации CRS банк отказывает в открытии нового счёта, а по действующему счёту через 10 рабочих дней приостанавливает операции, кроме перевода средств на собственный счёт клиента в другом финансовом учреждении."
           }
         },
         {
           "@type": "Question",
-          "name": "Правда ли, что Армения передаёт данные о счетах в Россию?",
+          "name": "Как и за какой срок можно получить сертификат налогового резидента Армении в КГД РА?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Первая часть подтверждена официально: Армения ратифицировала многостороннее соглашение об автоматическом обмене — закон подписан президентом РА 03.10.2023 — и провела первый обмен в сентябре 2025 года по данным ОЭСР, Global Forum. Комитет госдоходов Армении заявлял об обмене примерно со 120 странами и территориями. Вторая часть не закрыта: включение Армении в российский перечень государств автоматического обмена мы официальным текстом не подтвердили. Планировать разумно исходя из видимости счёта, а не из невидимости. Проверено 04.09.2026."
+            "text": "Сертификат налогового резидента Республики Армения выдаётся Комитетом государственных доходов электронно через систему «Ես Եմ» за 2 рабочих дня бесплатно (госпошлина 0 ֏) при подтверждении 183 и более дней пребывания в году либо центра жизненных интересов."
           }
         },
         {
           "@type": "Question",
-          "name": "Банк прислал форму про налоговое резидентство. Обязан ли я её заполнять?",
+          "name": "Какие сроки и штрафы действуют в РФ за неуведомление о счетах в Армении и несдачу ОДДС?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Практически да, если хотите пользоваться счётом. Это самосертификация в рамках автоматического обмена. По описанию армянского банка последствия отказа такие: при открытии счёта банк отказывает в открытии; по уже действующему счёту при непредставлении сведений в течение 10 рабочих дней банк приостанавливает операции, кроме перевода средств в другое учреждение. Формулировки «счёт закрывают» на проверенной нами странице нет. Источник: unibank.am/ru/crs, проверено 04.09.2026."
+            "text": "Граждане РФ, пробывшие вне РФ менее 183 дней в календарном году, уведомляют ФНС об открытии или закрытии счёта за 1 месяц и сдают отчёт о движении средств до 1 июня. Штрафы составляют 1 000–1 500 руб. за просрочку уведомления, 4 000–5 000 руб. за неуведомление, от 300–500 руб. до 2 500–3 000 руб. за просрочку отчёта и 20 000 руб. при повторном нарушении."
           }
         },
         {
           "@type": "Question",
-          "name": "У меня ВНЖ Армении. Значит, я налоговый резидент Армении?",
+          "name": "Как устраняется двойное резидентство между Арменией и Россией в год переезда?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Нет. Это два разных статуса, которые выдают разные органы по разным основаниям. ВНЖ — миграционный статус, право находиться в стране. Налоговое резидентство определяется присутствием 183 дня и более либо центром жизненных интересов (ст. 25 НК РА). С 1 ноября 2026 появится ещё одна цифра 183: обладатель временного или постоянного статуса пребывания, отсутствовавший в Армении 183 дня и более, обязан уведомить об этом миграционный орган в 10-дневный срок (новая ст. 17 ч. 8 закона «Об иностранцах», ՀՕ-11-Ն от 20.01.2026). Налоговые 183 дня считают присутствие, миграционные — отсутствие."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Когда подавать декларацию о доходах в Армении и нужна ли она мне вообще?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Общее правило: физическое лицо, получившее доход, не обложенный налогом у источника выплаты в Армении, обязано подать личную декларацию; зарубежный доход налогового резидента Армении в эту категорию попадает. Отдельно существует система всеобщего декларирования — она охватывает граждан Армении, являющихся её резидентами, и иностранные граждане в неё не включены. Базовый срок — 1 мая; за 2025 год срок продлён до 1 ноября 2026 включительно (закон ՀՕ-324-Ն от 24.10.2025); с 2027 года окно подачи планируется со 2 марта по 1 июля. Подача только электронная, через self-portal.taxservice.am."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Я собираюсь продать квартиру в России в год отъезда. Чем это грозит?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "По этому вопросу мы не даём числа. Утверждение «нерезидент платит 30 % со всей суммы продажи без вычетов» ходит по обзорам, но норму ст. 217.1 НК РФ мы первоисточником не подтвердили, а разница между «с прибыли» и «со всей суммы» в конкретной сделке измеряется миллионами рублей. Что можно сказать твёрдо: момент сделки относительно года утраты российского резидентства имеет значение, и разбирать это надо до сделки, вместе с российским консультантом. Проверено 04.09.2026."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Что делать, если срок уже пропущен?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Смотря какой. У части обязанностей есть штраф и возможность подать с опозданием — например, по российским валютным уведомлениям суммы для граждан прописаны в ст. 15.25 КоАП постатейно. У части срок пресекательный: заявление по взаимосогласительной процедуре подаётся в течение трёх лет с момента первого уведомления о действиях, приводящих к налогообложению не по соглашению (ст. 24 договора), и после трёх лет этот путь закрыт. Пропущенный срок разбирается по конкретной обязанности и конкретной дате. Проверено 04.09.2026."
+            "text": "При одновременном признании налоговым резидентом обеих стран статус определяется последовательно по критериям международного соглашения об избежании двойного налогообложения: постоянное жилище, центр жизненных интересов, гражданство и взаимосогласительная процедура, с подтверждением сертификатом КГД РА за 2 рабочих дня."
           }
         }
       ]
@@ -160,11 +131,10 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     {
       "@type": "Service",
       "@id": "https://ltcg.am/rezidentstvo-i-crs.html#service",
-      "name": "Разбор налоговой картины при двух странах",
-      "serviceType": "Налоговое и бухгалтерское сопровождение",
+      "name": "Налоговое планирование, резидентство РА и комплаенс CRS",
+      "serviceType": "Налоговое и юридическое сопровождение в Республике Армения",
       "areaServed": { "@type": "Country", "name": "Армения" },
-      "provider": { "@id": "https://ltcg.am/#org" },
-      "audience": { "@type": "Audience", "audienceType": "Люди, живущие в Армении и сохранившие связи с другой страной" }
+      "provider": { "@id": "https://ltcg.am/#org" }
     }
   ]
 }
@@ -201,1700 +171,694 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
     <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 7.5h7M8.5 12h2M13.5 12h2M8.5 16h2M13.5 16h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
     <symbol id="i-auto" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></symbol>
+    <!-- знак хиро: заполняется из assets/hero/logo.svg скриптом -->
+    <symbol id="hsLogoLetters" viewBox="67 524 889 236"></symbol>
+    <symbol id="hsLogoMark" viewBox="67 169 889 590"></symbol>
   </defs>
 </svg>
 
 <!-- ═══ Шапка ═══════════════════════════════════════════════════ -->
 <header class="hdr glass" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="./" data-path="" aria-label="LTCG — на главную">
-      <svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span>
+    <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+      <picture data-logo="gold">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
+      <picture data-logo="ink">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
+      </picture>
     </a>
-    <!-- Четыре пункта, а не шесть: на 1280–1439 строка «нав + телефон + CTA + три языка»
-         в контейнер 1280 не влезает. Полный список разделов — в мобильном меню и в подвале. -->
-    <nav class="hdr__nav" aria-label="Разделы страницы">
-      <a href="#otvet">Ответ</a>
-      <a href="#dogovor">Договор</a>
-      <a href="#obmen">Обмен</a>
-      <a href="#voprosy">Вопросы</a>
-    </nav>
-    <div class="hdr__contacts">
-      <a class="hdr__phone" href="tel:+37494184014">+374 94 184 014</a>
-      <a class="btn btn--icon btn--ghost hdr__phone-ico" href="tel:+37494184014" aria-label="Позвонить +374 94 184 014"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
-      <a class="btn btn--icon btn--ghost" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
-      <!-- WhatsApp на этом номере не подтверждён компанией — см. комментарий у формы -->
-      <a class="btn btn--icon btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+    <div class="hdr__mid">
+      <nav class="hdr__nav" aria-label="Разделы">
+        <a href="./home-ru.html#where">Этапы</a>
+        <a href="./home-ru.html#calc">Калькулятор</a>
+        <a href="./home-ru.html#services">Услуги</a>
+        <a href="./noyabr.html">С 1 ноября</a>
+        <a href="./home-ru.html#contact">Контакты</a>
+      </nav>
+      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
-    <!-- Короткая форма кнопки ветки: в строке шапки «Разобрать мою налоговую картину»
-         переносится на две строки и ломает высоту ряда. Полная формулировка — у формы. -->
-    <a class="btn btn--primary btn--sm hdr__cta" href="#kontakt">Разобрать <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <nav class="lang" aria-label="Язык сайта">
-      <a href="hy/" data-path="hy/" lang="hy" hreflang="hy"><span class="lang__code" aria-hidden="true">HY</span><span class="lang__name">Հայերեն</span></a>
-      <a href="./" data-path="" lang="ru" aria-current="page"><span class="lang__code" aria-hidden="true">RU</span><span class="lang__name">Русский</span></a>
-      <a href="en/" data-path="en/" lang="en" hreflang="en"><span class="lang__code" aria-hidden="true">EN</span><span class="lang__name">English</span></a>
-    </nav>
+    <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
+         меню не собирается, и мёртвой кнопки на экране быть не должно.
+         Содержимое панели js/menu-mobile.js берёт из самой страницы и из
+         подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+      <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="hdr__menu-txt">Меню</span>
+    </button>
+
     <div class="themer" role="group" aria-label="Тема оформления" data-themer>
       <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
       <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
       <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
-      <svg data-ico="menu" aria-hidden="true"><use href="#i-menu"/></svg>
-      <svg data-ico="close" aria-hidden="true"><use href="#i-close"/></svg>
-    </button>
   </div>
 </header>
 
-<div class="menu glass" id="menu" hidden>
-  <nav class="menu__list" aria-label="Разделы страницы">
-    <a href="#otvet">Короткий ответ</a>
-    <a href="#vash-sluchay">Ваш случай</a>
-    <a href="#kak-schitayut">Как считают резидентство</a>
-    <a href="#dogovor">Что говорит договор</a>
-    <a href="#obmen">Обмен данными</a>
-    <a href="#obyazannosti">Обязанности и сроки</a>
-    <a href="#lovushki">Где ломается</a>
-    <a href="#voprosy">Вопросы</a>
-    <a href="#kontakt">Контакт</a>
-  </nav>
-  <div class="menu__row">
-    <a class="btn btn--primary" href="#kontakt">Разобрать мою картину <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-    <a class="btn btn--outline" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg> +374 94 184 014</a>
-  </div>
-  <div class="themer" role="group" aria-label="Тема оформления" data-themer>
-    <button class="themer__btn" type="button" data-theme-set="auto" aria-pressed="true" title="Как в системе"><svg aria-hidden="true"><use href="#i-auto"/></svg><span class="sr-only">Как в системе</span></button>
-    <button class="themer__btn" type="button" data-theme-set="light" aria-pressed="false" title="Светлая тема"><svg aria-hidden="true"><use href="#i-sun"/></svg><span class="sr-only">Светлая тема</span></button>
-    <button class="themer__btn" type="button" data-theme-set="dark" aria-pressed="false" title="Тёмная тема"><svg aria-hidden="true"><use href="#i-moon"/></svg><span class="sr-only">Тёмная тема</span></button>
-  </div>
-  <nav class="menu__langs" aria-label="Язык сайта">
-    <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-    <a href="./" data-path="" lang="ru" aria-current="page">Русский</a>
-    <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-  </nav>
-</div>
+<div class="hdr-gap" aria-hidden="true"></div>
 
 <main id="main">
 
-<!-- ═══ 01 · Шапка ветки и короткий ответ ═══════════════════════ -->
-<section class="section" id="otvet" aria-labelledby="branch-title" data-rail-label="Ответ">
+<!-- ═══ 01 · Первый экран + 4 цифры ══════════════════════════════ -->
+<section class="section section--grid section--art" id="otvet" aria-labelledby="branch-title" data-rail-label="Короткий ответ">
+  <div class="nov-art nov-art--guilloche" aria-hidden="true"></div>
   <div class="wrap">
-
-    <header class="section__head section__head--wide">
-      <p class="kicker"><span class="kicker__no">Ветка 05</span> Живу и планирую</p>
-      <h1 class="h1" id="branch-title">Налоговое резидентство Армении и обмен данными с Россией: <em>как это считается и где чаще всего ошибаются</em></h1>
-      <p class="lead">Вы живёте здесь уже не первый месяц, дни считали примерно, и в какой-то
-        момент выяснилось, что вы не знаете простой вещи — чьим налоговым резидентом вы стали
-        и кому теперь что должны.</p>
-
-      <p class="small measure">Эта страница не нужна, если вы ещё не приехали и закрываете дела
-        дома — тогда вам в <a class="lnk" href="pered-pereezdom.html">«Ещё не переехал»</a>; если
-        вопрос в том, какой налоговый режим выбрать для ИП и сколько платить с оборота — это
-        <a class="lnk" href="ip-i-nalogi.html">«Работаю»</a>; если нужен вид на жительство и вы
-        выбираете основание — <a class="lnk" href="vnzh.html">«Легализуюсь»</a>. Здесь про другое:
-        про две страны сразу, про дни, про счета и про то, что о них теперь известно.</p>
-
-      <nav class="pathbar" aria-label="Шесть веток">
-        <ol class="pathbar__list">
-          <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
-          <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
-          <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
-          <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
-          <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">05</span><span>Живу и планирую</span></span></li>
-          <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
-        </ol>
-      </nav>
-
-      <!-- Подпись ветки сформулирована честно: подписывать российскую половину «проверил
-           юрист LTCG» нельзя — армянская фирма не ручается за российское право. -->
-      <p class="sign">
-        <span>Проверено по первоисточникам и открытым документам</span>
-        <span>Российские нормы — по опубликованным текстам: мы не практикуем российское право</span>
-        <span>Обновлено 04.09.2026</span>
-      </p>
-    </header>
-
-    <section class="answer" aria-labelledby="short">
-      <h2 class="kicker" id="short"><span class="kicker__no">01</span> Короткий ответ</h2>
-
-      <p class="answer__p"><b>Резидентство считает каждая страна отдельно и по своему закону,
-        поэтому в год переезда нормально оказаться резидентом обеих сразу.</b> Когда обе страны
-        признали вас своим, спор разрешается договором между Россией и Арменией об устранении
-        двойного налогообложения от 28.12.1996. Отдельно от налогов и независимо от налогового
-        статуса существуют валютные обязанности перед российской налоговой: уведомление об
-        открытии счёта и отчёт о движении средств живут по собственным правилам и по собственным
-        срокам.</p>
-
-      <ol class="answer__facts" role="list">
-        <li><span>Армения признаёт вас налоговым резидентом при фактическом присутствии
-          <b>183 дня и более</b>, а также по центру жизненных интересов — и, что важнее, если вы
-          были признаны резидентом Армении хотя бы <b>один день</b> налогового года, вы считаетесь
-          резидентом за <b>весь</b> этот год.
-          <span class="src">Источник: ст. 25 НК РА, английский перевод на государственном правовом
-          портале <a href="https://www.arlis.am/en/acts/205620" rel="noopener">arlis.am/en/acts/205620</a> · проверено 04.09.2026.</span></span></li>
-
-        <li><span>Россия признаёт резидентом того, кто фактически находился в стране не менее
-          <b>183 календарных дней в течение 12 следующих подряд месяцев</b>, а окончательный
-          статус за год фиксирует по его итогам.
-          <span class="src">Источник: п. 2 ст. 207 НК РФ · проверено 04.09.2026.</span></span></li>
-
-        <li><span>В тексте договора вторая ступень теста — <b>гражданство</b>, а привычных по
-          модельной конвенции ОЭСР ступеней «центр жизненных интересов» и «обычное проживание»
-          в нём нет вовсе.
-          <span class="src">Источник: ст. 4 п. 2, текст с сервера ФНС data.nalog.ru · читайте
-          вместе с границей проверки ниже: у нас редакция 1996 года.</span></span></li>
-
-        <li><span>Валютные обязанности перед российской налоговой не зависят от налогового
-          статуса: уведомление о счёте и отчёт о движении средств живут по собственным срокам.
-          <span class="src">Источник: ст. 12 Федерального закона от 10.12.2003 № 173-ФЗ · проверено 04.09.2026.</span></span></li>
-
-        <li><span>С <b>сентября 2025 года</b> Армения участвует в автоматическом обмене финансовой
-          информацией — то есть расчёт на то, что о счёте просто не узнают, перестал работать.
-          <span class="src">Источник: ОЭСР, Global Forum · проверено 04.09.2026.</span></span></li>
+    <nav class="pathbar" aria-label="Шесть веток">
+      <ol class="pathbar__list">
+        <li class="pathbar__i"><a href="pered-pereezdom.html"><span class="pathbar__n">01</span><span>Ещё не переехал</span></a></li>
+        <li class="pathbar__i"><a href="schet-v-banke.html"><span class="pathbar__n">02</span><span>Только приехал</span></a></li>
+        <li class="pathbar__i"><a href="vnzh.html"><span class="pathbar__n">03</span><span>Легализуюсь</span></a></li>
+        <li class="pathbar__i"><a href="ip-i-nalogi.html"><span class="pathbar__n">04</span><span>Работаю</span></a></li>
+        <li class="pathbar__i" aria-current="page"><span><span class="pathbar__n">05</span><span>Живу и планирую</span></span></li>
+        <li class="pathbar__i"><a href="spravki-i-zakrytie.html"><span class="pathbar__n">06</span><span>Двигаюсь дальше</span></a></li>
       </ol>
-    </section>
+    </nav>
 
-    <!-- Признанная граница. Стоит здесь, а не в подвале и не мелким шрифтом: требование
-         задания выполнено видимым текстом трижды — здесь, в шапке таблицы договора и в подписи. -->
-    <aside class="nochange" style="margin-top:var(--s-10)" aria-labelledby="granica-1996">
-      <p class="nochange__tag">Граница проверки</p>
-      <h2 class="nochange__t" id="granica-1996">Разбор договора 1996 года на этой странице сделан по редакции 1996 года</h2>
+    <div class="branch-hero" data-reveal>
+      <div class="section__head section__head--wide">
+        <p class="kicker"><span class="kicker__no">01 · Ветка 05</span> Живу и планирую · Налоговое резидентство РА, CRS и валютный контроль</p>
+        <h1 class="h1" id="branch-title">Налоговое резидентство и CRS: <em>183 дня, сертификат КГД и счета</em></h1>
+        <p class="lead">В год переезда легко стать налоговым резидентом двух стран одновременно: Армения считает резидентом за весь год того, кто признан резидентом хотя бы на <b>1 день</b>, а банки РА без анкеты CRS за <b>10 рабочих дней</b> приостанавливают операции по счёту.</p>
+        <div class="btn-row" style="margin-top: var(--s-5)">
+          <a class="btn btn--primary" href="#contact">Разобрать мою налоговую картину <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="#skolko">Рассчитать сопровождение <svg aria-hidden="true"><use href="#i-calc"/></svg></a>
+        </div>
+      </div>
+      <aside class="branch-visual" aria-hidden="true">
+        <img src="assets/img/ltcg-yerevan-tuff.png" width="1280" height="853" alt="" fetchpriority="high">
+        <div class="branch-visual__hud">
+          <span><b>Ветка 05 · Резидентство и CRS</b>183 дня, сертификат КГД и автообмен</span>
+          <span>Ереван · LTCG</span>
+        </div>
+      </aside>
+    </div>
 
-      <p>Полный текст мы скачали с сервера ФНС и прочитали из распакованного файла, а не из
-        чужого пересказа. Но в этом файле — редакция с протоколом от 28.12.1996.
-        <b>Протокола от 24.10.2011, который вступил в силу 15.04.2013 и применяется с 01.01.2014,
-        у нас на руках нет.</b> КонсультантПлюс маркирует действующую редакцию как «ред. от 24.10.2011».</p>
-
-      <p>Что это значит практически: по оглавлению действующей редакции мы видим, что статья 13
-        по-прежнему называется «Доходы от независимой личной деятельности», а статья 25 —
-        «Помощь в сборе налогов», то есть два наблюдения ниже протокол пережили.
-        <b>По статьям 4 (резидентство), 10 (дивиденды), 11 (проценты) и 12 (роялти) такой
-        проверки у нас нет.</b> Всё, что написано ниже про эти четыре статьи, — чтение редакции
-        1996 года, и до получения протокола мы не утверждаем, что оно описывает действующую норму.</p>
-
-      <p>Мы могли бы этого не писать. Никто из тех, кто пишет на эту тему по-русски, такого
-        не пишет. Но тогда вы бы читали разбор возможно устаревшего текста и не знали об этом.</p>
-
-      <p><b>Дополнительно:</b> к договору применяется многосторонняя конвенция MLI — со стороны
-        России к налогам у источника и к прочим налогам с 01.01.2025, со стороны Армении к налогам
-        у источника с 01.01.2025 и к прочим налогам с 16.08.2024.
-        <b>Какие именно положения MLI применяются к этому договору — тест основной цели,
-        изменённая преамбула, правило по двойному резидентству — мы не установили.</b>
-        Это второе место, где наш разбор упирается в границу.</p>
-
-      <p class="src">Проверено по: распакованному файлу текста соглашения с data.nalog.ru
-        (редакция 1996 года), оглавлению действующей редакции на КонсультантПлюс и данным
-        minfin.gov.ru о применении MLI · 04.09.2026.</p>
-    </aside>
-
+    <div class="answer" data-reveal>
+      <div class="bignums" data-stagger aria-label="Ключевые сроки и пороги резидентства">
+        <div class="bignum">
+          <span class="bignum__val">183 <small>дня</small></span>
+          <span class="bignum__lbl">порог в году (<b>12 месяцев</b>) или центр интересов; <b>1 день</b> статуса = весь <b>1 год</b></span>
+          <span class="src">ст. 25 ч. 1, ч. 5 НК РА ՀՕ-165-Ն</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">2 <small>р. д. · 0 ֏</small></span>
+          <span class="bignum__lbl">бесплатная электронная выдача сертификата резидента КГД РА через «Ես Եմ»</span>
+          <span class="src">e-services.src.am</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">10 <small>р. дней</small></span>
+          <span class="bignum__lbl">срок подачи анкеты самосертификации CRS по счёту до заморозки операций</span>
+          <span class="src">ст. 80.2 НК РА · unibank.am/ru/crs</span>
+        </div>
+        <div class="bignum">
+          <span class="bignum__val">1 <small>месяц</small></span>
+          <span class="bignum__lbl">уведомление ФНС о счёте; освобождение от ОДДС при пребывании вне РФ более <b>183 дней</b></span>
+          <span class="src">ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══ 02 · Развилка ═══════════════════════════════════════════ -->
-<section class="section section--stone" id="vash-sluchay" aria-labelledby="fork-title" data-rail-label="Ваш случай">
+<!-- ═══ 02 · Интерактивная развилка (.fork) ══════════════════════ -->
+<section class="section section--deep section--thread section--light" id="situaciya" aria-labelledby="fork-t" data-rail-label="Ваша ситуация">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">02</span> Развилка</p>
-      <h2 class="h2" id="fork-title">Чьим налоговым резидентом вы <em>оказались</em></h2>
-      <p class="lead">Вопрос один, и это не вопрос о том, где у вас ВНЖ и где вы себя чувствуете
-        дома. Это вопрос про дни и обстоятельства. Ниже все четыре исхода. Найдите свой — но
-        прочитайте и остальные три, потому что в год переезда люди чаще всего попадают не туда,
-        куда думали.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">02</span> Ваша ситуация</p>
+      <h2 class="h2" id="fork-t">Выберите сценарий — <em>покажем статус, сроки и риски</em></h2>
     </div>
 
-    <!-- Развилка на нативных radio: считается в браузере, ничего не отправляется,
-         контакт не спрашивается. Все исходы лежат в разметке и видны без выбора. -->
-    <form>
-    <fieldset class="fork">
-      <legend class="fork__q">Чьим налоговым резидентом вы оказались по итогам календарного года?</legend>
+    <fieldset class="fork" data-reveal>
+      <legend class="sr-only">Выберите сценарий резидентства и CRS</legend>
+      <input class="fork__r" type="radio" name="res-fork" id="rf-dual" checked>
+      <input class="fork__r" type="radio" name="res-fork" id="rf-crs">
+      <input class="fork__r" type="radio" name="res-fork" id="rf-val">
+      <input class="fork__r" type="radio" name="res-fork" id="rf-vnzh">
 
-      <input class="fork__r" type="radio" name="rezident" id="r1">
-      <input class="fork__r" type="radio" name="rezident" id="r2">
-      <input class="fork__r" type="radio" name="rezident" id="r3">
-      <input class="fork__r" type="radio" name="rezident" id="r4">
-
-      <div class="fork__opts">
-        <label class="fork__opt" for="r1"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>183 дня и больше здесь, в России меньше</b>Приехал давно, за год не возвращался или возвращался ненадолго</span></label>
-        <label class="fork__opt" for="r2"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Живу наездами, 183 дней здесь не набирается</b>Много езжу, семья и дела остались в России</span></label>
-        <label class="fork__opt" for="r3"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Год переезда: уехал весной, к 31 декабря 183 дня набрал</b>Часть года прожита там, часть здесь</span></label>
-        <label class="fork__opt" for="r4"><span class="fork__box" aria-hidden="true"></span>
-          <span class="fork__t"><b>Дни я считал по памяти</b>Или прожил год в трёх странах и нигде не набрал 183</span></label>
+      <div class="fork__opts" aria-label="Сценарий резидентства и CRS">
+        <label class="fork__opt" for="rf-dual"><span class="fork__tag">Год переезда и две страны</span><span class="fork__sub">183 дня в РА и РФ, сертификат КГД за 2 р. дня</span></label>
+        <label class="fork__opt" for="rf-crs"><span class="fork__tag">Запрос анкеты CRS от банка</span><span class="fork__sub">10 рабочих дней по ст. 80.2 НК РА и пороги 20% / 50%</span></label>
+        <label class="fork__opt" for="rf-val"><span class="fork__tag">Валютные отчёты по ФЗ-173</span><span class="fork__sub">1 месяц на уведомление, ОДДС до 1 июня и штрафы</span></label>
+        <label class="fork__opt" for="rf-vnzh"><span class="fork__tag">ВНЖ РА и отъезды из страны</span><span class="fork__sub">183 дня присутствия vs 183 дня отсутствия</span></label>
       </div>
 
       <div class="fork__outs">
-        <article class="fork__out">
-          <p class="fork__out__k">Исход A</p>
-          <h3 class="fork__out__t">Резидент только Армении</h3>
-          <p>Армения облагает ваш мировой доход: не только то, что заработано здесь, но и
-            зарубежные гонорары, дивиденды, аренду, проценты. Налог, уплаченный за рубежом,
-            засчитывается — но не больше суммы армянского налога с такого же дохода. Доход,
-            не обложенный налогом у источника выплаты в Армении, вы декларируете сами. Для России
-            вы нерезидент: доходы от российских источников облагаются по повышенной ставке,
-            а вычеты нерезиденту не положены.</p>
-          <p><b>Чем платите.</b> Появляется годовая декларация в Армении и необходимость собирать
-            документы о зарубежных налогах, чтобы зачёт вообще состоялся. Порядок документального
-            подтверждения зачёта мы отдельно уточняем — <span class="slot">подтверждает юрист LTCG</span>.</p>
-          <p class="src">Источник по зачёту: справочник PwC · проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="rf-dual">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+              <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Двойное резидентство в год переезда</b> ст. 25 НК РА · ст. 4 СИДН РФ–РА</p>
+          <h3 class="h3">1 день резидентства в РА делает вас резидентом за весь календарный год</h3>
+          <p>При наборе <b>183 дней</b> в году (<b>12 месяцев</b>) вы считаетесь резидентом РА за весь этот <b>1 год</b>. При сохранении <b>183 дней</b> в РФ статус определяется последовательно по международному соглашению на базе сертификата КГД РА (<b>2 рабочих дня</b>, пошлина <b>0 ֏</b>). <span class="src">ст. 25 ч. 1, ч. 5 НК РА · п. 2 ст. 207 НК РФ · ст. 4 Соглашения РФ–РА от 28.12.1996 в ред. Протокола от 24.10.2011 · e-services.src.am</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Оформить сертификат резидента РА <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход B</p>
-          <h3 class="fork__out__t">Резидент только России</h3>
-          <p>Россия облагает ваш мировой доход, Армения — только доходы из армянских источников.
-            Армянский банк при этом всё равно попросит вас указать страну налогового резидентства
-            в самосертификации, и указать надо Россию, а не Армению.</p>
-          <p><b>Чем платите.</b> Полный набор российских обязанностей остаётся, включая валютные:
-            освобождение от уведомлений и отчётов даётся не за налоговый статус, а за факт
-            пребывания за пределами России более 183 дней в календарном году. Если вы резидент
-            России, вы это освобождение не получаете почти никогда.</p>
-          <p class="src">Источник: ч. 8 ст. 12 ФЗ 173-ФЗ ·
-            <a href="https://www.consultant.ru/document/cons_doc_LAW_45458/" rel="noopener">consultant.ru</a> · проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="rf-crs">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+              <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Самосертификация CRS в банках РА</b> ст. 80.2 НК РА · unibank.am/ru/crs</p>
+          <h3 class="h3">Ответьте на запрос банка за 10 рабочих дней, чтобы избежать блокировки</h3>
+          <p>Автообмен CRS в Армении действует с 09.2025. Без анкеты самосертификации за <b>10 рабочих дней</b> банк приостанавливает расходные операции, а с 01.09.2026 для переводов свыше <b>20 000 USD</b> обязательны статус, резидентство и код цели. Для пассивных НФО (свыше <b>50%</b> пассивного дохода) раскрываются контролирующие лица с долей от <b>20%</b>. <span class="src">ст. 80.2 НК РА · unibank.am/ru/crs · Решение ЦБ РА № 150-Н</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Проверить анкету CRS для банка <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход C</p>
-          <h3 class="fork__out__t">Резидент обеих стран одновременно</h3>
-          <p>Уехали весной, к 31 декабря набрали 183 дня в Армении — Армения считает вас своим
-            резидентом за весь год (ст. 25 ч. 5 НК РА). А Россия по своим правилам могла
-            зафиксировать резидентство за тот же год. Это не экзотика и не ошибка: это нормальный
-            арифметический результат двух разных законов.</p>
-          <p>Спор разрешается договором. По тексту редакции 1996 года — три ступени: сначала
-            государство постоянного местожительства; если постоянное жильё есть в обоих
-            государствах или ни в одном — государство <b>гражданства</b>; если и это не помогает —
-            по взаимному согласию компетентных органов (ст. 4 п. 2). <b>Ступени «центр жизненных
-            интересов» в этом договоре нет.</b> Практический вывод для россиянина, сохранившего
-            квартиру в России и снявшего квартиру в Ереване, получается обратным ожидаемому:
-            постоянное жильё в обоих государствах → следующая ступень → гражданство → Россия.</p>
-          <p><b>Чем платите.</b> Разбором. Здесь страница честно упирается: чтобы сказать, чем
-            закончится ваш случай, нужны ваши даты, ваша недвижимость в обеих странах и ваши
-            договоры. И нужен протокол 2011 года, которого у нас пока нет.</p>
-          <p class="src">Источник: ст. 4 п. 2 соглашения от 28.12.1996, текст с data.nalog.ru,
-            редакция 1996 года · проверено 04.09.2026.</p>
+        <article class="tile fork__out" data-for="rf-val">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+              <img src="assets/img/nov-shot-1100.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Уведомления ФНС и ОДДС для граждан РФ</b> ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</p>
+          <h3 class="h3">Сверьте дни вне РФ до 31 декабря и подайте уведомления вовремя</h3>
+          <p>Граждане РФ, пробывшие вне РФ менее <b>183 дней</b> в году, уведомляют ФНС о счёте за <b>1 месяц</b> (штраф <b>1 000–1 500 руб.</b> за просрочку и <b>4 000–5 000 руб.</b> за неуведомление) и сдают ОДДС до 1 июня (штрафы <b>300–500 руб.</b> до <b>10 дней</b>, <b>1 000–1 500 руб.</b> до <b>30 дней</b>, <b>2 500–3 000 руб.</b> свыше <b>30 дней</b>, повторно — <b>20 000 руб.</b>). <span class="src">ч. 2, ч. 8 ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Сверить календарь дней и выписки <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
 
-        <article class="fork__out">
-          <p class="fork__out__k">Исход D</p>
-          <h3 class="fork__out__t">Ни одной — или вы просто не знаете дней</h3>
-          <p>«Ни одной» — редкий и неустойчивый исход: центр жизненных интересов может вернуть вам
-            резидентство там, где вы дней не набрали. А «не знаю дней» — это не исход вообще,
-            это отсутствие исходных данных.</p>
-          <p><b>Чем платите.</b> Первым шагом в обоих случаях будет одно и то же: поднять штампы
-            въезда-выезда и посчитать по календарю. Пока этого нет, любой разговор про налоги —
-            гадание, и мы это скажем вам прямо, а не будем продавать консультацию.</p>
+        <article class="tile fork__out" data-for="rf-vnzh">
+          <div class="tile__art" aria-hidden="true">
+            <picture>
+              <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
+              <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="853" alt="">
+            </picture>
+          </div>
+          <p class="tile__meta"><b>Налоговые и миграционные 183 дня</b> ст. 25 НК РА · ст. 17 ч. 8 ՀՕ-11-Ն</p>
+          <h3 class="h3">Не путайте 183 дня налогового присутствия и 183 дня миграционного отсутствия</h3>
+          <p>НК РА считает <b>183 дня</b> присутствия для налогового резидентства, а Закон РА «Об иностранцах» с 01.11.2026 считает <b>183 дня</b> отсутствия: обладатель ВНЖ (до <b>1 года</b>) или ПМЖ (на <b>5 лет</b>) уведомляет миграционную службу через платформу за <b>10 дней</b> после <b>183 дней</b> отсутствия. <span class="src">ст. 25 НК РА · ст. 17 ч. 8, ст. 21 ч. 1 п. 7 ՀՕ-11-Ն</span></p>
+          <div class="btn-row"><a class="btn btn--primary btn--sm" href="#contact">Проверить статус ВНЖ и резидентства <svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div>
         </article>
       </div>
     </fieldset>
-    </form>
+
+    <aside class="dated-box" aria-label="Разница налогового и миграционного учёта">
+        <div class="dated-box__head">
+          <span class="dated-box__badge"><svg aria-hidden="true"><use href="#i-check"/></svg> Проверка на 18.10.2026</span>
+          <span class="src">ст. 25, 80.2 НК РА · ст. 17 ч. 8 ՀՕ-11-Ն</span>
+        </div>
+        <p class="dated-box__title">Два разных счётчика по 183 дня: налоговый и миграционный</p>
+        <div class="shift" role="group" aria-label="Сравнение налоговых и миграционных 183 дней">
+          <div class="shift__col shift__col--was">
+            <span class="shift__tag">Налоговый кодекс РА (ст. 25)</span>
+            <p class="shift__val">183 дня присутствия или центр интересов</p>
+            <p class="shift__note">Определяет резидентство за весь <b>1 год</b> (признание на <b>1 день</b> делает резидентом на <b>12 месяцев</b>) и право на сертификат КГД за <b>2 рабочих дня</b>.</p>
+          </div>
+          <div class="shift__col shift__col--becomes">
+            <span class="shift__tag">Закон об иностранцах (с 01.11.2026)</span>
+            <p class="shift__val">183 дня отсутствия и уведомление за 10 дней</p>
+            <p class="shift__note">Обладатель ВНЖ (до <b>1 года</b>) или ПМЖ (на <b>5 лет</b>) при выезде на <b>183 дня</b> и более уведомляет миграционную службу через платформу за <b>10 дней</b>.</p>
+          </div>
+        </div>
+      </aside>
   </div>
 </section>
 
-<!-- ═══ 03 · Как считают резидентство и по каким ставкам ════════ -->
-<section class="section" id="kak-schitayut" aria-labelledby="how-title" data-rail-label="Как считают">
+<!-- ═══ 03 · Сводная матрица режимов и обязанностей ══════════════ -->
+<section class="section section--grid section--thread section--art" id="matrica" aria-labelledby="mat-t" data-rail-label="Матрица контроля">
+  <div class="nov-art nov-art--stone" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">03</span> Как это устроено</p>
-      <h2 class="h2" id="how-title">Кто и по каким правилам <em>считает резидентство</em></h2>
-      <p class="lead">Три числа, вокруг которых строится вся тема. У каждого — норма и дата
-        проверки; там, где период подсчёта в источнике не назван, это сказано прямо.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">03</span> Сравнительная таблица</p>
+      <h2 class="h2" id="mat-t">Четыре контура контроля: <em>резидентство РА, миграция, CRS и валютный учёт</em></h2>
     </div>
 
-    <div class="bignums">
-      <div class="bignum">
-        <p class="bignum__n">183<small> дня</small></p>
-        <p class="bignum__u">порог · присутствие</p>
-        <p class="bignum__d">Столько нужно провести в Армении, чтобы стать её налоговым
-          резидентом. В России порог тот же, но период считается иначе.
-          <span class="src">Источник: ст. 25 НК РА (arlis.am) и п. 2 ст. 207 НК РФ · 04.09.2026.</span></p>
-      </div>
-
-      <div class="bignum">
-        <p class="bignum__n">40 000<small> USD</small></p>
-        <p class="bignum__u">условие · ставка 5 % по дивидендам</p>
-        <p class="bignum__d">По прочитанному нами тексту договора пониженная ставка привязана
-          к сумме вклада в уставный капитал, а не к доле участия.
-          <span class="src">Источник: ст. 10 п. 2 соглашения от 28.12.1996, редакция 1996 года · 04.09.2026.</span></p>
-      </div>
-
-      <div class="bignum">
-        <p class="bignum__n">3<small> года</small></p>
-        <p class="bignum__u">срок · взаимосогласительная процедура</p>
-        <p class="bignum__d">Столько есть на заявление с момента первого уведомления о действиях,
-          приводящих к налогообложению не по соглашению. Срок пресекательный.
-          <span class="src">Источник: ст. 24 соглашения от 28.12.1996 · 04.09.2026.</span></p>
-      </div>
-    </div>
-
-    <div class="diy-wrap" style="margin-top:var(--s-12)">
-      <table class="diy">
-        <caption>Два закона, два порога, разные периоды подсчёта. Проверено 04.09.2026.</caption>
+    <div class="table-wrap" role="region" aria-labelledby="mat-t" tabindex="0" data-reveal>
+      <table class="tbl">
         <thead>
-          <tr><th scope="col">Критерий</th><th scope="col">Армения</th><th scope="col">Россия</th></tr>
+          <tr>
+            <th scope="col">Контур</th>
+            <th scope="col">Базовый порог</th>
+            <th scope="col">Срок и пошлина</th>
+            <th scope="col">Последствие нарушения</th>
+            <th scope="col">Норма и источник</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Основной критерий</th>
-            <td data-l="Армения" class="us">фактическое присутствие 183 дня и более
-              <span class="src">ст. 25 НК РА · <a href="https://www.arlis.am/en/acts/205620" rel="noopener">arlis.am/en/acts/205620</a> — английский перевод на государственном портале</span></td>
-            <td data-l="Россия">фактическое нахождение не менее 183 календарных дней в течение 12 следующих подряд месяцев
-              <span class="src">п. 2 ст. 207 НК РФ · норма общедоступна</span></td>
+            <td><b>Налоговое резидентство РА</b></td>
+            <td><b>183 дня</b> в году (<b>12 месяцев</b>) или центр интересов</td>
+            <td>Резидент за весь <b>1 год</b> при статусе от <b>1 дня</b>; ПН — <b>20%</b>, дивиденды — <b>5%</b></td>
+            <td>Налогообложение мирового дохода резидента РА</td>
+            <td><span class="src">ст. 25 ч. 1, 5 НК РА · arlis.am/en/acts/205620</span></td>
           </tr>
           <tr>
-            <th scope="row">Ещё критерии</th>
-            <td data-l="Армения" class="us">центр жизненных интересов — дом или квартира, семья,
-              основное место профессиональной деятельности; состояние на государственной службе РА
-              при временной работе за границей</td>
-            <td data-l="Россия">нет — правило одно, по дням</td>
+            <td><b>Сертификат резидента РА</b></td>
+            <td>Подтверждение <b>183 дней</b> или центра интересов</td>
+            <td><b>2 рабочих дня</b> через «Ես Եմ», пошлина — <b>0 ֏</b></td>
+            <td>Удержание налога у источника без льгот СИДН</td>
+            <td><span class="src">КГД РА · e-services.src.am</span></td>
           </tr>
           <tr>
-            <th scope="row">Правило дня</th>
-            <td data-l="Армения" class="us"><span class="part">есть</span> — признан резидентом хотя бы один день
-              налогового года, значит резидент за весь налоговый год (ст. 25 ч. 5)</td>
-            <td data-l="Россия">нет</td>
+            <td><b>Самосертификация CRS</b></td>
+            <td>Счета нерезидентов; пассивные НФО (свыше <b>50%</b>) и КЛ от <b>20%</b></td>
+            <td><b>10 рабочих дней</b> по запросу банка (обмен с 09.2025)</td>
+            <td>Отказ в открытии либо приостановка операций через <b>10 рабочих дней</b></td>
+            <td><span class="src">ст. 80.2 НК РА · unibank.am/ru/crs</span></td>
           </tr>
           <tr>
-            <th scope="row">Налоговый год</th>
-            <td data-l="Армения" class="us">с 1 января по 31 декабря</td>
-            <td data-l="Россия">календарный год; окончательный статус — по его итогам</td>
+            <td><b>Контроль отсутствия с 01.11.2026</b></td>
+            <td>Отсутствие обладателя ВНЖ (до <b>1 года</b>) или ПМЖ (<b>5 лет</b>) от <b>183 дней</b></td>
+            <td>Уведомление через платформу за <b>10 дней</b></td>
+            <td>Отмена статуса; подача после отказа — через <b>1 год</b>, после лишения — <b>3 года</b></td>
+            <td><span class="src">ст. 17 ч. 8, 19, 20, 21 ՀՕ-11-Ն</span></td>
           </tr>
           <tr>
-            <th scope="row">Что облагается</th>
-            <td data-l="Армения" class="us">мировой доход резидента</td>
-            <td data-l="Россия">мировой доход резидента</td>
+            <td><b>Уведомления и ОДДС в РФ</b></td>
+            <td>Граждане РФ, пробывшие вне РФ менее <b>183 дней</b> в году</td>
+            <td>Уведомление — <b>1 месяц</b>; ОДДС — до 1 июня</td>
+            <td>Штрафы ст. 15.25 КоАП: <b>1 000–1 500 руб.</b>, <b>4 000–5 000 руб.</b>, ОДДС <b>300–500 руб.</b> / <b>2 500–3 000 руб.</b>, повторно <b>20 000 руб.</b></td>
+            <td><span class="src">ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ · consultant.ru</span></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Расхождение источников показывается, а не прячется. -->
-    <p class="note measure" style="margin-top:var(--s-6)"><b>Расхождение, которое мы обязаны
-      показать.</b> Официальный английский текст ст. 25 НК РА <b>не называет период, за который
-      считаются 183 дня</b>. Справочник PwC читает это как налоговый (календарный) год. Часть
-      русскоязычных обзоров читает как любые 12 следующих подряд месяцев. Армянский оригинал
-      нормы мы не открывали, а английский текст на arlis — это перевод, а не аутентичный закон.
-      Самая важная цифра всей темы у нас помечена как неустановленная в части периода подсчёта,
-      и мы предпочитаем сказать это, чем выбрать одну из двух трактовок и выдать её за факт.
-      <span class="slot">период подсчёта — подтверждает юрист LTCG по армянскому оригиналу</span></p>
-
-    <h3 class="h3" style="margin-top:var(--s-12)">Ставки для физического лица в Армении</h3>
-
-    <div class="diy-wrap" style="margin-top:var(--s-5)">
-      <table class="diy">
-        <caption>Ставки подоходного налога и НДС для физического лица. Две строки оставлены
-          пустыми намеренно — объяснение под таблицей. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Доход</th><th scope="col">Ставка</th><th scope="col">Источник</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Подоходный налог</th>
-            <td data-l="Ставка" class="us"><span class="part">20 %</span> общая плоская ставка</td>
-            <td data-l="Источник">PwC + armenian-lawyer.com · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Проценты</th>
-            <td data-l="Ставка" class="us"><span class="part">20 %</span> для физлица — налогового резидента РА</td>
-            <td data-l="Источник">PwC, раздел individual · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Дивиденды</th>
-            <td data-l="Ставка" class="us"><span class="part">5 %</span>; для иностранцев — к доходу,
-              образовавшемуся после 01.01.2020, для граждан РА — после 01.01.2018</td>
-            <td data-l="Источник">PwC · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Роялти</th>
-            <td data-l="Ставка" class="us"><span class="part">10 %</span></td>
-            <td data-l="Источник">PwC · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Аренда</th>
-            <td data-l="Ставка" class="us"><span class="part">10 %</span>, плюс дополнительные 10 %
-              с суммы годовой арендной платы свыше 60 млн драм (норма с 01.01.2020)</td>
-            <td data-l="Источник">PwC · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">НДС</th>
-            <td data-l="Ставка" class="us"><span class="part">20 %</span> на внутренние продажи и импорт</td>
-            <td data-l="Источник">PwC + armenian-lawyer.com · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Прирост капитала</th>
-            <td data-l="Ставка">От продажи ценных бумаг физлицом: <span class="slot">уточняется</span></td>
-            <td data-l="Источник">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Дарение и наследование</th>
-            <td data-l="Ставка">Налоги на дарение, наследование и богатство: <span class="slot">уточняется</span></td>
-            <td data-l="Источник">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="measure" style="margin-top:var(--s-5)"><b>Почему две последние строки пустые.</b>
-      «0 % на прирост капитала для физлица» и «в Армении нет налогов на дарение, наследование
-      и богатство» — оба утверждения мы нашли, но каждое стоит на <b>одном</b> источнике, и этот
-      источник — сайт юридической фирмы, то есть заявление компании, а не норма. Отрицательное
-      утверждение о законе («такого налога нет») на одном маркетинговом источнике мы не публикуем
-      принципиально: если мы ошибёмся, ошибётся человек, который на это рассчитывал.
-      <span class="slot">обе строки подтверждает юрист LTCG со ссылкой на статью НК РА</span></p>
-
-    <p class="measure"><b>Отдельно про путаницу, в которую попадают почти все.</b> Ставка 20 %
-      по процентам — это ставка для физического лица, налогового резидента Армении. Ставка 10 %
-      по процентам — это ставка удержания у источника при выплатах <b>нерезидентам</b>.
-      Это не противоречие в справочниках, это две разные нормы с разными адресатами. Человек,
-      который читает таблицу withholding и примеряет её на себя-резидента, посчитает неправильно.</p>
-  </div>
-</section>
-
-<!-- ═══ 04 · Что говорит договор ════════════════════════════════ -->
-<section class="section" id="dogovor" aria-labelledby="treaty-title" data-rail-label="Договор">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">04</span> Договор России и Армении</p>
-      <h2 class="h2" id="treaty-title">Что в нём написано <em>на самом деле</em></h2>
-      <p class="lead">Здесь три места, где текст расходится с тем, что о нём принято писать:
-        разрешение двойного резидентства идёт через гражданство, отдельной статьи о приросте
-        капитала в договоре нет, а условие ставки 5 % по дивидендам — сумма вклада, а не доля
-        участия.</p>
-    </div>
-
-    <figure class="lawquote">
-      <blockquote cite="https://data.nalog.ru/">
-        <p>могут облагаться налогом только в этом Государстве</p>
-      </blockquote>
-      <figcaption>
-        <span class="lawquote__art">Ст. 17 · дословный фрагмент</span>
-        <span>Пенсии и подобные вознаграждения за прошлую работу по найму. Модальность «могут»
-          существенна: на конструкции «может / только» в этом договоре держится всё. Редакция
-          1996 года, полный текст статьи — по ссылке.</span>
-        <a href="https://data.nalog.ru/" rel="noopener">Первоисточник: сервер ФНС</a>
-      </figcaption>
+    <figure class="lawquote" data-reveal>
+      <blockquote>«Физическое лицо считается резидентом Республики Армения в данном налоговом году, если в течение любого двенадцатимесячного периода, начинающегося или заканчивающегося в этом налоговом году, оно фактически находилось в Республике Армения 183 дня и более, либо если центр его жизненных интересов находится в Республике Армения».</blockquote>
+      <figcaption>Налоговый кодекс Республики Армения ՀՕ-165-Ն, статья 25, часть 1 · <a class="lnk" href="https://www.arlis.am/en/acts/205620" target="_blank" rel="noopener noreferrer">arlis.am/en/acts/205620</a></figcaption>
     </figure>
-
-    <div class="diy-wrap" style="margin-top:var(--s-10)">
-      <table class="diy">
-        <caption>Соглашение между Россией и Арменией от 28.12.1996. Все строки — из редакции
-          1996 года; действие протокола от 24.10.2011 не проверено, читайте вместе с границей
-          проверки в первом экране. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Статья</th><th scope="col">Что в ней</th><th scope="col">Почему это важно</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Статус договора</th>
-            <td data-l="Что в ней" class="us">Подписан 28.12.1996, ратифицирован ФЗ от 17.12.1997
-              № 151-ФЗ, в силе с 17.03.1998, применяется с 01.01.1999; протокол в силе с 15.04.2013,
-              применяется с 01.01.2014. На 14.07.2026 числится действующим — не приостановлен
-              и не денонсирован.
-              <span class="src">Источник: data.nalog.ru, minfin.gov.ru · 04.09.2026.</span></td>
-            <td data-l="Почему важно">Договор жив. Это первый вопрос, который задают, и ответ на него — да</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 4 п. 2</th>
-            <td data-l="Что в ней" class="us">Разрешение двойного резидентства: постоянное
-              местожительство → <b>гражданство</b> → взаимное согласие компетентных органов</td>
-            <td data-l="Почему важно">Ступеней «центр жизненных интересов» и «обычное проживание»
-              в тексте нет. Тест ведёт не туда, куда ведёт модельная конвенция ОЭСР</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 6 и 20</th>
-            <td data-l="Что в ней" class="us">Доход от недвижимости облагается в государстве
-              нахождения имущества; прочие доходы — по ст. 20: п. 1 в государстве резидентства,
-              п. 3 доходы, возникающие в другом государстве, могут облагаться и там</td>
-            <td data-l="Почему важно">Сюда попадает то, что люди ищут в несуществующей статье
-              о приросте капитала</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 10 п. 2</th>
-            <td data-l="Что в ней" class="us">Дивиденды: не более <b>5 %</b> валовой суммы, если
-              резидент другого государства внёс в уставный капитал предприятия не менее
-              <b>40 000 долларов США</b> или эквивалент; <b>10 %</b> во всех остальных случаях</td>
-            <td data-l="Почему важно">Условие пониженной ставки — <b>сумма вклада</b>, а не доля участия</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 11 и 12</th>
-            <td data-l="Что в ней" class="us">Проценты и роялти облагаются <b>только</b>
-              в государстве резидентства получателя — но п. 3 обеих статей снимает это правило
-              при наличии постоянного представительства или постоянной базы</td>
-            <td data-l="Почему важно">Безусловная формулировка «у источника не удерживают» —
-              прямая ошибка, и она встречается часто</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 13</th>
-            <td data-l="Что в ней" class="us"><b>«Доходы от независимой личной деятельности»</b></td>
-            <td data-l="Почему важно">Отдельной статьи о приросте капитала в договоре <b>нет</b>.
-              Обзоры, которые ссылаются на «статью 13 о приросте капитала», ссылаются на норму,
-              которой не существует</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 14</th>
-            <td data-l="Что в ней" class="us">Работа по найму: облагается в государстве
-              резидентства, если работа не выполняется в другом государстве. Освобождение в стране
-              выполнения работы — только при одновременном выполнении трёх условий: пребывание
-              не более 183 дней в календарном году, выплата нанимателем-нерезидентом этого
-              государства, отсутствие расходов у постоянного представительства</td>
-            <td data-l="Почему важно">Три условия одновременно, а не на выбор</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 17</th>
-            <td data-l="Что в ней" class="us">Пенсии и подобные вознаграждения за прошлую работу
-              по найму «<b>могут</b> облагаться налогом только в этом Государстве»</td>
-            <td data-l="Почему важно">Модальность «могут» существенна. Мы цитируем её дословно,
-              потому что на конструкции «может / только» в этом договоре держится всё</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 21</th>
-            <td data-l="Что в ней" class="us">Недвижимое имущество может облагаться в государстве
-              нахождения; все иные элементы имущества — только в государстве резидентства</td>
-            <td data-l="Почему важно">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 22</th>
-            <td data-l="Что в ней" class="us">Метод устранения двойного налогообложения — зачёт:
-              налог, уплаченный в другом государстве, вычитается, но не более суммы налога
-              государства резидентства с этого дохода</td>
-            <td data-l="Почему важно">Зачёт не возвращает разницу, если за рубежом заплатили больше</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 24</th>
-            <td data-l="Что в ней" class="us">Взаимосогласительная процедура: заявление подаётся
-              в течение <b>трёх лет</b> с момента первого уведомления о действиях, приводящих
-              к налогообложению не по соглашению</td>
-            <td data-l="Почему важно">Срок пресекательный, и о нём узнают поздно</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 25</th>
-            <td data-l="Что в ней" class="us"><b>«Помощь в сборе налогов»:</b> налоговый орган
-              одного государства по просьбе налогового органа другого обеспечивает взимание
-              налогов, а также доплат и взысканий, не носящих характера штрафов; допускаются
-              превентивные меры (п. 4)</td>
-            <td data-l="Почему важно">Это редкая норма, и в обзорах она почти не упоминается.
-              Смысл простой: долг, признанный в одной стране, в принципе может взыскиваться в другой</td>
-          </tr>
-          <tr>
-            <th scope="row">Ст. 26</th>
-            <td data-l="Что в ней" class="us">Обмен информацией по запросу — в объёме, необходимом
-              для применения соглашения или внутреннего налогового законодательства;
-              не ограничен резидентами договаривающихся государств</td>
-            <td data-l="Почему важно">Это обмен <b>по запросу</b>, и он не то же самое, что
-              автоматический обмен CRS</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="measure" style="margin-top:var(--s-6)"><b>Важная оговорка про ставку 5 % по
-      дивидендам.</b> По тексту договора условие — вклад не менее 40 000 долларов США в уставный
-      капитал. Международные справочники описывают условие иначе — через прямое владение не менее
-      25 % капитала. Мы не объявляем чужой справочник ошибочным: у нас нет на руках действующей
-      редакции договора, а без неё такое заявление было бы ровно тем, за что мы критикуем других.
-      Мы говорим то, что можем доказать: <b>в прочитанном нами тексте написано про 40 000
-      долларов</b>, и если вы считали ставку по доле участия, это стоит перепроверить до,
-      а не после платежа.</p>
   </div>
 </section>
 
-<!-- ═══ 05 · Обмен данными ═════════════════════════════════════ -->
-<section class="section section--stone" id="obmen" aria-labelledby="crs-title" data-rail-label="Обмен данными">
+<!-- ═══ 04 · 5 ловушек резидентства и CRS + Timeline ═════════════ -->
+<section class="section section--deep section--thread section--light" id="lovushki" aria-labelledby="lov-t" data-rail-label="Пять ловушек">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">05</span> Автоматический обмен</p>
-      <h2 class="h2" id="crs-title">Что происходит <em>на самом деле</em></h2>
-      <p class="lead">Один вывод здесь прочный, другой слабый — и мы подаём их по-разному,
-        а не смешиваем в один абзац.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">04</span> Где теряют деньги и доступ к счетам</p>
+      <h2 class="h2" id="lov-t">Пять ловушек резидентства и CRS <em>при жизни на две страны</em></h2>
     </div>
 
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Участие Армении в автоматическом обмене финансовой информацией. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Присоединение</th>
-            <td data-l="Значение" class="us">Закон о ратификации Многостороннего соглашения
-              компетентных органов (MCAA) подписан президентом РА <b>03.10.2023</b></td>
-            <td data-l="Источник">orbitax.com · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Первый обмен</th>
-            <td data-l="Значение" class="us">Армения провела первый обмен данными по CRS
-              в <b>сентябре 2025 года</b></td>
-            <td data-l="Источник">ОЭСР, Global Forum — официальный источник · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Масштаб</th>
-            <td data-l="Значение" class="us">С 2025 года обмен информацией о финансовых счетах
-              нерезидентов на взаимной основе примерно со <b>120 странами и территориями</b> —
-              по заявлению армянской налоговой</td>
-            <td data-l="Источник">Комитет госдоходов РА,
-              <a href="https://www.src.am/en/getNews/743" rel="noopener">src.am/en/getNews/743</a> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Кто в обмене</th>
-            <td data-l="Значение" class="us">Армянские банки отчитываются по счетам
-              <b>иностранных</b> налоговых резидентов; счета налоговых резидентов Армении
-              в международный обмен не идут</td>
-            <td data-l="Источник">armenian-lawyer.com + unibank.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Отказ подписать форму</th>
-            <td data-l="Значение" class="us">При <b>открытии</b> счёта банк отказывает в открытии;
-              по <b>действующему</b> счёту при непредставлении в течение <b>10 рабочих дней</b>
-              банк приостанавливает операции, кроме перевода средств в другое учреждение</td>
-            <td data-l="Источник">
-              <a href="https://www.unibank.am/ru/crs" rel="noopener">unibank.am/ru/crs</a> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Армения в перечне ФНС</th>
-            <td data-l="Значение"><span class="part">не подтверждено официально</span> — обзоры
-              юридических фирм называют приказ ФНС от 14.10.2025 № ЕД-7-17/883@ и 80 юрисдикций;
-              официальная публикация на pravo.gov.ru у нас не открылась, а справочная база отдала
-              неполную выжимку на 71 государство, в которой Армении не было</td>
-            <td data-l="Источник">обзоры юрфирм · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Дата приказа ФНС</th>
-            <td data-l="Значение"><span class="part">источники расходятся</span> — 12.12.2025,
-              21.12.2025 и 22.12.2025 у трёх разных авторов</td>
-            <td data-l="Источник">три обзора · 04.09.2026</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="bento" style="margin-top:var(--s-8)">
-      <article class="tile tile--hero" data-span="6">
-        <p class="tile__meta"><b>Вывод 01</b> прочный</p>
-        <h3 class="h3">Автоматический обмен у Армении работает</h3>
-        <p>Это подтверждено ОЭСР. Ставка на то, что счёт в армянском банке «не виден», устарела
-          в 2025 году, и любой гайд, который до сих пор пишет, что обмена с Арменией нет,
-          описывает позапрошлую реальность.</p>
-      </article>
-
-      <article class="tile" data-span="6">
-        <p class="tile__meta"><b>Вывод 02</b> слабый — и мы подаём его таким</p>
-        <h3 class="h3">Российский перечень мы не прочитали</h3>
-        <p>Включение Армении в российский перечень стран автообмена мы официальным текстом
-          не подтвердили. Мы видели этот тезис у нескольких юридических фирм, но сам перечень
-          не прочитали, а одна проверенная нами выжимка Армению не показала. Поэтому мы не пишем
-          «данные о вашем армянском счёте уходят в ФНС» как установленный факт. Мы пишем: механизм
-          существует, Армения в нём участвует, российский перечень мы не проверили — и планировать
-          разумно исходя из того, что счёт видим, а не наоборот.</p>
-      </article>
-    </div>
-
-    <p class="measure" style="margin-top:var(--s-6)"><b>Что именно передаётся.</b> Состав данных
-      задаёт стандарт ОЭСР, а не отдельный банк. По описанию армянского банка в набор входят имя,
-      адреса, место и дата рождения, страны налогового резидентства и налоговый идентификационный
-      номер. Позиции «номер счёта, остаток, движения по счёту» при повторной проверке той страницы
-      у нас <b>не подтвердились</b> — мы их не утверждаем, хотя по стандарту они ожидаемы.
-      <span class="slot">состав передаваемых сведений берём из текста стандарта ОЭСР, а не со страницы банка</span></p>
-  </div>
-</section>
-
-<!-- ═══ 06 · Обязанности и сроки ═══════════════════════════════ -->
-<section class="section" id="obyazannosti" aria-labelledby="duty-title" data-rail-label="Обязанности">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">06</span> Обязанности</p>
-      <h2 class="h2" id="duty-title">Что, когда и <em>кому</em></h2>
-      <p class="lead">Две таблицы, потому что это два разных государства с разными органами
-        и разными сроками. Исполнение обязанности в одной стране не закрывает обязанность
-        в другой.</p>
-    </div>
-
-    <h3 class="h3">Армения</h3>
-    <div class="diy-wrap" style="margin-top:var(--s-5)">
-      <table class="diy">
-        <caption>Обязанности перед армянскими органами. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Обязанность</th><th scope="col">У кого возникает</th><th scope="col">Срок и порядок</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Годовая декларация</th>
-            <td data-l="У кого" class="us">У физлица, получившего доход, <b>не обложенный налогом
-              у источника выплаты в Армении</b>. Зарубежный доход налогового резидента РА сюда попадает</td>
-            <td data-l="Срок">Базовый срок — <b>1 мая</b>; за 2025 год срок продлён
-              <b>до 1 ноября 2026 включительно</b> (закон ՀՕ-324-Ն от 24.10.2025, вступил в силу
-              30.10.2025). С 2027 года окно подачи — со 2 марта по 1 июля следующего года.
-              <span class="src">Источник: PwC + заявление зампреда КГД от 10.03.2026 + текст
-              ՀՕ-324-Ն на <a href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a> · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Способ подачи</th>
-            <td data-l="У кого" class="us">Все, кто декларирует</td>
-            <td data-l="Срок">Только электронно, через self-portal.taxservice.am; нужны социальный
-              номер и электронная подпись.
-              <span class="src">Источник: repatarmenia.org + armlegal.am · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Справка о резидентстве</th>
-            <td data-l="У кого" class="us">Тому, кто хочет применить договор и не платить дважды</td>
-            <td data-l="Срок">Заявление электронно на e-services.src.am; заявленный срок
-              <b>2 рабочих дня</b>, <b>бесплатно</b>; вход через платформу идентификации «ԵսԵմ»
-              (EsEm). Форма справки утверждена приказом председателя КГД <b>№ 345-Ն от 08.06.2018</b>;
-              справка содержит QR-код, подлинность проверяется на verify.e-gov.am.
-              <span class="src">Источник: e-services.src.am, src.am · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Самосертификация</th>
-            <td data-l="У кого" class="us">Всем клиентам банка</td>
-            <td data-l="Срок">При открытии счёта; по действующему счёту — в течение 10 рабочих
-              дней по запросу банка.
-              <span class="src">Источник: unibank.am · 04.09.2026.</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3 class="h3" style="margin-top:var(--s-12)">Россия</h3>
-    <div class="diy-wrap" style="margin-top:var(--s-5)">
-      <table class="diy">
-        <caption>Обязанности перед российскими органами. Приведены по опубликованным текстам
-          со ссылкой на статью: LTCG — армянская компания и российское право не практикует.
-          Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Обязанность</th><th scope="col">У кого возникает</th><th scope="col">Срок и норма</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Уведомление о счёте</th>
-            <td data-l="У кого" class="us">Гражданам России — валютное резидентство от проживания
-              не зависит. Об открытии, закрытии или изменении реквизитов</td>
-            <td data-l="Срок"><b>Не позднее одного месяца</b> со дня открытия, закрытия или
-              изменения реквизитов (ч. 2 ст. 12 ФЗ 173-ФЗ).
-              <span class="src">Источник: <a href="https://www.consultant.ru/document/cons_doc_LAW_45458/" rel="noopener">consultant.ru</a> · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Отчёт о движении</th>
-            <td data-l="У кого" class="us">Им же</td>
-            <td data-l="Срок"><b>До 1 июня</b> года, следующего за отчётным (ч. 7 ст. 12 ФЗ 173-ФЗ).
-              <span class="src">Источник: consultant.ru · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Освобождение</th>
-            <td data-l="У кого" class="us">Тем, чей срок пребывания за пределами России
-              в истекшем календарном году в совокупности <b>превысил 183 дня</b></td>
-            <td data-l="Срок">Действует за тот календарный год (ч. 8 ст. 12 ФЗ 173-ФЗ).
-              <span class="src">Источник: consultant.ru · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Возврат обязанности</th>
-            <td data-l="У кого" class="us">Тому, у кого срок пребывания за пределами России
-              в истекшем календарном году <b>183 дня не превысил</b></td>
-            <td data-l="Срок">Ранее не поданные уведомления о счетах, открытых в период
-              освобождения, представляются <b>до 1 июня следующего календарного года</b> (ч. 8 ст. 12).
-              <span class="src">Источник: consultant.ru · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Участие в компании</th>
-            <td data-l="У кого" class="us">Резиденту России, ставшему участником</td>
-            <td data-l="Срок">В течение <b>3 месяцев</b> с даты возникновения участия; штраф
-              <b>50 000 руб.</b> по каждой организации (ст. 25.14 НК РФ).
-              <span class="src">Источник: consultant.ru · 04.09.2026.</span></td>
-          </tr>
-          <tr>
-            <th scope="row">Уведомление о КИК</th>
-            <td data-l="У кого" class="us">Контролирующему лицу — резиденту России</td>
-            <td data-l="Срок">Не позднее <b>30 апреля</b> года, следующего за налоговым периодом;
-              штраф <b>500 000 руб.</b> по каждой КИК.
-              <span class="src">Источник: consultant.ru · 04.09.2026.</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Датированная врезка: она про СРОК, а не про момент, поэтому регистр другой. -->
-    <aside class="dated-box" style="margin-top:var(--s-10)" aria-labelledby="nov1">
-      <p class="dated-box__when">С 01.11.2026 иначе</p>
-      <h3 class="dated-box__t" id="nov1">Появляется вторая цифра 183 — и она про отсутствие,
-        а не про присутствие</h3>
-
-      <p class="dated-box__d">Обладатели временного и постоянного статуса пребывания, кроме
-        статуса по основаниям «դ» и «ե» ч. 1 ст. 16, обязаны уведомить миграционный орган
-        об отсутствии в Армении 183 дня и более. Уведомление подаётся через единую электронную
-        платформу, <b>не позднее 10 дней</b> с момента истечения 183-дневного срока. Норма
-        вступает в силу 01.11.2026.</p>
-
-      <p class="dated-box__d"><b>Это разные 183 дня, и их постоянно путают.</b> Налоговые
-        183 дня считают ваше <b>присутствие</b> в Армении и определяют, платите ли вы здесь налог
-        с мирового дохода. Миграционные 183 дня, которые появляются с 1 ноября 2026, считают ваше
-        <b>отсутствие</b> и определяют, сохранится ли статус пребывания. Порог совпадает,
-        институты разные, органы разные, и исполнение одной обязанности не закрывает вторую.</p>
-
-      <p class="src">Проверено по тексту закона: новая ст. 17 ч. 8 закона «Об иностранцах»,
-        ՀՕ-11-Ն от 20.01.2026 ·
-        <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a> · 04.09.2026.</p>
-    </aside>
-
-    <p class="note measure" style="margin-top:var(--s-8)"><b>Штрафы за неподачу армянской
-      декларации — расхождение источников.</b> Заместитель председателя Комитета госдоходов
-      10.03.2026 назвал 50 000 драм для предпринимателей и 5 000 драм для прочих граждан;
-      по одному источнику первое нарушение оформляется предупреждением с 30-дневным сроком
-      на исправление. Другой источник называет вилку 50 000–200 000 драм. <b>Мы показываем оба
-      и не выбираем.</b>
-      <span class="slot">действующая санкция — подтверждает юрист LTCG со ссылкой на статью</span></p>
-  </div>
-</section>
-
-<!-- ═══ 07 · Российская половина ═══════════════════════════════ -->
-<section class="section" id="rossiyskaya-polovina" aria-labelledby="ru-title" data-rail-label="Российская половина">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">07</span> Российская половина</p>
-      <h2 class="h2" id="ru-title">Что стоит знать — <em>с честной оговоркой</em></h2>
-    </div>
-
-    <aside class="nochange" aria-labelledby="ru-granica">
-      <p class="nochange__tag">Наша граница</p>
-      <h3 class="nochange__t" id="ru-granica">Мы армянская компания и российское право не практикуем</h3>
-      <p>Мы читаем российские нормы по опубликованным текстам и даём вам ссылку на статью,
-        чтобы вы могли проверить сами. Мы не подписываемся под тем, как российская налоговая
-        применит норму в вашем случае. Ниже — то, что нам известно и откуда; часть источников
-        этого раздела — обзоры аудиторских и юридических компаний, а не первоисточники,
-        и это помечено в таблице.</p>
-    </aside>
-
-    <div class="diy-wrap" style="margin-top:var(--s-8)">
-      <table class="diy">
-        <caption>Российские нормы, которые чаще всего касаются человека, живущего в Армении.
-          Природа источника указана у каждой строки. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Природа источника</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Ставка нерезидента РФ</th>
-            <td data-l="Значение" class="us"><b>30 %</b> на доходы от источников в России;
-              дивиденды от российских организаций — <b>15 %</b></td>
-            <td data-l="Источник"><span class="part">обзоры</span> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Дистанционные работники</th>
-            <td data-l="Значение" class="us">С 01.01.2024 (ФЗ от 31.07.2023 № 389-ФЗ)
-              вознаграждение по трудовым договорам с российскими организациями облагается НДФЛ
-              <b>независимо от резидентства</b>; с 01.01.2025 то же распространено на выплаты
-              по гражданско-правовым договорам при использовании российского сегмента интернета
-              или российского ПО</td>
-            <td data-l="Источник"><span class="part">обзоры</span> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Шкала выплат</th>
-            <td data-l="Значение" class="us">13 % до 2,4 млн руб.; 15 % от 2,4 до 5 млн;
-              18 % от 5 до 20 млн; 20 % от 20 до 50 млн; 22 % свыше 50 млн</td>
-            <td data-l="Источник"><span class="part">обзоры</span> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Кто контролирует КИК</th>
-            <td data-l="Значение" class="us">Доля прямого или косвенного участия более 25 %;
-              либо более 10 % при совокупной доле резидентов России более 50 %; либо фактический
-              контроль без участия в капитале</td>
-            <td data-l="Источник"><span class="part">обзоры</span> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Штрафы по КоАП</th>
-            <td data-l="Значение" class="us">Ч. 2 ст. 15.25 КоАП — граждане 1 000–1 500 руб.
-              за просрочку или неверную форму; ч. 2.1 — 4 000–5 000 руб. за непредставление.
-              По ОДДС: просрочка до 10 дней 300–500 руб., от 10 до 30 дней 1 000–1 500,
-              свыше 30 дней 2 500–3 000, повторное нарушение 20 000 руб.</td>
-            <td data-l="Источник"><b>первоисточник, текст КоАП</b> · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Продажа недвижимости в РФ</th>
-            <td data-l="Значение">Продажа российской недвижимости в год утраты резидентства: <span class="slot">уточняется</span></td>
-            <td data-l="Источник">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Освобождение по ЕАЭС</th>
-            <td data-l="Значение">Освобождение от ОДДС по счетам в банках ЕАЭС и порог 600 000 руб.: <span class="slot">уточняется</span></td>
-            <td data-l="Источник">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="measure" style="margin-top:var(--s-6)"><b>Почему две строки пустые, хотя ответ
-      «известен всем».</b> Тезис «продал квартиру в России в год отъезда и заплатил 30 % со всей
-      суммы продажи без вычетов» — самый громкий в этой теме и самый цитируемый. У нас он держится
-      на одном обзоре аудиторской компании; текст ст. 217.1 НК РФ мы первоисточником
-      не подтверждали. То же с порогом 600 000 рублей и освобождением по счетам в странах ЕАЭС,
-      куда входит Армения: формулировку ч. 7 ст. 12 ФЗ-173 мы первоисточником не подтвердили.
-      <b>Ставить громкий вывод на непроверенную норму — ровно тот способ работы, из-за которого
-      люди принимают дорогие решения по чужому пересказу.</b> Обе строки закрываются
-      первоисточником, а не нашей уверенностью.</p>
-  </div>
-</section>
-
-<!-- ═══ 08 · Если у вас здесь квартира ═════════════════════════ -->
-<section class="section section--stone" id="kvartira" aria-labelledby="flat-title" data-rail-label="Квартира здесь">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">08</span> Недвижимость в Армении</p>
-      <h2 class="h2" id="flat-title">2026 год — первый, когда ставка <em>применяется полностью</em></h2>
-      <p class="lead">Владелец квартиры в Ереване, который ориентируется на сумму, уплаченную
-        два-три года назад, увидит другую цифру: поэтапный ввод завершился, а прежний
-        необлагаемый порог отменён.</p>
-    </div>
-
-    <div class="diy-wrap">
-      <table class="diy">
-        <caption>Налог на имущество физических лиц в Армении после реформы 2021 года.
-          Две строки оставлены пустыми намеренно — объяснение под таблицей. Проверено 04.09.2026.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Значение</th><th scope="col">Источник</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">База расчёта</th>
-            <td data-l="Значение" class="us">Налог считается от кадастровой стоимости; реформа
-              2021 года приблизила кадастровую стоимость к рыночной</td>
-            <td data-l="Источник">finport.am, ampop.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Поэтапный ввод</th>
-            <td data-l="Значение" class="us">2021 — 25 % полной ставки, 2022 — 30 %, 2023 — 35 %,
-              2024 — 50 %, 2025 — 75 %, <b>с 2026 — 100 %</b></td>
-            <td data-l="Источник">finport.am + ampop.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Освобождение</th>
-            <td data-l="Значение" class="us">Освобождение недвижимости стоимостью до 3 млн драм
-              реформа отменила — платят все собственники</td>
-            <td data-l="Источник">finport.am + ampop.am · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Срок уплаты</th>
-            <td data-l="Значение" class="us">До <b>1 декабря</b>; оплата через портал
-              pay.e-community.am, принимаются международные карты</td>
-            <td data-l="Источник">armenian-lawyer.com · 04.09.2026</td>
-          </tr>
-          <tr>
-            <th scope="row">Ставки по ступеням</th>
-            <td data-l="Значение">Ставки налога по стоимостным ступеням: <span class="slot">уточняется</span></td>
-            <td data-l="Источник">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Земля и иностранец</th>
-            <td data-l="Значение">Может ли иностранец владеть землёй: <span class="slot">уточняется</span></td>
-            <td data-l="Источник">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="measure" style="margin-top:var(--s-6)"><b>Две пустые строки здесь — это не лень.</b>
-      По ставкам налога на имущество источники дают разные шкалы: один — потолок 1,0 % и пороги
-      10 / 25 / 47 / 120 / 200 млн драм, другой — потолок 1,5 % и другие пороги. По земле
-      две страницы <b>одного и того же издателя</b> утверждают разное: на одной иностранец
-      не может владеть землёй вовсе и для этого создаёт армянское юрлицо, на другой ограничение
-      касается только сельскохозяйственной земли. Мы не выбираем из двух версий ту, что звучит
-      увереннее. <span class="slot">обе строки подтверждает юрист LTCG</span></p>
-  </div>
-</section>
-
-<!-- ═══ 09 · Где ломается ══════════════════════════════════════ -->
-<section class="section" id="lovushki" aria-labelledby="traps-title" data-rail-label="Где ломается">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">09</span> Режимы ошибок</p>
-      <h2 class="h2" id="traps-title">Двенадцать мест, где <em>ломается чаще всего</em></h2>
-      <p class="lead">У каждого: в чём ошибка, чем кончается и можно ли починить заранее.
-        Мы говорим о том, что делаем и проверяем, — исход в налоговом вопросе не обещает никто,
-        и мы тоже не будем.</p>
-    </div>
-
-    <dl class="traps">
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 01</span><span class="trap__tag trap__tag--fix">закрывается арифметикой</span></span>
-          <span class="trap__title">Резидентство посчитано по ощущению, а не по календарю</span></dt>
-        <dd>Человек говорит «я тут почти весь год» и считает себя армянским резидентом. Или
-          наоборот — «я же постоянно мотаюсь» — и считает себя российским. Ни то, ни другое
-          не считается по ощущению: считаются дни присутствия по штампам и обстоятельства.</dd>
-        <dd><b>Чем кончается</b>Декларация подана не в той стране либо не подана вовсе; договор
-          не применён; переплата или недоимка выясняются через год.</dd>
-        <dd><b>Лечится ли до</b>Да, полностью. Это единственный пункт списка, который закрывается
-          арифметикой: поднять все въезды-выезды за календарный год и посчитать. Пока цифры нет,
-          любые дальнейшие выводы — предположения.</dd>
+    <dl class="traps" data-stagger>
+      <div class="trap">
+        <dt><span class="trap__tag">Правило 1 дня</span> Признание резидентом РА ретроактивно с 1 января</dt>
+        <dd>Признание резидентом РА хотя бы на <b>1 день</b> делает физлицо резидентом за весь год (<b>12 месяцев</b>). Заранее планируем дату переезда и режим ИП (микробизнес до <b>24 000 000 ֏</b> под <b>0%</b> или налог с оборота до <b>115 000 000 ֏</b> со ставками <b>1,5%</b>, <b>5%</b>, <b>7%</b>, <b>10%</b>, <b>12%</b> за <b>20 дней</b>). <span class="src">ст. 25 ч. 5, 254, 258, 267 НК РА</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 02</span><span class="trap__tag trap__tag--fix">разбирается до подачи</span></span>
-          <span class="trap__title">Год переезда: двойное резидентство приняли за ошибку, а это норма</span></dt>
-        <dd>Уехали весной, к 31 декабря набрали 183 дня здесь. Армения при этом считает вас
-          резидентом <b>за весь год</b>, включая те месяцы, когда вы жили в России (ст. 25 ч. 5
-          НК РА). Россия за тот же год могла зафиксировать резидентство по своим правилам.
-          Человек уверен, что так не бывает, и не идёт разбираться.</dd>
-        <dd><b>Чем кончается</b>Год переезда остаётся неразобранным, а именно в нём чаще всего
-          происходят разовые крупные события — продажа квартиры, закрытие вкладов, выплата бонуса.</dd>
-        <dd><b>Лечится ли до</b>Да, если разобрать год до подачи деклараций в обеих странах.
-          После — уже переписка с органами и, возможно, взаимосогласительная процедура.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">10 рабочих дней</span> Игнорирование запроса банка по самосертификации CRS</dt>
+        <dd>Без ответа на запрос CRS за <b>10 рабочих дней</b> банк приостанавливает расходные операции по счёту; с 01.09.2026 при переводах свыше <b>20 000 USD</b> проверяются код цели и резидентство контрагента. Сверяем анкеты CRS до блокировки. <span class="src">ст. 80.2 НК РА · unibank.am/ru/crs · Решение ЦБ РА № 150-Н</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 03</span><span class="trap__tag trap__tag--fix">снимается справкой заранее</span></span>
-          <span class="trap__title">Договор применили по чужому пересказу, а не по тексту</span></dt>
-        <dd>Три конкретных места, на которых спотыкаются чаще всего. <b>Разрешение двойного
-          резидентства ведёт не туда, куда ждут</b> — по прочитанному нами тексту после
-          постоянного местожительства сразу идёт гражданство, а «центра жизненных интересов»
-          в договоре нет. <b>Ставка 5 % по дивидендам считается от суммы вклада, а не от доли
-          участия</b> — по тексту условие не менее 40 000 долларов США в уставный капитал,
-          справочники описывают его через 25 % владения. <b>Проценты и роялти «только
-          в государстве резидентства» — с оговоркой</b>: п. 3 статей 11 и 12 снимает это правило
-          при наличии постоянного представительства или постоянной базы.</dd>
-        <dd><b>Чем кончается</b>Неверно спланированная выплата и удержанный у источника налог,
-          который потом возвращать самому и задним числом.</dd>
-        <dd><b>Лечится ли до</b>Да — если справка о налоговом резидентстве оказалась у плательщика
-          <b>до</b> выплаты, а не после. И с оговоркой: наш разбор договора сделан по редакции
-          1996 года, протокол 2011 года у нас не на руках, и это написано в самом верху страницы.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Центр интересов</span> Учёт только дней без анализа центра жизненных интересов</dt>
+        <dd>НК РА признаёт резидентом как по <b>183 дням</b> присутствия, так и по центру жизненных интересов в РА (семья, жильё, бизнес). Формируем досье и получаем сертификат КГД РА за <b>2 рабочих дня</b> (<b>0 ֏</b>). <span class="src">ст. 25 ч. 1 НК РА · e-services.src.am</span></dd>
       </div>
 
-      <div class="tile trap">
-        <dt><span class="trap__head"><span class="trap__no">Ловушка 04</span><span class="trap__tag trap__tag--fix">проверяется за минуту</span></span>
-          <span class="trap__title">Ищут статью о приросте капитала, которой в договоре нет</span></dt>
-        <dd>Продали ценные бумаги или долю, открыли обзор, увидели ссылку на «статью 13 о приросте
-          капитала», применили. Статья 13 этого договора называется «Доходы от независимой личной
-          деятельности». Отдельной статьи о приросте капитала в договоре нет: недвижимость идёт
-          по ст. 6 п. 3, всё остальное — по ст. 20 о прочих доходах, причём п. 3 ст. 20 допускает
-          обложение и в государстве возникновения дохода.</dd>
-        <dd><b>Чем кончается</b>Расчёт построен на несуществующей норме. Это тот случай, когда
-          ошибка не видна до проверки, потому что выглядит абсолютно нормально: ссылка есть,
-          номер статьи есть.</dd>
-        <dd><b>Лечится ли до</b>Да. Проверка занимает столько времени, сколько нужно, чтобы
-          открыть оглавление договора.</dd>
+      <div class="trap">
+        <dt><span class="trap__tag">Отъезд 183+ дней</span> Потеря ВНЖ/ПМЖ из-за пропуска 10-дневного уведомления</dt>
+        <dd>С 01.11.2026 отсутствие в РА <b>183 дня</b> и более без уведомления через платформу за <b>10 дней</b> отменяет ВНЖ или ПМЖ, а отсутствие налогов по бизнес-ВНЖ за <b>180 дней</b> аннулирует статус. <span class="src">ст. 17 ч. 8, ст. 29.4 ч. 5 ՀՕ-11-Ն</span></dd>
+      </div>
+
+      <div class="trap">
+        <dt><span class="trap__tag">Возврат к ОДДС</span> Восстановление обязанности сдать уведомления и ОДДС при поездках</dt>
+        <dd>При пребывании вне РФ <b>183 дня</b> или менее в году обязанность сдать ОДДС восстанавливается до 1 июня (штрафы от <b>300–500 руб.</b> и <b>2 000–3 000 руб.</b> до <b>20 000 руб.</b>). Заказываем банковские выписки в РА (старше <b>6 месяцев</b> в Ameriabank — <b>3 000 ֏</b>, справка — <b>5 000 ֏</b>). <span class="src">ч. 8 ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ · Тарифы Ameriabank</span></dd>
       </div>
     </dl>
 
-    <details class="traps-more">
-      <summary class="btn btn--outline btn--sm">Ещё восемь ловушек <svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
-      <dl class="traps">
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 05</span><span class="trap__tag trap__tag--fix">заказывается заранее</span></span>
-            <span class="trap__title">Справку о резидентстве заказали позже, чем она понадобилась</span></dt>
-          <dd>Справка нужна плательщику дохода <b>до</b> выплаты, чтобы он применил ставку
-            по договору. Её заказывают после того, как налог уже удержан.</dd>
-          <dd><b>Чем кончается</b>Возврат излишне удержанного вместо неудержания. Это другая
-            процедура, она дольше и она на вас.</dd>
-          <dd><b>Лечится ли до</b>Да, и это дёшево: заявление подаётся электронно на
-            e-services.src.am, заявленный срок — 2 рабочих дня, услуга бесплатная.
-            <b>Где здесь настоящая ловушка, о которой не пишут:</b> вход в портал требует
-            платформы идентификации «ԵսԵմ», а она работает через армянскую SIM-карту с Mobile ID
-            либо через ID-карту с чипом и картридер. Человек, который уже уехал из Армении и хочет
-            заказать справку дистанционно, упирается не в налоговую, а во вход. Возможно ли это
-            без армянской SIM и без ID-карты, находясь за границей, — мы не установили.
-            <span class="slot">подтверждает юрист LTCG — и это, возможно, самый практически важный слот на странице</span></dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 06</span><span class="trap__tag trap__tag--fix">лучше до первой оплаты</span></span>
-            <span class="trap__title">Личные и предпринимательские деньги живут на одном счёте</span></dt>
-          <dd>Один счёт принимает и оплату от заказчиков, и переводы себе, и возврат долга другу.
-            Внутри года это удобно, в момент годового разбора — нерасцепляемо.</dd>
-          <dd><b>Чем кончается</b>Картину года приходится восстанавливать по выпискам вручную,
-            и любой вопрос от банка или органа превращается в реконструкцию, а не в ответ.</dd>
-          <dd><b>Лечится ли до</b>Да, и лучше всего — до первой оплаты, а не после. Отдельная
-            хорошая новость: с сентября 2026 любое физическое лицо вправе бесплатно получить
-            от армянского банка электронную справку о своих счетах, остатках и обязательствах
-            в срок до пяти рабочих дней. То есть собрать картину счетов теперь можно самому
-            и бесплатно.
-            <span class="src">Источник: решение Совета ЦБ РА № 222-Н от 11.08.2026 ·
-            <a href="https://www.cba.am/hy/Board-decisions/10536" rel="noopener">cba.am/hy/Board-decisions/10536</a> · проверено 04.09.2026.</span></dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 07</span><span class="trap__tag">пока срок не истёк</span></span>
-            <span class="trap__title">Валютные обязанности считают отменёнными вместе с налоговым статусом</span></dt>
-          <dd>«Я больше не налоговый резидент России — значит, валютные обязанности отпали».
-            Валютное резидентство России привязано к гражданству, а не к проживанию: резиденты —
-            это «физические лица, являющиеся гражданами Российской Федерации», без оговорок
-            о сроке пребывания (подп. «а» п. 6 ч. 1 ст. 1 ФЗ 173-ФЗ). Освобождение от уведомлений
-            и отчётов даётся не за налоговый статус, а за факт пребывания за пределами России
-            более 183 дней в конкретном календарном году.</dd>
-          <dd><b>Чем кончается</b>Пропущенные уведомления и штрафы по ст. 15.25 КоАП. Суммы
-            для граждан невелики, но обязанность существует, а её невыполнение фиксируется.</dd>
-          <dd><b>Лечится ли до</b>Обязанность — да, если срок ещё не истёк: месяц на уведомление
-            об открытии счёта, 1 июня на отчёт за прошлый год.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 08</span><span class="trap__tag trap__tag--fix">решается до 1 июня</span></span>
-            <span class="trap__title">Вернулись в Россию — и обязанность вернулась задним числом</span></dt>
-          <dd>Год прожили за границей, освобождение работало, счетов не заявляли. На следующий год
-            вернулись, и срок пребывания за пределами России за тот календарный год 183 дней
-            уже не превысил. По ч. 8 ст. 12 ФЗ 173-ФЗ уведомления о счетах, открытых в период
-            освобождения, надо представить <b>до 1 июня следующего календарного года</b>.</dd>
-          <dd><b>Чем кончается</b>Человек, который два года назад законно ничего не подавал,
-            обнаруживает у себя просроченную обязанность за те самые два года.</dd>
-          <dd><b>Лечится ли до</b>Да — если решение о возвращении принято раньше 1 июня. Это,
-            возможно, самая недооценённая норма во всём российском валютном блоке: она срабатывает
-            не в момент отъезда, а в момент возвращения.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 09</span><span class="trap__tag">сроки идут от события</span></span>
-            <span class="trap__title">Зарегистрировали здесь компанию, оставаясь налоговым резидентом России</span></dt>
-          <dd>Открыли ООО или вошли в состав участников — и не подали российское уведомление
-            об участии в иностранной организации. Затем не подали уведомление о КИК.</dd>
-          <dd><b>Чем кончается</b>50 000 рублей по каждой организации за первое и 500 000 рублей
-            по каждой КИК за второе (ст. 25.14 НК РФ). Это единственные крупные штрафы во всей
-            теме, и обе обязанности возникают до всякого дохода.</dd>
-          <dd><b>Лечится ли до</b>Первое — 3 месяца с даты возникновения участия. Второе —
-            30 апреля следующего года. Оба срока считаются от события, а не от того, когда
-            вы о них узнали.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 10</span><span class="trap__tag">здесь нет «до»</span></span>
-            <span class="trap__title">Долг решили «оставить в другой стране»</span></dt>
-          <dd>Расчёт на то, что налоговое требование, признанное в одной стране, физически
-            недосягаемо в другой.</dd>
-          <dd><b>Чем кончается</b>По ст. 25 договора налоговый орган одного государства по просьбе
-            органа другого обеспечивает взимание налогов, доплат и взысканий, не носящих характера
-            штрафов; п. 4 допускает превентивные меры. <b>Применялась ли эта статья между Россией
-            и Арменией на практике — мы не знаем и не утверждаем.</b> Но норма в тексте есть,
-            и планировать «долг останется там» на её фоне неразумно.</dd>
-          <dd><b>Лечится ли до</b>Здесь нет «до» — есть только «разобраться раньше, чем требование
-            стало бесспорным». Отдельно: у взаимосогласительной процедуры по ст. 24 договора есть
-            трёхлетний срок с момента первого уведомления, и он пресекательный.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 11</span><span class="trap__tag trap__tag--fix">снимается подписью</span></span>
-            <span class="trap__title">Отказались подписать самосертификацию в банке</span></dt>
-          <dd>Клиент воспринимает форму с вопросом о стране налогового резидентства как избыточное
-            любопытство и не подписывает.</dd>
-          <dd><b>Чем кончается</b>По описанию армянского банка: при открытии счёта — отказ
-            в открытии; по действующему счёту при непредставлении в течение 10 рабочих дней —
-            приостановка операций, кроме перевода средств в другое учреждение. Формулировки
-            «закрытие счёта» на проверенной нами странице <b>нет</b>, и мы её не используем,
-            хотя она гуляет по обзорам.
-            <span class="src">Источник: <a href="https://www.unibank.am/ru/crs" rel="noopener">unibank.am/ru/crs</a> · проверено 04.09.2026.</span></dd>
-          <dd><b>Лечится ли до</b>Да. И заодно: указывать в самосертификации страну, которая
-            не соответствует вашим дням и обстоятельствам, — способ создать себе расхождение между
-            тем, что заявлено в банке, и тем, что заявлено в декларации.</dd>
-        </div>
-
-        <div class="tile trap">
-          <dt><span class="trap__head"><span class="trap__no">Ловушка 12</span><span class="trap__tag trap__tag--fix">собирается до подачи</span></span>
-            <span class="trap__title">Доход, которого «здесь нет», не попал в картину</span></dt>
-          <dd>Брокерский счёт в третьей стране, дивиденды иностранной компании, аренда квартиры,
-            оставшейся дома, проценты по вкладу за рубежом. Логика «это же не армянский доход»
-            неверна для армянского резидента: резидент платит с мирового дохода, а доход,
-            не обложенный у источника выплаты в Армении, декларируется самостоятельно.</dd>
-          <dd><b>Чем кончается</b>Неполная декларация — при том что информация о зарубежных счетах
-            теперь ходит между странами автоматически.</dd>
-          <dd><b>Лечится ли до</b>Да, если собрать полный перечень счетов и источников дохода
-            до подачи, а не вспоминать по одному. <b>И здесь же — наша граница, названная прямо:</b>
-            как именно облагается у армянского резидента зарубежный пассивный доход по видам —
-            иностранные дивиденды, проценты в иностранных банках, прирост капитала по иностранным
-            ценным бумагам — мы не подтвердили ни одним источником. У нас есть общий принцип
-            мирового дохода и зачёта, но нет постатейного ответа. Отдельно: налогообложение
-            операций с криптовалютой у резидента Армении мы не нашли нигде.
-            <span class="slot">оба вопроса — юрист LTCG</span></dd>
-        </div>
-      </dl>
-    </details>
-
-    <h3 class="h3" style="margin-top:var(--s-14)">Чего эта страница о вас не знает</h3>
-    <p class="measure">Три названные вещи, без которых ни один ответ выше не становится вашим ответом.</p>
-
-    <div class="oath">
-      <article class="tile">
-        <p class="oath__no">01</p>
-        <h4 class="oath__t">Сколько дней вы фактически провели здесь и там</h4>
-        <p class="oath__d">Не по памяти, а по штампам. Без этого числа вся страница — теория.</p>
-      </article>
-      <article class="tile">
-        <p class="oath__no">02</p>
-        <h4 class="oath__t">Что у вас с жильём в обеих странах и что написано в ваших договорах</h4>
-        <p class="oath__d">Постоянное местожительство в тесте по договору — первая ступень,
-          и она решается документами, а не ощущением «дом там».</p>
-      </article>
-      <article class="tile">
-        <p class="oath__no">03</p>
-        <h4 class="oath__t">Полный состав ваших счетов, компаний и источников дохода</h4>
-        <p class="oath__d">Мы видим тему целиком, но не видим вашу конкретную конфигурацию,
-          а именно она определяет, сколько стран вас касается.</p>
-      </article>
+    <div style="margin-top: var(--s-6)" data-reveal>
+      <h3 class="h3" style="margin-bottom: var(--s-4)">Пять шагов защиты статуса резидента и счетов в банке РА</h3>
+      <ol class="tl" data-stagger>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 01 · Сверка дней</span>
+          <h4 class="tl__t">Календарь в двух странах</h4>
+          <p class="tl__d">Считаем дни по штампам и билетам (порог <b>183 дня</b> и правило <b>1 дня</b> по ст. 25 НК РА).</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 02 · Банк и CRS</span>
+          <h4 class="tl__t">Анкета CRS за 10 р. дней</h4>
+          <p class="tl__d">Подаём самосертификацию за <b>10 рабочих дней</b> по ст. 80.2 НК РА; для переводов свыше <b>20 000 USD</b> проверяем коды цели.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 03 · КГД РА</span>
+          <h4 class="tl__t">Сертификат за 2 р. дня</h4>
+          <p class="tl__d">Через ПСН в «Ես Եմ» получаем электронный сертификат КГД РА (<b>0 ֏</b>).</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 04 · Миграция</span>
+          <h4 class="tl__t">Контроль 180 и 183 дней</h4>
+          <p class="tl__d">Следим за налогами за <b>180 дней</b> и уведомляем за <b>10 дней</b> при отъезде на <b>183+ дня</b>.</p>
+        </li>
+        <li class="tl__s">
+          <span class="tl__n">Шаг 05 · Выписки</span>
+          <h4 class="tl__t">Выписки для СИДН и ОДДС</h4>
+          <p class="tl__d">Готовим банковские выписки и пакет для зачёта налогов по ст. 4 СИДН.</p>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- ═══ 10 · Сколько стоит ═════════════════════════════════════ -->
-<section class="section section--stone" id="cena" aria-labelledby="price-title" data-rail-label="Сколько стоит">
+<!-- ═══ 05 · Сколько стоит (Калькулятор) ═════════════════════════ -->
+<section class="section section--glow section--thread" id="skolko" aria-labelledby="sk-t" data-rail-label="Калькулятор">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">10</span> Деньги</p>
-      <h2 class="h2" id="price-title">Сумму по этой ветке страница посчитать не может — <em>и это не отговорка</em></h2>
-      <p class="lead">На соседних ветках калькулятор работает честно: ИП, счёт, соцкарта, адрес —
-        фиксированные модули, они складываются. Здесь складывать нечего: объём зависит
-        от количества стран, от того, сколько лет надо разбирать, есть ли у вас компания,
-        и от того, идёт ли речь о планировании вперёд или о починке уже сделанного.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">05</span> Прозрачная смета LTCG</p>
+      <h2 class="h2" id="sk-t">Сколько стоит сопровождение <em>бизнеса, счетов и учёта в Армении</em></h2>
+      <p class="lead">Фиксированные цены LTCG в драмах РА против заморозки счетов по ст. 80.2 НК РА и штрафов за пропуск уведомлений.</p>
     </div>
 
-    <div class="diy-wrap">
-      <!-- Цены названы Геворгом 31.08.2026. Валюта явно не названа — уточняется у компании,
-           поставлена как драмы. -->
-      <table class="diy">
-        <caption>Что можно назвать прямо сейчас. Цены компании подтверждены клиентом
-          в переписке 01.09.2026; валюта на подтверждении.</caption>
-        <thead>
-          <tr><th scope="col">Что</th><th scope="col">Цена</th><th scope="col">Примечание</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Бухгалтерия, в месяц</th>
-            <td data-l="Цена" class="us"><span class="part">36 000 ֏ в месяц</span></td>
-            <td data-l="Примечание">Подтверждено клиентом в переписке 01.09.2026; состав работ уточняется</td>
-          </tr>
-          <tr>
-            <th scope="row">Справка о резидентстве</th>
-            <td data-l="Цена" class="us"><span class="part">0 ֏</span></td>
-            <td data-l="Примечание">Это цена самой услуги органа. Комитет госдоходов, заявленный
-              срок 2 рабочих дня, e-services.src.am</td>
-          </tr>
-          <tr>
-            <th scope="row">Справка о счетах</th>
-            <td data-l="Цена" class="us"><span class="part">0 ֏</span></td>
-            <td data-l="Примечание">Решение Совета ЦБ РА № 222-Н от 11.08.2026, срок
-              до 5 рабочих дней</td>
-          </tr>
-          <tr>
-            <th scope="row">Годовой разбор</th>
-            <td data-l="Цена"><span class="slot">платно или бесплатно — решает клиент</span></td>
-            <td data-l="Примечание">—</td>
-          </tr>
-          <tr>
-            <th scope="row">Сопровождение подачи</th>
-            <td data-l="Цена"><span class="slot">уточняется</span></td>
-            <td data-l="Примечание">—</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <script type="application/json" id="prices">
+    {
+      "publish": true,
+      "currency": "֏",
+      "currencyConfirmed": true,
+      "asOf": "2026-10-18",
+      "modules": {
+        "ip":         { "name": "Регистрация ИП",       "per": "once",  "amount": 45000  },
+        "account":    { "name": "Открытие счёта",       "per": "once",  "amount": 110000 },
+        "social":     { "name": "Соцкарта",             "per": "once",  "amount": 35000  },
+        "address":    { "name": "Адрес",                "per": "year",  "amount": 430000 },
+        "accounting": { "name": "Бухгалтерия",          "per": "month", "amount": 36000, "from": true }
+      }
+    }
+    </script>
 
-    <div class="bento" style="margin-top:var(--s-8)">
-      <article class="tile" data-span="6">
-        <h3 class="h3">Что в цену не входит</h3>
-        <p>Государственные пошлины и банковские комиссии — они всегда отдельной строкой.</p>
-        <p><a class="lnk" href="home-ru.html#calc">Полный калькулятор</a> с модулями ИП, счёта, соцкарты
-          и юридического адреса живёт на странице цен. Здесь он не помогает: две из четырёх
-          позиций к вашей ситуации отношения не имеют.</p>
-      </article>
+    <div class="calc" data-calc data-reveal>
+      <div class="calc__mods">
+        <label class="tile mod" for="m-accounting">
+          <input type="checkbox" id="m-accounting" name="mod" value="accounting" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Бухгалтерия</div><div class="mod__unit">в месяц · точный состав и цена — под ваш налоговый режим после короткого разбора</div></div>
+            <div class="mod__price" data-price="accounting">от 36 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Учёт в КГД РА, контроль 180 дней для ВНЖ и сертификат резидента (0 ֏ за 2 рабочих дня)</li>
+            </ul>
+          </details>
+        </label>
 
-      <article class="tile" data-span="6">
-        <h3 class="h3">И главное про сам расчёт</h3>
-        <p>Мы сознательно не заканчиваем этот блок итоговой цифрой. Не потому что прячем цену —
-          на соседних ветках она открыта, — а потому что в разговоре сумма меняется в обе стороны,
-          и вниз тоже: часть работ оказывается не нужна, часть закрывается одним документом.
-          Честнее показать состав и обсудить, чем выдать красивое число и потом объяснять,
-          почему оно другое.</p>
-      </article>
+        <label class="tile mod" for="m-account">
+          <input type="checkbox" id="m-account" name="mod" value="account" checked>
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Открытие счёта и комплаенс CRS</div><div class="mod__unit">единовременно · тариф банка отдельно</div></div>
+            <div class="mod__price" data-price="account">110 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Предпроверка анкеты CRS (ст. 80.2 НК РА) и сопровождение открытия счёта в банке РА</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-ip">
+          <input type="checkbox" id="m-ip" name="mod" value="ip">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Регистрация ИП</div><div class="mod__unit">единовременно · выбор режима за 20 дней</div></div>
+            <div class="mod__price" data-price="ip">45 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Регистрация ИП в госреестре РА и подача заявления на спецрежим за 20 дней</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-social">
+          <input type="checkbox" id="m-social" name="mod" value="social">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Номер общественных услуг (ПСН)</div><div class="mod__unit">единовременно · для входа в «Ես Եմ»</div></div>
+            <div class="mod__price" data-price="social">35 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Оформление ПСН для авторизации в «Ես Եմ» и электронных справок КГД</li>
+            </ul>
+          </details>
+        </label>
+
+        <label class="tile mod" for="m-address">
+          <input type="checkbox" id="m-address" name="mod" value="address">
+          <div class="mod__top">
+            <span class="mod__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <div><div class="mod__name">Адрес для регистрации и корреспонденции</div><div class="mod__unit">в год · если нужен вашему случаю (для ИП по закону не обязателен)</div></div>
+            <div class="mod__price" data-price="address">430 000 ֏</div>
+          </div>
+          <details class="mod__more">
+            <summary><svg aria-hidden="true"><use href="#i-chevron"/></svg> Что входит</summary>
+            <ul>
+              <li>Официальный адрес в Ереване и приём корреспонденции из КГД и госорганов РА</li>
+            </ul>
+          </details>
+        </label>
+      </div>
+
+      <aside class="tile tile--hero total" aria-labelledby="total" data-total>
+        <p class="total__title" id="total">Ваш расчёт</p>
+        <ul class="total__list chips" role="list" data-total-list>
+          <li class="chip">Бухгалтерия</li>
+          <li class="chip">Открытие счёта</li>
+        </ul>
+        <dl class="total__rows" data-total-rows>
+          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">110 000 ֏</dd></div>
+          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
+          <div class="total__row"><dt>Ежемесячно</dt><dd data-sum="month">от 36 000 ֏</dd></div>
+        </dl>
+        <div class="total__meta">
+          <p>Сертификат резидента КГД РА (<b>0 ֏</b> за <b>2 рабочих дня</b>) и ВНЖ (в комплексе, под основание) добавляются при разборе.</p>
+        </div>
+        <div class="total__cta">
+          <a class="btn btn--primary" href="#contact">Зафиксировать состав и обсудить <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ═══ 11 · Вопросы ═══════════════════════════════════════════ -->
-<section class="section" id="voprosy" aria-labelledby="faq-title" data-rail-label="Вопросы">
+<!-- ═══ 06 · 6 вопросов FAQ ══════════════════════════════════════ -->
+<section class="section section--deep section--thread section--light" id="faq" aria-labelledby="faq-t" data-rail-label="Частые вопросы">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">11</span> Вопросы этой ветки</p>
-      <h2 class="h2" id="faq-title">Девять вопросов, которые <em>задают чаще всего</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">06</span> Частые вопросы</p>
+      <h2 class="h2" id="faq-t">Шесть вопросов о налоговом резидентстве РА, <em>автообмене CRS и отчётах по счетам</em></h2>
     </div>
 
-    <div class="faq">
+    <div class="faq" data-stagger>
       <details>
-        <summary>Я уехал в апреле. Я вообще где резидент за этот год?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Как считается налоговое резидентство физического лица в Армении по ст. 25 НК РА?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Возможно, в обеих странах сразу, и это нормальный результат, а не ваша ошибка.
-            Армения: если вы набрали здесь 183 дня к 31 декабря — вы резидент Армении, причём
-            за <b>весь</b> год, включая январь–март, когда вы жили в России (ст. 25 ч. 5 НК РА).
-            Россия: свой статус за календарный год она фиксирует по итогам года по правилу
-            183 дней в течение 12 следующих подряд месяцев (п. 2 ст. 207 НК РФ). Когда обе страны
-            признали вас своим, включается договор: постоянное местожительство → гражданство →
-            согласование между органами. Практический шаг ровно один и он ваш: поднять все въезды
-            и выезды за год и посчитать по календарю. Дальше разбирается конфигурация, но без
-            числа разбирать нечего.</p>
-          <p class="small"><a class="lnk" href="#vash-sluchay">Четыре исхода развилки</a><a class="lnk" href="#dogovor">Что говорит договор</a></p>
+          <p>Физлицо признаётся налоговым резидентом РА при пребывании <b>183 дня</b> и более в году (<b>12 месяцев</b>) либо по центру жизненных интересов в РА. Признание резидентом хотя бы на <b>1 день</b> делает лицо резидентом за весь год (<b>1 год</b>). <span class="src">ст. 25 ч. 1, ч. 5 НК РА ՀՕ-165-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Нужно ли уведомлять российскую налоговую о счёте в армянском банке?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Означает ли наличие карты ВНЖ или ПМЖ Армении автоматическое налоговое резидентство?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Обязанность уведомить об открытии, закрытии или изменении реквизитов зарубежного
-            счёта существует у граждан России и не зависит от того, где вы живёте: валютными
-            резидентами закон называет «физических лиц, являющихся гражданами Российской
-            Федерации», без оговорок о сроке пребывания (подп. «а» п. 6 ч. 1 ст. 1 ФЗ 173-ФЗ).
-            Срок — не позднее одного месяца со дня открытия (ч. 2 ст. 12). Освобождение есть:
-            тот, чей срок пребывания за пределами России в истекшем календарном году в совокупности
-            превысил 183 дня, уведомления и отчёты не представляет (ч. 8 ст. 12). Но у этого
-            освобождения есть возврат: если в каком-то году 183 дня за границей не набрались,
-            ранее не поданные уведомления о счетах, открытых в период освобождения, надо
-            представить до 1 июня следующего календарного года.</p>
-          <p><b>Отдельно предупреждаем:</b> мы армянская компания и российское право
-            не практикуем — мы даём вам норму и ссылку, чтобы вы проверили сами или со своим
-            российским консультантом.</p>
+          <p>Нет: карта ВНЖ (до <b>1 года</b>) или ПМЖ (на <b>5 лет</b>) — миграционный статус, а налоговое резидентство определяется <b>183 днями</b> присутствия или центром интересов. С 01.11.2026 при отсутствии в РА <b>183 дня</b> и более нужно уведомить миграционную службу через платформу за <b>10 дней</b>. <span class="src">ст. 25 НК РА · ст. 17 ч. 8 ՀՕ-11-Ն</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Отчёт о движении средств — это то же самое, что уведомление?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Что произойдёт со счётом в армянском банке, если не заполнить анкету самосертификации CRS?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Нет, это две разные обязанности с разными сроками, и их регулярно путают, закрывая
-            одну и считая, что закрыты обе. Уведомление подаётся один раз по событию — открыли,
-            закрыли, изменили реквизиты — в течение месяца. Отчёт о движении средств по счёту
-            (ОДДС) подаётся ежегодно, до 1 июня года, следующего за отчётным (ч. 7 ст. 12
-            ФЗ 173-ФЗ). Существуют освобождения от ОДДС для счетов в банках стран ЕАЭС, куда
-            входит Армения, с порогом по сумме за год — но <b>точную формулировку этой нормы мы
-            первоисточником не подтвердили и поэтому её здесь не приводим.</b> Освобождение
-            по ЕАЭС и по порогу в любом случае касается только отчёта, но не самого уведомления
-            об открытии счёта.</p>
-          <p class="small"><a class="lnk" href="#obyazannosti">Таблица сроков</a></p>
+          <p>Без анкеты самосертификации CRS банк отказывает в открытии нового счёта, а по действующему счёту через <b>10 рабочих дней</b> приостанавливает расходные операции. <span class="src">ст. 80.2 НК РА · unibank.am/ru/crs</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Правда ли, что Армения теперь передаёт данные о счетах в Россию?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Как и за какой срок можно получить сертификат налогового резидента Армении в КГД РА?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Разложим на две части, потому что они разной прочности. Первая часть подтверждена
-            официально: Армения ратифицировала многостороннее соглашение об автоматическом обмене
-            (закон подписан президентом РА 03.10.2023) и <b>провела первый обмен в сентябре
-            2025 года</b> — это данные ОЭСР, Global Forum. Комитет госдоходов Армении заявлял
-            об обмене примерно со 120 странами и территориями.</p>
-          <p>Вторая часть у нас не закрыта: включение Армении в российский перечень государств
-            автоматического обмена мы <b>официальным текстом не подтвердили</b> — обзоры
-            юридических фирм называют приказ ФНС от 14.10.2025 № ЕД-7-17/883@, но сам перечень
-            мы не прочитали, а одна проверенная выжимка Армению не показала, и даже дата
-            вступления приказа у трёх источников разная. Поэтому мы не говорим «данные точно
-            уходят в ФНС» и не говорим «не уходят». Мы говорим: механизм работает, Армения в нём
-            участвует, конкретную пару стран мы не подтвердили, и планировать разумно исходя
-            из видимости, а не из невидимости счёта. Гайды, которые до сих пор пишут, что обмена
-            с Арменией нет вообще, описывают позапрошлую реальность.</p>
-          <p class="small"><a class="lnk" href="#obmen">Таблица по обмену данными</a></p>
+          <p>Сертификат налогового резидента РА выдаётся электронно через «Ես Եմ» за <b>2 рабочих дня</b> бесплатно (<b>0 ֏</b>) при подтверждении <b>183+ дней</b> пребывания либо центра жизненных интересов. <span class="src">КГД РА · e-services.src.am</span></p>
         </div>
       </details>
 
       <details>
-        <summary>Банк прислал форму про налоговое резидентство. Обязан ли я её заполнять?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Какие сроки и штрафы действуют в РФ за неуведомление о счетах в Армении и несдачу ОДДС?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Практически — да, если хотите пользоваться счётом. Это самосертификация в рамках
-            автоматического обмена. По описанию армянского банка последствия отказа такие:
-            при открытии счёта банк отказывает в открытии; по уже действующему счёту
-            при непредставлении сведений в течение 10 рабочих дней банк приостанавливает операции,
-            кроме перевода средств в другое учреждение
-            (<a class="lnk" href="https://www.unibank.am/ru/crs" rel="noopener">unibank.am/ru/crs</a> ·
-            проверено 04.09.2026). Формулировки «счёт закрывают» на этой странице нет, хотя она
-            встречается в пересказах — мы её не используем. Заполнять её стоит по своим реальным
-            дням и обстоятельствам: расхождение между тем, что заявлено банку, и тем, что заявлено
-            в декларации, — это проблема, которую вы создаёте себе сами.</p>
+          <p>Граждане РФ, пробывшие вне РФ менее <b>183 дней</b> в году, уведомляют ФНС о счёте за <b>1 месяц</b> и сдают ОДДС до 1 июня. Штрафы: <b>1 000–1 500 руб.</b> за просрочку уведомления, <b>4 000–5 000 руб.</b> за неуведомление, от <b>300–500 руб.</b> до <b>2 500–3 000 руб.</b> за просрочку ОДДС (до <b>10 дней</b> / до <b>30 дней</b> / свыше <b>30 дней</b>) и <b>20 000 руб.</b> повторно. <span class="src">ч. 2, 7, 8 ст. 12 ФЗ-173 · ст. 15.25 КоАП РФ</span></p>
         </div>
       </details>
 
       <details>
-        <summary>У меня ВНЖ Армении. Значит, я налоговый резидент Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <summary>Как устраняется двойное резидентство между Арменией и Россией в год переезда?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
         <div class="faq__a">
-          <p>Нет. Это два разных статуса, которые выдают разные органы по разным основаниям,
-            и они не следуют один из другого ни в одну сторону. ВНЖ — миграционный статус: право
-            находиться в стране. Налоговое резидентство определяется присутствием 183 дня и более
-            либо центром жизненных интересов (ст. 25 НК РА). Можно иметь ВНЖ и не быть налоговым
-            резидентом Армении. Можно быть налоговым резидентом Армении без ВНЖ.</p>
-          <p>С 1 ноября 2026 путаницы станет больше, потому что появится ещё одна цифра 183:
-            обладатель временного или постоянного статуса пребывания, отсутствовавший в Армении
-            183 дня и более, обязан уведомить об этом миграционный орган через единую электронную
-            платформу в 10-дневный срок (новая ст. 17 ч. 8 закона «Об иностранцах», ՀՕ-11-Ն
-            от 20.01.2026 ·
-            <a class="lnk" href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>).
-            Налоговые 183 дня считают присутствие, миграционные — отсутствие. Порог совпадает,
-            институты разные.</p>
-          <p class="small"><a class="lnk" href="vnzh.html">Легализуюсь: основания для ВНЖ</a></p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Когда подавать декларацию в Армении и надо ли она мне вообще?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Общее правило: физическое лицо, получившее доход, <b>не обложенный налогом у источника
-            выплаты в Армении</b>, обязано подать личную декларацию. Зарубежный доход налогового
-            резидента Армении в эту категорию попадает. Отдельно существует система всеобщего
-            декларирования — она охватывает граждан Армении, являющихся резидентами Армении, кроме
-            несовершеннолетних, и иностранные граждане в неё не включены. Отсюда частая ошибка:
-            человек читает про всеобщее декларирование, видит, что оно «для граждан Армении»,
-            и решает, что его это не касается вовсе. Общая обязанность из первого предложения
-            существует независимо.</p>
-          <p>По срокам: базовый срок — 1 мая; за 2025 год срок продлён до 1 ноября 2026
-            включительно (закон ՀՕ-324-Ն от 24.10.2025 ·
-            <a class="lnk" href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a>);
-            с 2027 года окно подачи планируется со 2 марта по 1 июля. Подача только электронная,
-            через self-portal.taxservice.am, нужны социальный номер и электронная подпись.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Я собираюсь продать квартиру в России в год отъезда. Чем это грозит?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Честный ответ: это самый частый и самый дорогой вопрос в этой теме, и именно по нему
-            мы <b>не даём числа</b>. Утверждение «нерезидент платит 30 % со всей суммы продажи
-            без вычетов» ходит по обзорам, мы его видели, но норму ст. 217.1 НК РФ первоисточником
-            не подтвердили, а разница между «с прибыли» и «со всей суммы» в конкретной сделке
-            измеряется миллионами рублей. Публиковать громкий вывод на непроверенной норме
-            мы не будем — тем более что это российское право, а мы армянская компания.</p>
-          <p>Что мы можем сказать твёрдо: момент сделки относительно года утраты российского
-            резидентства имеет значение, и разбирать это надо <b>до</b> сделки, вместе с российским
-            консультантом. Развилка существует — а её цену считает тот, кто отвечает за российскую
-            норму.</p>
-        </div>
-      </details>
-
-      <details>
-        <summary>Что делать, если срок уже пропущен?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a">
-          <p>Смотря какой. У части обязанностей есть штраф и есть возможность подать с опозданием —
-            например, по российским валютным уведомлениям суммы для граждан невелики и прописаны
-            в ст. 15.25 КоАП постатейно. У части срок пресекательный: заявление
-            по взаимосогласительной процедуре подаётся в течение трёх лет с момента первого
-            уведомления о действиях, приводящих к налогообложению не по соглашению (ст. 24
-            договора), и после трёх лет этот путь закрыт. Общее правило одно: пропущенный срок
-            разбирается по конкретной обязанности и конкретной дате, а не «в целом». Принесите
-            даты — мы скажем, что ещё открыто.</p>
+          <p>При одновременном резидентстве статус определяется последовательно по международному соглашению (жилище, центр интересов, гражданство) с подтверждением сертификатом КГД РА за <b>2 рабочих дня</b> (<b>0 ֏</b>). <span class="src">ст. 25 НК РА · п. 2 ст. 207 НК РФ · ст. 4 Соглашения РФ–РА от 28.12.1996 в ред. Протокола от 24.10.2011</span></p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ═══ 12 · Выход ═════════════════════════════════════════════ -->
-<section class="section section--art section--contact" id="kontakt" aria-labelledby="contact-title" data-rail-label="Контакт">
+<!-- ═══ 07 · Форма заявки + соседние ветки ═══════════════════════ -->
+<section class="section section--art section--contact" id="contact" aria-labelledby="f-title" data-rail-label="Контакт">
   <div class="art art--center" aria-hidden="true">
     <picture>
-      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh.webp">
+      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
+      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
       <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">12</span> Повод для разговора</p>
-      <h2 class="h2" id="contact-title">Даты в этом абзаце <em>не наши</em></h2>
-      <p class="lead">Повод берётся не из нашей акции, а из календаря: календарный год
-        закрывается 31 декабря, и именно к этой дате обе страны фиксируют, чьим резидентом
-        вы были. Всё, что можно решить осознанно — где вы проведёте оставшиеся недели, когда
-        заказать справку, в каком году совершать крупную сделку, — решается до этой даты,
-        а не после. То же с 1 июня: к нему привязаны и годовой отчёт по зарубежным счетам,
-        и возврат обязанности за годы, когда вы были освобождены.</p>
-      <p class="small measure">Мы не будем вас торопить и не поставим здесь обратный отсчёт.
-        Даты в этом абзаце не наши — они в законе, и их видно.</p>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">07</span> Заявка юристу LTCG</p>
+      <h2 class="h2" id="f-title">Разберём ваш календарь дней, <em>статус резидента РА и CRS</em></h2>
+      <p class="lead">Проверим дни пребывания, оформим сертификат КГД РА за 2 рабочих дня и подготовим анкеты CRS.</p>
     </div>
 
-    <div class="contact">
+    <div class="contact" data-reveal>
       <div class="tile">
+        <span class="state sr-only" data-state="settled" data-name="Живу и планирую" aria-hidden="true"></span>
         <div class="ways">
           <a class="way" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram<small>@LTCG_Armenia</small></a>
-          <!-- WhatsApp у компании НЕ ПОДТВЕРЖДЁН: номер тот же, но наличие WhatsApp на нём
-               никто не проверял. Если не подтвердится — снять все ссылки с data-wa. -->
           <a class="way" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp<small>+374 94 184 014</small></a>
           <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
         </div>
+
         <hr class="rule">
 
-        <!-- method="dialog" вне <dialog> — это НЕ отправка: браузер прерывает submit.
-             Без JavaScript нажатие Enter не бросает POST в никуда и не уносит имя
-             и контакт в строку адреса. С JavaScript отправку перехватывает js/site.js. -->
         <form class="form" id="lead" method="dialog" data-lead novalidate>
-          <p class="tile__meta"><b>Вы выбрали</b> Живу и планирую → резидентство и обмен данными</p>
+          <p class="tile__meta"><b>Вы выбрали</b> Живу и планирую → Резидентство РА, CRS и отчётность</p>
 
           <div class="form__row">
             <div class="field">
-              <label class="field__label" for="f-name">Как к вам обращаться</label>
+              <label class="field__label" for="f-name">Ваше имя</label>
               <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
             </div>
             <div class="field">
-              <label class="field__label" for="f-contact">Телефон или Telegram</label>
-              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник">
+              <label class="field__label" for="f-contact">Telegram, WhatsApp или телефон</label>
+              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" required placeholder="@username или +374 / +7…">
             </div>
           </div>
 
           <div class="field">
-            <label class="field__label" for="f-days">Сколько дней вы были здесь и там за прошлый год <small>— по календарю, а не по памяти</small></label>
-            <input class="field__input" id="f-days" name="days" type="text" inputmode="numeric" placeholder="Например: Армения 210, Россия 120">
+            <label class="field__label" for="f-msg">Задача <small>— необязательно</small></label>
+            <textarea id="f-msg" name="message" placeholder="Например: сертификат резидента КГД РА и анкета CRS"></textarea>
           </div>
 
-          <div class="field">
-            <label class="field__label" for="f-msg">Сообщение <small>— необязательно</small></label>
-            <textarea id="f-msg" name="message" placeholder="Одной фразой: что уже подавали и за какие годы"></textarea>
-          </div>
-
-          <!-- след выбора: ветка едет вместе с заявкой. Поле fork заполняет скрипт, если он есть;
-               без скрипта уходит пустым — форма от этого не ломается. -->
+          <input type="hidden" id="f-state" name="state" value="settled">
           <input type="hidden" name="branch" value="rezidentstvo-i-crs">
           <input type="hidden" name="fork" value="" data-f-fork>
-          <input type="hidden" name="page" value="rezidentstvo-i-crs">
+          <input type="hidden" name="modules" data-f-modules value="accounting,account">
 
-          <!-- honeypot: отсекает только заполненное поле; отсечки по времени нет намеренно -->
-          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="hp" aria-hidden="true"><label>Поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
-          <label class="check"><input type="checkbox" name="consent" required>
+          <label class="check">
+            <input type="checkbox" name="consent" required>
             <span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
-            <span>Согласен на обработку персональных данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст согласия от клиента</span></span></label>
+            <span>Согласен на обработку персональных данных для ответа</span>
+          </label>
 
           <div class="form__foot">
-            <button class="btn btn--primary js-only" type="submit">Разобрать мою налоговую картину <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
-            <p class="form__nojs nojs-only small">Форма собирает сообщение скриптом. Скрипт
-              выключен — напишите напрямую:
-              <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> ·
-              <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
+            <button class="btn btn--primary js-only" type="submit">Разобрать мою ситуацию <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
+            <p class="form__nojs nojs-only small">Без JS: <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a> · <a class="lnk" href="tel:+37494184014">+374 94 184 014</a></p>
             <p class="form__msg" role="status" aria-live="polite" data-form-msg></p>
           </div>
         </form>
 
-        <!-- Приёмник заявки: сайт статический, текст показывается человеку целиком,
-             отправляет он сам. Никакие данные никуда не уходят до нажатия. -->
         <div class="form__done" data-form-done hidden tabindex="-1">
-          <p class="h4">Заявка собрана — осталось отправить</p>
-          <p class="measure small">Сайт статический, отправлять некому: заявка уходит вашим
-            сообщением в мессенджер. Текст уже готов.</p>
+          <p class="h4">Заявка готова</p>
+          <p class="measure small">Нажмите кнопку мессенджера, чтобы открыть диалог с юристом LTCG.</p>
           <label class="sr-only" for="f-out">Текст заявки</label>
           <textarea class="field__input form__out" id="f-out" data-form-out readonly rows="5"></textarea>
           <div class="btn-row">
-            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Открыть Telegram и вставить</a>
-            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> Открыть WhatsApp с текстом</a>
-            <button class="btn btn--outline" type="button" data-copy>Скопировать текст</button>
+            <a class="btn btn--primary" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer" data-send-tg><svg aria-hidden="true"><use href="#i-tg"/></svg> Telegram</a>
+            <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-send-wa><svg aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</a>
+            <button class="btn btn--outline" type="button" data-copy>Скопировать</button>
           </div>
           <p class="small" role="status" aria-live="polite" data-copy-msg></p>
         </div>
       </div>
 
       <aside class="tile tile--hero">
-        <p class="tile__meta"><b>12</b> Что вы приносите с собой</p>
-        <p class="small">Разговор без этого получается пустым, и честнее сказать заранее.</p>
+        <div class="tile__art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+          </picture>
+        </div>
+        <p class="tile__meta"><b>Прямой контакт</b> Ереван · LTCG</p>
+        <h3 class="h3">Что подготовить</h3>
         <ol class="next" role="list">
-          <li><span><b>Даты въездов и выездов</b>За нужные годы — по штампам, не по памяти.</span></li>
-          <li><span><b>Список счетов</b>В каких странах и с какого года.</span></li>
-          <li><span><b>Источники дохода</b>Кто платит, в какой стране зарегистрирован, в какой валюте.</span></li>
-          <li><span><b>Есть ли у вас компания</b>Или доля в компании — здесь или где-то ещё.</span></li>
-          <li><span><b>Что с недвижимостью</b>В обеих странах: своё жильё, аренда, планы продать.</span></li>
-          <li><span><b>Что уже подавали</b>Декларации, уведомления, отчёты — и за какие годы.</span></li>
+          <li><span><b>Поездки</b>Штампы и билеты за 2 года.</span></li>
+          <li><span><b>Счета</b>Личные и ИП-счета, анкеты CRS.</span></li>
+          <li><span><b>Доходы</b>Оборотный налог, микробизнес, наём или дивиденды.</span></li>
+          <li><span><b>ВНЖ / ПМЖ</b>Порог 183 дней и 10-дневное уведомление по ՀՕ-11-Ն.</span></li>
         </ol>
         <hr class="rule">
-        <p class="measure"><b>Первый вопрос, который вам зададут, мы печатаем заранее, чтобы
-          на звонке не было неожиданности:</b> «Сколько дней вы фактически были здесь и там —
-          по календарю, а не по памяти?» Если ответа нет, разговор начнётся с того, как его получить.</p>
+        <p class="small">Тел.: <a class="lnk" href="tel:+37494184014">+374 94 184 014</a> · TG: <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">@LTCG_Armenia</a></p>
       </aside>
-    </div>
-
-    <div class="tile tile--quiet" style="margin-top:var(--gap)">
-      <h3 class="h3">Если разговор сейчас не нужен</h3>
-      <p class="measure">Это нормально, и вот что имеет смысл прочитать дальше вместо него.</p>
-      <ul class="chips" role="list">
-        <li><a class="lnk" href="ip-i-nalogi.html">«Работаю: ИП, режимы и налоги» — если вопрос всё-таки про ставку с оборота и выбор режима, а не про две страны</a></li>
-        <li><a class="lnk" href="spravki-i-zakrytie.html">«Двигаюсь дальше: справки и закрытие дел» — если вы планируете уезжать из Армении</a></li>
-        <li><a class="lnk" href="pered-pereezdom.html">«Ещё не переехал» — если вы читаете это, ещё не уехав: часть российских обязанностей закрывается проще, пока вы там</a></li>
-      </ul>
     </div>
   </div>
 </section>
 
-<!-- ═══ 13 · Соседние ветки и подпись ══════════════════════════ -->
-<section class="section" id="dalshe" aria-labelledby="neigh-title" data-rail-label="Соседние ветки">
+<!-- ═══ 08 · Соседние ветки ══════════════════════════════════════ -->
+<section class="section section--deep section--thread" id="dalee" data-rail-label="Что дальше" aria-labelledby="neigh-t">
   <div class="wrap">
-    <div class="section__head">
-      <p class="kicker"><span class="kicker__no">13</span> Соседние ветки</p>
-      <h2 class="h2" id="neigh-title">Что рядом <em>по времени</em></h2>
+    <div class="section__head" data-reveal>
+      <p class="kicker"><span class="kicker__no">08</span> Соседние ветки</p>
+      <h2 class="h2" id="neigh-t">Связанные <em>ветки</em></h2>
     </div>
 
-    <nav class="bento" aria-label="Соседние ветки">
+    <nav class="bento" data-stagger aria-label="Соседние ветки">
       <a class="tile neigh" href="schet-v-banke.html" data-span="4">
-        <p class="neigh__when">До этого</p>
-        <h3 class="neigh__t">Счёт, соцкарта и адрес — и порядок, в котором они делаются</h3>
-        <p class="neigh__d">Что требуют три банка от нерезидента, где отказ бывает платным
-          и какие переводы не пройдут.</p>
-        <span class="neigh__go">Только приехал <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
+            <img src="assets/img/nov-shot-1100.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 02 · Банки и KYC</span>
+        </div>
+        <p class="neigh__when">Ветка 02</p>
+        <h3 class="neigh__t">Счёт в банке РА и комплаенс</h3>
+        <p class="neigh__d">Тарифы Ameriabank, Converse, Evocabank и сопровождение 110 000 ֏.</p>
+        <span class="neigh__go">Перейти <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
-
       <a class="tile neigh" href="ip-i-nalogi.html" data-span="4">
-        <p class="neigh__when">Параллельно</p>
-        <h3 class="neigh__t">Режим ИП, ставки и приём оплат от зарубежных заказчиков</h3>
-        <p class="neigh__d">Режим выбирают по составу заказчиков и обороту до регистрации:
-          ошибка обнаруживается только через год.</p>
-        <span class="neigh__go">Работаю <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
+            <img src="assets/bg/desk-documents-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 04 · ИП и налоги</span>
+        </div>
+        <p class="neigh__when">Ветка 04</p>
+        <h3 class="neigh__t">ИП, ООО и налоги в Армении</h3>
+        <p class="neigh__d">Лимиты 24 млн и 115 млн ֏, ставки 2025–2026 и учёт от 36 000 ֏/мес.</p>
+        <span class="neigh__go">Перейти <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
-
       <a class="tile neigh" href="spravki-i-zakrytie.html" data-span="4">
-        <p class="neigh__when">После этого</p>
-        <h3 class="neigh__t">Справка о резидентстве, справка об уплаченных налогах, апостиль</h3>
-        <p class="neigh__d">Что можно получить только пока вы физически здесь, и что можно
-          получить потом — но дольше и дороже. Плюс порядок закрытия ИП.</p>
-        <span class="neigh__go">Двигаюсь дальше <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <div class="tile__plate" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
+            <img src="assets/bg/window-city-1280.jpg" width="640" height="360" alt="">
+          </picture>
+          <span class="tile__plate-tag">Ветка 06 · Справки и выход</span>
+        </div>
+        <p class="neigh__when">Ветка 06</p>
+        <h3 class="neigh__t">Справки и закрытие ИП и счетов</h3>
+        <p class="neigh__d">Несудимость 7 000 ֏, сертификат КГД РА и ликвидация ИП.</p>
+        <span class="neigh__go">Перейти <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
     </nav>
 
-    <!-- Перечень того, что мы сами назвали непроверенным. Тихий род: это отрицательный
-         результат, и кричать ему нечем. -->
-    <aside class="nochange" style="margin-top:var(--s-12)" aria-labelledby="unverified">
-      <p class="nochange__tag">Названо на странице как непроверенное или расходящееся</p>
-      <h3 class="nochange__t" id="unverified">Двенадцать мест, где наш разбор упирается в границу</h3>
-      <ul>
-        <li>Редакция соглашения — у нас 1996 год, протокола от 24.10.2011 на руках нет.</li>
-        <li>Какие положения MLI применяются к соглашению.</li>
-        <li>Период подсчёта 183 дней по ст. 25 НК РА.</li>
-        <li>Включение Армении в российский перечень стран автообмена и дата приказа ФНС.</li>
-        <li>Ставка на прирост капитала по ценным бумагам.</li>
-        <li>Отсутствие налогов на дарение и наследование.</li>
-        <li>Порог 600 000 рублей и освобождение от ОДДС по счетам в банках ЕАЭС.</li>
-        <li>Ставка 30 % со всей суммы при продаже российской недвижимости нерезидентом.</li>
-        <li>Ставки армянского налога на имущество и правила владения землёй для иностранцев.</li>
-        <li>Санкция за неподачу армянской декларации.</li>
-        <li>Возможность войти в «ԵսԵմ» из-за границы без армянской SIM и ID-карты.</li>
-        <li>Состав сведений, передаваемых по CRS, — берём из текста стандарта ОЭСР,
-          а не со страницы банка.</li>
-      </ul>
-      <p class="src">Каждый пункт назван в том блоке, к которому относится, и помечен там же.
-        Список собран, чтобы его было видно целиком · 04.09.2026.</p>
-    </aside>
-
     <footer class="section__foot">
-      <p class="sign">
-        <span>Проверено по первоисточникам и открытым документам</span>
-        <span>Юридическая проверка со стороны LTCG: <span class="slot">имя юриста и дата подписи</span></span>
-        <span>Обновлено 04.09.2026</span>
-      </p>
-
-      <p class="small measure"><b>Источники:</b> текст соглашения между Россией и Арменией
-        от 28.12.1996 (data.nalog.ru, распакованный файл, редакция 1996 года) · Налоговый кодекс
-        РА, ст. 25 (<a class="lnk" href="https://www.arlis.am/en/acts/205620" rel="noopener">arlis.am/en/acts/205620</a> —
-        английский перевод на государственном портале, не аутентичный текст) · Федеральный закон
-        от 10.12.2003 № 173-ФЗ, ст. 12
-        (<a class="lnk" href="https://www.consultant.ru/document/cons_doc_LAW_45458/" rel="noopener">consultant.ru</a>) ·
-        КоАП РФ, ст. 15.25 (zakonrf.info) · НК РФ, ст. 25.14 (consultant.ru) · закон РА ՀՕ-11-Ն
-        от 20.01.2026, новая ст. 17 ч. 8
-        (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am/hy/acts/220874</a>) ·
-        закон РА ՀՕ-324-Ն от 24.10.2025
-        (<a class="lnk" href="https://www.arlis.am/hy/acts/215597" rel="noopener">arlis.am/hy/acts/215597</a>) ·
-        решение Совета ЦБ РА № 222-Н от 11.08.2026 (cba.am) · портал КГД РА src.am
-        и e-services.src.am · ОЭСР, Global Forum · заявление зампреда Комитета госдоходов РА
-        от 10.03.2026.</p>
-
-      <p class="small measure"><b>Про российские обязанности — отдельно и честно.</b> LTCG —
-        армянская компания, и мы не практикуем российское право. Российские нормы на этой странице
-        приведены по опубликованным текстам, со ссылкой на статью, чтобы вы могли проверить их
-        сами. Мы не ручаемся за то, как российский налоговый орган применит норму в вашем случае,
-        и не заменяем собой российского консультанта. Наша работа здесь — показать, где именно
-        возникает вопрос и к какой дате он привязан.</p>
-
-      <p class="small measure"><b>Что изменилось в этой редакции:</b> первая публикация ветки.</p>
-
-      <p class="small measure"><b>Наша политика по цифрам.</b> Цифры на этом сайте появляются
-        только с источником и датой. Пустые места и пометки «уточняем» — не недоделка,
-        а правило: одна выдуманная цифра обесценивает все остальные.</p>
+      <p class="sign"><span>Проверили: Юристы LTCG</span><span>Обновлено 18.10.2026</span></p>
+      <p class="small measure"><b>Источники:</b> НК РА ՀՕ-165-Ն ст. 25, 80.2, 254, 258, 267 (<a class="lnk" href="https://www.arlis.am/en/acts/205620" target="_blank" rel="noopener noreferrer">arlis.am/en/acts/205620</a>) · ՀՕ-11-Ն (<a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">arlis.am/hy/acts/220874</a>) · КГД РА (<a class="lnk" href="https://e-services.src.am/" target="_blank" rel="noopener noreferrer">e-services.src.am</a>) · Unibank CRS (<a class="lnk" href="https://www.unibank.am/ru/crs/" target="_blank" rel="noopener noreferrer">unibank.am/ru/crs</a>) · Решение ЦБ РА № 150-Н (<a class="lnk" href="https://ameriabank.am/ru/announcements" target="_blank" rel="noopener noreferrer">ameriabank.am</a>) · ФЗ-173 ст. 12 и КоАП РФ ст. 15.25 (<a class="lnk" href="https://www.consultant.ru/document/cons_doc_LAW_45458/" target="_blank" rel="noopener noreferrer">consultant.ru</a>).</p>
     </footer>
   </div>
 </section>
@@ -1904,65 +868,79 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <!-- ═══ Футер ═══════════════════════════════════════════════════ -->
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="ftr__grid">
-      <div class="ftr__brand">
-        <a class="brand" href="./" data-path="" aria-label="LTCG — на главную"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
-        <address>
+    <div class="bento ftr__bento" role="list">
+
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+        <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
+          <picture data-logo="gold">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+          <picture data-logo="ink">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <h2 class="sr-only" id="f-brand">Контакты</h2>
+        <address class="ftr__addr">
           <span>Legal and Tax Consulting Group LLC · Ереван</span>
-          <a href="tel:+37494184014">+374 94 184 014</a>
+          <a class="ftr__phone" href="tel:+37494184014">+374 94 184 014</a>
           <span><a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa>WhatsApp</a> · <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">Telegram @LTCG_Armenia</a></span>
-          <span>Реквизиты, email, часы: <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>уточняем</span></span>
         </address>
-      </div>
-      <nav aria-labelledby="f-moments">
-        <h2 id="f-moments">По моменту</h2>
-        <ul role="list">
-          <li><a href="pered-pereezdom.html">Ещё не переехал</a></li>
-          <li><a href="schet-v-banke.html">Только приехал</a></li>
-          <li><a href="vnzh.html">Легализуюсь</a></li>
-          <li><a href="ip-i-nalogi.html">Работаю</a></li>
-          <li><a href="rezidentstvo-i-crs.html" aria-current="page">Живу и планирую</a></li>
-          <li><a href="spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+      </section>
+
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+        <ul class="ftr__list" role="list">
+          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
+          <li><a href="./schet-v-banke.html">Только приехал</a></li>
+          <li><a href="./vnzh.html">Легализуюсь</a></li>
+          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
+          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
         </ul>
       </nav>
-      <nav aria-labelledby="f-page">
-        <h2 id="f-page">На этой странице</h2>
-        <ul role="list">
-          <li><a href="#otvet">Короткий ответ</a></li>
-          <li><a href="#vash-sluchay">Ваш случай</a></li>
-          <li><a href="#kak-schitayut">Как считают резидентство</a></li>
-          <li><a href="#dogovor">Что говорит договор</a></li>
-          <li><a href="#obmen">Обмен данными</a></li>
-          <li><a href="#obyazannosti">Обязанности и сроки</a></li>
-          <li><a href="#lovushki">Где ломается</a></li>
-          <li><a href="#voprosy">Вопросы</a></li>
-        </ul>
-      </nav>
-      <nav aria-labelledby="f-site">
-        <h2 id="f-site">Сайт</h2>
-        <ul role="list">
-          <li><a href="home-ru.html#calc">Цены</a></li>
-          <li><a href="home-ru.html#services">Услуги</a></li>
-          <li><a href="#kontakt">Контакты</a></li>
-          <li><a href="#" aria-disabled="true">Политика обработки данных — <span class="tbc tbc--quiet"><svg aria-hidden="true"><use href="#i-pending"/></svg>текст</span></a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="ftr__bottom">
-      <div>
-        <p>Услуги носят консультационный и сопроводительный характер; решения о налоговых
-          последствиях принимают налоговые органы соответствующих государств. LTCG — армянская
-          компания и не практикует российское право. Формулировку подтверждает клиент.</p>
-        <p style="margin-top: var(--s-2)">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
-      </div>
-      <nav class="ftr__langs" aria-label="Язык сайта">
-        <a href="hy/" data-path="hy/" lang="hy" hreflang="hy">Հայերեն</a>
-        <a href="./" data-path="" lang="ru" aria-current="page">Русский</a>
-        <a href="en/" data-path="en/" lang="en" hreflang="en">English</a>
-      </nav>
+
+      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+        <h2 class="ftr__h" id="f-site">Сайт</h2>
+        <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
+        <nav class="ftr__langs" aria-label="Язык сайта">
+          <span aria-disabled="true" lang="hy">Հայերեն</span>
+          <span lang="ru" aria-current="page">Русский</span>
+          <span aria-disabled="true" lang="en">English</span>
+        </nav>
+        <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
+      </section>
+
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+        <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
+        <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
+        <div class="ftr__credit">
+          <p class="ftr__copy">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+          <p class="ftr__by">Сайт спроектирован и собран студией
+            <a class="ftr__vkv" href="https://vkvstudio.com" target="_blank" rel="noopener noreferrer">
+              <picture><source type="image/webp" srcset="assets/logo/vkv-studio.webp"><img src="assets/logo/vkv-studio.png" width="256" height="180" alt="" loading="lazy" decoding="async"></picture>
+              <span>VKV Studio</span>
+            </a>
+            <span class="ftr__dom">vkvstudio.com</span>
+          </p>
+        </div>
+      </section>
+
     </div>
   </div>
 </footer>
+
+<!-- Мобильная нижняя панель -->
+<nav class="dock glass is-shown" aria-label="Быстрые действия">
+  <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+  <a href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+  <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="is-primary" href="#skolko"><svg aria-hidden="true"><use href="#i-calc"/></svg>Рассчитать</a>
+</nav>
 
 </body>
 </html>

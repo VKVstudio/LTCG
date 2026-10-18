@@ -72,7 +72,7 @@
   const pgHint = pg ? pg.querySelector('.lang-hint') : null;
   const head = document.getElementById('siteHead');
 
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]motion=0/.test(location.search);
   const isMobile = window.matchMedia(MOBILE_GATE).matches;
   const hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
   const debug = /[?&]debug=1/.test(location.search);
@@ -429,6 +429,7 @@
   }
   // null = на этом кадре ролика рамка экрана не отслежена, показывать страницу негде
   function screenQuadView() {
+    if (S.full >= 0.999) return [[0, 0], [vw, 0], [vw, vh], [0, vh]];
     if (walkActive()) {
       // квад берётся по ПОКАЗАННОМУ кадру, а не по цели скролла: картинка и маска обязаны
       // приходить из одного и того же кадра, иначе разница во времени читается как боковой снос
@@ -1280,7 +1281,7 @@
   // взводятся заново, когда прогресс упал ниже REARM_P, то есть посетитель реально уехал
   // назад в хиро. chosen — язык выбран, дальше ворота не встают вовсе.
   const REARM_P = 0.80;
-  let locked = false, chosen = false, armed = true;
+  let locked = false, chosen = !!(location.hash && !/^#(hero|triGate)?$/i.test(location.hash)), armed = !chosen;
   const GATE = { p: 0 };          // доводка хореографии на воротах — по времени, не по скроллу
   const LANG = { zoom: 1 };       // языковой момент — тоже по времени: на быстром флике колокол по
                                   // скроллу отыгрывался за один кадр и читался как глитч
@@ -1355,6 +1356,7 @@
   }
   // выбор сделан (язык или Esc): ворота больше не встают
   function unlock(fromUser) { if (!locked) return; chosen = !!fromUser; releaseLock(); }
+  window.__heroUnlock = function () { chosen = true; releaseLock(); };
   // возврат в хиро: замок снят, выбор НЕ сделан. Ворота встанут снова, но только после того,
   // как прогресс упадёт ниже REARM_P, — иначе они защёлкнулись бы на том же кадре. Небольшой
   // ход назад запускаем сами, чтобы движение началось от того же тика колеса, а не со второго.
@@ -1406,6 +1408,7 @@
 
   // ── Секция после хиро (срез): вход волной по словарю; разметка видима без JS ──
   function revealAfter() {
+    if (document.documentElement.hasAttribute('data-site')) return;
     const items = Array.from(document.querySelectorAll('.after [data-reveal]'));
     if (!items.length || reduced || !hasGsap) return;
     gsap.fromTo(items, { opacity: 0, y: 40, scale: 0.96 }, {
@@ -1440,6 +1443,18 @@
     placeLogoOnPanel();
     resize();
     root.classList.add('is-ready');
+
+    if (reduced || !hasGsap) {
+      // Tier 3: статика — финал хиро (шапка с переключателем, цвет кожи), без пина
+      Object.assign(S, { p: HERO_END, zoom: 1.0, cx: 1280, cy: 720, dusk: 1, draw: 1, glow: 0,
+        swoosh: 1, head: 1, morph: 1, fill: 1, shapes: 1, snow: 1, letters: 1, tagline: 1,
+        glass: 1, logoSit: 1, dolly: 1, screenIn: 1, full: 1, navy: 1, markOut: 1, choose: 0, logoFade: (quads.baked_logo ? 1 : 0), walk: 1 });
+      root.classList.add('is-static');
+      if (head) head.classList.add('is-past');
+      render();
+      return;
+    }
+
     idle(walkLoad);   // ролик — сразу после LCP, параллельно плитам (7 МБ, blob)
 
     // остальные плиты — после LCP, в простое, по порядку прихода в кадр; движок их не ждёт:
@@ -1462,17 +1477,6 @@
         })
         .catch(err => console.error('[hero-scroll] plates', err));
     });
-
-    if (reduced || !hasGsap) {
-      // Tier 3: статика — финал хиро (шапка с переключателем, цвет кожи), без пина
-      Object.assign(S, { p: HERO_END, zoom: 1.0, cx: 1280, cy: 720, dusk: 1, draw: 1, glow: 0,
-        swoosh: 1, head: 1, morph: 1, fill: 1, shapes: 1, snow: 1, letters: 1, tagline: 1,
-        glass: 1, logoSit: 1, dolly: 1, screenIn: 1, full: 1, navy: 1, markOut: 1, choose: 0, logoFade: (quads.baked_logo ? 1 : 0), walk: 1 });
-      root.classList.add('is-static');
-      if (head) head.classList.add('is-past');
-      render();
-      return;
-    }
 
     gsap.registerPlugin(ScrollTrigger);
     const tl = buildTimeline();
@@ -1521,24 +1525,65 @@
 
     timeline = tl;
     loopOn = true;
+    const hasDeepTarget = !!(location.hash && !/^#(hero|triGate)?$/i.test(location.hash)) || /[?&]at=[\w-]+/.test(location.search);
+    if (hasDeepTarget) {
+      chosen = true;
+      armed = false;
+      releaseLock();
+      pRaw = pSmooth = 1;
+      tl.progress(1);
+      if (head) head.classList.add('is-past');
+      render();
+      if (window.__lenis && typeof window.__lenis.scrollTo === 'function') {
+        window.__lenis.scrollTo(0, { immediate: true, force: true });
+      }
+      window.scrollTo(0, 0);
+    }
     trigger = ScrollTrigger.create({
       trigger: root,
       start: 'top top',
       end: '+=' + PIN_PCT + '%',
       pin: stage,
       pinSpacing: true,
-      // scrub НЕ ставим: со scrub onUpdate вызывается скраб-твином, а его без animation нет —
-      // проверено, onUpdate не срабатывал ни разу. Без scrub onUpdate отдаёт СЫРОЙ progress,
-      // а сглаживание остаётся ровно одно — lerp в rAF-цикле движка.
       invalidateOnRefresh: true,
-      onUpdate: (st) => { if (!locked) pRaw = st.progress; gate(st.progress); kick(); },   // обработчик только двигает цель
+      onUpdate: (st) => { if (!locked) pRaw = st.progress; gate(st.progress); kick(); },
       onLeave: () => { gate(1); if (!locked) { pRaw = 1; kick(); } if (head) head.classList.add('is-past'); },
       onEnterBack: () => { if (head) head.classList.remove('is-past'); },
     });
     window.addEventListener('resize', resize, { passive: true });
     ScrollTrigger.addEventListener('refresh', resize);
     resize();
-    requestAnimationFrame(resize);
+    ScrollTrigger.refresh();
+    if (window.__lenis && typeof window.__lenis.resize === 'function') window.__lenis.resize();
+    const jumpToDeepTarget = () => {
+      const atMatch = /[?&]at=([\w-]+)/.exec(location.search);
+      const rawId = atMatch ? atMatch[1] : ((location.hash && !/^#(hero|triGate)?$/i.test(location.hash)) ? location.hash.slice(1).split('?')[0] : '');
+      const target = rawId ? document.getElementById(rawId) : null;
+      if (!target) return;
+      if (typeof window.__heroUnlock === 'function') window.__heroUnlock();
+      document.body.classList.add('is-landed');
+      document.documentElement.classList.add('hdr-on');
+      if (head) head.classList.add('is-past');
+      const hdrEl = document.getElementById('hdr');
+      if (hdrEl) hdrEl.classList.add('is-shown');
+      pRaw = pSmooth = 1;
+      tl.progress(1);
+      ScrollTrigger.refresh();
+      if (window.__lenis && typeof window.__lenis.resize === 'function') window.__lenis.resize();
+      const offset = (hdrEl ? hdrEl.offsetHeight : 72) + 8;
+      const y = Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - offset));
+      if (window.__lenis && typeof window.__lenis.scrollTo === 'function') {
+        window.__lenis.scrollTo(y, { immediate: true, force: true });
+      }
+      window.scrollTo(0, y);
+      ScrollTrigger.update();
+      window.dispatchEvent(new Event('scroll'));
+    };
+    if (hasDeepTarget) {
+      jumpToDeepTarget();
+      setTimeout(jumpToDeepTarget, 60);
+      setTimeout(jumpToDeepTarget, 240);
+    }
     revealAfter();
   }).catch(err => {
     console.error('[hero-scroll]', err);

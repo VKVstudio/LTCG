@@ -1,0 +1,354 @@
+/* ============================================================
+   LTCG — Hero copy · канон B «Редакционный люкс» (data-style="editorial")
+   ------------------------------------------------------------
+   Только текстовая плашка первого экрана (.hs__copy и её дети).
+   Разметка hero-slice.html не меняется; все селекторы под
+   [data-style="editorial"], чтобы три канона сосуществовали.
+
+   Шрифты (Google Fonts, кириллица есть):
+     display — Literata   (оси opsz 7–72, wght, ital; TypeTogether)
+     body    — Golos Text (Paratype, родная кириллица, без курсива)
+     hy      — Noto Serif Armenian + Noto Sans Armenian под :lang(hy)
+   Правило одного золота: в плашке золотом набран только курсив h1.
+   Кнопка primary — «бумага», линейки — бумага на 38 %.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Golos+Text:wght@400;500;600&family=Noto+Serif+Armenian:wght@300..600&family=Noto+Sans+Armenian:wght@400..600&display=swap');
+
+/* ── токены канона (только внутри хиро) ─────────────────── */
+[data-style="editorial"] {
+  --ed-serif: 'Literata', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --ed-sans: 'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --ed-serif-hy: 'Noto Serif Armenian', 'Literata', Georgia, serif;
+  --ed-sans-hy: 'Noto Sans Armenian', 'Golos Text', Arial, sans-serif;
+
+  --ed-paper: #F4ECDC;          /* бумага: кикер, лид, подпись */
+  --ed-paper-strong: #FBF6EA;   /* бумага ярче: h1, primary */
+  --ed-ink: #0C1B3A;            /* чернила: текст на бумаге */
+  --ed-gold: #FAE0A2;           /* единственное золото плашки */
+  --ed-rule: rgba(244, 236, 220, 0.38);
+
+  --ed-scrim-0: rgba(38, 24, 7, 0);
+  --ed-scrim-1: rgba(38, 24, 7, 0.46);
+  --ed-scrim-2: rgba(24, 15, 5, 0.80);
+
+  --ed-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ed-rise: 900ms;
+}
+
+/* ── контейнер: нижняя треть, левое выравнивание, воздух ── */
+[data-style="editorial"] .hs__copy {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 66rem;
+  /* низ ≥ 4.75rem — чтобы подпись не садилась на подсказку «листайте» */
+  padding: 0 clamp(1.25rem, 6vw, 6rem) clamp(4.75rem, 9vh, 6rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  color: var(--ed-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* тёмно-янтарный скрим: на всю ширину экрана, полоса нижней трети,
+   без видимого края справа (в hero.css он обрывался на max-width) */
+[data-style="editorial"] .hs__copy::before {
+  content: '';
+  position: absolute;
+  top: -70%;
+  right: -100vw;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg,
+    var(--ed-scrim-0) 0%,
+    var(--ed-scrim-1) 42%,
+    var(--ed-scrim-2) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* бумажное зерно поверх скрима — 6 %, кремовое, гаснет кверху */
+[data-style="editorial"] .hs__copy::after {
+  content: '';
+  position: absolute;
+  top: -70%;
+  right: -100vw;
+  bottom: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.93 0 0 0 0 0.8 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.06;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 55%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── кикер как рубрика: линейка сверху, номер раздела справа ── */
+[data-style="editorial"] .hs__kicker {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 clamp(1.25rem, 3vh, 2rem);
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--ed-rule);
+  font: 500 0.6875rem/1.35 var(--ed-sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ed-paper);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+[data-style="editorial"] .hs__kicker::after {
+  content: '№ 01' / '';
+  flex: 0 0 auto;
+  font: italic 400 1.0625rem/1 var(--ed-serif);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--ed-paper);
+  white-space: nowrap;
+}
+
+/* ── h1: антиква доминирует, курсивный акцент отдельной строкой ── */
+[data-style="editorial"] .hs__title {
+  font-family: var(--ed-serif);
+  font-weight: 500;
+  font-variation-settings: 'opsz' 72;
+  font-size: clamp(2.25rem, 1.1rem + 4.2vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  max-width: 19ch;
+  margin: 0;
+  color: var(--ed-paper-strong);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 40px rgba(0, 0, 0, 0.35);
+  text-wrap: balance;
+  font-kerning: normal;
+}
+[data-style="editorial"] .hs__title em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  line-height: 1.02;
+  letter-spacing: -0.005em;
+  margin-top: 0.06em;
+  padding-left: 0.02em;
+  color: var(--ed-gold);
+}
+
+/* ── лид как «дек» под обложкой: короткая линейка, узкая колонка ── */
+[data-style="editorial"] .hs__lead {
+  position: relative;
+  font: 400 clamp(1rem, 0.95rem + 0.3vw, 1.125rem)/1.55 var(--ed-sans);
+  letter-spacing: 0;
+  color: rgba(244, 236, 220, 0.9);
+  max-width: 38ch;
+  margin: clamp(1.25rem, 3vh, 1.75rem) 0 0;
+  padding-top: 1rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+[data-style="editorial"] .hs__lead::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--ed-rule);
+}
+
+/* ── кнопки как подпись под фото ─────────────────────────── */
+[data-style="editorial"] .hs__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: clamp(1.5rem, 3.5vh, 2.25rem);
+}
+[data-style="editorial"] .btn {
+  font: 600 0.75rem/1 var(--ed-sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  gap: 0.6rem;
+  min-height: 3rem;              /* 48 px */
+  padding: 0 1.5rem;
+  border-radius: 2px;
+  background-image: none;
+  box-shadow: none;
+  transform: none;
+  transition:
+    background-color 250ms var(--ed-ease),
+    color 250ms var(--ed-ease),
+    box-shadow 250ms var(--ed-ease),
+    transform 250ms var(--ed-ease);
+}
+[data-style="editorial"] .btn::before { content: none; }   /* блик из style.css — выключен */
+
+/* primary — бумага и чернила, стрелка антиквой */
+[data-style="editorial"] .btn--primary {
+  background: var(--ed-paper-strong);
+  color: var(--ed-ink);
+  border: 1px solid var(--ed-paper-strong);
+}
+[data-style="editorial"] .btn--primary::after {
+  content: '→' / '';
+  font: 500 1.05rem/1 var(--ed-serif);
+  transition: transform 300ms var(--ed-ease);
+}
+[data-style="editorial"] .btn--primary:hover {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--ed-ink);
+  transform: none;
+  box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.65);
+}
+[data-style="editorial"] .btn--primary:hover::after { transform: translateX(4px); }
+[data-style="editorial"] .btn--primary:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* outline → текстовая подпись с тонким подчёркиванием */
+[data-style="editorial"] .btn--outline {
+  position: relative;
+  background: transparent;
+  border: 0;
+  color: var(--ed-paper);
+  min-height: 2.75rem;           /* 44 px */
+  padding: 0 0.125rem 0 0;
+  border-radius: 0;
+}
+[data-style="editorial"] .btn--outline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0.125rem;
+  bottom: 0.8rem;
+  height: 1px;
+  background: var(--ed-rule);
+  transition: background-color 250ms var(--ed-ease), transform 300ms var(--ed-ease);
+  transform-origin: left center;
+}
+[data-style="editorial"] .btn--outline:hover {
+  background: transparent;
+  border: 0;
+  color: var(--ed-paper-strong);
+  transform: none;
+}
+[data-style="editorial"] .btn--outline:hover::after {
+  background: var(--ed-gold);    /* временное золото — только на hover */
+  transform: scaleY(2);
+}
+[data-style="editorial"] .btn--outline:active { transform: translateY(1px); }
+
+[data-style="editorial"] .btn:focus-visible {
+  outline: 2px solid var(--ed-gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ── появление: «перелистывание», снизу на 14 px, стагер ─── */
+@keyframes hsEdRise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+[data-style="editorial"] .hs__kicker,
+[data-style="editorial"] .hs__title,
+[data-style="editorial"] .hs__lead,
+[data-style="editorial"] .hs__actions {
+  animation: hsEdRise var(--ed-rise) var(--ed-ease) both;
+}
+[data-style="editorial"] .hs__kicker  { animation-delay: 120ms; }
+[data-style="editorial"] .hs__title   { animation-delay: 240ms; }
+[data-style="editorial"] .hs__lead    { animation-delay: 420ms; }
+[data-style="editorial"] .hs__actions { animation-delay: 560ms; }
+
+/* ── ≥ 640: подпись в строку ─────────────────────────────── */
+@media (min-width: 640px) {
+  [data-style="editorial"] .hs__actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+  }
+}
+
+/* ── ≥ 1024: разворот — заголовок слева, дек и подпись справа
+   на одной нижней линии (асимметрия обложки) ─────────────── */
+@media (min-width: 1024px) {
+  [data-style="editorial"] .hs__copy {
+    max-width: none;                 /* ширину держат колонки, не контейнер */
+    grid-template-columns: minmax(0, 50rem) 18rem;   /* h1 ≤ 50rem → 3 строки от ~1150 px */
+    grid-template-rows: auto auto auto;
+    justify-content: start;          /* правая треть остаётся фотографии */
+    column-gap: clamp(2.5rem, 4vw, 4rem);
+    align-items: end;
+  }
+  [data-style="editorial"] .hs__kicker {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+  }
+  [data-style="editorial"] .hs__title {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    align-self: end;
+  }
+  [data-style="editorial"] .hs__lead {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 0;
+    max-width: none;
+  }
+  [data-style="editorial"] .hs__actions {
+    grid-column: 2;
+    grid-row: 3;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* ── армянская версия: Noto вместо Literata/Golos ─────────── */
+[data-style="editorial"] .hs__title:lang(hy),
+[data-style="editorial"] .hs__kicker:lang(hy)::after {
+  font-family: var(--ed-serif-hy);
+  font-variation-settings: normal;
+  letter-spacing: 0;
+}
+[data-style="editorial"] .hs__title:lang(hy) {
+  font-weight: 500;
+  font-size: clamp(2.125rem, 1rem + 4vw, 4.25rem);
+  line-height: 1.08;
+}
+/* у Noto Serif Armenian нет курсива: акцент — весом и золотом, не наклоном */
+[data-style="editorial"] .hs__title:lang(hy) em {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1em;
+}
+[data-style="editorial"] .hs__kicker:lang(hy),
+[data-style="editorial"] .hs__lead:lang(hy),
+[data-style="editorial"] .btn:lang(hy) {
+  font-family: var(--ed-sans-hy);
+}
+[data-style="editorial"] .hs__kicker:lang(hy),
+[data-style="editorial"] .btn:lang(hy) {
+  letter-spacing: 0.08em;        /* армянские заглавные шире — трекинг меньше */
+}
+
+/* ── reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  [data-style="editorial"] .hs__kicker,
+  [data-style="editorial"] .hs__title,
+  [data-style="editorial"] .hs__lead,
+  [data-style="editorial"] .hs__actions {
+    animation: none;
+  }
+  [data-style="editorial"] .btn,
+  [data-style="editorial"] .btn--primary::after,
+  [data-style="editorial"] .btn--outline::after {
+    transition: none;
+  }
+}

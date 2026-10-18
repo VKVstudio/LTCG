@@ -48,13 +48,15 @@
       const b = e.target.closest('[data-theme-set]');
       if (b) setTheme(b.dataset.themeSet);
     }));
-    paint();
+    const themeParam = /[?&]theme=(light|dark|auto)\b/.exec(location.search);
+    if (themeParam) setTheme(themeParam[1]);
+    else paint();
   }
 
   /* ── 2. Шапка и мобильный док появляются после хиро ──────────── */
   const hdr = $('#hdr');
   const dock = $('.dock');
-  const hero = $('#hero');
+  const hero = $('[data-hero-scroll]');
   const headerH = () => (hdr ? hdr.offsetHeight : 72);
   if (hero && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
@@ -72,6 +74,7 @@
     io.observe(hero);
   } else {
     hdr && hdr.classList.add('is-shown');
+    dock && dock.classList.add('is-shown');
     document.documentElement.classList.add('hdr-on');
   }
 
@@ -93,20 +96,87 @@
 
   /* ── 4. Якоря: цель + параметры (#calc?preset=arrived) ───────── */
   const parseHash = (h) => {
-    const s = (h || '').replace(/^#/, '');
+    const raw = String(h || '');
+    const idx = raw.indexOf('#');
+    const s = idx >= 0 ? raw.slice(idx + 1) : raw.replace(/^#/, '');
     const [id, q] = s.split('?');
     const params = new URLSearchParams(q || '');
     return { id, params };
   };
+  const finishRevealTween = (el) => {
+    if (el.__revealTween) {
+      if (el.__revealTween.scrollTrigger) el.__revealTween.scrollTrigger.kill();
+      el.__revealTween.progress(1).kill();
+      el.__revealTween = null;
+    }
+  };
+  const revealVisibleNow = (scopeEl) => {
+    if (!hasGsap) return;
+    const vh = window.innerHeight || 900;
+    $$('[data-reveal]').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if ((scopeEl && scopeEl.contains(el)) || (r.top <= vh * 0.96 && r.bottom >= -40)) {
+        finishRevealTween(el);
+        gsap.set(el, { autoAlpha: 1, y: 0, clearProps: 'transform,opacity,visibility' });
+      }
+    });
+    $$('[data-stagger]').forEach(group => {
+      const r = group.getBoundingClientRect();
+      if ((scopeEl && scopeEl.contains(group)) || (r.top <= vh * 0.96 && r.bottom >= -40)) {
+        finishRevealTween(group);
+        const items = Array.from(group.children);
+        if (items.length) gsap.set(items, { autoAlpha: 1, y: 0, scale: 1, clearProps: 'transform,opacity,visibility' });
+      }
+    });
+    $$('.kicker').forEach(k => {
+      const r = k.getBoundingClientRect();
+      if ((scopeEl && scopeEl.contains(k)) || (r.top <= vh * 0.96 && r.bottom >= -40)) {
+        finishRevealTween(k);
+        gsap.set(k, { '--kw': 1 });
+      }
+    });
+  };
+
+  const setScrollY = (y) => {
+    const l = window.__lenis;
+    const pos = Math.max(0, Math.round(y));
+    if (l && typeof l.resize === 'function') l.resize();
+    if (l && typeof l.scrollTo === 'function') {
+      l.scrollTo(pos, { immediate: true, force: true });
+    }
+    window.scrollTo(0, pos);
+    if (window.ScrollTrigger && typeof window.ScrollTrigger.update === 'function') {
+      window.ScrollTrigger.update();
+    }
+  };
   const scrollToId = (id) => {
     const el = id ? document.getElementById(id) : null;
     if (!el) return false;
-    const offset = -(headerH() + 8);
-    if (window.__lenis) window.__lenis.scrollTo(el, { offset, duration: 1.1 });
-    else {
-      const top = el.getBoundingClientRect().top + window.scrollY + offset;
-      window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
+    if (id !== 'hero' && id !== 'triGate') {
+      if (typeof window.__heroUnlock === 'function') window.__heroUnlock();
+      if (document.querySelector('.hs')) {
+        document.body.classList.add('is-landed');
+        document.documentElement.classList.add('hdr-on');
+        if (hdr) hdr.classList.add('is-shown');
+      }
     }
+    const l = window.__lenis;
+    if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === 'function') {
+      window.ScrollTrigger.refresh();
+    }
+    if (l && typeof l.resize === 'function') l.resize();
+    revealVisibleNow(el);
+    const offset = (id === 'hero') ? 0 : -headerH();
+    const to = Math.max(0, Math.round(el.getBoundingClientRect().top + window.scrollY + offset));
+    setScrollY(to);
+    revealVisibleNow(el);
+    window.dispatchEvent(new Event('scroll'));
+    setTimeout(() => {
+      const fixTo = Math.max(0, Math.round(el.getBoundingClientRect().top + window.scrollY + offset));
+      if (Math.abs(window.scrollY - fixTo) > 8) setScrollY(fixTo);
+      revealVisibleNow(el);
+      window.dispatchEvent(new Event('scroll'));
+    }, 50);
     return true;
   };
 
@@ -129,8 +199,10 @@
     if (formState && !opts.keepForm) formState.value = key;
     // CTA несут состояние: ссылки-якоря с параметром, WhatsApp — предзаполненным текстом
     $$('a[data-cta]').forEach(a => {
-      const { id } = parseHash(a.getAttribute('href'));
-      if (id) a.setAttribute('href', '#' + id + '?state=' + key);
+      const raw = a.getAttribute('href') || '';
+      const prefix = raw.indexOf('#') > 0 ? raw.slice(0, raw.indexOf('#')) : '';
+      const { id } = parseHash(raw);
+      if (id) a.setAttribute('href', prefix + '#' + id + '?state=' + key);
     });
     updateWa();
     try { localStorage.setItem('ltcg.state', key); } catch (e) { /* приватный режим */ }
@@ -147,27 +219,59 @@
   };
 
   document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href^="#"]');
+    const a = e.target.closest('a[href*="#"]');
     if (!a) return;
-    const href = a.getAttribute('href');
-    if (href === '#') return;
-    const { id } = parseHash(href);
-    if (!document.getElementById(id)) return;
+    const href = a.getAttribute('href') || '';
+    if (href === '#' || a.classList.contains('hs__skip') || a.classList.contains('tri__part')) return;
+    const hashIdx = href.indexOf('#');
+    if (hashIdx < 0) return;
+    if (hashIdx > 0) {
+      try {
+        const u = new URL(href, location.href);
+        const samePage = (u.origin === location.origin) && (
+          u.pathname === location.pathname ||
+          (u.pathname.endsWith('/home-ru.html') && (location.pathname === '/' || location.pathname.endsWith('/index.html'))) ||
+          ((u.pathname === '/' || u.pathname.endsWith('/index.html')) && location.pathname.endsWith('/home-ru.html'))
+        );
+        if (!samePage) return;
+      } catch (err) { return; }
+    }
+    const hashPart = href.slice(hashIdx);
+    const { id } = parseHash(hashPart);
+    if (!id || !document.getElementById(id)) return;
     e.preventDefault();
     if (a.dataset.stateLink) setState(a.dataset.stateLink);
     if (a.dataset.presetLink) applyPreset(a.dataset.presetLink);
-    applyHash(href, false);
+    applyHash(hashPart, false);
     setMenu(false);
-    history.replaceState(null, '', href);
+    history.replaceState(null, '', hashPart);
     scrollToId(id);
   });
 
-  // клик по плитке состояния (не по ссылке внутри) — выбор
+  // клик по любой области плитки состояния (кроме кнопок действия) — запоминает этап и открывает страницу ветки
   states.forEach(s => {
     s.addEventListener('click', (e) => {
+      const hitLink = e.target.closest('a, button');
+      if (hitLink) {
+        if (s.dataset.state && (hitLink.classList.contains('state__link') || hitLink.classList.contains('tile__read'))) {
+          setState(s.dataset.state);
+        }
+        return;
+      }
+      if (s.dataset.state) setState(s.dataset.state);
+      const readLink = s.querySelector('a.tile__read, a.state__link');
+      if (readLink && readLink.getAttribute('href')) {
+        window.location.href = readLink.getAttribute('href');
+      }
+    });
+  });
+  $$('.svc').forEach(card => {
+    card.addEventListener('click', (e) => {
       if (e.target.closest('a, button')) return;
-      setState(s.dataset.state);
-      history.replaceState(null, '', '#' + s.dataset.state);
+      const readLink = card.querySelector('a.tile__read');
+      if (readLink && readLink.getAttribute('href')) {
+        window.location.href = readLink.getAttribute('href');
+      }
     });
   });
   formState && formState.addEventListener('change', () => { if (formState.value) setState(formState.value, { keepForm: true }); });
@@ -241,7 +345,8 @@
         const dd = $('[data-sum="' + per + '"]', totalEl);
         if (!dd) return;
         const has = mods.some(k => prices.modules[k].per === per);
-        dd.innerHTML = has ? fmt(sums[per]) + '<span class="cur">' + curLabel() + '</span>' : '—';
+        const hasFrom = mods.some(k => prices.modules[k].per === per && prices.modules[k].from);
+        dd.innerHTML = has ? (hasFrom ? 'от ' : '') + fmt(sums[per]) + '<span class="cur">' + curLabel() + '</span>' : '—';
       });
     }
     updateWa();
@@ -254,7 +359,8 @@
       if (!m) return;
       if (showNumbers && typeof m.amount === 'number') {
         const per = m.per === 'year' ? ' / год' : m.per === 'month' ? ' / мес' : '';
-        el.innerHTML = (el.classList.contains('svc__price') ? '<span>от</span>' : '') + fmt(m.amount) + ' <span class="small">' + curLabel() + per + '</span>';
+        const prefix = (el.classList.contains('svc__price') || m.from) ? '<span>от</span> ' : '';
+        el.innerHTML = prefix + fmt(m.amount) + ' <span class="small">' + curLabel() + per + '</span>';
         el.hidden = false;
       }
     });
@@ -268,30 +374,41 @@
     recalc();
   }
 
-  /* ── 7. Приёмник формы: мессенджер вместо бэкенда ─────────────
-     Бэкенда у проекта нет и не будет — статические страницы на GitHub Pages.
-     Форма собирает след выбора («Где я сейчас» + модули калькулятора + сообщение)
-     в готовый текст и отдаёт его человеку: Telegram основным каналом, WhatsApp вторым.
-     Telegram НЕ подставляет текст в чат обычного аккаунта (?text= есть только у ботов
-     и у wa.me), поэтому текст показан в поле и копируется одной кнопкой.
-     Honeypot — только на заполненное скрытое поле. Отсечки по времени НЕТ намеренно:
-     живой человек заполняет четыре поля быстрее любого разумного порога, и отсечка
-     молча съела бы валидную заявку (docs/adopt_from_vkvstudio.md). */
-  const lead = $('[data-lead]');
-  if (lead) {
+  /* ── 6б. Вилка сценариев → скрытое поле формы ──────────────── */
+  const forkField = $('[data-f-fork]');
+  const syncFork = () => {
+    if (!forkField) return;
+    const checked = $('.fork__r:checked');
+    const titleEl = checked && checked.id ? $(`label[for="${checked.id}"] .fork__tag, label[for="${checked.id}"] b`) : null;
+    forkField.value = titleEl ? titleEl.textContent.trim() : '';
+  };
+  $$('.fork__r').forEach(r => r.addEventListener('change', syncFork));
+  syncFork();
+
+  /* ── 7. Приёмник формы: мессенджер вместо бэкенда ───────────── */
+  $$('[data-lead]').forEach(lead => {
+    const host = lead.closest('section') || lead.parentElement || document;
     const msg = $('[data-form-msg]', lead);
-    const done = $('[data-form-done]');
-    const out = $('[data-form-out]');
+    const done = $('[data-form-done]', host) || $('[data-form-done]');
+    const out = $('[data-form-out]', host) || $('[data-form-out]');
 
     const leadText = () => {
       const name = $('#f-name', lead), contact = $('#f-contact', lead);
       const st = $('#f-state', lead), free = $('#f-msg', lead), src = $('#f-src', lead);
+      const branch = lead.querySelector('input[name="branch"]');
+      const fork = lead.querySelector('input[name="fork"]');
+      const days = $('#f-days', lead), when = $('#f-when', lead), country = $('#f-country', lead);
       const mods = (typeof selected === 'function' ? selected() : []);
-      const parts = ['Здравствуйте! Меня зовут ' + name.value.trim() + '.'];
+      const parts = ['Здравствуйте! Меня зовут ' + (name ? name.value.trim() : '') + '.'];
       if (st && st.value) parts.push('Где я сейчас: ' + (stateNames[st.value] || st.value) + '.');
-      if (mods.length && prices) parts.push('Модули: ' + mods.map(k => prices.modules[k].name.toLowerCase()).join(', ') + '.');
+      else if (branch && branch.value) parts.push('Страница: ' + branch.value + '.');
+      if (fork && fork.value) parts.push('Сценарий: ' + fork.value + '.');
+      if (mods.length && prices) parts.push('Модули: ' + mods.map(k => prices.modules[k] ? prices.modules[k].name.toLowerCase() : k).join(', ') + '.');
+      if (days && days.value.trim()) parts.push('Дни в РА/РФ: ' + days.value.trim() + '.');
+      if (when && when.value.trim()) parts.push('Срок отъезда: ' + when.value.trim() + '.');
+      if (country && country.value.trim()) parts.push('Следующая страна: ' + country.value.trim() + '.');
       if (free && free.value.trim()) parts.push(free.value.trim());
-      parts.push('Связь: ' + contact.value.trim() + '.');
+      if (contact && contact.value.trim()) parts.push('Связь: ' + contact.value.trim() + '.');
       if (src && src.value.trim()) parts.push('Узнал(а) о вас: ' + src.value.trim() + '.');
       return parts.join(' ');
     };
@@ -300,26 +417,32 @@
       e.preventDefault();
       const hp = lead.querySelector('input[name="website"]');
       if (hp && hp.value.trim() !== '') return;            // бот заполнил скрытое поле — молча
-      const name = $('#f-name', lead), contact = $('#f-contact', lead), st = $('#f-state', lead);
+      const name = $('#f-name', lead), contact = $('#f-contact', lead);
+      const st = $('#f-state', lead);
       const consent = lead.querySelector('input[name="consent"]');
-      const bad = [name, contact, st].find(f => !f.value.trim()) || (!consent.checked ? consent : null);
+      const reqFields = [name, contact, st && st.hasAttribute('required') ? st : null].filter(Boolean);
+      const bad = reqFields.find(f => !f.value.trim()) || (consent && !consent.checked ? consent : null);
       if (bad) {
-        msg.textContent = bad === consent ? 'Нужно согласие на обработку данных.' : 'Заполните имя, контакт и выберите момент.';
-        (bad === consent ? consent : bad).focus();
+        if (msg) {
+          msg.textContent = bad === consent
+            ? 'Нужно согласие на обработку данных.'
+            : (st && bad === st ? 'Заполните имя, контакт и выберите момент.' : 'Заполните имя и контакт для связи.');
+        }
+        bad.focus();
         return;
       }
-      msg.textContent = '';
+      if (msg) msg.textContent = '';
       const text = leadText();
       if (out) out.value = text;
-      const wa = $('[data-send-wa]');
+      const wa = $('[data-send-wa]', host) || $('[data-send-wa]');
       if (wa) wa.setAttribute('href', 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(text));
       lead.hidden = true;
       if (done) { done.hidden = false; done.focus(); }
     });
 
-    const copyBtn = $('[data-copy]');
+    const copyBtn = $('[data-copy]', host) || $('[data-copy]');
     if (copyBtn && out) {
-      const note = $('[data-copy-msg]');
+      const note = $('[data-copy-msg]', host) || $('[data-copy-msg]');
       copyBtn.addEventListener('click', () => {
         const say = (t) => { if (note) note.textContent = t; };
         const fallback = () => { out.focus(); out.select(); say('Текст выделен — скопируйте его (Ctrl+C).'); };
@@ -328,28 +451,37 @@
         } else fallback();
       });
     }
-  }
+  });
 
   /* ── 8. Появление по скроллу — словарь GSAP; без GSAP всё видно ── */
   if (hasGsap && !reduced) {
     gsap.registerPlugin(ScrollTrigger);
     $$('[data-reveal]').forEach(el => {
-      gsap.fromTo(el, { autoAlpha: 0, y: 28 }, {
-        autoAlpha: 1, y: 0, duration: 0.8, ease: 'expo.out', clearProps: 'transform',
-        scrollTrigger: { trigger: el, start: 'top 85%', once: true, refreshPriority: -1 }
+      el.__revealTween = gsap.fromTo(el, { autoAlpha: 0, y: 24 }, {
+        autoAlpha: 1, y: 0, duration: 0.75, ease: 'expo.out', clearProps: 'transform,opacity,visibility',
+        scrollTrigger: { trigger: el, start: 'top 90%', once: true, refreshPriority: -1 }
       });
     });
     $$('[data-stagger]').forEach(group => {
       const items = Array.from(group.children);
       if (!items.length) return;
-      gsap.fromTo(items, { autoAlpha: 0, y: 40, scale: 0.96 }, {
-        autoAlpha: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.08, ease: 'expo.out', clearProps: 'transform',
-        scrollTrigger: { trigger: group, start: 'top 82%', once: true, refreshPriority: -1 }
+      group.__revealTween = gsap.fromTo(items, { autoAlpha: 0, y: 32, scale: 0.97 }, {
+        autoAlpha: 1, y: 0, scale: 1, duration: 0.65, stagger: 0.06, ease: 'expo.out', clearProps: 'transform,opacity,visibility',
+        scrollTrigger: { trigger: group, start: 'top 88%', once: true, refreshPriority: -1 }
       });
     });
     // золотая линия у заголовка — пружина маркера
     $$('.kicker').forEach(k => {
-      gsap.fromTo(k, { '--kw': 0 }, { '--kw': 1, duration: 0.6, ease: 'back.out(2.5)', scrollTrigger: { trigger: k, start: 'top 85%', once: true, refreshPriority: -1 } });
+      k.__revealTween = gsap.fromTo(k, { '--kw': 0 }, { '--kw': 1, duration: 0.6, ease: 'back.out(2.5)', scrollTrigger: { trigger: k, start: 'top 90%', once: true, refreshPriority: -1 } });
+    });
+    // мягкий параллакс фоновых и акцентных иллюстраций по скроллу
+    $$('.art img, .bento-visual img, .nov-hero__figure img').forEach(img => {
+      const host = img.closest('.section, .tile, .nov-hero__figure') || img.parentElement;
+      if (!host) return;
+      gsap.fromTo(img, { yPercent: -6, scale: 1.06 }, {
+        yPercent: 6, scale: 1.06, ease: 'none',
+        scrollTrigger: { trigger: host, start: 'top bottom', end: 'bottom top', scrub: true, refreshPriority: -2 }
+      });
     });
     // подсветка текущего раздела в шапке
     const navLinks = $$('.hdr__nav a');
@@ -362,21 +494,180 @@
         onToggle: (self) => { if (self.isActive) { navLinks.forEach(l => l.removeAttribute('aria-current')); a.setAttribute('aria-current', 'true'); } }
       });
     });
+    revealVisibleNow();
+    window.addEventListener('scroll', () => revealVisibleNow(), { passive: true });
+    window.addEventListener('load', () => { ScrollTrigger.refresh(); revealVisibleNow(); }, { once: true });
   }
 
-  /* ── 9. Магнит на главных CTA — только точный указатель ──────── */
-  if (hasGsap && !reduced && finePointer) {
-    $$('.btn--primary').forEach(btn => {
-      const xTo = gsap.quickTo(btn, 'x', { duration: 0.4, ease: 'power2.out' });
-      const yTo = gsap.quickTo(btn, 'y', { duration: 0.4, ease: 'power2.out' });
-      btn.addEventListener('pointermove', (e) => {
-        const r = btn.getBoundingClientRect();
-        xTo((e.clientX - (r.left + r.width / 2)) * 0.18);
-        yTo((e.clientY - (r.top + r.height / 2)) * 0.18);
+  /* ── 9. Магнит на главных CTA и курсорный свет на Bento ─────── */
+  if (finePointer && !reduced) {
+    if (hasGsap) {
+      $$('.btn--primary').forEach(btn => {
+        const xTo = gsap.quickTo(btn, 'x', { duration: 0.4, ease: 'power2.out' });
+        const yTo = gsap.quickTo(btn, 'y', { duration: 0.4, ease: 'power2.out' });
+        btn.addEventListener('pointermove', (e) => {
+          const r = btn.getBoundingClientRect();
+          xTo((e.clientX - (r.left + r.width / 2)) * 0.18);
+          yTo((e.clientY - (r.top + r.height / 2)) * 0.18);
+        }, { passive: true });
+        btn.addEventListener('pointerleave', () => { xTo(0); yTo(0); }, { passive: true });
+      });
+    }
+    $$('.bento, .calc__mods, .traps, .oath').forEach(grid => {
+      grid.addEventListener('pointermove', (e) => {
+        const t = e.target.closest('.tile');
+        if (!t) return;
+        const r = t.getBoundingClientRect();
+        t.style.setProperty('--mx', (e.clientX - r.left).toFixed(1) + 'px');
+        t.style.setProperty('--my', (e.clientY - r.top).toFixed(1) + 'px');
       }, { passive: true });
-      btn.addEventListener('pointerleave', () => { xTo(0); yTo(0); }, { passive: true });
     });
   }
+
+  /* ── 9b. Пошаговое переключение экранов (каждый блок — как отдельная страница) ── */
+  const getStepBlocks = () => $$('main > .section:not([hidden]):not([data-hero-scroll]), footer.ftr');
+  const isInHeroZone = () => {
+    if (!hero) return false;
+    return hero.getBoundingClientRect().bottom > headerH() + 24;
+  };
+  const canInnerScroll = (el, dir) => {
+    let cur = el && el.nodeType === 1 ? el : null;
+    while (cur && cur !== document.body && cur !== document.documentElement) {
+      if (cur.tagName === 'TEXTAREA' || cur.tagName === 'SELECT') return true;
+      const st = getComputedStyle(cur);
+      if ((st.overflowY === 'auto' || st.overflowY === 'scroll') && cur.scrollHeight > cur.clientHeight + 2) {
+        if (dir > 0 && cur.scrollTop + cur.clientHeight < cur.scrollHeight - 2) return true;
+        if (dir < 0 && cur.scrollTop > 2) return true;
+      }
+      cur = cur.parentElement;
+    }
+    return false;
+  };
+  const findCurrentBlockIndex = (blocks) => {
+    const hdrTop = headerH();
+    let bestIdx = 0;
+    let bestDist = Infinity;
+    blocks.forEach((b, i) => {
+      const r = b.getBoundingClientRect();
+      const d = Math.abs(r.top - hdrTop);
+      if (d < bestDist) {
+        bestDist = d;
+        bestIdx = i;
+      }
+    });
+    return bestIdx;
+  };
+  const stepByBlock = (dir) => {
+    const blocks = getStepBlocks();
+    if (!blocks.length) return false;
+    const hdrTop = headerH();
+    const vh = window.innerHeight;
+    const idx = findCurrentBlockIndex(blocks);
+    const cur = blocks[idx];
+    const r = cur.getBoundingClientRect();
+    if (dir > 0) {
+      if (r.top <= hdrTop + 16 && r.bottom > vh + 18) {
+        const stepDown = Math.min(r.bottom - vh, vh - hdrTop - 32);
+        setScrollY(window.scrollY + stepDown);
+        revealVisibleNow(cur);
+        window.dispatchEvent(new Event('scroll'));
+        return true;
+      }
+      const next = blocks[idx + 1];
+      if (!next) return true;
+      const to = Math.max(0, Math.round(next.getBoundingClientRect().top + window.scrollY - hdrTop));
+      setScrollY(to);
+      revealVisibleNow(next);
+      if (next.id) history.replaceState(null, '', '#' + next.id);
+      window.dispatchEvent(new Event('scroll'));
+      return true;
+    } else {
+      if (r.top < hdrTop - 18) {
+        const toCur = Math.max(0, Math.round(r.top + window.scrollY - hdrTop));
+        setScrollY(toCur);
+        revealVisibleNow(cur);
+        window.dispatchEvent(new Event('scroll'));
+        return true;
+      }
+      if (idx > 0) {
+        const prev = blocks[idx - 1];
+        const to = Math.max(0, Math.round(prev.getBoundingClientRect().top + window.scrollY - hdrTop));
+        setScrollY(to);
+        revealVisibleNow(prev);
+        if (prev.id) history.replaceState(null, '', '#' + prev.id);
+        window.dispatchEvent(new Event('scroll'));
+        return true;
+      }
+      if (hero) {
+        document.body.classList.remove('is-landed');
+        const gateY = Math.max(0, Math.round(hero.offsetTop + Math.max(0, hero.offsetHeight - vh) * 0.94));
+        setScrollY(gateY);
+        history.replaceState(null, '', location.pathname + location.search);
+        window.dispatchEvent(new Event('scroll'));
+        return true;
+      }
+      setScrollY(0);
+      return true;
+    }
+  };
+
+  let lastWheelTs = 0;
+  let lastStepTs = 0;
+  let lastStepDir = 0;
+  let minAbsDeltaSinceStep = Infinity;
+
+  window.addEventListener('wheel', (e) => {
+    if (window.innerWidth < 1024) return;
+    if (e.ctrlKey || e.metaKey) return;
+    if (document.documentElement.classList.contains('is-gate-locked') || document.documentElement.classList.contains('menu-open')) return;
+    if (isInHeroZone()) return;
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+    const absD = Math.abs(e.deltaY);
+    if (absD < 2) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      return;
+    }
+    const dir = e.deltaY > 0 ? 1 : -1;
+    if (canInnerScroll(e.target, dir)) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const now = performance.now();
+    const dtEvent = now - lastWheelTs;
+    const dtStep = now - lastStepTs;
+    lastWheelTs = now;
+
+    const dirChanged = (dir !== lastStepDir) && (dtStep > 80);
+    const gestureGap = dtEvent > 120;
+    const newFlickSpike = (dtStep > 260) && (absD > minAbsDeltaSinceStep * 1.45) && (absD >= 18);
+    const cooldownDone = dtStep > 480;
+
+    if (dirChanged || gestureGap || newFlickSpike || cooldownDone) {
+      lastStepTs = now;
+      lastStepDir = dir;
+      minAbsDeltaSinceStep = absD;
+      stepByBlock(dir);
+    } else {
+      if (absD < minAbsDeltaSinceStep) minAbsDeltaSinceStep = absD;
+    }
+  }, { passive: false, capture: true });
+
+  window.addEventListener('keydown', (e) => {
+    if (window.innerWidth < 1024) return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (document.documentElement.classList.contains('is-gate-locked') || document.documentElement.classList.contains('menu-open')) return;
+    if (isInHeroZone()) return;
+    const tag = (e.target && e.target.tagName) ? e.target.tagName.toUpperCase() : '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || tag === 'BUTTON' || tag === 'SUMMARY' || (e.target && e.target.isContentEditable)) return;
+    if (e.key === 'PageDown' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      stepByBlock(1);
+    } else if (e.key === 'PageUp' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      stepByBlock(-1);
+    }
+  });
 
   /* ── 10. Старт: hash как источник истины, localStorage — удобство ── */
   let saved = '';
@@ -384,7 +675,10 @@
   if (location.hash) {
     applyHash(location.hash, false);
     const { id } = parseHash(location.hash);
-    if (id && /[?]/.test(location.hash)) setTimeout(() => scrollToId(id), 60);
+    if (id && id !== 'hero' && document.getElementById(id)) {
+      setTimeout(() => scrollToId(id, true), 120);
+      window.addEventListener('load', () => setTimeout(() => scrollToId(id, true), 360), { once: true });
+    }
   } else if (saved && stateNames[saved]) {
     setState(saved, { keepForm: false });
   }
@@ -394,13 +688,34 @@
   /* ── 11. Отладка: ?at=<id> — мгновенный переход к секции (скриншоты headless) ── */
   const at = /[?&]at=([\w-]+)/.exec(location.search);
   if (at) {
-    window.addEventListener('load', () => setTimeout(() => {
+    const runAt = () => {
       const el = document.getElementById(at[1]);
       if (!el) return;
+      document.body.classList.add('is-landed');
       document.documentElement.classList.add('hdr-on');
+      const siteHead = document.getElementById('siteHead');
+      if (siteHead) siteHead.style.display = 'none';
       hdr && hdr.classList.add('is-shown');
       dock && dock.classList.add('is-shown');
-      window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - headerH() - 8);
-    }, 400));
+      revealVisibleNow(el);
+      $$('img', el).forEach(img => { img.loading = 'eager'; img.decoding = 'sync'; });
+      if (/[?&]motion=0/.test(location.search)) {
+        if (hero) hero.style.display = 'none';
+        const mainEl = document.getElementById('main');
+        if (hero && mainEl) mainEl.style.paddingTop = headerH() + 'px';
+        let prev = el.previousElementSibling;
+        while (prev) {
+          prev.style.display = 'none';
+          prev = prev.previousElementSibling;
+        }
+        window.scrollTo(0, 0);
+      } else {
+        setScrollY(el.getBoundingClientRect().top + window.scrollY - headerH() - 8);
+      }
+    };
+    runAt();
+    if (document.readyState !== 'complete') {
+      window.addEventListener('load', runAt, { once: true });
+    }
   }
 })();
