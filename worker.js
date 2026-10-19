@@ -72,9 +72,30 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    // Alias /.well-known/api-catalog -> /.well-known/ai-catalog.json
+    const cleanSlugMatch = url.pathname.match(
+      /^\/(home-ru|noyabr|pered-pereezdom|schet-v-banke|vnzh|ip-i-nalogi|rezidentstvo-i-crs|spravki-i-zakrytie)\/?$/
+    );
+    if (cleanSlugMatch) {
+      const targetUrl = new URL(request.url);
+      targetUrl.pathname = `/${cleanSlugMatch[1]}.html`;
+      return Response.redirect(targetUrl.toString(), 301);
+    }
+
+    // Alias /.well-known/api-catalog and directory index routes
     let assetRequest = request;
-    if (url.pathname === "/.well-known/api-catalog") {
+    if (url.pathname === "/") {
+      const aliasUrl = new URL(request.url);
+      aliasUrl.pathname = "/index.html";
+      assetRequest = new Request(aliasUrl.toString(), request);
+    } else if (url.pathname === "/en" || url.pathname === "/en/") {
+      const aliasUrl = new URL(request.url);
+      aliasUrl.pathname = "/en/index.html";
+      assetRequest = new Request(aliasUrl.toString(), request);
+    } else if (url.pathname === "/hy" || url.pathname === "/hy/") {
+      const aliasUrl = new URL(request.url);
+      aliasUrl.pathname = "/hy/index.html";
+      assetRequest = new Request(aliasUrl.toString(), request);
+    } else if (url.pathname === "/.well-known/api-catalog") {
       const aliasUrl = new URL(request.url);
       aliasUrl.pathname = "/.well-known/ai-catalog.json";
       assetRequest = new Request(aliasUrl.toString(), request);
