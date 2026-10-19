@@ -30,13 +30,15 @@ html.hm-lock body {
   touch-action: pan-x;          /* вертикальный жест гасим, горизонтальный оставляем системе */
 }
 /* Safari на iOS одного overflow: hidden не слушается — страница продолжает
-   тянуться пальцем. Держит только выключение тела из потока. Безопасно
-   именно здесь: замок живёт лишь на самом верху страницы, прокручивать
-   назад нечего, и снимается он вместе с классом. */
-html.hm-lock body {
-  position: fixed;
-  inset: 0;
-  width: 100%;
+   тянуться пальцем. Держит только выключение тела из потока. Ограничиваем
+   @supports (-webkit-touch-callout: none), чтобы в Chromium/Android добавление
+   hm-lock не пересоздавало LayoutObject у body и не сбрасывало LCP. */
+@supports (-webkit-touch-callout: none) {
+  html.hm-lock body {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+  }
 }
 
 /* ── 2. Сцена ─────────────────────────────────────────────────────────────
@@ -317,7 +319,7 @@ body .hs__screen .tri__crest {
   position: relative;
   inset: auto;
   order: -3;                                /* первой строкой панели, справа */
-  min-height: 0;
+  min-height: 44px;
   padding: 0;
   background: none;
   border: 0;
@@ -339,7 +341,7 @@ body .hs__screen .tri__theme-btn[aria-pressed="true"] { color: #F2C249; }
    слева от переключателя тем. Видна с нулевого кадра без ожидания JS. */
 body .hs__screen .lang-hint,
 body .hs__screen .lang-hint[hidden] {
-  display: block;
+  display: block !important;
   opacity: 1;
   transform: none;
   transition: none;

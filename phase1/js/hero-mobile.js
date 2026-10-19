@@ -28,7 +28,6 @@ function lock()   { if (!locked) { locked = true;  html.classList.add('hm-lock')
 function unlock() { if (locked)  { locked = false; html.classList.remove('hm-lock'); } }
 html.classList.add('hm-run');
 lock();
-html.style.setProperty('--gate', '1');
 var earlyHint = document.getElementById('triHint');
 if (earlyHint) { earlyHint.hidden = false; earlyHint.classList.add('is-in'); }
 function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
@@ -49,21 +48,22 @@ function seg(t, k, ease) {
 var a = T[k][0], b = T[k][1];
 return (ease || outCubic)(clamp01((t - a) / (b - a)));
 }
-var M = null, vw = 0, vh = 0, cov = null, pl = null;
+var M = null, vw = 0, vh = 0, cov = null, pl = null, lastMorph = -1;
 function measure() {
-vw = scene.clientWidth || window.innerWidth;
-vh = scene.clientHeight || window.innerHeight;
+vw = window.innerWidth || scene.clientWidth;
+vh = window.innerHeight || scene.clientHeight;
 var s = Math.max(vw / M.frame[0], vh / M.frame[1]);
 cov = { s: s, ox: (vw - M.frame[0] * s) / 2, oy: (vh - M.frame[1] * s) / 2 };
 var LB = M.logoBox, bw = LB[2] - LB[0], bh = LB[3] - LB[1];
 var cap = vw < 520 ? 300 : 420;
 var lw = Math.min(vw * 0.64, cap), k = lw / bw, lh = bh * k;
-var gateH = screenEl ? screenEl.offsetHeight : vh * 0.46;
+var gateH = Math.min(vh * 0.46, 320);
 pl = {
 k: k, lw: lw, lh: lh, LB: LB,
 cy0: cov.oy + M.anchors.ridge.masis_apex[1] * s + lh * 0.30,
 cy1: Math.max(lh / 2 + 18, (vh - gateH) / 2)
 };
+lastMorph = -1;
 }
 function ridgeS(i) {
 return [cov.ox + M.ridge[i][0] * cov.s, cov.oy + M.ridge[i][1] * cov.s];
@@ -136,6 +136,7 @@ cp.appendChild(wipeRect);
 defs.appendChild(cp);
 svg.insertBefore(defs, svg.firstChild);
 gSw.setAttribute('clip-path', 'url(#hmWipe)');
+edge.setAttribute('pathLength', '1000');
 }
 var lastLift = -1, ended = false;
 function render(t) {
@@ -148,11 +149,13 @@ var mLt    = seg(t, 'letters');
 var mTg    = seg(t, 'tag');
 var mLift  = seg(t, 'lift', inOutCubic);
 if (mFade < 1) {
+if (mMorph !== lastMorph) {
 edge.setAttribute('d', pathD(mMorph, 1));
+lastMorph = mMorph;
+}
 if (mDraw < 1) {
-var len = edge.getTotalLength();
-edge.style.strokeDasharray = String(len);
-edge.style.strokeDashoffset = String(len * (1 - mDraw));
+edge.style.strokeDasharray = '1000';
+edge.style.strokeDashoffset = String((1000 * (1 - mDraw)).toFixed(1));
 } else if (edge.style.strokeDasharray) {
 edge.style.strokeDasharray = '';
 edge.style.strokeDashoffset = '';
@@ -171,7 +174,6 @@ if (wipeRect) wipeRect.setAttribute('width', String(Math.round(1024 * mSw)));
 gLt.style.opacity = String(mLt);
 gTg.style.opacity = String(mTg);
 if (veil) veil.style.opacity = String(mVeil);
-html.style.setProperty('--gate', '1');
 if (skip) skip.style.opacity = String(clamp01(1 - mLift * 2));
 }
 var t0 = 0, raf = 0, guard = 0;
@@ -184,7 +186,6 @@ raf = requestAnimationFrame(step);
 function finish() {
 if (ended) return;
 ended = true;
-html.style.setProperty('--gate', '1');
 if (raf) { cancelAnimationFrame(raf); raf = 0; }
 if (guard) { clearTimeout(guard); guard = 0; }
 html.classList.remove('hm-run');

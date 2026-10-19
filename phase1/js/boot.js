@@ -25,7 +25,7 @@ var hasSite = h.hasAttribute('data-site');  var SRI = {
     "js/vendor/lenis.min.js": "sha384-iiCtod6ZId6zT42Bar9EFXNKZh8X4VliWYWFOuY3/t1AxCvLejXExXcbluoc57CJ",
     "js/hero-static.js": "sha384-oKKadulpH3T+jdYUXku15C0M5IgUgRooyIjiwxgx+rCTVt2FY6Q71kRBVl24TREF",
     "js/hero-scroll.js": "sha384-0wJIrw5K0CVvmyjexgY4c1j2ZYTByQvc6auURJATzLnSUG9mGPwKf42G9sFzi2vu",
-    "js/hero-mobile.js": "sha384-4OM90vdqE461CqKPZYBHJjxYkNQkiFZYzaLXNDjNCdRRpD0OchQBifzagzIZSe7z",
+    "js/hero-mobile.js": "sha384-tTT+YVgywv2UIRxTjJatVyEWvL7vhWh/yI6rUua2XSobQS85x6ahz4BjY+QbkoZI",
     "js/menu-mobile.js": "sha384-DyN2iaHvY7TsHGzHAbPjUiUOMrMuA4zyszjkwCt1y7bNsweYTIkestBQZcV733Ef",
     "js/site.js": "sha384-P0xwCoeLDeGekR4BM6uHscOb5bu57l3CTpaxG1QEAli4d367ddjjT0HQF8uHvRV0",
     "js/railnav.js": "sha384-qdp4rTEtXjGegoou7tUiapz85cnuSs0rMgNnEQJMCuo93LV4WY8r1mhkdq29eJ5m",
@@ -64,8 +64,10 @@ window.__lenis = lenis;
 chain
 .then(function () {
 var appScripts = [];
-if (hasHero) appScripts.push(splash ? 'js/hero-static.js' : 'js/hero-scroll.js');
+if (hasHero) {
 if (splash && d.querySelector('[data-hero-mobile]')) appScripts.push('js/hero-mobile.js');
+else appScripts.push(motion ? 'js/hero-scroll.js' : 'js/hero-static.js');
+}
 appScripts.push('js/menu-mobile.js');
 if (hasSite) appScripts.push('js/site.js');
 if (fine && !splash) appScripts.push('js/railnav.js');
