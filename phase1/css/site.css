@@ -42,8 +42,8 @@
 :where(html) {
   --btn-h: 3rem;
 
-  --font-display: 'Onest', 'Segoe UI', Tahoma, sans-serif;
-  --font-body: 'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-display: 'Onest', 'Onest Fallback', 'Segoe UI', Tahoma, sans-serif;
+  --font-body: 'Golos Text', 'Golos Text Fallback', 'Segoe UI', Tahoma, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
   --fw-h1: 640;
   --fw-h: 600;
@@ -1725,3 +1725,6 @@ html:not(:has([data-hero-scroll])) .dock { transform: none; }
   color: var(--text-strong);
 }
 
+
+/* suppress load-time transitions (CLS / non-composited animations); class removed after load + 2 rAF by head script */
+html.is-loading *, html.is-loading *::before, html.is-loading *::after { transition: none !important; }

@@ -1415,3 +1415,11 @@ body.is-at-footer .railnav { display: none; }
 
 
 
+
+/* Perf (m15): skip rendering of off-screen sections on desktop; each is ~100svh so intrinsic size keeps scroll geometry stable. */
+@media (min-width: 1100px) and (min-height: 600px) {
+  main > #calc, main > #roadmap, main > #diy, main > #services, main > #faq, main > #contact {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 100svh;
+  }
+}

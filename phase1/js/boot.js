@@ -24,12 +24,12 @@ var hasSite = h.hasAttribute('data-site');  var SRI = {
     "js/vendor/ScrollTrigger.min.js": "sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF",
     "js/vendor/lenis.min.js": "sha384-iiCtod6ZId6zT42Bar9EFXNKZh8X4VliWYWFOuY3/t1AxCvLejXExXcbluoc57CJ",
     "js/hero-static.js": "sha384-oKKadulpH3T+jdYUXku15C0M5IgUgRooyIjiwxgx+rCTVt2FY6Q71kRBVl24TREF",
-    "js/hero-scroll.js": "sha384-WFXI9iFTU+xfiaMq1YLNPnZzrkXvMd9PTadYeJs2x/SIXQDSOmFR8lrytYoYdtIV",
+    "js/hero-scroll.js": "sha384-H0XeXQprjhguSifvhFp6Hn+nYJWPO2lkBLdod9dLn9pQbsFFkN+YHWKH3N6CcE0r",
     "js/hero-mobile.js": "sha384-4OM90vdqE461CqKPZYBHJjxYkNQkiFZYzaLXNDjNCdRRpD0OchQBifzagzIZSe7z",
     "js/menu-mobile.js": "sha384-DyN2iaHvY7TsHGzHAbPjUiUOMrMuA4zyszjkwCt1y7bNsweYTIkestBQZcV733Ef",
     "js/site.js": "sha384-P0xwCoeLDeGekR4BM6uHscOb5bu57l3CTpaxG1QEAli4d367ddjjT0HQF8uHvRV0",
     "js/railnav.js": "sha384-qdp4rTEtXjGegoou7tUiapz85cnuSs0rMgNnEQJMCuo93LV4WY8r1mhkdq29eJ5m",
-    "js/webmcp.js": "sha384-EoXhIs2v6OdkCBuVolXdjZ7l9fmYC5wqokp8kf8uKgB7mkebQvddf+dRLLI2Dydp"
+    "js/webmcp.js": "sha384-XVm+K6oQ3mdN25Hr9DwXyL2bWfZeqBpdLeT0SjX3Y7yRlWjFfkAESVC8AvjgkSiy"
 };
   function load(src) {
     return new Promise(function (res, rej) {
@@ -69,11 +69,8 @@ if (splash && d.querySelector('[data-hero-mobile]')) appScripts.push('js/hero-mo
 appScripts.push('js/menu-mobile.js');
 if (hasSite) appScripts.push('js/site.js');
 if (fine && !splash) appScripts.push('js/railnav.js');
+appScripts.push('js/webmcp.js');
 return batch(appScripts);
-})
-.then(function () {
-var idle = window.requestIdleCallback || function (cb) { setTimeout(cb, 250); };
-idle(function () { load('js/webmcp.js').catch(function () {}); });
 });
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
 addEventListener('load', function () {
