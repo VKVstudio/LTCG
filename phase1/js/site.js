@@ -96,17 +96,34 @@ el.__revealTween = null;
 };
 const revealVisibleNow = (scopeEl) => {
 if (!hasGsap) return;
+if (scopeEl) {
+$$('[data-reveal]', scopeEl).forEach(el => {
+finishRevealTween(el);
+gsap.set(el, { autoAlpha: 1, y: 0, clearProps: 'transform,opacity,visibility' });
+});
+$$('[data-stagger]', scopeEl).forEach(group => {
+finishRevealTween(group);
+const items = Array.from(group.children);
+if (items.length) gsap.set(items, { autoAlpha: 1, y: 0, scale: 1, clearProps: 'transform,opacity,visibility' });
+});
+$$('.kicker', scopeEl).forEach(k => {
+finishRevealTween(k);
+gsap.set(k, { '--kw': 1 });
+});
+return;
+}
+if (hero && window.scrollY < 40) return;
 const vh = window.innerHeight || 900;
 $$('[data-reveal]').forEach(el => {
 const r = el.getBoundingClientRect();
-if ((scopeEl && scopeEl.contains(el)) || (r.top <= vh * 0.96 && r.bottom >= -40)) {
+if (r.top <= vh * 0.96 && r.bottom >= -40) {
 finishRevealTween(el);
 gsap.set(el, { autoAlpha: 1, y: 0, clearProps: 'transform,opacity,visibility' });
 }
 });
 $$('[data-stagger]').forEach(group => {
 const r = group.getBoundingClientRect();
-if ((scopeEl && scopeEl.contains(group)) || (r.top <= vh * 0.96 && r.bottom >= -40)) {
+if (r.top <= vh * 0.96 && r.bottom >= -40) {
 finishRevealTween(group);
 const items = Array.from(group.children);
 if (items.length) gsap.set(items, { autoAlpha: 1, y: 0, scale: 1, clearProps: 'transform,opacity,visibility' });
@@ -114,7 +131,7 @@ if (items.length) gsap.set(items, { autoAlpha: 1, y: 0, scale: 1, clearProps: 't
 });
 $$('.kicker').forEach(k => {
 const r = k.getBoundingClientRect();
-if ((scopeEl && scopeEl.contains(k)) || (r.top <= vh * 0.96 && r.bottom >= -40)) {
+if (r.top <= vh * 0.96 && r.bottom >= -40) {
 finishRevealTween(k);
 gsap.set(k, { '--kw': 1 });
 }
@@ -600,6 +617,11 @@ navigator.clipboard.writeText(out.value).then(() => say('Скопировано.
 }
 });
 if (hasGsap && !reduced) {
+let revealsReady = false;
+const initScrollReveals = () => {
+if (revealsReady) return;
+revealsReady = true;
+['scroll', 'wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(ev => window.removeEventListener(ev, initScrollReveals));
 gsap.registerPlugin(ScrollTrigger);
 $$('[data-reveal]').forEach(el => {
 el.__revealTween = gsap.fromTo(el, { autoAlpha: 0, y: 24 }, {
@@ -640,7 +662,12 @@ onToggle: (self) => { if (self.isActive) { navLinks.forEach(l => l.removeAttribu
 });
 revealVisibleNow();
 window.addEventListener('scroll', () => revealVisibleNow(), { passive: true });
-window.addEventListener('load', () => { ScrollTrigger.refresh(); revealVisibleNow(); }, { once: true });
+};
+if (hero && window.scrollY < 4 && !location.hash && !/[?&]at=/.test(location.search)) {
+['scroll', 'wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(ev => window.addEventListener(ev, initScrollReveals, { passive: true, once: true }));
+} else {
+initScrollReveals();
+}
 }
 if (finePointer && !reduced) {
 if (hasGsap) {

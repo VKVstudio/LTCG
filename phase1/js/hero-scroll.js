@@ -165,8 +165,8 @@ let gradeGrad = null, vigGrad = null, keyGrad = null;
 let duskBand = null;
 let embVig = null, embKey = null;
 function resize() {
-vw = stage.clientWidth || window.innerWidth;
-vh = stage.clientHeight || window.innerHeight;
+vw = window.innerWidth || stage.clientWidth;
+vh = window.innerHeight || stage.clientHeight;
 dpr = Math.min(window.devicePixelRatio || 1, 1.5, PLATE_W / vw);
 canvas.width = Math.round(vw * dpr); canvas.height = Math.round(vh * dpr);
 if (!ctx) ctx = canvas.getContext('2d', { alpha: false });
@@ -765,8 +765,8 @@ headTip = [lx0 + tip[0] * ls, ly0 + tip[1] * ls];
 swooshScale = ls;
 const C = [S0[0] + (headTip[0] - S0[0]) * 0.72, S0[1] - (S0[1] - headTip[1]) * 0.08];
 const dMask = 'M' + S0[0] + ' ' + S0[1] + ' Q' + C[0] + ' ' + C[1] + ' ' + headTip[0] + ' ' + headTip[1];
-swooshMaskPaths.forEach(p => { p.setAttribute('d', dMask); p.style.strokeWidth = String(Math.round(150 * ls)); });
-swooshLen = swooshMaskPath ? swooshMaskPath.getTotalLength() : 0;
+swooshMaskPaths.forEach(p => { p.setAttribute('d', dMask); p.setAttribute('pathLength', '1000'); p.style.strokeWidth = String(Math.round(150 * ls)); });
+swooshLen = swooshMaskPath ? 1000 : 0;
 gildGrad = null;
 lastMorph = -1;
 if (ctx) buildGrades();
@@ -1223,9 +1223,9 @@ onLeave: () => { gate(1); if (!locked) { pRaw = 1; kick(); } if (head) head.clas
 onEnterBack: () => { if (head) head.classList.remove('is-past'); },
 });
 window.addEventListener('resize', resize, { passive: true });
-ScrollTrigger.addEventListener('refresh', resize);
-resize();
-ScrollTrigger.refresh();
+ScrollTrigger.addEventListener('refresh', () => {
+if (vw !== window.innerWidth || vh !== window.innerHeight) resize();
+});
 if (window.__lenis && typeof window.__lenis.resize === 'function') window.__lenis.resize();
 const jumpToDeepTarget = () => {
 const atMatch = /[?&]at=([\w-]+)/.exec(location.search);

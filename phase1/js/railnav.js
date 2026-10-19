@@ -52,6 +52,7 @@ if (k === i) a.setAttribute('aria-current', 'true'); else a.removeAttribute('ari
 });
 }
 function pick() {
+if (window.scrollY < 40 && d.querySelector('[data-hero-scroll]')) return;
 var mid = innerHeight / 2, best = -1, dist = Infinity;
 secs.forEach(function (el, i) {
 var r = el.getBoundingClientRect();
@@ -62,7 +63,16 @@ if (dd < dist) { dist = dd; best = i; }
 mark(best);
 }
 if ('IntersectionObserver' in window) {
-var io = new IntersectionObserver(pick, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+var io = new IntersectionObserver(function (entries) {
+var best = -1, bestRatio = 0;
+entries.forEach(function (e) {
+if (e.isIntersecting && e.intersectionRatio >= bestRatio) {
+bestRatio = e.intersectionRatio;
+best = secs.indexOf(e.target);
+}
+});
+if (best >= 0) mark(best);
+}, { threshold: [0.25, 0.5, 0.75] });
 secs.forEach(function (el) { io.observe(el); });
 }
 addEventListener('scroll', function () {
@@ -70,6 +80,4 @@ if (nav.dataset.tick) return;
 nav.dataset.tick = '1';
 requestAnimationFrame(function () { nav.dataset.tick = ''; pick(); });
 }, { passive: true });
-addEventListener('resize', pick, { passive: true });
-pick();
 })();

@@ -24,11 +24,11 @@ var hasSite = h.hasAttribute('data-site');  var SRI = {
     "js/vendor/ScrollTrigger.min.js": "sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF",
     "js/vendor/lenis.min.js": "sha384-iiCtod6ZId6zT42Bar9EFXNKZh8X4VliWYWFOuY3/t1AxCvLejXExXcbluoc57CJ",
     "js/hero-static.js": "sha384-oKKadulpH3T+jdYUXku15C0M5IgUgRooyIjiwxgx+rCTVt2FY6Q71kRBVl24TREF",
-    "js/hero-scroll.js": "sha384-0wJIrw5K0CVvmyjexgY4c1j2ZYTByQvc6auURJATzLnSUG9mGPwKf42G9sFzi2vu",
+    "js/hero-scroll.js": "sha384-/joqhhIBllEbkf73G+N3mfTB5vCGkkkGh1VVh9RCNrsXBRRH21P/qTGGCvKpKWqJ",
     "js/hero-mobile.js": "sha384-tTT+YVgywv2UIRxTjJatVyEWvL7vhWh/yI6rUua2XSobQS85x6ahz4BjY+QbkoZI",
     "js/menu-mobile.js": "sha384-DyN2iaHvY7TsHGzHAbPjUiUOMrMuA4zyszjkwCt1y7bNsweYTIkestBQZcV733Ef",
-    "js/site.js": "sha384-P0xwCoeLDeGekR4BM6uHscOb5bu57l3CTpaxG1QEAli4d367ddjjT0HQF8uHvRV0",
-    "js/railnav.js": "sha384-qdp4rTEtXjGegoou7tUiapz85cnuSs0rMgNnEQJMCuo93LV4WY8r1mhkdq29eJ5m",
+    "js/site.js": "sha384-q4qHlmpwKDIr8rom3wJotkvdRzwrsK3Ba9PwJSxVeGloCqDNZQPypuz3U+pymDGh",
+    "js/railnav.js": "sha384-/D3tDNUYpCkEh3oDWFQozEJ6unaMZbKRaZG9YlqEY1svTnil/NmCNg4rSc+1ix+j",
     "js/webmcp.js": "sha384-XVm+K6oQ3mdN25Hr9DwXyL2bWfZeqBpdLeT0SjX3Y7yRlWjFfkAESVC8AvjgkSiy"
 };
   function load(src) {

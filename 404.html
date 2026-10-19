@@ -12,6 +12,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 h.className+=' is-loading';var d=function(){var l=document.querySelectorAll('link[media="print"]');for(var i=0;i<l.length;i++)l[i].media='all';requestAnimationFrame(function(){requestAnimationFrame(function(){h.className=h.className.replace(/\s*\bis-loading\b/,'');});});};if(document.readyState==='complete')d();else addEventListener('load',d);setTimeout(d,4000);
 if(window.trustedTypes&&window.trustedTypes.createPolicy&&!window.trustedTypes.defaultPolicy){try{window.trustedTypes.createPolicy('default',{createHTML:function(s){return String(s).replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<\/?(?:script|iframe|object|embed)\b[^>]*>/gi,'').replace(/\bon[a-z]+\s*=/gi,'data-blocked=').replace(/javascript\s*:/gi,'blocked:');},createScript:function(){return '';},createScriptURL:function(u){var p=new URL(String(u),location.href);if(p.origin===location.origin||p.origin==='https://static.cloudflareinsights.com')return p.href;throw new TypeError('Blocked script URL');}});}catch(e){}}})();
 </script>
+<meta http-equiv="origin-trial" content="ArJGG1ONXdxN++M+gaelDaEhe863ukoj+eVN8ujkLIajFPpe9K2tXcplzch2lvg4JIyblmoXl5y+Onk2IqAwRA4AAABaeyJvcmlnaW4iOiJodHRwczovL2x0Y2cuYW06NDQzIiwiZmVhdHVyZSI6IldlYk1DUCIsImV4cGlyeSI6MTgwNjM2NDgwMCwiaXNTdWJkb21haW4iOnRydWV9">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://t.me https://wa.me mailto:; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-e3q2w+NRxZTNZCBGG2AtVEPchTDCc4tN7IjOZmCX67w=' 'sha256-PpG18IHQWLZgV8fxP9UuQ/rrlt0GXnicKAge7Ze5i+o=' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'; require-trusted-types-for 'script'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <!-- Файл лежит В КОРНЕ репозитория (не в phase1/): GitHub Pages подхватывает кастомный
@@ -220,6 +221,6 @@ if(window.trustedTypes&&window.trustedTypes.createPolicy&&!window.trustedTypes.d
   </div>
 </footer>
 
-<script defer src="phase1/js/boot.js?v=20261019m17" integrity="sha384-bL8I6jtuqmfX5951IEL9EDIb2aXNFetT0+CeRSt3JndrBAS3BEh2prEuECA+hMWl" crossorigin="anonymous"></script>
+<script defer src="phase1/js/boot.js?v=20261019m17" integrity="sha384-Gefr481akb1iBnYnwHhVofIvLQdFOJWVDJUXeOmFzNOjg97eo/2dJwumqTe/OD5x" crossorigin="anonymous"></script>
 </body>
 </html>
