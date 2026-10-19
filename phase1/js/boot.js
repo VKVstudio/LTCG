@@ -24,7 +24,7 @@ var hasSite = h.hasAttribute('data-site');  var SRI = {
     "js/vendor/ScrollTrigger.min.js": "sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF",
     "js/vendor/lenis.min.js": "sha384-iiCtod6ZId6zT42Bar9EFXNKZh8X4VliWYWFOuY3/t1AxCvLejXExXcbluoc57CJ",
     "js/hero-static.js": "sha384-oKKadulpH3T+jdYUXku15C0M5IgUgRooyIjiwxgx+rCTVt2FY6Q71kRBVl24TREF",
-    "js/hero-scroll.js": "sha384-H0XeXQprjhguSifvhFp6Hn+nYJWPO2lkBLdod9dLn9pQbsFFkN+YHWKH3N6CcE0r",
+    "js/hero-scroll.js": "sha384-0wJIrw5K0CVvmyjexgY4c1j2ZYTByQvc6auURJATzLnSUG9mGPwKf42G9sFzi2vu",
     "js/hero-mobile.js": "sha384-4OM90vdqE461CqKPZYBHJjxYkNQkiFZYzaLXNDjNCdRRpD0OchQBifzagzIZSe7z",
     "js/menu-mobile.js": "sha384-DyN2iaHvY7TsHGzHAbPjUiUOMrMuA4zyszjkwCt1y7bNsweYTIkestBQZcV733Ef",
     "js/site.js": "sha384-P0xwCoeLDeGekR4BM6uHscOb5bu57l3CTpaxG1QEAli4d367ddjjT0HQF8uHvRV0",
