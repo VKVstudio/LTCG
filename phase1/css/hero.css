@@ -383,6 +383,37 @@ html.is-gate-locked { overflow: clip; }
   .after .state--dated { padding: var(--s-3) var(--s-4); }
 }
 
+/* скрытый источник кадров ролика */
+.hs__video { position: absolute; left: -9999px; top: 0; width: 2px; height: 2px; opacity: 0; pointer-events: none; }
+
+/* ── экран внутри монитора: то же зерно и та же мягкость, что у кадра ролика,
+      иначе страница читается как наклейка. Обе величины УБЫВАЮТ по мере
+      приближения (--scr-far: 1 далеко → 0 на развороте) — на весь экран
+      страница выходит чистой, без шума и без пелены. ── */
+.hs__screen {
+  --scr-far: 1;
+  --scr-grain: 0.30;
+}
+.hs__screen::after {
+  content: '';
+  position: absolute; inset: 0;
+  z-index: 9;
+  pointer-events: none;
+  background: url("../assets/hero/lcp/grain.webp") repeat 0 0 / 180px 180px;
+  mix-blend-mode: overlay;
+  opacity: calc(var(--scr-grain) * var(--scr-far));
+}
+.hs__screen .tri {
+  /* сжатие и свет кадра: экран в комнате не бывает контрастнее самой комнаты */
+  filter:
+    contrast(calc(1 - 0.09 * var(--scr-far)))
+    saturate(calc(1 - 0.07 * var(--scr-far)))
+    brightness(calc(1 - 0.06 * var(--scr-far)));
+}
+.hs__screen.is-flat::after { opacity: 0; }
+.hs__screen.is-flat .tri { filter: none; }
+.hs__screen .tri { --page-scale: 1; }
+
 /* ── 6. Мобильная ветка — ПОСЛЕДНИЙ блок в файле (гейт как у VKV) ── */
 @media (max-width: 767px), ((max-height: 767px) and (pointer: coarse)) {
   .hs__skip, .hs__canvas, .hs__svg, .hs__grain, .hs__hint, .hs__screen-glow, .hs__screen::after { display: none; }
@@ -422,6 +453,7 @@ html.is-gate-locked { overflow: clip; }
     will-change: auto;
     isolation: auto;
   }
+  .hs__screen .tri { filter: none; }
   /* та же верхушка страницы, но в потоке и снизу кадра: сначала текст и CTA, языки — последней строкой */
   .hs__screen .pg { position: static; overflow: visible; background: none; }
   .hs__screen .pg__main { order: 1; flex: 0 0 auto; padding: 0 max(1rem, env(safe-area-inset-left)) 1rem max(1rem, env(safe-area-inset-right)); }
@@ -441,35 +473,3 @@ html.is-gate-locked { overflow: clip; }
   .hs__poster img { animation: hsKen 5s var(--ease) 0.2s both; }
   @keyframes hsKen { from { transform: scale(1); } to { transform: scale(1.03); } }
 }
-
-/* скрытый источник кадров ролика */
-.hs__video { position: absolute; left: -9999px; top: 0; width: 2px; height: 2px; opacity: 0; pointer-events: none; }
-
-
-/* ── экран внутри монитора: то же зерно и та же мягкость, что у кадра ролика,
-      иначе страница читается как наклейка. Обе величины УБЫВАЮТ по мере
-      приближения (--scr-far: 1 далеко → 0 на развороте) — на весь экран
-      страница выходит чистой, без шума и без пелены. ── */
-.hs__screen {
-  --scr-far: 1;
-  --scr-grain: 0.30;
-}
-.hs__screen::after {
-  content: '';
-  position: absolute; inset: 0;
-  z-index: 9;
-  pointer-events: none;
-  background: url("../assets/hero/lcp/grain.webp") repeat 0 0 / 180px 180px;
-  mix-blend-mode: overlay;
-  opacity: calc(var(--scr-grain) * var(--scr-far));
-}
-.hs__screen .tri {
-  /* сжатие и свет кадра: экран в комнате не бывает контрастнее самой комнаты */
-  filter:
-    contrast(calc(1 - 0.09 * var(--scr-far)))
-    saturate(calc(1 - 0.07 * var(--scr-far)))
-    brightness(calc(1 - 0.06 * var(--scr-far)));
-}
-.hs__screen.is-flat::after { opacity: 0; }
-.hs__screen.is-flat .tri { filter: none; }
-.hs__screen .tri { --page-scale: 1; }

@@ -106,7 +106,7 @@ Disallow: /
 
 # ── Карта сайта и каталоги для ИИ-агентов (GEO / ARD / WebMCP) ──
 Sitemap: https://ltcg.am/sitemap.xml
-LLMs-Txt: https://ltcg.am/llms.txt
-LLMs-Full-Txt: https://ltcg.am/llms-full.txt
-AI-Catalog: https://ltcg.am/.well-known/ai-catalog.json
-Agent-Skills: https://ltcg.am/agent-skills/ltcg-legal-tax/SKILL.md
+# LLMs-Txt: https://ltcg.am/llms.txt
+# LLMs-Full-Txt: https://ltcg.am/llms-full.txt
+# AI-Catalog: https://ltcg.am/.well-known/ai-catalog.json
+# Agent-Skills: https://ltcg.am/agent-skills/ltcg-legal-tax/SKILL.md

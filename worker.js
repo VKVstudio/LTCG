@@ -15,7 +15,7 @@ const CSP_HEADER = [
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
   "style-src 'self' 'unsafe-inline'",
-  "script-src 'self' 'sha256-FGB6UuDDN3ITvUuuwx2nz16/Cr5IUVaiY9O7NRH8Exs=' 'sha256-PpG18IHQWLZgV8fxP9UuQ/rrlt0GXnicKAge7Ze5i+o=' https://static.cloudflareinsights.com",
+  "script-src 'self' 'sha256-DbueuQB/OAJ9KoJ4O5kEs3KF3ifABfW0cxRW2TFYLdE=' 'sha256-PpG18IHQWLZgV8fxP9UuQ/rrlt0GXnicKAge7Ze5i+o=' https://static.cloudflareinsights.com",
   "connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com",
   "media-src 'self' blob:",
   "worker-src 'self' blob:",

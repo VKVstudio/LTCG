@@ -942,7 +942,7 @@ p.tl__b { display: block; font-size: var(--fs-sm); line-height: 1.42; color: var
 .field select { appearance: none; -webkit-appearance: none; background-image: var(--select-arrow); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1rem; padding-right: 2.5rem; }
 /* выпадающий список рисует ОС (прогрессивный фоллбэк без JS) */
 .field select option { color: #0C1B3A; background: #fff; }
-.field select.is-enhanced { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; opacity: 0 !important; pointer-events: none !important; }
+.field select.is-enhanced { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; opacity: 0 !important; pointer-events: none !important; transition: none !important; }
 .csel { position: relative; width: 100%; }
 .tile:has(.csel.is-open) { overflow: visible; z-index: 30; }
 .csel__btn {

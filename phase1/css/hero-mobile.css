@@ -304,9 +304,10 @@ body .hs__screen .tri__part--hy .tri__scrim::after,
 body .hs__screen .tri__part--en::before,
 body .hs__screen .tri__part--ru .tri__aud::before { display: none; }
 
-/* Фактуры колонок остаются, но приглушены: на строке в 68 px гравюра по туфу
-   читается как грязь. Даём ровно столько, чтобы три языка отличались. */
-body .hs__screen .tri__art { opacity: calc(var(--art-op, 0.1) * 0.55); }
+/* На мобильной панели 68 px фоновые текстуры колонок 1280 px выключаем, чтобы не грузить лишние изображения. */
+body .hs__screen::after,
+body .hs__screen .tri::after,
+body .hs__screen .tri__art { display: none; background-image: none; }
 body .hs__screen .tri__glass { display: none; }
 
 /* Полоса хрома: свой знак на панели не нужен — он уже стоит над ней во всю
@@ -335,8 +336,13 @@ body .hs__screen .tri__theme-btn {
 body .hs__screen .tri__theme-btn[aria-pressed="true"] { color: #F2C249; }
 
 /* Подсказка — заголовок панели, а не сноска: первая строка, статично,
-   слева от переключателя тем. */
-body .hs__screen .lang-hint {
+   слева от переключателя тем. Видна с нулевого кадра без ожидания JS. */
+body .hs__screen .lang-hint,
+body .hs__screen .lang-hint[hidden] {
+  display: block;
+  opacity: 1;
+  transform: none;
+  transition: none;
   position: relative;
   inset: auto;
   order: -2;
