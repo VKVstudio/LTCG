@@ -120,7 +120,15 @@
   --tex-paper:     url("../assets/patterns/paper.png");
   --nov-art-opacity: 0.10;
 }
-:root[data-skin="ru"]:not([data-theme="light"]),
+@media (prefers-color-scheme: dark) {
+  :root[data-skin="ru"]:not([data-theme="light"]) {
+    --tex-khachkar:  url("../assets/patterns/khachkar_n.png");
+    --tex-stone:     url("../assets/patterns/stone_n.png");
+    --tex-guilloche: url("../assets/patterns/guilloche_n.png");
+    --tex-paper:     url("../assets/patterns/paper_n.png");
+    --nov-art-opacity: 0.10;
+  }
+}
 :root[data-skin="ru"][data-theme="dark"] {
   --tex-khachkar:  url("../assets/patterns/khachkar_n.png");
   --tex-stone:     url("../assets/patterns/stone_n.png");
@@ -158,15 +166,29 @@
       --tex-paper:     image-set(url("../assets/patterns/paper-1920.avif") type("image/avif"), url("../assets/patterns/paper-1920.webp") type("image/webp"));
     }
   }
-  :root[data-skin="ru"]:not([data-theme="light"]),
+  @media (prefers-color-scheme: dark) {
+    :root[data-skin="ru"]:not([data-theme="light"]) {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-768.avif") type("image/avif"), url("../assets/patterns/khachkar_n-768.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-768.avif") type("image/avif"), url("../assets/patterns/stone_n-768.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-768.avif") type("image/avif"), url("../assets/patterns/guilloche_n-768.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-768.avif") type("image/avif"), url("../assets/patterns/paper_n-768.webp") type("image/webp"));
+    }
+  }
   :root[data-skin="ru"][data-theme="dark"] {
     --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-768.avif") type("image/avif"), url("../assets/patterns/khachkar_n-768.webp") type("image/webp"));
     --tex-stone:     image-set(url("../assets/patterns/stone_n-768.avif") type("image/avif"), url("../assets/patterns/stone_n-768.webp") type("image/webp"));
     --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-768.avif") type("image/avif"), url("../assets/patterns/guilloche_n-768.webp") type("image/webp"));
     --tex-paper:     image-set(url("../assets/patterns/paper_n-768.avif") type("image/avif"), url("../assets/patterns/paper_n-768.webp") type("image/webp"));
   }
+  @media (min-width: 768px) and (prefers-color-scheme: dark) {
+    :root[data-skin="ru"]:not([data-theme="light"]) {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1280.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1280.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-1280.avif") type("image/avif"), url("../assets/patterns/stone_n-1280.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1280.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1280.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-1280.avif") type("image/avif"), url("../assets/patterns/paper_n-1280.webp") type("image/webp"));
+    }
+  }
   @media (min-width: 768px) {
-    :root[data-skin="ru"]:not([data-theme="light"]),
     :root[data-skin="ru"][data-theme="dark"] {
       --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1280.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1280.webp") type("image/webp"));
       --tex-stone:     image-set(url("../assets/patterns/stone_n-1280.avif") type("image/avif"), url("../assets/patterns/stone_n-1280.webp") type("image/webp"));
@@ -174,8 +196,15 @@
       --tex-paper:     image-set(url("../assets/patterns/paper_n-1280.avif") type("image/avif"), url("../assets/patterns/paper_n-1280.webp") type("image/webp"));
     }
   }
+  @media (min-width: 1024px) and (prefers-color-scheme: dark) {
+    :root[data-skin="ru"]:not([data-theme="light"]) {
+      --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1920.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1920.webp") type("image/webp"));
+      --tex-stone:     image-set(url("../assets/patterns/stone_n-1920.avif") type("image/avif"), url("../assets/patterns/stone_n-1920.webp") type("image/webp"));
+      --tex-guilloche: image-set(url("../assets/patterns/guilloche_n-1920.avif") type("image/avif"), url("../assets/patterns/guilloche_n-1920.webp") type("image/webp"));
+      --tex-paper:     image-set(url("../assets/patterns/paper_n-1920.avif") type("image/avif"), url("../assets/patterns/paper_n-1920.webp") type("image/webp"));
+    }
+  }
   @media (min-width: 1024px) {
-    :root[data-skin="ru"]:not([data-theme="light"]),
     :root[data-skin="ru"][data-theme="dark"] {
       --tex-khachkar:  image-set(url("../assets/patterns/khachkar_n-1920.avif") type("image/avif"), url("../assets/patterns/khachkar_n-1920.webp") type("image/webp"));
       --tex-stone:     image-set(url("../assets/patterns/stone_n-1920.avif") type("image/avif"), url("../assets/patterns/stone_n-1920.webp") type("image/webp"));
@@ -268,11 +297,17 @@ body.nov { --ru-grid-line: transparent; }
    в принципе: разница светлот меньше единицы. Приём другой — screen: чёрные
    участки уходят в ноль и фон не сереет, а светлые (рельеф, золотая нить)
    проступают. Поэтому в тёмной теме прозрачность выше, а вклад всё равно мал. */
-:root[data-skin="ru"]:not([data-theme="light"]) .nov-art,
+@media (prefers-color-scheme: dark) {
+  :root[data-skin="ru"]:not([data-theme="light"]) .nov-art {
+    mix-blend-mode: screen; opacity: 0.42;
+  }
+  :root[data-skin="ru"]:not([data-theme="light"]) .nov-art::after {
+    mix-blend-mode: normal;
+  }
+}
 :root[data-skin="ru"][data-theme="dark"] .nov-art {
   mix-blend-mode: screen; opacity: 0.42;
 }
-:root[data-skin="ru"]:not([data-theme="light"]) .nov-art::after,
 :root[data-skin="ru"][data-theme="dark"] .nov-art::after {
   mix-blend-mode: normal;
 }

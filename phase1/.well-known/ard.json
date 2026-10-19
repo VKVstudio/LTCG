@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ard-spec.org/v1/schema.json",
+  "specVersion": "1.0",
+  "publisher": {
+    "name": "LTCG — Legal and Tax Consulting Group LLC",
+    "url": "https://ltcg.am"
+  },
+  "resources": [
+    {
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "uri": "https://ltcg.am/agent-skills/ltcg-legal-tax/SKILL.md",
+      "description": "Legal and Tax Consulting Group LLC (LTCG, Yerevan, Armenia): business registration (IP/LLC), bank account KYC accompaniment, accounting in SRC RA, tax residency & CRS, and residence permits under the November 1, 2026 reform (Law HO-11-N) with fixed AMD fees.",
+      "queries": [
+        "Сколько стоит открыть ИП, банковский счёт и соцкарту в Армении через LTCG?",
+        "Почему релоканты в Грузии переводят ИП и счета в Армению в 2026 году?",
+        "Как изменились правила оформления ВНЖ и ПМЖ в Армении с 1 ноября 2026 года по закону ՀՕ-11-Ն?",
+        "Какие тарифы и требования KYC у банков Армении (Ameriabank, Converse Bank, Evocabank) для нерезидентов?",
+        "How can foreign founders from EU, US, China, Taiwan, Iran, Asia, or Africa register an LLC or IP and open a bank account in Armenia?"
+      ]
+    }
+  ]
+}

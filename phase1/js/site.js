@@ -20,8 +20,15 @@
 
   /* ── 0. Языковые ссылки уже расставлены boot.js из одного массива LANGS ──── */
 
-  /* ── 1. Год в футере ─────────────────────────────────────────── */
+  /* ── 1. Год в футере и активный пункт меню шапки ─────────────── */
   $$('[data-year]').forEach(el => { el.textContent = String(new Date().getFullYear()); });
+  const curFile = (location.pathname.split('/').pop() || 'home-ru.html').replace(/^index\.html$/, 'home-ru.html');
+  $$('.hdr__nav a[href]').forEach(a => {
+    const rawHref = a.getAttribute('href') || '';
+    if (rawHref.indexOf('#') >= 0) return;
+    const linkFile = rawHref.replace(/^\.\//, '').split('?')[0];
+    if (linkFile && linkFile === curFile) a.setAttribute('aria-current', 'true');
+  });
 
 
   /* ── 1-бис. Переключатель темы: авто / светлая / тёмная ───────
@@ -37,6 +44,9 @@
       themers.forEach(box => $$('[data-theme-set]', box).forEach(b => {
         b.setAttribute('aria-pressed', String(b.dataset.themeSet === now));
       }));
+      $$('[data-theme-toggle] .tri__theme-btn').forEach(b => {
+        b.setAttribute('aria-pressed', String(b.dataset.set === now));
+      });
     };
     const setTheme = (mode) => {
       if (mode === 'auto') root.removeAttribute('data-theme');
@@ -60,8 +70,8 @@
   const headerH = () => (hdr ? hdr.offsetHeight : 72);
   if (hero && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
-      const past = entries.some(e => !e.isIntersecting && e.boundingClientRect.bottom < 0);
-      const inHero = entries.some(e => e.isIntersecting);
+      const past = entries.some(e => e.boundingClientRect.bottom <= headerH() + 8);
+      const inHero = entries.some(e => e.isIntersecting && e.boundingClientRect.bottom > headerH() + 8);
       const show = past && !inHero;
       if (hdr && hdr.classList.contains('is-shown') !== show) {
         hdr.classList.add('is-animating');
@@ -70,7 +80,7 @@
       }
       dock && dock.classList.toggle('is-shown', show);
       document.documentElement.classList.toggle('hdr-on', show);
-    }, { threshold: 0 });
+    }, { threshold: [0, 0.05, 0.15] });
     io.observe(hero);
   } else {
     hdr && hdr.classList.add('is-shown');
@@ -196,7 +206,10 @@
     document.documentElement.setAttribute('data-state', key);
     states.forEach(s => s.classList.toggle('is-on', s.dataset.state === key));
     if (chosen && chosenName) { chosenName.textContent = stateNames[key]; chosen.hidden = false; }
-    if (formState && !opts.keepForm) formState.value = key;
+    if (formState && !opts.keepForm) {
+      formState.value = key;
+      if (typeof formState.__syncCsel === 'function') formState.__syncCsel();
+    }
     // CTA несут состояние: ссылки-якоря с параметром, WhatsApp — предзаполненным текстом
     $$('a[data-cta]').forEach(a => {
       const raw = a.getAttribute('href') || '';
@@ -276,6 +289,152 @@
   });
   formState && formState.addEventListener('change', () => { if (formState.value) setState(formState.value, { keepForm: true }); });
 
+  /* ── 5b. Кастомный выпадающий список .csel для всех .field select ── */
+  $$('.field select').forEach(sel => {
+    if (sel.classList.contains('is-enhanced')) return;
+    sel.classList.add('is-enhanced');
+    sel.tabIndex = -1;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'csel';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'csel__btn';
+    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-expanded', 'false');
+
+    const valSpan = document.createElement('span');
+    valSpan.className = 'csel__val';
+    btn.appendChild(valSpan);
+
+    const list = document.createElement('ul');
+    list.className = 'csel__list';
+    list.setAttribute('role', 'listbox');
+    list.hidden = true;
+
+    const options = Array.from(sel.options);
+    const items = options.map((opt, idx) => {
+      const li = document.createElement('li');
+      li.className = 'csel__opt';
+      li.setAttribute('role', 'option');
+      li.dataset.value = opt.value;
+      li.dataset.index = String(idx);
+      li.textContent = opt.textContent;
+      list.appendChild(li);
+      return li;
+    });
+
+    const syncFromSelect = () => {
+      const curIdx = sel.selectedIndex >= 0 ? sel.selectedIndex : 0;
+      const curOpt = options[curIdx];
+      valSpan.textContent = curOpt ? curOpt.textContent : '';
+      items.forEach((li, i) => {
+        const isSel = (i === curIdx);
+        li.setAttribute('aria-selected', isSel ? 'true' : 'false');
+        li.classList.toggle('is-active', isSel);
+      });
+    };
+    sel.__syncCsel = syncFromSelect;
+    syncFromSelect();
+
+    let activeIdx = sel.selectedIndex >= 0 ? sel.selectedIndex : 0;
+    const setActive = (idx) => {
+      if (!items.length) return;
+      activeIdx = (idx + items.length) % items.length;
+      items.forEach((li, i) => li.classList.toggle('is-active', i === activeIdx));
+      const el = items[activeIdx];
+      if (el && el.scrollIntoView) el.scrollIntoView({ block: 'nearest' });
+    };
+
+    const close = (restoreFocus) => {
+      if (list.hidden) return;
+      list.hidden = true;
+      wrap.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      if (restoreFocus) btn.focus({ preventScroll: true });
+    };
+
+    const open = () => {
+      if (!list.hidden) return;
+      $$('.csel.is-open').forEach(other => {
+        if (other !== wrap && typeof other.__closeCsel === 'function') other.__closeCsel(false);
+      });
+      list.hidden = false;
+      wrap.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      setActive(sel.selectedIndex >= 0 ? sel.selectedIndex : 0);
+    };
+    wrap.__closeCsel = close;
+
+    const choose = (idx) => {
+      if (idx < 0 || idx >= options.length) return;
+      if (sel.selectedIndex !== idx) {
+        sel.selectedIndex = idx;
+        syncFromSelect();
+        sel.dispatchEvent(new Event('change', { bubbles: true }));
+      } else {
+        syncFromSelect();
+      }
+      close(true);
+    };
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (list.hidden) open();
+      else close(false);
+    });
+
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (list.hidden) open();
+        else setActive(activeIdx + 1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (list.hidden) open();
+        else setActive(activeIdx - 1);
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (list.hidden) open();
+        else choose(activeIdx);
+      } else if (e.key === 'Escape') {
+        if (!list.hidden) { e.preventDefault(); e.stopPropagation(); close(true); }
+      } else if (e.key === 'Tab') {
+        close(false);
+      }
+    });
+
+    items.forEach((li, idx) => {
+      li.addEventListener('mouseenter', () => setActive(idx));
+      li.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        choose(idx);
+      });
+    });
+
+    const fieldLabel = sel.id ? document.querySelector('label[for="' + sel.id + '"]') : sel.closest('label');
+    if (fieldLabel) {
+      fieldLabel.addEventListener('click', (e) => {
+        if (e.target.closest('.csel')) return;
+        e.preventDefault();
+        btn.focus({ preventScroll: true });
+        open();
+      });
+    }
+
+    sel.parentNode.insertBefore(wrap, sel.nextSibling);
+    wrap.appendChild(btn);
+    wrap.appendChild(list);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.csel')) {
+      $$('.csel.is-open').forEach(w => { if (typeof w.__closeCsel === 'function') w.__closeCsel(false); });
+    }
+  });
+
   /* ── 6. Калькулятор — единый источник цен #prices ────────────── */
   let prices = null;
   try { prices = JSON.parse($('#prices').textContent); } catch (e) { prices = null; }
@@ -302,7 +461,7 @@
 
   const waText = () => {
     const parts = [];
-    if (currentState) parts.push('Где я сейчас: ' + stateNames[currentState] + '.');
+    if (currentState) parts.push('Маршрут: ' + stateNames[currentState] + '.');
     const mods = selected();
     if (mods.length && prices) parts.push('Хочу расчёт: ' + mods.map(k => prices.modules[k].name.toLowerCase()).join(', ') + '.');
     else parts.push('Хочу расчёт стоимости.');
@@ -311,7 +470,7 @@
   const updateWa = () => {
     // подстановка текста есть только у wa.me: t.me/<аккаунт> параметр text игнорирует.
     const t = encodeURIComponent(waText());
-    $$('a[data-wa]').forEach(a => a.setAttribute('href', 'https://wa.me/' + PHONE + '?text=' + t));
+    $$('a[data-wa], a[data-wa-calc]').forEach(a => a.setAttribute('href', 'https://wa.me/' + PHONE + '?text=' + t));
     const hidden = $('[data-f-modules]');
     if (hidden) hidden.value = selected().join(',');
   };
@@ -320,12 +479,19 @@
     if (!prices || !totalEl) return;
     const mods = selected();
     boxes.forEach(b => b.closest('.mod') && b.closest('.mod').classList.toggle('is-on', b.checked));
-    // список выбранного
+    // постатейный чек выбранных модулей с ценой каждого пункта
     const list = $('[data-total-list]', totalEl);
     if (list) {
       list.innerHTML = mods.length
-        ? mods.map(k => '<span class="chip">' + prices.modules[k].name + '</span>').join('')
-        : '<span class="total__empty">Пока ничего не выбрано — отметьте модули.</span>';
+        ? mods.map(k => {
+            const m = prices.modules[k];
+            if (!m) return '';
+            const per = m.per === 'year' ? ' / год' : m.per === 'month' ? ' / мес' : '';
+            const pref = m.from ? 'от ' : '';
+            const pTxt = (showNumbers && typeof m.amount === 'number') ? (pref + fmt(m.amount) + ' ' + curLabel() + per) : '';
+            return '<li class="total__item"><span>' + m.name + '</span><b>' + pTxt + '</b></li>';
+          }).join('')
+        : '<li class="total__item total__item--empty">Отметьте нужные пункты слева — здесь появится смета</li>';
     }
     // крупный объект итога — честная цифра: сколько модулей выбрано
     const cnt = $('[data-total-count]', totalEl);
@@ -340,14 +506,20 @@
     if (note) note.hidden = showNumbers;
     if (showNumbers) {
       const sums = { once: 0, year: 0, month: 0 };
-      mods.forEach(k => { const m = prices.modules[k]; if (typeof m.amount === 'number') sums[m.per] += m.amount; });
+      mods.forEach(k => { const m = prices.modules[k]; if (m && typeof m.amount === 'number') sums[m.per] += m.amount; });
       ['once', 'year', 'month'].forEach(per => {
         const dd = $('[data-sum="' + per + '"]', totalEl);
         if (!dd) return;
-        const has = mods.some(k => prices.modules[k].per === per);
-        const hasFrom = mods.some(k => prices.modules[k].per === per && prices.modules[k].from);
-        dd.innerHTML = has ? (hasFrom ? 'от ' : '') + fmt(sums[per]) + '<span class="cur">' + curLabel() + '</span>' : '—';
+        const has = mods.some(k => prices.modules[k] && prices.modules[k].per === per);
+        const hasFrom = mods.some(k => prices.modules[k] && prices.modules[k].per === per && prices.modules[k].from);
+        dd.innerHTML = has ? (hasFrom ? 'от ' : '') + fmt(sums[per]) + ' <span class="cur">' + curLabel() + '</span>' : '—';
       });
+      const startDd = $('[data-sum="start"]', totalEl);
+      if (startDd) {
+        const startSum = sums.once + sums.year + sums.month;
+        const anyFrom = mods.some(k => prices.modules[k] && prices.modules[k].from);
+        startDd.innerHTML = mods.length ? (anyFrom ? 'от ' : '') + fmt(startSum) + ' <span class="cur">' + curLabel() + '</span>' : '—';
+      }
     }
     updateWa();
   };
@@ -359,7 +531,7 @@
       if (!m) return;
       if (showNumbers && typeof m.amount === 'number') {
         const per = m.per === 'year' ? ' / год' : m.per === 'month' ? ' / мес' : '';
-        const prefix = (el.classList.contains('svc__price') || m.from) ? '<span>от</span> ' : '';
+        const prefix = m.from ? '<span>от</span> ' : '';
         el.innerHTML = prefix + fmt(m.amount) + ' <span class="small">' + curLabel() + per + '</span>';
         el.hidden = false;
       }
@@ -385,7 +557,43 @@
   $$('.fork__r').forEach(r => r.addEventListener('change', syncFork));
   syncFork();
 
-  /* ── 7. Приёмник формы: мессенджер вместо бэкенда ───────────── */
+  /* ── 6в. FAQ Bento — синхронное раскрытие пар по ряду на десктопе ── */
+  $$('.faq').forEach(faq => {
+    const items = $$('details', faq);
+    if (!items.length) return;
+    items.forEach((d, idx) => {
+      const sum = $('summary', d);
+      if (!sum) return;
+      sum.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024) {
+          if (!d.open) {
+            items.forEach((other, j) => { if (j !== idx && other.open) other.open = false; });
+          }
+          return;
+        }
+        e.preventDefault();
+        const isLastOdd = (items.length % 2 === 1) && (idx === items.length - 1);
+        const rowStart = isLastOdd ? idx : (idx - (idx % 2));
+        const rowIdxs = isLastOdd ? [idx] : [rowStart, rowStart + 1].filter(i => i < items.length);
+        const willOpen = !d.open;
+        items.forEach((item, j) => {
+          item.open = willOpen ? rowIdxs.includes(j) : false;
+        });
+      });
+    });
+  });
+
+  /* ── 7. Приёмник формы: мессенджер вместо бэкенда + Declarative WebMCP ── */
+  const MOD_NAMES = {
+    ip: 'регистрация ИП',
+    llc: 'регистрация ООО',
+    account: 'открытие банковского счёта и KYC',
+    residence: 'ВНЖ через ИП или ООО',
+    accounting: 'бухгалтерское сопровождение',
+    social: 'соцкарта (ПСН)',
+    address: 'юридический адрес',
+    closure: 'справки, апостиль и закрытие ИП/ООО'
+  };
   $$('[data-lead]').forEach(lead => {
     const host = lead.closest('section') || lead.parentElement || document;
     const msg = $('[data-form-msg]', lead);
@@ -397,13 +605,15 @@
       const st = $('#f-state', lead), free = $('#f-msg', lead), src = $('#f-src', lead);
       const branch = lead.querySelector('input[name="branch"]');
       const fork = lead.querySelector('input[name="fork"]');
+      const modField = lead.querySelector('input[name="modules"]');
       const days = $('#f-days', lead), when = $('#f-when', lead), country = $('#f-country', lead);
       const mods = (typeof selected === 'function' ? selected() : []);
+      const rawMods = mods.length ? mods : (modField && modField.value ? modField.value.split(',').map(s => s.trim()).filter(Boolean) : []);
       const parts = ['Здравствуйте! Меня зовут ' + (name ? name.value.trim() : '') + '.'];
-      if (st && st.value) parts.push('Где я сейчас: ' + (stateNames[st.value] || st.value) + '.');
+      if (st && st.value) parts.push('Маршрут: ' + (stateNames[st.value] || st.value) + '.');
       else if (branch && branch.value) parts.push('Страница: ' + branch.value + '.');
       if (fork && fork.value) parts.push('Сценарий: ' + fork.value + '.');
-      if (mods.length && prices) parts.push('Модули: ' + mods.map(k => prices.modules[k] ? prices.modules[k].name.toLowerCase() : k).join(', ') + '.');
+      if (rawMods.length) parts.push('Модули: ' + rawMods.map(k => (prices && prices.modules && prices.modules[k]) ? prices.modules[k].name.toLowerCase() : (MOD_NAMES[k] || k)).join(', ') + '.');
       if (days && days.value.trim()) parts.push('Дни в РА/РФ: ' + days.value.trim() + '.');
       if (when && when.value.trim()) parts.push('Срок отъезда: ' + when.value.trim() + '.');
       if (country && country.value.trim()) parts.push('Следующая страна: ' + country.value.trim() + '.');
@@ -423,21 +633,32 @@
       const reqFields = [name, contact, st && st.hasAttribute('required') ? st : null].filter(Boolean);
       const bad = reqFields.find(f => !f.value.trim()) || (consent && !consent.checked ? consent : null);
       if (bad) {
-        if (msg) {
-          msg.textContent = bad === consent
-            ? 'Нужно согласие на обработку данных.'
-            : (st && bad === st ? 'Заполните имя, контакт и выберите момент.' : 'Заполните имя и контакт для связи.');
-        }
+        const errText = bad === consent
+          ? 'Нужно согласие на обработку данных.'
+          : (st && bad === st ? 'Заполните имя, контакт и выберите задачу.' : 'Заполните имя и контакт для связи.');
+        if (msg) msg.textContent = errText;
         bad.focus();
+        if (typeof e.respondWith === 'function') {
+          e.respondWith(Promise.resolve({ ok: false, error: errText }));
+        }
         return;
       }
       if (msg) msg.textContent = '';
       const text = leadText();
       if (out) out.value = text;
+      const waUrl = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(text);
       const wa = $('[data-send-wa]', host) || $('[data-send-wa]');
-      if (wa) wa.setAttribute('href', 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(text));
+      if (wa) wa.setAttribute('href', waUrl);
       lead.hidden = true;
       if (done) { done.hidden = false; done.focus(); }
+      if (typeof e.respondWith === 'function') {
+        e.respondWith(Promise.resolve({
+          ok: true,
+          summary: text,
+          whatsappUrl: waUrl,
+          telegramUrl: 'https://t.me/LTCG_Armenia',
+        }));
+      }
     });
 
     const copyBtn = $('[data-copy]', host) || $('[data-copy]');
@@ -474,8 +695,10 @@
     $$('.kicker').forEach(k => {
       k.__revealTween = gsap.fromTo(k, { '--kw': 0 }, { '--kw': 1, duration: 0.6, ease: 'back.out(2.5)', scrollTrigger: { trigger: k, start: 'top 90%', once: true, refreshPriority: -1 } });
     });
-    // мягкий параллакс фоновых и акцентных иллюстраций по скроллу
+    // мягкий параллакс фоновых и акцентных иллюстраций по скроллу (пропускаем скрытую тему)
     $$('.art img, .bento-visual img, .nov-hero__figure img').forEach(img => {
+      const pic = img.closest('picture');
+      if (pic && getComputedStyle(pic).display === 'none') return;
       const host = img.closest('.section, .tile, .nov-hero__figure') || img.parentElement;
       if (!host) return;
       gsap.fromTo(img, { yPercent: -6, scale: 1.06 }, {
@@ -533,7 +756,7 @@
   const canInnerScroll = (el, dir) => {
     let cur = el && el.nodeType === 1 ? el : null;
     while (cur && cur !== document.body && cur !== document.documentElement) {
-      if (cur.tagName === 'TEXTAREA' || cur.tagName === 'SELECT') return true;
+      if (cur.tagName === 'TEXTAREA' || cur.tagName === 'SELECT' || cur.classList.contains('csel__list')) return true;
       const st = getComputedStyle(cur);
       if ((st.overflowY === 'auto' || st.overflowY === 'scroll') && cur.scrollHeight > cur.clientHeight + 2) {
         if (dir > 0 && cur.scrollTop + cur.clientHeight < cur.scrollHeight - 2) return true;

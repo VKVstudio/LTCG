@@ -6,13 +6,8 @@
    Отдельная полоса под шапкой добавляла высоты и дублировала кнопку,
    которая уже стоит справа. Теперь это одна строка внутри того же ряда. */
 .hdr__chosen {
-  display: inline-flex; align-items: baseline; gap: 0.6rem;
-  font-size: 0.875rem; color: var(--text-2); white-space: nowrap;
+  display: none !important;
 }
-.hdr__chosen b { color: var(--text); font-weight: 600; }
-.hdr__chosen a { color: var(--gold-text); text-decoration: underline;
-  text-decoration-color: var(--gold-line); text-underline-offset: 0.25em; }
-.hdr__chosen[hidden] { display: none; }
 
 /* ── 3. Переход к секции — к её началу, а не в середину ───────────────────
    Ссылка «Русский» в воротах ведёт на #where. Без отступа якорь встаёт под
@@ -33,26 +28,26 @@
 }
 .hdr .lang a { display: inline-flex; align-items: baseline; gap: 0.35em; }
 
-/* ── 5. Шапка: три колонки ────────────────────────────────────────────────
-   Замерено: знак в первом кадре хиро стоит на x=24, а в шапке — на x=113,
-   потому что шапка лежит внутри контейнера с полями; тема при этом висела
-   в 127 px от края экрана. Теперь ряд идёт во всю ширину с тем же отступом
-   24 px, знак совпадает с кадром хиро пиксель в пиксель, середина прижата
-   влево, тема — ровно к правому краю экрана. */
+/* ── 5. Шапка: три колонки ──────────────────────────────────────────────── */
 .hdr .hdr__in {
   max-width: none; width: 100%;
   padding-inline: 24px;
   display: grid; grid-template-columns: auto 1fr auto;
-  align-items: center; column-gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center; column-gap: clamp(0.75rem, 1.8vw, 1.75rem);
 }
 .hdr .brand { justify-self: start; margin: 0; }
 .hdr .brand-logo { width: 57px; height: 38px; }
 
 .hdr__mid {
-  display: flex; align-items: center; gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  display: flex; align-items: center; gap: clamp(0.5rem, 1.1vw, 1.15rem);
   justify-content: flex-end; min-width: 0;
 }
-.hdr__mid .hdr__nav { margin-right: auto; }
+.hdr__mid .hdr__nav { margin-right: auto; gap: clamp(0.05rem, 0.35vw, 0.25rem); }
+.hdr__mid .hdr__nav a {
+  padding-inline: clamp(0.38rem, 0.65vw, 0.65rem);
+  font-size: clamp(0.78rem, 0.66rem + 0.16vw, 0.875rem);
+  font-weight: 500;
+}
 .hdr__mid .hdr__cta { margin: 0; flex: 0 0 auto; }
 
 /* Тема: ширина колонки фиксирована по числу кнопок, поэтому ряд не дёргается
@@ -135,21 +130,13 @@ body.nov .tile .tile__meta b::after {
   font-family: var(--font-mono); font-size: 0.85em; font-weight: 600;
   color: var(--gold-text); letter-spacing: 0.06em;
 }
-/* Развилка 2.1–2.4 и датированная врезка 2.5 на страницах веток */
+/* Развилка 2.1–2.4 и датированная врезка 2.5 на страницах веток (номера только в левом столбце вариантов) */
 .fork__opts { counter-reset: fo; }
 .fork__opt { counter-increment: fo; }
 .fork__opt .fork__tag::before {
   content: '2.' counter(fo) ' · ';
   font: 600 0.72rem/1 var(--font-mono);
   letter-spacing: 0.08em;
-  color: var(--gold-text);
-}
-.fork__outs { counter-reset: foout; }
-.fork__out { counter-increment: foout; }
-.fork__out .tile__meta b::before {
-  content: '2.' counter(foout) ' · ';
-  font: 600 0.85em/1 var(--font-mono);
-  letter-spacing: 0.06em;
   color: var(--gold-text);
 }
 .dated-box > .h3::before,
@@ -210,11 +197,19 @@ body.nov .tile .tile__meta b::after {
 #faq .faq details, #voprosy .faq details { counter-increment: faq; }
 #faq .faq summary, #voprosy .faq summary {
   grid-template-columns: auto 1fr auto;
-  column-gap: 0.65rem;
+  column-gap: 0.75rem;
+  align-items: center;
 }
 #faq .faq summary::before, #voprosy .faq summary::before {
   content: '6.' counter(faq);
-  font: 600 0.78rem/1 var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.22rem 0.54rem;
+  border-radius: 999px;
+  background: var(--wash-2);
+  border: 1px solid var(--gold-line);
+  font: 600 0.72rem/1 var(--font-mono);
   letter-spacing: 0.08em;
   color: var(--gold-text);
 }
@@ -257,17 +252,17 @@ body.nov #contact .next li::before {
 .hs__hint-pill {
   display: inline-flex; align-items: center; gap: 0.85rem;
   padding: 0.62rem 1.15rem; border-radius: 999px;
-  background: rgba(12, 27, 58, 0.55);
+  background: var(--glass-bg, rgba(12, 27, 58, 0.76));
   -webkit-backdrop-filter: blur(14px);
           backdrop-filter: blur(14px);
-  border: 1px solid rgba(250, 224, 162, 0.20);
+  border: 1px solid var(--gold-line);
   font: 500 0.9375rem/1 var(--font-mono);
   letter-spacing: 0.08em;
-  color: rgba(255, 243, 208, 0.92);
+  color: var(--text-strong);
   white-space: nowrap;
 }
 .hs__hint-pill span[lang="hy"] { font-family: 'Noto Sans Armenian', var(--font-mono); letter-spacing: 0.02em; }
-.hs__hint-pill span + span { padding-left: 0.85rem; border-left: 1px solid rgba(250, 224, 162, 0.22); }
+.hs__hint-pill span + span { padding-left: 0.85rem; border-left: 1px solid var(--gold-line); }
 @media (max-width: 767px) {
   .hs__hint-pill { font-size: 0.8125rem; gap: 0.6rem; padding: 0.5rem 0.9rem; }
   .hs__hint-pill span + span { padding-left: 0.6rem; }
@@ -556,9 +551,12 @@ body.is-at-footer .railnav { display: none; }
    экран (100svh - header), рассчитанный под реальную высоту окна браузера
    с вкладками и панелью задач (760 px общая / 688 px под шапкой). */
 @media (min-width: 1024px) {
+  html:has([data-hero-scroll]) .hdr-gap {
+    display: none;
+  }
   main > .section:not([data-hero-scroll]) {
     min-height: calc(100svh - var(--header-h));
-    padding-block: clamp(0.55rem, 1.1vh, 1.05rem);
+    padding-block: clamp(0.45rem, 0.9vh, 0.85rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -568,172 +566,245 @@ body.is-at-footer .railnav { display: none; }
     width: 100%;
   }
 
-  /* ── Шапки секций: комфортный типографический ритм ───────────────────── */
+  /* ── Шапки секций: комфортный типографический ритм + сплит по канону Bueno ── */
   main > .section:not([data-hero-scroll]) .section__head {
-    margin-bottom: clamp(0.55rem, 1vh, 0.8rem);
+    margin-bottom: clamp(0.38rem, 0.75vh, 0.62rem);
   }
   main > .section:not([data-hero-scroll]) .section__head .kicker {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
   }
   main > .section:not([data-hero-scroll]) .section__head .h1,
   main > .section:not([data-hero-scroll]) .section__head .h2 {
-    font-size: clamp(1.36rem, 0.98rem + 1.05vw, 1.84rem);
-    line-height: 1.14;
+    font-size: clamp(1.32rem, 0.94rem + 0.98vw, 1.74rem);
+    line-height: 1.13;
   }
   main > .section:not([data-hero-scroll]) .section__head .lead {
-    font-size: 0.84rem;
-    line-height: 1.48;
+    font-size: 0.82rem;
+    line-height: 1.44;
+  }
+  main > .section:not([data-hero-scroll]) > .wrap > .section__head:not(.section__head--split):has(> .lead) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 0.14rem;
+    align-items: end;
+    max-width: none;
+  }
+  main > .section:not([data-hero-scroll]) > .wrap > .section__head:not(.section__head--split):has(> .lead) > .kicker {
+    grid-column: 1 / -1;
+    margin-bottom: 0.08rem;
+  }
+  main > .section:not([data-hero-scroll]) > .wrap > .section__head:not(.section__head--split):has(> .lead) > .h2,
+  main > .section:not([data-hero-scroll]) > .wrap > .section__head:not(.section__head--split):has(> .lead) > .h1 {
+    grid-column: 1;
+    max-width: none;
+    margin: 0;
+  }
+  main > .section:not([data-hero-scroll]) > .wrap > .section__head:not(.section__head--split):has(> .lead) > .lead {
+    grid-column: 2;
+    max-width: none;
+    margin: 0;
   }
 
   /* ── 01 (ветки). Первый экран: pathbar + branch-hero + answer + bignums ── */
   .pathbar {
     margin-top: 0;
     padding-top: 0;
-    padding-bottom: 0.38rem;
-    margin-bottom: 0.65rem;
+    padding-bottom: 0.28rem;
+    margin-bottom: 0.45rem;
     border-top: 0;
     border-bottom: 1px solid var(--line);
   }
   .pathbar__i > a,
   .pathbar__i > span,
   .pathbar__gr {
-    min-height: 1.75rem;
-    font-size: 0.76rem;
+    min-height: 1.55rem;
+    font-size: 0.74rem;
   }
   .branch-hero {
-    gap: 1.35rem;
-    margin-bottom: 0.7rem;
+    grid-template-columns: minmax(0, 6.2fr) minmax(0, 5.8fr);
+    gap: 1.2rem;
+    margin-bottom: 0.48rem;
     align-items: stretch;
   }
   .branch-hero .section__head {
     margin-bottom: 0;
+    justify-content: space-between;
   }
   .branch-hero .section__head .h1 {
-    font-size: clamp(1.4rem, 1.02rem + 1.08vw, 1.86rem);
-    line-height: 1.15;
+    font-size: clamp(1.3rem, 0.95rem + 0.95vw, 1.68rem);
+    line-height: 1.12;
   }
   .branch-hero .section__head .lead {
-    font-size: 0.85rem;
-    line-height: 1.52;
-    margin-top: 0.45rem;
+    font-size: 0.81rem;
+    line-height: 1.44;
+    margin-top: 0.34rem;
   }
   .branch-hero .btn-row {
-    margin-top: 0.65rem !important;
-    gap: 0.55rem;
+    margin-top: 0.46rem !important;
+    gap: 0.5rem;
   }
   .branch-hero .btn-row .btn {
-    min-height: 2.2rem;
-    padding: 0.32rem 0.92rem;
-    font-size: 0.8rem;
+    min-height: 2.05rem;
+    padding: 0.26rem 0.85rem;
+    font-size: 0.78rem;
   }
   .branch-visual {
-    min-height: 11.8rem;
-    max-height: 14.2rem;
-    padding: 0.8rem;
+    align-self: stretch;
+    height: 100%;
+    min-height: clamp(11.8rem, 22svh, 14.8rem);
+    max-height: none;
+    padding: 0.7rem;
+  }
+  .branch-visual img {
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
   }
   .branch-visual__hud {
-    padding: 0.6rem 0.85rem;
-    gap: 0.22rem;
+    padding: 0.45rem 0.72rem;
+    gap: 0.14rem;
+    max-width: 92%;
+    align-self: flex-start;
   }
   .branch-visual__hud > span:first-child {
-    font-size: 0.88rem;
-    line-height: 1.3;
+    font-size: 0.8rem;
+    line-height: 1.24;
   }
   .branch-visual__stat {
-    font-size: 1.28rem;
-    line-height: 1.1;
+    font-size: 1.14rem;
+    line-height: 1.08;
   }
   .branch-visual__hud > span:last-child,
   .branch-visual__note {
-    font-size: 0.72rem;
-    line-height: 1.35;
+    font-size: 0.68rem;
+    line-height: 1.28;
   }
   .answer {
-    gap: 0.55rem;
-    margin-top: 0.55rem !important;
+    gap: 0.38rem;
+    margin-top: 0.38rem !important;
   }
   .answer__p,
   .answer__lead {
-    font-size: 0.84rem;
-    line-height: 1.5;
+    font-size: 0.8rem;
+    line-height: 1.42;
   }
   .answer__facts {
-    gap: 0.6rem;
+    gap: 0.45rem;
   }
   .answer__facts > li {
-    padding: 0.7rem 0.9rem;
-    gap: 0.28rem;
-    font-size: 0.78rem;
-    line-height: 1.45;
+    padding: 0.48rem 0.76rem;
+    gap: 0.16rem;
+    font-size: 0.74rem;
+    line-height: 1.36;
   }
   .answer__facts > li > b {
-    font-size: 0.86rem;
-    line-height: 1.25;
+    font-size: 0.81rem;
+    line-height: 1.2;
   }
   .bignums {
-    gap: 0.65rem;
-    margin-top: 0.55rem !important;
+    gap: 0.48rem;
+    margin-top: 0.38rem !important;
   }
   .bignum {
-    padding: 0.78rem 0.95rem;
-    gap: 0.34rem;
+    padding: 0.52rem 0.8rem;
+    gap: 0.2rem;
   }
   .bignum__n::before,
   .bignum__val::before {
-    margin-bottom: 0.18rem;
-    font-size: 0.72rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.68rem;
   }
   .bignum__n,
   .bignum__val {
-    font-size: clamp(1.2rem, 0.96rem + 0.75vw, 1.5rem);
-    line-height: 1.1;
+    font-size: clamp(1.08rem, 0.88rem + 0.62vw, 1.32rem);
+    line-height: 1.08;
   }
   .bignum__d,
   .bignum__lbl {
-    font-size: 0.79rem;
-    line-height: 1.46;
+    font-size: 0.74rem;
+    line-height: 1.36;
   }
   .bignum .src,
   .answer .src {
-    font-size: 0.69rem;
-    line-height: 1.35;
+    font-size: 0.66rem;
+    line-height: 1.28;
     margin-top: auto;
-    padding-top: 0.32rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 0.22rem;
+    border-top: 1px solid var(--line);
   }
 
-  /* ── 01 (главная). #where: 7 стадий (1.1–1.7) в 3 ряда в один экран ──── */
-  #where .bento { gap: 0.5rem; }
-  #where .state { padding: 0.65rem 0.95rem; gap: 0.24rem; }
-  #where .state .tile__meta { font-size: 0.7rem; }
-  #where .state .tile__meta b { font-size: 0.98rem; }
+  /* ── 01 (главная). #where: 7 стадий (1.1–1.7) в 3 ряда строго в 100svh ──── */
+  #where .section__head--split {
+    grid-template-columns: minmax(0, 4.5fr) minmax(0, 7.5fr);
+    gap: 1.25rem;
+    align-items: end;
+    margin-bottom: 0.36rem;
+  }
+  #where .section__head--split .kicker { margin-bottom: 0.14rem; }
+  #where .section__head--split .h2 { font-size: clamp(1.28rem, 0.92rem + 0.9vw, 1.62rem); line-height: 1.1; margin: 0; }
+  #where .section__head--split .lead { font-size: 0.78rem; line-height: 1.38; max-width: none; margin: 0; }
+  #where .bento { gap: 0.36rem; }
+  #where .state { padding: 0.4rem 0.76rem; gap: 0.11rem; }
+  #where .state .tile__plate {
+    margin: 0 0 0.1rem;
+    width: 100%;
+    height: clamp(4.2rem, 8.6svh, 5.4rem);
+    aspect-ratio: auto;
+    border-radius: 9px;
+  }
+  #where .state .tile__plate-tag {
+    top: 0.3rem; right: 0.38rem; left: auto; bottom: auto;
+    padding: 0.12rem 0.4rem;
+    font-size: 0.56rem;
+  }
+  #where .state .tile__meta { font-size: 0.66rem; }
+  #where .state .tile__meta b { font-size: 0.86rem; }
   #where .state__name,
-  #where .tile--hero .state__name { font-size: 1rem; line-height: 1.18; max-width: none; }
+  #where .tile--hero .state__name { font-size: 0.88rem; line-height: 1.14; max-width: none; }
   #where .state__recog,
-  #where .tile--hero .state__recog { font-size: 0.76rem; line-height: 1.36; max-width: none; }
+  #where .tile--hero .state__recog {
+    font-size: 0.7rem;
+    line-height: 1.24;
+    max-width: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   #where .state__fork,
   #where .tile--hero .state__fork {
-    display: block;
-    padding-top: 0.26rem;
-    font-size: 0.74rem;
-    line-height: 1.36;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-top: 0.12rem;
+    font-size: 0.68rem;
+    line-height: 1.24;
     max-width: none;
   }
   #where .state__fork b {
     display: inline;
-    margin-right: 0.35rem;
+    margin-right: 0.3rem;
+  }
+  #where .state__fork .src {
+    display: inline;
+    margin: 0 0 0 0.25rem;
+    padding: 0;
+    border: 0;
+    font-size: 0.64rem;
   }
   #where .chips { display: none; }
-  #where .tile__foot { padding-top: 0.26rem; gap: 0.4rem; flex-wrap: nowrap; }
-  #where .tile__read { font-size: 0.76rem; white-space: nowrap; }
-  #where .tile__foot .btn--sm { min-height: 1.7rem; padding: 0.2rem 0.55rem; font-size: 0.74rem; white-space: nowrap; }
-  #where .state--dated { padding: 0.52rem 0.95rem; gap: 0.25rem 0.85rem; flex-wrap: nowrap; align-items: center; }
-  #where .state--dated .dated__no { font-size: 0.98rem; }
-  #where .state--dated .dated__name { font-size: 0.92rem; white-space: nowrap; }
-  #where .state--dated .dated__note { font-size: 0.77rem; line-height: 1.34; }
-  #where .state--dated .dated__go { font-size: 0.78rem; }
+  #where .tile__foot { padding-top: 0.12rem; gap: 0.35rem; flex-wrap: nowrap; }
+  #where .tile__read { font-size: 0.71rem; white-space: nowrap; }
+  #where .tile__foot .btn--sm { min-height: 1.46rem; padding: 0.1rem 0.46rem; font-size: 0.69rem; white-space: nowrap; }
+  #where .state--dated { padding: 0.34rem 0.78rem; gap: 0.18rem 0.75rem; flex-wrap: nowrap; align-items: center; }
+  #where .state--dated .dated__no { font-size: 0.88rem; }
+  #where .state--dated .dated__name { font-size: 0.82rem; white-space: nowrap; }
+  #where .state--dated .dated__note { font-size: 0.71rem; line-height: 1.24; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #where .state--dated .dated__go { font-size: 0.72rem; white-space: nowrap; }
 
-  /* ── 02 (ветки). Развилка .fork (2.1–2.4) + сверка .dated-box (2.5) ──── */
+  /* ── 02 (ветки). Развилка .fork (2.1–2.4) без прыжков высоты + сверка .dated-box (2.5) ── */
   .fork {
     gap: 0.45rem 1rem;
     align-items: stretch;
@@ -744,65 +815,138 @@ body.is-at-footer .railnav { display: none; }
     max-width: none;
   }
   .fork__opts {
-    gap: 0.48rem;
+    display: grid;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    align-content: stretch;
+    align-self: stretch;
+    height: 100%;
+    gap: 0.45rem;
   }
   .fork__opt:has(.fork__tag) {
-    padding: 0.58rem 0.85rem 0.58rem 2.2rem;
-    gap: 0.2rem;
+    padding: 0.5rem 0.85rem 0.5rem 2.2rem;
+    gap: 0.18rem;
     min-height: 0;
+    height: 100%;
+    justify-content: center;
   }
   .fork__opt:has(.fork__tag)::before {
     left: 0.78rem;
-    top: 0.72rem;
+    top: 50%;
+    transform: translateY(-50%);
     width: 0.76rem;
     height: 0.76rem;
   }
   .fork__tag {
-    font-size: 0.88rem;
-    line-height: 1.26;
+    font-size: 0.86rem;
+    line-height: 1.24;
   }
   .fork__sub {
-    font-size: 0.76rem;
-    line-height: 1.42;
+    font-size: 0.75rem;
+    line-height: 1.38;
   }
-  .fork__out {
-    padding: 0.95rem 1.15rem;
-    gap: 0.44rem;
+  /* Все 4 исхода лежат в одной ячейке CSS Grid (grid-area: 1 / 1), поэтому
+     высота правого столбца зафиксирована по самому высокому варианту и не
+     прыгает ни на 1 пиксель при переключении пунктов 2.1–2.4 */
+  .fork__outs {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    align-self: stretch;
+    height: 100%;
+  }
+  .fork:has(.fork__r:checked) .fork__out {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    height: 100%;
+    align-self: stretch;
+    padding: 0.92rem 1.15rem;
+    grid-template-columns: minmax(0, 1.24fr) minmax(235px, 0.96fr);
+    grid-template-rows: auto auto 1fr auto;
+    column-gap: 1.15rem;
+    row-gap: 0.32rem;
+    align-items: start;
+    border-top: 2px solid var(--gold);
+    border-color: var(--gold-line);
+    background: var(--tile-bg);
+    box-shadow: var(--tile-shadow);
+    transition: opacity 180ms var(--ease);
+  }
+  .fork:has(.fork__r:checked) .fork__out:has(> p:not(.tile__meta) + p:not(.tile__meta)) {
+    grid-template-rows: auto auto auto 1fr auto;
+  }
+  .fork__r:nth-of-type(1):checked ~ .fork__outs .fork__out:nth-child(1),
+  .fork__r:nth-of-type(2):checked ~ .fork__outs .fork__out:nth-child(2),
+  .fork__r:nth-of-type(3):checked ~ .fork__outs .fork__out:nth-child(3),
+  .fork__r:nth-of-type(4):checked ~ .fork__outs .fork__out:nth-child(4),
+  .fork__r:nth-of-type(5):checked ~ .fork__outs .fork__out:nth-child(5) {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+  .fork__out > :not(.tile__plate) {
+    grid-column: 1;
+  }
+  .fork__out > .tile__plate {
+    grid-column: 2;
+    grid-row: 1 / 5;
+    align-self: stretch;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 11.8rem;
+    max-height: none;
+    aspect-ratio: auto;
+    border-radius: 12px;
+  }
+  .fork__out:has(> p:not(.tile__meta) + p:not(.tile__meta)) > .tile__plate {
+    grid-row: 1 / 6;
+  }
+  .fork__out .tile__plate-tag {
+    top: 0.45rem; right: 0.52rem; left: auto; bottom: auto;
+    padding: 0.16rem 0.48rem;
+    font-size: 0.6rem;
   }
   .fork__out .tile__meta {
     font-size: 0.72rem;
     margin: 0;
   }
   .fork__out .h3 {
-    font-size: 1.04rem;
-    line-height: 1.26;
+    font-size: 1.02rem;
+    line-height: 1.24;
     margin: 0;
   }
   .fork__out p:not(.tile__meta) {
-    font-size: 0.82rem;
-    line-height: 1.52;
+    font-size: 0.8rem;
+    line-height: 1.46;
     margin: 0;
   }
   .fork__out .src {
     display: block;
-    font-size: 0.7rem;
-    margin-top: 0.35rem;
-    padding-top: 0.35rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    line-height: 1.36;
+    font-size: 0.69rem;
+    margin-top: 0.28rem;
+    padding-top: 0.28rem;
+    border-top: 1px solid var(--line);
+    line-height: 1.34;
   }
   .fork__out .btn-row {
+    align-self: end;
     margin-top: 0.3rem;
   }
   .fork__out .btn--sm {
-    min-height: 2rem;
-    padding: 0.28rem 0.8rem;
-    font-size: 0.78rem;
+    min-height: 1.96rem;
+    padding: 0.26rem 0.82rem;
+    font-size: 0.77rem;
   }
   .dated-box {
-    margin-top: 0.48rem;
-    padding: 0.55rem 0.95rem;
-    gap: 0.24rem;
+    margin-top: 0.42rem;
+    padding: 0.48rem 0.9rem;
+    gap: 0.2rem;
   }
   .dated-box__head {
     display: flex;
@@ -812,25 +956,9 @@ body.is-at-footer .railnav { display: none; }
     gap: 0.35rem 1rem;
   }
   .dated-box__head .h3 {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     line-height: 1.22;
     margin: 0;
-  }
-  #osnovanie .section__head {
-    margin-bottom: 0.35rem;
-  }
-  #osnovanie .fork {
-    gap: 0.35rem;
-  }
-  #osnovanie .fork__opt {
-    padding: 0.45rem 0.85rem 0.45rem 2.3rem;
-  }
-  #osnovanie .fork__opt:has(.fork__tag)::before {
-    top: 0.56rem;
-  }
-  #osnovanie .fork__out {
-    padding: 0.78rem 1.15rem;
-    gap: 0.32rem;
   }
   .dated-box__t,
   .dated-box__title,
@@ -911,10 +1039,10 @@ body.is-at-footer .railnav { display: none; }
     min-height: 0;
   }
 
-  /* ── 04 (ветки). #lovushki: 5 ловушек (4.1–4.5) + 5 шагов (4.6–4.10) ─── */
+  /* ── 04 (ветки). #lovushki: 5 ловушек (4.1–4.5) + 5 шагов Bento (4.6–4.10) без обрезки ── */
   #lovushki .traps {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0.52rem;
+    gap: 0.45rem;
   }
   #lovushki .traps > .trap:nth-child(-n+3) {
     grid-column: span 2;
@@ -923,32 +1051,32 @@ body.is-at-footer .railnav { display: none; }
     grid-column: span 3;
   }
   #lovushki .trap {
-    padding: 0.68rem 0.88rem;
-    gap: 0.28rem;
+    padding: 0.56rem 0.82rem;
+    gap: 0.2rem;
   }
   #lovushki .trap dt,
   #lovushki .trap__title {
-    font-size: 0.86rem;
-    line-height: 1.24;
-    gap: 0.15rem;
+    font-size: 0.84rem;
+    line-height: 1.22;
+    gap: 0.12rem;
   }
   #lovushki .trap__no,
   #lovushki .trap__tag {
-    font-size: 0.66rem;
+    font-size: 0.65rem;
   }
   #lovushki .trap dd {
-    font-size: 0.75rem;
-    line-height: 1.42;
+    font-size: 0.74rem;
+    line-height: 1.36;
   }
   #lovushki .trap dd + dd {
-    padding-top: 0.22rem;
+    padding-top: 0.18rem;
   }
   #lovushki .trap .src {
-    font-size: 0.66rem;
+    font-size: 0.64rem;
     margin-top: auto;
-    padding-top: 0.22rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-    line-height: 1.28;
+    padding-top: 0.18rem;
+    border-top: 1px solid var(--line);
+    line-height: 1.26;
   }
   #lovushki .traps + .section__head,
   #lovushki .traps + div > .h3 {
@@ -956,38 +1084,50 @@ body.is-at-footer .railnav { display: none; }
   }
   #lovushki .traps + div,
   #lovushki .tl {
-    margin-top: 0.52rem !important;
-    gap: 0.52rem;
+    margin-top: 0.44rem !important;
+    gap: 0.45rem;
+    align-items: stretch;
   }
-  #lovushki .tl__step {
-    padding-top: 0.95rem;
-    gap: 0.2rem;
+  #lovushki .tl__step::before,
+  #lovushki .tl__dot {
+    display: none;
   }
+  #lovushki .tl__step,
   #lovushki .tl__s {
-    padding: 0.6rem 0.8rem;
-    gap: 0.22rem;
+    padding: 0.54rem 0.74rem;
+    gap: 0.16rem;
+    border: 1px solid var(--tile-line);
+    border-radius: var(--r-card);
+    background: var(--tile-bg);
+    box-shadow: var(--tile-shadow);
+    display: flex;
+    flex-direction: column;
   }
   #lovushki .tl__title,
   #lovushki .tl__t {
-    font-size: 0.82rem;
-    line-height: 1.22;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0;
   }
   #lovushki .tl__who,
   #lovushki p.tl__d,
   #lovushki p.tl__b {
-    font-size: 0.73rem;
-    line-height: 1.38;
-    gap: 0.14rem;
+    font-size: 0.72rem;
+    line-height: 1.34;
+    gap: 0.12rem;
   }
-  #lovushki p.tl__b {
-    margin-top: 0.2rem;
-    padding-top: 0.2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  #lovushki p.tl__b,
+  #lovushki .tl__days {
+    margin-top: auto;
+    padding-top: 0.18rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.69rem;
+    line-height: 1.3;
   }
 
-  /* ── 02 / 05. #calc и #skolko: модули слева + итог справа в один экран ── */
+  /* ── 02 / 05. #calc и #skolko: модули слева + итог справа без прыжков высоты ── */
   #calc .calc, #skolko .calc { gap: 0.65rem; align-items: stretch; }
-  #calc .calc__mods, #skolko .calc__mods { gap: 0.5rem; align-content: stretch; }
+  #calc .calc__mods, #skolko .calc__mods { gap: 0.5rem; align-content: stretch; height: 100%; }
   #calc .mod, #skolko .mod { padding: 0.68rem 0.95rem; gap: 0.24rem; }
   #calc .mod__no, #skolko .mod__no { font-size: 0.7rem; margin-bottom: 0.12rem; }
   #calc .mod__name, #skolko .mod__name { font-size: 0.9rem; line-height: 1.22; }
@@ -996,18 +1136,47 @@ body.is-at-footer .railnav { display: none; }
   #calc .mod__more, #skolko .mod__more { padding-top: 0.22rem; font-size: 0.75rem; line-height: 1.4; }
   #calc .mod__more summary, #skolko .mod__more summary { min-height: 1.45rem; }
   #calc .mod-note, #skolko .mod-note { padding: 0.68rem 0.95rem; gap: 0.22rem; justify-content: center; }
-  #calc .total, #skolko .total { position: relative; top: auto; padding: 0.85rem 1.1rem; gap: 0.35rem; justify-content: space-between; }
+  #calc .total, #skolko .total {
+    position: relative; top: auto;
+    height: 100%; align-self: stretch;
+    padding: 0.85rem 1.1rem; gap: 0.3rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
   #calc .total__title, #skolko .total__title { font-size: 0.98rem; }
-  #calc .total__rows, #skolko .total__rows { padding: 0.2rem 0; gap: 0; }
-  #calc .total__row, #skolko .total__row { padding: 0.32rem 0; }
-  #calc .total__row dt, #skolko .total__row dt { font-size: 0.82rem; }
-  #calc .total__row dd, #skolko .total__row dd { font-size: 1.05rem; }
+  #calc .total__list, #skolko .total__list {
+    display: flex; flex-direction: column; gap: 0.18rem;
+    list-style: none; margin: 0; padding: 0.28rem 0;
+    border-top: 1px solid var(--line);
+    height: 6.9rem;
+    min-height: 6.9rem;
+    max-height: 6.9rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .total__item {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem;
+    font-size: 0.75rem; line-height: 1.26; color: var(--text-2);
+  }
+  .total__item b {
+    font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
+    color: var(--gold-text); white-space: nowrap;
+  }
+  .total__item--empty { color: var(--text-3); font-style: italic; }
+  #calc .total__rows, #skolko .total__rows { padding: 0.15rem 0; gap: 0; }
+  #calc .total__row, #skolko .total__row { padding: 0.26rem 0; }
+  #calc .total__row dt, #skolko .total__row dt { font-size: 0.8rem; }
+  #calc .total__row dd, #skolko .total__row dd { font-size: 1rem; }
+  .total__row--start {
+    margin-top: 0.15rem; padding-top: 0.38rem !important;
+    border-top: 1px solid var(--gold-line) !important;
+  }
+  .total__row--start dt { font-weight: 600; color: var(--text-strong) !important; }
+  .total__row--start dd { font-size: 1.16rem !important; font-weight: 700; color: var(--gold-text) !important; }
   #calc .total__asof, #skolko .total__asof { font-size: 1.15rem; }
   #calc .total__asof small, #skolko .total__asof small { margin-top: 0.15rem; font-size: 0.66rem; }
-  #calc .total__list, #skolko .total__list { min-height: 1.45rem; }
-  #calc .total__meta, #skolko .total__meta { font-size: 0.74rem; line-height: 1.38; gap: 0.2rem; }
-  #calc .total__cta, #skolko .total__cta { gap: 0.38rem; }
-  #calc .total__cta .btn, #skolko .total__cta .btn { min-height: 2.15rem; padding: 0.32rem 0.8rem; font-size: 0.8rem; }
+  #calc .total__meta, #skolko .total__meta { font-size: 0.73rem; line-height: 1.35; gap: 0.18rem; }
+  #calc .total__cta, #skolko .total__cta { gap: 0.36rem; margin-top: auto; }
+  #calc .total__cta .btn, #skolko .total__cta .btn { min-height: 2.1rem; padding: 0.3rem 0.8rem; font-size: 0.8rem; }
   #skolko .section__foot { margin-top: 0.45rem; }
   #skolko .section__foot .note { padding: 0.45rem 0.8rem; font-size: 0.76rem; line-height: 1.4; margin: 0; }
 
@@ -1033,48 +1202,81 @@ body.is-at-footer .railnav { display: none; }
   #diy .section__foot .small, #granicy .section__foot .small { margin: 0; font-size: 0.78rem; line-height: 1.4; }
   #diy .section__foot .btn, #granicy .section__foot .btn { min-height: 2.2rem; padding: 0.32rem 0.95rem; font-size: 0.8rem; white-space: nowrap; }
 
-  /* ── 05. #services: пакеты 5.1–5.6 + полоса 5.7 в один экран ───────── */
-  #services .bento { gap: 0.55rem; }
-  #services .svc { padding: 0.68rem 0.92rem; gap: 0.24rem; }
+  /* ── 05. #services: пакеты 5.1–5.6 + полоса 5.7 строго в 100svh ───────── */
+  #services .bento { gap: 0.38rem; }
+  #services .svc { padding: 0.45rem 0.78rem; gap: 0.14rem; }
   #services .tile__plate {
-    margin: 0 0 0.22rem;
+    margin: 0 0 0.12rem;
     width: 100%;
-    height: 7.8rem;
+    height: clamp(4.4rem, 8.8svh, 5.5rem);
     aspect-ratio: auto;
-    border-radius: 11px;
+    border-radius: 9px;
   }
   #services .tile__plate-tag {
-    top: 0.45rem; right: 0.5rem; left: auto; bottom: auto;
-    padding: 0.16rem 0.48rem;
-    font-size: 0.6rem;
+    top: 0.32rem; right: 0.4rem; left: auto; bottom: auto;
+    padding: 0.12rem 0.4rem;
+    font-size: 0.56rem;
   }
   #services .svc__head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
-  #services .svc .tile__meta { font-size: 0.72rem; margin: 0; }
-  #services .svc .tile__meta b { font-size: 0.98rem; }
-  #services .svc__name { font-size: 0.96rem; line-height: 1.2; margin: 0; }
-  #services .svc__for { font-size: 0.76rem; line-height: 1.38; margin: 0; }
-  #services .svc__price { font-size: 0.88rem; margin: 0; font-weight: 600; color: var(--gold-text); }
-  #services .svc .tile__foot { padding-top: 0.24rem; margin-top: auto; gap: 0.4rem; flex-wrap: nowrap; }
-  #services .svc .tile__read { font-size: 0.75rem; white-space: nowrap; }
-  #services .svc .btn--sm { min-height: 1.68rem; padding: 0.18rem 0.58rem; font-size: 0.73rem; white-space: nowrap; }
+  #services .svc .tile__meta { font-size: 0.68rem; margin: 0; }
+  #services .svc .tile__meta b { font-size: 0.88rem; }
+  #services .svc__name { font-size: 0.86rem; line-height: 1.15; margin: 0; }
+  #services .svc__for { font-size: 0.71rem; line-height: 1.28; margin: 0; }
+  #services .svc__price { font-size: 0.8rem; margin: 0; font-weight: 600; color: var(--gold-text); }
+  #services .svc .tile__foot { padding-top: 0.14rem; margin-top: auto; gap: 0.32rem; flex-wrap: nowrap; }
+  #services .svc .tile__read { font-size: 0.71rem; white-space: nowrap; }
+  #services .svc .btn--sm { min-height: 1.5rem; padding: 0.12rem 0.48rem; font-size: 0.69rem; white-space: nowrap; }
   #services .notdo {
-    margin-top: 0.5rem; padding: 0.5rem 0.95rem;
-    display: flex; flex-direction: row; flex-wrap: nowrap; align-items: baseline; gap: 0.25rem 0.85rem;
+    margin-top: 0.35rem; padding: 0.36rem 0.8rem;
+    display: flex; flex-direction: row; flex-wrap: nowrap; align-items: baseline; gap: 0.22rem 0.75rem;
   }
-  #services .notdo .tile__meta { font-size: 0.7rem; flex: 0 0 auto; }
-  #services .notdo .tile__meta b { font-size: 0.98rem; }
-  #services .notdo .small { margin: 0; font-size: 0.77rem; line-height: 1.36; flex: 1 1 0%; min-width: 0; color: var(--text-2); }
+  #services .notdo .tile__meta { font-size: 0.68rem; flex: 0 0 auto; }
+  #services .notdo .tile__meta b { font-size: 0.88rem; }
+  #services .notdo .small { margin: 0; font-size: 0.73rem; line-height: 1.28; flex: 1 1 0%; min-width: 0; color: var(--text-2); }
   #services .notdo .lnk { min-height: 0; }
 
-  /* ── 06. #faq и #voprosy: ответы 6.1–6.7 в 2 колонки в один экран ───── */
-  #faq .faq summary, #voprosy .faq summary { padding: 0.68rem 0; min-height: 2.8rem; font-size: 0.92rem; line-height: 1.32; }
-  #faq .faq__a, #voprosy .faq__a, #voprosy .faq details > div, #voprosy .faq details > p { padding-bottom: 0.65rem; font-size: 0.82rem; line-height: 1.48; }
-  #faq .section__foot, #voprosy .section__foot { margin-top: 0.65rem; }
+  /* ── 06. #faq и #voprosy: плитки Bento 6.1–6.7 в 2 колонки в один экран ── */
+  #faq .faq, #voprosy .faq {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 0.8rem;
+    align-items: stretch;
+  }
+  #faq .faq details, #voprosy .faq details {
+    padding: 0.72rem 1rem;
+    justify-content: center;
+  }
+  #faq .faq details[open], #voprosy .faq details[open] {
+    justify-content: flex-start;
+  }
+  #faq .faq summary, #voprosy .faq summary {
+    padding: 0;
+    min-height: 2rem;
+    font-size: 0.88rem;
+    line-height: 1.26;
+  }
+  #faq .faq__a, #voprosy .faq__a, #voprosy .faq details > div, #voprosy .faq details > p {
+    padding: 0.48rem 0 0;
+    margin-top: 0.45rem;
+    font-size: 0.79rem;
+    line-height: 1.44;
+  }
+  #faq .section__foot, #voprosy .section__foot {
+    margin-top: 0.52rem;
+    padding: 0.52rem 0.9rem;
+    border-radius: var(--r-card);
+    border: 1px solid var(--line);
+    background: var(--wash-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  #faq .section__foot .small, #voprosy .section__foot .small { margin: 0; }
 
   /* ── 07. #contact: 7.1 (форма) + 7.2 (шаги) в один экран ────────────── */
   #contact .contact { gap: 0.75rem; align-items: stretch; }
@@ -1088,7 +1290,9 @@ body.is-at-footer .railnav { display: none; }
   #contact .form__row { gap: 0.55rem; }
   #contact .field { gap: 0.18rem; }
   #contact .field__label { font-size: 0.75rem; }
-  #contact .field__input, #contact select { min-height: 2.15rem; padding: 0.28rem 0.68rem; font-size: 0.82rem; }
+  #contact .field__input, #contact select, #contact .csel__btn { min-height: 2.15rem; padding: 0.28rem 2.15rem 0.28rem 0.68rem; font-size: 0.82rem; }
+  #contact .csel__list { max-height: 14rem; padding: 0.3rem; }
+  #contact .csel__opt { padding: 0.36rem 0.62rem; font-size: 0.78rem; line-height: 1.28; }
   #contact textarea { min-height: 2.65rem; padding: 0.32rem 0.68rem; font-size: 0.82rem; }
   #contact .check { font-size: 0.77rem; line-height: 1.38; min-height: 1.75rem; }
   #contact .form__foot { padding-top: 0.18rem; gap: 0.4rem 0.75rem; }
@@ -1097,28 +1301,46 @@ body.is-at-footer .railnav { display: none; }
   #contact .next { gap: 0.55rem; }
   #contact .next li { font-size: 0.82rem; line-height: 1.46; gap: 0.6rem; }
 
-  /* ── 08 (ветки). #sosednie и #dalee: карточки 8.1–8.3 с фото + подпись ── */
-  #sosednie .bento, #dalee .bento { gap: 0.75rem; }
-  #sosednie .neigh, #dalee .neigh { padding: 0.85rem 1.05rem; gap: 0.38rem; }
+  /* ── 08 (ветки). #sosednie и #dalee: карточки 8.1–8.3 с полным кадром 16:9 без обрезки ── */
+  #sosednie .bento, #dalee .bento { gap: 0.85rem; align-items: stretch; }
+  #sosednie .neigh, #dalee .neigh {
+    padding: 0.9rem 1.08rem;
+    gap: 0.42rem;
+    display: flex;
+    flex-direction: column;
+  }
   #sosednie .neigh .tile__plate, #dalee .neigh .tile__plate {
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.24rem;
     width: 100%;
-    height: 8.2rem;
-    aspect-ratio: auto;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: clamp(10.8rem, 20.5svh, 13.2rem);
     border-radius: 11px;
   }
-  #sosednie .neigh__t, #dalee .neigh__t { font-size: 1.02rem; line-height: 1.26; }
-  #sosednie .neigh__d, #dalee .neigh__d { font-size: 0.82rem; line-height: 1.48; }
-  #sosednie .neigh__go, #dalee .neigh__go { font-size: 0.82rem; padding-top: 0.15rem; }
-  #sosednie .section__foot, #dalee .section__foot {
-    margin-top: 0.75rem;
-    padding-top: 0.65rem;
+  #sosednie .neigh .tile__plate img, #dalee .neigh .tile__plate img {
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
+  }
+  #sosednie .neigh__t, #dalee .neigh__t { font-size: 1.02rem; line-height: 1.24; }
+  #sosednie .neigh__d, #dalee .neigh__d { font-size: 0.82rem; line-height: 1.46; }
+  #sosednie .neigh__go, #dalee .neigh__go {
+    font-size: 0.81rem;
+    margin-top: auto;
+    padding-top: 0.45rem;
     border-top: 1px solid var(--line);
+  }
+  #sosednie .section__foot, #dalee .section__foot {
+    margin-top: 0.72rem;
+    padding: 0.62rem 0.98rem;
+    border-radius: var(--r-card);
+    border: 1px solid var(--line);
+    background: var(--wash-1);
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
-    gap: 0.45rem 1.5rem;
+    gap: 0.4rem 1.4rem;
   }
   #sosednie .section__foot .small, #dalee .section__foot .small {
     font-size: 0.75rem;
@@ -1127,39 +1349,69 @@ body.is-at-footer .railnav { display: none; }
     margin: 0;
   }
 
-  /* ── noyabr.html: секции 01–06 в один экран (100svh - header) ───────── */
-  body.nov .bento { gap: 0.65rem; }
+  /* ── noyabr.html: секции 01–06 строго в один экран (100svh - header) ───────── */
+  body.nov #nov .tower {
+    --card-h: clamp(14.5rem, 28svh, 17.5rem);
+    margin-top: 0;
+    height: calc(var(--card-h) + 4.5rem);
+  }
+  body.nov #nov .tcard {
+    padding: 1rem 1.2rem;
+    gap: 0.36rem;
+  }
+  body.nov main > .section:not(#nov) .section__head {
+    margin-bottom: 0.38rem;
+  }
+  body.nov main > .section:not(#nov) .section__head .h1,
+  body.nov main > .section:not(#nov) .section__head .h2 {
+    max-width: none;
+    font-size: clamp(1.3rem, 0.95rem + 0.95vw, 1.68rem);
+    line-height: 1.12;
+  }
+  body.nov .bento { gap: 0.5rem; }
   body.nov #razbor .tile,
   body.nov #porogi .tile,
   body.nov #vidno .tile,
   body.nov #legche .tile {
-    padding: 0.85rem 1.1rem;
-    gap: 0.35rem;
+    padding: 0.62rem 0.95rem;
+    gap: 0.2rem;
   }
   body.nov #porogi .tile .tile__plate {
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.16rem;
     width: 100%;
-    height: 7.4rem;
-    aspect-ratio: auto;
-    border-radius: 11px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: clamp(8.2rem, 15.5svh, 10.2rem);
+    border-radius: 10px;
   }
-  body.nov .tile .tile__meta { font-size: 0.72rem; }
-  body.nov .tile .tile__meta b { font-size: 0.98rem; }
-  body.nov .tile .h3 { font-size: 1.02rem; line-height: 1.25; margin: 0; }
-  body.nov .tile__sub { font-size: 0.82rem; line-height: 1.44; margin: 0; }
-  body.nov .tile > p:not(.tile__meta):not(.tile__sub) { font-size: 0.81rem; line-height: 1.48; margin: 0; }
-  body.nov .tile .src {
-    display: block;
-    font-size: 0.69rem;
-    margin-top: auto;
-    padding-top: 0.3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    line-height: 1.34;
+  body.nov #porogi .tile .tile__plate img {
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
   }
-  body.nov .cmp { margin-top: 0.28rem; font-size: 0.78rem; line-height: 1.42; }
-  body.nov .cmp th, body.nov .cmp td { padding: 0.34rem 0.58rem; }
-  body.nov .gains { margin-top: 0.28rem; gap: 0.38rem 1rem; }
-  body.nov .gains li { font-size: 0.79rem; line-height: 1.44; }
+  body.nov .tile .tile__meta { font-size: 0.68rem; }
+  body.nov .tile .tile__meta b { font-size: 0.9rem; }
+  body.nov .tile .h3 { font-size: 0.95rem; line-height: 1.2; margin: 0; }
+  body.nov .tile__sub { font-size: 0.78rem; line-height: 1.34; margin: 0; }
+  body.nov .tile > p:not(.tile__meta):not(.tile__sub) { font-size: 0.77rem; line-height: 1.38; margin: 0; }
+  body.nov .tile .src,
+  body.nov .cmp .src {
+    display: inline;
+    border: 0;
+    padding: 0;
+    margin: 0 0 0 0.3rem;
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+  body.nov .cmp { margin-top: 0.18rem; font-size: 0.76rem; line-height: 1.32; }
+  body.nov .cmp th, body.nov .cmp td { padding: 0.24rem 0.52rem; }
+  body.nov .gains { margin-top: 0.18rem; gap: 0.26rem 0.85rem; }
+  body.nov .gains li { font-size: 0.76rem; line-height: 1.36; }
 }
+
+/* ── Переключение знака в шапке первого экрана: пока шапка не прокручена (.not(.is-past)), фон под ней тёмный ── */
+.site-head:not(.is-past) .site-head__brand picture[data-logo="gold"] { display: block; }
+.site-head:not(.is-past) .site-head__brand picture[data-logo="ink"]  { display: none; }
+
 
 

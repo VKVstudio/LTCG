@@ -1,6 +1,6 @@
 # robots.txt — LTCG (Legal and Tax Consulting Group LLC)
 # https://ltcg.am/
-# Обновлено 18.10.2026
+# Обновлено 19.10.2026
 
 # ── Общее правило ──
 User-agent: *
@@ -104,5 +104,9 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
-# ── Карта сайта ──
+# ── Карта сайта и каталоги для ИИ-агентов (GEO / ARD / WebMCP) ──
 Sitemap: https://ltcg.am/sitemap.xml
+LLMs-Txt: https://ltcg.am/llms.txt
+LLMs-Full-Txt: https://ltcg.am/llms-full.txt
+AI-Catalog: https://ltcg.am/.well-known/ai-catalog.json
+Agent-Skills: https://ltcg.am/agent-skills/ltcg-legal-tax/SKILL.md

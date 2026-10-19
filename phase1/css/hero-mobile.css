@@ -97,7 +97,8 @@ body .hs__hint { display: none; }
    z-index 4, то есть ПОВЕРХ заставки (z-index 3) — линия по гребню и знак
    на планшете шли через лишнюю тёмную плёнку. Свой скрим у заставки есть,
    этот не нужен. */
-body .hs__stage::before { display: none; }
+body .hs__stage::before,
+body .hs__poster::after { display: none; }
 
 /* Знак поверх кадра из десктопной сцены: у нас свой, крупный, в центре. */
 body .hs__screen-mark { display: none; }
@@ -429,4 +430,51 @@ html.hm-done body .hs { height: 100svh; }
   body .hs__skip { transition: none; }
 }
 
+/* ── 10. Светлая тема на мобильной панели ворот ─────────────────────────── */
+:root[data-theme="light"] body .hs__screen .tri,
+:root[data-theme="light"] body .tri--screen {
+  background:
+    linear-gradient(180deg, rgba(242, 244, 248, 0) 0%, rgba(242, 244, 248, 0.90) 12%, rgba(242, 244, 248, 0.98) 44%, rgba(242, 244, 248, 1) 100%);
 }
+:root[data-theme="light"] body .hs__screen .tri__theme-btn {
+  color: rgba(12, 27, 58, 0.68);
+}
+:root[data-theme="light"] body .hs__screen .tri__theme-btn[aria-pressed="true"] {
+  color: #8A6414;
+}
+:root[data-theme="light"] body .hs__screen .lang-hint .lang-hint__col[lang],
+:root[data-theme="light"] body .hs__screen .lang-hint.is-in .lang-hint__col[lang] {
+  color: #3D4863;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) body .hs__screen .tri,
+  :root:not([data-theme="dark"]) body .tri--screen {
+    background:
+      linear-gradient(180deg, rgba(242, 244, 248, 0) 0%, rgba(242, 244, 248, 0.90) 12%, rgba(242, 244, 248, 0.98) 44%, rgba(242, 244, 248, 1) 100%);
+  }
+  :root:not([data-theme="dark"]) body .hs__screen .tri__theme-btn {
+    color: rgba(12, 27, 58, 0.68);
+  }
+  :root:not([data-theme="dark"]) body .hs__screen .tri__theme-btn[aria-pressed="true"] {
+    color: #8A6414;
+  }
+  :root:not([data-theme="dark"]) body .hs__screen .lang-hint .lang-hint__col[lang],
+  :root:not([data-theme="dark"]) body .hs__screen .lang-hint.is-in .lang-hint__col[lang] {
+    color: #3D4863;
+  }
+}
+@media (min-width: 600px) {
+  :root[data-theme="light"] body .hs__screen {
+    background: linear-gradient(180deg, rgba(242, 244, 248, 0) 0%, rgba(242, 244, 248, 0.90) 12%, rgba(242, 244, 248, 0.98) 44%, rgba(242, 244, 248, 1) 100%);
+  }
+  :root[data-theme="light"] body .hs__screen .tri { background: none; }
+}
+@media (min-width: 600px) and (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) body .hs__screen {
+    background: linear-gradient(180deg, rgba(242, 244, 248, 0) 0%, rgba(242, 244, 248, 0.90) 12%, rgba(242, 244, 248, 0.98) 44%, rgba(242, 244, 248, 1) 100%);
+  }
+  :root:not([data-theme="dark"]) body .hs__screen .tri { background: none; }
+}
+
+}
+

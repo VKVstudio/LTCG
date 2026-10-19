@@ -78,8 +78,18 @@
   const debug = /[?&]debug=1/.test(location.search);
   let hud = null;
   if (debug) { hud = document.createElement('div'); hud.className = 'hs__hud'; hud.setAttribute('aria-hidden', 'true'); stage.appendChild(hud); }
-  // цвет финала — кожа: navy у RU, бумага у HY/EN
-  const SKIN_BG = (getComputedStyle(html).getPropertyValue('--bg') || '').trim() || '#0C1B3A';
+  // цвет финала — кожа: обновляется реактивно при смене темы
+  let SKIN_BG = (getComputedStyle(html).getPropertyValue('--bg') || '').trim() || '#0C1B3A';
+  const refreshSkinBg = () => {
+    SKIN_BG = (getComputedStyle(html).getPropertyValue('--bg') || '').trim() || '#0C1B3A';
+  };
+  if (typeof MutationObserver !== 'undefined') {
+    new MutationObserver(refreshSkinBg).observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+  }
+  const darkMq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  if (darkMq && typeof darkMq.addEventListener === 'function') {
+    darkMq.addEventListener('change', refreshSkinBg);
+  }
 
   // ── Состояние, которое анимирует GSAP ───────────────────
   const S = {
@@ -696,7 +706,7 @@
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.globalAlpha = 1;
     }
-    if (!firstFrame) { firstFrame = true; if (poster) poster.classList.add('is-hidden'); }
+    if (!firstFrame && S.p > 0.002) { firstFrame = true; if (poster) poster.classList.add('is-hidden'); }
 
     // 2+3. svg — одна матрица на оба мира
     const m = 'matrix(' + s + ',0,0,' + s + ',' + tx + ',' + ty + ')';
@@ -1455,28 +1465,39 @@
       return;
     }
 
-    idle(walkLoad);   // ролик — сразу после LCP, параллельно плитам (7 МБ, blob)
-
-    // остальные плиты — после LCP, в простое, по порядку прихода в кадр; движок их не ждёт:
-    // первый кадр уже стоит из постера. LOD: k_кропа ≤ scale — постер переиспользуется, если он не меньше нужного
-    const chain = new Promise(res => idle(res)).then(() => {
-      const wA = lodW(MAX_ZOOM);
-      const haveW = A.width || A.naturalWidth || 0;
-      const needA = haveW < wA ? loadPlate('A', wA).then(b => { plates.A = b; render(); }).catch(() => {}) : Promise.resolve();
-      return needA
-        .then(() => loadPlate('A-dusk', wA).catch(() => null))
-        .then(D => { plates.D = D; render(); return loadPlate(E.base, lodW(1.6)).catch(() => null); })
-        .then(bmp => { plates.E = bmp; if (bmp) { eAt = arrived(); kick(); } render(); })
-        .then(() => new Promise(res => idle(res)))
-        .then(() => {
-          const srcA = plates.D || plates.A;
-          return Promise.all([
-            loadBlur('A-dusk', 40, srcA).then(b => { blur.A40 = b; }),
-            loadBlur(E.base, 40, plates.E).then(b => { blur.E40 = b; }),
-          ]).then(render);
-        })
-        .catch(err => console.error('[hero-scroll] plates', err));
-    });
+    let deferredStarted = false;
+    let chainResolve = null;
+    const chain = new Promise(res => { chainResolve = res; });
+    const startDeferredAssets = () => {
+      if (deferredStarted) return;
+      deferredStarted = true;
+      ['scroll', 'wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(ev => window.removeEventListener(ev, startDeferredAssets));
+      idle(walkLoad);
+      idle(() => {
+        const wA = lodW(MAX_ZOOM);
+        const haveW = A.width || A.naturalWidth || 0;
+        const needA = haveW < wA ? loadPlate('A', wA).then(b => { plates.A = b; render(); }).catch(() => {}) : Promise.resolve();
+        needA
+          .then(() => loadPlate('A-dusk', wA).catch(() => null))
+          .then(D => { plates.D = D; render(); return loadPlate(E.base, lodW(1.6)).catch(() => null); })
+          .then(bmp => { plates.E = bmp; if (bmp) { eAt = arrived(); kick(); } render(); })
+          .then(() => new Promise(res => idle(res)))
+          .then(() => {
+            const srcA = plates.D || plates.A;
+            return Promise.all([
+              loadBlur('A-dusk', 40, srcA).then(b => { blur.A40 = b; }),
+              loadBlur(E.base, 40, plates.E).then(b => { blur.E40 = b; }),
+            ]).then(render);
+          })
+          .then(() => { if (chainResolve) chainResolve(); })
+          .catch(err => { console.error('[hero-scroll] plates', err); if (chainResolve) chainResolve(); });
+      });
+    };
+    if (/[?&]p=([\d.]+)/.test(location.search) || window.scrollY > 4) {
+      startDeferredAssets();
+    } else {
+      ['scroll', 'wheel', 'touchmove', 'keydown', 'pointerdown'].forEach(ev => window.addEventListener(ev, startDeferredAssets, { passive: true, once: true }));
+    }
 
     gsap.registerPlugin(ScrollTrigger);
     const tl = buildTimeline();

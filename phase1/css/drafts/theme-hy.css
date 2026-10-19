@@ -1,0 +1,149 @@
+/* ============================================================
+   LTCG — theme-hy.css · кожа HY «частный банк», светлая, тёплая
+   бумага и туф · антиква · тонкие золотые линии · прямые углы.
+   Подключать после theme-base.css.
+   Шрифты (Google Fonts, subset-блоки API проверены 03.09.2026):
+     Cormorant Garamond 500;600 + Italic 500 (display, кириллица есть)
+     Golos Text 400;500 (body, кириллица)
+     Noto Serif Armenian 500;600 + Noto Sans Armenian 400;500 (:lang(hy); кириллицы нет — не нужна)
+     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Golos+Text:wght@400;500&family=Noto+Serif+Armenian:wght@500;600&family=Noto+Sans+Armenian:wght@400;500&display=swap">
+   ⚠ Cormorant SC (капитель) кириллицы НЕ содержит → кикер здесь —
+     Cormorant Garamond 600 прописными с разрядкой; в армянском — Noto Sans.
+   Канон-источник: docs/style_canon_bank.md · система: docs/style_system.md
+   ============================================================ */
+
+[data-skin="hy"] {
+  color-scheme: light;
+
+  --bg: #F7F3EA;                  /* слоновая кость / бумага */
+  --bg-2: #EFE8D9;                /* туф: тёплый серо-розовый оттенок бумаги */
+  --surface: #FFFDF8;
+  --surface-2: #F1EBDD;
+  --surface-3: #E6DDCB;
+
+  --text: #1B2438;
+  --text-2: #4A5266;
+  --text-3: #5B6376;           /* 5.0:1 на бумаге — метки и подписи */
+  --text-strong: #0C1B3A;
+
+  --line: rgba(12, 27, 58, 0.12);
+  --line-strong: rgba(12, 27, 58, 0.26);
+
+  --gold: #C4922B;
+  --gold-light: #FAE0A2;
+  --gold-mid: #C4922B;
+  --gold-dark: #593E10;
+  --gold-text: #593E10;           /* 8.6:1 на бумаге */
+  --gold-line: rgba(196, 146, 43, 0.45);
+  --gold-fill: #F2C249;           /* плоское золото, без градиента */
+  --gold-fill-text: #0C1B3A;
+
+  --btn-primary-bg: #F2C249;
+  --btn-primary-text: #0C1B3A;
+  --btn-outline-line: rgba(196, 146, 43, 0.55);
+  --btn-outline-text: #0C1B3A;
+  --btn-outline-hover-bg: rgba(196, 146, 43, 0.08);
+
+  --font-display: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --font-body: 'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-mono: 'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;   /* моно в банке нет: цифры Golos tnum */
+  --fw-h1: 500;
+  --fw-h: 600;
+  --lh-h1: 1.06;
+  --ls-h1: -0.005em;
+  --ls-h: 0;
+  --fs-body: 1.0625rem;
+
+  --kicker-font: 600 0.8125rem/1.4 var(--font-display);
+  --kicker-ls: 0.16em;
+  --kicker-transform: uppercase;
+  --kicker-color: #593E10;
+
+  --r-tile: 2px;
+  --r-card: 2px;
+  --r-btn: 2px;
+  --r-field: 2px;
+  --r-chip: 0;
+
+  --tile-bg: #FFFDF8;
+  --tile-line: rgba(196, 146, 43, 0.35);
+  --tile-shadow: none;
+
+  --field-bg: #FFFFFF;
+  --field-line: rgba(12, 27, 58, 0.22);
+  --focus: #593E10;
+}
+
+/* ── фон: бумага с едва заметным бумажным зерном ─────────────── */
+[data-skin="hy"].skin-root, html[data-skin="hy"] body {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E"),
+    var(--bg);
+}
+
+/* ── типографика ─────────────────────────────────────────────── */
+[data-skin="hy"] .h1 { font-size: clamp(2.125rem, 1.35rem + 3.9vw, 4.125rem); }
+[data-skin="hy"] .h2 { font-size: clamp(1.85rem, 1.3rem + 2.4vw, 3rem); }
+[data-skin="hy"] .h3 { font-size: 1.625rem; }
+[data-skin="hy"] .state__name { font-size: 1.5rem; font-weight: 600; }
+[data-skin="hy"] .h1 em, [data-skin="hy"] .h2 em { font-style: italic; font-weight: 500; color: var(--gold-text); }
+[data-skin="hy"] .lead { line-height: 1.6; }
+[data-skin="hy"] .mono, [data-skin="hy"] .slot { font-family: var(--font-body); font-variant-numeric: tabular-nums; }
+[data-skin="hy"] .slot { color: var(--gold-text); border-bottom-color: rgba(196, 146, 43, 0.6); }
+
+/* кикер: золотая линия 40 px, затем разряженные прописные антиквы */
+[data-skin="hy"] .kicker { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+[data-skin="hy"] .kicker::before { width: 2.5rem; background: var(--gold); }
+
+/* ── кнопки: плоские, прописные с трекингом, без сдвига ──────── */
+[data-skin="hy"] .btn {
+  font-family: var(--font-body); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding-inline: 1.5rem;
+}
+[data-skin="hy"] .btn--outline { background: transparent; }
+[data-skin="hy"] .btn--link { font-size: 0.875rem; letter-spacing: 0.02em; text-transform: none; text-decoration-color: var(--gold); }
+@media (hover: hover) {
+  [data-skin="hy"] .btn--primary:hover { background: #FAE0A2; transform: none; }
+  [data-skin="hy"] .btn--primary:active { background: #C4922B; }
+  [data-skin="hy"] .btn--outline:hover { border-color: var(--gold); }
+}
+
+/* ── карточка: матовая, без тени, с внутренней волосяной рамкой ── */
+[data-skin="hy"] .tile { padding: calc(var(--tile-pad) + 0.5rem); }
+[data-skin="hy"] .tile::after {
+  content: ''; position: absolute; inset: 0.5rem; z-index: 0;
+  border: 1px solid rgba(196, 146, 43, 0.28);
+  pointer-events: none;
+}
+[data-skin="hy"] .tile--hero { background: var(--surface); border-color: var(--gold); }
+[data-skin="hy"] .tile--hero::after { border-color: rgba(196, 146, 43, 0.5); }
+[data-skin="hy"] .tile--quiet { background: transparent; border-color: var(--line); }
+[data-skin="hy"] .tile--quiet::after { display: none; }
+[data-skin="hy"] .tile__meta { font-family: var(--font-body); letter-spacing: 0.12em; color: var(--text-3); }
+@media (min-width: 768px) { [data-skin="hy"] .tile::after { inset: 0.75rem; } }
+@media (hover: hover) {
+  [data-skin="hy"] .state { transition: border-color var(--t-base) var(--ease), background-color var(--t-base) var(--ease); }
+  [data-skin="hy"] .state:hover { border-color: var(--gold); background: #FFFFFF; }
+}
+
+/* чипы — прямые углы, волосяная линия */
+[data-skin="hy"] .chip { border-color: rgba(12, 27, 58, 0.18); color: var(--text-2); }
+
+/* разделитель — сплошная волосяная линия золотом */
+[data-skin="hy"] .rule { background: rgba(196, 146, 43, 0.35); }
+
+/* стекла в банке нет — шапка непрозрачная бумага с линией */
+[data-skin="hy"] .glass { background: rgba(247, 243, 234, 0.96); border-bottom: 1px solid rgba(196, 146, 43, 0.35); }
+
+/* ── армянский: Noto, без капители и курсива ─────────────────── */
+[data-skin="hy"] :lang(hy) { font-family: 'Noto Sans Armenian', var(--font-body); }
+[data-skin="hy"] :lang(hy) .h1, [data-skin="hy"] :lang(hy) .h2, [data-skin="hy"] :lang(hy) .h3,
+[data-skin="hy"] :lang(hy) .state__name, [data-skin="hy"] .h1:lang(hy), [data-skin="hy"] .h2:lang(hy) {
+  font-family: 'Noto Serif Armenian', var(--font-display);
+  letter-spacing: 0; line-height: 1.12;
+  font-size-adjust: none;
+}
+[data-skin="hy"] .h1:lang(hy) { font-size: clamp(1.9rem, 1.2rem + 3.4vw, 3.6rem); }
+[data-skin="hy"] :lang(hy) em, [data-skin="hy"] em:lang(hy) { font-style: normal; font-weight: 600; }
+[data-skin="hy"] .kicker:lang(hy), [data-skin="hy"] :lang(hy) .kicker { font: 500 0.75rem/1.5 'Noto Sans Armenian', var(--font-body); letter-spacing: 0.08em; }
+[data-skin="hy"] .btn:lang(hy), [data-skin="hy"] :lang(hy) .btn { font-family: 'Noto Sans Armenian', var(--font-body); letter-spacing: 0.06em; }

@@ -1,0 +1,687 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Нужен ВНЖ после 1 ноября — LTCG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Serif+Armenian:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080F22; --bg-2:#0C1B3A;
+  --surf:#101F3D; --surf-2:#152747; --surf-3:#1B3054;
+  --gold:#F2C249; --gold-lt:#FAE0A2; --gold-dk:#C4922B;
+  --ink:#F2F6FD; --mut:#A7B8D4; --dim:#6B80A5;
+  --line:rgba(167,184,212,.11); --line-2:rgba(167,184,212,.2);
+  --glow:0 0 0 1px rgba(242,194,73,.16), 0 18px 50px -18px rgba(242,194,73,.22);
+  --lift:0 1px 0 0 rgba(255,255,255,.05) inset, 0 22px 44px -26px rgba(0,0,0,.85);
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --fa:'Noto Serif Armenian','Sylfaen',serif;
+  --max:1240px; --hdr:72px; --r:22px;
+  --e:cubic-bezier(.22,1,.36,1); --t:.26s;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* зерно — снимает пластиковость плоских заливок */
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+::selection{background:var(--gold);color:#080F22}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* ═══ Шапка ═══ */
+.hdr{position:sticky;top:0;z-index:60;height:var(--hdr);display:flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;gap:2.5rem;width:100%}
+.brand{flex:none;display:flex;align-items:baseline;gap:.6rem;text-decoration:none}
+.brand__m{font-family:var(--fd);font-size:1.3rem;font-weight:600;letter-spacing:.03em}
+.brand__s{font-size:.625rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.nav{display:flex;gap:2rem;margin-left:auto;font-size:.875rem}
+.nav a{color:var(--mut);text-decoration:none;position:relative;padding-block:.4rem;
+  transition:color var(--t) var(--e)}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+  background:var(--gold);transition:right var(--t) var(--e)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{right:0}
+.btn{flex:none;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;
+  font-size:.875rem;font-weight:600;padding:.65rem 1.25rem;border-radius:999px;
+  text-decoration:none;border:1px solid transparent;transition:all var(--t) var(--e)}
+.btn--gold{color:#080F22;background:var(--gold);box-shadow:0 10px 30px -12px rgba(242,194,73,.6)}
+.btn--gold:hover{background:var(--gold-lt);transform:translateY(-1px);
+  box-shadow:0 16px 38px -12px rgba(242,194,73,.75)}
+.btn--ghost{color:var(--ink);border-color:var(--line-2);background:transparent}
+.btn--ghost:hover{border-color:var(--gold);color:var(--gold-lt)}
+@media(max-width:959px){.nav{display:none}}
+
+/* ═══ Первый экран — тоже бенто ═══ */
+.stage{padding-top:clamp(1.25rem,2.4vh,2rem);padding-bottom:clamp(1.5rem,3vh,2.5rem)}
+.t--say{grid-column:span 7;grid-row:span 2;justify-content:center;gap:1.25rem;min-height:26rem;
+  padding:clamp(1.75rem,3vw,2.75rem);
+  background:radial-gradient(120% 100% at 6% 0%,rgba(242,194,73,.13),transparent 55%),
+             linear-gradient(165deg,var(--surf-3),var(--surf) 70%);
+  border-color:rgba(242,194,73,.2)}
+.eyebrow{margin:0;display:flex;align-items:center;gap:.85rem;font-size:.6875rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:2.5rem;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-dk))}
+h1{margin:0;font-family:var(--fd);font-weight:500;line-height:1.02;letter-spacing:-.022em;
+  font-size:clamp(2rem,4vw,3.5rem);max-width:15ch;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--gold-lt)}
+.lead{margin:0;max-width:44ch;font-size:clamp(1rem,1.15vw,1.125rem);color:var(--mut)}
+.lead b{color:var(--ink);font-weight:600}
+.hero__act{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin-top:.25rem}
+.hero__src{margin:0;margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--line);
+  font-size:.75rem;line-height:1.5;color:var(--dim)}
+.hero__src a{color:var(--gold-lt);text-underline-offset:.2em}
+
+.t--shot{grid-column:span 5;grid-row:span 2;padding:0;justify-content:flex-end;
+  overflow:hidden;min-height:26rem}
+.t--shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:30% 50%;transition:transform .8s var(--e)}
+.t--shot:hover img{transform:scale(1.03)}
+.t--shot figcaption{position:relative;padding:clamp(1.25rem,1.9vw,1.75rem);font-size:.9375rem;
+  background:linear-gradient(180deg,transparent,rgba(8,15,34,.55) 34%,rgba(8,15,34,.94) 78%)}
+
+.t--keep{grid-column:span 5;grid-row:span 2;justify-content:center;gap:1.1rem}
+.keep{margin:0;padding:0;list-style:none;display:grid;gap:1.15rem}
+.keep li{display:grid;gap:.4rem;padding-bottom:1.15rem;border-bottom:1px solid var(--line)}
+.keep li:last-child{padding-bottom:0;border-bottom:0}
+.keep b{font-size:1.0625rem;font-weight:600;color:var(--ink);line-height:1.28;
+  letter-spacing:-.005em}
+.keep span{font-size:.9375rem;color:var(--mut);line-height:1.5;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem}
+.keep i{font-style:normal;font-size:.6875rem;font-weight:600;letter-spacing:.02em;
+  color:var(--gold-lt);white-space:nowrap;padding:.14rem .45rem;border-radius:5px;
+  background:rgba(242,194,73,.09);border:1px solid rgba(242,194,73,.18)}
+
+/* ═══ Аннотированная норма: армянский оригинал с подсветкой ═══ */
+.t--norm{grid-row:span 2;justify-content:flex-start;gap:1rem;
+  background:linear-gradient(168deg,var(--surf-2),var(--surf) 72%)}
+.norm{margin:0;font-family:var(--fa);font-size:clamp(.9375rem,1.05vw,1.0625rem);
+  line-height:1.72;color:var(--ink);letter-spacing:.005em}
+.norm mark{background:none;color:var(--gold-lt);position:relative;
+  box-shadow:inset 0 -.42em 0 rgba(242,194,73,.14)}
+.norm sup{font-family:var(--fb);font-size:.5625rem;font-weight:700;color:var(--gold);
+  margin-inline-start:.12em;vertical-align:.55em}
+.gloss{margin:0;display:grid;gap:.55rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.gloss li{display:grid;grid-template-columns:1.1rem 1fr;gap:.55rem;font-size:.8125rem;
+  color:var(--mut);line-height:1.45}
+.gloss b{font-size:.625rem;font-weight:700;color:var(--gold);padding-top:.15rem}
+.gloss em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ═══ Секция ═══ */
+.sec{position:relative;z-index:2;padding-block:clamp(2.75rem,6vh,4.5rem)}
+.sec__head{display:grid;gap:1rem;margin-bottom:clamp(2rem,4vh,3rem);max-width:60ch}
+h2{margin:0;font-family:var(--fd);font-weight:500;line-height:1.08;letter-spacing:-.015em;
+  font-size:clamp(1.875rem,3.4vw,3rem);text-wrap:balance}
+.sec__sub{margin:0;color:var(--mut);max-width:52ch;font-size:1.0625rem}
+
+/* ═══ Бенто ═══ */
+.bento{display:grid;gap:clamp(.875rem,1.2vw,1.25rem);
+  grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(11.5rem,auto)}
+.t{position:relative;border-radius:var(--r);
+  background:linear-gradient(168deg,var(--surf-2),var(--surf));
+  border:1px solid var(--line);box-shadow:var(--lift);
+  padding:clamp(1.25rem,1.9vw,1.75rem);display:flex;flex-direction:column;gap:.7rem;
+  transition:transform var(--t) var(--e),border-color var(--t) var(--e),box-shadow var(--t) var(--e)}
+.t:hover{transform:translateY(-3px);border-color:var(--line-2);
+  box-shadow:0 1px 0 0 rgba(255,255,255,.07) inset,0 30px 56px -28px rgba(0,0,0,.95)}
+.t__k{margin:0;font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim)}
+.t__h{margin:0;font-size:clamp(1rem,1.35vw,1.25rem);font-weight:600;line-height:1.25;
+  letter-spacing:-.005em}
+.t__p{margin:0;font-size:.9375rem;color:var(--mut)}
+.t__p b{color:var(--ink);font-weight:600}
+.t__src{margin:0;margin-top:auto;padding-top:1rem;font-size:.6875rem;color:var(--dim);
+  letter-spacing:.01em}
+.t__src a{color:var(--gold-lt)}
+
+/* доминанта */
+.t--hero{grid-column:span 5;grid-row:span 2;justify-content:center;
+  background:radial-gradient(110% 90% at 14% 8%,rgba(242,194,73,.14),transparent 58%),
+             linear-gradient(168deg,var(--surf-3),var(--surf));
+  border-color:rgba(242,194,73,.22)}
+.t--hero:hover{box-shadow:var(--glow)}
+.num{margin:0;font-family:var(--fd);font-weight:500;line-height:.85;letter-spacing:-.03em;
+  font-size:clamp(3.5rem,7.6vw,6.5rem);
+  background:linear-gradient(160deg,var(--gold-lt),var(--gold) 48%,var(--gold-dk));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.num__u{display:block;font-family:var(--fb);font-size:1rem;font-weight:500;letter-spacing:0;
+  color:var(--ink);margin-top:1.25rem;line-height:1.5;max-width:26ch}
+.num__u span{color:var(--mut)}
+
+.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}
+.c7{grid-column:span 7}.c3{grid-column:span 3}
+.r2{grid-row:span 2}
+
+/* пара сегодня/ноябрь */
+.pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:0;
+  margin-top:.35rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pair__c{padding:.9rem 1rem;min-width:0}
+.pair__c:last-child{background:rgba(242,194,73,.055)}
+.pair__d{width:1px;background:var(--line)}
+.pair .lab{margin:0 0 .4rem;font-size:.625rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--dim)}
+.pair__c:last-child .lab{color:var(--gold)}
+.pair .val{margin:0;font-size:.875rem;line-height:1.42;color:var(--mut)}
+.pair__c:last-child .val{color:var(--ink);font-weight:600}
+
+/* плитка-картинка */
+.t--img{padding:0;justify-content:flex-end;overflow:hidden}
+.t--img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--e)}
+.t--img:hover img{transform:scale(1.04)}
+.t--img figcaption{position:relative;padding:clamp(1.25rem,1.9vw,1.75rem);
+  background:linear-gradient(180deg,transparent,rgba(8,15,34,.94) 62%);font-size:.9375rem}
+
+/* значок направления */
+.sign{display:inline-flex;align-items:center;gap:.4rem;align-self:flex-start;
+  font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:.28rem .6rem .28rem .5rem;border-radius:999px;border:1px solid}
+.sign svg{width:12px;height:12px}
+.sign--up{color:#7BE3AE;border-color:rgba(123,227,174,.32);background:rgba(123,227,174,.09)}
+.sign--dn{color:var(--gold);border-color:rgba(242,194,73,.32);background:rgba(242,194,73,.08)}
+
+/* появление */
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(18px);
+      transition:opacity .6s var(--e),transform .6s var(--e)}
+  .rv.on{opacity:1;transform:none}
+}
+
+@media(max-width:1023px){
+  .bento{grid-auto-rows:auto}
+  .t--hero{grid-column:span 12;grid-row:auto}
+  .c3,.c4,.c5,.c7{grid-column:span 6}
+}
+@media(max-width:1023px){
+  .t--say{grid-column:span 12;grid-row:auto}
+  .t--keep{grid-column:span 12;grid-row:auto}
+  .t--norm{grid-column:span 12;grid-row:auto}
+}
+@media(max-width:719px){
+  .bento{grid-template-columns:1fr}
+  .c3,.c4,.c5,.c6,.c7,.t--hero,.t--say,.t--norm,.t--keep{grid-column:1/-1}
+  .pair{grid-template-columns:1fr}
+  .pair__d{width:auto;height:1px}
+}
+.ruler{position:fixed;left:0;bottom:0;z-index:99;background:#000d;color:#fff;
+  font:11px/1.4 var(--fb);padding:.35rem .6rem;border-top-right-radius:.4rem}
+
+/* ═══ ПРАВКИ ПЛАНА ═══ */
+:root{ --ok:#7BE3AE; --steel:#5C79A8; }
+.sign--up{color:var(--ok);border-color:rgba(123,227,174,.32);background:rgba(123,227,174,.09)}
+figure{margin:0}
+.c8{grid-column:span 8}
+@media(max-width:1023px){ .c8{grid-column:span 12} }
+@media(max-width:719px){ .c8{grid-column:1/-1} }
+.t--keep{grid-column:span 12}
+@media(min-width:1024px){ .keep{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .keep li{padding-bottom:0;border-bottom:0;border-left:1px solid var(--line);padding-left:1.25rem}
+  .keep li:first-child{border-left:0;padding-left:0} }
+
+/* 1. ШКАЛА */
+.t--shk{justify-content:flex-start;gap:1rem}
+.shk__svg{width:100%;max-width:344px;height:auto;display:block;overflow:hidden;margin-block:.35rem}
+.shk-t{font:600 14px/1 var(--fb);fill:var(--ink)}
+.shk-s{font:400 14px/1 var(--fb);fill:var(--mut)}
+.shk-au{fill:var(--gold)}
+.shk-cite{font:500 14px/1 var(--fb);fill:var(--gold-lt);opacity:.9}
+.shk-axis{stroke:var(--line-2);stroke-width:1}
+.shk-tick{stroke:var(--mut);stroke-width:1.5;stroke-linecap:round}
+.shk-a0{stop-color:#223B5F}
+.shk-a1{stop-color:var(--steel)}
+.shk-b0{stop-color:#2C6E58}
+.shk-b1{stop-color:var(--ok)}
+.shk-g0{stop-color:var(--gold);stop-opacity:0}
+.shk-g1{stop-color:var(--gold);stop-opacity:.10}
+.shk-barA{fill:url(#shkA)}
+.shk-barB{fill:url(#shkB)}
+.shk-bound{stroke:var(--gold);stroke-width:1.5;opacity:.5}
+.shk-bound-hi{stroke:var(--gold);stroke-width:3;stroke-linecap:round}
+.shk__cap{margin:0;font-size:.9375rem;line-height:1.55;color:var(--mut)}
+.shk__cap b{color:var(--ink);font-weight:600}
+.shk__cap i{font-style:normal;color:var(--gold-lt);white-space:nowrap}
+@media(prefers-reduced-motion:no-preference){
+  .shk-wipe{transform-box:fill-box;transform-origin:left center;transition:transform .3s var(--e)}
+  .rv:not(.on) .shk-wipe{transform:scaleX(0)}
+  .shk-wipe--b{transition-delay:.12s}
+  .shk-fade{transition:opacity .26s var(--e) .2s}
+  .rv:not(.on) .shk-fade{opacity:0}
+}
+
+/* 2. ПОРОГИ */
+.porogblk{display:grid;gap:1.25rem}
+@media(min-width:1024px){
+  .porogblk{grid-template-columns:300px minmax(0,1fr);gap:clamp(1.25rem,2vw,2rem);align-items:start}
+}
+.porogblk__txt{display:grid;gap:.7rem;font-size:.9375rem;color:var(--mut)}
+.porogblk__txt p{margin:0}
+.porogblk__txt b{color:var(--ink);font-weight:600}
+.porogblk__txt .warn{padding-left:.9rem;border-left:2px solid var(--gold);color:var(--ink)}
+.porog-fig{margin:0}
+.porog{width:100%;max-width:300px;height:auto;display:block;overflow:visible}
+@media(max-width:719px){ .porog{max-width:none} }
+.porog .h{font:600 17px/1 var(--fb);fill:var(--ink)}
+.porog .sub,.porog .grp{font:500 15px/1 var(--fb);fill:var(--mut)}
+.porog .grp{fill:var(--gold-lt);letter-spacing:.02em}
+.porog .lab{font:500 15px/1 var(--fb);fill:var(--ink)}
+.porog .val{font:600 21px/1 var(--fb);fill:var(--ink)}
+.porog .q{font-weight:400;font-size:15px;fill:var(--mut)}
+.porog .or{font:600 15px/1 var(--fb);fill:var(--gold);letter-spacing:.06em}
+.porog .ast{fill:var(--gold);font-size:15px}
+.porog .note,.porog .src{font:400 15px/1 var(--fb);fill:var(--mut)}
+.porog .rule{stroke:var(--line);stroke-width:1}
+.porog .track{fill:rgba(167,184,212,.10);stroke:var(--line);stroke-width:1}
+.porog .bar{fill:url(#porogFill)}
+.porog .g0{stop-color:var(--gold-dk)}
+.porog .g1{stop-color:var(--gold)}
+.porog .bar--flow{fill:url(#porogFlow)}
+.porog .hatch{stroke:var(--gold);stroke-width:2}
+.porog .bar--hold{fill:rgba(242,194,73,.18);stroke:var(--gold);stroke-width:1.5}
+.porog .hit{fill:transparent}
+.porog .tl{stroke:var(--line-2);stroke-width:1.5}
+.porog .tl-dot{fill:var(--gold)}
+.porog .tl-end{stroke:var(--gold);stroke-width:2;stroke-linecap:round}
+@media(prefers-reduced-motion:no-preference){
+  .porog .bar,.porog .bar--hold{transform-box:fill-box;transform-origin:left center;
+    transition:transform .28s var(--e) calc(var(--i,0) * 60ms)}
+  .rv:not(.on) .porog .bar,.rv:not(.on) .porog .bar--hold{transform:scaleX(0)}
+}
+
+/* 3. ЧАСЫ */
+.clockblk{display:grid;gap:1.25rem}
+@media(min-width:1024px){
+  .clockblk{grid-template-columns:minmax(0,1fr) 384px;gap:clamp(1.25rem,2vw,2rem);align-items:start}
+}
+.clockblk__txt{display:grid;gap:.7rem;font-size:.9375rem;color:var(--mut)}
+.clockblk__txt p{margin:0}
+.clockblk__txt b{color:var(--ink);font-weight:600}
+.clockblk__txt .ok{padding-left:.9rem;border-left:2px solid var(--ok);color:var(--ink)}
+.clock-fig{margin:0}
+.clock{width:100%;max-width:384px;height:auto;display:block}
+@media(max-width:719px){
+  .clock-fig{margin-inline:calc(-1 * clamp(1.25rem,1.9vw,1.75rem))}
+  .clock{max-width:none}
+}
+.clk-h{font:600 16px/1 var(--fb);fill:var(--ink)}
+.clk-side{font:500 14px/1 var(--fb);fill:var(--mut)}
+.clk-side--nov{fill:var(--gold)}
+.clk-in{font:400 14px/1 var(--fb);fill:var(--mut)}
+.clk-num{font:600 21px/1 var(--fb);fill:var(--ink)}
+.clk-num--gold{fill:var(--gold)}
+.clk-ref{font:500 14px/1 var(--fb);fill:var(--gold-lt);opacity:.85}
+.clk-tag{font:600 14px/1 var(--fb);fill:var(--mut);letter-spacing:.04em}
+.clk-tag--ok{fill:var(--ok)}
+.clk-tag--new{fill:var(--gold)}
+.clk-ghost{fill:rgba(167,184,212,.07);stroke:var(--line-2);stroke-width:1}
+.clk-bar{fill:rgba(242,194,73,.13);stroke:rgba(242,194,73,.30);stroke-width:1}
+.clk-bar--gold{fill:var(--gold);stroke:none}
+.clk-notch line{stroke:rgba(242,246,253,.30);stroke-width:1.5;stroke-linecap:round}
+.clk-auto{stroke:var(--gold);stroke-width:1.5;stroke-dasharray:3 4;fill:none}
+.clk-arrow{fill:var(--gold)}
+.clk-note{font:400 14px/1 var(--fb);fill:var(--mut)}
+.clk-strong{fill:var(--gold);font-weight:600}
+.clk-legend{font:400 14px/1 var(--fb);fill:var(--mut);opacity:.8}
+.clk-box{fill:rgba(123,227,174,.06);stroke:rgba(123,227,174,.22);stroke-width:1}
+.clk-rule{stroke:var(--ok);stroke-width:2;stroke-linecap:round}
+.clk-strip{font:500 14px/1 var(--fb);fill:var(--ink)}
+@media(prefers-reduced-motion:no-preference){
+  #clkWipeRect{transform-box:fill-box;transform-origin:left center;transition:transform .3s var(--e)}
+  .rv:not(.on) #clkWipeRect{transform:scaleX(0)}
+}
+
+</style></head><body>
+<header class="hdr"><div class="wrap hdr__in">
+  <a class="brand" href="/"><span class="brand__m">LTCG</span><span class="brand__s">Ереван</span></a>
+  <nav class="nav"><a href="#chto">Что меняется</a><a href="#legche">Что станет легче</a><a href="#uspet">Успеть до срока</a><a href="#voprosy">Вопросы</a></nav>
+  <a class="btn btn--gold" href="#zvonok">Позвонить</a>
+</div></header>
+
+<section class="sec wrap stage" aria-labelledby="h1">
+  <div class="bento">
+
+    <article class="t t--say rv on">
+      <p class="eyebrow">Закон вступает в силу 1 ноября 2026</p>
+      <h1 id="h1">Следующая запись — 1 ноября, <em>уже по новым правилам</em></h1>
+      <p class="lead">Свободных дат до 1 ноября не осталось: кто успел подать, того судят
+        по прежним нормам. Остальным остаётся месяц — и потратить его стоит
+        <b>на подготовку, а не на попытки записаться</b>.</p>
+      <div class="hero__act">
+        <a class="btn btn--gold" href="#zvonok">Разобрать мой случай</a>
+        <a class="btn btn--ghost" href="#chto">Что меняется →</a>
+      </div>
+      <p class="hero__src">Успевшие подать идут по прежним нормам — закон ՀՕ-11-Ն, статья 30
+        часть 4 · <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am</a>.
+        Отсутствие свободных дат до 1 ноября — наша проверка записи на migration.e-gov.am
+        4 сентября 2026. Удалось записаться? Напишите — обновим тем же днём.</p>
+    </article>
+
+    <figure class="t c5 r2 rv on t--shk">
+      <p class="t__k">Черта 1 ноября</p>
+<svg class="shk__svg" viewBox="0 0 248 222" role="img" aria-labelledby="shkT shkD" xmlns="http://www.w3.org/2000/svg">
+  <title id="shkT">1 ноября 2026: окно подачи закрывается, выданный статус идёт дальше</title>
+  <desc id="shkD">Шкала времени слева направо.</desc>
+  <defs>
+    <linearGradient id="shkA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="shk-a0"/><stop offset="1" class="shk-a1"/></linearGradient>
+    <linearGradient id="shkB" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="248" y2="0"><stop offset="0" class="shk-b0"/><stop offset="1" class="shk-b1"/></linearGradient>
+    <linearGradient id="shkGlow" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="shk-g0"/><stop offset=".5" class="shk-g1"/><stop offset="1" class="shk-g0"/></linearGradient>
+    <linearGradient id="shkFadeG" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="272" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset=".70" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity=".08"/></linearGradient>
+    <mask id="shkFadeB" maskUnits="userSpaceOnUse" x="0" y="170" width="272" height="28"><rect x="0" y="170" width="272" height="28" fill="url(#shkFadeG)"/></mask>
+  </defs>
+  <text x="0"   y="14" class="shk-t">сегодня</text>
+  <text x="152" y="14" text-anchor="end" class="shk-t">31 октября</text>
+  <text x="168" y="14" class="shk-t shk-au">1 ноября</text>
+  <text x="152" y="34" text-anchor="end" class="shk-s">включительно</text>
+  <text x="168" y="34" class="shk-s">платформа</text>
+  <line x1="0" y1="50" x2="248" y2="50" class="shk-axis"/>
+  <line x1="1.5" y1="43" x2="1.5" y2="57" class="shk-tick"/>
+  <rect class="shk-fade" x="147" y="0" width="26" height="216" fill="url(#shkGlow)"/>
+  <text x="0"   y="76" class="shk-t">Подать заявление</text>
+  <text x="248" y="76" text-anchor="end" class="shk-cite">ст. 30 ч. 4</text>
+  <path class="shk-barA shk-wipe" d="M160 88 H10 A10 10 0 0 0 10 108 H160 Z"/>
+  <text x="156" y="126" text-anchor="end" class="shk-s">по нынешним нормам</text>
+  <text x="0"   y="162" class="shk-t">Уже выданный статус</text>
+  <text x="248" y="162" text-anchor="end" class="shk-cite">ст. 30 ч. 5</text>
+  <g mask="url(#shkFadeB)"><rect class="shk-barB shk-wipe shk-wipe--b" x="0" y="174" width="272" height="20" rx="10"/></g>
+  <text x="248" y="212" text-anchor="end" class="shk-s">доработает свой срок</text>
+  <g class="shk-fade"><line x1="160" y1="0" x2="160" y2="216" class="shk-bound"/><line x1="160" y1="84" x2="160" y2="112" class="shk-bound-hi"/></g>
+</svg>
+      <figcaption class="shk__cap">
+        <b>31 октября 2026</b> — последний день, когда заявление подают по нынешним нормам:
+        представленные до вступления закона в силу рассматривают по правовым нормам,
+        действовавшим до него <i>ст. 30 ч. 4</i>. Сам закон и единая электронная платформа
+        начинают работать <b>1 ноября 2026</b> <i>ст. 30 ч. 1 и 3</i>. Статус, выданный раньше,
+        черту переживает: закон его не прекращает — документами пользуются до истечения
+        их срока <i>ст. 30 ч. 5</i>, а специальный статус сохраняет права и обязанности
+        до конца срока <i>ст. 30 ч. 6</i>.
+      </figcaption>
+      <p class="t__src">Свободных дат записи на migration.e-gov.am на 4 сентября 2026 нет —
+        это ограничение записи, а не закона. Проверяем и обновляем ·
+        <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am</a></p>
+    </figure>
+
+    <article class="t t--keep rv on">
+      <p class="t__k">Что у вас не отберут в любом случае</p>
+      <ul class="keep">
+        <li><b>Статус, выданный раньше</b><span>доработает свой срок целиком<i>ст. 30 ч. 5</i></span></li>
+        <li><b>Специальный статус</b><span>права и обязанности остаются прежними до конца срока<i>ст. 30 ч. 6</i></span></li>
+        <li><b>Рабочая виза</b><span>1 ноября не вводится: ждёт новой системы электронных виз, дата не назначена<i>ст. 30 ч. 7</i></span></li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<section class="sec wrap" id="chto">
+  <div class="sec__head">
+    <h2 class="rv on">Что меняется на самом деле</h2>
+    <p class="sec__sub rv on">Мы сверили действующую редакцию закона с той, что вступает
+      1 ноября, статья за статьёй.</p>
+  </div>
+  <div class="bento">
+
+    <article class="t t--hero rv on">
+      <p class="t__k">Постоянный статус для предпринимателя</p>
+      <p class="num">3 года<span class="num__u">временного статуса из последних пяти теперь
+        нужны, чтобы претендовать на постоянный.
+        <span>Сегодня предпринимателю не нужно ни одного.</span></span></p>
+      <p class="t__src">Действующая ст. 16 п. «б» → ноябрьская ст. 16 п. «в»</p>
+    </article>
+
+    <article class="t c7 r2 rv on">
+      <p class="t__k">Родственники</p>
+      <h3 class="t__h">Брат, сестра, бабушка, дед и внук перестают быть основанием</h3>
+      <p class="t__p">Остаются супруг, родитель и ребёнок — и для временного статуса,
+        и для постоянного. Взамен расширяется круг тех, к кому едут:
+        <b>достаточно родственника с любым статусом пребывания</b>, а не только с постоянным.</p>
+      <div class="pair">
+        <div class="pair__c"><p class="lab">сегодня</p><p class="val">супруг или близкий родственник: родитель, ребёнок, брат, сестра, бабушка, дед, внук</p></div>
+        <div class="pair__d"></div>
+        <div class="pair__c"><p class="lab">с 1 ноября</p><p class="val">супруг, родитель, ребёнок</p></div>
+      </div>
+      <p class="t__src">Статья 15 часть 1 пункт «г», статья 16 часть 1 пункт «а»</p>
+    </article>
+
+    <article class="t c7 rv on">
+      <p class="t__k">Предпринимательское основание</p>
+      <h3 class="t__h">Четыре порога, соединённые союзом «или»</h3>
+      <div class="porogblk">
+        <figure class="porog-fig">
+<svg class="porog" viewBox="0 0 300 550" role="img" aria-labelledby="porog-t porog-d" xmlns="http://www.w3.org/2000/svg">
+  <title id="porog-t">Четыре порога предпринимательского основания</title>
+  <desc id="porog-d">Статья 29.4 часть 3.</desc>
+  <defs>
+    <linearGradient id="porogFill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="g0"/><stop offset="1" class="g1"/></linearGradient>
+    <pattern id="porogFlow" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)"><line class="hatch" x1="0" y1="0" x2="0" y2="6"/></pattern>
+  </defs>
+  <text class="h" x="12" y="20">Достаточно любого одного</text>
+  <text class="sub" x="12" y="40">Четыре порога, суммы в драмах</text>
+  <line class="rule" x1="12" y1="54" x2="292" y2="54"/>
+  <g class="alts">
+    <text class="grp" x="12" y="74">Участник или акционер компании</text>
+    <g class="row" style="--i:0">
+      <rect class="hit" x="6" y="86" width="288" height="40"/>
+      <text class="lab" x="12" y="97">Вклад в уставный капитал</text>
+      <rect class="track" x="12" y="107" width="96" height="13" rx="6.5"/>
+      <rect class="bar" x="12" y="107" width="96" height="13" rx="6.5"/>
+      <text class="val" x="292" y="121" text-anchor="end"><tspan class="q">не менее</tspan> 2 млн</text>
+    </g>
+    <line class="rule" x1="12" y1="135" x2="136" y2="135"/><line class="rule" x1="168" y1="135" x2="292" y2="135"/>
+    <text class="or" x="152" y="140" text-anchor="middle">или</text>
+    <g class="row" style="--i:1">
+      <rect class="hit" x="6" y="146" width="288" height="40"/>
+      <text class="lab" x="12" y="157">Акции или ценные бумаги</text>
+      <rect class="track" x="12" y="167" width="96" height="13" rx="6.5"/>
+      <rect class="bar" x="12" y="167" width="96" height="13" rx="6.5"/>
+      <text class="val" x="292" y="181" text-anchor="end">2 млн</text>
+    </g>
+    <line class="rule" x1="12" y1="195" x2="136" y2="195"/><line class="rule" x1="168" y1="195" x2="292" y2="195"/>
+    <text class="or" x="152" y="200" text-anchor="middle">или</text>
+    <text class="grp" x="12" y="218">Индивидуальный предприниматель</text>
+    <g class="row" style="--i:2">
+      <rect class="hit" x="6" y="230" width="288" height="40"/>
+      <text class="lab" x="12" y="241">Деньги на счетах ИП</text>
+      <rect class="track" x="12" y="251" width="96" height="13" rx="6.5"/>
+      <rect class="bar" x="12" y="251" width="48" height="13" rx="6.5"/>
+      <text class="val" x="292" y="265" text-anchor="end"><tspan class="q">не менее</tspan> 1 млн</text>
+    </g>
+    <line class="rule" x1="12" y1="279" x2="136" y2="279"/><line class="rule" x1="168" y1="279" x2="292" y2="279"/>
+    <text class="or" x="152" y="284" text-anchor="middle">или</text>
+    <g class="row" style="--i:3">
+      <rect class="hit" x="6" y="290" width="288" height="40"/>
+      <text class="lab" x="12" y="301">Оборот за 60 дней до подачи<tspan class="ast">*</tspan></text>
+      <rect class="track" x="12" y="311" width="96" height="13" rx="6.5"/>
+      <rect class="bar bar--flow" x="12" y="311" width="48" height="13" rx="6.5"/>
+      <text class="val" x="292" y="325" text-anchor="end">1 млн</text>
+    </g>
+  </g>
+  <text class="note" x="12" y="348">* оборот — по нашему чтению путь ИП</text>
+  <text class="src" x="12" y="368">Статья 29.4 часть 3</text>
+  <line class="rule" x1="12" y1="384" x2="292" y2="384"/>
+  <g class="both">
+    <text class="grp" x="12" y="404">Чтобы статус не утратил силу</text>
+    <g class="row">
+      <text class="lab" x="12" y="427">Налог с деятельности в базе КГД</text>
+      <circle class="tl-dot" cx="13.5" cy="443.5" r="2.6"/>
+      <line class="tl" x1="18" y1="443.5" x2="104" y2="443.5"/>
+      <line class="tl-end" x1="108" y1="436" x2="108" y2="451"/>
+      <text class="val" x="292" y="451" text-anchor="end">180 дней</text>
+    </g>
+    <line class="rule" x1="12" y1="465" x2="136" y2="465"/><line class="rule" x1="168" y1="465" x2="292" y2="465"/>
+    <text class="or" x="152" y="470" text-anchor="middle">и</text>
+    <g class="row">
+      <text class="lab" x="12" y="487">Вклад или бумаги — не ниже</text>
+      <rect class="track" x="12" y="497" width="96" height="13" rx="6.5"/>
+      <rect class="bar--hold" x="12" y="497" width="48" height="13" rx="6.5"/>
+      <text class="val" x="292" y="511" text-anchor="end">1 млн</text>
+    </g>
+  </g>
+  <text class="src" x="12" y="534">Статья 29.4 часть 5</text>
+</svg>
+        </figure>
+        <div class="porogblk__txt">
+          <p>Достаточно <b>любого одного</b>: вклад в уставный капитал коммерческой организации
+            не менее <b>2 млн драмов</b>, приобретённые акции или ценные бумаги стоимостью
+            <b>2 млн</b>, не менее <b>1 млн</b> на счетах индивидуального предпринимателя
+            в любых валютах — или денежный оборот в <b>1 млн</b> за 60 дней, предшествующих
+            дню подачи заявления (ст. 29.4 ч. 3).</p>
+          <p>После выдачи статуса выбор кончается и условия складываются: статус признаётся
+            утратившим силу, если в <b>180 дней</b> после получения в базе Комитета
+            государственных доходов не появилась информация о налогах, рассчитанных
+            по результатам деятельности, либо если вклад или стоимость бумаг опустились
+            ниже <b>1 млн</b> (ст. 29.4 ч. 5).</p>
+          <p class="warn">Саму процедуру устанавливает Правительство отдельным порядком
+            (ст. 29.4 ч. 1). На 4 сентября 2026 акт не принят.</p>
+        </div>
+      </div>
+      <p class="t__src">Закон ՀՕ-11-Ն, ст. 29.4 ч. 1, 3, 5 · сверено 4 сентября 2026</p>
+    </article>
+
+    <article class="t t--norm c5 rv on" lang="hy">
+      <p class="t__k" lang="ru">Первоисточник · закон ՀՕ-11-Ն, статья 30 часть 4</p>
+      <p class="norm">Մինչև սույն օրենքն ուժի մեջ մտնելը <mark>ներկայացված<sup>1</sup></mark>՝
+        Հայաստանի Հանրապետությունում կացության կարգավիճակ ստանալու մասին դիմումների
+        քննարկումն իրականացվում է <mark>մինչև սույն օրենքն ուժի մեջ մտնելը գործող<sup>2</sup></mark>
+        <mark>իրավական նորմերով սահմանված կարգով<sup>3</sup></mark>։</p>
+      <ul class="gloss" lang="ru">
+        <li><b>1</b><span><em>представленных</em> — важен день подачи, а не день решения.</span></li>
+        <li><b>2</b><span><em>действовавшими до вступления в силу</em> — то есть сегодняшними.</span></li>
+        <li><b>3</b><span><em>в порядке, установленном правовыми нормами</em> — по прежней процедуре целиком.</span></li>
+      </ul>
+      <p class="t__src" lang="ru">Юридическую силу имеет только армянский текст</p>
+    </article>
+
+    <article class="t c8 rv on">
+      <p class="t__k">Часы производства</p>
+      <h3 class="t__h">Три срока, и два из них считает не человек</h3>
+      <div class="clockblk">
+        <div class="clockblk__txt">
+          <p>Решение по заявлению принимают <b>в 30 дней</b> — этот срок стоит в законе
+            и сегодня (действующая ст. 17 ч. 3), и с 1 ноября (ст. 17 ч. 4).</p>
+          <p>Внутри этого срока платформа может прислать уведомление об ошибке: на ответ
+            <b>пять дней</b>, после них производство приостанавливается автоматически,
+            а ещё через <b>месяц</b> молчания — прекращается, и заявление подаётся заново
+            (ст. 17 ч. 9 и ч. 10). Сегодня таких автоматических сроков в законе нет.</p>
+          <p class="ok">Зато исчезает отказ «не представил необходимые документы» —
+            основание действующей ст. 19 п. «е». С 1 ноября на его месте уведомление
+            и пять дней на исправление.</p>
+          <p>И пока идёт производство, нахождение в стране считается законным, даже если
+            срок статуса истёк (ст. 17 ч. 4). Похожее правило есть и сегодня, но только
+            при судебном обжаловании отказа (действующая ст. 20 ч. 2).</p>
+        </div>
+        <figure class="clock-fig">
+<svg class="clock" viewBox="0 0 320 510" role="img" aria-labelledby="clkT clkD" xmlns="http://www.w3.org/2000/svg">
+<title id="clkT">Три срока производства в одном масштабе</title>
+<desc id="clkD">Шкала общая, одно деление — пять дней.</desc>
+<defs><clipPath id="clkWipe"><rect id="clkWipeRect" x="82" y="0" width="228" height="510"/></clipPath></defs>
+<g clip-path="url(#clkWipe)">
+  <rect class="clk-ghost" x="84" y="28" width="222" height="30" rx="7"/>
+  <rect class="clk-bar" x="84" y="64" width="222" height="30" rx="7"/>
+  <rect class="clk-bar clk-bar--gold" x="84" y="168" width="37" height="30" rx="7"/>
+  <rect class="clk-bar" x="84" y="308" width="222" height="30" rx="7"/>
+  <g class="clk-notch">
+    <line x1="121" y1="51" x2="121" y2="57"/><line x1="158" y1="51" x2="158" y2="57"/><line x1="195" y1="51" x2="195" y2="57"/><line x1="232" y1="51" x2="232" y2="57"/><line x1="269" y1="51" x2="269" y2="57"/>
+    <line x1="121" y1="87" x2="121" y2="93"/><line x1="158" y1="87" x2="158" y2="93"/><line x1="195" y1="87" x2="195" y2="93"/><line x1="232" y1="87" x2="232" y2="93"/><line x1="269" y1="87" x2="269" y2="93"/>
+    <line x1="121" y1="331" x2="121" y2="337"/><line x1="158" y1="331" x2="158" y2="337"/><line x1="195" y1="331" x2="195" y2="337"/><line x1="232" y1="331" x2="232" y2="337"/><line x1="269" y1="331" x2="269" y2="337"/>
+  </g>
+</g>
+<text class="clk-h" x="14" y="18">Решение по заявлению</text>
+<text class="clk-tag" x="306" y="18" text-anchor="end">не новость</text>
+<text class="clk-side" x="14" y="48">сегодня</text>
+<text class="clk-in" x="96" y="48">30 дней</text>
+<text class="clk-ref" x="296" y="48" text-anchor="end">ст. 17 ч. 3</text>
+<text class="clk-side clk-side--nov" x="14" y="84">с ноября</text>
+<text class="clk-num" x="96" y="85">30 дней</text>
+<text class="clk-ref" x="296" y="84" text-anchor="end">ст. 17 ч. 4</text>
+<text class="clk-h" x="14" y="122">Ошибка в заявлении</text>
+<text class="clk-tag clk-tag--ok" x="306" y="122" text-anchor="end">стало легче</text>
+<text class="clk-side" x="14" y="152">сегодня</text>
+<text class="clk-in" x="84" y="152">могут отказать — ст. 19 п. «е»</text>
+<text class="clk-side clk-side--nov" x="14" y="188">с ноября</text>
+<text class="clk-num clk-num--gold" x="131" y="189">5 дней</text>
+<text class="clk-ref" x="296" y="188" text-anchor="end">ст. 17 ч. 9</text>
+<path class="clk-auto" d="M121 198 V 210"/>
+<path class="clk-arrow" d="M116.5 210 h9 l-4.5 6 z"/>
+<text class="clk-note" x="84" y="230">приостановка — <tspan class="clk-strong">автоматически</tspan></text>
+<text class="clk-h" x="14" y="262">Если молчать дальше</text>
+<text class="clk-tag clk-tag--new" x="306" y="262" text-anchor="end">новое</text>
+<text class="clk-side" x="14" y="292">сегодня</text>
+<text class="clk-in" x="84" y="292">такого механизма нет</text>
+<text class="clk-side clk-side--nov" x="14" y="328">с ноября</text>
+<text class="clk-num" x="96" y="329">месяц</text>
+<text class="clk-ref" x="296" y="328" text-anchor="end">ст. 17 ч. 10</text>
+<path class="clk-auto" d="M290 338 V 350"/>
+<path class="clk-arrow" d="M285.5 350 h9 l-4.5 6 z"/>
+<text class="clk-note" x="84" y="370">прекращение — <tspan class="clk-strong">автоматически</tspan></text>
+<text class="clk-legend" x="14" y="392">Одно деление — 5 дней.</text>
+<text class="clk-legend" x="14" y="408">Пунктир — платформа делает это сама.</text>
+<text class="clk-legend" x="14" y="424">Полосы меряют длину срока, не дату.</text>
+<rect class="clk-box" x="14" y="432" width="292" height="68" rx="12"/>
+<line class="clk-rule" x1="24" y1="446" x2="24" y2="486"/>
+<text class="clk-strip" x="34" y="454">Пока идёт производство, нахождение</text>
+<text class="clk-strip" x="34" y="472">в стране законно даже с истёкшим</text>
+<text class="clk-strip" x="34" y="490">сроком статуса — ст. 17 ч. 4</text>
+</svg>
+        </figure>
+      </div>
+      <p class="t__src">Действующая ՀՕ-47-Ն, ст. 17 ч. 3, ст. 19 п. «е», ст. 20 ч. 2 →
+        ноябрьская ст. 17 ч. 4, 9, 10 · сверено 4 сентября 2026</p>
+    </article>
+
+    <article class="t c4 rv on">
+      <span class="sign sign--up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>стало легче</span>
+      <h3 class="t__h">Работать становится проще</h3>
+      <p class="t__p">Тест рынка труда исчезает вместе со статьёй 25. На новый договор —
+        15 рабочих дней вместо трёхмесячного остатка и согласия органа.</p>
+      <p class="t__src">Действующая ст. 25 п. «а» · ст. 23</p>
+    </article>
+
+    <article class="t c5 rv on">
+      <p class="t__k">Основания отказа</p>
+      <p class="num">7 → 13<span class="num__u">оснований перечислено в статье 19.
+        <span>Среди новых — исчерпанная квота.</span></span></p>
+      <p class="t__src">Действующая ст. 19 → ноябрьская ст. 19</p>
+    </article>
+
+    <article class="t c4 rv on">
+      <p class="t__k">Отсутствие в стране</p>
+      <h3 class="t__h">183 дня — теперь для всех статусов</h3>
+      <p class="t__p">Сегодня это шесть месяцев и только для постоянного статуса.</p>
+      <p class="t__src">Действующая ст. 17 ч. 5 → ноябрьская ст. 17 ч. 8</p>
+    </article>
+
+    <article class="t c3 rv on">
+      <p class="t__k">Платформа</p>
+      <h3 class="t__h">12 государственных баз</h3>
+      <p class="t__p">Столько источников платформа запрашивает сама.</p>
+      <p class="t__src">Статья 42.2</p>
+    </article>
+
+  </div>
+</section>
+<div id="M" style="position:fixed;left:0;top:0;z-index:9999;background:#000;color:#0f0;font:11px/1.35 monospace;padding:6px;max-width:100%;white-space:pre-wrap"></div>
+<script>
+addEventListener('load',()=>{
+ const de=document.documentElement, W=de.clientWidth, out=[];
+ out.push('vw='+W+' scrollW='+de.scrollWidth);
+ const bad=[];
+ document.querySelectorAll('body *').forEach(el=>{const r=el.getBoundingClientRect(); if(r.width&&(r.right>W+0.5)) bad.push((el.tagName+'.'+(typeof el.className==='string'?el.className:el.className.baseVal)).slice(0,42)+' R'+Math.round(r.right));});
+ out.push('OVERFLOW n='+bad.length); out.push(bad.slice(0,10).join('\n'));
+ const m=(s)=>{const e=document.querySelector(s); if(!e)return s+' ?'; const r=e.getBoundingClientRect(); return s+' w='+Math.round(r.width)+' h='+Math.round(r.height);};
+ out.push(m('.t--say')); out.push(m('.t--shk')); out.push(m('.t--keep'));
+ out.push(m('.porog')); out.push(m('.clock')); out.push(m('.shk__svg'));
+ out.push(m('.t--norm'));
+ const pt=document.querySelectorAll('.bento')[1].children; let s=[];
+ for(const c of pt){const r=c.getBoundingClientRect(); s.push(Math.round(r.height));}
+ out.push('tiles h: '+s.join(' '));
+ const sc=(sel,vb)=>{const e=document.querySelector(sel); if(!e)return sel+' ?'; return sel+' scale='+(e.getBoundingClientRect().width/vb).toFixed(3);};
+ out.push(sc('.porog',300)); out.push(sc('.clock',320)); out.push(sc('.shk__svg',248));
+ document.getElementById('M').textContent=out.join('\n');
+});
+</script></body></html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ЧЕРНОВИК (drafts/): превью до унификации кож 04.09.2026, не показывать; живые страницы — home-ru/hy/en.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LTCG — три кожи рядом: RU · HY · EN (сравнение, не публиковать)</title>
+<!--
+  Одна и та же карточка состояния + кнопки + заголовок в трёх кожах.
+  Три колонки на десктопе (≥ 1024), стек на мобильном.
+  CSS: css/theme-base.css + theme-ru.css + theme-hy.css + theme-en.css.
+  Токены живут на [data-skin] — здесь атрибут стоит на колонках, в проде — на <html>.
+  Армянский текст не генерируется (правило проекта): в колонке HY только автоним «Հայերեն».
+  Система: docs/style_system.md
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500..700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Noto+Serif+Armenian:wght@500;600&family=Noto+Sans+Armenian:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/drafts/theme-base.css">
+<link rel="stylesheet" href="../css/drafts/theme-ru.css">
+<link rel="stylesheet" href="../css/drafts/theme-hy.css">
+<link rel="stylesheet" href="../css/drafts/theme-en.css">
+<style>
+html { background: #0A1631; }
+body { background: transparent; }
+.compare { display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+.skin-root {
+  display: flex; flex-direction: column; gap: 2rem;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 2.5rem) 3rem;
+  background: var(--bg); color: var(--text);
+  font: 400 var(--fs-body)/1.6 var(--font-body);
+  min-width: 0;
+}
+.skin-root__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.skin-root__label { white-space: nowrap; font: var(--kicker-font); letter-spacing: var(--kicker-ls); text-transform: var(--kicker-transform); color: var(--text-3); }
+.brand { display: inline-flex; align-items: center; gap: 0.625rem; color: var(--text-strong); }
+.brand__mark { width: 2.75rem; height: auto; aspect-ratio: 875 / 330; }
+.brand__name { font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; letter-spacing: 0.06em; }
+.lang { display: flex; gap: 0.125rem; font-size: 0.8125rem; }
+.lang a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 0.5rem; color: var(--text-2); position: relative; }
+.lang a[aria-current="page"] { color: var(--text-strong); }
+.lang a[aria-current="page"]::after { content: ''; position: absolute; left: 0.5rem; right: 0.5rem; bottom: 0.45rem; height: 1px; background: var(--gold); }
+.block { display: grid; gap: 1rem; }
+.block > .h1 { margin-bottom: 0.25rem; }
+.swatches { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.sw { display: grid; gap: 0.25rem; font-size: 0.6875rem; color: var(--text-3); font-family: var(--font-mono); }
+.sw i { display: block; width: 3rem; height: 2rem; border: 1px solid var(--line-strong); border-radius: var(--r-chip); }
+.spec { display: grid; gap: 0.25rem; font-size: 0.8125rem; color: var(--text-2); }
+.spec b { color: var(--text); font-weight: 500; }
+.specimen { font-size: 1.5rem; line-height: 1.3; color: var(--text-strong); }
+.demo-form { display: grid; gap: 0.75rem; max-width: 26rem; }
+[data-skin="ru"] .specimen, [data-skin="hy"] .specimen, [data-skin="en"] .specimen { font-family: var(--font-display); }
+@media (min-width: 1024px) {
+  .compare { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .skin-root { padding-inline: clamp(1.5rem, 2.5vw, 2.5rem); }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="206.69" y1="971.49" x2="903.97" y2="274.21">
+      <stop offset="0.32" stop-color="#C4922B"/><stop offset="0.55" stop-color="#F2C249"/><stop offset="0.79" stop-color="#FAE0A2"/><stop offset="1.0" stop-color="#C4922B"/>
+    </linearGradient>
+    <symbol id="emblem" viewBox="70 160 875 330">
+      <g fill="url(#gold)">
+        <path d="M395.61 375.61C364.78 346.18 333.98 316.74 303.18 287.31C228.45 351.94 153.72 416.54 78.99 481.16C133.82 479.61 188.66 478.06 243.5 476.5C326.05 475.33 473.76 460.55 618.97 367.65C663.92 338.9 700.76 307.69 730.52 278.1C702.35 250.58 674.18 223.07 646 195.56C635.87 195.35 625.77 195.1 615.66 194.89C605.77 186.38 595.89 177.87 586 169.36C522.53 238.12 459.07 306.85 395.61 375.61Z"/>
+        <path d="M783.7 329.49C771.99 342.4 757.81 356.67 740.94 371.25L632.04 477.59L935.37 477.59Z"/>
+        <path d="M761.04 267.86C624.46 457.56 349.91 477.56 349.91 477.56C647.91 480.32 794.84 296.14 794.84 296.14L780.63 279.04Z"/>
+        <path d="M740.94 371.25C725.94 384.21 708.81 397.41 689.4 410.12C628.82 449.8 570.97 468.36 531.15 477.59L636.33 477.59L743.03 373.39Z"/>
+        <path d="M735.52 244.41L761.04 267.86L794.84 296.14L822.43 318.9L841.75 211.98Z"/>
+      </g>
+      <g fill="#FFFFFF">
+        <path d="M305.18 311.52C323.8 329.22 342.43 346.93 361.05 364.63C347.49 358.88 333.92 353.13 320.35 347.38C321.96 352.9 323.57 358.42 325.18 363.94C318.97 358.65 312.76 353.36 306.56 348.08C298.51 360.26 290.46 372.45 282.41 384.63L282.41 348.08C265.63 356.12 248.84 364.17 232.06 372.22C256.43 351.98 280.81 331.75 305.18 311.52Z"/>
+        <path d="M588.69 190.11C596.51 197.24 604.33 204.37 612.14 211.49C621.57 211.72 631 211.95 640.43 212.18C656.75 229.2 673.08 246.21 689.4 263.23C676.3 257.94 663.19 252.65 650.08 247.36L655.6 270.82C643.41 261.62 631.23 252.42 619.04 243.22C605.25 257.94 591.45 272.66 577.65 287.37C576.73 272.43 575.81 257.48 574.89 242.53C554.89 251.96 534.88 261.39 514.88 270.82C539.48 243.91 564.09 217.01 588.69 190.11Z"/>
+      </g>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<main class="compare">
+
+<!-- ═══════════ RU ═══════════ -->
+<section class="skin-root" data-skin="ru" aria-label="Кожа RU — тёмный tech-premium">
+  <div class="skin-root__head">
+    <a class="brand" href="#"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
+    <span class="skin-root__label">RU · tech-premium</span>
+    <nav class="lang" aria-label="Язык"><a href="#" lang="hy">Հայերեն</a><a href="#" aria-current="page">Русский</a><a href="#" lang="en">English</a></nav>
+  </div>
+
+  <div class="block">
+    <p class="kicker">01 · Вход по моменту</p>
+    <h1 class="h1">Где вы <em>сейчас?</em></h1>
+    <p class="lead">Сайт собран по моменту, в котором вы находитесь, а не по списку услуг.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="#">Рассчитать стоимость<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+      <a class="btn btn--outline" href="#">Обсудить мою ситуацию</a>
+      <a class="btn btn--link" href="#">Разобраться →</a>
+    </div>
+  </div>
+
+  <article class="tile tile--hero state" aria-labelledby="ru-card">
+    <p class="tile__meta">До переезда и первые дни · 02</p>
+    <h2 class="state__name" id="ru-card">Только приехал</h2>
+    <p class="state__recog"><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+    <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается — из практики клиента}</span></span></p>
+    <ul class="chips" role="list"><li class="chip">счёт в банке</li><li class="chip">соцкарта</li><li class="chip">регистрация по адресу</li></ul>
+    <div class="tile__foot btn-row">
+      <a class="btn btn--outline btn--sm" href="#">Проверить мой пакет до подачи</a>
+      <a class="btn btn--link btn--sm" href="#">Разобраться →</a>
+    </div>
+  </article>
+
+  <article class="tile state" aria-labelledby="ru-card2">
+    <p class="tile__meta">Статус и работа · 04</p>
+    <h2 class="state__name" id="ru-card2">Работаю</h2>
+    <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+    <ul class="chips" role="list"><li class="chip">ИП</li><li class="chip">налоговый режим</li><li class="chip">бухгалтерия</li></ul>
+  </article>
+
+  <form class="demo-form" aria-label="Поле и чекбокс">
+    <div class="field"><label class="field__label" for="ru-name">Как к вам обращаться</label><input class="field__input" id="ru-name" type="text" placeholder="Имя"></div>
+    <label class="check"><input type="checkbox" checked><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Регистрация ИП · <span class="slot slot--num">{цена}</span></span></label>
+  </form>
+
+  <hr class="rule" aria-hidden="true">
+  <p class="specimen">Onest 600 — Аа Бб Ёё Жж · 0123456789</p>
+  <div class="spec">
+    <span><b>Display</b> Onest 640/600 · кириллица ✓</span>
+    <span><b>Body</b> Golos Text 400/500 · кириллица ✓</span>
+    <span><b>Метки</b> JetBrains Mono 500 · кириллица ✓</span>
+    <span><b>Радиусы</b> плитка 22 · карточка 16 · кнопка 10 · чип 6</span>
+    <span><b>Поверхности</b> стекло + зерно, кромка 1 px, тень низкая</span>
+  </div>
+  <div class="swatches">
+    <span class="sw"><i style="background:#0C1B3A"></i>0C1B3A</span>
+    <span class="sw"><i style="background:#112240"></i>112240</span>
+    <span class="sw"><i style="background:#F2C249"></i>F2C249</span>
+    <span class="sw"><i style="background:#FAE0A2"></i>FAE0A2</span>
+    <span class="sw"><i style="background:#593E10"></i>593E10</span>
+  </div>
+</section>
+
+<!-- ═══════════ HY ═══════════ -->
+<section class="skin-root" data-skin="hy" aria-label="Кожа HY — частный банк">
+  <div class="skin-root__head">
+    <a class="brand" href="#"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
+    <span class="skin-root__label">HY · частный банк</span>
+    <nav class="lang" aria-label="Язык"><a href="#" lang="hy" aria-current="page">Հայերեն</a><a href="#">Русский</a><a href="#" lang="en">English</a></nav>
+  </div>
+
+  <div class="block">
+    <p class="kicker">01 · Вход по моменту</p>
+    <h1 class="h1">Где вы <em>сейчас?</em></h1>
+    <p class="lead">Сайт собран по моменту, в котором вы находитесь, а не по списку услуг.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="#">Рассчитать стоимость</a>
+      <a class="btn btn--outline" href="#">Обсудить мою ситуацию</a>
+      <a class="btn btn--link" href="#">Разобраться →</a>
+    </div>
+  </div>
+
+  <article class="tile tile--hero state" aria-labelledby="hy-card">
+    <p class="tile__meta">До переезда и первые дни · 02</p>
+    <h2 class="state__name" id="hy-card">Только приехал</h2>
+    <p class="state__recog"><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+    <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается — из практики клиента}</span></span></p>
+    <ul class="chips" role="list"><li class="chip">счёт в банке</li><li class="chip">соцкарта</li><li class="chip">регистрация по адресу</li></ul>
+    <div class="tile__foot btn-row">
+      <a class="btn btn--outline btn--sm" href="#">Проверить мой пакет до подачи</a>
+      <a class="btn btn--link btn--sm" href="#">Разобраться →</a>
+    </div>
+  </article>
+
+  <article class="tile state" aria-labelledby="hy-card2">
+    <p class="tile__meta">Статус и работа · 04</p>
+    <h2 class="state__name" id="hy-card2">Работаю</h2>
+    <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+    <ul class="chips" role="list"><li class="chip">ИП</li><li class="chip">налоговый режим</li><li class="chip">бухгалтерия</li></ul>
+  </article>
+
+  <form class="demo-form" aria-label="Поле и чекбокс">
+    <div class="field"><label class="field__label" for="hy-name">Как к вам обращаться</label><input class="field__input" id="hy-name" type="text" placeholder="Имя"></div>
+    <label class="check"><input type="checkbox" checked><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Регистрация ИП · <span class="slot slot--num">{цена}</span></span></label>
+  </form>
+
+  <hr class="rule" aria-hidden="true">
+  <p class="specimen">Cormorant Garamond 500 — Аа Бб Ёё Жж · 0123456789</p>
+  <p class="specimen" lang="hy" style="font-family:'Noto Serif Armenian',serif;font-weight:500">Հայերեն — Noto Serif Armenian</p>
+  <div class="spec">
+    <span><b>Display</b> Cormorant Garamond 500/600 + Italic · кириллица ✓; под :lang(hy) — Noto Serif Armenian 500/600</span>
+    <span><b>Body</b> Golos Text 400/500; под :lang(hy) — Noto Sans Armenian 400/500</span>
+    <span><b>Кикер</b> Cormorant 600 прописные +0.16em (Cormorant SC — без кириллицы); в hy — Noto Sans 500</span>
+    <span><b>Радиусы</b> 2 px · внутренняя рамка 8/12 px · без теней</span>
+    <span><b>Поверхности</b> бумага #F7F3EA, туф #EFE8D9, карточка #FFFDF8</span>
+  </div>
+  <div class="swatches">
+    <span class="sw"><i style="background:#F7F3EA"></i>F7F3EA</span>
+    <span class="sw"><i style="background:#EFE8D9"></i>EFE8D9</span>
+    <span class="sw"><i style="background:#0C1B3A"></i>0C1B3A</span>
+    <span class="sw"><i style="background:#C4922B"></i>C4922B</span>
+    <span class="sw"><i style="background:#593E10"></i>593E10</span>
+  </div>
+</section>
+
+<!-- ═══════════ EN ═══════════ -->
+<section class="skin-root" data-skin="en" aria-label="Кожа EN — редакционный минимализм">
+  <div class="skin-root__head">
+    <a class="brand" href="#"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
+    <span class="skin-root__label">EN · editorial</span>
+    <nav class="lang" aria-label="Язык"><a href="#" lang="hy">Հայերեն</a><a href="#">Русский</a><a href="#" lang="en" aria-current="page">English</a></nav>
+  </div>
+
+  <div class="block">
+    <p class="kicker" data-no="№ 01">Вход по моменту</p>
+    <h1 class="h1">Где вы <em>сейчас?</em></h1>
+    <p class="lead">Сайт собран по моменту, в котором вы находитесь, а не по списку услуг.</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href="#">Рассчитать стоимость</a>
+      <a class="btn btn--outline" href="#">Обсудить мою ситуацию</a>
+      <a class="btn btn--link" href="#">Разобраться →</a>
+    </div>
+  </div>
+
+  <article class="tile tile--hero state" aria-labelledby="en-card">
+    <p class="tile__meta">До переезда и первые дни · 02</p>
+    <h2 class="state__name" id="en-card">Только приехал</h2>
+    <p class="state__recog"><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+    <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается — из практики клиента}</span></span></p>
+    <ul class="chips" role="list"><li class="chip">счёт в банке</li><li class="chip">соцкарта</li><li class="chip">регистрация по адресу</li></ul>
+    <div class="tile__foot btn-row">
+      <a class="btn btn--outline btn--sm" href="#">Проверить мой пакет до подачи</a>
+      <a class="btn btn--link btn--sm" href="#">Разобраться →</a>
+    </div>
+  </article>
+
+  <article class="tile state" aria-labelledby="en-card2">
+    <p class="tile__meta">Статус и работа · 04</p>
+    <h2 class="state__name" id="en-card2">Работаю</h2>
+    <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+    <ul class="chips" role="list"><li class="chip">ИП</li><li class="chip">налоговый режим</li><li class="chip">бухгалтерия</li></ul>
+  </article>
+
+  <form class="demo-form" aria-label="Поле и чекбокс">
+    <div class="field"><label class="field__label" for="en-name">Как к вам обращаться</label><input class="field__input" id="en-name" type="text" placeholder="Имя"></div>
+    <label class="check"><input type="checkbox" checked><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span>Регистрация ИП · <span class="slot slot--num">{цена}</span></span></label>
+  </form>
+
+  <hr class="rule" aria-hidden="true">
+  <p class="specimen">Literata 500 — Аа Бб Ёё Жж · <i>курсив 400</i> · 0123456789</p>
+  <div class="spec">
+    <span><b>Display</b> Literata opsz 72, 500 + Italic 400 · кириллица ✓ (одна система: и EN, и RU-фрагменты)</span>
+    <span><b>Body</b> Golos Text 400/500/600 — общий для трёх кож</span>
+    <span><b>Кикер</b> Golos 500 11 px +0.2em над линейкой, номер рубрики Literata Italic справа</span>
+    <span><b>Радиусы</b> 0 карточки · 2 px кнопки · без фонов и теней, только линейки</span>
+    <span><b>Поверхности</b> бумага #F4ECDC / #FBF6EA; primary — чернила на бумаге, золото звучит один раз</span>
+  </div>
+  <div class="swatches">
+    <span class="sw"><i style="background:#F4ECDC"></i>F4ECDC</span>
+    <span class="sw"><i style="background:#FBF6EA"></i>FBF6EA</span>
+    <span class="sw"><i style="background:#0C1B3A"></i>0C1B3A</span>
+    <span class="sw"><i style="background:#C4922B"></i>C4922B</span>
+    <span class="sw"><i style="background:#8A6414"></i>8A6414</span>
+  </div>
+</section>
+
+</main>
+</body>
+</html>

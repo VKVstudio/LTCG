@@ -124,6 +124,16 @@
   --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23593E10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --logo-gold: none;
   --logo-ink: block;
+  --scene-day: block;
+  --scene-night: none;
+  --plate-scrim: linear-gradient(180deg, rgba(12, 27, 58, 0.02) 0%, transparent 50%, rgba(12, 27, 58, 0.14) 100%);
+  --plate-tag-bg: rgba(255, 255, 255, 0.92);
+  --plate-tag-line: rgba(168, 122, 30, 0.42);
+  --plate-tag-text: #593E10;
+  --branch-bg: #E9ECF3;
+  --branch-scrim: linear-gradient(180deg, rgba(242, 244, 248, 0.02) 0%, rgba(242, 244, 248, 0.12) 55%, rgba(242, 244, 248, 0.68) 100%);
+  --hud-bg: rgba(255, 255, 255, 0.90);
+  --hud-line: rgba(168, 122, 30, 0.36);
 
   /* ── украшения кожи: те же роли, другой материал ──────────────
      Ни одно правило §1 не пишет цвет литералом — только эти токены. */
@@ -141,7 +151,7 @@
   --ru-glass-inset: inset 0 -1px 0 rgba(12, 27, 58, 0.06);
   --ru-glass-shadow: 0 12px 34px -18px rgba(12, 27, 58, 0.28);
   --ru-glass-solid: rgba(242, 244, 248, 0.98);   /* фолбэк без backdrop-filter */
-  --ru-grain-op: 0.30;
+  --ru-grain-op: 0.22;
   --ru-grain-blend: multiply;
   --ru-tile-inset: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(12, 27, 58, 0.02);
   --ru-ring-fill: linear-gradient(135deg, #8A6414 0%, rgba(168, 122, 30, 0.72) 22%, rgba(196, 146, 43, 0.34) 55%, rgba(12, 27, 58, 0.10) 100%);
@@ -154,8 +164,8 @@
   --ru-on-bar: linear-gradient(180deg, #8A6414, rgba(168, 122, 30, 0.40));
   --ru-num: #0C1B3A;                             /* крупные цифры итога */
   --ru-dot-glow: 0 0 12px rgba(196, 146, 43, 0.28);
-  --ru-art-op: 0.16;
-  --ru-art-op-contact: 0.28;
+  --ru-art-op: 0.28;
+  --ru-art-op-contact: 0.36;
   --ru-contact-scrim: linear-gradient(180deg, var(--bg) 0%, rgba(242, 244, 248, 0.35) 35%, rgba(242, 244, 248, 0.55) 70%, var(--bg-void) 100%);
   --ru-thread: linear-gradient(90deg, transparent 0, rgba(138, 100, 20, 0.55) 12%, rgba(168, 122, 30, 0.35) 48%, rgba(196, 146, 43, 0.14) 78%, transparent 100%);
   --ru-light-blob: radial-gradient(ellipse at center, rgba(196, 146, 43, 0.16) 0%, rgba(242, 194, 73, 0.04) 45%, transparent 68%);
@@ -163,7 +173,7 @@
   /* хиро: экран монитора и стол */
   --hs-screen-core: #FFFFFF;
   --hs-screen-edge: #E4E9F2;
-  --hs-brand: #593E10;
+  --hs-brand: #0C1B3A;
   --hs-desk-light: rgba(255, 236, 200, 0.85);
 }
 
@@ -171,7 +181,116 @@
    Контрасты на --bg #0C1B3A:
      --text 14.53:1 · --text-2 8.83:1 · --text-3 5.73:1 · --text-strong 17.02:1
      --gold-text #FAE0A2 13.17:1 · --gold #F2C249 10.21:1 · --control-line 3.64:1 */
-:root[data-skin="ru"]:not([data-theme="light"]),
+@media (prefers-color-scheme: dark) {
+  :root[data-skin="ru"]:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg: #0C1B3A;
+    --bg-2: #0A1631;
+    --bg-void: #07122A;
+    --surface: #112240;
+    --surface-2: #1A3050;
+    --surface-3: #243B5C;
+
+    --text: rgba(255, 255, 255, 0.92);
+    --text-2: rgba(255, 255, 255, 0.72);
+    --text-3: rgba(255, 255, 255, 0.56);
+    --text-strong: #FFFFFF;
+
+    --line: rgba(250, 224, 162, 0.14);
+    --line-strong: rgba(250, 224, 162, 0.32);
+    --control-line: rgba(250, 224, 162, 0.45);
+
+    --gold: #F2C249;
+    --gold-light: #FAE0A2;
+    --gold-mid: #C4922B;
+    --gold-dark: #593E10;
+    --gold-text: #FAE0A2;
+    --gold-line: rgba(250, 224, 162, 0.34);
+    --gold-fill: linear-gradient(180deg, #FAE0A2 0%, #F2C249 100%);
+    --gold-fill-text: #0C1B3A;
+    --gold-glow: rgba(242, 194, 73, 0.55);
+    --kicker-color: #FAE0A2;
+
+    --btn-primary-bg: var(--gold-fill);
+    --btn-primary-text: var(--gold-fill-text);
+    --btn-outline-line: var(--control-line);
+    --btn-outline-text: #FFFFFF;
+    --btn-outline-hover-bg: rgba(242, 194, 73, 0.10);
+
+    --tile-bg: linear-gradient(180deg, rgba(19, 38, 72, 0.92) 0%, rgba(12, 25, 50, 0.96) 100%);
+    --tile-line: rgba(250, 224, 162, 0.16);
+    --tile-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.72);
+
+    --field-bg: rgba(255, 255, 255, 0.04);
+    --field-line: var(--control-line);
+    --focus: #FAE0A2;
+
+    --glass-bg: rgba(12, 27, 58, 0.76);
+    --glass-blur: 22px;
+    --glass-line: rgba(250, 224, 162, 0.14);
+
+    --wash-1: rgba(255, 255, 255, 0.035);
+    --wash-2: rgba(255, 255, 255, 0.055);
+    --wash-3: rgba(255, 255, 255, 0.080);
+    --ring: rgba(242, 194, 73, 0.22);
+    --sel-bg: rgba(242, 194, 73, 0.32);
+    --sel-text: #FFFFFF;
+    --scrim: 12 27 58;
+    --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23FAE0A2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --logo-gold: block;
+    --logo-ink: none;
+    --scene-day: none;
+    --scene-night: block;
+    --plate-scrim: linear-gradient(180deg, rgba(7, 18, 42, 0.08) 0%, transparent 45%, rgba(7, 18, 42, 0.36) 100%);
+    --plate-tag-bg: rgba(7, 18, 42, 0.78);
+    --plate-tag-line: rgba(250, 224, 162, 0.32);
+    --plate-tag-text: #FAE0A2;
+    --branch-bg: #0C1B3A;
+    --branch-scrim: linear-gradient(180deg, rgba(7, 18, 42, 0.04) 0%, rgba(7, 18, 42, 0.18) 55%, rgba(7, 18, 42, 0.58) 100%);
+    --hud-bg: rgba(12, 27, 58, 0.80);
+    --hud-line: rgba(250, 224, 162, 0.24);
+
+    --ru-body-glow: rgba(89, 62, 16, 0.24);
+    --ru-grid-line: rgba(250, 224, 162, 0.04);
+    --ru-glow-blob: rgba(242, 194, 73, 0.08);
+    --ru-kicker-bar: linear-gradient(90deg, #FAE0A2, rgba(242, 194, 73, 0.4));
+    --ru-em-fill: linear-gradient(92deg, #FFF3D0 0%, #FAE0A2 45%, #F2C249 100%);
+    --ru-btn-inset: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(89, 62, 16, 0.30);
+    --ru-btn-hover-bg: linear-gradient(180deg, #FFF3D0 0%, #FAE0A2 100%);
+    --ru-btn-hover-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 12px 32px -8px rgba(242, 194, 73, 0.6);
+    --ru-outline-hover-color: #FFF3D0;
+    --ru-outline-hover-line: rgba(250, 224, 162, 0.7);
+    --ru-outline-hover-shadow: 0 10px 30px -14px rgba(242, 194, 73, 0.35);
+    --ru-glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --ru-glass-shadow: 0 12px 44px rgba(0, 0, 0, 0.24);
+    --ru-glass-solid: rgba(12, 27, 58, 0.96);
+    --ru-grain-op: 0.32;
+    --ru-grain-blend: overlay;
+    --ru-tile-inset: inset 0 1px 0 rgba(255, 243, 208, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+    --ru-ring-fill: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
+    --ru-ring-fallback-line: rgba(250, 224, 162, 0.36);
+    --ru-hero-bg-a: rgba(89, 62, 16, 0.42);
+    --ru-hero-bg-b: rgba(242, 194, 73, 0.12);
+    --ru-hover-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 243, 208, 0.18), 0 0 0 1px rgba(250, 224, 162, 0.06);
+    --ru-on-line: rgba(250, 224, 162, 0.62);
+    --ru-on-glow: 0 30px 80px -40px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 243, 208, 0.18), 0 0 48px -22px rgba(242, 194, 73, 0.45);
+    --ru-on-bar: linear-gradient(180deg, #FAE0A2, rgba(242, 194, 73, 0.35));
+    --ru-num: #FFF3D0;
+    --ru-dot-glow: 0 0 14px rgba(242, 194, 73, 0.25);
+    --ru-art-op: 0.34;
+    --ru-art-op-contact: 0.55;
+    --ru-contact-scrim: linear-gradient(180deg, var(--bg) 0%, rgba(12, 27, 58, 0.25) 35%, rgba(12, 27, 58, 0.35) 70%, var(--bg-void) 100%);
+    --ru-thread: linear-gradient(90deg, transparent 0, rgba(250, 224, 162, 0.55) 12%, rgba(242, 194, 73, 0.35) 48%, rgba(196, 146, 43, 0.12) 78%, transparent 100%);
+    --ru-light-blob: radial-gradient(ellipse at center, rgba(89, 62, 16, 0.34) 0%, rgba(242, 194, 73, 0.05) 45%, transparent 68%);
+
+    --hs-screen-core: #12264E;
+    --hs-screen-edge: #08142C;
+    --hs-brand: #FFF3D0;
+    --hs-desk-light: rgba(64, 110, 190, 0.85);
+  }
+}
+
 :root[data-skin="ru"][data-theme="dark"],
 [data-skin="ru"] [data-theme-scope="dark"] {
   color-scheme: dark;
@@ -231,6 +350,16 @@
   --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23FAE0A2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --logo-gold: block;
   --logo-ink: none;
+  --scene-day: none;
+  --scene-night: block;
+  --plate-scrim: linear-gradient(180deg, rgba(7, 18, 42, 0.08) 0%, transparent 45%, rgba(7, 18, 42, 0.36) 100%);
+  --plate-tag-bg: rgba(7, 18, 42, 0.78);
+  --plate-tag-line: rgba(250, 224, 162, 0.32);
+  --plate-tag-text: #FAE0A2;
+  --branch-bg: #0C1B3A;
+  --branch-scrim: linear-gradient(180deg, rgba(7, 18, 42, 0.04) 0%, rgba(7, 18, 42, 0.18) 55%, rgba(7, 18, 42, 0.58) 100%);
+  --hud-bg: rgba(12, 27, 58, 0.80);
+  --hud-line: rgba(250, 224, 162, 0.24);
 
   --ru-body-glow: rgba(89, 62, 16, 0.24);
   --ru-grid-line: rgba(250, 224, 162, 0.04);
@@ -271,43 +400,42 @@
   --hs-desk-light: rgba(64, 110, 190, 0.85);
 }
 
-/* ═══ D · СВЕТЛАЯ ТЕМА: ОСТРОВКИ КОНТРАСТА (#0C1B3A) ═══════════
-   По канону docs/style_canon_tech.md §133: опорная плитка ряда (.tile--hero)
-   и итоговая панель калькулятора (.total) на светлой теме выступают
-   глубокими обсидиановыми островами (#0C1B3A) с золотой кромкой,
-   вместо бледно-бежевого пятна по белой бумаге. */
+/* ═══ D · СВЕТЛАЯ ТЕМА: АКЦЕНТНЫЕ ПОВЕРХНОСТИ (ТЁПЛЫЙ ТРАВЕРТИН + ЗОЛОТО) ═══
+   В светлой теме опорная плитка ряда (.tile--hero) и итоговая панель
+   калькулятора (.total) остаются светлыми (тёплый слоновый камень #FFFDF8
+   с золотой кромкой и глубокими чернилами #0C1B3A), чтобы вся светлая тема
+   была цельной, без тёмных пятен. */
 :root[data-skin="ru"][data-theme="light"] .tile--hero,
-:root[data-skin="ru"][data-theme="light"] .total {
-  color-scheme: dark;
-  --surface: #112240;
-  --surface-2: #1A3050;
-  --surface-3: #243B5C;
-  --text: rgba(255, 255, 255, 0.92);
-  --text-2: rgba(255, 255, 255, 0.72);
-  --text-3: rgba(255, 255, 255, 0.56);
-  --text-strong: #FFFFFF;
-  --line: rgba(250, 224, 162, 0.16);
-  --line-strong: rgba(250, 224, 162, 0.34);
-  --control-line: rgba(250, 224, 162, 0.45);
-  --gold: #F2C249;
-  --gold-text: #FAE0A2;
-  --gold-line: rgba(250, 224, 162, 0.34);
-  --btn-outline-line: rgba(250, 224, 162, 0.45);
-  --btn-outline-text: #FFFFFF;
-  --tile-bg: linear-gradient(180deg, #132648 0%, #0C1B3A 100%);
-  --tile-line: rgba(250, 224, 162, 0.22);
-  --tile-shadow: 0 26px 64px -28px rgba(12, 27, 58, 0.55);
-  --wash-1: rgba(255, 255, 255, 0.04);
-  --wash-2: rgba(255, 255, 255, 0.07);
-  --scrim: 12 27 58;
-  --ru-grain-op: 0.30;
-  --ru-grain-blend: overlay;
-  --ru-tile-inset: inset 0 1px 0 rgba(255, 243, 208, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
-  --ru-ring-fill: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
-  --ru-hero-bg-a: rgba(89, 62, 16, 0.42);
-  --ru-hero-bg-b: rgba(242, 194, 73, 0.12);
-  --ru-num: #FFF3D0;
+:root[data-skin="ru"][data-theme="light"] .total,
+[data-skin="ru"] [data-theme-scope="light"] .tile--hero,
+[data-skin="ru"] [data-theme-scope="light"] .total {
+  color-scheme: light;
+  --surface: #FFFDF8;
+  --surface-2: #F8F3E6;
+  --surface-3: #EFE7D4;
+  --tile-bg: linear-gradient(180deg, #FFFFFF 0%, #FAF5E8 100%);
+  --tile-line: rgba(168, 122, 30, 0.42);
+  --tile-shadow: 0 22px 52px -28px rgba(12, 27, 58, 0.18);
+  --ru-hero-bg-a: rgba(242, 194, 73, 0.22);
+  --ru-hero-bg-b: rgba(196, 146, 43, 0.10);
+  --ru-num: #0C1B3A;
   color: var(--text);
+}
+@media (prefers-color-scheme: light) {
+  :root[data-skin="ru"]:not([data-theme="dark"]) .tile--hero,
+  :root[data-skin="ru"]:not([data-theme="dark"]) .total {
+    color-scheme: light;
+    --surface: #FFFDF8;
+    --surface-2: #F8F3E6;
+    --surface-3: #EFE7D4;
+    --tile-bg: linear-gradient(180deg, #FFFFFF 0%, #FAF5E8 100%);
+    --tile-line: rgba(168, 122, 30, 0.42);
+    --tile-shadow: 0 22px 52px -28px rgba(12, 27, 58, 0.18);
+    --ru-hero-bg-a: rgba(242, 194, 73, 0.22);
+    --ru-hero-bg-b: rgba(196, 146, 43, 0.10);
+    --ru-num: #0C1B3A;
+    color: var(--text);
+  }
 }
 
 /* ═══ 1 · УКРАШЕНИЯ КОЖИ · только токены, ни одного литерала ═══ */

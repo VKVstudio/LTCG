@@ -1,0 +1,168 @@
+/* ============================================================
+   LTCG — theme-ru.css · кожа RU «тёмный tech-premium»
+   navy · золото · стекло · bento. Подключать после theme-base.css.
+   Шрифты (Google Fonts, кириллица проверена по subset-блокам API 03.09.2026):
+     Onest 500..700 (display) · Golos Text 400;500 (body) · JetBrains Mono 500 (метки)
+     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@500..700&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@500&display=swap">
+   Канон-источник: docs/style_canon_tech.md · система: docs/style_system.md
+   ============================================================ */
+
+[data-skin="ru"] {
+  color-scheme: dark;
+
+  --bg: #0C1B3A;
+  --bg-2: #0A1631;
+  --surface: #112240;
+  --surface-2: #1A3050;
+  --surface-3: #243B5C;
+
+  --text: rgba(255, 255, 255, 0.92);
+  --text-2: rgba(255, 255, 255, 0.70);
+  --text-3: rgba(255, 255, 255, 0.52);
+  --text-strong: #FFFFFF;
+
+  --line: rgba(250, 224, 162, 0.14);
+  --line-strong: rgba(250, 224, 162, 0.30);
+
+  --gold: #F2C249;
+  --gold-light: #FAE0A2;
+  --gold-mid: #C4922B;
+  --gold-dark: #593E10;
+  --gold-text: #FAE0A2;
+  --gold-line: rgba(250, 224, 162, 0.32);
+  --gold-fill: linear-gradient(180deg, #FAE0A2 0%, #F2C249 100%);
+  --gold-fill-text: #0C1B3A;
+
+  --btn-primary-bg: var(--gold-fill);
+  --btn-primary-text: var(--gold-fill-text);
+  --btn-outline-line: rgba(250, 224, 162, 0.28);
+  --btn-outline-text: #FFFFFF;
+  --btn-outline-hover-bg: rgba(242, 194, 73, 0.10);
+
+  --font-display: 'Onest', 'Segoe UI', Tahoma, sans-serif;
+  --font-body: 'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --fw-h1: 640;
+  --fw-h: 600;
+  --lh-h1: 1.05;
+  --ls-h1: -0.028em;
+  --ls-h: -0.02em;
+  --fs-body: 1rem;
+
+  --kicker-font: 500 0.6875rem/1.45 var(--font-mono);
+  --kicker-ls: 0.12em;
+  --kicker-transform: uppercase;
+  --kicker-color: #FAE0A2;
+
+  --r-tile: 22px;
+  --r-card: 16px;
+  --r-btn: 10px;
+  --r-field: 10px;
+  --r-chip: 6px;
+
+  --tile-bg: linear-gradient(180deg, rgba(17, 34, 64, 0.92) 0%, rgba(13, 26, 50, 0.96) 100%);
+  --tile-line: rgba(250, 224, 162, 0.14);
+  --tile-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.65);
+
+  --field-bg: rgba(255, 255, 255, 0.04);
+  --field-line: rgba(250, 224, 162, 0.16);
+  --focus: #FAE0A2;
+
+  --glass-bg: rgba(12, 27, 58, 0.72);
+  --glass-blur: 22px;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.09'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ── фон страницы: navy с одним тёплым пятном слева-сверху ───── */
+[data-skin="ru"].skin-root, html[data-skin="ru"] body {
+  background:
+    radial-gradient(60rem 40rem at -10% -10%, rgba(89, 62, 16, 0.22), transparent 60%),
+    var(--bg);
+}
+
+/* ── кикер: моно-метка с золотой чертой 24 px ────────────────── */
+[data-skin="ru"] .kicker::before { width: 1.5rem; background: linear-gradient(90deg, #FAE0A2, rgba(242, 194, 73, 0.4)); }
+
+/* ── акцент в заголовке: 1–2 слова сплавом, не наклоном ──────── */
+[data-skin="ru"] .h1 em, [data-skin="ru"] .h2 em {
+  font-style: normal;
+  background: linear-gradient(92deg, #FFF3D0 0%, #FAE0A2 45%, #F2C249 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* ── кнопки ──────────────────────────────────────────────────── */
+[data-skin="ru"] .btn--primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -1px 0 rgba(89, 62, 16, 0.30);
+}
+@media (hover: hover) {
+  [data-skin="ru"] .btn--primary:hover {
+    background: linear-gradient(180deg, #FFF3D0 0%, #FAE0A2 100%);
+    transform: translateY(-1px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 12px 32px -8px rgba(242, 194, 73, 0.6);
+  }
+  [data-skin="ru"] .btn--outline:hover { color: #FFF3D0; border-color: rgba(250, 224, 162, 0.7); }
+}
+
+/* ── плитка: стекло с зерном, блик по верхнему ребру ─────────── */
+[data-skin="ru"] .tile::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  border-radius: inherit;
+  background: var(--grain);
+  background-size: 180px 180px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+[data-skin="ru"] .tile { box-shadow: var(--tile-shadow), inset 0 1px 0 rgba(255, 243, 208, 0.10); }
+[data-skin="ru"] .tile--quiet::before { display: none; }
+
+/* главная плитка: подсвеченная золотая кромка — кольцо 1 px через mask,
+   золото собрано в левом верхнем углу и гаснет к правому нижнему;
+   плюс тёплая тень в углу */
+[data-skin="ru"] .tile--hero { border-color: transparent; }
+[data-skin="ru"] .tile--hero::after {
+  content: ''; position: absolute; inset: 0; z-index: 2;
+  border-radius: inherit; padding: 1px;
+  background: linear-gradient(135deg, #FAE0A2 0%, rgba(242, 194, 73, 0.72) 22%, rgba(196, 146, 43, 0.30) 55%, rgba(250, 224, 162, 0.14) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+[data-skin="ru"] .tile--hero {
+  background:
+    radial-gradient(28rem 18rem at 100% 100%, rgba(89, 62, 16, 0.42), transparent 70%),
+    var(--tile-bg);
+}
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  [data-skin="ru"] .tile--hero { border-color: rgba(250, 224, 162, 0.36); }
+  [data-skin="ru"] .tile--hero::after { display: none; }
+}
+
+/* кликабельная плитка / карточка состояния: подъём 2 px, кромка ярче */
+@media (hover: hover) {
+  [data-skin="ru"] .tile[href]:hover, [data-skin="ru"] .state:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+  [data-skin="ru"] .tile { transition: transform var(--t-fast) var(--ease), border-color var(--t-slow) var(--ease); }
+}
+
+/* чипы — навесная метка, без пилюль */
+[data-skin="ru"] .chip { background: rgba(255, 255, 255, 0.03); }
+
+/* ── стекло: шапка ───────────────────────────────────────────── */
+[data-skin="ru"] .glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  border-bottom: 1px solid rgba(250, 224, 162, 0.12);
+}
+
+/* ── армянский внутри RU-страницы (переключатель, панель) ────── */
+[data-skin="ru"] :lang(hy) { font-family: 'Noto Sans Armenian', var(--font-body); letter-spacing: 0; }
+
+/* принудительные цвета */
+@media (forced-colors: active) {
+  [data-skin="ru"] .h1 em, [data-skin="ru"] .h2 em { background: none; color: CanvasText; -webkit-text-fill-color: currentColor; }
+  [data-skin="ru"] .tile--hero::after { display: none; }
+  [data-skin="ru"] .tile--hero { border-color: CanvasText; }
+}

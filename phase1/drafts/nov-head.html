@@ -1,0 +1,99 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Шапка ноябрьской ветки</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C1B3A; --surface:#112240; --gold:#F2C249; --gold-light:#FAE0A2;
+    --ink:#EAF0FA; --mut:#9FB2D0; --rule:rgba(159,178,208,.24);
+    --font-display:'Playfair Display',Georgia,'Times New Roman',serif;
+    --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
+       -webkit-font-smoothing:antialiased}
+
+  /* ── Шапка ветки: две колонки, жёсткий край. Панель — сетка, не наложение ── */
+  .bhead{display:grid;grid-template-columns:minmax(0,44fr) minmax(0,56fr);
+         min-height:clamp(30rem,64vh,40rem)}
+
+  .bhead__text{background:var(--bg);display:grid;align-content:center;gap:1.5rem;
+    padding:clamp(2rem,4vw,4rem) clamp(1.5rem,3.5vw,3.5rem);
+    /* содержимое прижато к правому краю колонки, к линии стыка */
+    justify-items:start}
+  .bhead__text > *{max-width:32ch}
+
+  .kicker{margin:0;font-size:.75rem;font-weight:600;letter-spacing:.16em;
+          text-transform:uppercase;color:var(--gold)}
+  .kicker__no{color:var(--mut);margin-right:.5em}
+
+  h1{margin:0;font-family:var(--font-display);font-weight:600;line-height:1.06;
+     letter-spacing:-.01em;font-size:clamp(1.875rem,3.1vw,3rem);
+     max-width:16ch;text-wrap:balance}
+
+  .lead{margin:0;font-size:clamp(1rem,1.15vw,1.1875rem);line-height:1.6;color:var(--mut)}
+  .lead b{color:var(--ink);font-weight:600}
+
+  .src{margin:0;padding-top:1rem;border-top:1px solid var(--rule);
+       font-size:.8125rem;line-height:1.5;color:var(--mut);max-width:38ch}
+  .src a{color:var(--gold-light);text-underline-offset:.2em}
+
+  .bhead__media{position:relative;overflow:hidden;background:var(--surface)}
+  .bhead__media img{width:100%;height:100%;object-fit:cover;object-position:78% 50%;display:block}
+  /* Тонкая растушёвка ТОЛЬКО на стыке — чтобы край не резал, но не съедал текст */
+  .bhead__media::before{content:"";position:absolute;inset:0 auto 0 0;width:12%;
+    background:linear-gradient(90deg,var(--bg),transparent);pointer-events:none}
+
+  /* ── Телефон: фото сверху, панель снизу. Ничего не сворачивается ── */
+  @media (max-width:767px){
+    .bhead{grid-template-columns:1fr;min-height:0}
+    .bhead__media{order:-1;aspect-ratio:16/10}
+    .bhead__media img{object-position:74% 50%}
+    .bhead__media::before{inset:auto 0 0 0;width:auto;height:34%;
+      background:linear-gradient(180deg,transparent,var(--bg))}
+    .bhead__text{padding:0 1.25rem 2rem;gap:1.125rem;margin-top:-1px}
+    .bhead__text > *{max-width:none}
+    h1{max-width:none;font-size:clamp(1.75rem,7.4vw,2.25rem)}
+    .src{max-width:none}
+  }
+
+  /* Линейка проверки — только в черновике, на боевой странице её нет */
+  .ruler{position:fixed;left:0;bottom:0;z-index:9;background:#000c;color:#fff;
+    font:12px/1.4 var(--font-body);padding:.4rem .6rem;border-top-right-radius:.4rem}
+</style></head><body>
+
+<header class="bhead">
+  <div class="bhead__text">
+    <p class="kicker"><span class="kicker__no">07</span>с 1 ноября 2026</p>
+    <h1>Подали до 1 ноября — судят по старым правилам</h1>
+    <p class="lead">Заявления, поданные до вступления закона в силу, рассматривают по нормам,
+      действовавшим до него. <b>Это написано в самом законе</b>, а не следует из разъяснений.</p>
+    <p class="src">Закон ՀՕ-11-Ն, статья 30 часть 4 ·
+      <a href="https://www.arlis.am/hy/acts/220874" rel="noopener">arlis.am</a> ·
+      проверено 4 сентября 2026</p>
+  </div>
+  <div class="bhead__media">
+    <picture>
+      <source type="image/webp" sizes="(max-width:767px) 100vw, 56vw"
+        srcset="../assets/img/ltcg-branch-november-1280.webp 1280w,
+                ../assets/img/ltcg-branch-november.webp 1920w">
+      <img src="../assets/img/ltcg-branch-november.jpg" alt="" width="1920" height="1342"
+        sizes="(max-width:767px) 100vw, 56vw"
+        srcset="../assets/img/ltcg-branch-november-1280.jpg 1280w,
+                ../assets/img/ltcg-branch-november.jpg 1920w"
+        fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+</header>
+
+<div class="ruler" id="r">—</div>
+<script>
+  const r=document.getElementById('r');
+  const upd=()=>{r.textContent=innerWidth+'×'+innerHeight+'  ·  h1 '+
+    Math.round(parseFloat(getComputedStyle(document.querySelector('h1')).fontSize))+'px'+
+    '  ·  lead '+Math.round(parseFloat(getComputedStyle(document.querySelector('.lead')).fontSize))+'px';};
+  upd();addEventListener('resize',upd);
+</script>
+</body></html>

@@ -1,0 +1,598 @@
+/* ============================================================================
+   LTCG — прототип экрана выбора языка «Три эпохи» (key = era)
+   I классика (неоклассика + викторианский намёк) · II современность
+   (тёмный интерфейс + бентосетка) · III будущее (editorial + эфемерный)
+
+   Mobile-first: базовые правила — три горизонтальные полосы; @media min-width
+   расширяют до триптиха. Ни одного цвета в правилах компонентов — только var().
+   Светлая и тёмная тема у каждой из трёх частей полные.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- 1. Reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; }
+
+/* ---------------------------------------------------- 2. Токены — светлая */
+:root {
+  color-scheme: light;
+
+  /* модуль экрана */
+  --crest-h: 56px;
+  --pad-b: clamp(18px, 3.4vh, 30px);
+  --pad-x: clamp(20px, 5.2vw, 56px);
+  --seam-w: 1px;
+
+  /* шрифты */
+  --f-hy-disp: 'Cormorant Garamond', 'Times New Roman', serif;
+  --f-hy-arm: 'Noto Serif Armenian', 'Cormorant Garamond', serif;
+  --f-ru-disp: 'Onest', 'Segoe UI', sans-serif;
+  --f-ru-mono: 'JetBrains Mono', 'Cascadia Mono', monospace;
+  --f-en-disp: 'Literata', Georgia, serif;
+  --f-mark: 'Cormorant Garamond', 'Times New Roman', serif;
+
+  /* движение */
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --t-fast: 180ms;
+  --t-mid: 240ms;
+  --t-slow: 320ms;
+  --t-in: 640ms;
+
+  /* ---- часть I · HY — резной туф, светлая ---- */
+  --hy-bg: #EFE7D7;
+  --hy-bg2: #E5DAC5;
+  --hy-ink: #221B12;
+  --hy-mut: #5B4E3A;
+  --hy-gold: #6B4C11;
+  --hy-line: rgba(34, 27, 18, .20);
+  --hy-gold-line: rgba(138, 100, 20, .52);
+  --hy-gold-line-2: rgba(138, 100, 20, .80);
+  --hy-tex: url('../assets/bg/bg-stone-tuf-1280.jpg');
+  --hy-tex-op: .11;
+  --hy-tex-blend: multiply;
+  --hy-tex-filter: contrast(.55) saturate(.7);
+  --hy-tex-mask: linear-gradient(160deg, rgba(0,0,0,.95), rgba(0,0,0,.18) 78%);
+  --hy-veil: linear-gradient(180deg, rgba(255, 253, 246, .55), rgba(255, 253, 246, 0) 46%);
+
+  /* ---- часть II · RU — прибор, светлая (дневной режим) ---- */
+  --ru-bg: #E7ECF4;
+  --ru-bg2: #FFFFFF;
+  --ru-ink: #0C1B3A;
+  --ru-mut: #445771;
+  --ru-gold: #7A5410;
+  --ru-line: rgba(12, 27, 58, .17);
+  --ru-gold-line: rgba(122, 84, 16, .42);
+  --ru-gold-line-2: rgba(122, 84, 16, .74);
+  --ru-tex: none;
+  --ru-tex-op: 0;
+  --ru-tex-blend: normal;
+  --ru-tex-filter: none;
+  --ru-tex-mask: linear-gradient(180deg, rgba(0,0,0,.22) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,.10) 82%);
+  --ru-grid: rgba(12, 27, 58, .038);
+  --ru-veil: radial-gradient(120% 80% at 50% 108%, rgba(122, 84, 16, .10), rgba(122, 84, 16, 0) 62%);
+
+  /* ---- часть III · EN — воздух, светлая ---- */
+  --en-bg: #FAF7F1;
+  --en-bg2: #FFFDF9;
+  --en-ink: #171D2A;
+  --en-mut: #4C5566;
+  --en-gold: #8A6414;
+  --en-line: rgba(23, 29, 42, .17);
+  --en-gold-line: rgba(138, 100, 20, .50);
+  --en-gold-line-2: rgba(138, 100, 20, .85);
+  --en-tex: url('../assets/bg/bg-soft-bokeh-1280.jpg');
+  --en-tex-op: .13;
+  --en-tex-blend: soft-light;
+  --en-tex-filter: blur(2px) saturate(.85);
+  --en-tex-mask: radial-gradient(88% 46% at 60% 116%, rgba(0,0,0,.9) 0%, rgba(0,0,0,0) 70%);
+  --en-veil: radial-gradient(90% 50% at 62% 114%, rgba(255,247,228,.75), rgba(255,247,228,0) 68%), linear-gradient(200deg, rgba(255,255,255,.86), rgba(255,255,255,0) 60%);
+
+  /* ---- шов и хром ---- */
+  --seam: rgba(138, 100, 20, .40);
+  --ch-bg: rgba(255, 255, 255, .80);
+  --ch-fg: #171D2A;
+  --ch-line: rgba(23, 29, 42, .20);
+  --ch-on-bg: #171D2A;
+  --ch-on-fg: #FAF7F1;
+
+  /* ---- знак ---- */
+  --mk-1: #A97C1E;
+  --mk-2: #D8A32F;
+  --mk-3: #EFC65B;
+  --mk-4: #A97C1E;
+  --mk-snow: #FFFDF6;
+  --mk-word: #4A3510;
+}
+
+/* ------------------------------------------------------- 3. Токены — тёмная
+   Один и тот же список значений живёт в двух селекторах: системная тёмная
+   (когда пользователь не выбрал светлую руками) и явный выбор data-theme=dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --hy-bg: #14110D;
+    --hy-bg2: #1D1912;
+    --hy-ink: #F1E9DA;
+    --hy-mut: #B6A88E;
+    --hy-gold: #E4C583;
+    --hy-line: rgba(241, 233, 218, .16);
+    --hy-gold-line: rgba(228, 197, 131, .40);
+    --hy-gold-line-2: rgba(228, 197, 131, .78);
+    --hy-tex-op: .16;
+    --hy-tex-blend: overlay;
+    --hy-tex-filter: contrast(.6) saturate(.6);
+    --hy-veil: linear-gradient(180deg, rgba(228, 197, 131, .07), rgba(228, 197, 131, 0) 52%);
+
+    --ru-bg: #0C1B3A;
+    --ru-bg2: #112240;
+    --ru-ink: #F3F6FB;
+    --ru-mut: #A9B8D0;
+    --ru-gold: #FAE0A2;
+    --ru-line: rgba(250, 224, 162, .18);
+    --ru-gold-line: rgba(250, 224, 162, .30);
+    --ru-gold-line-2: rgba(250, 224, 162, .72);
+    --ru-tex: url('../assets/bg/bg-dark-glass-1280.jpg');
+    --ru-tex-op: .26;
+    --ru-tex-blend: normal;
+    --ru-tex-filter: saturate(.85) brightness(.82);
+    --ru-grid: rgba(250, 224, 162, .045);
+    --ru-veil: radial-gradient(120% 80% at 50% 108%, rgba(250, 224, 162, .10), rgba(250, 224, 162, 0) 62%);
+
+    --en-bg: #0E1117;
+    --en-bg2: #161A22;
+    --en-ink: #EBEEF4;
+    --en-mut: #9AA3B2;
+    --en-gold: #E0C185;
+    --en-line: rgba(235, 238, 244, .16);
+    --en-gold-line: rgba(224, 193, 133, .40);
+    --en-gold-line-2: rgba(224, 193, 133, .82);
+    --en-tex-op: .16;
+    --en-tex-blend: screen;
+    --en-tex-filter: blur(2px) saturate(.8);
+    --en-veil: radial-gradient(92% 54% at 62% 114%, rgba(224,193,133,.17), rgba(224,193,133,0) 70%), linear-gradient(200deg, rgba(210,224,255,.07), rgba(210,224,255,0) 60%);
+
+    --seam: rgba(250, 224, 162, .26);
+    --ch-bg: rgba(14, 17, 23, .72);
+    --ch-fg: #EBEEF4;
+    --ch-line: rgba(235, 238, 244, .24);
+    --ch-on-bg: #EBEEF4;
+    --ch-on-fg: #0E1117;
+
+    --mk-1: #C4922B;
+    --mk-2: #F2C249;
+    --mk-3: #FAE0A2;
+    --mk-4: #C4922B;
+    --mk-snow: #FFFFFF;
+    --mk-word: #F0DBA6;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --hy-bg: #14110D;
+  --hy-bg2: #1D1912;
+  --hy-ink: #F1E9DA;
+  --hy-mut: #B6A88E;
+  --hy-gold: #E4C583;
+  --hy-line: rgba(241, 233, 218, .16);
+  --hy-gold-line: rgba(228, 197, 131, .40);
+  --hy-gold-line-2: rgba(228, 197, 131, .78);
+  --hy-tex-op: .16;
+  --hy-tex-blend: overlay;
+  --hy-tex-filter: contrast(.6) saturate(.6);
+  --hy-veil: linear-gradient(180deg, rgba(228, 197, 131, .07), rgba(228, 197, 131, 0) 52%);
+
+  --ru-bg: #0C1B3A;
+  --ru-bg2: #112240;
+  --ru-ink: #F3F6FB;
+  --ru-mut: #A9B8D0;
+  --ru-gold: #FAE0A2;
+  --ru-line: rgba(250, 224, 162, .18);
+  --ru-gold-line: rgba(250, 224, 162, .30);
+  --ru-gold-line-2: rgba(250, 224, 162, .72);
+  --ru-tex: url('../assets/bg/bg-dark-glass-1280.jpg');
+  --ru-tex-op: .26;
+  --ru-tex-blend: normal;
+  --ru-tex-filter: saturate(.85) brightness(.82);
+  --ru-grid: rgba(250, 224, 162, .045);
+  --ru-veil: radial-gradient(120% 80% at 50% 108%, rgba(250, 224, 162, .10), rgba(250, 224, 162, 0) 62%);
+
+  --en-bg: #0E1117;
+  --en-bg2: #161A22;
+  --en-ink: #EBEEF4;
+  --en-mut: #9AA3B2;
+  --en-gold: #E0C185;
+  --en-line: rgba(235, 238, 244, .16);
+  --en-gold-line: rgba(224, 193, 133, .40);
+  --en-gold-line-2: rgba(224, 193, 133, .82);
+  --en-tex-op: .16;
+  --en-tex-blend: screen;
+  --en-tex-filter: blur(2px) saturate(.8);
+  --en-veil: radial-gradient(92% 54% at 62% 114%, rgba(224,193,133,.17), rgba(224,193,133,0) 70%), linear-gradient(200deg, rgba(210,224,255,.07), rgba(210,224,255,0) 60%);
+
+  --seam: rgba(250, 224, 162, .26);
+  --ch-bg: rgba(14, 17, 23, .72);
+  --ch-fg: #EBEEF4;
+  --ch-line: rgba(235, 238, 244, .24);
+  --ch-on-bg: #EBEEF4;
+  --ch-on-fg: #0E1117;
+
+  --mk-1: #C4922B;
+  --mk-2: #F2C249;
+  --mk-3: #FAE0A2;
+  --mk-4: #C4922B;
+  --mk-snow: #FFFFFF;
+  --mk-word: #F0DBA6;
+}
+
+/* --------------------------------------------------------- 4. Каркас ворот */
+body {
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;                /* ворота: до выбора языка не скроллим */
+  background: var(--ru-bg);
+  color: var(--ru-ink);
+  font-family: var(--f-ru-disp);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+.skip {
+  position: fixed; z-index: 30;
+  top: 8px; left: 8px;
+  transform: translateY(-160%);
+  padding: 10px 16px;
+  min-height: 44px; display: inline-flex; align-items: center;
+  font: 500 13px/1 var(--f-ru-mono);
+  letter-spacing: .06em;
+  color: var(--ch-on-fg);
+  background: var(--ch-on-bg);
+  border-radius: 2px;
+}
+.skip:focus-visible { transform: translateY(0); outline: 2px solid var(--seam); outline-offset: 2px; }
+
+.gate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: var(--seam-w);
+  height: 100%;
+  /* шов — общая линия, не принадлежит ни одной части: ярче у линии знака */
+  background-image: linear-gradient(180deg,
+    color-mix(in srgb, var(--seam) 30%, transparent) 0%,
+    var(--seam) 22%, var(--seam) 78%,
+    color-mix(in srgb, var(--seam) 30%, transparent) 100%);
+}
+
+/* -------------------------------------------------------------- 5. Часть */
+.part {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px var(--pad-x) var(--pad-b);
+  text-decoration: none;
+  background: var(--bg);
+  color: var(--ink);
+  --focus: var(--gold);
+}
+.part--hy { --bg: var(--hy-bg); --bg2: var(--hy-bg2); --ink: var(--hy-ink); --mut: var(--hy-mut); --gold: var(--hy-gold); --line: var(--hy-line); --gline: var(--hy-gold-line); --gline2: var(--hy-gold-line-2); --tex: var(--hy-tex); --tex-op: var(--hy-tex-op); --tex-blend: var(--hy-tex-blend); --tex-filter: var(--hy-tex-filter); --tex-mask: var(--hy-tex-mask); --veil: var(--hy-veil); }
+.part--ru { --bg: var(--ru-bg); --bg2: var(--ru-bg2); --ink: var(--ru-ink); --mut: var(--ru-mut); --gold: var(--ru-gold); --line: var(--ru-line); --gline: var(--ru-gold-line); --gline2: var(--ru-gold-line-2); --tex: var(--ru-tex); --tex-op: var(--ru-tex-op); --tex-blend: var(--ru-tex-blend); --tex-filter: var(--ru-tex-filter); --tex-mask: var(--ru-tex-mask); --veil: var(--ru-veil); }
+.part--en { --bg: var(--en-bg); --bg2: var(--en-bg2); --ink: var(--en-ink); --mut: var(--en-mut); --gold: var(--en-gold); --line: var(--en-line); --gline: var(--en-gold-line); --gline2: var(--en-gold-line-2); --tex: var(--en-tex); --tex-op: var(--en-tex-op); --tex-blend: var(--en-tex-blend); --tex-filter: var(--en-tex-filter); --tex-mask: var(--en-tex-mask); --veil: var(--en-veil); }
+
+/* первая полоса на мобильном уступает место знаку */
+.part--hy { padding-top: calc(var(--crest-h) + 6px); }
+
+.part:focus { outline: none; }
+.part:focus-visible { outline: 2px solid var(--focus); outline-offset: -6px; }
+
+/* материал: фактура + вуаль + собственная кромка части */
+.mat { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.mat::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: var(--tex);
+  background-size: cover;
+  background-position: center;
+  opacity: var(--tex-op);
+  mix-blend-mode: var(--tex-blend);
+  filter: var(--tex-filter);
+  -webkit-mask-image: var(--tex-mask);
+  mask-image: var(--tex-mask);
+}
+.mat::after { content: ''; position: absolute; inset: 0; background-image: var(--veil); }
+
+/* -------------------------------------------------- 6. Содержимое части */
+.num {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: clamp(14px, 2.4vh, 26px);
+  color: var(--gold);
+}
+.num__rule { display: block; height: 1px; background: var(--gline); }
+.num__val { white-space: nowrap; }
+
+.name {
+  display: block;
+  line-height: 1.02;
+  color: var(--ink);
+  margin-bottom: clamp(8px, 1.4vh, 14px);
+}
+
+.line {
+  display: block;
+  color: var(--mut);
+  max-width: 26ch;
+  margin-bottom: clamp(16px, 3vh, 34px);
+  font-size: clamp(.875rem, .34vw + .82rem, 1.0625rem);
+  line-height: 1.5;
+}
+/* черновой армянский до вычитки носителем — видимая пометка, как слоты {…} */
+.is-draft {
+  text-decoration: underline dotted var(--gline2);
+  text-underline-offset: .32em;
+  text-decoration-thickness: 1px;
+}
+
+.act {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 44px;
+  color: var(--gold);
+}
+.act__word { white-space: nowrap; }
+.arw { width: 24px; height: 12px; flex: none; }
+
+/* ---------------------------------- 7. Голоса эпох (I / II / III) */
+
+/* I · классика — резьба по камню: антиква, разрядка, прямые углы, без теней */
+.part--hy .num__rule { width: 30px; }
+.part--hy .num__val {
+  font: 500 clamp(12px, .5vw, 13px)/1 var(--f-hy-disp);
+  letter-spacing: .34em;
+}
+.part--hy .name {
+  font-family: var(--f-hy-arm);
+  font-weight: 500;
+  font-size: clamp(1.75rem, 2.7vw + .35rem, 3rem);
+  letter-spacing: 0;
+}
+.part--hy .line { font-family: var(--f-hy-arm); font-weight: 400; }
+.part--hy .act__word {
+  font: 500 clamp(12px, .42vw + .55rem, 14px)/1 var(--f-hy-arm);
+  letter-spacing: .04em;
+}
+.part--hy .arw { stroke-width: 1; }
+/* викторианский намёк — не орнамент, а внутренняя волосяная рамка «тиснения» */
+.part--hy .mat::after {
+  box-shadow: inset 0 0 0 1px var(--line);
+  outline: 1px solid var(--line);
+  outline-offset: -14px;
+}
+
+/* II · современность — прибор: моно-метка, сетка 48 px, стеклянная плита */
+.part--ru .num__rule { width: 22px; }
+.part--ru .num__val {
+  font: 500 clamp(10px, .34vw + .4rem, 11.5px)/1 var(--f-ru-mono);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.part--ru .name {
+  font-family: var(--f-ru-disp);
+  font-weight: 600;
+  font-size: clamp(1.875rem, 2.9vw + .35rem, 3.25rem);
+  letter-spacing: -.028em;
+}
+.part--ru .line { font-family: var(--f-ru-disp); font-weight: 400; }
+.part--ru .act__word {
+  font: 500 clamp(12px, .42vw + .55rem, 14px)/1 var(--f-ru-disp);
+  letter-spacing: .01em;
+}
+.part--ru .arw { stroke-width: 1.4; }
+.part--ru .mat::after {
+  background-image:
+    var(--veil),
+    repeating-linear-gradient(0deg, var(--ru-grid) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, var(--ru-grid) 0 1px, transparent 1px 48px);
+  box-shadow: inset 0 1px 0 var(--gline);
+}
+
+/* III · будущее — воздух: линейка на всю колонку, антиква-курсив, ничего плотного */
+.part--en .num { justify-content: flex-start; }
+.part--en .num__rule { flex: 1 1 auto; background: var(--line); }
+.part--en .num__val {
+  font: italic 400 clamp(12px, .4vw + .58rem, 14px)/1 var(--f-en-disp);
+  letter-spacing: .02em;
+  color: var(--mut);
+}
+.part--en .name {
+  font-family: var(--f-en-disp);
+  font-weight: 500;
+  font-size: clamp(1.75rem, 2.7vw + .35rem, 3rem);
+  letter-spacing: -.02em;
+  font-variation-settings: 'opsz' 72;
+}
+.part--en .line { font-family: var(--f-en-disp); font-weight: 400; }
+.part--en .act__word {
+  font: italic 400 clamp(13px, .42vw + .6rem, 15px)/1 var(--f-en-disp);
+  letter-spacing: .01em;
+}
+.part--en .arw { stroke-width: .9; }
+
+/* -------------------------------------- 8. Пометка части по умолчанию (RU) */
+.part[data-default] .name { position: relative; }
+.part[data-default] .name::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -.18em;
+  width: 28px; height: 2px;
+  background: var(--gline2);
+}
+
+/* --------------------------------------------------------- 9. Состояния */
+@media (hover: hover) and (pointer: fine) {
+  .part:hover { --line: var(--gline); }
+}
+.part:hover .num__rule,
+.part:focus-visible .num__rule { background: var(--gline2); }
+.part:hover .act,
+.part:focus-visible .act { color: var(--gold); }
+
+/* I — растёт резьба и загорается внутренняя рамка; ничего не двигается */
+.part--hy:hover .num__rule,
+.part--hy:focus-visible .num__rule { width: 54px; }
+.part--hy:hover .mat::after,
+.part--hy:focus-visible .mat::after { outline-color: var(--gline2); box-shadow: inset 0 0 0 1px var(--gline); }
+
+/* II — плита оживает: тёплый свет снизу, кромка сверху, шеврон вперёд */
+.part--ru:hover .mat::after,
+.part--ru:focus-visible .mat::after { box-shadow: inset 0 1px 0 var(--gline2), inset 0 -140px 100px -120px var(--gold); }
+.part--ru:hover .arw,
+.part--ru:focus-visible .arw { transform: translateX(4px); }
+
+/* III — линейка утолщается, подпись получает подчёркивание, воздух светлеет */
+.part--en:hover .num__rule,
+.part--en:focus-visible .num__rule { height: 2px; background: var(--gline2); }
+.part--en:hover .mat::before,
+.part--en:focus-visible .mat::before { opacity: calc(var(--tex-op) * 1.6); }
+.part--en .act__word { padding-bottom: 3px; background-image: linear-gradient(var(--gline2), var(--gline2)); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 1px; }
+.part--en:hover .act__word,
+.part--en:focus-visible .act__word { background-size: 100% 1px; }
+
+/* ------------------------------------------------------------ 10. Знак */
+.crest {
+  position: fixed; z-index: 20;
+  top: 0; left: var(--pad-x);
+  height: var(--crest-h);
+  display: flex; align-items: center; gap: 10px;
+  pointer-events: none;
+}
+.crest__mark { width: 40px; height: auto; }
+.crest .g1, .crest .g4 { stop-color: var(--mk-1); }
+.crest .g2 { stop-color: var(--mk-2); }
+.crest .g3 { stop-color: var(--mk-3); }
+.crest__snow { fill: var(--mk-snow); }
+.crest__word {
+  margin: 0;
+  font: 500 clamp(15px, .5vw + .75rem, 19px)/1 var(--f-mark);
+  letter-spacing: .34em;
+  text-indent: .34em;
+  color: var(--mk-word);
+}
+
+/* ------------------------------------------------ 11. Переключатель темы */
+.theme {
+  position: fixed; z-index: 25;
+  bottom: max(10px, env(safe-area-inset-bottom));
+  right: max(10px, env(safe-area-inset-right));
+  display: flex; gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--ch-line);
+  border-radius: 2px;
+  background: var(--ch-bg);
+  color: var(--ch-fg);
+  backdrop-filter: blur(6px) saturate(1.2);
+}
+@supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+  .theme { -webkit-backdrop-filter: blur(6px) saturate(1.2); backdrop-filter: blur(6px) saturate(1.2); }
+}
+.theme__btn {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 1px;
+  cursor: pointer;
+}
+.theme__btn svg { width: 18px; height: 18px; }
+.theme__btn[aria-pressed="true"] { background: var(--ch-on-bg); color: var(--ch-on-fg); }
+.theme__btn:focus-visible { outline: 2px solid var(--ch-on-bg); outline-offset: 1px; }
+@media (hover: hover) and (pointer: fine) {
+  .theme__btn:not([aria-pressed="true"]):hover { background: color-mix(in srgb, var(--ch-fg) 12%, transparent); }
+}
+
+/* ------------------------------------------- 12. Планшет и десктоп ≥ 768 */
+@media (min-width: 768px) {
+  :root { --crest-h: clamp(88px, 13vh, 132px); }
+
+  .gate {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows:
+      [crest-s] var(--crest-h)
+      [air-1] 1fr
+      [num-s] auto
+      [name-s] auto
+      [line-s] auto
+      [air-2] 1fr
+      [act-s] auto
+      [foot] var(--pad-b);
+    background-image: linear-gradient(90deg,
+      color-mix(in srgb, var(--seam) 25%, transparent) 0%,
+      var(--seam) 26%, var(--seam) 74%,
+      color-mix(in srgb, var(--seam) 25%, transparent) 100%);
+  }
+
+  /* общий модуль: три части — колонки одной сетки, базовые линии общие */
+  .part {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: subgrid;
+    justify-content: stretch;
+    padding: 0 var(--pad-x);
+  }
+  .part--hy { padding-top: 0; }
+
+  .num  { grid-row: num-s;  margin-bottom: 0; align-self: end; min-height: 18px; align-items: flex-end; }
+  .name { grid-row: name-s; margin-bottom: 0; }
+  .line { grid-row: line-s; margin-bottom: 0; padding-top: clamp(10px, 1.4vh, 18px); }
+  .act  { grid-row: act-s;  align-self: end; }
+
+  /* горизонтальная линия знака — одна на весь экран, проходит через все три */
+  .crest { left: 0; right: 0; justify-content: center; }
+  .crest::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--seam) 12%, var(--seam) 88%, transparent);
+  }
+  .crest__mark { width: clamp(44px, 3.6vw, 56px); }
+
+  .theme { bottom: max(14px, env(safe-area-inset-bottom)); right: max(14px, env(safe-area-inset-right)); }
+}
+
+@media (min-width: 1024px) {
+  .line { max-width: 24ch; }
+}
+
+/* --------------------------------------------------------- 13. Движение
+   Разметка отрисовывается видимой; вход объявлен только при no-preference. */
+@media (prefers-reduced-motion: no-preference) {
+  .num, .name, .line, .act {
+    animation: rise var(--t-in) var(--ease) backwards;
+    animation-delay: calc(120ms + var(--p, 0) * 90ms + var(--i, 0) * 55ms);
+  }
+  .crest { animation: fade var(--t-slow) var(--ease) backwards; }
+  .theme { animation: fade var(--t-slow) var(--ease) 420ms backwards; }
+
+  .num__rule { transition: width var(--t-mid) var(--ease), height var(--t-fast) var(--ease), background-color var(--t-mid) var(--ease); }
+  .act, .arw { transition: transform var(--t-mid) var(--ease), color var(--t-mid) var(--ease); }
+  .mat::after { transition: box-shadow var(--t-slow) var(--ease), outline-color var(--t-slow) var(--ease); }
+  .mat::before { transition: opacity var(--t-slow) var(--ease); }
+  .part--en .act__word { transition: background-size var(--t-mid) var(--ease); }
+  .theme__btn { transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

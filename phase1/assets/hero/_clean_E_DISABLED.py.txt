@@ -1,0 +1,132 @@
+# -*- coding: utf-8 -*-
+"""
+Плита E без запечённого знака: на стекле перегородки остаётся только вектор (один источник знака на кадр).
+Метод: область запечённого знака (logo_bbox из E-gemini-quads.json, с полем) заполняется по пирамиде
+нормализованной свёрткой из кольца вокруг — низкочастотный фон матового стекла — и получает зерно,
+снятое с самого стекла рядом. Float-обработка, без квантования между проходами (иначе полосы).
+Вход: E-gemini.jpg (плита со знаком, остаётся как источник). Выход: E.jpg / E.webp / E.avif + LOD 1920/1280.
+Запуск: python phase1/assets/hero/clean_E.py
+"""
+import os, json
+import numpy as np
+from PIL import Image
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+src_path = os.path.join(HERE, 'E-gemini.jpg')
+im = Image.open(src_path).convert('RGB')
+assert im.size == (2560, 1440), im.size
+a = np.asarray(im).astype(np.float32) / 255.0
+H, W, _ = a.shape
+
+q = json.load(open(os.path.join(HERE, 'E-gemini-quads.json'), encoding='utf-8'))
+bx0, by0, bx1, by1 = q['logo_bbox']
+# неизвестная область — bbox знака с полем 10 px (края букв/подписи), рабочее окно — ещё +160 px кольца
+m = 26
+ring = 160
+x0, y0, x1, y1 = max(0, bx0 - m - ring), max(0, by0 - m - ring), min(W, bx1 + m + ring), min(H, by1 + m + ring)
+reg = a[y0:y1, x0:x1].copy()
+h, w, _ = reg.shape
+unknown = np.zeros((h, w), np.float32)
+unknown[by0 - m - y0:by1 + m - y0, bx0 - m - x0:bx1 + m - x0] = 1.0
+known = 1.0 - unknown
+
+
+def gauss1d(sigma):
+    r = int(3 * sigma + 0.5)
+    x = np.arange(-r, r + 1, dtype=np.float32)
+    k = np.exp(-0.5 * (x / sigma) ** 2)
+    return k / k.sum()
+
+
+def blur(arr, sigma):
+    """Отделяемая гауссова свёртка в float с отражением на краях. arr: HxW или HxWxC."""
+    k = gauss1d(sigma)
+    r = len(k) // 2
+    was2d = arr.ndim == 2
+    if was2d:
+        arr = arr[..., None]
+    p = np.pad(arr, ((r, r), (r, r), (0, 0)), mode='reflect')
+    # по x
+    out = np.zeros_like(p)
+    for i, kv in enumerate(k):
+        out += kv * np.roll(p, i - r, axis=1)
+    p2 = out
+    out = np.zeros_like(p2)
+    for i, kv in enumerate(k):
+        out += kv * np.roll(p2, i - r, axis=0)
+    out = out[r:-r, r:-r]
+    return out[..., 0] if was2d else out
+
+
+def down(arr):
+    hh, ww = arr.shape[0] // 2 * 2, arr.shape[1] // 2 * 2
+    a2 = arr[:hh, :ww]
+    if a2.ndim == 2:
+        return 0.25 * (a2[0::2, 0::2] + a2[1::2, 0::2] + a2[0::2, 1::2] + a2[1::2, 1::2])
+    return 0.25 * (a2[0::2, 0::2] + a2[1::2, 0::2] + a2[0::2, 1::2] + a2[1::2, 1::2])
+
+
+def up(arr, shape):
+    img = Image.fromarray(np.clip(arr * 255, 0, 255).astype(np.float32)) if arr.ndim == 2 else None
+    # билинейный апсемпл через PIL по каналам в float32
+    out = []
+    chans = [arr] if arr.ndim == 2 else [arr[..., c] for c in range(arr.shape[2])]
+    for c in chans:
+        pil = Image.fromarray(c.astype(np.float32), mode='F').resize((shape[1], shape[0]), Image.BILINEAR)
+        out.append(np.asarray(pil, dtype=np.float32))
+    return out[0] if arr.ndim == 2 else np.stack(out, -1)
+
+
+# пирамида: заполняем на грубом уровне, поднимаем, уточняем у края
+levels = []
+img, kn = reg, known
+for _ in range(5):
+    levels.append((img, kn))
+    img, kn = down(img), down(kn)
+fill = None
+for img, kn in reversed(levels):
+    if fill is None:
+        num = blur(img * kn[..., None], 6.0)
+        den = blur(kn, 6.0)
+        est = num / np.maximum(den[..., None], 1e-4)
+        fill = np.where(kn[..., None] > 0.5, img, est)
+    else:
+        upf = up(fill, img.shape[:2])
+        # известные пиксели этого уровня возвращаем, у края мягко смешиваем
+        fill = np.where(kn[..., None] > 0.5, img, upf)
+        num = blur(fill * np.maximum(kn, 0.35)[..., None], 3.0)
+        den = blur(np.maximum(kn, 0.35), 3.0)
+        est = num / np.maximum(den[..., None], 1e-4)
+        fill = np.where(kn[..., None] > 0.5, img, est)
+
+# зерно стекла из кольца: высокие частоты известной области, сшитые случайными блоками
+hp = reg - blur(reg, 2.5)
+ring_mask = known > 0.5
+sigma = float(hp[ring_mask].std())
+rng = np.random.default_rng(11)
+grain = rng.normal(0, sigma, reg.shape).astype(np.float32)
+grain = blur(grain, 1.0) * 0.6
+out = fill + grain * unknown[..., None]
+# мягкий стык
+edge = blur(unknown, 4.0)[..., None]
+out = reg * (1 - edge) + out * edge
+a[y0:y1, x0:x1] = np.clip(out, 0, 1)
+res = Image.fromarray((a * 255 + 0.5).astype(np.uint8))
+
+
+def save(im, name, **kw):
+    p = os.path.join(HERE, name)
+    im.save(p, **kw)
+    print('%-12s %5d KB' % (name, os.path.getsize(p) // 1024))
+
+
+save(res, 'E.jpg', quality=90, subsampling=0, optimize=True, progressive=True)
+save(res, 'E.webp', quality=84, method=6)
+save(res, 'E.avif', quality=60, speed=4)
+save(res.resize((1280, 720), Image.LANCZOS), 'E-1280.jpg', quality=86, optimize=True, progressive=True)
+save(res.resize((1920, 1080), Image.LANCZOS), 'E-1920.avif', quality=60, speed=4)
+save(res.resize((1920, 1080), Image.LANCZOS), 'E-1920.webp', quality=82, method=6)
+save(res.resize((1280, 720), Image.LANCZOS), 'E-1280.avif', quality=60, speed=4)
+save(res.resize((1280, 720), Image.LANCZOS), 'E-1280.webp', quality=82, method=6)
+res.crop((bx0 - 120, by0 - 120, bx1 + 120, by1 + 120)).resize((760, 560)).save(os.path.join(HERE, 'gemini', 'E-clean-check.jpg'), quality=85)
+print('done')

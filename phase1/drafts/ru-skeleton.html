@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- ЧЕРНОВИК (drafts/): превью до унификации кож 04.09.2026, не показывать; живые страницы — home-ru/hy/en.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>LTCG — вайрфрейм русской главной (черновик, не публиковать)</title>
+<!--
+  Низкодетальный вайрфрейм по docs/page_skeleton_ru.md (черновик от 03.09.2026).
+  Только HTML/CSS, без JS. Подключён css/style.css ради токенов, поверх — css/skeleton.css.
+  {слот} — текст или цифра, которых нет до подтверждения клиентом. Ни одной цифры о LTCG здесь нет.
+  Секции с пометкой «по мере данных» в релиз-минимум не отгружаются (лежат в drafts/), здесь показаны для обзора.
+  Реальные данные на странице: телефон +374 94 184 014, WhatsApp/Telegram на том же номере, ник @LTCG_Armenia (CLAUDE.md, блокер 3).
+-->
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/drafts/skeleton.css">
+</head>
+<body>
+
+<a class="sk-skip" href="#main">К содержанию</a>
+
+<p class="sk-banner" role="note">Вайрфрейм · <code>docs/page_skeleton_ru.md</code> · 03.09.2026 · все <span class="slot">{слоты}</span> ждут данных клиента · секции «по мере данных» в релиз не идут · не публиковать</p>
+
+<!-- ═══════════════════════════ 3. ШАПКА ═══════════════════════════ -->
+<header class="sk-header" aria-label="Шапка сайта">
+  <div class="sk-wrap sk-header__row">
+    <a class="sk-logo" href="/" aria-label="Legal and Tax Consulting Group — на главную">
+      <span class="ph ph--inline" aria-hidden="true">[логотип SVG]</span>
+      <span class="sk-logo__name">LTCG</span>
+    </a>
+
+    <nav class="sk-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#where">Где вы сейчас?</a></li>
+        <li><a href="#calc">Цены</a></li>
+        <li><a href="#bank">Счёт в банке</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="/razbory/">Разборы</a></li>
+      </ul>
+    </nav>
+
+    <div class="sk-contacts" aria-label="Контакты">
+      <a href="tel:+37494184014">+374 94 184 014</a>
+      <a href="https://wa.me/37494184014" aria-label="Написать в WhatsApp"><span class="ph ph--icon" aria-hidden="true">WA</span></a>
+      <a href="https://t.me/LTCG_Armenia" aria-label="Написать в Telegram"><span class="ph ph--icon" aria-hidden="true">TG</span></a>
+    </div>
+
+    <a class="sk-btn sk-btn--primary" href="#calc">Рассчитать стоимость</a>
+
+    <nav class="sk-lang" aria-label="Язык сайта">
+      <a href="/hy/" lang="hy" hreflang="hy">Հայերեն</a>
+      <a href="/" lang="ru" hreflang="ru" aria-current="page">Русский</a>
+      <a href="/en/" lang="en" hreflang="en">English</a>
+    </nav>
+
+    <p class="sk-note sk-note--mobile">[мобильный: бургер с теми же пятью пунктами и языками · липкая нижняя панель из четырёх кнопок — в конце страницы · до подтверждения цен «Рассчитать стоимость» ведёт в #contact · слот под 8-800 и рубли заложен, не показывается]</p>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════════════════════ 4.1 HERO ═══════════════════════════ -->
+<section class="sk-hero" id="hero" aria-labelledby="hero-title">
+  <p class="sk-hero__frame" role="note">[здесь скролл-хиро (hero-slice.html): Арарат → золотая кромка и свош → знак L·T·C·G за матовым стеклом → вечерний офис без людей → монитор просыпается → три панели. Один статичный экран-заглушка. prefers-reduced-motion: статичный кадр, панели списком]</p>
+  <div class="sk-wrap sk-hero__content">
+    <p class="sk-kicker">Где вы сейчас?</p>
+    <h1 id="hero-title"><span class="slot">{h1 — слот по docs/hero_vision_draft.md}</span></h1>
+    <p class="sk-lead"><span class="slot">{лид — слот по docs/hero_vision_draft.md}</span></p>
+    <div class="sk-cta-row">
+      <a class="sk-btn sk-btn--primary" href="#contact">Обсудить мою ситуацию</a>
+      <a class="sk-btn" href="#calc">Рассчитать стоимость</a>
+      <a class="sk-btn sk-btn--link" href="#where">Пропустить</a>
+    </div>
+    <ul class="sk-panels" aria-label="Три языковые панели монитора">
+      <li class="ph"><span lang="hy">Հայերեն</span> · панель-момент</li>
+      <li class="ph ph--active">Русский · Переезжаю в Армению — активная, становится верхом следующей секции</li>
+      <li class="ph"><span lang="en">English</span> · панель-момент</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.2 WHERE ═══════════════════════════ -->
+<section class="sk-section" id="where" aria-labelledby="where-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.2 · where · <span class="sk-flag sk-flag--ok">релиз-минимум</span></p>
+    <h2 id="where-title">Где вы сейчас?</h2>
+    <p class="sk-sub">Сайт собран по моменту, в котором вы находитесь, а не по списку наших услуг. Выберите свой — покажем, что на этом шаге обычно ломается и что из этого берём на себя.</p>
+    <p class="sk-note">[механика: активная панель hero становится верхом секции, две другие уезжают вкладками в переключатель шапки (Flip). Ниже — три панели-момента в той же трёхколоночной сетке, по два состояния в каждой. Выбор пишет hash, подсвечивает карточку (:target), заполняет липкую полосу и state= во всех CTA ниже. Без JS все шесть карточек читаются и ведут на внутренние страницы. Мобильный: шесть строк стеком, без каруселей.]</p>
+
+    <div class="sk-grid sk-grid--3">
+
+      <div class="sk-moment">
+        <h3 class="sk-kicker">До переезда и первые дни</h3>
+
+        <article class="sk-state" id="pre-move" aria-labelledby="pre-move-h">
+          <h4 id="pre-move-h">Ещё не переехал</h4>
+          <p><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+          <p class="sk-state__fork"><b>Развилка:</b> <span class="slot">{где ломается — из практики клиента}</span></p>
+          <ul class="sk-chips" aria-label="Темы">
+            <li>доверенности для РФ</li><li>консульские действия</li><li>уведомление ФНС о зарубежных счетах</li><li><span class="slot">{что делаем удалённо — от клиента}</span></li>
+          </ul>
+          <div class="sk-cta-row">
+            <a class="sk-btn sk-btn--link" href="/pered-pereezdom/">Разобраться →</a>
+            <a class="sk-btn sk-btn--sm" href="#contact" data-state="pre-move">Составить план до отъезда</a>
+          </div>
+          <p class="sk-note">[модулей в калькуляторе нет → вместо «Рассчитать» — «Обсудить до отъезда» (state=pre-move)]</p>
+        </article>
+
+        <article class="sk-state" id="arrived" aria-labelledby="arrived-h">
+          <h4 id="arrived-h">Только приехал</h4>
+          <p><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+          <p class="sk-state__fork"><b>Развилка:</b> <span class="slot">{где ломается — из практики клиента}</span></p>
+          <ul class="sk-chips" aria-label="Темы">
+            <li>счёт в банке</li><li>соцкарта</li><li>регистрация по адресу</li>
+          </ul>
+          <div class="sk-cta-row">
+            <a class="sk-btn sk-btn--link" href="/tolko-priehal/">Разобраться →</a>
+            <a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a>
+            <a class="sk-btn sk-btn--sm" href="#contact" data-state="arrived">Проверить мой пакет до подачи</a>
+          </div>
+          <p class="sk-note">[предвыбор: счёт + соцкарта + адрес · из hero-панели RU по умолчанию приходит сюда — гипотеза]</p>
+        </article>
+
+        <p class="ph ph--flag">[review-quote: цитата · имя · роль · дата · ссылка на оригинал — не отгружается до данных]</p>
+      </div>
+
+      <div class="sk-moment">
+        <h3 class="sk-kicker">Статус и работа</h3>
+
+        <article class="sk-state" id="legalizing" aria-labelledby="legalizing-h">
+          <h4 id="legalizing-h">Легализуюсь</h4>
+          <p><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+          <p class="sk-state__fork"><b>Развилка:</b> <span class="slot">{где ломается — из практики клиента}</span></p>
+          <ul class="sk-chips" aria-label="Темы">
+            <li>ВНЖ по основанию: наём / ИП / семья / корни</li><li>что красный флаг в анкете</li>
+          </ul>
+          <div class="sk-cta-row">
+            <a class="sk-btn sk-btn--link" href="/legalizuyus/">Разобраться →</a>
+            <a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a>
+            <a class="sk-btn sk-btn--sm" href="#contact" data-state="legalizing">Обсудить основание для ВНЖ</a>
+          </div>
+          <p class="sk-note">[предвыбор: ИП + адрес · ВНЖ вне калькулятора · показывать ли ВНЖ как самостоятельный вход — открытый вопрос]</p>
+        </article>
+
+        <article class="sk-state" id="working" aria-labelledby="working-h">
+          <h4 id="working-h">Работаю</h4>
+          <p><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+          <p class="sk-state__fork"><b>Развилка:</b> <span class="slot">{где ломается — из практики клиента}</span></p>
+          <ul class="sk-chips" aria-label="Темы">
+            <li>ИП</li><li>налоговый режим</li><li>бухгалтерия</li><li>приём платежей из-за рубежа</li><li>SWIFT</li>
+          </ul>
+          <div class="sk-cta-row">
+            <a class="sk-btn sk-btn--link" href="/rabotayu/">Разобраться →</a>
+            <a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a>
+            <a class="sk-btn sk-btn--sm" href="#contact" data-state="working">Подобрать режим и посчитать</a>
+          </div>
+          <p class="sk-note">[предвыбор: ИП + бухгалтерия]</p>
+        </article>
+
+        <p class="ph ph--flag">[review-quote — не отгружается до данных]</p>
+      </div>
+
+      <div class="sk-moment">
+        <h3 class="sk-kicker">Жизнь здесь — и дальше</h3>
+
+        <article class="sk-state" id="settled" aria-labelledby="settled-h">
+          <h4 id="settled-h">Живу и планирую</h4>
+          <p><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+          <p class="sk-state__fork"><b>Развилка:</b> <span class="slot">{где ломается — из практики клиента}</span></p>
+          <ul class="sk-chips" aria-label="Темы">
+            <li>налоги за год</li><li>декларация ФЛ</li><li>CRS и двойное налогообложение</li><li><span class="slot">{сопровождение сделок с недвижимостью — подтвердить профиль}</span></li>
+          </ul>
+          <div class="sk-cta-row">
+            <a class="sk-btn sk-btn--link" href="/zhivu-i-planiruyu/">Разобраться →</a>
+            <a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a>
+            <a class="sk-btn sk-btn--sm" href="#contact" data-state="settled">Разобрать мою налоговую картину</a>
+          </div>
+          <p class="sk-note">[предвыбор: бухгалтерия]</p>
+        </article>
+
+        <article class="sk-state" id="moving-on" aria-labelledby="moving-on-h">
+          <h4 id="moving-on-h">Двигаюсь дальше</h4>
+          <p><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+          <p class="sk-state__fork"><b>Развилка:</b> <span class="slot">{где ломается — из практики клиента}</span></p>
+          <ul class="sk-chips" aria-label="Темы">
+            <li>справки о несудимости и налоговом резидентстве</li><li>закрытие ИП</li><li>апостиль и переводы</li>
+          </ul>
+          <div class="sk-cta-row">
+            <a class="sk-btn sk-btn--link" href="/dvigayus-dalshe/">Разобраться →</a>
+            <a class="sk-btn sk-btn--sm" href="#contact" data-state="moving-on">Собрать пакет для следующей страны</a>
+          </div>
+          <p class="sk-note">[модулей нет → «Обсудить» (state=moving-on)]</p>
+        </article>
+
+        <p class="ph ph--flag">[review-quote — не отгружается до данных]</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- липкая полоса (десктоп, после #where) -->
+<div class="sk-strip" aria-label="Выбранное состояние">
+  <span>Вы выбрали: <span class="slot">{состояние}</span></span>
+  <a class="sk-btn sk-btn--sm sk-btn--primary" href="#calc">Рассчитать</a>
+  <a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a>
+  <span class="sk-note">[десктоп · липкая · состояние из URL-hash]</span>
+</div>
+
+<!-- ═══════════════════════════ 4.3 CALC ═══════════════════════════ -->
+<section class="sk-section" id="calc" aria-labelledby="calc-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.3 · calc · <span class="sk-flag sk-flag--ok">релиз-минимум</span> · только после валюты и состава модулей, иначе CTA ведут в #contact</p>
+    <h2 id="calc-title">Сколько это стоит — считается здесь, без звонка</h2>
+    <p class="sk-sub">Отметьте, что нужно. Сумма меняется сразу. Контакт — только если хотите получить расчёт и план по шагам.</p>
+
+    <div class="sk-calc">
+      <form class="sk-calc__form" aria-label="Калькулятор стоимости" action="#calc" method="get">
+        <p class="ph">[калькулятор: ИП + счёт + соцкарта + адрес (+ бухгалтерия) = сумма · пресеты ?preset=arrived|working|legalizing|settled|hero]</p>
+        <fieldset>
+          <legend>Модули</legend>
+
+          <div class="sk-module">
+            <label><input type="checkbox" name="m" value="ip"> Регистрация ИП</label>
+            <span class="sk-price"><span class="slot slot--num">{цифра}</span></span>
+            <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. Не входит: госпошлины <span class="slot slot--num">{цифра}</span>, комиссии банка.</p></details>
+          </div>
+
+          <div class="sk-module">
+            <label><input type="checkbox" name="m" value="account"> Открытие счёта</label>
+            <span class="sk-price"><span class="slot slot--num">{цифра}</span></span>
+            <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. Не входит: комиссии банка.</p></details>
+          </div>
+
+          <div class="sk-module">
+            <label><input type="checkbox" name="m" value="social-card"> Соцкарта</label>
+            <span class="sk-price"><span class="slot slot--num">{цифра}</span></span>
+            <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. Не входит: госпошлины <span class="slot slot--num">{цифра}</span>.</p></details>
+          </div>
+
+          <div class="sk-module">
+            <label><input type="checkbox" name="m" value="address"> Юридический адрес + корреспонденция</label>
+            <span class="sk-price"><span class="slot slot--num">{цифра}</span> / год</span>
+            <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>.</p></details>
+          </div>
+
+          <div class="sk-module">
+            <label><input type="checkbox" name="m" value="accounting"> Бухгалтерия</label>
+            <span class="sk-price"><span class="slot slot--num">{цифра}</span> / месяц</span>
+            <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. <span class="slot">{младший тариф для простых ИП — открытый вопрос}</span></p></details>
+          </div>
+        </fieldset>
+
+        <div class="sk-total" aria-live="polite" aria-label="Итог">
+          <p>Единовременно <span class="slot slot--num">{цифра}</span> <span class="slot">{валюта}</span></p>
+          <p>В год <span class="slot slot--num">{цифра}</span></p>
+          <p>В месяц <span class="slot slot--num">{цифра}</span></p>
+          <p class="sk-small">актуально на <span class="slot">{дата}</span></p>
+        </div>
+      </form>
+
+      <aside class="sk-calc__aside" aria-label="Обязательства и пояснения к цене">
+        <p class="sk-commit">«Это та же сумма, что будет в договоре» — <span class="slot">{формулировку подтвердить}</span></p>
+        <p>Сами: госпошлина <span class="slot slot--num">{цифра}</span> и ваше время. С нами: <span class="slot slot--num">{цифра}</span> — и вот что именно мы берём на себя → <a href="#diy">что берём на себя</a></p>
+        <p class="sk-small">Итог — стоимость наших услуг. Решения по счёту и статусу принимают банк и госорганы.</p>
+        <p class="ph">[пояснение к бухгалтерии — обязательно до публикации: текст «почему столько» {слот} либо младший тариф]</p>
+        <p class="ph ph--flag">[review-quote — не отгружается до данных]</p>
+      </aside>
+    </div>
+
+    <div class="sk-cta-row">
+      <a class="sk-btn sk-btn--primary" href="#contact">Получить расчёт и план по шагам</a>
+      <a class="sk-btn" href="https://wa.me/37494184014">Открыть в WhatsApp</a>
+      <a class="sk-btn sk-btn--link" href="#contact">Сначала обсудить</a>
+    </div>
+    <p class="ph">[короткая форма после результата: имя · телефон или Telegram · состав модулей и состояние — скрытые поля. Та же форма, что в #contact. WhatsApp — wa.me/37494184014?text= со списком модулей]</p>
+    <p class="sk-note">[цены — единый JSON-блок &lt;script type="application/json" id="prices"&gt; ниже; из него же читают карточки #services («от …») и /tseny/]</p>
+    <script type="application/json" id="prices">
+{ "currency": null, "updated": null,
+  "modules": { "ip": null, "account": null, "social-card": null, "address": null, "accounting": null },
+  "fees": { "state-duty": null } }
+    </script>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.4 ROADMAP ═══════════════════════════ -->
+<section class="sk-section" id="roadmap" aria-labelledby="roadmap-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.4 · roadmap · <span class="sk-flag sk-flag--ok">релиз-минимум</span> · структура и честная строка без SLA и дней</p>
+    <h2 id="roadmap-title">Что будет после того, как вы написали</h2>
+    <p class="sk-sub">Сроки и цена известны до начала работы. Что решают банки и госорганы — говорим заранее.</p>
+
+    <ol class="sk-timeline" aria-label="Пять шагов">
+      <li>
+        <h3>Ответ в течение <span class="slot">{SLA}</span></h3>
+        <dl class="sk-dl"><dt>от вас</dt><dd><span class="slot">{слот}</span></dd><dt>от нас</dt><dd><span class="slot">{слот}</span></dd><dt>дней</dt><dd><span class="slot slot--num">{цифра}</span></dd></dl>
+      </li>
+      <li>
+        <h3>Разбор ситуации</h3>
+        <p><span class="slot">{формат: бесплатный или платный}</span></p>
+        <dl class="sk-dl"><dt>от вас</dt><dd><span class="slot">{слот}</span></dd><dt>от нас</dt><dd><span class="slot">{слот}</span></dd><dt>дней</dt><dd><span class="slot slot--num">{цифра}</span></dd></dl>
+      </li>
+      <li>
+        <h3>План с датами и список документов — до оплаты</h3>
+        <dl class="sk-dl"><dt>от вас</dt><dd><span class="slot">{слот}</span></dd><dt>от нас</dt><dd><span class="slot">{слот}</span></dd><dt>дней</dt><dd><span class="slot slot--num">{цифра}</span></dd></dl>
+      </li>
+      <li>
+        <h3>Исполнение по модулям</h3>
+        <p>ИП <span class="slot slot--num">{цифра}</span> дн. · счёт <span class="slot slot--num">{цифра}</span> дн. · соцкарта <span class="slot slot--num">{цифра}</span> дн. · адрес <span class="slot slot--num">{цифра}</span> дн.</p>
+      </li>
+      <li>
+        <h3>Если что-то пошло не так</h3>
+        <p><span class="slot">{что делаем при отказе или запросе документов — из практики}</span></p>
+      </li>
+    </ol>
+
+    <ul class="sk-grid sk-grid--4" aria-label="Четыре обязательства">
+      <li class="sk-card">Цена из калькулятора = цена в договоре <span class="slot">{подтвердить}</span></li>
+      <li class="sk-card">План с датами — до оплаты</li>
+      <li class="sk-card">Проверка пакета до подачи по списку из <span class="slot slot--num">{цифра}</span> пунктов, по которым банки чаще всего отказывают</li>
+      <li class="sk-card">Дата актуальности на каждой странице с ценами и сроками</li>
+    </ul>
+
+    <p class="sk-honest">Решения о выдаче ВНЖ и открытии счёта принимают государственные органы и банки. Мы отвечаем за подготовку, сроки и за то, что о рисках вы узнаёте до подачи, а не после.</p>
+
+    <div class="sk-cta-row">
+      <a class="sk-btn sk-btn--primary" href="#contact">Обсудить мою ситуацию</a>
+      <a class="sk-btn" href="#calc">Рассчитать</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.5 BANK ═══════════════════════════ -->
+<section class="sk-section sk-section--flag" id="bank" aria-labelledby="bank-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.5 · bank · <span class="sk-flag">по мере данных</span> · причины отказов и тексты диагностики — от клиента</p>
+    <h2 id="bank-title">Одинаковые документы — разный результат. Почему так и что делаем до подачи</h2>
+    <p class="sk-sub">Счёт можно открыть и самому. Мы про то, где это ломается. Решение принимает банк, и мы не обещаем исход — мы делаем так, чтобы к решению вы подошли с пакетом, к которому нет вопросов.</p>
+
+    <h3>Уровень 1 — диагностика</h3>
+    <div class="sk-diag" aria-label="Диагностика: что банк захочет увидеть">
+      <p class="sk-note">[компонент diag, конфигурация bank · результат на экране, без формы · без JS — список с ссылкой на /schet-v-banke/]</p>
+      <ol>
+        <li>Гражданство и статус в РА <ul class="sk-chips"><li><span class="slot">{варианты}</span></li></ul></li>
+        <li>Источник дохода <ul class="sk-chips"><li><span class="slot">{варианты}</span></li></ul></li>
+        <li>Цель счёта <ul class="sk-chips"><li>личный</li><li>ИП</li><li>приём оплат из-за рубежа</li></ul></li>
+        <li>Подтверждение проживания <ul class="sk-chips"><li>есть</li><li>нет</li></ul></li>
+      </ol>
+      <p class="ph">[результат: «Что банк захочет увидеть в вашем случае» + «что подготовить до подачи» — {тексты результатов — клиент}. Без обещания исхода]</p>
+    </div>
+
+    <h3>Уровень 2 — разбор</h3>
+    <div class="sk-grid sk-grid--2">
+      <div class="sk-block">
+        <h4>Почему одинаковые пакеты дают разный результат</h4>
+        <p><span class="slot">{объяснение из практики: на что смотрит комплаенс, роль источника средств, история заявителя}</span></p>
+      </div>
+      <div class="sk-block">
+        <h4>Причины отказов, которые мы видели</h4>
+        <p class="sk-note">[главный GEO-блок страницы · нумерованный список из практики клиента]</p>
+        <ol>
+          <li><span class="slot">{причина}</span> — снимается до подачи / не снимается → <span class="slot">{что делаем}</span></li>
+          <li><span class="slot">{причина}</span> — <span class="slot">{что делаем}</span></li>
+          <li><span class="slot">{причина}</span> — <span class="slot">{что делаем}</span></li>
+        </ol>
+      </div>
+      <div class="sk-block">
+        <h4>Что просят подтверждать</h4>
+        <dl class="sk-dl">
+          <dt>проживание</dt><dd><span class="slot">{что это значит на практике}</span></dd>
+          <dt>легальный доход</dt><dd><span class="slot">{слот}</span></dd>
+          <dt>происхождение средств</dt><dd><span class="slot">{слот}</span></dd>
+        </dl>
+      </div>
+      <div class="sk-block">
+        <h4>Что делаем до подачи</h4>
+        <ul>
+          <li><span class="slot">{пункт чек-листа работ LTCG — клиент}</span></li>
+          <li><span class="slot">{пункт}</span></li>
+          <li><span class="slot">{пункт}</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sk-callout sk-callout--warning" data-kind="warning"><span class="slot">{предупреждение о подводном камне — из практики}</span></p>
+    <p class="sk-callout sk-callout--tip" data-kind="tip"><span class="slot">{совет — из практики}</span></p>
+    <p class="sk-callout" data-kind="note"><b>Боль номер два — переводы и SWIFT.</b> <span class="slot">{одна строка}</span> → <a href="/swift-perevody/">про переводы и SWIFT</a></p>
+
+    <p class="sk-small">Проверил: <span class="slot">{юрист, фото}</span> · Обновлено <span class="slot">{дата}</span></p>
+
+    <h3>Уровень 3 — граница</h3>
+    <p class="sk-honest">Дальше — ваш паспорт, ваша история и конкретный банк. Это разбирается по документам, не по странице.</p>
+
+    <p class="ph ph--flag">[review-quote формата «пробовал сам → споткнулся → решилось» — не отгружается до данных]</p>
+
+    <div class="sk-cta-row">
+      <a class="sk-btn sk-btn--primary" href="#contact" data-state="bank">Проверить мой пакет до подачи</a>
+      <a class="sk-btn" href="#calc">Рассчитать</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.6 DIY ═══════════════════════════ -->
+<section class="sk-section" id="diy" aria-labelledby="diy-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.6 · diy · <span class="sk-flag sk-flag--ok">релиз-минимум</span> · структура таблицы; ячейки — клиент-юрист</p>
+    <h2 id="diy-title">Многое можно сделать самому. Вот что именно, и где обычно ломается</h2>
+
+    <table class="sk-table">
+      <caption class="sk-note">[мобильный — карточки; все ячейки {клиент-юрист; «да / частично / нет» — его оценка}]</caption>
+      <thead>
+        <tr><th scope="col">Шаг</th><th scope="col">Можно самому?</th><th scope="col">Где ломается</th><th scope="col">Что берём на себя</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">ИП</th><td data-label="Можно самому?"><span class="slot">{да / частично / нет}</span></td><td data-label="Где ломается"><span class="slot">{из историй клиента}</span></td><td data-label="Что берём на себя"><span class="slot">{клиент}</span></td></tr>
+        <tr><th scope="row">Счёт</th><td data-label="Можно самому?"><span class="slot">{да / частично / нет}</span></td><td data-label="Где ломается"><span class="slot">{из историй клиента}</span></td><td data-label="Что берём на себя"><span class="slot">{клиент}</span></td></tr>
+        <tr><th scope="row">Соцкарта</th><td data-label="Можно самому?"><span class="slot">{да / частично / нет}</span></td><td data-label="Где ломается"><span class="slot">{из историй клиента}</span></td><td data-label="Что берём на себя"><span class="slot">{клиент}</span></td></tr>
+        <tr><th scope="row">Адрес и корреспонденция</th><td data-label="Можно самому?"><span class="slot">{да / частично / нет}</span></td><td data-label="Где ломается"><span class="slot">{из историй клиента}</span></td><td data-label="Что берём на себя"><span class="slot">{клиент}</span></td></tr>
+        <tr><th scope="row">ВНЖ</th><td data-label="Можно самому?"><span class="slot">{да / частично / нет}</span></td><td data-label="Где ломается"><span class="slot">{из историй клиента}</span></td><td data-label="Что берём на себя"><span class="slot">{клиент}</span></td></tr>
+        <tr><th scope="row">Бухгалтерия и режим</th><td data-label="Можно самому?"><span class="slot">{да / частично / нет}</span></td><td data-label="Где ломается"><span class="slot">{из историй клиента}</span></td><td data-label="Что берём на себя"><span class="slot">{клиент}</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Диагностика «Источник дохода → режим»</h3>
+    <div class="sk-diag" aria-label="Диагностика: источник дохода и налоговый режим">
+      <p class="sk-note">[компонент diag, конфигурация regime · пороги и логика — клиент · без JS — список с ссылкой на /nalogovyy-rezhim/]</p>
+      <ol>
+        <li>Заказчики <ul class="sk-chips"><li>иностранные</li><li>местные</li><li>оба</li></ul></li>
+        <li>Ожидаемый годовой оборот <ul class="sk-chips"><li>до <span class="slot">{порог микро}</span></li><li>до <span class="slot">{порог оборотного}</span></li><li>выше</li></ul></li>
+        <li>Вид деятельности <ul class="sk-chips"><li>IT</li><li>услуги</li><li>торговля</li><li><span class="slot">{…}</span></li></ul></li>
+      </ol>
+      <p class="ph">[результат: подходящий режим и почему; что на этом режиме запрещено — {НК РА, проверил юрист}]</p>
+    </div>
+
+    <p class="sk-honest"><b>Цена ошибки.</b> Неверно выбранный налоговый режим за год — <span class="slot slot--num">{цифра из подтверждённого кейса}</span>. <span class="sk-note">[только из реальных дел, иначе строку не отгружать]</span></p>
+
+    <div class="sk-cta-row">
+      <a class="sk-btn sk-btn--primary" href="#calc">Рассчитать, что берём на себя</a>
+      <a class="sk-btn" href="#contact" data-state="working">Обсудить мой случай</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.7 STORIES ═══════════════════════════ -->
+<section class="sk-section sk-section--flag" id="stories" aria-labelledby="stories-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.7 · stories · <span class="sk-flag">по мере данных</span> · десять историй — запрос 31.08.2026, не получены</p>
+    <h2 id="stories-title">Развилки, которые видно только потом</h2>
+    <p class="sk-sub">Истории людей, которые сделали всё сами и пришли, когда что-то пошло не так. Не чтобы напугать — чтобы вы увидели поворот заранее. Имена изменены, суммы и сроки — настоящие <span class="slot">{подтвердить}</span>.</p>
+
+    <div class="sk-grid sk-grid--3">
+      <article class="sk-card sk-story" aria-label="История 1">
+        <ul class="sk-chips"><li><a href="#arrived">состояние</a></li><li><a href="/schet-v-banke/">тема</a></li></ul>
+        <ol>
+          <li><span class="slot">{ситуация одной фразой}</span></li>
+          <li><span class="slot">{что сделал и почему это выглядело разумно}</span></li>
+          <li><span class="slot">{чего не знал — развилка}</span></li>
+          <li><span class="slot">{во что обошлось: деньги, время, нервы}</span></li>
+          <li><span class="slot">{как чинилось и чинится ли}</span></li>
+        </ol>
+        <p><b>Как понять, что вы здесь:</b> <span class="slot">{признак}</span></p>
+        <a class="sk-btn sk-btn--sm" href="#contact" data-state="arrived">Похоже на мою ситуацию</a>
+      </article>
+      <article class="sk-card sk-story" aria-label="История 2">
+        <ul class="sk-chips"><li><a href="#working">состояние</a></li><li><a href="/nalogovyy-rezhim/">тема</a></li></ul>
+        <ol>
+          <li><span class="slot">{ситуация}</span></li><li><span class="slot">{что сделал}</span></li><li><span class="slot">{развилка}</span></li><li><span class="slot">{во что обошлось}</span></li><li><span class="slot">{как чинилось}</span></li>
+        </ol>
+        <p><b>Как понять, что вы здесь:</b> <span class="slot">{признак}</span></p>
+        <a class="sk-btn sk-btn--sm" href="#contact" data-state="working">Похоже на мою ситуацию</a>
+      </article>
+      <article class="sk-card sk-story" aria-label="История 3">
+        <ul class="sk-chips"><li><a href="#legalizing">состояние</a></li><li><a href="/vnzh/">тема</a></li></ul>
+        <ol>
+          <li><span class="slot">{ситуация}</span></li><li><span class="slot">{что сделал}</span></li><li><span class="slot">{развилка}</span></li><li><span class="slot">{во что обошлось}</span></li><li><span class="slot">{как чинилось}</span></li>
+        </ol>
+        <p><b>Как понять, что вы здесь:</b> <span class="slot">{признак}</span></p>
+        <a class="sk-btn sk-btn--sm" href="#contact" data-state="legalizing">Похоже на мою ситуацию</a>
+      </article>
+    </div>
+    <p><a class="sk-btn sk-btn--link" href="/istorii/">Все истории →</a></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.8 WHY-ARMENIA ═══════════════════════════ -->
+<section class="sk-section sk-section--flag" id="why-armenia" aria-labelledby="why-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.8 · why-armenia · <span class="sk-flag">по мере данных</span> · 10 фактов + статья закона к каждому — после подтверждения</p>
+    <h2 id="why-title">Почему Армения: цифры, которые мы проверили <span class="slot">{дата}</span></h2>
+    <p class="sk-sub">Если что-то изменится — сначала изменится здесь.</p>
+
+    <ul class="sk-grid sk-grid--3" aria-label="Проверенные факты">
+      <li class="sk-card"><p class="sk-fact"><span class="slot slot--num">{цифра}</span></p><p>Налог с оборота до порога <span class="slot slot--num">{цифра}</span> — <span class="slot">{что это значит для вас}</span></p><p class="sk-small">Статья: <span class="slot">{НК РА, ст. …}</span> · Проверено <span class="slot">{дата}</span>, <span class="slot">{юрист}</span></p></li>
+      <li class="sk-card"><p class="sk-fact"><span class="slot slot--num">{цифра}</span></p><p>Микробизнес до порога — <span class="slot">{что это значит для вас}</span></p><p class="sk-small">Статья: <span class="slot">{закон, ст. …}</span> · Проверено <span class="slot">{дата}</span></p></li>
+      <li class="sk-card"><p class="sk-fact"><span class="slot slot--num">{цифра}</span></p><p>Общая система: ставки — <span class="slot">{что это значит для вас}</span></p><p class="sk-small">Статья: <span class="slot">{закон, ст. …}</span> · Проверено <span class="slot">{дата}</span></p></li>
+      <li class="sk-card"><p class="sk-fact"><span class="slot slot--num">{цифра}</span></p><p>Регистрация: срок; капитал, сотрудники, адрес — <span class="slot">{слот}</span></p><p class="sk-small">Статья: <span class="slot">{закон, ст. …}</span> · Проверено <span class="slot">{дата}</span></p></li>
+      <li class="sk-card"><p class="sk-fact"><span class="slot slot--num">{цифра}</span></p><p>Иностранное владение: доля, земля — <span class="slot">{слот}</span></p><p class="sk-small">Статья: <span class="slot">{закон, ст. …}</span> · Проверено <span class="slot">{дата}</span></p></li>
+      <li class="sk-card"><p class="sk-fact"><span class="slot">{условия}</span></p><p>ВНЖ через предпринимательскую деятельность; <span class="slot">{fast-track с 01.08.2026 — после сверки}</span></p><p class="sk-small">Статья: <span class="slot">{закон, ст. …}</span> · Проверено <span class="slot">{дата}</span></p></li>
+    </ul>
+    <p class="sk-small">Цифры меняются. Дата проверки стоит у каждой.</p>
+
+    <div class="sk-cta-row">
+      <a class="sk-btn sk-btn--primary" href="#diy">Какой режим подходит мне</a>
+      <a class="sk-btn" href="#calc">Рассчитать регистрацию</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.9 SERVICES ═══════════════════════════ -->
+<section class="sk-section" id="services" aria-labelledby="services-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.9 · services · <span class="sk-flag sk-flag--ok">релиз-минимум</span></p>
+    <h2 id="services-title">Если вы уже знаете, что вам нужно</h2>
+    <p class="sk-sub">Регистрация бизнеса, бухгалтерия и налоги, открытие счёта, миграционные вопросы — только это, и в этом мы разбираемся глубоко.</p>
+
+    <ul class="sk-grid sk-grid--auto" aria-label="Услуги">
+      <li class="sk-card sk-service"><h3>Регистрация ИП</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p>от <span class="slot slot--num">{цифра}</span></p><ul class="sk-chips"><li>только приехал</li><li>работаю</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/registratsiya-ip/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a></div></li>
+      <li class="sk-card sk-service"><h3>Регистрация ООО</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p>от <span class="slot slot--num">{цифра}</span></p><ul class="sk-chips"><li>работаю</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/registratsiya-ooo/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a></div></li>
+      <li class="sk-card sk-service"><h3>Открытие счёта</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p>от <span class="slot slot--num">{цифра}</span></p><ul class="sk-chips"><li>только приехал</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/schet-v-banke/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a></div></li>
+      <li class="sk-card sk-service"><h3>Соцкарта и регистрация по адресу</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p>от <span class="slot slot--num">{цифра}</span></p><ul class="sk-chips"><li>только приехал</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/sotskarta/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a></div></li>
+      <li class="sk-card sk-service"><h3>Юридический адрес и корреспонденция</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p>от <span class="slot slot--num">{цифра}</span> / год</p><ul class="sk-chips"><li>легализуюсь</li><li>работаю</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/yuridicheskiy-adres/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a></div></li>
+      <li class="sk-card sk-service"><h3>Бухгалтерия и налоговый режим</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p>от <span class="slot slot--num">{цифра}</span> / месяц</p><ul class="sk-chips"><li>работаю</li><li>живу и планирую</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/buhgalteriya/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#calc">Рассчитать</a></div></li>
+      <li class="sk-card sk-service"><h3>Налоговое консультирование (резидентство, CRS)</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><p><span class="slot">{формат цены}</span></p><ul class="sk-chips"><li>живу и планирую</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/nalogovoe-rezidentstvo-i-crs/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a></div></li>
+      <li class="sk-card sk-service"><h3>ВНЖ (наём / ИП / семья / корни)</h3><p class="sk-small">для кого: <span class="slot">{слот}</span> · <span class="slot">{формат — решение клиента}</span></p><ul class="sk-chips"><li>легализуюсь</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/vnzh/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a></div></li>
+      <li class="sk-card sk-service"><h3>Международные переводы и SWIFT (подготовка)</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><ul class="sk-chips"><li>работаю</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/swift-perevody/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a></div></li>
+      <li class="sk-card sk-service"><h3>Доверенности и дела в РФ <span class="slot">{подтвердить}</span></h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><ul class="sk-chips"><li>ещё не переехал</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/doverennosti-i-dela-v-rf/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a></div></li>
+      <li class="sk-card sk-service"><h3>Справки и закрытие дел</h3><p class="sk-small">для кого: <span class="slot">{слот}</span></p><ul class="sk-chips"><li>двигаюсь дальше</li></ul><div class="sk-cta-row"><a class="sk-btn sk-btn--link" href="/spravki-i-zakrytie-del/">Подробнее →</a><a class="sk-btn sk-btn--sm" href="#contact">Обсудить</a></div></li>
+    </ul>
+
+    <p class="sk-path">Зарегистрировали → открыли счёт → ведём учёт → сопровождаем статус — внутри одной компании</p>
+
+    <div class="sk-block">
+      <h3>Чего не делаем</h3>
+      <p>Подбор жилья, школы, билеты, визы в третьи страны <span class="slot">{формулировку подтвердить}</span>.</p>
+      <p class="sk-small">Кто принимает решения: банк, миграционная служба, налоговая.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.10 TEAM ═══════════════════════════ -->
+<section class="sk-section sk-section--flag" id="team" aria-labelledby="team-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.10 · team · <span class="sk-flag">по мере данных</span> · только настоящие фото без обработки · счётчиков нет</p>
+    <h2 id="team-title">Кто ответит вам</h2>
+    <p class="sk-sub">Настоящие фото и имена. Мы не публикуем цифры, которые не можем подтвердить документально.</p>
+
+    <ul class="sk-grid sk-grid--3" aria-label="Команда">
+      <li class="sk-card sk-person">
+        <p class="ph ph--photo">[фото — настоящее, без обработки, от клиента]</p>
+        <h3><span class="slot">{имя}</span></h3>
+        <p><span class="slot">{роль}</span> · <span class="slot">{за что отвечает}</span></p>
+        <p class="sk-small">языки: <span class="slot">{слот}</span> · <span class="slot">{адвокатский статус / квалификация}</span></p>
+        <ul class="sk-chips"><li>ведёт: счета</li><li>ИП</li><li>ВНЖ</li></ul>
+        <a class="sk-btn sk-btn--sm" href="https://wa.me/37494184014">Написать <span class="slot">{имя}</span></a>
+      </li>
+      <li class="sk-card sk-person">
+        <p class="ph ph--photo">[фото — настоящее]</p>
+        <h3><span class="slot">{имя}</span></h3>
+        <p><span class="slot">{роль}</span> · <span class="slot">{за что отвечает}</span></p>
+        <p class="sk-small">языки: <span class="slot">{слот}</span></p>
+        <a class="sk-btn sk-btn--sm" href="https://t.me/LTCG_Armenia">Написать <span class="slot">{имя}</span></a>
+      </li>
+      <li class="sk-card sk-person">
+        <p class="ph ph--photo">[фото — настоящее · карточек 2–4]</p>
+        <h3><span class="slot">{имя}</span></h3>
+        <p><span class="slot">{роль}</span></p>
+        <p class="sk-small">языки: <span class="slot">{слот}</span></p>
+      </li>
+    </ul>
+
+    <p>На первое сообщение отвечает <span class="slot">{имя, роль}</span>.</p>
+    <p class="ph">[внешние знаки: {членства, реестры — только реальные} · ссылки «Отзывы на Яндекс Бизнес» / «на Google» — когда карточки существуют]</p>
+    <p class="sk-small">Legal and Tax Consulting Group LLC · <span class="slot">{реквизиты}</span></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.11 DIGESTS ═══════════════════════════ -->
+<section class="sk-section sk-section--flag" id="digests" aria-labelledby="digests-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.11 · digests · <span class="sk-flag">по мере данных</span> · первые три разбора</p>
+    <h2 id="digests-title">Что изменилось — и что это значит для вас</h2>
+
+    <ul class="sk-grid sk-grid--3" aria-label="Последние разборы">
+      <li class="sk-card sk-digest">
+        <h3><span class="slot">{миграционные изменения: реформа 1 ноября против fast-track 01.08.2026 — после сверки}</span> <span class="slot slot--num">{год}</span></h3>
+        <p class="sk-small">опубликовано <span class="slot">{дата}</span> · обновлено <span class="slot">{дата}</span> · <span class="ph ph--inline">[фото]</span> <span class="slot">{автор-юрист}</span> · источник: <span class="slot">{закон / parliament.am}</span></p>
+        <ul class="sk-chips"><li>кого касается: легализуюсь</li></ul>
+        <a class="sk-btn sk-btn--link" href="/razbory/">Читать →</a>
+      </li>
+      <li class="sk-card sk-digest">
+        <h3><span class="slot">{налог с оборота 2026}</span></h3>
+        <p class="sk-small">опубликовано <span class="slot">{дата}</span> · <span class="slot">{автор-юрист}</span> · источник: <span class="slot">{закон}</span></p>
+        <ul class="sk-chips"><li>кого касается: работаю</li></ul>
+        <a class="sk-btn sk-btn--link" href="/razbory/">Читать →</a>
+      </li>
+      <li class="sk-card sk-digest">
+        <h3><span class="slot">{банковский комплаенс}</span></h3>
+        <p class="sk-small">опубликовано <span class="slot">{дата}</span> · <span class="slot">{автор-юрист}</span> · источник: <span class="slot">{слот}</span></p>
+        <ul class="sk-chips"><li>кого касается: только приехал</li></ul>
+        <a class="sk-btn sk-btn--link" href="/razbory/">Читать →</a>
+      </li>
+    </ul>
+    <p><a class="sk-btn sk-btn--link" href="/razbory/">Все разборы →</a> <span class="sk-note">[{Telegram-канал — только если клиент ведёт}]</span></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.12 FAQ ═══════════════════════════ -->
+<section class="sk-section" id="faq" aria-labelledby="faq-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.12 · faq · <span class="sk-flag sk-flag--ok">релиз-минимум</span> · только вопросы с реальными ответами · FAQPage — когда ответы реальные</p>
+    <h2 id="faq-title">Вопросы, с которыми приходят</h2>
+
+    <div class="sk-faq">
+      <details><summary>Отказали в открытии счёта — что дальше?</summary><p><span class="slot">{ответ — клиент}</span> → <a href="#bank">Счёт в банке</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Можно ли открыть ИП, не приезжая?</summary><p><span class="slot">{ответ — клиент}</span> → <a href="#pre-move">Ещё не переехал</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Какой налоговый режим подходит под доход от зарубежных заказчиков?</summary><p><span class="slot">{ответ — клиент}</span> → <a href="#diy">диагностика «Источник дохода → режим»</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Нужно ли уведомлять ФНС о счёте в Армении?</summary><p><span class="slot">{ответ — клиент}</span> → <a href="#pre-move">Ещё не переехал</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Что делать, если нет адреса для регистрации?</summary><p><span class="slot">{ответ — клиент}</span> → <a href="/yuridicheskiy-adres/">Юридический адрес</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Можно ли сделать всё самому?</summary><p>Да. <span class="slot">{где ломается — клиент}</span> → <a href="#diy">что берём на себя</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Сколько занимает <span class="slot">{услуга}</span>?</summary><p><span class="slot">{сроки}</span> → <a href="#roadmap">Что будет после того, как вы написали</a> · обновлено <span class="slot">{дата}</span></p></details>
+      <details><summary>Берёте ли ВНЖ отдельно?</summary><p><span class="slot">{по решению клиента}</span> → <a href="#legalizing">Легализуюсь</a></p></details>
+      <details><summary>Можно ли оплатить в рублях?</summary><p><span class="slot">{не публикуется до решения по российскому контуру}</span></p></details>
+    </div>
+
+    <div class="sk-cta-row">
+      <a class="sk-btn" href="#contact">Не нашли свой вопрос — напишите, где вы сейчас</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ 4.13 CONTACT ═══════════════════════════ -->
+<section class="sk-section" id="contact" aria-labelledby="contact-title">
+  <div class="sk-wrap">
+    <p class="sk-meta">4.13 · contact · <span class="sk-flag sk-flag--ok">релиз-минимум</span> · та же форма — после калькулятора</p>
+    <h2 id="contact-title">Напишите — ответим в течение <span class="slot">{SLA}</span></h2>
+    <p class="sk-sub">Напишите, где вы сейчас, — скажем, что нужно, а что нет. Один номер, три способа: <span class="slot">{часы по Еревану}</span>.</p>
+
+    <div class="sk-cta-row" aria-label="Способы связи">
+      <a class="sk-btn" href="https://wa.me/37494184014">WhatsApp</a>
+      <a class="sk-btn" href="https://t.me/LTCG_Armenia">Telegram</a>
+      <a class="sk-btn" href="tel:+37494184014">Позвонить +374 94 184 014</a>
+      <a class="sk-btn" href="#contact">Email <span class="slot">{слот}</span></a>
+    </div>
+    <p class="sk-note">[WhatsApp — wa.me/37494184014?text=&lt;состояние&gt;. Telegram: предзаполнение работает только у бота, @LTCG_Armenia — личный аккаунт → нужен бот либо метка в тексте формы]</p>
+
+    <div class="sk-contact">
+      <form class="sk-form" action="#contact" method="post" aria-label="Форма заявки">
+        <p class="sk-field"><label for="f-name">Имя</label><input id="f-name" name="name" type="text" autocomplete="name"></p>
+        <p class="sk-field"><label for="f-contact">Как связаться (телефон или Telegram)</label><input id="f-contact" name="contact" type="text" autocomplete="tel"></p>
+        <p class="sk-field"><label for="f-state">Где вы сейчас?</label>
+          <select id="f-state" name="state">
+            <option value="">— выберите —</option>
+            <option value="pre-move">Ещё не переехал</option>
+            <option value="arrived">Только приехал</option>
+            <option value="legalizing">Легализуюсь</option>
+            <option value="working">Работаю</option>
+            <option value="settled">Живу и планирую</option>
+            <option value="moving-on">Двигаюсь дальше</option>
+          </select>
+        </p>
+        <p class="sk-field"><label for="f-msg">Сообщение (необязательно)</label><textarea id="f-msg" name="message"></textarea></p>
+        <p class="sk-field"><label for="f-src">Как вы о нас узнали? (необязательно)</label><input id="f-src" name="source" type="text"></p>
+        <p class="sk-field sk-field--check"><input id="f-consent" name="consent" type="checkbox"><label for="f-consent">Согласие на обработку персональных данных — <span class="slot">{текст — клиент}</span></label></p>
+
+        <!-- honeypot: без отсечки по времени заполнения (CLAUDE.md) -->
+        <p class="sk-hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="modules" value="">
+        <input type="hidden" name="story" value="">
+
+        <p class="sk-note">[предзаполнение «Где вы сейчас?» из state= · скрытые поля: состояние, состав модулей, история · кириллица допускается · honeypot без отсечки по времени]</p>
+        <div class="sk-cta-row">
+          <button class="sk-btn sk-btn--primary" type="submit">Отправить</button>
+          <span class="sk-small">или напишите в <a href="https://wa.me/37494184014">WhatsApp</a></span>
+        </div>
+        <p class="ph">[после отправки: «Что будет дальше: {шаги} — {срок}»]</p>
+      </form>
+
+      <aside class="sk-block" aria-label="Что будет дальше">
+        <h3>Что будет дальше</h3>
+        <ol class="sk-steps">
+          <li>Ответ в течение <span class="slot">{SLA}</span></li>
+          <li>Разбор ситуации — <span class="slot">{формат}</span></li>
+          <li>План с датами и список документов — до оплаты</li>
+        </ol>
+        <p class="sk-small"><a href="#roadmap">Все пять шагов →</a></p>
+        <p class="ph">[адрес и карта — только после решения по адресу (офиса нет)]</p>
+        <p class="ph">[скрытые слоты до договорённости: российский номер 8-800 · оплата в рублях {через партнёра}]</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════ 5. ФУТЕР ═══════════════════════════ -->
+<footer class="sk-footer" aria-label="Подвал сайта">
+  <div class="sk-wrap">
+    <div class="sk-grid sk-grid--4">
+      <div>
+        <p class="sk-footer__h">Legal and Tax Consulting Group LLC</p>
+        <ul>
+          <li><span class="slot">{реквизиты}</span></li>
+          <li><span class="slot">{юридический адрес}</span></li>
+          <li><a href="tel:+37494184014">+374 94 184 014</a></li>
+          <li><a href="https://wa.me/37494184014">WhatsApp</a> · <a href="https://t.me/LTCG_Armenia">Telegram @LTCG_Armenia</a></li>
+          <li><span class="slot">{email}</span> · <span class="slot">{часы}</span></li>
+        </ul>
+      </div>
+      <nav aria-labelledby="ft-moments">
+        <p class="sk-footer__h" id="ft-moments">По моменту</p>
+        <ul>
+          <li><a href="/pered-pereezdom/">Ещё не переехал</a></li>
+          <li><a href="/tolko-priehal/">Только приехал</a></li>
+          <li><a href="/legalizuyus/">Легализуюсь</a></li>
+          <li><a href="/rabotayu/">Работаю</a></li>
+          <li><a href="/zhivu-i-planiruyu/">Живу и планирую</a></li>
+          <li><a href="/dvigayus-dalshe/">Двигаюсь дальше</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="ft-services">
+        <p class="sk-footer__h" id="ft-services">Услуги</p>
+        <ul>
+          <li><a href="/registratsiya-ip/">Регистрация ИП</a></li>
+          <li><a href="/registratsiya-ooo/">Регистрация ООО</a></li>
+          <li><a href="/schet-v-banke/">Открытие счёта</a></li>
+          <li><a href="/sotskarta/">Соцкарта и регистрация по адресу</a></li>
+          <li><a href="/yuridicheskiy-adres/">Юридический адрес</a></li>
+          <li><a href="/buhgalteriya/">Бухгалтерия и налоговый режим</a></li>
+          <li><a href="/nalogovoe-rezidentstvo-i-crs/">Налоговое консультирование</a></li>
+          <li><a href="/vnzh/">ВНЖ</a></li>
+          <li><a href="/swift-perevody/">Переводы и SWIFT</a></li>
+          <li><a href="/spravki-i-zakrytie-del/">Справки и закрытие дел</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="ft-pages">
+        <p class="sk-footer__h" id="ft-pages">Разделы</p>
+        <ul>
+          <li><a href="/tseny/">Цены</a></li>
+          <li><a href="/kak-eto-budet/">Как это будет</a></li>
+          <li><a href="/istorii/">Истории</a></li>
+          <li><a href="/razbory/">Разборы</a></li>
+          <li><a href="/voprosy/">Вопросы</a></li>
+          <li><a href="/komanda/">Команда</a></li>
+          <li><a href="/kontakty/">Контакты</a></li>
+          <li><a href="/politika/">Политика обработки данных</a></li>
+          <li><span class="slot">{оферта — если есть}</span></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sk-footer__bottom">
+      <nav class="sk-lang" aria-label="Язык сайта">
+        <a href="/hy/" lang="hy" hreflang="hy">Հայերեն</a>
+        <a href="/" lang="ru" hreflang="ru" aria-current="page">Русский</a>
+        <a href="/en/" lang="en" hreflang="en">English</a>
+      </nav>
+      <p class="ph">[ссылки на Яндекс Бизнес / Google — когда карточки есть]</p>
+      <p class="sk-small">Услуги носят консультационный и сопроводительный характер; решения о выдаче ВНЖ и открытии счетов принимают государственные органы и банки <span class="slot">{формулировку подтвердить}</span>.</p>
+      <p class="sk-small">© <span class="slot slot--num">{год, динамически}</span> Legal and Tax Consulting Group LLC</p>
+      <p class="sk-note">[cookie-полоска — только если есть аналитика; «Отклонить» одним кликом без модалки · разметка: Organization / LegalService (telephone +374-94-184-014, sameAs t.me/LTCG_Armenia), Service по модулям, Person, Article, FAQPage — только с реальными ответами; AggregateRating — нет · hreflang ru / en / hy + x-default · canonical на / · sitemap с актуальным lastmod]</p>
+    </div>
+  </div>
+</footer>
+
+<!-- липкая нижняя панель (мобильный) — появляется после отпускания пина hero, не поверх него -->
+<nav class="sk-bottombar" aria-label="Быстрые действия">
+  <a href="tel:+37494184014">Позвонить</a>
+  <a href="https://wa.me/37494184014">WhatsApp</a>
+  <a href="https://t.me/LTCG_Armenia">Telegram</a>
+  <a href="#calc">Рассчитать</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<title>OG</title>
+<link rel="stylesheet" href="../css/fonts.css">
+<style>
+  :root{
+    --navy:#0C1B3A; --navy-2:#08142C; --gold:#F2C249; --gold-3:#FAE0A2;
+    --ink:#F4F7FC; --mut:#B9C6DD; --line:rgba(250,224,162,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:#000}
+  .og{
+    position:relative; width:1200px; height:630px; overflow:hidden;
+    background:linear-gradient(158deg, var(--navy) 0%, var(--navy-2) 100%);
+    color:var(--ink); font-family:var(--f-ru-body,'Golos Text',system-ui,sans-serif);
+  }
+  /* Арарат занимает правую треть и виден по-настоящему: это единственная фотография
+     в карточке, ради неё её и открывают. Слева уходит в навах мягкой маской. */
+  .og__art{
+    position:absolute; inset:-4% -4% -4% 46%;
+    background:url('../assets/hero/lcp/A-1280.jpg') 62% 46%/cover no-repeat;
+    opacity:.62; filter:saturate(.72) contrast(.96) brightness(1.02);
+    -webkit-mask-image:linear-gradient(96deg, transparent 0%, rgba(0,0,0,.55) 22%, #000 52%);
+    mask-image:linear-gradient(96deg, transparent 0%, rgba(0,0,0,.55) 22%, #000 52%);
+  }
+  /* тёплый свет от горизонта и холодная глубина сверху — тот же грейд, что в хиро */
+  .og__veil{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(88% 62% at 96% 88%, rgba(242,194,73,.20), transparent 62%),
+      radial-gradient(70% 60% at 4% 4%, rgba(8,20,44,.85), transparent 70%),
+      linear-gradient(92deg, var(--navy) 26%, rgba(12,27,58,.86) 44%, rgba(12,27,58,.10) 78%);
+  }
+  .og__grid{
+    position:relative; z-index:2; height:100%;
+    display:grid; grid-template-rows:auto 1fr auto; padding:58px 68px;
+  }
+  .og__top{display:flex; align-items:center; gap:20px}
+  .og__mark{height:42px; width:auto; display:block; flex:none}
+  .og__site{
+    margin-inline-start:auto; font-family:var(--f-ru-mono,'JetBrains Mono',monospace);
+    font-size:18px; letter-spacing:.18em; text-transform:uppercase; color:var(--mut);
+  }
+  .og__mid{display:flex; flex-direction:column; justify-content:center; gap:20px}
+  .og__kicker{
+    display:inline-flex; align-items:center; gap:14px; white-space:nowrap;
+    font-family:var(--f-ru-mono,'JetBrains Mono',monospace);
+    font-size:18px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold);
+  }
+  .og__kicker::before{content:''; width:52px; height:1px; background:var(--gold); opacity:.75; flex:none}
+  .og__title{
+    font-family:var(--f-ru-display,'Cormorant Garamond',Georgia,serif); font-weight:600;
+    font-size:82px; line-height:1.02; letter-spacing:-.018em; color:#fff;
+    max-width:13ch; text-wrap:balance;
+  }
+  .og__title em{font-style:normal; color:var(--gold-3)}
+  .og__sub{font-size:25px; line-height:1.38; color:var(--mut); max-width:19ch}
+  .og__bot{
+    display:flex; align-items:baseline; justify-content:space-between; gap:24px;
+    padding-top:24px; border-top:1px solid var(--line);
+  }
+  .og__meta{font-family:var(--f-ru-mono,'JetBrains Mono',monospace); font-size:17px; letter-spacing:.12em; color:var(--mut)}
+  .og__city{font-size:21px; color:var(--gold-3); letter-spacing:.01em}
+</style></head><body>
+<div class="og" id="og">
+  <span class="og__art" aria-hidden="true"></span><span class="og__veil" aria-hidden="true"></span>
+  <div class="og__grid">
+  <div class="og__top">
+    <img class="og__mark" src="../assets/logo/ltcg-lockup@2x.png" alt="">
+    <span class="og__site" id="site">ltcg.am</span>
+  </div>
+  <div class="og__mid">
+    <span class="og__kicker" id="kicker">Вход по моменту</span>
+    <span class="og__title" id="title">Где вы <em>сейчас</em>?</span>
+    <span class="og__sub" id="sub">Легализация, счёт, ИП и бухгалтерия в Армении</span>
+  </div>
+  <div class="og__bot">
+    <span class="og__meta" id="meta">Legal and Tax Consulting Group</span>
+    <span class="og__city">Ереван</span>
+  </div>
+</div>
+<script>
+  // параметры из адреса: ?k=надкад&t=заголовок&s=подпись&m=низ
+  var q=new URLSearchParams(location.search), set=function(id,v){ if(v) document.getElementById(id).innerHTML=v; };
+  set('kicker',q.get('k')); set('title',q.get('t')); set('sub',q.get('s')); set('meta',q.get('m')); set('site',q.get('d'));
+</script>
+</body></html>

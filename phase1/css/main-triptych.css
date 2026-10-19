@@ -66,26 +66,26 @@
   --hy-etch:      rgba(107, 76, 17, .34);
   --hy-slot:      rgba(196, 146, 43, .10);
 
-  /* ── II · RU — navy в обеих темах (style_system §4.1); светлая = дневной свет ── */
-  --ru-bg:        #10254B;
-  --ru-art:       url('../assets/bg/bg-dark-glass-1280.jpg');
-  --ru-art-op:    .52;
+  /* ── II · RU — в светлой теме солнечное дневное стекло, в тёмной — глубокий ночной индиго ── */
+  --ru-bg:        #EEF2F8;
+  --ru-art:       url('../assets/scenes/hero-yerevan-day-1280.jpg');
+  --ru-art-op:    .68;
   --ru-art-tint:  transparent;
   --ru-art-blend: normal;
-  --ru-art-filter: saturate(.9) brightness(1.16);
-  --ru-scrim:     16 37 75;
-  --ru-a1:        .74;
-  --ru-a2:        .40;
-  --ru-key:       radial-gradient(118% 90% at 1% 0%, rgba(255, 240, 205, .17), rgba(255, 240, 205, 0) 58%);
-  --ru-glass:     rgba(224, 234, 250, .10);
-  --ru-edge:      rgba(255, 246, 222, .36);
-  --ru-grain:     .13;
-  --ru-ink:       #F4F7FC;
-  --ru-mut:       #BCC9DF;
-  --ru-gold:      #FAE0A2;
-  --ru-line:      rgba(250, 224, 162, .22);
-  --ru-gline:     rgba(250, 224, 162, .44);
-  --ru-gline2:    rgba(250, 224, 162, .92);
+  --ru-art-filter: contrast(1.02) saturate(.96) brightness(1.02);
+  --ru-scrim:     238 242 248;
+  --ru-a1:        .88;
+  --ru-a2:        .58;
+  --ru-key:       radial-gradient(118% 90% at 1% 0%, rgba(255, 255, 255, .62), rgba(255, 255, 255, 0) 58%);
+  --ru-glass:     rgba(255, 255, 255, .72);
+  --ru-edge:      rgba(168, 122, 30, .34);
+  --ru-grain:     .08;
+  --ru-ink:       #0C1B3A;
+  --ru-mut:       #3D4863;
+  --ru-gold:      #593E10;
+  --ru-line:      rgba(12, 27, 58, .18);
+  --ru-gline:     rgba(138, 100, 20, .44);
+  --ru-gline2:    rgba(138, 100, 20, .88);
 
   /* ── III · EN — кремовая бумага при косом свете ── */
   --en-bg:        #FAF6EE;
@@ -106,35 +106,27 @@
   --en-gline2:    rgba(138, 100, 20, .88);
   --en-shade:     rgba(21, 32, 46, .11);
 
-  /* ── шов между частями и полоса хрома ── */
-  --seam:         rgba(12, 27, 58, .30);
-  --chrome-ink:   var(--ru-ink);
-  --chrome-mut:   var(--ru-mut);
-  --chrome-line:  rgba(250, 224, 162, .30);
-  --crest-bg:     #08142C;   /* глубже навахи русской колонки — ступень видна и над ней */
-  --mark-ink:     var(--g-2);
-  --hint-ink:     var(--ru-mut);
-  --hint-gold:    var(--ru-gold);
+  /* ── шов между частями и полоса хрома (в светлой теме — светлый травертин) ── */
+  --seam:         rgba(12, 27, 58, .20);
+  --chrome-ink:   #0C1B3A;
+  --chrome-mut:   #3D4863;
+  --chrome-line:  rgba(12, 27, 58, .18);
+  --crest-bg:     #F3EFE6;
+  --mark-ink:     #593E10;
+  --hint-ink:     #3D4863;
+  --hint-gold:    #593E10;
 }
 
-/* ── 1-бис. Те же три фото — AVIF/WebP через image-set() ─────────────────
-   JPEG в блоке 1 остаётся безусловным фолбэком: старый браузер этот блок
-   просто не видит (@supports проверяет саму функцию, не формат внутри).
-   Картинка не меняется между темами (меняются только --*-art-op/tint/
-   blend/filter выше), поэтому одного @supports-блока достаточно на все три. */
+/* ── 1-бис. AVIF/WebP через image-set() (дневной вид) ───────────────── */
 @supports (background-image: image-set(url("a.avif") type("image/avif"))) {
   .tri {
     --hy-art: image-set(url('../assets/bg/bg-stone-tuf-1280.avif') type("image/avif"), url('../assets/bg/bg-stone-tuf-1280.webp') type("image/webp"));
-    --ru-art: image-set(url('../assets/bg/bg-dark-glass-1280.avif') type("image/avif"), url('../assets/bg/bg-dark-glass-1280.webp') type("image/webp"));
+    --ru-art: image-set(url('../assets/scenes/hero-yerevan-day-1280.avif') type("image/avif"), url('../assets/scenes/hero-yerevan-day-1280.webp') type("image/webp"));
     --en-art: image-set(url('../assets/bg/bg-paper-1280.avif') type("image/avif"), url('../assets/bg/bg-paper-1280.webp') type("image/webp"));
   }
 }
 
-/* ── 2. Токены — ТЁМНАЯ тема ────────────────────────────────────────────
-   Один и тот же список в двух селекторах: системная тёмная (пока пользователь
-   не выбрал светлую руками) и явный выбор. Стиль части не меняется — меняются
-   вещество и тон: туф становится ночным туфом, бумага — бумагой под лампой,
-   navy остаётся navy.                                                     */
+/* ── 2. Токены — ТЁМНАЯ тема ──────────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .tri {
     color-scheme: dark;
@@ -158,6 +150,7 @@
     --hy-slot:      rgba(242, 194, 73, .085);
 
     --ru-bg:        #0A1730;
+    --ru-art:       url('../assets/scenes/hero-yerevan-night-1280.jpg');
     --ru-art-op:    .64;
     --ru-art-tint:  transparent;
     --ru-art-blend: normal;
@@ -194,8 +187,13 @@
     --en-shade:     rgba(0, 0, 0, .38);
 
     --seam:         rgba(250, 224, 162, .24);
+    --chrome-ink:   #F3F6FB;
+    --chrome-mut:   #AEBCD3;
     --chrome-line:  rgba(250, 224, 162, .32);
     --crest-bg:     #060F22;
+    --mark-ink:     #F2C249;
+    --hint-ink:     #AEBCD3;
+    --hint-gold:    #FAE0A2;
   }
 }
 
@@ -221,6 +219,7 @@
   --hy-slot:      rgba(242, 194, 73, .085);
 
   --ru-bg:        #0A1730;
+  --ru-art:       url('../assets/scenes/hero-yerevan-night-1280.jpg');
   --ru-art-op:    .64;
   --ru-art-tint:  transparent;
   --ru-art-blend: normal;
@@ -257,7 +256,24 @@
   --en-shade:     rgba(0, 0, 0, .38);
 
   --seam:         rgba(250, 224, 162, .24);
+  --chrome-ink:   #F3F6FB;
+  --chrome-mut:   #AEBCD3;
   --chrome-line:  rgba(250, 224, 162, .32);
+  --crest-bg:     #060F22;
+  --mark-ink:     #F2C249;
+  --hint-ink:     #AEBCD3;
+  --hint-gold:    #FAE0A2;
+}
+
+@supports (background-image: image-set(url("a.avif") type("image/avif"))) {
+  :root[data-theme="dark"] .tri {
+    --ru-art: image-set(url('../assets/scenes/hero-yerevan-night-1280.avif') type("image/avif"), url('../assets/scenes/hero-yerevan-night-1280.webp') type("image/webp"));
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .tri {
+      --ru-art: image-set(url('../assets/scenes/hero-yerevan-night-1280.avif') type("image/avif"), url('../assets/scenes/hero-yerevan-night-1280.webp') type("image/webp"));
+    }
+  }
 }
 
 /* ── 3. Каркас ворот — mobile-first: три горизонтальные полосы ───────────

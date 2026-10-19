@@ -1,0 +1,56 @@
+{
+  "made": "2026-09-03",
+  "purpose": "Фоны и фактуры секций (SITE_ASSETS.md разд. 2, 3, 6). Без людей, без текста в кадре. Ни одной цифры о компании.",
+  "pipeline": "ComfyUI 0.30 (D:/ComfyUI_windows_portable, STUDIO/studio.py). Генерация 4 сида на сюжет, отбор по контактному листу, апскейл SeedVR2 3B (upscale --pro --scale 2), экспорт PIL: <id>.jpg q88 progressive 4:2:2, <id>.webp q84 method 6, <id>-1280.jpg q86.",
+  "style_refs": {
+    "style_ref_office.png": "phase1/assets/hero/E.jpg (плита офиса, Gemini) — эталон для style-линии тёмных сюжетов",
+    "style_ref_dusk.png": "phase1/assets/hero/A-dusk.jpg (Арарат в сумерках) — эталон для вечернего города и боке"
+  },
+  "gen_size": {"3:2": "1248x832", "16:9": "1280x720"},
+  "assets": [
+    {
+      "id": "bg-dark-glass", "skin": "RU", "use": "фон секций тёмной кожи: стекло и отражения",
+      "line": "style", "ref": "style_ref_office.png", "lora_strength": 1.0, "ar": "3:2", "seed": 1102,
+      "candidates": [1101, 1102, 1103, 1104], "gen_time_s": 38.3, "upscale_time_s": 17.4,
+      "out": "2496x1664", "retouch": "нет",
+      "prompt": "A close abstract view of a dark glass office partition at dusk, filling the entire frame: deep navy-black glass panels with faint warm reflections of a low sun coming from the left, one thin amber highlight running along a polished vertical edge, soft out-of-focus ceiling lights doubled in the reflection, a barely visible band of frosted glass. Mostly dark and quiet with generous empty areas for text. The frame contains only glass, reflections and shadow: no furniture, no objects, no writing, nobody. 50mm lens at f/2.8, fine film grain, muted palette of navy, charcoal and a single warm amber accent from the left."
+    },
+    {
+      "id": "bg-stone-tuf", "skin": "HY", "use": "фон секций светлой тёплой кожи: розовый туф крупно",
+      "line": "krea", "ref": null, "ar": "3:2", "seed": 2103,
+      "candidates": [2101, 2102, 2103, 2104], "gen_time_s": 16.7, "upscale_time_s": 13.0,
+      "out": "2496x1664", "retouch": "нет",
+      "prompt": "Extreme close-up of a wall of Armenian pink tuff stone, cut in large smooth rectangular blocks with fine porous volcanic texture and tight pale mortar joints, filling the entire frame edge to edge. Soft warm morning light from the left skims across the surface and gently reveals the grain and tiny pores. Pale rose-beige, salmon and cream tones, evenly lit, calm, light and airy overall, only faint soft shadows. Plain stone only: no ornament, no carving, no objects, no writing, nobody. Macro lens, f/8, natural colour, crisp fine detail."
+    },
+    {
+      "id": "bg-paper", "skin": "EN", "use": "фон редакционной кожи: бумага с боковым светом",
+      "line": "krea", "ref": null, "ar": "3:2", "seed": 3103,
+      "candidates": [3101, 3102, 3103, 3104], "gen_time_s": 16.7, "upscale_time_s": 12.8,
+      "out": "2496x1664", "retouch": "нет",
+      "prompt": "A large sheet of heavy cream cotton paper photographed flat from directly above, filling the entire frame edge to edge, lit by soft raking daylight from a window on the left that reveals a fine laid texture and tiny fibres, with a gentle gradient from brighter on the left to a slightly warmer shade on the right. The paper is completely blank: no writing, no ruled lines, no objects, nobody. Colours: warm off-white, ivory, a hint of parchment. 100mm macro lens at f/5.6, quiet, even, high resolution texture."
+    },
+    {
+      "id": "bg-soft-bokeh", "skin": "RU", "use": "фон под форму заявки: расфокусированный вечерний Ереван",
+      "line": "style", "ref": "style_ref_dusk.png", "lora_strength": 0.7, "ar": "3:2", "seed": 4102,
+      "candidates": [4101, 4102, 4103, 4104], "gen_time_s": 38.4, "upscale_time_s": 12.8,
+      "out": "2496x1664", "retouch": "нет",
+      "prompt": "A completely defocused view of Yerevan at blue hour seen from a high window: soft round bokeh discs of warm sodium and amber street lights scattered across a deep navy-indigo dusk, the last orange glow of the horizon as a soft band in the lower third, thin blurred lines of a distant avenue. Everything is out of focus, no building is readable, the upper two thirds are dark and calm to sit behind a form, no writing, nobody. 85mm lens at f/1.4 focused far in front of the city, smooth creamy bokeh, fine grain."
+    },
+    {
+      "id": "window-city", "skin": "все", "use": "раздел «Доверие»: вид из окна на вечерний Ереван без Арарата",
+      "line": "style", "ref": "style_ref_dusk.png", "lora_strength": 0.7, "ar": "16:9", "seed": 5102,
+      "candidates": [5101, 5102, 5103, 5104], "gen_time_s": 35.9, "upscale_time_s": 11.7,
+      "out": "2560x1440", "retouch": "нет",
+      "prompt": "View from a high office window over Yerevan at dusk: a sea of pink tuff apartment blocks, flat roofs and cranes rolling toward the horizon, warm evening light from the low sun on the left laying long shadows across the facades, scattered windows beginning to glow amber, the far horizon dissolving into a flat band of warm haze under a peach-to-indigo sky with a few thin clouds. Shot through clean glass with a faint reflection of the window frame at the right edge. 35mm lens at f/5.6, natural colour, quiet, no writing on buildings, nobody."
+    },
+    {
+      "id": "desk-documents", "skin": "все", "use": "раздел «Доверие»: стол с документами, следы работы, без людей",
+      "line": "style", "ref": "style_ref_office.png", "lora_strength": 1.0, "ar": "3:2", "seed": 6103,
+      "candidates": [6101, 6102, 6103, 6104], "gen_time_s": 38.7, "upscale_time_s": 13.2,
+      "out": "2496x1664",
+      "retouch": "PIL/numpy после апскейла: убраны псевдонадписи, которые SeedVR2 дорисовал на обложке блокнота (x2045-2290, y1132-1224 — вертикальная интерполяция между рядами выше/ниже + зерно) и тиснение на папке (x1018-1182, y762-824 — нормализованная гауссова свёртка R=7 внутри маски поверхности папки, край папки и столешница не тронуты, зерно 0.4 от исходного); строчки верхней страницы стопки смягчены (blur 2.2, x60-560 y660-890), чтобы не читались как буквы. Исходный апскейл без ретуши: ComfyUI/output/desk-documents-up_00001_.png",
+      "prompt": "A consultant's desk in a quiet office in the early evening, photographed from a standing position at a slight angle: a stack of printed contracts held with paper clips, one page turned over, a black fountain pen lying across an open pale folder, a pair of reading glasses, a closed dark blue notebook, a half-empty cup of coffee on a coaster with a faint ring beside it. The printed pages carry only faint blurred grey lines of type. Low warm sunlight from the window on the left rakes across the pale oak surface, the far edge of the desk fades into the shadowed room. 35mm lens at f/2.8, focus on the pen, empty desk without hands, nobody in the frame."
+    }
+  ],
+  "sources_kept": "Исходники и все 24 кандидата: D:/ComfyUI_windows_portable/ComfyUI/output/<id>-s<seed>_00001_.png; апскейлы <id>-up_00001_.png"
+}

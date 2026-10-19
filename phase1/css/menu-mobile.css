@@ -6,7 +6,7 @@
    js/menu-mobile.js из самой страницы и из подвала — здесь только вид.
    ══════════════════════════════════════════════════════════════════════════ */
 
-@media (max-width: 767px), (any-pointer: coarse) and (max-width: 1366px) {
+@media (max-width: 1099px), (any-pointer: coarse) and (max-width: 1366px) {
 
 /* ── 1. Кнопка ────────────────────────────────────────────────────────────
    48×48 — выше минимума 44 по правилу «touch-target-size», с запасом на то,
@@ -64,6 +64,7 @@ body .hdr .hdr__menu {
 /* Кнопка расчёта в шапке на телефоне уступает место кнопке меню: то же
    действие стоит в нижней панели быстрых действий, которая видна всегда,
    а в строке шапки они вдвоём не помещаются. */
+body .hdr__nav { display: none; }
 body .hdr__cta { display: none; }
 body .hdr__chosen { display: none; }
 
@@ -187,13 +188,13 @@ html.mnav-on body .hdr { z-index: 130; }
   font-size: 0.9375rem;
 }
 a.mnav__lang { color: var(--text); border-color: var(--gold-line); }
-a.mnav__lang[aria-current="page"] {
+.mnav__lang[aria-current="page"] {
   background: var(--gold-fill);
   color: var(--gold-fill-text);
   border-color: transparent;
   font-weight: 600;
 }
-span.mnav__lang { opacity: 0.5; }
+span.mnav__lang:not([aria-current="page"]) { opacity: 0.5; }
 
 /* Планшет: колонка меню не растягивается на 1024 px — строка с одним словом
    и полем в пол-экрана читается хуже, чем плотный список. */

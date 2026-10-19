@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru" data-skin="ru">
+<head>
+<!-- ЧЕРНОВИК (drafts/): превью до унификации кож 04.09.2026, не показывать; живые страницы — home-ru/hy/en.html -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LTCG — превью русской главной, кожа RU (черновик, не публиковать)</title>
+<meta name="description" content="Живой превью русской главной LTCG в коже RU: шапка, заглушка хиро, «Где вы сейчас?» bento, калькулятор, контакт. Черновик.">
+<!--
+  ПРЕВЬЮ · кожа RU «тёмный tech-premium» · 03.09.2026
+  Каркас: docs/page_skeleton_ru.md (§3, §4.1–4.3, §4.13, §5) · система: docs/style_system.md
+  CSS: css/theme-base.css (общее) + css/theme-ru.css (кожа). style.css НЕ подключён и не правится.
+  {слот} — текст или цифра, которых нет до подтверждения клиентом. Ни одной цифры о LTCG здесь нет.
+  Реальные данные: +374 94 184 014 · WhatsApp/Telegram на том же номере · @LTCG_Armenia (CLAUDE.md, блокер 3).
+  Порядок DOM = визуальному: заглушка хиро идёт первой (на первом кадре текста нет — решение Валерия),
+  липкая шапка появляется после хиро, как после отпускания пина.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500..700&family=Golos+Text:wght@400;500&family=JetBrains+Mono:wght@500&family=Noto+Sans+Armenian:wght@500&display=swap">
+<link rel="stylesheet" href="../css/drafts/theme-base.css">
+<link rel="stylesheet" href="../css/drafts/theme-ru.css">
+<style>
+/* ── раскладка страницы (не кожа): шапка, хиро-заглушка, секции, футер ── */
+.brand { display: inline-flex; align-items: center; gap: 0.625rem; color: var(--text-strong); }
+.brand__mark { flex: none; width: 2.75rem; height: auto; aspect-ratio: 875 / 330; }
+.brand__name { font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; letter-spacing: 0.06em; }
+
+/* хиро-заглушка: один экран, без текста; знак в углу и подсказка «листайте» */
+.hero-stub {
+  position: relative; min-height: 100svh; display: grid; grid-template-rows: auto 1fr auto;
+  padding: var(--gutter);
+  background:
+    radial-gradient(90rem 42rem at 50% 118%, rgba(150, 95, 22, 0.55) 0%, rgba(89, 62, 16, 0.28) 30%, transparent 62%),
+    linear-gradient(180deg, #08122A 0%, #0C1B3A 45%, #1B1E2E 78%, #2A2116 100%);
+  color: var(--text-2);
+}
+.hero-stub::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: var(--grain); background-size: 180px 180px; opacity: 0.5;
+}
+.hero-stub__note {
+  justify-self: center; align-self: start;
+  max-width: 62ch; padding: 0.5rem 0.875rem;
+  border: 1px dashed var(--gold-line); border-radius: var(--r-btn);
+  font: 500 0.6875rem/1.5 var(--font-mono); letter-spacing: 0.04em; color: var(--gold-text); text-align: center;
+}
+.hero-stub__mark { align-self: end; }
+.hero-stub__mark .brand__mark { width: 3.5rem; }
+.hero-stub__hint { display: flex; align-items: center; gap: 0.75rem; justify-self: end; align-self: end; font: 500 0.6875rem/1 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-2); }
+.hero-stub__hint::after { content: ''; width: 1px; height: 2.5rem; background: linear-gradient(180deg, var(--gold-light), transparent); animation: hint 2.2s var(--ease) infinite; transform-origin: top; }
+@keyframes hint { 0% { transform: scaleY(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+.hero-stub__ridge { position: absolute; left: 0; right: 0; bottom: 26%; height: 1px; pointer-events: none; opacity: 0.55;
+  background: linear-gradient(90deg, transparent 6%, rgba(250, 224, 162, 0.35) 30%, #FAE0A2 52%, rgba(250, 224, 162, 0.4) 74%, transparent 94%); }
+
+/* шапка: липкая после хиро (как после отпускания пина) */
+.site-header { position: sticky; top: 0; z-index: 30; }
+.site-header__row { display: flex; align-items: center; gap: 0.75rem; min-height: var(--header-h); }
+.site-header .nav, .site-header .lang, .site-header .header__cta, .site-header .header__contacts { display: none; }
+.nav ul { display: flex; flex-wrap: nowrap; gap: 1.25rem; }
+.site-header .btn { white-space: nowrap; }
+.nav a { white-space: nowrap; }
+.nav a { display: inline-block; padding: 0.35rem 0; font-weight: 500; font-size: 0.9375rem; border-bottom: 1px solid transparent; transition: color var(--t-base) var(--ease), border-color var(--t-base) var(--ease); }
+.nav a:hover { color: var(--gold-text); border-color: var(--gold-line); }
+.header__contacts { align-items: center; gap: 0.25rem; margin-left: auto; }
+.header__phone { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0 0.5rem; font-family: var(--font-mono); font-size: 0.875rem; letter-spacing: 0.02em; white-space: nowrap; border-radius: var(--r-btn); }
+.header__phone:hover { color: var(--gold-text); }
+.icon-btn { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: var(--r-btn); color: var(--text-2); transition: color var(--t-base) var(--ease), background-color var(--t-base) var(--ease); }
+.icon-btn:hover { color: var(--gold-text); background: rgba(255, 255, 255, 0.05); }
+.icon-btn svg { width: 1.25rem; height: 1.25rem; }
+.lang { gap: 0.125rem; font-size: 0.8125rem; }
+.lang a { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 0.5rem; color: var(--text-2); border-radius: var(--r-btn); position: relative; }
+.lang a[aria-current="page"] { color: var(--text-strong); }
+.lang a[aria-current="page"]::after { content: ''; position: absolute; left: 0.5rem; right: 0.5rem; bottom: 0.45rem; height: 1px; background: var(--gold); }
+.lang a:hover { color: var(--gold-text); }
+.burger { margin-left: auto; border: 1px solid var(--line); background: transparent; }
+.burger .i-close { display: none; }
+.burger[aria-expanded="true"] .i-close { display: block; }
+.burger[aria-expanded="true"] .i-menu { display: none; }
+.menu { display: none; padding: 1rem var(--gutter) 1.5rem; border-top: 1px solid var(--line); }
+.menu.is-open { display: grid; gap: 1rem; }
+.menu .nav ul { flex-direction: column; gap: 0; }
+.menu .nav a { display: block; padding: 0.75rem 0; font-size: 1.125rem; border-bottom: 1px solid var(--line); }
+.menu .lang, .menu .menu__contacts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.menu .menu__contacts { align-items: center; }
+
+/* панели монитора — посадка из хиро */
+.panels { display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: clamp(2rem, 5vh, 3rem); }
+.panel { display: grid; gap: 0.25rem; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--r-card); color: var(--text-2); background: rgba(255, 255, 255, 0.02); transition: border-color var(--t-slow) var(--ease), color var(--t-slow) var(--ease); }
+.panel__lang { font-family: var(--font-display); font-weight: 600; font-size: 1.0625rem; color: var(--text-strong); }
+.panel__moment { font-size: 0.875rem; }
+.panel--active { border-color: var(--gold-line); color: var(--text); box-shadow: inset 0 1px 0 rgba(255, 243, 208, 0.12), 0 0 0 1px rgba(242, 194, 73, 0.06); background: linear-gradient(180deg, rgba(242, 194, 73, 0.08), rgba(242, 194, 73, 0.02)); }
+.panel--active .panel__lang { color: var(--gold-text); }
+.panel:hover { border-color: var(--line-strong); color: var(--text); }
+
+/* шаги внутри главной плитки */
+.steps { display: grid; gap: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--line); }
+.steps li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.5rem; align-items: baseline; font-size: 0.9375rem; color: var(--text-2); }
+.steps__n { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.08em; color: var(--gold-text); }
+
+/* калькулятор */
+.calc { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap); }
+.calc__modules { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--gap); }
+.calc__modules > *, .calc__total { min-width: 0; }
+.module__row > * { min-width: 0; }
+.module { gap: 0.75rem; cursor: pointer; transition: border-color var(--t-slow) var(--ease), transform var(--t-fast) var(--ease); }
+.module.is-on { border-color: var(--gold-line); }
+.module__row { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.module__name { font-family: var(--font-display); font-weight: 600; font-size: 1.125rem; line-height: 1.3; color: var(--text-strong); }
+.module__price { flex: 0 1 auto; font-family: var(--font-mono); font-size: 0.875rem; color: var(--text-2); text-align: right; }
+.module details { font-size: 0.875rem; color: var(--text-2); }
+.module summary { cursor: pointer; color: var(--text-3); list-style: none; display: inline-flex; align-items: center; gap: 0.4rem; min-height: 1.75rem; }
+.module summary::-webkit-details-marker { display: none; }
+.module summary::before { content: '+'; font-family: var(--font-mono); color: var(--gold-text); }
+.module details[open] summary::before { content: '−'; }
+.module details p { margin-top: 0.5rem; }
+.total { gap: 1.25rem; }
+.total__rows { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.total__row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line); }
+.total__row dt { color: var(--text-2); font-size: 0.9375rem; }
+.total__row dd { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.total__row dd .slot { font-size: 0.6em; vertical-align: 0.2em; }
+.total__chosen { min-height: 1.5rem; font-size: 0.875rem; color: var(--text-2); }
+.total__chosen b { color: var(--text); font-weight: 500; }
+.honest { padding-left: 1rem; border-left: 1px solid var(--gold-line); font-size: 0.875rem; color: var(--text-2); }
+
+/* контакт */
+.contact { gap: 1.25rem; }
+.contact .h2 { max-width: 20ch; }
+.contact__ways { display: grid; gap: 0.5rem; }
+
+/* футер */
+.site-footer { padding-block: 3rem 5rem; border-top: 1px solid var(--line); font-size: 0.875rem; color: var(--text-2); }
+.site-footer__row { display: grid; gap: 1.5rem; }
+.site-footer .lang { display: flex; }
+.site-footer__legal { max-width: 70ch; }
+
+/* липкая нижняя панель — мобильный, появляется после хиро */
+.bottombar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 25;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px;
+  padding: 0.4rem; padding-bottom: max(0.4rem, env(safe-area-inset-bottom));
+  background: var(--glass-bg); -webkit-backdrop-filter: blur(22px) saturate(1.35); backdrop-filter: blur(22px) saturate(1.35);
+  border-top: 1px solid rgba(250, 224, 162, 0.12);
+  transform: translateY(110%); transition: transform var(--t-slow) var(--ease);
+}
+.bottombar.is-visible { transform: none; }
+.bottombar a { display: grid; place-items: center; gap: 0.15rem; min-height: 2.75rem; border-radius: var(--r-btn); font-size: 0.6875rem; font-weight: 500; color: var(--text-2); }
+.bottombar a svg { width: 1.125rem; height: 1.125rem; }
+.bottombar a:last-child { background: var(--gold-fill); color: var(--gold-fill-text); }
+
+@media (min-width: 768px) {
+  .hero-stub__note { max-width: 78ch; }
+  .panels { grid-template-columns: repeat(3, 1fr); }
+  .calc__modules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .calc__modules .module:last-child { grid-column: span 2; }
+  .contact__ways { grid-template-columns: repeat(3, 1fr); }
+  .site-footer__row { grid-template-columns: 1fr auto; align-items: start; }
+  .site-header .header__contacts { display: flex; }
+}
+@media (min-width: 1024px) {
+  /* 1024–1439: две строки (нав отдельно), как в каркасе §3; с 1440 — одна */
+  :root { --header-h: 6.75rem; }
+  .site-header__row { display: grid; grid-template-columns: auto 1fr auto auto; grid-template-areas: "logo contacts cta lang" "nav nav nav nav"; align-items: center; row-gap: 0; padding-block: 0.5rem; }
+  .site-header .brand { grid-area: logo; }
+  .site-header .nav { grid-area: nav; display: flex; padding-bottom: 0.25rem; }
+  .site-header .header__contacts { grid-area: contacts; justify-self: end; }
+  .site-header .header__cta { grid-area: cta; display: inline-flex; }
+  .site-header .lang { grid-area: lang; display: flex; }
+  .burger, .menu, .bottombar { display: none; }
+  .calc { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); align-items: start; }
+}
+@media (min-width: 1440px) {
+  /* одна строка — с 1440: на 1280 пять пунктов + телефон + CTA + языки в 1240 px не помещаются */
+  :root { --header-h: 4.5rem; }
+  .site-header__row { grid-template-columns: auto 1fr auto auto auto; grid-template-areas: "logo nav contacts cta lang"; padding-block: 0; }
+  .site-header .nav { justify-self: start; margin-left: 1.5rem; padding-bottom: 0; }
+  .calc__total { position: sticky; top: calc(var(--header-h) + 1rem); }
+  .site-footer { padding-bottom: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">К содержанию</a>
+
+<!-- спрайт: знак из assets/hero/logo.svg (группы mountains · snow · swoosh · arrowhead) + иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="206.69" y1="971.49" x2="903.97" y2="274.21">
+      <stop offset="0.32" stop-color="#C4922B"/><stop offset="0.55" stop-color="#F2C249"/><stop offset="0.79" stop-color="#FAE0A2"/><stop offset="1.0" stop-color="#C4922B"/>
+    </linearGradient>
+    <symbol id="emblem" viewBox="70 160 875 330">
+      <g fill="url(#gold)">
+        <path d="M395.61 375.61C364.78 346.18 333.98 316.74 303.18 287.31C228.45 351.94 153.72 416.54 78.99 481.16C133.82 479.61 188.66 478.06 243.5 476.5C326.05 475.33 473.76 460.55 618.97 367.65C663.92 338.9 700.76 307.69 730.52 278.1C702.35 250.58 674.18 223.07 646 195.56C635.87 195.35 625.77 195.1 615.66 194.89C605.77 186.38 595.89 177.87 586 169.36C522.53 238.12 459.07 306.85 395.61 375.61Z"/>
+        <path d="M783.7 329.49C771.99 342.4 757.81 356.67 740.94 371.25L632.04 477.59L935.37 477.59Z"/>
+        <path d="M761.04 267.86C624.46 457.56 349.91 477.56 349.91 477.56C647.91 480.32 794.84 296.14 794.84 296.14L780.63 279.04Z"/>
+        <path d="M740.94 371.25C725.94 384.21 708.81 397.41 689.4 410.12C628.82 449.8 570.97 468.36 531.15 477.59L636.33 477.59L743.03 373.39Z"/>
+        <path d="M735.52 244.41L761.04 267.86L794.84 296.14L822.43 318.9L841.75 211.98Z"/>
+      </g>
+      <g fill="#FFFFFF">
+        <path d="M305.18 311.52C323.8 329.22 342.43 346.93 361.05 364.63C347.49 358.88 333.92 353.13 320.35 347.38C321.96 352.9 323.57 358.42 325.18 363.94C318.97 358.65 312.76 353.36 306.56 348.08C298.51 360.26 290.46 372.45 282.41 384.63L282.41 348.08C265.63 356.12 248.84 364.17 232.06 372.22C256.43 351.98 280.81 331.75 305.18 311.52Z"/>
+        <path d="M588.69 190.11C596.51 197.24 604.33 204.37 612.14 211.49C621.57 211.72 631 211.95 640.43 212.18C656.75 229.2 673.08 246.21 689.4 263.23C676.3 257.94 663.19 252.65 650.08 247.36L655.6 270.82C643.41 261.62 631.23 252.42 619.04 243.22C605.25 257.94 591.45 272.66 577.65 287.37C576.73 272.43 575.81 257.48 574.89 242.53C554.89 251.96 534.88 261.39 514.88 270.82C539.48 243.91 564.09 217.01 588.69 190.11Z"/>
+      </g>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.6 3.3 2.9 10.5c-1.1.4-1.1 1.1-.1 1.4l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.3-1.8zM8.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.1-1.7-4.3z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.7 7.6c.2-.4.5-.4.8-.4h.6c.2 0 .4.1.5.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.2-.1.3 0 .5.6 1 1.5 1.9 2.6 2.5.2.1.3.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5v.7c0 .3-.1.6-.4.8-.6.5-1.4.8-2.2.6-2.6-.6-4.7-2.7-5.7-5.1-.3-.8-.1-1.6.4-2.2z" fill="currentColor"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ═══════════ HERO — заглушка одним экраном. На первом кадре текста нет ═══════════ -->
+<div class="hero-stub" id="hero" aria-label="Здесь будет скролл-хиро">
+  <p class="hero-stub__note" role="note">здесь скролл-хиро · hero-slice.html · Арарат → луч по хребту → стрелка → знак за матовым стеклом → вечерний офис без людей → монитор: три панели · превью кожи RU, 03.09.2026 · noindex</p>
+  <span class="hero-stub__ridge" aria-hidden="true"></span>
+  <a class="brand hero-stub__mark" href="#main" aria-label="LTCG — к содержанию"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg></a>
+  <p class="hero-stub__hint" aria-hidden="true">листайте</p>
+</div>
+
+<!-- ═══════════ ШАПКА — липкая, появляется после хиро (как после отпускания пина) ═══════════ -->
+<header class="site-header glass" aria-label="Шапка сайта">
+  <div class="wrap site-header__row">
+    <a class="brand" href="/" aria-label="Legal and Tax Consulting Group — на главную">
+      <svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg>
+      <span class="brand__name">LTCG</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <ul role="list">
+        <li><a href="#where">Где вы сейчас?</a></li>
+        <li><a href="#calc">Цены</a></li>
+        <li><a href="#bank" title="секция в превью не отгружается">Счёт в банке</a></li>
+        <li><a href="#services" title="секция в превью не отгружается">Услуги</a></li>
+        <li><a href="/razbory/">Разборы</a></li>
+      </ul>
+    </nav>
+    <div class="header__contacts">
+      <a class="header__phone" href="tel:+37494184014"><svg aria-hidden="true" width="16" height="16"><use href="#i-phone"/></svg>+374 94 184 014</a>
+      <a class="icon-btn" href="https://wa.me/37494184014" aria-label="Написать в WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+      <a class="icon-btn" href="https://t.me/LTCG_Armenia" aria-label="Написать в Telegram"><svg aria-hidden="true"><use href="#i-tg"/></svg></a>
+    </div>
+    <a class="btn btn--primary btn--sm header__cta" href="#calc">Рассчитать стоимость</a>
+    <nav class="lang" aria-label="Язык сайта">
+      <a href="/hy/" lang="hy" hreflang="hy">Հայերեն</a>
+      <a href="/" lang="ru" hreflang="ru" aria-current="page">Русский</a>
+      <a href="/en/" lang="en" hreflang="en">English</a>
+    </nav>
+    <button class="icon-btn burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Меню">
+      <svg class="i-menu" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="i-close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+  <div class="menu" id="menu">
+    <nav class="nav" aria-label="Навигация (мобильная)">
+      <ul role="list">
+        <li><a href="#where">Где вы сейчас?</a></li>
+        <li><a href="#calc">Цены</a></li>
+        <li><a href="#bank">Счёт в банке</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="/razbory/">Разборы</a></li>
+      </ul>
+    </nav>
+    <div class="menu__contacts">
+      <a class="btn btn--outline btn--sm" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>+374 94 184 014</a>
+      <a class="btn btn--outline btn--sm" href="https://wa.me/37494184014"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+      <a class="btn btn--outline btn--sm" href="https://t.me/LTCG_Armenia"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+    </div>
+    <nav class="lang" aria-label="Язык сайта (мобильный)">
+      <a href="/hy/" lang="hy" hreflang="hy">Հայերեն</a>
+      <a href="/" lang="ru" hreflang="ru" aria-current="page">Русский</a>
+      <a href="/en/" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════ 4.2 WHERE — «Где вы сейчас?» ═══════════ -->
+<section class="section" id="where" aria-labelledby="where-title">
+  <div class="wrap">
+
+    <!-- посадка из хиро: три панели монитора; активная — верх секции, две другие уйдут в переключатель шапки (Flip) -->
+    <ul class="panels" role="list" aria-label="Три языковые панели монитора">
+      <li><a class="panel" href="/hy/" hreflang="hy"><span class="panel__lang" lang="hy">Հայերեն</span><span class="panel__moment"><span class="slot">{строка носителя · бухгалтерия}</span></span></a></li>
+      <li><a class="panel panel--active" href="#arrived" aria-current="true"><span class="panel__lang">Русский</span><span class="panel__moment">Переезжаю в Армению</span></a></li>
+      <li><a class="panel" href="/en/" hreflang="en"><span class="panel__lang" lang="en">English</span><span class="panel__moment" lang="en">Company, taxes &amp; relocation</span></a></li>
+    </ul>
+
+    <div class="section__head reveal">
+      <p class="kicker">01 · Вход по моменту</p>
+      <h1 class="h1" id="where-title">Где вы <em>сейчас?</em></h1>
+      <p class="lead">Сайт собран по моменту, в котором вы находитесь, а не по списку наших услуг. Выберите свой — покажем, что на этом шаге обычно ломается и что из этого берём на себя.</p>
+    </div>
+
+    <div class="bento">
+
+      <!-- главная плитка — состояние по умолчанию из hero-панели RU (гипотеза, проверить на людях) -->
+      <article class="tile tile--hero state reveal" id="arrived" data-span="6" aria-labelledby="arrived-h" style="--i:0">
+        <p class="tile__meta">До переезда и первые дни · 02</p>
+        <h2 class="state__name h3" id="arrived-h">Только приехал</h2>
+        <p class="state__recog lead"><span class="slot">{фраза узнавания — из историй клиента}</span></p>
+        <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается — из практики клиента}</span></span></p>
+        <ul class="chips" role="list" aria-label="Темы">
+          <li class="chip">счёт в банке</li><li class="chip">соцкарта</li><li class="chip">регистрация по адресу</li>
+        </ul>
+        <ol class="steps" role="list" aria-label="Что будет после того, как вы написали">
+          <li><span class="steps__n">01</span><span>Ответ в течение <span class="slot">{SLA}</span></span></li>
+          <li><span class="steps__n">02</span><span>План с датами и список документов — до оплаты</span></li>
+          <li><span class="steps__n">03</span><span>Проверка пакета до подачи по списку из <span class="slot">{N}</span> пунктов</span></li>
+        </ol>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--primary" href="#contact" data-state="arrived">Проверить мой пакет до подачи<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+          <a class="btn btn--outline" href="#calc?preset=arrived">Рассчитать</a>
+          <a class="btn btn--link" href="/tolko-priehal/">Разобраться →</a>
+        </div>
+      </article>
+
+      <article class="tile state reveal" id="pre-move" data-span="3" aria-labelledby="pre-move-h" style="--i:1">
+        <p class="tile__meta">До переезда · 01</p>
+        <h2 class="state__name" id="pre-move-h">Ещё не переехал</h2>
+        <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+        <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается}</span></span></p>
+        <ul class="chips" role="list" aria-label="Темы">
+          <li class="chip">доверенности для РФ</li><li class="chip">консульские действия</li><li class="chip">уведомление ФНС</li><li class="chip"><span class="slot">{удалённо}</span></li>
+        </ul>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--outline btn--sm" href="#contact" data-state="pre-move">Обсудить до отъезда</a>
+          <a class="btn btn--link btn--sm" href="/pered-pereezdom/">Разобраться →</a>
+        </div>
+      </article>
+
+      <article class="tile state reveal" id="legalizing" data-span="3" aria-labelledby="legalizing-h" style="--i:2">
+        <p class="tile__meta">Статус и работа · 03</p>
+        <h2 class="state__name" id="legalizing-h">Легализуюсь</h2>
+        <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+        <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается}</span></span></p>
+        <ul class="chips" role="list" aria-label="Темы">
+          <li class="chip">ВНЖ: наём / ИП / семья / корни</li><li class="chip">красный флаг в анкете</li>
+        </ul>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--outline btn--sm" href="#contact" data-state="legalizing">Обсудить основание для ВНЖ</a>
+          <a class="btn btn--link btn--sm" href="/legalizuyus/">Разобраться →</a>
+        </div>
+      </article>
+
+      <article class="tile state reveal" id="working" data-span="3" aria-labelledby="working-h" style="--i:3">
+        <p class="tile__meta">Статус и работа · 04</p>
+        <h2 class="state__name" id="working-h">Работаю</h2>
+        <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+        <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается}</span></span></p>
+        <ul class="chips" role="list" aria-label="Темы">
+          <li class="chip">ИП</li><li class="chip">налоговый режим</li><li class="chip">бухгалтерия</li><li class="chip">платежи из-за рубежа</li><li class="chip">SWIFT</li>
+        </ul>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--outline btn--sm" href="#calc?preset=working">Подобрать режим и посчитать</a>
+          <a class="btn btn--link btn--sm" href="/rabotayu/">Разобраться →</a>
+        </div>
+      </article>
+
+      <article class="tile state reveal" id="settled" data-span="3" aria-labelledby="settled-h" style="--i:4">
+        <p class="tile__meta">Жизнь здесь · 05</p>
+        <h2 class="state__name" id="settled-h">Живу и планирую</h2>
+        <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+        <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается}</span></span></p>
+        <ul class="chips" role="list" aria-label="Темы">
+          <li class="chip">налоги за год</li><li class="chip">декларация ФЛ</li><li class="chip">CRS и двойное налогообложение</li><li class="chip"><span class="slot">{недвижимость — подтвердить}</span></li>
+        </ul>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--outline btn--sm" href="#contact" data-state="settled">Разобрать налоговую картину</a>
+          <a class="btn btn--link btn--sm" href="/zhivu-i-planiruyu/">Разобраться →</a>
+        </div>
+      </article>
+
+      <article class="tile state reveal" id="moving-on" data-span="3" aria-labelledby="moving-on-h" style="--i:5">
+        <p class="tile__meta">Жизнь здесь — и дальше · 06</p>
+        <h2 class="state__name" id="moving-on-h">Двигаюсь дальше</h2>
+        <p class="state__recog small"><span class="slot">{фраза узнавания}</span></p>
+        <p class="state__fork"><b>Развилка</b><span><span class="slot">{где ломается}</span></span></p>
+        <ul class="chips" role="list" aria-label="Темы">
+          <li class="chip">справки о несудимости</li><li class="chip">налоговое резидентство</li><li class="chip">закрытие ИП</li><li class="chip">апостиль и переводы</li>
+        </ul>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--outline btn--sm" href="#contact" data-state="moving-on">Собрать пакет для следующей страны</a>
+          <a class="btn btn--link btn--sm" href="/dvigayus-dalshe/">Разобраться →</a>
+        </div>
+      </article>
+
+      <!-- служебная плитка: не нашёл себя — напиши, где ты -->
+      <aside class="tile tile--quiet reveal" data-span="3" aria-label="Не нашли себя" style="--i:6">
+        <p class="tile__meta">Не нашли себя?</p>
+        <p class="h4">Напишите, где вы сейчас, — скажем, что нужно, а что нет.</p>
+        <p class="small">Один номер, три способа. Ответим в течение <span class="slot">{SLA}</span>.</p>
+        <div class="tile__foot btn-row">
+          <a class="btn btn--outline btn--sm" href="https://wa.me/37494184014"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+          <a class="btn btn--outline btn--sm" href="https://t.me/LTCG_Armenia"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule wrap" aria-hidden="true">
+
+<!-- ═══════════ 4.3 CALC — калькулятор ═══════════ -->
+<section class="section" id="calc" aria-labelledby="calc-title">
+  <div class="wrap">
+    <div class="section__head reveal">
+      <p class="kicker">02 · Цена</p>
+      <h2 class="h2" id="calc-title">Сколько это стоит — считается здесь, <em>без звонка</em></h2>
+      <p class="lead">Отметьте, что нужно. Сумма меняется сразу. Контакт — только если хотите получить расчёт и план по шагам.</p>
+    </div>
+
+    <form class="calc" aria-label="Калькулятор стоимости" action="#calc" method="get" data-calc>
+      <div class="calc__modules">
+
+        <label class="tile module reveal" style="--i:0">
+          <div class="module__row">
+            <span class="check"><input type="checkbox" name="m" value="ip"><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span class="module__name">Регистрация ИП</span></span>
+            <span class="module__price"><span class="slot slot--num">{цена}</span></span>
+          </div>
+          <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. Не входит: госпошлины <span class="slot slot--num">{сумма}</span>, комиссии банка.</p></details>
+        </label>
+
+        <label class="tile module reveal" style="--i:1">
+          <div class="module__row">
+            <span class="check"><input type="checkbox" name="m" value="account"><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span class="module__name">Открытие счёта</span></span>
+            <span class="module__price"><span class="slot slot--num">{цена}</span></span>
+          </div>
+          <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. Не входит: комиссии банка. Решение принимает банк.</p></details>
+        </label>
+
+        <label class="tile module reveal" style="--i:2">
+          <div class="module__row">
+            <span class="check"><input type="checkbox" name="m" value="social-card"><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span class="module__name">Соцкарта</span></span>
+            <span class="module__price"><span class="slot slot--num">{цена}</span></span>
+          </div>
+          <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. Не входит: госпошлины <span class="slot slot--num">{сумма}</span>.</p></details>
+        </label>
+
+        <label class="tile module reveal" style="--i:3">
+          <div class="module__row">
+            <span class="check"><input type="checkbox" name="m" value="address"><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span class="module__name">Юридический адрес + корреспонденция</span></span>
+            <span class="module__price"><span class="slot slot--num">{цена}</span> / год</span>
+          </div>
+          <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>.</p></details>
+        </label>
+
+        <label class="tile module reveal" style="--i:4">
+          <div class="module__row">
+            <span class="check"><input type="checkbox" name="m" value="accounting"><span class="check__box"><svg aria-hidden="true"><use href="#i-check"/></svg></span><span class="module__name">Бухгалтерия</span></span>
+            <span class="module__price"><span class="slot slot--num">{цена}</span> / месяц</span>
+          </div>
+          <details><summary>что входит / не входит</summary><p><span class="slot">{что входит — клиент}</span>. <span class="slot">{младший тариф для простых ИП — открытый вопрос}</span></p></details>
+        </label>
+
+      </div>
+
+      <div class="calc__total">
+        <div class="tile tile--hero total reveal" style="--i:2" aria-live="polite">
+          <p class="tile__meta">Итог · актуально на <span class="slot">{дата}</span></p>
+          <dl class="total__rows">
+            <div class="total__row"><dt>Единовременно</dt><dd><span class="slot slot--num">{сумма}</span> <span class="slot">{валюта}</span></dd></div>
+            <div class="total__row"><dt>В год</dt><dd><span class="slot slot--num">{сумма}</span></dd></div>
+            <div class="total__row"><dt>В месяц</dt><dd><span class="slot slot--num">{сумма}</span></dd></div>
+          </dl>
+          <p class="total__chosen" data-chosen>Ничего не отмечено — отметьте модули слева.</p>
+          <p class="honest">Это та же сумма, что будет в договоре — <span class="slot">{формулировку подтвердить}</span>. Итог — стоимость наших услуг; решения по счёту и статусу принимают банк и госорганы.</p>
+          <div class="tile__foot btn-row">
+            <a class="btn btn--primary" href="#contact" data-state="calc">Получить расчёт и план<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+            <a class="btn btn--outline" href="https://wa.me/37494184014" data-wa>Открыть в WhatsApp</a>
+          </div>
+          <p class="small">Сами: госпошлина <span class="slot slot--num">{сумма}</span> и ваше время. С нами: <span class="slot slot--num">{сумма}</span> — и вот что именно берём на себя.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<hr class="rule wrap" aria-hidden="true">
+
+<!-- ═══════════ 4.13 CONTACT — полоса контакта ═══════════ -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="tile tile--hero contact reveal">
+      <p class="kicker">03 · Контакт</p>
+      <h2 class="h2" id="contact-title">Напишите — ответим в течение <em><span class="slot">{SLA}</span></em></h2>
+      <p class="lead">Напишите, где вы сейчас, — скажем, что нужно, а что нет. Один номер, три способа: <span class="slot">{часы по Еревану}</span>.</p>
+      <div class="contact__ways">
+        <a class="btn btn--primary" href="https://wa.me/37494184014"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="btn btn--outline" href="https://t.me/LTCG_Armenia"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram · @LTCG_Armenia</a>
+        <a class="btn btn--outline" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>+374 94 184 014</a>
+      </div>
+      <p class="small">Форма с полями «имя · как связаться · где вы сейчас · сообщение» и honeypot без отсечки по времени — по каркасу §4.13, в превью не отгружается. Скрытый слот: <span class="slot">{email}</span>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" aria-label="Подвал">
+  <div class="wrap site-footer__row">
+    <div>
+      <a class="brand" href="/"><svg class="brand__mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand__name">LTCG</span></a>
+      <p style="margin-top:.75rem">Legal and Tax Consulting Group LLC · <span class="slot">{реквизиты}</span> · <span class="slot">{юридический адрес}</span></p>
+      <p><a class="mono" href="tel:+37494184014">+374 94 184 014</a> · WhatsApp · Telegram <a href="https://t.me/LTCG_Armenia">@LTCG_Armenia</a> · <span class="slot">{email}</span> · <span class="slot">{часы}</span></p>
+      <p class="site-footer__legal small">Услуги носят консультационный и сопроводительный характер; решения о выдаче ВНЖ и открытии счетов принимают государственные органы и банки — <span class="slot">{формулировку подтвердить}</span>.</p>
+      <p class="small">© <span data-year>2026</span> Legal and Tax Consulting Group LLC</p>
+    </div>
+    <nav class="lang" aria-label="Язык сайта (подвал)">
+      <a href="/hy/" lang="hy" hreflang="hy">Հայերեն</a>
+      <a href="/" lang="ru" hreflang="ru" aria-current="page">Русский</a>
+      <a href="/en/" lang="en" hreflang="en">English</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- мобильная нижняя панель: появляется после хиро -->
+<nav class="bottombar" aria-label="Быстрые действия">
+  <a href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить</a>
+  <a href="https://wa.me/37494184014"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="https://t.me/LTCG_Armenia"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+  <a href="#calc">Рассчитать</a>
+</nav>
+
+<script>
+(function () {
+  'use strict';
+  var d = document;
+
+  /* бургер */
+  var burger = d.querySelector('.burger'), menu = d.getElementById('menu');
+  if (burger && menu) {
+    burger.addEventListener('click', function () {
+      var open = burger.getAttribute('aria-expanded') !== 'true';
+      burger.setAttribute('aria-expanded', String(open));
+      menu.classList.toggle('is-open', open);
+    });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) { burger.setAttribute('aria-expanded', 'false'); menu.classList.remove('is-open'); } });
+  }
+
+  /* появление на скролле — IntersectionObserver, без библиотек, один раз */
+  var reveals = d.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* нижняя панель — после хиро, не поверх него */
+  var hero = d.getElementById('hero'), bar = d.querySelector('.bottombar');
+  if (hero && bar && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle('is-visible', !entries[0].isIntersecting);
+    }, { threshold: 0.05 }).observe(hero);
+  }
+
+  /* калькулятор: состав модулей (цифры — слоты, суммы не считаются до данных клиента) */
+  var calc = d.querySelector('[data-calc]');
+  if (calc) {
+    var names = { ip: 'ИП', account: 'счёт', 'social-card': 'соцкарта', address: 'адрес', accounting: 'бухгалтерия' };
+    var chosen = calc.querySelector('[data-chosen]'), wa = calc.querySelector('[data-wa]');
+    var presets = { arrived: ['account', 'social-card', 'address'], working: ['ip', 'accounting'], legalizing: ['ip', 'address'], settled: ['accounting'], hero: ['ip', 'account'] };
+    function update() {
+      var on = [].slice.call(calc.querySelectorAll('input[name="m"]:checked'));
+      calc.querySelectorAll('.module').forEach(function (m) { m.classList.toggle('is-on', m.querySelector('input').checked); });
+      if (!on.length) { chosen.textContent = 'Ничего не отмечено — отметьте модули.'; if (wa) wa.href = 'https://wa.me/37494184014'; return; }
+      var list = on.map(function (i) { return names[i.value]; }).join(' + ');
+      chosen.innerHTML = 'Выбрано: <b>' + list + '</b> · модулей: ' + on.length;
+      if (wa) wa.href = 'https://wa.me/37494184014?text=' + encodeURIComponent('Хочу расчёт: ' + list);
+    }
+    calc.addEventListener('change', update);
+    function applyPreset() {
+      var m = location.hash.match(/preset=([a-z-]+)/) || location.search.match(/preset=([a-z-]+)/);
+      if (!m || !presets[m[1]]) return;
+      calc.querySelectorAll('input[name="m"]').forEach(function (i) { i.checked = presets[m[1]].indexOf(i.value) > -1; });
+      update();
+      var t = d.getElementById('calc'); if (t) t.scrollIntoView({ block: 'start' });
+    }
+    window.addEventListener('hashchange', applyPreset);
+    applyPreset(); update();
+  }
+
+  /* состояние из hash → подсветка карточки и state= в CTA */
+  function markState() {
+    var id = location.hash.replace('#', '').split('?')[0];
+    d.querySelectorAll('.state').forEach(function (s) { s.classList.toggle('is-on', s.id === id); });
+  }
+  window.addEventListener('hashchange', markState); markState();
+
+  var y = d.querySelector('[data-year]'); if (y) y.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

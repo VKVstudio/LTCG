@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru" data-proto="tri-final" data-site-root="/phase1/">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<title>LTCG — главный экран: ворота выбора языка</title>
+
+<!-- Шрифты: подсеты проверены по CSS API (curl, Chrome UA):
+     Cormorant Garamond → cyrillic ✓ · Onest → cyrillic ✓ · JetBrains Mono → cyrillic ✓
+     Literata → cyrillic ✓ · Noto Serif Armenian → armenian ✓
+     Для прода — self-host woff2 с unicode-range и прелоадом по языку (vkv_bar §3.2). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=JetBrains+Mono:wght@500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Noto+Serif+Armenian:wght@400;500&family=Onest:wght@400;500;600&display=swap">
+
+<link rel="stylesheet" href="tri-final.css">
+<link rel="stylesheet" href="../css/main-triptych.css">
+
+<script>
+/* Тема до первого кадра: auto | light | dark. Без JS остаётся системная.
+   Стоит в <head> инлайном, чтобы не мигнуть чужой темой. */
+(function () {
+  try {
+    var t = localStorage.getItem('ltcg-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body>
+
+<a class="skip" href="#triGate">Перейти к выбору языка</a>
+
+<!-- знак: символ заполнен из assets/hero/logo.svg (в проде это делает движок хиро) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="hsLogoMark" viewBox="67 169 889 590" fill="currentColor">
+        <path d="M395.61 375.61C364.78 346.18 333.98 316.74 303.18 287.31C228.45 351.94 153.72 416.54 78.99 481.16C133.82 479.61 188.66 478.06 243.5 476.5C326.05 475.33 473.76 460.55 618.97 367.65C663.92 338.9 700.76 307.69 730.52 278.1C702.35 250.58 674.18 223.07 646 195.56C635.87 195.35 625.77 195.1 615.66 194.89C605.77 186.38 595.89 177.87 586 169.36C522.53 238.12 459.07 306.85 395.61 375.61Z"/>
+        <path d="M783.7 329.49C771.99 342.4 757.81 356.67 740.94 371.25L632.04 477.59L935.37 477.59Z"/>
+        <path d="M761.04 267.86C624.46 457.56 349.91 477.56 349.91 477.56C647.91 480.32 794.84 296.14 794.84 296.14L780.63 279.04Z"/>
+        <path d="M740.94 371.25C725.94 384.21 708.81 397.41 689.4 410.12C628.82 449.8 570.97 468.36 531.15 477.59L636.33 477.59L743.03 373.39Z"/>
+        <path d="M735.52 244.41L761.04 267.86L794.84 296.14L822.43 318.9L841.75 211.98Z"/>
+        <path d="M67.78 529.39L67.78 754.48L238.84 754.48L238.84 704L131.44 704L131.44 529.39Z"/>
+        <path d="M244.31 529.39L244.31 579.88L313.44 579.88L313.44 754.48L377.11 754.48L377.11 579.88L445.92 579.88L445.92 529.39Z"/>
+        <path d="M537.73 539.85C518.97 549.81 504.23 563.7 493.51 581.49C482.79 599.28 477.44 619.43 477.44 641.94C477.44 664.45 482.79 684.6 493.51 702.39C504.23 720.18 518.97 734.06 537.73 744.03C556.48 754 577.65 758.98 601.23 758.98C621.81 758.98 640.35 755.34 656.86 748.05C673.37 740.77 687.09 730.26 698.02 716.54L657.5 679.88C642.92 697.46 625.24 706.25 604.45 706.25C592.23 706.25 581.35 703.57 571.81 698.21C562.27 692.85 554.87 685.3 549.62 675.54C544.37 665.79 541.75 654.59 541.75 641.94C541.75 629.29 544.37 618.09 549.62 608.34C554.87 598.58 562.27 591.03 571.81 585.67C581.35 580.31 592.23 577.63 604.45 577.63C625.24 577.63 642.92 586.42 657.5 604L698.02 567.34C687.09 553.62 673.37 543.12 656.86 535.83C640.35 528.54 621.81 524.89 601.23 524.89C577.65 524.89 556.48 529.88 537.73 539.85Z"/>
+        <path d="M793.19 539.85C774.11 549.81 759.22 563.7 748.5 581.49C737.78 599.28 732.42 619.43 732.42 641.94C732.42 664.45 737.78 684.6 748.5 702.39C759.22 720.18 774.01 734.06 792.87 744.03C811.73 754 832.96 758.98 856.54 758.98C873.26 758.98 889.98 756.52 906.7 751.59C923.42 746.66 938.22 739.59 951.08 730.36L951.08 637.11L894.8 637.11L894.8 698.85C884.08 703.79 872.62 706.25 860.4 706.25C847.97 706.25 836.92 703.51 827.28 698.05C817.63 692.58 810.13 684.98 804.77 675.22C799.41 665.47 796.73 654.37 796.73 641.94C796.73 622.43 802.63 606.84 814.42 595.15C826.2 583.47 841.75 577.63 861.04 577.63C882.26 577.63 900.48 585.99 915.71 602.71L956.22 566.05C945.07 552.76 931.14 542.58 914.42 535.5C897.7 528.43 878.83 524.89 857.83 524.89C833.82 524.89 812.27 529.88 793.19 539.85Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+  <section class="tri" id="triGate" data-tri aria-labelledby="triTitle">
+
+    <!-- единственный h1 экрана. Стоит первым в DOM — читалка встречает
+         заголовок раньше ссылок; визуально его роль играет знак ниже. -->
+    <h1 class="tri__title sr-only" id="triTitle">LTCG — Legal and Tax Consulting Group. Выберите язык · Choose your language</h1>
+
+    <!-- ── три части. Порядок утверждён клиентом 31.08: HY · RU · EN ────────
+         Вся треть — одна ссылка: тач-цель заведомо больше 44 px.
+         Языки идут первыми в табе; переключатель темы — после них.        -->
+
+    <!-- I · КЛАССИКА — неоклассика, гравюра по туфу -->
+    <a class="tri__part tri__part--hy" href="/hy/" data-lang="hy" data-path="hy/"
+       lang="hy" hreflang="hy" style="--p:0">
+      <span class="tri__art" aria-hidden="true"></span>
+      <span class="tri__scrim" aria-hidden="true"></span>
+
+      <span class="tri__idx" style="--i:0">
+        <i class="tri__tick" aria-hidden="true"></i><span class="tri__ord">I</span>
+      </span>
+      <span class="tri__name" style="--i:1">Հայերեն</span>
+      <!-- ЧЕРНОВИК. CLAUDE.md запрещает выдавать сгенерированный армянский за
+           готовый: строка и слово действия помечены слотом (золотая подложка)
+           и data-draft. До вычитки носителем на прод не идут.
+           Гарантирован только автоним «Հայերեն». -->
+      <span class="tri__aud" style="--i:2"><span class="is-slot" data-draft="native-review-pending">Հաշվապահություն և հարկեր</span></span>
+      <span class="tri__act" style="--i:3">
+        <span class="tri__word is-slot" data-draft="native-review-pending">Մուտք</span>
+        <svg class="tri__arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- II · СОВРЕМЕННОСТЬ — тёмный прибор со стеклом. Язык по умолчанию:
+         помечен золотым квадратом 6 px, золотым швом и aria-current — без
+         карточки, без рамки, без увеличенного кегля. -->
+    <a class="tri__part tri__part--ru is-active" href="/" data-lang="ru" data-path=""
+       lang="ru" hreflang="ru" aria-current="true" data-default="true" style="--p:1">
+      <span class="tri__art" aria-hidden="true"></span>
+      <span class="tri__scrim" aria-hidden="true"></span>
+      <span class="tri__glass" aria-hidden="true"></span>
+
+      <span class="tri__idx" style="--i:0">
+        <i class="tri__tick" aria-hidden="true"></i><span class="tri__ord">02</span>
+      </span>
+      <span class="tri__name" style="--i:1">Русский<span class="sr-only"> — выбран по умолчанию</span></span>
+      <span class="tri__aud" style="--i:2">Релокация, ВНЖ и налоги</span>
+      <span class="tri__act" style="--i:3">
+        <span class="tri__word">Продолжить</span>
+        <svg class="tri__arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- III · БУДУЩЕЕ — редакционная бумага, воздух -->
+    <a class="tri__part tri__part--en" href="/en/" data-lang="en" data-path="en/"
+       lang="en" hreflang="en" style="--p:2">
+      <span class="tri__art" aria-hidden="true"></span>
+      <span class="tri__scrim" aria-hidden="true"></span>
+
+      <span class="tri__idx" style="--i:0">
+        <i class="tri__tick" aria-hidden="true"></i><span class="tri__ord">№&nbsp;03</span>
+      </span>
+      <span class="tri__name" style="--i:1">English</span>
+      <span class="tri__aud" style="--i:2">Low taxes, a company, accounting</span>
+      <span class="tri__act" style="--i:3">
+        <span class="tri__word">Continue</span>
+        <svg class="tri__arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- ── полоса хрома: знак один раз на весь экран + переключатель темы.
+         Переключатель стоит рядом со знаком, а не в углу английской колонки:
+         у него нет владельца-колонки и он ни с чем не сталкивается.
+         Без JS он остаётся hidden — мёртвых кнопок на экране нет.        -->
+    <div class="tri__crest">
+      <svg class="tri__mark" aria-hidden="true" focusable="false"><use href="#hsLogoMark"/></svg>
+
+      <span class="tri__theme" role="group" aria-label="Тема оформления · Theme" data-theme-toggle hidden>
+        <button class="tri__theme-btn" type="button" data-set="auto" aria-pressed="true">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M10 3a7 7 0 0 0 0 14Z" fill="currentColor"/>
+          </svg>
+          <span class="sr-only">Как в системе · System</span>
+        </button>
+        <button class="tri__theme-btn" type="button" data-set="light" aria-pressed="false">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <circle cx="10" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            <g stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+              <path d="M10 1.7v2.1M10 16.2v2.1M1.7 10h2.1M16.2 10h2.1M4.2 4.2l1.5 1.5M14.3 14.3l1.5 1.5M15.8 4.2l-1.5 1.5M5.7 14.3l-1.5 1.5"/>
+            </g>
+          </svg>
+          <span class="sr-only">Светлая · Light</span>
+        </button>
+        <button class="tri__theme-btn" type="button" data-set="dark" aria-pressed="false">
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M15.6 12.4A6.6 6.6 0 0 1 7.6 4.4a6.6 6.6 0 1 0 8 8Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">Тёмная · Dark</span>
+        </button>
+      </span>
+    </div>
+
+    <!-- показывает движок: hidden снимается, затем добавляется .is-in -->
+    <p class="lang-hint" id="triHint" hidden>Выберите язык, чтобы продолжить · Choose a language</p>
+
+  </section>
+
+<script>
+(function () {
+  'use strict';
+  var d = document, root = d.documentElement;
+
+  /* 1. Пути к языковым версиям: в проде /, /hy/, /en/; на дев-сервере — из SITE_ROOT */
+  var SITE_ROOT = root.getAttribute('data-site-root') || '/';
+  d.querySelectorAll('[data-path]').forEach(function (a) {
+    a.setAttribute('href', SITE_ROOT + (a.getAttribute('data-path') || ''));
+  });
+
+  /* 2. Переключатель темы: три состояния, localStorage, data-theme на <html> */
+  var box = d.querySelector('[data-theme-toggle]');
+  if (box) {
+    var btns = box.querySelectorAll('.tri__theme-btn');
+    var read = function () {
+      try { var v = localStorage.getItem('ltcg-theme'); return (v === 'light' || v === 'dark') ? v : 'auto'; }
+      catch (e) { return 'auto'; }
+    };
+    var paint = function (mode) {
+      if (mode === 'auto') root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', mode);
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === mode)); });
+    };
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var m = b.dataset.set;
+        try { m === 'auto' ? localStorage.removeItem('ltcg-theme') : localStorage.setItem('ltcg-theme', m); }
+        catch (e) {}
+        paint(m);
+      });
+    });
+    paint(read());
+    box.hidden = false;
+  }
+
+  /* 3. Момент посадки: три части просыпаются стаггером 0.06 — затем покой */
+  var tri = d.getElementById('triGate');
+  if (tri) requestAnimationFrame(function () { tri.classList.add('is-choosing'); });
+
+  /* 4. Ворота: страница не скроллится, пока язык не выбран. Попытка прокрутки
+        показывает подсказку — один раз, без повторов и без бесконечной анимации. */
+  var hint = d.getElementById('triHint'), shown = false;
+  function askLang() {
+    if (shown || !hint) return;
+    shown = true;
+    hint.hidden = false;
+    requestAnimationFrame(function () { hint.classList.add('is-in'); });
+  }
+  ['wheel', 'touchmove'].forEach(function (ev) {
+    window.addEventListener(ev, askLang, { passive: true });
+  });
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'PageDown' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'End') askLang();
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

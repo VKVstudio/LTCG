@@ -1,0 +1,248 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Нужен ВНЖ после 1 ноября — LTCG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Noto+Serif+Armenian:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080F22; --bg-2:#0C1B3A;
+  --surf:#101F3D; --surf-2:#152747; --surf-3:#1B3054;
+  --gold:#F2C249; --gold-lt:#FAE0A2; --gold-dk:#C4922B;
+  --ink:#F2F6FD; --mut:#A7B8D4; --dim:#6B80A5;
+  --line:rgba(167,184,212,.11); --line-2:rgba(167,184,212,.2);
+  --glow:0 0 0 1px rgba(242,194,73,.16), 0 18px 50px -18px rgba(242,194,73,.22);
+  --lift:0 1px 0 0 rgba(255,255,255,.05) inset, 0 22px 44px -26px rgba(0,0,0,.85);
+  --fd:'Playfair Display',Georgia,serif;
+  --fb:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --fa:'Noto Serif Armenian','Sylfaen',serif;
+  --max:1240px; --hdr:72px; --r:22px;
+  --e:cubic-bezier(.22,1,.36,1); --t:.26s;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fb);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* зерно — снимает пластиковость плоских заливок */
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+::selection{background:var(--gold);color:#080F22}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+/* ═══ Шапка ═══ */
+.hdr{position:sticky;top:0;z-index:60;height:var(--hdr);display:flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;gap:2.5rem;width:100%}
+.brand{flex:none;display:flex;align-items:baseline;gap:.6rem;text-decoration:none}
+.brand__m{font-family:var(--fd);font-size:1.3rem;font-weight:600;letter-spacing:.03em}
+.brand__s{font-size:.625rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.nav{display:flex;gap:2rem;margin-left:auto;font-size:.875rem}
+.nav a{color:var(--mut);text-decoration:none;position:relative;padding-block:.4rem;
+  transition:color var(--t) var(--e)}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;
+  background:var(--gold);transition:right var(--t) var(--e)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{right:0}
+.btn{flex:none;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;
+  font-size:.875rem;font-weight:600;padding:.65rem 1.25rem;border-radius:999px;
+  text-decoration:none;border:1px solid transparent;transition:all var(--t) var(--e)}
+.btn--gold{color:#080F22;background:var(--gold);box-shadow:0 10px 30px -12px rgba(242,194,73,.6)}
+.btn--gold:hover{background:var(--gold-lt);transform:translateY(-1px);
+  box-shadow:0 16px 38px -12px rgba(242,194,73,.75)}
+.btn--ghost{color:var(--ink);border-color:var(--line-2);background:transparent}
+.btn--ghost:hover{border-color:var(--gold);color:var(--gold-lt)}
+@media(max-width:959px){.nav{display:none}}
+
+/* ═══ Первый экран — тоже бенто ═══ */
+.stage{padding-top:clamp(1.25rem,2.4vh,2rem);padding-bottom:clamp(1.5rem,3vh,2.5rem)}
+.t--say{grid-column:span 7;grid-row:span 2;justify-content:center;gap:1.25rem;min-height:26rem;
+  padding:clamp(1.75rem,3vw,2.75rem);
+  background:radial-gradient(120% 100% at 6% 0%,rgba(242,194,73,.13),transparent 55%),
+             linear-gradient(165deg,var(--surf-3),var(--surf) 70%);
+  border-color:rgba(242,194,73,.2)}
+.eyebrow{margin:0;display:flex;align-items:center;gap:.85rem;font-size:.6875rem;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:2.5rem;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-dk))}
+h1{margin:0;font-family:var(--fd);font-weight:500;line-height:1.02;letter-spacing:-.022em;
+  font-size:clamp(2rem,4vw,3.5rem);max-width:15ch;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--gold-lt)}
+.lead{margin:0;max-width:44ch;font-size:clamp(1rem,1.15vw,1.125rem);color:var(--mut)}
+.lead b{color:var(--ink);font-weight:600}
+.hero__act{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin-top:.25rem}
+.hero__src{margin:0;margin-top:auto;padding-top:1.25rem;border-top:1px solid var(--line);
+  font-size:.75rem;line-height:1.5;color:var(--dim)}
+.hero__src a{color:var(--gold-lt);text-underline-offset:.2em}
+
+.t--shot{grid-column:span 5;grid-row:span 2;padding:0;justify-content:flex-end;
+  overflow:hidden;min-height:26rem}
+.t--shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:30% 50%;transition:transform .8s var(--e)}
+.t--shot:hover img{transform:scale(1.03)}
+.t--shot figcaption{position:relative;padding:clamp(1.25rem,1.9vw,1.75rem);font-size:.9375rem;
+  background:linear-gradient(180deg,transparent,rgba(8,15,34,.55) 34%,rgba(8,15,34,.94) 78%)}
+
+.t--keep{grid-column:span 5;grid-row:span 2;justify-content:center;gap:1.1rem}
+.keep{margin:0;padding:0;list-style:none;display:grid;gap:1.15rem}
+.keep li{display:grid;gap:.4rem;padding-bottom:1.15rem;border-bottom:1px solid var(--line)}
+.keep li:last-child{padding-bottom:0;border-bottom:0}
+.keep b{font-size:1.0625rem;font-weight:600;color:var(--ink);line-height:1.28;
+  letter-spacing:-.005em}
+.keep span{font-size:.9375rem;color:var(--mut);line-height:1.5;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem}
+.keep i{font-style:normal;font-size:.6875rem;font-weight:600;letter-spacing:.02em;
+  color:var(--gold-lt);white-space:nowrap;padding:.14rem .45rem;border-radius:5px;
+  background:rgba(242,194,73,.09);border:1px solid rgba(242,194,73,.18)}
+
+
+/* ═══ Шкала 1 ноября — вёрсткой, не SVG.
+   Смысл несёт геометрия: одна полоса упирается в черту, вторая проходит насквозь.
+   Весь текст остаётся настоящим текстом — выделяется, переводится, читается скринридером. ═══ */
+.t--line{grid-column:span 12;gap:1.15rem}
+.line__head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.75rem}
+.line__track{position:relative;display:grid;gap:.7rem;--x:62%}
+.line__mark{position:absolute;top:-.35rem;bottom:1.6rem;left:var(--x);width:1px;
+  background:linear-gradient(180deg,transparent,var(--gold) 12%,var(--gold) 88%,transparent);
+  box-shadow:0 0 22px 2px rgba(242,194,73,.28)}
+.line__row{display:grid;grid-template-columns:minmax(0,15rem) 1fr;align-items:center;
+  gap:1.25rem;min-height:2.75rem}
+.line__lab{margin:0;font-size:.9375rem;font-weight:600;line-height:1.3}
+.line__lab i{display:block;font-style:normal;font-size:.8125rem;font-weight:400;color:var(--mut);
+  margin-top:.15rem}
+.line__bar{position:relative;height:1.25rem;border-radius:999px;min-width:0}
+.line__bar--stop{width:var(--x);
+  background:linear-gradient(90deg,rgba(167,184,212,.16),rgba(242,194,73,.42));
+  box-shadow:inset 0 0 0 1px rgba(242,194,73,.28)}
+.line__bar--through{width:100%;
+  background:linear-gradient(90deg,rgba(123,227,174,.5),rgba(123,227,174,.34) 78%,rgba(123,227,174,0));
+  box-shadow:inset 0 0 0 1px rgba(123,227,174,.22)}
+.line__foot{display:flex;flex-wrap:wrap;gap:.5rem 2rem;padding-top:1rem;
+  border-top:1px solid var(--line);font-size:.8125rem;color:var(--mut)}
+.line__foot b{color:var(--ink);font-weight:600}
+.line__when{display:flex;justify-content:space-between;font-size:.75rem;color:var(--dim);
+  letter-spacing:.02em}
+.line__when span:nth-child(2){color:var(--gold);font-weight:600}
+@media(max-width:719px){
+  .line__row{grid-template-columns:1fr;gap:.45rem;min-height:0}
+  .line__mark{top:0;bottom:0}
+  .line__bar{height:1.5rem}
+}
+
+/* ═══ Аннотированная норма: армянский оригинал с подсветкой ═══ */
+.t--norm{grid-row:span 2;justify-content:flex-start;gap:1rem;
+  background:linear-gradient(168deg,var(--surf-2),var(--surf) 72%)}
+.norm{margin:0;font-family:var(--fa);font-size:clamp(.9375rem,1.05vw,1.0625rem);
+  line-height:1.72;color:var(--ink);letter-spacing:.005em}
+.norm mark{background:none;color:var(--gold-lt);position:relative;
+  box-shadow:inset 0 -.42em 0 rgba(242,194,73,.14)}
+.norm sup{font-family:var(--fb);font-size:.5625rem;font-weight:700;color:var(--gold);
+  margin-inline-start:.12em;vertical-align:.55em}
+.gloss{margin:0;display:grid;gap:.55rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.gloss li{display:grid;grid-template-columns:1.1rem 1fr;gap:.55rem;font-size:.8125rem;
+  color:var(--mut);line-height:1.45}
+.gloss b{font-size:.625rem;font-weight:700;color:var(--gold);padding-top:.15rem}
+.gloss em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ═══ Секция ═══ */
+.sec{position:relative;z-index:2;padding-block:clamp(2.75rem,6vh,4.5rem)}
+.sec__head{display:grid;gap:1rem;margin-bottom:clamp(2rem,4vh,3rem);max-width:60ch}
+h2{margin:0;font-family:var(--fd);font-weight:500;line-height:1.08;letter-spacing:-.015em;
+  font-size:clamp(1.875rem,3.4vw,3rem);text-wrap:balance}
+.sec__sub{margin:0;color:var(--mut);max-width:52ch;font-size:1.0625rem}
+
+/* ═══ Бенто ═══ */
+.bento{display:grid;gap:clamp(.875rem,1.2vw,1.25rem);
+  grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(11.5rem,auto)}
+.t{position:relative;border-radius:var(--r);
+  background:linear-gradient(168deg,var(--surf-2),var(--surf));
+  border:1px solid var(--line);box-shadow:var(--lift);
+  padding:clamp(1.25rem,1.9vw,1.75rem);display:flex;flex-direction:column;gap:.7rem;
+  transition:transform var(--t) var(--e),border-color var(--t) var(--e),box-shadow var(--t) var(--e)}
+.t:hover{transform:translateY(-3px);border-color:var(--line-2);
+  box-shadow:0 1px 0 0 rgba(255,255,255,.07) inset,0 30px 56px -28px rgba(0,0,0,.95)}
+.t__k{margin:0;font-size:.625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim)}
+.t__h{margin:0;font-size:clamp(1rem,1.35vw,1.25rem);font-weight:600;line-height:1.25;
+  letter-spacing:-.005em}
+.t__p{margin:0;font-size:.9375rem;color:var(--mut)}
+.t__p b{color:var(--ink);font-weight:600}
+.t__src{margin:0;margin-top:auto;padding-top:1rem;font-size:.6875rem;color:var(--dim);
+  letter-spacing:.01em}
+.t__src a{color:var(--gold-lt)}
+
+/* доминанта */
+.t--hero{grid-column:span 5;grid-row:span 2;justify-content:center;
+  background:radial-gradient(110% 90% at 14% 8%,rgba(242,194,73,.14),transparent 58%),
+             linear-gradient(168deg,var(--surf-3),var(--surf));
+  border-color:rgba(242,194,73,.22)}
+.t--hero:hover{box-shadow:var(--glow)}
+.num{margin:0;font-family:var(--fd);font-weight:500;line-height:.85;letter-spacing:-.03em;
+  font-size:clamp(3.5rem,7.6vw,6.5rem);
+  background:linear-gradient(160deg,var(--gold-lt),var(--gold) 48%,var(--gold-dk));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.num__u{display:block;font-family:var(--fb);font-size:1rem;font-weight:500;letter-spacing:0;
+  color:var(--ink);margin-top:1.25rem;line-height:1.5;max-width:26ch}
+.num__u span{color:var(--mut)}
+
+.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}
+.c7{grid-column:span 7}.c3{grid-column:span 3}
+.r2{grid-row:span 2}
+
+/* пара сегодня/ноябрь */
+.pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:0;
+  margin-top:.35rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pair__c{padding:.9rem 1rem;min-width:0}
+.pair__c:last-child{background:rgba(242,194,73,.055)}
+.pair__d{width:1px;background:var(--line)}
+.pair .lab{margin:0 0 .4rem;font-size:.625rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--dim)}
+.pair__c:last-child .lab{color:var(--gold)}
+.pair .val{margin:0;font-size:.875rem;line-height:1.42;color:var(--mut)}
+.pair__c:last-child .val{color:var(--ink);font-weight:600}
+
+/* плитка-картинка */
+.t--img{padding:0;justify-content:flex-end;overflow:hidden}
+.t--img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .7s var(--e)}
+.t--img:hover img{transform:scale(1.04)}
+.t--img figcaption{position:relative;padding:clamp(1.25rem,1.9vw,1.75rem);
+  background:linear-gradient(180deg,transparent,rgba(8,15,34,.94) 62%);font-size:.9375rem}
+
+/* значок направления */
+.sign{display:inline-flex;align-items:center;gap:.4rem;align-self:flex-start;
+  font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:.28rem .6rem .28rem .5rem;border-radius:999px;border:1px solid}
+.sign svg{width:12px;height:12px}
+.sign--up{color:#7BE3AE;border-color:rgba(123,227,174,.32);background:rgba(123,227,174,.09)}
+.sign--dn{color:var(--gold);border-color:rgba(242,194,73,.32);background:rgba(242,194,73,.08)}
+
+/* появление */
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(18px);
+      transition:opacity .6s var(--e),transform .6s var(--e)}
+  .rv.on{opacity:1;transform:none}
+}
+
+@media(max-width:1023px){
+  .bento{grid-auto-rows:auto}
+  .t--hero{grid-column:span 12;grid-row:auto}
+  .c3,.c4,.c5,.c7{grid-column:span 6}
+}
+@media(max-width:1023px){
+  .t--say{grid-column:span 12;grid-row:auto}
+  .t--keep{grid-column:span 12;grid-row:auto}
+  .t--norm{grid-column:span 12;grid-row:auto}
+}
+@media(max-width:719px){
+  .bento{grid-template-columns:1fr}
+  .c3,.c4,.c5,.c6,.c7,.t--hero,.t--say,.t--norm,.t--keep{grid-column:1/-1}
+  .pair{grid-template-columns:1fr}
+  .pair__d{width:auto;height:1px}
+}
+.ruler{position:fixed;left:0;bottom:0;z-index:99;background:#000d;color:#fff;
+  font:11px/1.4 var(--fb);padding:.35rem .6rem;border-top-right-radius:.4rem}
+</style></head><body>

@@ -1,0 +1,232 @@
+/* ============================================================
+   LTCG — плашка хиро, канон A «Частный банк» (KEY: bank)
+   Гравировка на визитке из плотного картона: серьёзная антиква,
+   капитель с разрядкой, золотые волосяные линии, матовая подложка.
+   Подключение: hero-slice.html?style=bank → [data-style="bank"] на .hs
+   Разметка не меняется. Только стили .hs__copy и её детей.
+   Канон: docs/style_canon_bank.md
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cormorant+SC:wght@600&family=Golos+Text:wght@400;500&family=Noto+Serif+Armenian:wght@500;600&family=Noto+Sans+Armenian:wght@400;500&display=swap');
+
+/* ── токены канона (живут на .hs[data-style="bank"]) ─────────── */
+[data-style="bank"] {
+  --bank-serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --bank-sc:    'Cormorant SC', 'Cormorant Garamond', Georgia, serif;
+  --bank-sans:  'Golos Text', 'Segoe UI', Tahoma, Arial, sans-serif;
+
+  --bank-ivory:      #F7F3EA;                      /* слоновая кость, не белый */
+  --bank-ivory-soft: rgba(247, 243, 234, 0.78);
+  --bank-navy:       #0C1B3A;
+  --bank-gold:       #F2C249;
+  --bank-gold-light: #FAE0A2;
+  --bank-gold-mid:   #C4922B;
+  --bank-hair:       rgba(242, 194, 73, 0.30);     /* волосяная линия, рамка   */
+  --bank-hair-soft:  rgba(242, 194, 73, 0.18);     /* волосяная линия, разделитель */
+
+  --bank-inset: 0.5rem;                            /* отступ внутренней рамки  */
+  --bank-ease:  cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ── плашка: плотный картон ──────────────────────────────────── */
+[data-style="bank"] .hs__copy {
+  left: 1rem;
+  right: 1rem;
+  bottom: 4.75rem;                 /* над подсказкой «листайте» */
+  max-width: none;
+  padding: 1.75rem 1.375rem 1.5rem;
+  color: var(--bank-ivory);
+}
+
+/* подложка: матовая, без стекла; лёгкое бумажное зерно поверх */
+[data-style="bank"] .hs__copy::before {
+  inset: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.09'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(15, 19, 29, 0.86) 0%, rgba(21, 19, 15, 0.90) 100%);
+  box-shadow: 0 32px 64px -32px rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* внутренняя волосяная рамка — как тиснение на визитке */
+[data-style="bank"] .hs__copy::after {
+  content: '';
+  position: absolute;
+  inset: var(--bank-inset);
+  border: 1px solid var(--bank-hair);
+  pointer-events: none;
+  animation: bankFrame 1.2s var(--bank-ease) 0.2s both;
+}
+
+/* ── кикер: капитель с разрядкой + короткая золотая линия ────── */
+[data-style="bank"] .hs__kicker {
+  font: 600 1.0625rem/1.4 var(--bank-sc);
+  text-transform: none;            /* капитель даёт сам Cormorant SC */
+  letter-spacing: 0.12em;
+  color: var(--bank-gold-light);
+  margin: 0 0 1rem;
+}
+[data-style="bank"] .hs__kicker::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  margin: 0 0 0.875rem;
+  background: var(--bank-gold);
+  transform-origin: left center;
+  animation: bankRule 0.9s var(--bank-ease) both;
+}
+
+/* ── заголовок: антиква без тени, курсив золотом ─────────────── */
+[data-style="bank"] .hs__title {
+  font-family: var(--bank-serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 1.25rem + 3.6vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -0.005em;
+  color: var(--bank-ivory);
+  text-shadow: none;
+  max-width: 20ch;                 /* на мобайле ширину режет сама карточка */
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+[data-style="bank"] .hs__title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--bank-gold-light);
+}
+
+/* ── лид: спокойный гротеск, тёплый серый ────────────────────── */
+[data-style="bank"] .hs__lead {
+  font: 400 clamp(0.9375rem, 0.9rem + 0.25vw, 1.0625rem)/1.6 var(--bank-sans);
+  color: var(--bank-ivory-soft);
+  max-width: 42ch;
+  margin: 0 0 1.25rem;
+  text-shadow: none;
+}
+
+/* ── действия: волосяной разделитель, кнопки прямые ──────────── */
+[data-style="bank"] .hs__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--bank-hair-soft);
+}
+[data-style="bank"] .hs__actions .btn {
+  flex: 1 1 100%;
+  min-height: 3rem;                /* ≥ 44 px */
+  padding: 0.6rem 1.5rem;
+  border-radius: 2px;
+  font: 500 0.78rem/1.25 var(--bank-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: normal;
+  transform: none;
+  box-shadow: none;
+  transition:
+    background-color 0.22s var(--bank-ease),
+    border-color     0.22s var(--bank-ease),
+    color            0.22s var(--bank-ease);
+}
+[data-style="bank"] .hs__actions .btn:hover,
+[data-style="bank"] .hs__actions .btn:active {
+  transform: none;
+  box-shadow: none;
+}
+[data-style="bank"] .hs__actions .btn::before { display: none; }   /* без блика-пробега */
+
+[data-style="bank"] .hs__actions .btn--primary {
+  background: var(--bank-gold);    /* плоское золото, без градиента */
+  color: var(--bank-navy);
+}
+[data-style="bank"] .hs__actions .btn--primary:hover  { background: var(--bank-gold-light); }
+[data-style="bank"] .hs__actions .btn--primary:active { background: var(--bank-gold-mid); }
+
+[data-style="bank"] .hs__actions .btn--outline {
+  background: transparent;
+  color: var(--bank-gold-light);
+  border: 1px solid rgba(242, 194, 73, 0.55);
+}
+[data-style="bank"] .hs__actions .btn--outline:hover {
+  border-color: var(--bank-gold);
+  background: rgba(242, 194, 73, 0.08);
+  color: #FFF3D0;
+}
+[data-style="bank"] .hs__actions .btn--outline:active {
+  background: rgba(242, 194, 73, 0.14);
+}
+
+[data-style="bank"] .hs__actions .btn:focus-visible {
+  outline: 2px solid var(--bank-gold-light);
+  outline-offset: 3px;
+}
+
+/* ── прорисовка деталей при загрузке (только линии) ──────────── */
+@keyframes bankRule  { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes bankFrame { from { opacity: 0; }          to { opacity: 1; } }
+
+/* ── ≥ 640: кнопки в ряд ─────────────────────────────────────── */
+@media (min-width: 640px) {
+  [data-style="bank"] .hs__actions { gap: 0.75rem; }
+  [data-style="bank"] .hs__actions .btn { flex: 0 0 auto; padding: 0.6rem 1.75rem; }
+  [data-style="bank"] .hs__kicker { font-size: 1.125rem; letter-spacing: 0.14em; }
+}
+
+/* ── ≥ 768: визитка слева, много воздуха ─────────────────────── */
+@media (min-width: 768px) {
+  [data-style="bank"] {
+    --bank-inset: 0.75rem;
+  }
+  [data-style="bank"] .hs__copy {
+    left: clamp(2rem, 6vw, 6rem);
+    right: auto;
+    bottom: clamp(4.75rem, 9vh, 6rem);
+    width: min(42rem, calc(100% - 2 * clamp(2rem, 6vw, 6rem)));
+    padding: 2.5rem 2.75rem 2.25rem;
+  }
+  [data-style="bank"] .hs__kicker { margin-bottom: 1.375rem; }
+  [data-style="bank"] .hs__kicker::before { width: 3rem; margin-bottom: 1.125rem; }
+  [data-style="bank"] .hs__title { margin-bottom: 1.25rem; }
+  [data-style="bank"] .hs__lead  { margin-bottom: 1.75rem; }
+  [data-style="bank"] .hs__actions { padding-top: 1.625rem; }
+}
+
+/* ── ≥ 1024: полный формат ───────────────────────────────────── */
+@media (min-width: 1024px) {
+  [data-style="bank"] .hs__copy {
+    width: min(47rem, calc(100% - 2 * clamp(2rem, 6vw, 6rem)));
+    padding: 2.75rem 3.25rem 2.5rem;
+  }
+}
+
+/* ── армянская версия: Noto, без капители и курсива ─────────── */
+[data-style="bank"]:lang(hy) .hs__kicker {
+  font: 500 0.75rem/1.5 'Noto Sans Armenian', var(--bank-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+[data-style="bank"]:lang(hy) .hs__title {
+  font-family: 'Noto Serif Armenian', var(--bank-serif);
+  font-size: clamp(1.9rem, 1.2rem + 3.4vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+[data-style="bank"]:lang(hy) .hs__title em {
+  font-style: normal;              /* у Noto Serif Armenian нет курсива */
+  font-weight: 600;
+}
+[data-style="bank"]:lang(hy) .hs__lead,
+[data-style="bank"]:lang(hy) .hs__actions .btn {
+  font-family: 'Noto Sans Armenian', var(--bank-sans);
+}
+[data-style="bank"]:lang(hy) .hs__actions .btn { letter-spacing: 0.08em; }
+
+/* ── движение: уважаем reduced motion ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  [data-style="bank"] .hs__copy::after,
+  [data-style="bank"] .hs__kicker::before { animation: none; }
+  [data-style="bank"] .hs__actions .btn { transition: none; }
+}

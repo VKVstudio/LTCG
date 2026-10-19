@@ -54,29 +54,43 @@
 
   var hasHero = !!d.querySelector('[data-hero-scroll]');
   var hasReveal = !!d.querySelector('[data-reveal], [data-stagger]');
-  var hasSite = h.hasAttribute('data-site');
-
+  var hasSite = h.hasAttribute('data-site');  var SRI = {
+    "js/vendor/gsap.min.js": "sha384-XmJ9SoHtVOHoQUcKvFAzVXwdkKo1Ie3bhmSoIAkcdsHGaIrVJIkmozyq0FJeb/Ly",
+    "js/vendor/ScrollTrigger.min.js": "sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF",
+    "js/vendor/lenis.min.js": "sha384-iiCtod6ZId6zT42Bar9EFXNKZh8X4VliWYWFOuY3/t1AxCvLejXExXcbluoc57CJ",
+    "js/hero-static.js": "sha384-YUrHE7ZfRQ9kI/Ck4ZZGP+mBKbaoMUsM/X0AQfcT6PNbMG0/8VBhIOKhTDVZ9vVQ",
+    "js/hero-scroll.js": "sha384-7P5RBPPJs8CTzen0ip0fZlpYpsI9Y6qbc2rQ3uAnNOwnxPoriN5FBcyfQqERthsD",
+    "js/hero-mobile.js": "sha384-GDjZg3rNImcKZ0wRZuKXKw5hNI5NDw1N3Stw0jkgTfYTsOR07735znZ7uL3NfV/I",
+    "js/menu-mobile.js": "sha384-X6byNeiPRoKn3hrRZNdSkwZKbQEUmWBfF1dLf2ryuF7de2GzJf25V9Eg7wmKtnKP",
+    "js/site.js": "sha384-0fE5UjHlrzUZyFFZguZwqSTIb75U/mD1ZrSqXwpjzNMlLpXqyAn8/ltngdNeSZXJ",
+    "js/railnav.js": "sha384-vED4nRbRadrYCkT5KimiSgA+zQ7GI+RSq6opb9h5i2PEEsmo9ZVBjGpnlST0zMcy",
+    "js/webmcp.js": "sha384-IKPiUmiPDc3YWfDPl28NUj+CWyVGdb6TbsX9BPl5ZMG7W4VIe5iIz9jF6StjTcQq"
+};
   function load(src) {
     return new Promise(function (res, rej) {
       var el = d.createElement('script');
+      el.async = false;
+      if (SRI[src]) { el.integrity = SRI[src]; el.crossOrigin = 'anonymous'; }
       el.src = SITE_ROOT + src + VER;
       el.onload = res; el.onerror = function () { rej(new Error(src)); };
       d.head.appendChild(el);
     });
   }
-  function seq(list) { return list.reduce(function (p, s) { return p.then(function () { return load(s); }); }, Promise.resolve()); }
+  function batch(list) {
+    return Promise.all(list.map(function (s) {
+      return load(s).catch(function (err) { console.warn('[boot]', s, err); });
+    }));
+  }
 
   var chain = Promise.resolve();
   if (motion && (hasHero || hasReveal)) {
-    chain = seq(['js/vendor/gsap.min.js', 'js/vendor/ScrollTrigger.min.js'].concat(fine ? ['js/vendor/lenis.min.js'] : []))
+    chain = batch(['js/vendor/gsap.min.js', 'js/vendor/ScrollTrigger.min.js'].concat(fine ? ['js/vendor/lenis.min.js'] : []))
       .then(function () {
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
         gsap.registerPlugin(ScrollTrigger);
         if (!fine || typeof Lenis === 'undefined') return;
         // Lenis через gsap.ticker — один драйвер на кадр; собственного rAF-цикла нет.
         // Демпфер ровно один на всю цепь: lerp (нормирован по dt внутри Lenis), НЕ duration.
-        // duration 1.2 давал ~1.2 с инерции, а движок хиро вешал поверх ещё свой lerp — суммарная
-        // постоянная времени 0.4 с, отсюда вязкость, перелёт ворот и рассинхрон камеры с роликом.
         var lenis = new Lenis({ lerp: 0.18, smoothWheel: true, syncTouch: false });
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
@@ -86,37 +100,29 @@
       .catch(function (err) { console.warn('[boot] motion libs unavailable, static tier', err); });
   }
   chain
-    .then(function () { if (hasHero) return load(splash ? 'js/hero-static.js' : 'js/hero-scroll.js'); })
-    .catch(function (err) { console.error('[boot] hero', err); })
-    // Заставка телефона — отдельным модулем поверх статической ветки: знак для
-    // <use> в шапке даёт hero-static.js, движение — hero-mobile.js. Грузится
-    // только там, где в разметке есть её слой: страницы без него не платят.
-    .then(function () { if (splash && d.querySelector('[data-hero-mobile]')) return load('js/hero-mobile.js'); })
-    .catch(function (err) { console.error('[boot] hero-mobile', err); })
-    // Меню узкого экрана: там нет ни боковой рейки, ни разделов в шапке —
-    // без него навигация начиналась только с подвала.
-    .then(function () { if (splash) return load('js/menu-mobile.js'); })
-    .catch(function (err) { console.warn('[boot] menu-mobile', err); })
-    .then(function () { if (hasSite) return load('js/site.js'); })
-    .catch(function (err) { console.error('[boot] site', err); })
-    // Рейка разделов справа: строится из разметки, ссылки настоящие, без неё
-    // страница цела. Не грузится там, где есть заставка: на узком экране рейке
-    // негде стоять, её работу делает меню шапки. Условие важно именно для iPad
-    // — он отвечает «hover: hover», и рейка строилась, чтобы тут же быть
-    // спрятанной стилями. Лишняя работа и лишний файл.
-    .then(function () { if (fine && !splash) return load('js/railnav.js'); })
-    .catch(function (err) { console.warn('[boot] railnav', err); });
+    .then(function () {
+      var appScripts = [];
+      if (hasHero) appScripts.push(splash ? 'js/hero-static.js' : 'js/hero-scroll.js');
+      if (splash && d.querySelector('[data-hero-mobile]')) appScripts.push('js/hero-mobile.js');
+      appScripts.push('js/menu-mobile.js');
+      if (hasSite) appScripts.push('js/site.js');
+      if (fine && !splash) appScripts.push('js/railnav.js');
+      return batch(appScripts);
+    })
+    .then(function () {
+      var idle = window.requestIdleCallback || function (cb) { setTimeout(cb, 250); };
+      idle(function () { load('js/webmcp.js').catch(function () {}); });
+    });
 
-  /* Рабочий процесс — только ради установки на рабочий стол: Chrome на
-     Android ставит сайт настоящим приложением лишь при его наличии, иначе
-     предлагает ярлык в браузере. Политика внутри — сеть всегда впереди,
-     кеш только когда сети нет (подробности и история в phase1/sw.js).
-     Регистрация после load, чтобы не соперничать за сеть с тем, что человек
-     видит прямо сейчас. */
+  /* Снимаем старый Service Worker, если он остался от прежних сессий:
+     SW перехватывает навигацию и блокирует Back/Forward Cache (bfcache) в Lighthouse. */
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     addEventListener('load', function () {
-      navigator.serviceWorker.register(SITE_ROOT + 'sw.js')
-        .catch(function (err) { console.warn('[boot] sw', err); });
+      if (navigator.serviceWorker.getRegistrations) {
+        navigator.serviceWorker.getRegistrations().then(function (regs) {
+          regs.forEach(function (r) { r.unregister(); });
+        }).catch(function () {});
+      }
     });
   }
 

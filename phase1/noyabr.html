@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261018m5" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261019m12" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,14 +7,15 @@
      после charset/viewport, чтобы охватить и инлайн-скрипт темы ниже. На этой странице
      нет формы и нет hero-scroll.js, но politика едина для обеих страниц — расходиться
      ей незачем, а совпадение упрощает будущий перенос в phase1/_headers. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <script>
 (function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
-try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
+try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}
+if(window.trustedTypes&&window.trustedTypes.createPolicy&&!window.trustedTypes.defaultPolicy){try{window.trustedTypes.createPolicy('default',{createHTML:function(s){return String(s).replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<\/?(?:script|iframe|object|embed)\b[^>]*>/gi,'').replace(/\bon[a-z]+\s*=/gi,'data-blocked=').replace(/javascript\s*:/gi,'blocked:');},createScript:function(){return '';},createScriptURL:function(u){var p=new URL(String(u),location.href);if(p.origin===location.origin||p.origin==='https://static.cloudflareinsights.com')return p.href;throw new TypeError('Blocked script URL');}});}catch(e){}}})();
 </script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://t.me https://wa.me mailto:; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-FGB6UuDDN3ITvUuuwx2nz16/Cr5IUVaiY9O7NRH8Exs=' 'sha256-PpG18IHQWLZgV8fxP9UuQ/rrlt0GXnicKAge7Ze5i+o=' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'; require-trusted-types-for 'script'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<title>ВНЖ с 1 ноября 2026: реформа закона РА — LTCG, Ереван</title>
+<title>Реформа ВНЖ в Армении (ՀՕ-11-Ն): платформа и квоты — LTCG</title>
 <meta name="description" content="С 1 ноября 2026 в Армении действуют новые правила ВНЖ (ՀՕ-11-Ն): единая онлайн-платформа, квоты, биометрия лично, 183 дня отсутствия. Разбор юристов LTCG.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
@@ -27,11 +28,11 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="ВНЖ с 1 ноября 2026: что меняет реформа">
+<meta property="og:title" content="Реформа ВНЖ и квот в Армении (ՀՕ-11-Ն): платформа, пороги и сроки">
 <meta property="og:description" content="Пятнадцать статей закона переписаны. Перевели с армянского и сверили с действующей редакцией: под каждым сроком стоит статья, из которой он взят.">
 <!-- даты реальные: из git log самого файла, не выдуманы -->
 <meta property="article:published_time" content="2026-09-04T19:55:58+04:00">
-<meta property="article:modified_time" content="2026-10-18T00:00:00+04:00">
+<meta property="article:modified_time" content="2026-10-19T00:00:00+04:00">
 <meta property="og:url" content="https://ltcg.am/noyabr.html">
 <meta property="og:image" content="https://ltcg.am/assets/og/ltcg-og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -50,64 +51,229 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <link rel="preload" as="image" type="image/avif" media="(max-width: 767px)" href="assets/patterns/khachkar-768.avif">
 <link rel="preload" as="image" type="image/avif" media="(min-width: 768px) and (max-width: 1023px)" href="assets/patterns/khachkar-1280.avif">
 <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="assets/patterns/khachkar-1920.avif">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m7">
-<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
-<script defer src="js/boot.js?v=20261019m7"></script>
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m12" integrity="sha384-rzS/zBdNzHQYFBWNlx+kmJ5gPGUbSAak9xk0jVTF++8haKAt++v/pcwilUY4AjwQ" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m12" integrity="sha384-JsZXC2x3l8nyAO0Unz71eGyqlQaUPERViMGiNpXIlbqS827gk/891hY55otGqS/R" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m12" integrity="sha384-zWyk15V0r+v2Xu+1zKBSil7xpx2EcR4uIyyFo7Yar+xHoG6BeMTPboUSbFzPDaw4" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m12" integrity="sha384-nqm4pEiev9mie+V56QRcpksH0QsnZSrEj+3enNrwmp9+GPA2wheDh8Yfd7c+u0HT" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/noyabr.min.css?v=20261019m12" integrity="sha384-AzZotxe/hZ4gULbm0E4KB9dzGtUk1SP6u5xJmRABBAU/tGKKQGSJ88Uk9h4U0kqk" crossorigin="anonymous">
+<link rel="stylesheet" media="(max-width: 1099px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m12" integrity="sha384-GtjUVed82VQRXZ2CX06P2ybdpoW8d7CPvUlx+HQzqoxycYw8D78BWOXQKm4kqmco" crossorigin="anonymous">
+<script defer src="js/boot.js?v=20261019m12" integrity="sha384-EFOrk4uSPbwKGJbpnPGeoNetapgQo1Yxcjtqm3FiutYc9MhQv5zqo3Qin/37iU8V" crossorigin="anonymous"></script>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "LegalService",
       "@id": "https://ltcg.am/#org",
-      "name": "Legal and Tax Consulting Group LLC",
-      "alternateName": "LTCG",
+      "name": "LTCG — Legal and Tax Consulting Group LLC",
+      "legalName": "«Լեգալ ընդ Թաքս Կոնսալթինգ Գրուպ» ՍՊԸ",
       "url": "https://ltcg.am/",
-      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 }
+      "logo": "https://ltcg.am/assets/logo/ltcg-lockup@2x.png?v=20261019m12",
+      "image": "https://ltcg.am/assets/og/ltcg-og.jpg",
+      "telephone": "+37494184014",
+      "email": "info@ltcg.am",
+      "priceRange": "35 000 ֏ · 430 000 ֏",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "пр. Месропа Маштоца",
+        "addressLocality": "Ереван",
+        "addressCountry": "AM"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.1811,
+        "longitude": 44.5136
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Armenia",
+          "identifier": "AM"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia",
+          "identifier": "GE"
+        },
+        {
+          "@type": "Country",
+          "name": "Russia",
+          "identifier": "RU"
+        },
+        {
+          "@type": "Country",
+          "name": "Ukraine",
+          "identifier": "UA"
+        },
+        {
+          "@type": "Country",
+          "name": "Taiwan",
+          "identifier": "TW"
+        },
+        {
+          "@type": "Country",
+          "name": "China",
+          "identifier": "CN"
+        },
+        {
+          "@type": "Country",
+          "name": "Iran",
+          "identifier": "IR"
+        },
+        {
+          "@type": "Country",
+          "name": "India",
+          "identifier": "IN"
+        },
+        {
+          "@type": "Country",
+          "name": "Pakistan",
+          "identifier": "PK"
+        },
+        {
+          "@type": "Country",
+          "name": "Bangladesh",
+          "identifier": "BD"
+        },
+        {
+          "@type": "Country",
+          "name": "Philippines",
+          "identifier": "PH"
+        },
+        {
+          "@type": "Country",
+          "name": "Nepal",
+          "identifier": "NP"
+        },
+        {
+          "@type": "Country",
+          "name": "Egypt",
+          "identifier": "EG"
+        },
+        {
+          "@type": "Country",
+          "name": "Nigeria",
+          "identifier": "NG"
+        },
+        {
+          "@type": "Country",
+          "name": "Kenya",
+          "identifier": "KE"
+        },
+        {
+          "@type": "Country",
+          "name": "South Africa",
+          "identifier": "ZA"
+        },
+        {
+          "@type": "Country",
+          "name": "Morocco",
+          "identifier": "MA"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany",
+          "identifier": "DE"
+        },
+        {
+          "@type": "Country",
+          "name": "United States",
+          "identifier": "US"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada",
+          "identifier": "CA"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia",
+          "identifier": "AU"
+        }
+      ],
+      "availableLanguage": [
+        "ru",
+        "hy",
+        "en"
+      ],
+      "knowsAbout": [
+        "Регистрация ИП (ԱՁ) и ООО (ՍՊԸ) в Армении",
+        "Релокация бизнеса и ИП из Грузии в Армению",
+        "Открытие личных и корпоративных счетов в банках Армении (KYC/AML)",
+        "ВНЖ и ПМЖ в Армении по квоте и электронной платформе с 01.11.2026 (ՀՕ-11-Ն)",
+        "Налоговое сопровождение ИП и ООО в Армении (налог с оборота, НДС, микробизнес)",
+        "Налоговое резидентство 183 дня и автообмен CRS в Армении"
+      ],
+      "sameAs": [
+        "https://t.me/LTCG_Armenia",
+        "https://wa.me/37494184014"
+      ]
     },
     {
       "@type": "WebPage",
       "@id": "https://ltcg.am/noyabr.html",
       "url": "https://ltcg.am/noyabr.html",
-      "name": "ВНЖ с 1 ноября 2026: реформа закона РА — LTCG, Ереван",
+      "name": "Реформа ВНЖ в Армении (ՀՕ-11-Ն): платформа и квоты — LTCG",
       "inLanguage": "ru",
       "datePublished": "2026-09-04",
-      "dateModified": "2026-10-18",
-      "isPartOf": { "@type": "WebSite", "@id": "https://ltcg.am/#website", "url": "https://ltcg.am/", "name": "LTCG — Legal & Tax Consulting Group" },
-      "about": { "@id": "https://ltcg.am/#org" },
-      "breadcrumb": { "@id": "https://ltcg.am/noyabr.html#breadcrumb" }
+      "dateModified": "2026-10-19",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://ltcg.am/#website",
+        "url": "https://ltcg.am/",
+        "name": "LTCG — Legal & Tax Consulting Group"
+      },
+      "about": {
+        "@id": "https://ltcg.am/#org"
+      },
+      "breadcrumb": {
+        "@id": "https://ltcg.am/noyabr.html#breadcrumb"
+      }
     },
     {
       "@type": "Article",
       "@id": "https://ltcg.am/noyabr.html#article",
-      "headline": "С 1 ноября статус оформляют иначе",
+      "headline": "Реформа ВНЖ в Армении: платформа, квоты и пороги ՀՕ-11-Ն",
       "url": "https://ltcg.am/noyabr.html",
       "inLanguage": "ru",
       "image": "https://ltcg.am/assets/og/ltcg-og.jpg",
       "datePublished": "2026-09-04",
-      "dateModified": "2026-10-18",
-      "author": { "@id": "https://ltcg.am/#org" },
-      "publisher": { "@id": "https://ltcg.am/#org" },
-      "mainEntityOfPage": { "@id": "https://ltcg.am/noyabr.html" }
+      "dateModified": "2026-10-19",
+      "author": {
+        "@id": "https://ltcg.am/#org"
+      },
+      "publisher": {
+        "@id": "https://ltcg.am/#org"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://ltcg.am/noyabr.html"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://ltcg.am/noyabr.html#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ltcg.am/" },
-        { "@type": "ListItem", "position": 2, "name": "Подаю по новым правилам", "item": "https://ltcg.am/noyabr.html" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://ltcg.am/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Реформа ВНЖ и квот (ՀՕ-11-Ն)",
+          "item": "https://ltcg.am/noyabr.html"
+        }
       ]
     }
   ]
 }
-</script>
+  </script>
 </head>
 <body class="nov">
+<!--email_off-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="206.69" y1="971.49" x2="903.97" y2="274.21">
@@ -150,32 +316,35 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
   <div class="wrap hdr__in">
     <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
       <picture data-logo="gold">
-        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
-        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
-        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.avif?v=20261019m12 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.webp?v=20261019m12 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png?v=20261019m12" width="57" height="38" alt="" decoding="async">
       </picture>
       <picture data-logo="ink">
-        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
-        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
-        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.avif?v=20261019m12 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.webp?v=20261019m12 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png?v=20261019m12" width="57" height="38" alt="" decoding="async">
       </picture>
     </a>
     <div class="hdr__mid">
-      <nav class="hdr__nav" aria-label="Разделы">
-        <a href="./home-ru.html#where">Этапы</a>
-        <a href="./home-ru.html#calc">Калькулятор</a>
-        <a href="./home-ru.html#services">Услуги</a>
-        <a href="./noyabr.html">С 1 ноября</a>
+      <nav class="hdr__nav" aria-label="Практики и разделы">
+        <a href="./home-ru.html#where">Маршруты</a>
+        <a href="./ip-i-nalogi.html">ИП и налоги</a>
+        <a href="./schet-v-banke.html">Банки и KYC</a>
+        <a href="./vnzh.html">ВНЖ и ПМЖ</a>
+        <a href="./rezidentstvo-i-crs.html">Резидентство</a>
+        <a href="./pered-pereezdom.html">Релокация</a>
+        <a href="./spravki-i-zakrytie.html">Закрытие</a>
+        <a href="./noyabr.html">Реформа ВНЖ</a>
         <a href="./home-ru.html#contact">Контакты</a>
       </nav>
-      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
-      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Калькулятор <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
     <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
          меню не собирается, и мёртвой кнопки на экране быть не должно.
          Содержимое панели js/menu-mobile.js берёт из самой страницы и из
          подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
-    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" hidden>
       <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="hdr__menu-txt">Меню</span>
     </button>
@@ -191,19 +360,30 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <div class="hdr-gap" aria-hidden="true"></div>
 <main id="main">
 
-<section class="section section--grid section--art nov-hero" id="nov" aria-labelledby="nov-title" data-rail-label="1 ноября">
-  <div class="nov-art" aria-hidden="true"></div>
+<section class="section section--grid section--art nov-hero" id="nov" aria-labelledby="nov-title" data-rail-label="Реформа ՀՕ-11-Ն">
+  <div class="art art--right" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/hero-noyabr-day-640.avif 640w, assets/scenes/hero-noyabr-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/hero-noyabr-day-640.webp 640w, assets/scenes/hero-noyabr-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/hero-noyabr-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/hero-noyabr-night-640.avif 640w, assets/scenes/hero-noyabr-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/hero-noyabr-night-640.webp 640w, assets/scenes/hero-noyabr-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/hero-noyabr-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
   <div class="wrap">
     <div class="nov-grid">
 
       <div class="section__head" data-reveal>
         <p class="kicker"><span class="kicker__no">01</span> Реформа закона «Об иностранцах»</p>
-        <h1 class="h1" id="nov-title">С 1 ноября статус <em>оформляют иначе</em></h1>
+        <h1 class="h1" id="nov-title">Реформа ВНЖ в Армении: <em>платформа, квоты и пороги ՀՕ-11-Ն</em></h1>
         <p class="lead nov-lede">Пятнадцать статей закона переписаны. Мы перевели их с армянского целиком и построчно сверили с прежней редакцией — потому что половина того, что пишут о реформе, действовала и раньше, а ключевые изменения в процедуре остались незамеченными.</p>
         <p class="nov-lede">Подача по старым гайдам грозит потерей пошлины <b>150 000 ֏</b> и паузой на <b>1 год</b> — сверяем маршрут заранее. Под каждым числом стоит статья закона. <span class="src">ст. 20 ч. 4 ՀՕ-11-Ն</span></p>
         <div class="nov-actions">
           <a class="btn btn--primary" href="#contact">Обсудить мою подачу</a>
-          <a class="btn btn--link" href="#razbor">Что меняется лично у меня</a>
+          <a class="btn btn--link" href="#razbor">Ключевые нормы по статьям</a>
         </div>
       </div>
 
@@ -260,16 +440,28 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 </section>
 
 
-<section class="section section--grid section--thread section--stone" id="razbor" aria-labelledby="razbor-title" data-rail-label="Что меняется">
+<section class="section section--grid section--thread section--stone" id="razbor" aria-labelledby="razbor-title" data-rail-label="Разбор норм">
   <div class="wrap">
     <div class="section__head" data-reveal>
       <p class="kicker"><span class="kicker__no">02</span> По одному изменению на плитку</p>
-      <h2 class="h1" id="razbor-title">Что меняется <em>на самом деле</em></h2>
+      <h2 class="h1" id="razbor-title">Что изменила реформа <em>на самом деле</em></h2>
     </div>
 
     <div class="bento" data-stagger>
 
       <article class="tile" data-span="6" aria-labelledby="t2-h">
+        <div class="tile__art" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-03-vnzh-day-640.avif 640w, assets/scenes/sit-03-vnzh-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/sit-03-vnzh-day-640.webp 640w, assets/scenes/sit-03-vnzh-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/sit-03-vnzh-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-03-vnzh-night-640.avif 640w, assets/scenes/sit-03-vnzh-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/sit-03-vnzh-night-640.webp 640w, assets/scenes/sit-03-vnzh-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/sit-03-vnzh-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+        </div>
         <p class="tile__meta"><b>2.1</b> Сначала хорошее</p>
         <h3 class="h3" id="t2-h">Три вещи остались без изменений</h3>
         <p class="tile__sub">С этого начинаем, потому что этого ждут меньше всего.</p>
@@ -278,36 +470,60 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
       <article class="tile" data-span="6" aria-labelledby="t3-h">
         <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/img/ltcg-branch-november-1280.webp">
-            <img src="assets/img/ltcg-branch-november-1280.jpg" width="1280" height="853" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/noyabr-visibility-day-640.avif 640w, assets/scenes/noyabr-visibility-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-visibility-day-640.webp 640w, assets/scenes/noyabr-visibility-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/noyabr-visibility-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/noyabr-visibility-night-640.avif 640w, assets/scenes/noyabr-visibility-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-visibility-night-640.webp 640w, assets/scenes/noyabr-visibility-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/noyabr-visibility-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
           </picture>
         </div>
-<p class="tile__meta"><b>2.2</b> Переход на онлайн-подачу · ст. 17 ч. 1</p>
-        <h3 class="h3" id="t3-h">Подача переходит в единую электронную платформу</h3>
+        <p class="tile__meta"><b>2.2</b> Переход на онлайн-подачу · ст. 17 ч. 1</p>
+        <h3 class="h3" id="t3-h">Подача через единую электронную платформу</h3>
         <p class="tile__sub">С 1 ноября 2026 заявления принимаются только онлайн. <span class="src">ст. 17 ч. 1, ст. 30 ч. 3 ՀՕ-11-Ն</span></p>
-        <p>На практике в октябре 2026 записаться на подачу по прежней очереди было нельзя, а с 1 ноября все заявления подаются через единую электронную платформу миграционной службы. Мы формируем цифровой пакет под требования платформы заранее.</p>
+        <p>По реформе ՀՕ-11-Ն (с 1 ноября 2026) все заявления на ВНЖ и ПМЖ подаются исключительно через единую электронную платформу миграционной службы (ранее действовала предварительная запись на очную подачу). Мы формируем цифровой пакет под требования платформы заранее.</p>
       </article>
 
       <article class="tile" data-span="8" aria-labelledby="t5-h">
         <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
-            <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/fork-04-family-day-640.avif 640w, assets/scenes/fork-04-family-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/fork-04-family-day-640.webp 640w, assets/scenes/fork-04-family-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/fork-04-family-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/fork-04-family-night-640.avif 640w, assets/scenes/fork-04-family-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/fork-04-family-night-640.webp 640w, assets/scenes/fork-04-family-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/fork-04-family-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
           </picture>
         </div>
-<p class="tile__meta"><b>2.3</b> Бьёт по конкретному человеку</p>
-        <h3 class="h3" id="t5-h">Брат, сестра, бабушка и внук перестают быть основанием</h3>
+        <p class="tile__meta"><b>2.3</b> Бьёт по конкретному человеку</p>
+        <h3 class="h3" id="t5-h">Брат, сестра, бабушка и внук исключены из оснований по семье</h3>
         <p class="tile__sub">Изменение касается и временного статуса, и постоянного — одинаково.</p>
         <p>До 1 ноября 2026 статус давал супруг или близкий родственник: родитель, ребёнок, брат, сестра, бабушка, дедушка, внук. С 1 ноября членом семьи закон называет только супруга, родителя и ребёнка. <span class="src">ст. 15 и ст. 16 прежней редакции · ст. 29.5 ՀՕ-11-Ն</span></p>
-        <p>А вот круг принимающих не сузился: супруг, родитель и ребёнок иностранца с временным статусом дают основание и до, и после реформы. С ноября к принимающим добавляется человек со статусом беженца. <span class="src">ст. 29.5 ч. 1 ՀՕ-11-Ն</span></p>
+        <p>А вот круг принимающих не сузился: супруг, родитель и ребёнок иностранца с временным статусом дают основание и до, и после реформы. По реформе ՀՕ-11-Ն (с 01.11.2026) к принимающим добавлен человек со статусом беженца. <span class="src">ст. 29.5 ч. 1 ՀՕ-11-Ն</span></p>
       </article>
 
       <article class="tile" data-span="4" aria-labelledby="t6-h">
+        <div class="tile__art" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/noyabr-thresholds-day-640.avif 640w, assets/scenes/noyabr-thresholds-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-thresholds-day-640.webp 640w, assets/scenes/noyabr-thresholds-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/noyabr-thresholds-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/noyabr-thresholds-night-640.avif 640w, assets/scenes/noyabr-thresholds-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-thresholds-night-640.webp 640w, assets/scenes/noyabr-thresholds-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/noyabr-thresholds-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+        </div>
         <p class="tile__meta"><b>2.4</b> Новое основание отказа</p>
-        <h3 class="h3" id="t6-h">Появляется квота</h3>
+        <h3 class="h3" id="t6-h">Годовая квота по статусам пребывания</h3>
         <p class="tile__sub">Ограничение, которого в прежней редакции закона не было.</p>
-        <p>Правительство устанавливает предельное число статусов на год, и исчерпанная квота становится самостоятельным основанием отказа. Конкретные квотные показатели утверждаются постановлением Правительства РА. <span class="src">ст. 17 ч. 4, ст. 19, ст. 30 ч. 2 ՀՕ-11-Ն</span></p>
+        <p>Правительство устанавливает предельное число статусов на год, и исчерпанная квота становится самостоятельным основанием отказа. Для заявителей не из стран ЕАЭС (включая граждан Украины) это ограничивает трудовой ВНЖ: регистрация действующего ИП (от <b>1 000 000 ֏</b>) или ООО (от <b>2 000 000 ֏</b>) остаётся надёжным внеквотным основанием. <span class="src">ст. 17 ч. 4, ст. 19, ст. 29.4 ՀՕ-11-Ն</span></p>
       </article>
 
     </div>
@@ -316,7 +532,18 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
 
 <section class="section section--grid section--thread section--art" id="porogi" aria-labelledby="porogi-title" data-rail-label="Пороги и продление">
-  <div class="nov-art nov-art--guilloche" aria-hidden="true"></div>
+  <div class="art" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/noyabr-thresholds-day-640.avif 640w, assets/scenes/noyabr-thresholds-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/noyabr-thresholds-day-640.webp 640w, assets/scenes/noyabr-thresholds-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/noyabr-thresholds-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/noyabr-thresholds-night-640.avif 640w, assets/scenes/noyabr-thresholds-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/noyabr-thresholds-night-640.webp 640w, assets/scenes/noyabr-thresholds-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/noyabr-thresholds-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
   <div class="wrap">
     <div class="section__head" data-reveal>
       <p class="kicker"><span class="kicker__no">03</span> Деньги и сроки</p>
@@ -326,25 +553,40 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
       <article class="tile" data-span="6" aria-labelledby="t7-h">
         <div class="tile__plate" aria-hidden="true">
-          <img src="assets/img/ltcg-yerevan-tuff.png" width="640" height="360" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/noyabr-thresholds-day-640.avif 640w, assets/scenes/noyabr-thresholds-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-thresholds-day-640.webp 640w, assets/scenes/noyabr-thresholds-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/noyabr-thresholds-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/noyabr-thresholds-night-640.avif 640w, assets/scenes/noyabr-thresholds-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-thresholds-night-640.webp 640w, assets/scenes/noyabr-thresholds-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/noyabr-thresholds-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
           <span class="tile__plate-tag">ՀՕ-11-Ն · ст. 16 и 29.4</span>
         </div>
-<p class="tile__meta"><b>3.1</b> Самая многочисленная группа</p>
-        <h3 class="h3" id="t7-h">Предпринимателю ПМЖ отодвигается на три года</h3>
-        <p class="tile__sub">Для армянского происхождения не меняется ничего — это разные пункты.</p>
-        <p>В прежней редакции бизнес и армянское происхождение стояли в одном пункте и стажа не требовали. С 1 ноября ПМЖ по бизнесу дают только после трёх лет временного статуса за последние пять. Госпошлина вырастает со <b>105 000 ֏</b> до <b>150 000 ֏</b> за ВНЖ и со <b>140 000 ֏</b> до <b>250 000 ֏</b> за ПМЖ. <span class="src">ст. 16 ч. 1 ՀՕ-11-Ն · Закон РА ՀՕ-215-Ն (релиз МВД РА от 21.01.2026)</span></p>
+        <p class="tile__meta"><b>3.1</b> Самая многочисленная группа</p>
+        <h3 class="h3" id="t7-h">Для ПМЖ по бизнесу требуется три года стажа ВНЖ</h3>
+        <p class="tile__sub">Для армянского происхождения правило прежнее — предварительный стаж ВНЖ не требуется.</p>
+        <p>В прежней редакции бизнес и армянское происхождение стояли в одном пункте и стажа не требовали. С 1 ноября ПМЖ по бизнесу дают только после трёх лет временного статуса за последние пять. Госпошлина составляет <b>150 000 ֏</b> за ВНЖ (до 01.11.2026 — <b>105 000 ֏</b>) и <b>250 000 ֏</b> за ПМЖ (до 01.11.2026 — <b>140 000 ֏</b>). <span class="src">ст. 16 ч. 1 ՀՕ-11-Ն · Закон РА ՀՕ-215-Ն (релиз МВД РА от 21.01.2026)</span></p>
         <p class="nov-figs">Порог входа закон называет прямо: <b>2 млн драмов</b> в уставный капитал или в акции, либо <b>1 млн</b> на счетах ИП, либо оборот <b>1 млн</b> за 60 дней до подачи. <span class="src">ст. 29.4 ч. 3 ՀՕ-11-Ն</span></p>
       </article>
 
       <article class="tile" data-span="6" aria-labelledby="t8-h">
         <div class="tile__plate" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
-            <img src="assets/img/nov-shot-1100.jpg" width="640" height="360" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/noyabr-visibility-day-640.avif 640w, assets/scenes/noyabr-visibility-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-visibility-day-640.webp 640w, assets/scenes/noyabr-visibility-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/noyabr-visibility-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/noyabr-visibility-night-640.avif 640w, assets/scenes/noyabr-visibility-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-visibility-night-640.webp 640w, assets/scenes/noyabr-visibility-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/noyabr-visibility-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
           <span class="tile__plate-tag">КГД РА · 180 дней</span>
         </div>
-<p class="tile__meta"><b>3.2</b> Самое опасное место</p>
+        <p class="tile__meta"><b>3.2</b> Самое опасное место</p>
         <h3 class="h3" id="t8-h">Продление не отменили — его перенесли</h3>
         <p class="tile__sub">И правила «подать за 30 дней» в новом тексте закона тоже нет.</p>
         <p>До реформы статус давали до года с продлением каждый раз на год, а заявление подавали не менее чем за <b>30 дней</b>. С 1 ноября в статье осталась одна строка: до одного года. <span class="src">ст. 15 ч. 2 прежней редакции · ст. 15 ՀՕ-11-Ն</span></p>
@@ -355,17 +597,17 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
   </div>
 </section>
 
-<section class="section section--grid section--thread section--stone" id="vidno" aria-labelledby="vidno-title" data-rail-label="Дело станет видно">
+<section class="section section--grid section--thread section--stone" id="vidno" aria-labelledby="vidno-title" data-rail-label="Цифровой контроль">
   <div class="wrap">
     <div class="section__head" data-reveal>
       <p class="kicker"><span class="kicker__no">04</span> Смысловой центр</p>
-      <h2 class="h1" id="vidno-title">Дело станет видно — <em>и молчание станет дорогим</em></h2>
+      <h2 class="h1" id="vidno-title">Дело видно в платформе — <em>а молчание стоит статуса</em></h2>
     </div>
     <div class="bento" data-stagger>
 
       <article class="tile" data-span="12" aria-labelledby="t9-h">
         <p class="tile__meta"><b>4.1</b> Одна процедура, четыре точки</p>
-        <h3 class="h3" id="t9-h">Что именно меняется в самой процедуре</h3>
+        <h3 class="h3" id="t9-h">Как устроена проверка в электронной платформе</h3>
         <p class="tile__sub">На ответ платформе даётся всего 5 дней — мы отслеживаем статус заявки и начисления в КГД.</p>
         <table class="cmp">
           <thead><tr><th scope="col"></th><th scope="col">до 1 ноября 2026</th><th scope="col">с 1 ноября 2026</th></tr></thead>
@@ -380,12 +622,18 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
       <article class="tile" data-span="4" aria-labelledby="t10-h">
         <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
-            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-03-vnzh-day-640.avif 640w, assets/scenes/sit-03-vnzh-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/sit-03-vnzh-day-640.webp 640w, assets/scenes/sit-03-vnzh-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/sit-03-vnzh-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-03-vnzh-night-640.avif 640w, assets/scenes/sit-03-vnzh-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/sit-03-vnzh-night-640.webp 640w, assets/scenes/sit-03-vnzh-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/sit-03-vnzh-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
           </picture>
         </div>
-<p class="tile__meta"><b>4.2</b> Против иллюзии «всё из дома»</p>
+        <p class="tile__meta"><b>4.2</b> Против иллюзии «всё из дома»</p>
         <h3 class="h3" id="t10-h">Удалённо карту не получить</h3>
         <p class="tile__sub">Подача электронная, выдача — по-прежнему визит.</p>
         <p>Карту статуса и справку о законности проживания выдают лично, после сдачи отпечатков пальцев и электронного образца подписи. За детей до 16 лет документ получает родитель или законный представитель. <span class="src">ст. 17 ч. 7 ՀՕ-11-Ն</span></p>
@@ -393,12 +641,18 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
       <article class="tile" data-span="8" aria-labelledby="t11-h">
         <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
-            <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="853" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/noyabr-visibility-day-640.avif 640w, assets/scenes/noyabr-visibility-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-visibility-day-640.webp 640w, assets/scenes/noyabr-visibility-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/noyabr-visibility-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/noyabr-visibility-night-640.avif 640w, assets/scenes/noyabr-visibility-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/noyabr-visibility-night-640.webp 640w, assets/scenes/noyabr-visibility-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/noyabr-visibility-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
           </picture>
         </div>
-<p class="tile__meta"><b>4.3</b> Развилка, о которой не знали</p>
+        <p class="tile__meta"><b>4.3</b> Развилка, о которой не знали</p>
         <h3 class="h3" id="t11-h">Две разные 183 — и они про разное</h3>
         <p class="tile__sub">Одно правило считает присутствие, другое — отсутствие. Совпадение чисел случайно.</p>
         <p>С 1 ноября иностранец, отсутствовавший в Армении <b>183 дня</b> и более, уведомляет об этом через платформу в течение <b>10 дней</b>. Не уведомил — статус признают утратившим силу. Освобождены только получившие ПМЖ по инвестициям и за исключительные услуги. <span class="src">ст. 17 ч. 8, ст. 21 ч. 1 ՀՕ-11-Ն</span></p>
@@ -409,8 +663,19 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
   </div>
 </section>
 
-<section class="section section--grid section--thread section--art" id="legche" aria-labelledby="legche-title" data-rail-label="Что становится легче">
-  <div class="nov-art nov-art--stone" aria-hidden="true"></div>
+<section class="section section--grid section--thread section--art" id="legche" aria-labelledby="legche-title" data-rail-label="Что упростилось">
+  <div class="art art--right" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/fork-04-family-day-640.avif 640w, assets/scenes/fork-04-family-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/fork-04-family-day-640.webp 640w, assets/scenes/fork-04-family-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/fork-04-family-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/fork-04-family-night-640.avif 640w, assets/scenes/fork-04-family-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/fork-04-family-night-640.webp 640w, assets/scenes/fork-04-family-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/fork-04-family-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+  </div>
   <div class="wrap">
     <div class="section__head" data-reveal>
       <p class="kicker"><span class="kicker__no">05</span> Вторая половина правды</p>
@@ -420,14 +685,14 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
       <article class="tile" data-span="12" aria-labelledby="t12-h">
         <p class="tile__meta"><b>5.1</b> Шесть пунктов в вашу пользу</p>
-        <h3 class="h3" id="t12-h">Что становится легче</h3>
+        <h3 class="h3" id="t12-h">Что упростила реформа</h3>
         <p class="tile__sub">После пяти плиток об ужесточении — обратная сторона, той же длины.</p>
         <ul class="gains" role="list">
-          <li><b>Тест рынка труда исчезает.</b> Статья, где состояние рынка труда было основанием отказа в разрешении на работу, утрачивает силу целиком. <span class="src">ст. 25 прежней редакции</span></li>
-          <li><b>Отказ за недостающие документы уходит.</b> Вместо отказа — уведомление через платформу и пять дней на исправление. <span class="src">ст. 17 ч. 9 ՀՕ-11-Ն</span></li>
+          <li><b>Тест рынка труда отменён.</b> Статья, где состояние рынка труда было основанием отказа в разрешении на работу, утратила силу целиком. <span class="src">ст. 25 прежней редакции</span></li>
+          <li><b>Отказ из-за неполного комплекта заменён досылкой.</b> Вместо отказа — уведомление через платформу и пять дней на исправление. <span class="src">ст. 17 ч. 9 ՀՕ-11-Ն</span></li>
           <li><b>Потеряли работу — 15 рабочих дней на новый договор.</b> До реформы это было возможно далеко не всегда и требовало согласия органа. <span class="src">ст. 27 ч. 1 ՀՕ-11-Ն</span></li>
           <li><b>Годичный мораторий после отказа в ВНЖ действует не всегда.</b> По семи устранимым основаниям отказа из тринадцати в ч. 1 ст. 19 и по ч. 3 ст. 27 подать заново можно сразу после отпадения обстоятельств, не выжидая 1 год. <span class="src">ст. 20 ч. 4 ՀՕ-11-Ն</span></li>
-          <li><b>Круг принимающих расширяется на одного.</b> Основание даёт и человек со статусом беженца. <span class="src">ст. 29.5 ч. 1 ՀՕ-11-Ն</span></li>
+          <li><b>Круг принимающих расширен.</b> Основание даёт и человек со статусом беженца. <span class="src">ст. 29.5 ч. 1 ՀՕ-11-Ն</span></li>
           <li><b>Учёба считается шире.</b> Не только вуз: неформальные программы, переподготовка, обмен, наука и инновации. <span class="src">ст. 29.3 ՀՕ-11-Ն</span></li>
         </ul>
       </article>
@@ -441,12 +706,18 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
       <article class="tile" data-span="4" aria-labelledby="t14-h">
         <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/img/nov-hero-1280.webp">
-            <img src="assets/img/nov-hero-1280.jpg" width="1280" height="853" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-03-vnzh-day-640.avif 640w, assets/scenes/svc-03-vnzh-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/svc-03-vnzh-day-640.webp 640w, assets/scenes/svc-03-vnzh-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/svc-03-vnzh-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-03-vnzh-night-640.avif 640w, assets/scenes/svc-03-vnzh-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/svc-03-vnzh-night-640.webp 640w, assets/scenes/svc-03-vnzh-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/svc-03-vnzh-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
           </picture>
         </div>
-<p class="tile__meta"><b>5.3</b> Первоисточники и сопровождение</p>
+        <p class="tile__meta"><b>5.3</b> Первоисточники и сопровождение</p>
         <h3 class="h3" id="t14-h">Сопровождаем ВНЖ в комплексе с бизнесом</h3>
         <p class="tile__sub">Проверили: Юристы LTCG · Обновлено 18.10.2026.</p>
         <p>Оформляем ВНЖ в комплексе с регистрацией ИП/ООО или ведением бухгалтерии в LTCG (<a class="lnk" href="./vnzh.html">подробнее о ВНЖ</a> · <a class="lnk" href="./home-ru.html#calc">калькулятор стоимости</a>). Первоисточники: <a class="lnk" href="https://www.arlis.am/hy/acts/220874" target="_blank" rel="noopener noreferrer">закон ՀՕ-11-Ն</a>, <a class="lnk" href="https://www.arlis.am/hy/acts/225851" target="_blank" rel="noopener noreferrer">ՀՕ-212-Ն</a> и <a class="lnk" href="https://mia.gov.am/2026/01/21/azh-30/" target="_blank" rel="noopener noreferrer">релиз МВД РА по ՀՕ-215-Ն</a>. <span class="src">юридическую силу имеет официальный текст на армянском языке</span></p>
@@ -457,17 +728,22 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 </section>
 
 <section class="section section--art section--contact" id="contact" aria-labelledby="c-title" data-rail-label="Заявка">
-  <div class="art art--center" aria-hidden="true">
-    <picture>
-      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
-      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
-      <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" width="2496" height="1664" alt="" loading="lazy" decoding="async">
+    <div class="art art--center" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/bg-contact-day-640.avif 640w, assets/scenes/bg-contact-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-contact-day-640.webp 640w, assets/scenes/bg-contact-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-contact-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/bg-contact-night-640.avif 640w, assets/scenes/bg-contact-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-contact-night-640.webp 640w, assets/scenes/bg-contact-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-contact-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
     <div class="section__head" data-reveal>
       <p class="kicker"><span class="kicker__no">06</span> Обсудить ваш случай</p>
-      <h2 class="h2" id="c-title">Подаёте на ВНЖ <em>после 1 ноября 2026?</em></h2>
+      <h2 class="h2" id="c-title">Оформляете ВНЖ <em>по правилам реформы ՀՕ-11-Ն?</em></h2>
       <p class="lead">Оформляем ВНЖ в комплексе с открытием бизнеса или ведением учёта в LTCG. Оставьте контакт — разберём основание и подготовим подачу через электронную платформу.</p>
     </div>
 
@@ -480,42 +756,42 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
         </div>
         <hr class="rule">
-        <form class="form" id="lead" method="dialog" data-lead novalidate>
+        <form class="form" id="lead" method="dialog" data-lead novalidate toolname="submit_legal_inquiry" tooldescription="Подготовить заявку юристам LTCG (Ереван) по открытию счёта, регистрации ИП/ООО, бухгалтерии, ВНЖ с 01.11.2026 или резидентству в Армении.">
           <div class="form__row">
             <div class="field">
               <label class="field__label" for="f-name">Как к вам обращаться</label>
-              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя" aria-required="true" toolparamdescription="Имя или название компании заявителя">
             </div>
             <div class="field">
               <label class="field__label" for="f-contact">Телефон или Telegram</label>
-              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник">
+              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник" aria-required="true" toolparamdescription="Контакт для связи: ник в Telegram (@username) или номер телефона WhatsApp">
             </div>
           </div>
           <div class="field">
-            <label class="field__label" for="f-state">Где вы сейчас?</label>
-            <select id="f-state" name="state" required>
-              <option value="">Выберите момент</option>
-              <option value="pre-move">Ещё не переехал</option>
-              <option value="arrived">Только приехал</option>
-              <option value="legalizing">Легализуюсь</option>
-              <option value="working">Работаю</option>
-              <option value="settled">Живу и планирую</option>
-              <option value="moving-on">Двигаюсь дальше</option>
-              <option value="new-rules" selected>Подаю после 1 ноября</option>
+            <label class="field__label" for="f-state">Профиль задачи</label>
+            <select id="f-state" name="state" required aria-required="true" toolparamdescription="Текущая стадия: до переезда, счёт в банке, ВНЖ, ИП и налоги, резидентство 183 дня, закрытие или реформа 01.11.2026">
+              <option value="">Выберите задачу</option>
+              <option value="pre-move">До переезда и удалённый старт</option>
+              <option value="arrived">Счёт в банке, НОУ и адрес</option>
+              <option value="legalizing">ВНЖ, ПМЖ и квоты</option>
+              <option value="working">ИП, ООО и налоги</option>
+              <option value="settled">Резидентство и CRS</option>
+              <option value="moving-on">Справки и закрытие</option>
+              <option value="new-rules" selected>Реформа ВНЖ (ՀՕ-11-Ն)</option>
             </select>
           </div>
           <div class="field">
             <label class="field__label" for="f-msg">Сообщение <small>— необязательно</small></label>
-            <textarea id="f-msg" name="message" placeholder="Например: нужно открыть ИП, поставить на учёт и подать на ВНЖ по предпринимательству после 1 ноября"></textarea>
+            <textarea id="f-msg" name="message" placeholder="Например: нужно открыть ИП, поставить на учёт и подать на ВНЖ по предпринимательству через платформу"></textarea>
           </div>
           <div class="field">
             <label class="field__label" for="f-src">Как вы о нас узнали? <small>— необязательно</small></label>
             <input class="field__input" id="f-src" name="source" type="text" placeholder="Рекомендация, поиск, Telegram…">
           </div>
-          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" toolparamdescription="Служебное антиспам-поле (оставьте пустым)"></label></div>
           <input type="hidden" name="modules" data-f-modules value="">
           <input type="hidden" name="page" value="noyabr">
-          <label class="check"><input type="checkbox" name="consent" required><span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Согласен на обработку персональных данных для связи по заявке</span></label>
+          <label class="check"><input type="checkbox" name="consent" required aria-required="true" toolparamdescription="Согласие на обработку персональных данных для ответа по обращению"><span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Согласен на обработку персональных данных для связи по заявке</span></label>
           <div class="form__foot">
             <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
             <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
@@ -541,10 +817,22 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       </div>
 
       <aside class="tile tile--hero" data-reveal>
+                    <div class="tile__art" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/hero-yerevan-day-640.avif 640w, assets/scenes/hero-yerevan-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/hero-yerevan-day-640.webp 640w, assets/scenes/hero-yerevan-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/hero-yerevan-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/hero-yerevan-night-640.avif 640w, assets/scenes/hero-yerevan-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/hero-yerevan-night-640.webp 640w, assets/scenes/hero-yerevan-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/hero-yerevan-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+        </div>
         <p class="tile__meta"><b>6.2</b> Что будет дальше</p>
         <ol class="next" role="list">
           <li><span><b>Ответ юриста LTCG</b>Смотрим ваше основание (ИП, трудовой договор, семья, происхождение) и сроки подачи.</span></li>
-          <li><span><b>Разбор под реформу 1 ноября</b>Проверяем пороги (1 млн / 2 млн ֏), наличие налоговых начислений для правила 180 дней и готовность документов к электронной платформе.</span></li>
+          <li><span><b>Разбор по нормам ՀՕ-11-Ն</b>Проверяем пороги (1 млн / 2 млн ֏), наличие налоговых начислений для правила 180 дней и готовность документов к электронной платформе.</span></li>
           <li><span><b>Комплексный маршрут и договор</b>Фиксируем стоимость регистрации бизнеса/бухгалтерии и сопровождения ВНЖ в драмах РА.</span></li>
         </ol>
         <hr class="rule">
@@ -558,19 +846,19 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="bento ftr__bento" role="list">
+    <div class="bento ftr__bento">
 
-      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" aria-labelledby="f-brand">
         <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
           <picture data-logo="gold">
-            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
-            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
-            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.avif?v=20261019m12 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.webp?v=20261019m12 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png?v=20261019m12" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
           </picture>
           <picture data-logo="ink">
-            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
-            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
-            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.avif?v=20261019m12 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.webp?v=20261019m12 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png?v=20261019m12" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
           </picture>
         </a>
         <h2 class="sr-only" id="f-brand">Контакты</h2>
@@ -581,20 +869,20 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </address>
       </section>
 
-      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
-        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">Практики и маршруты</h2>
         <ul class="ftr__list" role="list">
-          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
-          <li><a href="./schet-v-banke.html">Только приехал</a></li>
-          <li><a href="./vnzh.html">Легализуюсь</a></li>
-          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
-          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
-          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
-          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
+          <li><a href="./ip-i-nalogi.html">ИП, ООО и налоги</a></li>
+          <li><a href="./schet-v-banke.html">Счёт в банке и KYC</a></li>
+          <li><a href="./vnzh.html">ВНЖ, ПМЖ и квоты</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Резидентство и CRS</a></li>
+          <li><a href="./pered-pereezdom.html">Релокация и апостиль</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Справки и закрытие</a></li>
+          <li><a href="./noyabr.html">Реформа ВНЖ (ՀՕ-11-Ն)</a></li>
         </ul>
       </nav>
 
-      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+      <section class="tile ftr__tile" data-span="4" aria-labelledby="f-site">
         <h2 class="ftr__h" id="f-site">Сайт</h2>
         <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
         <nav class="ftr__langs" aria-label="Язык сайта">
@@ -605,7 +893,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
       </section>
 
-      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" aria-labelledby="f-legal">
         <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
         <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
         <div class="ftr__credit">
@@ -630,5 +918,6 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
   <a href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
   <a class="is-primary" href="#contact"><svg aria-hidden="true"><use href="#i-calc"/></svg>Заявка</a>
 </nav>
+<!--/email_off-->
 </body>
 </html>

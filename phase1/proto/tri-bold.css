@@ -1,0 +1,715 @@
+/* ============================================================
+   LTCG — экран выбора языка «Триптих», трактовка bold
+   Три части = три стиля:
+     HY  Неоклассика + люксовая типографика  («гравированная плита»)
+     RU  Необрутализм в бренд-палитре        («масса»)
+     EN  Editorial design                    («разворот журнала»)
+   Инвариант композиции: центр всегда инвертирован относительно соседей.
+   Светлая: камень | navy | бумага.   Тёмная: базальт | кость | чернила.
+   Все цвета — только через токены. Ни одного цвета в правилах компонентов.
+   ============================================================ */
+
+/* ---------- 1. ТОКЕНЫ. СВЕТЛАЯ ТЕМА (база) ---------- */
+:root {
+  color-scheme: light;
+
+  /* бренд */
+  --gold:      #F2C249;
+  --gold-lt:   #FAE0A2;
+  --gold-mid:  #C4922B;
+  --gold-dk:   #593E10;
+  --navy:      #0C1B3A;
+
+  /* шов между частями */
+  --seam-1: rgba(196,146,43,.10);
+  --seam-2: rgba(196,146,43,.30);
+  --seam-3: rgba(196,146,43,.85);
+
+  /* знак в короне (лежит над центральной частью) */
+  --crown-ink: rgba(255,255,255,.94);
+  --crown-snow: #FFFFFF;
+  --mark-1: #C4922B;
+  --mark-2: #F2C249;
+  --mark-3: #FAE0A2;
+
+  /* переключатель темы (лежит над правой частью) */
+  --ui-ink:      #16223B;
+  --ui-ink-2:    #56627C;
+  --ui-line:     rgba(12,27,58,.28);
+  --ui-on-bg:    #0C1B3A;
+  --ui-on-ink:   #F4ECDC;
+  --focus:       #C4922B;
+
+  /* HY — светлый туф */
+  --hy-bg:        #EFE8D9;
+  --hy-tex:       url("../assets/bg/bg-stone-tuf-1280.jpg");
+  --hy-tex-op:    .22;
+  --hy-tex-blend: multiply;
+  --hy-ink:       #1B2438;
+  --hy-ink-2:     #4A5266;
+  --hy-gold:      #593E10;
+  --hy-line:      rgba(196,146,43,.45);
+  --hy-line-soft: rgba(196,146,43,.26);
+  --hy-frame:     rgba(196,146,43,.42);
+
+  /* RU — navy-масса */
+  --ru-bg:        #0C1B3A;
+  --ru-bg-2:      #112240;
+  --ru-tex:       url("../assets/bg/bg-dark-glass-1280.jpg");
+  --ru-tex-op:    .30;
+  --ru-tex-blend: soft-light;
+  --ru-ink:       #FFFFFF;
+  --ru-ink-2:     rgba(255,255,255,.72);
+  --ru-gold:      #FAE0A2;
+  --ru-line:      rgba(250,224,162,.30);
+  --ru-fill:      #F2C249;
+  --ru-fill-ink:  #0C1B3A;
+  --ru-edge:      #F2C249;
+  --ru-offset:    #C4922B;
+
+  /* EN — бумага */
+  --en-bg:        #F4ECDC;
+  --en-tex:       url("../assets/bg/bg-paper-1280.jpg");
+  --en-tex-op:    .34;
+  --en-tex-blend: multiply;
+  --en-ink:       #16223B;
+  --en-ink-2:     #3D4A63;
+  --en-ink-3:     #56627C;
+  --en-rule:      rgba(22,34,59,.24);
+  --en-rule-str:  rgba(22,34,59,.55);
+  --en-gold:      #8A6414;
+
+  /* геометрия и ритм — общие для трёх частей */
+  --pad:  clamp(20px, 3.1vw, 46px);
+  --rt:   clamp(86px, 11vh, 118px);   /* верхняя линейка: от верха */
+  --rb:   clamp(104px, 13.5vh, 140px);/* нижняя линейка: от низа */
+  --crown: 64px;
+  --ease: cubic-bezier(.16, 1, .3, 1); /* expo.out */
+  --t-fast: 240ms;
+  --t-mid:  320ms;
+  --t-in:   620ms;
+}
+
+/* ---------- 2. ТОКЕНЫ. ТЁМНАЯ ТЕМА ----------
+   Дублируется дважды намеренно: системная тема должна работать без JS,
+   ручной выбор — перебивать её в обе стороны.                          */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --seam-1: rgba(242,194,73,.10);
+    --seam-2: rgba(242,194,73,.26);
+    --seam-3: rgba(242,194,73,.80);
+
+    --crown-ink: #0C1B3A;
+    --crown-snow: #E9E1CF;
+    --mark-1: #8A6414;
+    --mark-2: #A87A1E;
+    --mark-3: #C4922B;
+
+    --ui-ink:    #EDE7DA;
+    --ui-ink-2:  #ADA598;
+    --ui-line:   rgba(237,231,218,.30);
+    --ui-on-bg:  #EDE7DA;
+    --ui-on-ink: #12100D;
+    --focus:     #F2C249;
+
+    --hy-bg:        #1A1815;
+    --hy-tex-op:    .30;
+    --hy-tex-blend: soft-light;
+    --hy-ink:       #EDE6D8;
+    --hy-ink-2:     #B0A797;
+    --hy-gold:      #F2C249;
+    --hy-line:      rgba(242,194,73,.44);
+    --hy-line-soft: rgba(242,194,73,.22);
+    --hy-frame:     rgba(242,194,73,.30);
+
+    --ru-bg:        #E9E1CF;
+    --ru-bg-2:      #E2D9C4;
+    --ru-tex:       url("../assets/bg/bg-paper-1280.jpg");
+    --ru-tex-op:    .40;
+    --ru-tex-blend: multiply;
+    --ru-ink:       #0C1B3A;
+    --ru-ink-2:     #4A5266;
+    --ru-gold:      #593E10;
+    --ru-line:      rgba(12,27,58,.26);
+    --ru-fill:      #0C1B3A;
+    --ru-fill-ink:  #E9E1CF;
+    --ru-edge:      #0C1B3A;
+    --ru-offset:    #C4922B;
+
+    --en-bg:        #12100D;
+    --en-tex-op:    .20;
+    --en-tex-blend: soft-light;
+    --en-ink:       #EDE7DA;
+    --en-ink-2:     #ADA598;
+    --en-ink-3:     #8E877B;
+    --en-rule:      rgba(237,231,218,.24);
+    --en-rule-str:  rgba(237,231,218,.55);
+    --en-gold:      #E4B658;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --seam-1: rgba(242,194,73,.10);
+  --seam-2: rgba(242,194,73,.26);
+  --seam-3: rgba(242,194,73,.80);
+
+  --crown-ink: #0C1B3A;
+  --crown-snow: #E9E1CF;
+  --mark-1: #8A6414;
+  --mark-2: #A87A1E;
+  --mark-3: #C4922B;
+
+  --ui-ink:    #EDE7DA;
+  --ui-ink-2:  #ADA598;
+  --ui-line:   rgba(237,231,218,.30);
+  --ui-on-bg:  #EDE7DA;
+  --ui-on-ink: #12100D;
+  --focus:     #F2C249;
+
+  --hy-bg:        #1A1815;
+  --hy-tex-op:    .30;
+  --hy-tex-blend: soft-light;
+  --hy-ink:       #EDE6D8;
+  --hy-ink-2:     #B0A797;
+  --hy-gold:      #F2C249;
+  --hy-line:      rgba(242,194,73,.44);
+  --hy-line-soft: rgba(242,194,73,.22);
+  --hy-frame:     rgba(242,194,73,.30);
+
+  --ru-bg:        #E9E1CF;
+  --ru-bg-2:      #E2D9C4;
+  --ru-tex:       url("../assets/bg/bg-paper-1280.jpg");
+  --ru-tex-op:    .40;
+  --ru-tex-blend: multiply;
+  --ru-ink:       #0C1B3A;
+  --ru-ink-2:     #4A5266;
+  --ru-gold:      #593E10;
+  --ru-line:      rgba(12,27,58,.26);
+  --ru-fill:      #0C1B3A;
+  --ru-fill-ink:  #E9E1CF;
+  --ru-edge:      #0C1B3A;
+  --ru-offset:    #C4922B;
+
+  --en-bg:        #12100D;
+  --en-tex-op:    .20;
+  --en-tex-blend: soft-light;
+  --en-ink:       #EDE7DA;
+  --en-ink-2:     #ADA598;
+  --en-ink-3:     #8E877B;
+  --en-rule:      rgba(237,231,218,.24);
+  --en-rule-str:  rgba(237,231,218,.55);
+  --en-gold:      #E4B658;
+}
+
+/* ---------- 3. КАРКАС ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+body {
+  background: var(--navy);
+  font-family: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.gate { position: relative; height: 100svh; }
+
+/* --- триптих и швы --- */
+.tri {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  height: 100svh;
+  /* шов вспыхивает ровно там, где его пересекают общие линейки частей */
+  background:
+    linear-gradient(180deg,
+      var(--seam-1) 0,
+      var(--seam-2) calc(var(--rt) - 14px),
+      var(--seam-3) var(--rt),
+      var(--seam-2) calc(var(--rt) + 14px),
+      var(--seam-2) calc(100% - var(--rb) - 14px),
+      var(--seam-3) calc(100% - var(--rb)),
+      var(--seam-2) calc(100% - var(--rb) + 14px),
+      var(--seam-1) 100%);
+}
+
+/* --- часть --- */
+.panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: block;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  padding: 0 var(--pad);
+}
+.panel__tex {
+  position: absolute; inset: 0; z-index: -1;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+.panel__in {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: var(--rt) minmax(0, 1fr) var(--rb);
+}
+
+/* верхняя строка: кикер, под ним — общая линейка */
+.eyebrow {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding-bottom: 14px;
+  font-size: 11px;
+  line-height: 1;
+}
+/* тело */
+.body {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 5.4em;
+  align-items: end;
+  row-gap: 14px;
+  padding-bottom: clamp(18px, 3.4vh, 34px);
+  min-width: 0;
+}
+.body > .line { align-self: start; }
+.autonym { display: block; margin: 0; }
+.line { display: block; max-width: 24ch; }
+/* нижняя строка: действие, над ним — общая линейка */
+.act {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+}
+.arw { width: 18px; height: 10px; flex: none; }
+.arw path { fill: none; stroke: currentColor; stroke-width: 1.4; }
+
+/* фокус — одинаковый во всех трёх частях */
+.panel:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -8px;
+}
+
+/* ============================================================
+   ЧАСТЬ 1 — HY. НЕОКЛАССИКА + ЛЮКСОВАЯ ТИПОГРАФИКА
+   Гравированная плита: симметрия, волосяная золотая рамка,
+   антиква, нулевые радиусы, ничего не светится.
+   ============================================================ */
+.panel--hy { background: var(--hy-bg); color: var(--hy-ink); }
+.panel--hy .panel__tex {
+  background-image: var(--hy-tex);
+  opacity: var(--hy-tex-op);
+  mix-blend-mode: var(--hy-tex-blend);
+}
+.panel--hy .frame {
+  position: absolute;
+  inset: 16px;
+  border: 1px solid var(--hy-frame);
+  pointer-events: none;
+  z-index: 0;
+}
+.panel--hy .panel__in { text-align: center; z-index: 1; }
+.panel--hy .eyebrow {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  border-bottom: 1px solid var(--hy-line-soft);
+  font-family: "Noto Sans Armenian", "Golos Text", sans-serif;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--hy-ink-2);
+}
+.panel--hy .eyebrow::before {
+  content: "";
+  width: 40px; height: 1px;
+  background: var(--hy-line);
+}
+.panel--hy .body { justify-items: center; }
+.panel--hy .autonym {
+  font-family: "Noto Serif Armenian", "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.3vw, 3.45rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--hy-ink);
+}
+.panel--hy .line {
+  font-family: "Noto Sans Armenian", "Golos Text", sans-serif;
+  font-weight: 400;
+  font-size: clamp(.9375rem, .82rem + .3vw, 1.0625rem);
+  line-height: 1.55;
+  color: var(--hy-ink-2);
+  max-width: 20ch;
+}
+.panel--hy .act {
+  justify-content: center;
+  border-top: 1px solid var(--hy-line-soft);
+  font-family: "Noto Sans Armenian", "Golos Text", sans-serif;
+  font-weight: 500;
+  font-size: .9375rem;
+  letter-spacing: .04em;
+  color: var(--hy-gold);
+}
+.panel--hy .act__label {
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--hy-line);
+}
+
+/* ============================================================
+   ЧАСТЬ 2 — RU. НЕОБРУТАЛИЗМ В БРЕНД-ПАЛИТРЕ
+   Масса: инверсия к соседям, 2 px кромка, жёсткий сдвиг без блюра,
+   плотный гротеск, моно-метка. Ни одного попсового цвета.
+   ============================================================ */
+.panel--ru {
+  background: linear-gradient(180deg, var(--ru-bg) 0%, var(--ru-bg-2) 100%);
+  color: var(--ru-ink);
+}
+.panel--ru .panel__tex {
+  background-image: var(--ru-tex);
+  opacity: var(--ru-tex-op);
+  mix-blend-mode: var(--ru-tex-blend);
+}
+.panel--ru .eyebrow {
+  border-bottom: 1px solid var(--ru-line);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ru-ink-2);
+}
+/* активна по умолчанию — тонкая метка, не выделенная карточка */
+.panel[aria-current] .eyebrow::before {
+  content: "";
+  width: 7px; height: 7px;
+  background: var(--gold);
+  margin-bottom: 1px;
+  flex: none;
+}
+.panel--ru .autonym {
+  font-family: "Onest", "Golos Text", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4.1vw, 4.25rem);
+  line-height: .96;
+  letter-spacing: -.04em;
+  color: var(--ru-ink);
+}
+.panel--ru .line {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  font-size: clamp(.9375rem, .82rem + .3vw, 1.0625rem);
+  line-height: 1.5;
+  color: var(--ru-ink-2);
+  max-width: 22ch;
+}
+.panel--ru .act { border-top: 1px solid var(--ru-line); }
+.panel--ru .act__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 22px;
+  background: var(--ru-fill);
+  color: var(--ru-fill-ink);
+  border: 2px solid var(--ru-edge);
+  box-shadow: 6px 6px 0 0 var(--ru-offset);
+  font-family: "Onest", "Golos Text", sans-serif;
+  font-weight: 600;
+  font-size: .875rem;
+  letter-spacing: .02em;
+}
+
+/* ============================================================
+   ЧАСТЬ 3 — EN. EDITORIAL DESIGN
+   Разворот журнала: линейка на всю ширину, номер рубрики курсивом
+   справа, антиква говорит, гротеск подписывает, золото звучит один раз.
+   ============================================================ */
+.panel--en { background: var(--en-bg); color: var(--en-ink); }
+.panel--en .panel__tex {
+  background-image: var(--en-tex);
+  opacity: var(--en-tex-op);
+  mix-blend-mode: var(--en-tex-blend);
+}
+.panel--en .eyebrow {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--en-rule);
+  font-family: "Golos Text", sans-serif;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--en-ink-3);
+}
+.panel--en .eyebrow__no {
+  font-family: "Literata", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--en-ink-2);
+}
+.panel--en .autonym {
+  font-family: "Literata", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  color: var(--en-ink);
+}
+.panel--en .line {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 400;
+  font-size: clamp(.9375rem, .82rem + .3vw, 1.0625rem);
+  line-height: 1.6;
+  color: var(--en-ink-2);
+  max-width: 26ch;
+}
+.panel--en .line em {
+  font-family: "Literata", Georgia, serif;
+  font-style: italic;
+  color: var(--en-gold);
+}
+.panel--en .act {
+  border-top: 1px solid var(--en-rule);
+  font-family: "Golos Text", sans-serif;
+  font-weight: 600;
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--en-ink);
+}
+.panel--en .act__label {
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--en-rule-str);
+}
+
+/* ============================================================
+   КОРОНА: знак и переключатель темы
+   ============================================================ */
+.crown {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--crown);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad);
+  pointer-events: none;
+  z-index: 3;
+}
+.mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--crown-ink);
+  pointer-events: none;
+}
+.mark svg { height: 26px; width: auto; display: block; }
+.mark__word {
+  font-family: "Onest", "Golos Text", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: .22em;
+  line-height: 1;
+}
+
+.themer {
+  display: none;
+  margin-left: auto;
+  pointer-events: auto;
+  border: 1px solid var(--ui-line);
+  padding: 3px;
+  gap: 2px;
+  background: transparent;
+}
+.js .themer { display: inline-flex; }
+.themer button {
+  appearance: none;
+  min-height: 34px;
+  min-width: 46px;
+  padding: 0 10px;
+  border: 0;
+  background: transparent;
+  color: var(--ui-ink-2);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.themer button:hover { color: var(--ui-ink); }
+.themer button[aria-pressed="true"] {
+  background: var(--ui-on-bg);
+  color: var(--ui-on-ink);
+}
+.themer button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+/* тач-цель 44 px без визуального роста кнопки */
+.themer button::after {
+  content: "";
+  position: absolute;
+  inset: -6px 0;
+}
+.themer button { position: relative; }
+
+/* ============================================================
+   СОСТОЯНИЯ И ДВИЖЕНИЕ — только вход и hover
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .panel--hy .frame,
+  .panel--hy .act__label,
+  .panel--ru .act__label,
+  .panel--en .act__label,
+  .arw {
+    transition:
+      transform var(--t-fast) var(--ease),
+      border-color var(--t-mid) var(--ease),
+      border-width var(--t-mid) var(--ease),
+      box-shadow var(--t-fast) var(--ease);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .panel__in > * {
+    animation: rise var(--t-in) var(--ease) backwards;
+    animation-delay: calc(var(--d) + var(--i) * 70ms);
+  }
+  .panel--hy .panel__in { --d: 40ms; }
+  .panel--ru .panel__in { --d: 130ms; }
+  .panel--en .panel__in { --d: 220ms; }
+  .panel--hy .frame { animation: fade 720ms var(--ease) 240ms backwards; }
+  .crown { animation: fade 720ms var(--ease) 60ms backwards; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .panel:hover .arw { transform: translateX(4px); }
+  .panel--hy:hover .frame { transform: scale(1.012); border-color: var(--hy-line); }
+  .panel--hy:hover .act__label { border-bottom-color: var(--hy-gold); }
+  .panel--ru:hover .act__label {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 0 var(--ru-offset);
+  }
+  .panel--en:hover .act__label { border-bottom-width: 2px; border-bottom-color: var(--en-gold); }
+}
+.panel--ru:active .act__label {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 0 var(--ru-offset);
+}
+
+/* ============================================================
+   МОБИЛЬНЫЙ — три горизонтальные полосы. Последним блоком в файле.
+   ============================================================ */
+@media (max-width: 767px), ((max-height: 520px) and (pointer: coarse)) {
+  :root {
+    --rt: 52px;
+    --rb: 68px;
+    --pad: 20px;
+    --crown: 48px;
+
+    /* корона лежит над первой полосой — её тон берётся у HY */
+    --crown-ink: #1B2438;
+    --crown-snow: #EFE8D9;
+    --mark-1: #8A6414;
+    --mark-2: #A87A1E;
+    --mark-3: #C4922B;
+    --ui-ink: #1B2438;
+    --ui-ink-2: #4A5266;
+    --ui-line: rgba(27,36,56,.26);
+    --ui-on-bg: #1B2438;
+    --ui-on-ink: #EFE8D9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --crown-ink: #EDE6D8;
+      --crown-snow: #1A1815;
+      --mark-1: #C4922B;
+      --mark-2: #F2C249;
+      --mark-3: #FAE0A2;
+      --ui-ink: #EDE6D8;
+      --ui-ink-2: #B0A797;
+      --ui-line: rgba(237,230,216,.28);
+      --ui-on-bg: #EDE6D8;
+      --ui-on-ink: #1A1815;
+    }
+  }
+  :root[data-theme="dark"] {
+    --crown-ink: #EDE6D8;
+    --crown-snow: #1A1815;
+    --mark-1: #C4922B;
+    --mark-2: #F2C249;
+    --mark-3: #FAE0A2;
+    --ui-ink: #EDE6D8;
+    --ui-ink-2: #B0A797;
+    --ui-line: rgba(237,230,216,.28);
+    --ui-on-bg: #EDE6D8;
+    --ui-on-ink: #1A1815;
+  }
+
+  .tri {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    background:
+      linear-gradient(90deg,
+        var(--seam-1) 0,
+        var(--seam-2) calc(var(--pad) - 6px),
+        var(--seam-3) var(--pad),
+        var(--seam-2) calc(var(--pad) + 24px),
+        var(--seam-2) calc(100% - var(--pad) - 24px),
+        var(--seam-3) calc(100% - var(--pad)),
+        var(--seam-1) 100%);
+  }
+  .mark { left: var(--pad); transform: translate(0, -50%); }
+  .mark svg { height: 22px; }
+  .mark__word { font-size: 11px; letter-spacing: .2em; }
+  .crown { padding-inline: var(--pad); }
+
+  /* первая полоса уступает место короне */
+  .panel--hy .panel__in { grid-template-rows: calc(var(--rt) + var(--crown) - 4px) minmax(0, 1fr) var(--rb); }
+  .panel--hy .frame { inset: 10px; top: 52px; }
+  .panel--hy .eyebrow { gap: 8px; }
+
+  /* на телефоне части идут друг за другом — общая базовая линия не читается,
+     поэтому фиксированный блок строки снимается, ритм задаёт content */
+  .body {
+    grid-template-rows: auto auto;
+    align-content: end;
+    row-gap: 6px;
+    padding-bottom: 10px;
+  }
+  .eyebrow { padding-bottom: 10px; font-size: 10px; }
+  .line { max-width: 34ch; }
+  .panel--hy .line { max-width: 30ch; }
+  .act { min-height: 44px; }
+  .panel--ru .act__label { min-height: 44px; padding: 0 18px; box-shadow: 5px 5px 0 0 var(--ru-offset); }
+  .panel--hy .autonym { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .panel--ru .autonym { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .panel--en .autonym { font-size: clamp(1.75rem, 7.4vw, 2.3rem); }
+}

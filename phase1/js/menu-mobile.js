@@ -30,8 +30,8 @@
      десктопе: снимал с кнопки hidden, она вставала четвёртым элементом в
      трёхколоночную сетку шапки и сбрасывала переключатель тем на вторую
      строку. Тот же список, что у стилей меню и заставки. */
-  var GATE = '(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)';
-  if (!matchMedia(GATE).matches) return;
+  var GATE = '(max-width: 1099px), (any-pointer: coarse) and (max-width: 1366px)';
+  var mq = matchMedia(GATE);
 
   var NS_LIMIT = 26;   // длина метки раздела, дальше — многоточие
 
@@ -115,13 +115,14 @@
     }
 
     // 2.2 страницы сайта — из подвала, он общий для всего сайта.
-    //     Часть его ссылок ведёт якорем на секции, которые сейчас «припаркованы»
-    //     (hidden data-parked) — перейти по ним некуда. Мёртвых пунктов в меню
-    //     быть не должно: такие показываем как «готовится», без ссылки.
     var footNav = d.querySelector('.ftr__tile--nav .ftr__list');
     if (footNav) {
-      var g2 = group('По моменту');
+      var g2 = group('Практики и маршруты');
       var ul2 = list(g2);
+      var curLeaf = location.pathname.split('/').pop() || 'home-ru.html';
+      if (!/^(?:home-ru|index)\.html$/i.test(curLeaf)) {
+        item(ul2, './home-ru.html', 'Главная и калькулятор');
+      }
       Array.prototype.forEach.call(footNav.querySelectorAll('a'), function (a) {
         var here = a.pathname === location.pathname;
         var hash = (a.hash || '').replace('#', '');
@@ -138,19 +139,10 @@
           li.appendChild(sp); ul2.appendChild(li);
           return;
         }
-        // Ссылка на текущую страницу ведёт голым якорем: полный адрес
-        // перезагрузил бы её целиком и заставка первого экрана пошла бы
-        // по второму кругу — за переход внутри страницы это несоразмерная цена.
         var link = item(ul2, here && hash ? '#' + hash : a.getAttribute('href'), text);
-        // «Вы здесь» — только если это и есть открытая страница, а не любой
-        // якорь на неё: иначе метка стояла бы у всех пунктов сразу.
         if (here && !hash) link.classList.add('is-here');
       });
     }
-
-    /* Связи и кнопки расчёта здесь нет умышленно: телефон, Telegram, WhatsApp
-       и «Рассчитать» уже стоят в нижней панели быстрых действий (.dock), она
-       видна на экране всегда. Второй раз те же четыре действия — шум. */
 
     // 2.3 языки — тем же списком, что в подвале
     var langs = d.querySelector('.ftr__langs');
@@ -167,10 +159,7 @@
     }
   }
 
-  /* ── 3. Открытие ───────────────────────────────────────────────────────
-     Фокус уводится в панель и держится в ней, пока она открыта: правило
-     скила ui-ux-pro-max, «escape-routes» и «keyboard-nav». Esc и нажатие
-     мимо закрывают, фокус возвращается на кнопку — а не в начало страницы. */
+  /* ── 3. Открытие ─────────────────────────────────────────────────────── */
   var open = false;
   var lastY = 0;
 
@@ -188,9 +177,6 @@
       build();
       panel.hidden = false;
       lastY = window.scrollY;
-      // Тело фиксируем, а не гасим overflow: Safari на iOS одного overflow
-      // не слушается. Позицию возвращаем при закрытии — иначе страница
-      // прыгнет в начало.
       d.body.style.top = (-lastY) + 'px';
       d.body.classList.add('mnav-lock');
       requestAnimationFrame(function () {
@@ -213,7 +199,7 @@
 
   panel.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a') : null;
-    if (a) setOpen(false);              // переход — панель больше не нужна
+    if (a) setOpen(false);
   });
 
   d.addEventListener('keydown', function (e) {
@@ -227,12 +213,22 @@
     else if (!e.shiftKey && d.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 
-  // Экран стал широким — панель закрывается сама: на десктопе её место
-  // занимают рейка и шапка, а забытый замок прокрутки был бы поломкой.
-  matchMedia('(min-width: 1025px)').addEventListener('change', function (e) {
-    if (e.matches) setOpen(false);
-  });
-
-  d.body.appendChild(panel);
-  btn.hidden = false;
+  var mounted = false;
+  function syncGate() {
+    if (mq.matches) {
+      if (!mounted) {
+        d.body.appendChild(panel);
+        btn.setAttribute('aria-controls', 'mnav');
+        mounted = true;
+      }
+      btn.hidden = false;
+    } else {
+      if (open) setOpen(false);
+      btn.hidden = true;
+    }
+  }
+  syncGate();
+  if (typeof mq.addEventListener === 'function') {
+    mq.addEventListener('change', syncGate);
+  }
 })();

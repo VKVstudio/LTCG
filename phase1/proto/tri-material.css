@@ -1,0 +1,799 @@
+/* ============================================================================
+   LTCG — экран выбора языка «Три вещества» (прототип)
+   Ось: МАТЕРИАЛ И СВЕТ. Камень (туф) · тёмное стекло · бумага.
+   01 Հայերեն — ваби-саби / камень       (аудитория: бухгалтерия, Армения)
+   02 Русский — гласморфизм тёмный        (аудитория: релокация, ВНЖ)
+   03 English — editorial / бумага        (аудитория: Европа, низкие налоги)
+
+   Все цвета — только через переменные. Ни одного hex в правилах компонентов.
+   Светлая и тёмная тема у КАЖДОЙ части: меняется материал и тон, не стиль.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- 1. Ядро */
+
+:root {
+  /* бренд. Чистое #F2C249 живёт только в градиенте знака (#ltcgGold в разметке)
+     и в тёплом свете --*-light: «одно золото на экран». */
+  --gold:        #F2C249;
+  --gold-light:  #FAE0A2;
+  --gold-mid:    #C4922B;
+  --gold-dark:   #593E10;
+  --navy:        #0C1B3A;
+
+  /* сетка и ритм — общие для трёх частей */
+  --pad:      clamp(1.375rem, 2.8vw, 2.75rem);
+  --r-top:    clamp(4.25rem, 9vh, 6.5rem);   /* полоса знака            */
+  --r-idx:    1.5rem;                        /* индекс части            */
+  --r-name:   clamp(3rem, 5.6vw, 4.6rem);    /* автоним                 */
+  --r-aud:    3.5rem;                       /* строка про аудиторию    */
+  --r-act:    2.5rem;                        /* действие                */
+  --r-bot:    clamp(1.5rem, 4.5vh, 3rem);
+
+  /* движение */
+  --ease:   cubic-bezier(.16, 1, .3, 1);
+  --t-fast: 180ms;
+  --t-mid:  240ms;
+  --t-slow: 320ms;
+  --t-in:   640ms;
+
+  /* скрим: доля высоты, на которой материал уступает место тексту */
+  --scrim-stop: 46%;
+  --scrim-end:  92%;
+
+  /* зерно на стекле (только RU) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* --------------------------------------------------- 2. Темы: светлая (база) */
+
+:root {
+  color-scheme: light;
+
+  --seam:      rgba(12, 27, 58, .20);
+  --focus:     var(--gold-dark);
+  --ui-bg:     rgba(255, 253, 248, .78);
+  --ui-line:   rgba(12, 27, 58, .22);
+  --ui-text:   #3D4A63;
+  --ui-on-bg:  rgba(196, 146, 43, .26);
+  --ui-on-text:#0C1B3A;
+  --edge-shade: rgba(12, 27, 58, .09);
+  --mark-ink:  var(--gold-dark);
+  --mark-snow: #FFFFFF;
+  --mark-op:   1;
+
+  /* 01 · камень (розовый туф, боковой дневной свет) */
+  --hy-bg:      #ECE1D2;
+  --hy-art:     url("../assets/bg/bg-stone-tuf.webp");
+  --hy-art-op:  .88;
+  --hy-tint:    transparent;
+  --hy-blend:   normal;
+  --hy-scrim-rgb: 236 225 210;
+  --hy-a1: .88;
+  --hy-a2: .74;
+  --hy-light:   radial-gradient(120% 90% at 0% 22%, rgba(255, 255, 255, .34), transparent 62%);
+  --hy-text:    #1B2438;
+  --hy-muted:   #4A5266;
+  --hy-line:    rgba(196, 146, 43, .55);
+  --hy-rule:    rgba(196, 146, 43, .58);
+
+  /* 02 · тёмное стекло (в свету — матовое стекло, за ним город) */
+  --ru-bg:      #D6DFEC;
+  --ru-art:     url("../assets/bg/window-city.webp");
+  --ru-art-pos: 42% 74%;
+  --ru-art-size: auto 190%;
+  --ru-art-op:  .82;
+  --ru-tint:    transparent;
+  --ru-blend:   normal;
+  --ru-scrim-rgb: 214 223 236;
+  --ru-a1: .70;
+  --ru-a2: .52;
+  --ru-light:   radial-gradient(110% 80% at 4% 16%, rgba(255, 255, 255, .40), transparent 58%);
+  --ru-glass:   rgba(255, 255, 255, .58);
+  --ru-edge:    rgba(255, 255, 255, .85);
+  --ru-grain:   .16;
+  --ru-text:    #0C1B3A;
+  --ru-muted:   #3D4A63;
+  --ru-line:    rgba(196, 146, 43, .70);
+  --ru-rule:    rgba(196, 146, 43, .85);
+
+  /* 03 · бумага (кремовый хлопок, косой свет слева) */
+  --en-bg:      #F6F1E4;
+  --en-art:     url("../assets/bg/bg-paper.webp");
+  --en-art-op:  .55;
+  --en-tint:    transparent;
+  --en-blend:   normal;
+  --en-scrim-rgb: 246 241 228;
+  --en-a1: .90;
+  --en-a2: .84;
+  --en-light:   radial-gradient(130% 100% at 0% 0%, rgba(255, 255, 255, .40), transparent 60%);
+  --en-text:    #16223B;
+  --en-muted:   #3D4A63;
+  --en-line:    rgba(22, 34, 59, .42);
+  --en-rule:    rgba(22, 34, 59, .42);
+}
+
+/* --------------------------------------------------------- 3. Тёмная тема  */
+/* тот же материал, ночной свет: одна тёплая лампа слева у всех трёх частей */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --seam:      rgba(250, 224, 162, .16);
+    --focus:     var(--gold-light);
+    --ui-bg:     rgba(12, 27, 58, .46);
+    --ui-line:   rgba(250, 224, 162, .22);
+    --ui-text:   #C6CFDF;
+    --ui-on-bg:  rgba(250, 224, 162, .20);
+    --ui-on-text:#FFFFFF;
+    --edge-shade: rgba(0, 0, 0, .34);
+    --mark-ink:  url(#ltcgGold);
+    --mark-snow: #FFFFFF;
+    --mark-op:   1;
+
+    --hy-bg:      #15171C;
+    --hy-art-op:  .95;
+    --hy-tint:    #2E3749;
+    --hy-blend:   multiply;
+    --hy-scrim-rgb: 21 23 28;
+  --hy-a1: .84;
+  --hy-a2: .60;
+    --hy-light:   radial-gradient(120% 90% at 0% 30%, rgba(242, 194, 73, .16), transparent 60%);
+    --hy-text:    #F3EEE4;
+    --hy-muted:   #BDB4A6;
+    --hy-line:    rgba(250, 224, 162, .48);
+    --hy-rule:    rgba(250, 224, 162, .40);
+
+    --ru-bg:      var(--navy);
+    --ru-art:     url("../assets/bg/bg-dark-glass.webp");
+    --ru-art-pos: 62% 34%;
+    --ru-art-size: auto 150%;
+    --ru-art-op:  .88;
+    --ru-scrim-rgb: 12 27 58;
+  --ru-a1: .66;
+  --ru-a2: .52;
+    --ru-light:   radial-gradient(110% 80% at 2% 18%, rgba(242, 194, 73, .13), transparent 58%);
+    --ru-glass:   rgba(12, 27, 58, .34);
+    --ru-edge:    rgba(255, 243, 208, .22);
+    --ru-grain:   .26;
+    --ru-text:    #FFFFFF;
+    --ru-muted:   #CBD4E2;
+    --ru-line:    rgba(250, 224, 162, .55);
+    --ru-rule:    rgba(250, 224, 162, .80);
+
+    --en-bg:      #1A1714;
+    --en-art-op:  .92;
+    --en-tint:    #3B3126;
+    --en-blend:   multiply;
+    --en-scrim-rgb: 26 23 20;
+  --en-a1: .80;
+  --en-a2: .58;
+    --en-light:   radial-gradient(130% 100% at 0% 4%, rgba(242, 194, 73, .12), transparent 58%);
+    --en-text:    #EFE7D8;
+    --en-muted:   #BEB3A0;
+    --en-line:    rgba(239, 231, 216, .55);
+    --en-rule:    rgba(239, 231, 216, .40);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --seam:      rgba(250, 224, 162, .16);
+  --focus:     var(--gold-light);
+  --ui-bg:     rgba(12, 27, 58, .46);
+  --ui-line:   rgba(250, 224, 162, .22);
+  --ui-text:   #C6CFDF;
+  --ui-on-bg:  rgba(250, 224, 162, .20);
+  --ui-on-text:#FFFFFF;
+  --edge-shade: rgba(0, 0, 0, .34);
+  --mark-ink:  url(#ltcgGold);
+  --mark-snow: #FFFFFF;
+  --mark-op:   1;
+
+  --hy-bg:      #15171C;
+  --hy-art-op:  .95;
+  --hy-tint:    #2E3749;
+  --hy-blend:   multiply;
+  --hy-scrim-rgb: 21 23 28;
+--hy-a1: .84;
+--hy-a2: .60;
+  --hy-light:   radial-gradient(120% 90% at 0% 30%, rgba(242, 194, 73, .16), transparent 60%);
+  --hy-text:    #F3EEE4;
+  --hy-muted:   #BDB4A6;
+  --hy-line:    rgba(250, 224, 162, .48);
+  --hy-rule:    rgba(250, 224, 162, .40);
+
+  --ru-bg:      var(--navy);
+  --ru-art:     url("../assets/bg/bg-dark-glass.webp");
+  --ru-art-pos: 62% 34%;
+  --ru-art-size: auto 150%;
+  --ru-art-op:  .88;
+  --ru-scrim-rgb: 12 27 58;
+--ru-a1: .66;
+--ru-a2: .52;
+  --ru-light:   radial-gradient(110% 80% at 2% 18%, rgba(242, 194, 73, .13), transparent 58%);
+  --ru-glass:   rgba(12, 27, 58, .34);
+  --ru-edge:    rgba(255, 243, 208, .22);
+  --ru-grain:   .26;
+  --ru-text:    #FFFFFF;
+  --ru-muted:   #CBD4E2;
+  --ru-line:    rgba(250, 224, 162, .55);
+  --ru-rule:    rgba(250, 224, 162, .80);
+
+  --en-bg:      #1A1714;
+  --en-art-op:  .92;
+  --en-tint:    #3B3126;
+  --en-blend:   multiply;
+  --en-scrim-rgb: 26 23 20;
+--en-a1: .80;
+--en-a2: .58;
+  --en-light:   radial-gradient(130% 100% at 0% 4%, rgba(242, 194, 73, .12), transparent 58%);
+  --en-text:    #EFE7D8;
+  --en-muted:   #BEB3A0;
+  --en-line:    rgba(239, 231, 216, .55);
+  --en-rule:    rgba(239, 231, 216, .40);
+}
+
+/* -------------------------------------------------------- 4. Каркас экрана */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;               /* ворота: до выбора языка не скроллим */
+  background: var(--ru-bg);
+}
+
+body {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.gate {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100vh;
+  height: 100svh;
+  isolation: isolate;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------- 5. Часть   */
+
+.pane {
+  position: relative;
+  isolation: isolate;               /* иначе слои материала уйдут под фон части */
+  display: grid;
+  grid-template-rows:
+    var(--r-top) var(--r-idx) 1fr var(--r-name) var(--r-aud) var(--r-act) var(--r-bot);
+  padding-inline: var(--pad);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.pane__rule,
+.pane__idx,
+.pane__name,
+.pane__aud,
+.pane__act { grid-column: 1; }       /* одна колонка: иначе строка 2 расщепляется надвое */
+
+.pane + .pane { border-inline-start: 1px solid var(--seam); }
+
+/* Швы — часть материала: у стекла кромка имеет толщину, бумага ложится с тенью */
+.pane--ru::before,
+.pane--ru::after,
+.pane--en::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset-block: 0;
+  pointer-events: none;
+}
+.pane--ru::before,
+.pane--ru::after {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--ru-edge) 20%, var(--ru-edge) 80%, transparent);
+}
+.pane--ru::before { inset-inline-start: 0; }
+.pane--ru::after  { inset-inline-end: 0; }
+.pane--en::before {
+  inset-inline-start: 0;
+  width: 22px;
+  background: linear-gradient(to right, var(--edge-shade), transparent);
+}
+
+.pane:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -7px;
+}
+
+/* материал: фотография вещества, режим смешения задаёт тема */
+.pane__art,
+.pane__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pane__art {
+  background-color: var(--art-tint, transparent);
+  background-image: var(--art);
+  background-size: var(--art-size, cover);
+  background-position: var(--art-pos, center);
+  background-blend-mode: var(--blend);
+  opacity: var(--art-op);
+}
+
+/* скрим + один тёплый источник света слева, общий для трёх частей */
+.pane__scrim {
+  background-image:
+    var(--light),
+    linear-gradient(to top,
+      rgb(var(--scrim-rgb) / var(--a1)) 0%,
+      rgb(var(--scrim-rgb) / var(--a2)) var(--scrim-stop),
+      rgb(var(--scrim-rgb) / 0) var(--scrim-end));
+}
+
+/* общая базовая линия — волосяная, идёт сквозь все три части на одной высоте */
+.pane__rule {
+  grid-row: 2;
+  align-self: start;
+  height: 1px;
+  margin-inline: calc(var(--pad) * -1);
+  background: var(--rule);
+}
+
+.pane__idx {
+  grid-row: 2;
+  align-self: center;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.pane__name {
+  grid-row: 4;
+  align-self: end;
+  color: var(--text);
+  line-height: 1;
+}
+
+.pane__aud {
+  grid-row: 5;
+  align-self: start;
+  margin-block-start: .85rem;
+  max-inline-size: 30ch;
+  color: var(--muted);
+}
+
+.pane__act {
+  position: relative;
+  grid-row: 6;
+  align-self: start;
+  margin-block-start: .4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  justify-self: start;
+  min-height: 44px;
+  color: var(--text);
+}
+
+/* подчёркивание действия — одна механика на три части, разное поведение */
+.pane__act::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: calc(50% + .85em);
+  height: 1px;
+  width: var(--act-w, 100%);
+  background: var(--act-line);
+}
+
+.ico {
+  width: 1.05em;
+  height: 1.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: square;
+}
+
+/* ------------------------------------------ 6. 01 · Հայերեն — камень (туф) */
+
+.pane--hy {
+  --bg: var(--hy-bg);
+  --art: var(--hy-art);
+  --art-op: var(--hy-art-op);
+  --art-tint: var(--hy-tint);
+  --blend: var(--hy-blend);
+  --art-pos: 30% center;
+  --scrim-rgb: var(--hy-scrim-rgb);
+  --a1: var(--hy-a1);
+  --a2: var(--hy-a2);
+  --light: var(--hy-light);
+  --text: var(--hy-text);
+  --muted: var(--hy-muted);
+  --rule: var(--hy-rule);
+}
+
+.pane--hy .pane__idx {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  font-family: "Noto Serif Armenian", Georgia, serif;
+  font-weight: 500;
+  font-size: .78rem;
+  letter-spacing: .2em;
+}
+.pane--hy .pane__idx::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--hy-line);
+}
+
+.pane--hy .pane__name {
+  font-family: "Noto Serif Armenian", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.15rem, 4.1vw, 3.5rem);
+  letter-spacing: 0;
+  transform: translateY(-.02em);
+}
+
+.pane--hy .pane__aud {
+  font-family: "Noto Sans Armenian", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(.86rem, .78vw + .55rem, 1rem);
+  line-height: 1.5;
+}
+
+.pane--hy .pane__act {
+  --act-line: var(--hy-line);
+  --act-w: 0;                          /* линия «прорезается» по ховеру */
+  font-family: "Noto Sans Armenian", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: .95rem;
+  letter-spacing: .02em;
+}
+
+/* ---------------------------------- 7. 02 · Русский — тёмное стекло (RU)  */
+
+.pane--ru {
+  --bg: var(--ru-bg);
+  --art: var(--ru-art);
+  --art-op: var(--ru-art-op);
+  --art-tint: var(--ru-tint);
+  --blend: var(--ru-blend);
+  --art-pos: var(--ru-art-pos);
+  --art-size: var(--ru-art-size);
+  --scrim-rgb: var(--ru-scrim-rgb);
+  --a1: var(--ru-a1);
+  --a2: var(--ru-a2);
+  --light: var(--ru-light);
+  --text: var(--ru-text);
+  --muted: var(--ru-muted);
+  --rule: var(--ru-rule);
+}
+
+/* стеклянный лист: нижние две трети части — настоящее стекло поверх материала */
+.pane__glass {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 62%;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--ru-glass);
+  border-top: 1px solid var(--ru-edge);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .pane__glass {
+    -webkit-backdrop-filter: blur(5px) saturate(1.14);
+    backdrop-filter: blur(5px) saturate(1.14);
+  }
+}
+.pane__glass::after {                 /* зерно живёт на стекле, не на секции */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  background-size: 120px 120px, 300px 300px;
+  mix-blend-mode: overlay;
+  opacity: var(--ru-grain);
+}
+
+.pane--ru .pane__idx {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.pane--ru .pane__name {
+  font-family: "Onest", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 4.9vw, 4.1rem);
+  letter-spacing: -.028em;
+}
+
+.pane--ru .pane__aud {
+  font-family: "Onest", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(.9rem, .8vw + .58rem, 1.02rem);
+  line-height: 1.5;
+}
+
+.pane--ru .pane__act {
+  --act-line: var(--ru-line);            /* активна по умолчанию: линия уже проведена */
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: .74rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------ 8. 03 · English — бумага (editorial) */
+
+.pane--en {
+  --bg: var(--en-bg);
+  --art: var(--en-art);
+  --art-op: var(--en-art-op);
+  --art-tint: var(--en-tint);
+  --blend: var(--en-blend);
+  --scrim-rgb: var(--en-scrim-rgb);
+  --a1: var(--en-a1);
+  --a2: var(--en-a2);
+  --light: var(--en-light);
+  --text: var(--en-text);
+  --muted: var(--en-muted);
+  --rule: var(--en-rule);
+}
+
+.pane--en .pane__idx {
+  justify-self: end;
+  font-family: "Literata", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: .9rem;
+  letter-spacing: .01em;
+}
+
+.pane--en .pane__name {
+  font-family: "Literata", Georgia, serif;
+  font-weight: 500;
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(2.4rem, 4.7vw, 3.9rem);
+  letter-spacing: -.02em;
+}
+
+.pane--en .pane__aud {
+  font-family: "Literata", Georgia, serif;
+  font-weight: 400;
+  font-variation-settings: "opsz" 14;
+  font-size: clamp(.88rem, .78vw + .56rem, 1rem);
+  line-height: 1.55;
+}
+
+.pane--en .pane__act {
+  --act-line: var(--en-line);
+  font-family: "Literata", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+
+/* ---------------------------------------------------- 9. Знак — один на экран */
+
+.mark {
+  position: absolute;
+  z-index: 2;
+  inset-block-start: clamp(1.15rem, 2.6vh, 2rem);
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  pointer-events: none;
+  opacity: var(--mark-op);
+}
+
+.mark svg {
+  display: block;
+  height: clamp(30px, 4.4vh, 42px);
+  width: auto;
+}
+
+.mark .m-ink  { fill: var(--mark-ink); }
+.mark .m-snow { fill: var(--mark-snow); }
+
+/* ------------------------------------------------- 10. Переключатель темы */
+
+.theme {
+  position: absolute;
+  z-index: 3;
+  inset-block-end: clamp(1rem, 2.4vh, 1.6rem);
+  inset-inline-end: clamp(1rem, 2vw, 1.6rem);
+  display: none;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--ui-line);
+  border-radius: 2px;
+  background: var(--ui-bg);
+  overflow: hidden;
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .theme {
+    -webkit-backdrop-filter: blur(8px) saturate(1.2);
+    backdrop-filter: blur(8px) saturate(1.2);
+  }
+}
+.js .theme { display: flex; }
+
+.theme button {
+  min-width: 46px;
+  min-height: 44px;
+  padding: 0 .55rem;
+  border: 0;
+  background: transparent;
+  color: var(--ui-text);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.theme button + button { border-inline-start: 1px solid var(--ui-line); }
+.theme button[aria-pressed="true"] { color: var(--ui-on-text); background: var(--ui-on-bg); }
+.theme button:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
+
+/* ---------------------------------------------------------- 11. Движение  */
+
+@media (prefers-reduced-motion: no-preference) {
+  .pane__rule,
+  .pane__idx,
+  .pane__name,
+  .pane__aud,
+  .pane__act {
+    animation: rise var(--t-in) var(--ease) backwards;
+    animation-delay: calc(var(--d) + var(--i) * 70ms);
+  }
+  .pane--hy { --d: 0ms; }
+  .pane--ru { --d: 90ms; }
+  .pane--en { --d: 180ms; }
+
+  .pane__rule { --i: 0; }
+  .pane__idx  { --i: 1; }
+  .pane__name { --i: 2; }
+  .pane__aud  { --i: 3; }
+  .pane__act  { --i: 4; }
+
+  .mark { animation: rise var(--t-in) var(--ease) 40ms backwards; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .pane--hy .pane__name { animation-name: rise-hy; }
+  @keyframes rise-hy {
+    from { opacity: 0; transform: translateY(18px) translateY(-.02em); }
+    to   { opacity: 1; transform: translateY(0) translateY(-.02em); }
+  }
+
+  /* только плавность; сами состояния объявлены ниже и при reduce остаются */
+  .pane__art        { transition: opacity var(--t-slow) var(--ease); }
+  .pane__glass      { transition: border-color var(--t-mid) var(--ease); }
+  .pane__act        { transition: color var(--t-mid) var(--ease); }
+  .pane__act::after { transition: width var(--t-slow) var(--ease),
+                                  height var(--t-fast) var(--ease),
+                                  background-color var(--t-mid) var(--ease); }
+  .pane__rule       { transition: height var(--t-fast) var(--ease); }
+  .ico              { transition: transform var(--t-mid) var(--ease); }
+}
+
+/* ответ материала на курсор и клавиатуру — у каждой части свой, механика одна.
+   Живёт ВНЕ no-preference: при reduce состояние остаётся, исчезает только плавность. */
+
+/* клавиатура — всегда */
+.pane--hy:focus-visible .pane__act  { --act-w: 100%; }
+.pane--hy:focus-visible .pane__art  { opacity: calc(var(--art-op) + .07); }
+.pane--ru:focus-visible .pane__glass { border-top-color: var(--gold-light); }
+.pane--ru:focus-visible .ico        { transform: translateX(4px); }
+.pane--en:focus-visible .pane__rule { height: 2px; }
+.pane--en:focus-visible .pane__act::after { height: 2px; background: var(--gold-mid); }
+
+/* курсор — только там, где он есть */
+@media (hover: hover) and (pointer: fine) {
+  .pane--hy:hover .pane__act  { --act-w: 100%; }
+  .pane--hy:hover .pane__art  { opacity: calc(var(--art-op) + .07); }
+  .pane--ru:hover .pane__glass { border-top-color: var(--gold-light); }
+  .pane--ru:hover .ico        { transform: translateX(4px); }
+  .pane--en:hover .pane__rule { height: 2px; }
+  .pane--en:hover .pane__act::after { height: 2px; background: var(--gold-mid); }
+}
+
+@media (hover: none) {
+  .pane--hy .pane__act { --act-w: 100%; }
+}
+
+/* -------------------------------------------------------- 12. Мобильный   */
+/* три горизонтальные полосы по 33svh; блок последний в файле                */
+
+@media (max-width: 767px), ((max-height: 520px) and (pointer: coarse)) {
+  :root {
+    --scrim-stop: 24%;
+    --scrim-end:  58%;
+    --r-top: 3.5rem;
+    --r-idx: 1.25rem;
+    --r-name: 2.7rem;
+    --r-aud: 3rem;
+    --r-act: 2.5rem;
+    --r-bot: .75rem;
+    --pad: 1.25rem;
+  }
+
+  .gate {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, calc(100svh / 3));
+  }
+
+  .pane + .pane {
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--seam);
+  }
+
+  /* шов поворачивается вместе с раскладкой */
+  .pane--ru::before,
+  .pane--ru::after,
+  .pane--en::before { inset-block: auto; inset-inline: 0; width: auto; }
+  .pane--ru::before,
+  .pane--ru::after {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--ru-edge) 20%, var(--ru-edge) 80%, transparent);
+  }
+  .pane--ru::before { inset-block-start: 0; }
+  .pane--ru::after  { inset-block-end: 0; }
+  .pane--en::before {
+    inset-block-start: 0;
+    height: 22px;
+    background: linear-gradient(to bottom, var(--edge-shade), transparent);
+  }
+
+  .pane__glass { height: 58%; }
+
+  .pane--hy .pane__name { font-size: 1.85rem; }
+  .pane--ru .pane__name { font-size: 2.15rem; }
+  .pane--en .pane__name { font-size: 2.05rem; }
+  .pane__aud { margin-block-start: .5rem; max-inline-size: 34ch; }
+  .pane--hy .pane__aud,
+  .pane--ru .pane__aud,
+  .pane--en .pane__aud { font-size: .84rem; line-height: 1.45; }
+  .pane__act { min-height: 44px; }
+
+  .mark {
+    inset-block-start: .6rem;
+    inset-inline-start: var(--pad);
+    translate: 0 0;
+  }
+  .mark svg { height: 26px; }
+
+  .theme {
+    inset-block-start: .5rem;
+    inset-block-end: auto;
+    inset-inline-end: .75rem;
+  }
+  .theme button { min-width: 44px; min-height: 44px; font-size: .58rem; padding: 0 .35rem; }
+}

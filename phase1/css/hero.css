@@ -149,7 +149,7 @@ html.is-gate-locked { overflow: clip; }
 .hs__grain {
   position: absolute; inset: -256px;
   z-index: 3;
-  background: url("../assets/hero/lcp/grain.png") repeat 0 0 / 256px 256px;
+  background: url("../assets/hero/lcp/grain.webp") repeat 0 0 / 256px 256px;
   mix-blend-mode: overlay;
   opacity: 0.12;
   pointer-events: none;
@@ -385,7 +385,7 @@ html.is-gate-locked { overflow: clip; }
 
 /* ── 6. Мобильная ветка — ПОСЛЕДНИЙ блок в файле (гейт как у VKV) ── */
 @media (max-width: 767px), ((max-height: 767px) and (pointer: coarse)) {
-  .hs__skip, .hs__canvas, .hs__svg, .hs__grain, .hs__hint, .hs__screen-glow { display: none; }
+  .hs__skip, .hs__canvas, .hs__svg, .hs__grain, .hs__hint, .hs__screen-glow, .hs__screen::after { display: none; }
   /* один знак на экран: в шапке — только эмблема без букв, над заголовком — ничего.
      Условие МЕДИАЗАПРОСА ДОСЛОВНО повторено в <source media> у <picture> в разметке —
      иначе в низком landscape с coarse-pointer шире 767 px коробка станет 63×24,
@@ -459,7 +459,7 @@ html.is-gate-locked { overflow: clip; }
   position: absolute; inset: 0;
   z-index: 9;
   pointer-events: none;
-  background: url("../assets/hero/lcp/grain.png") repeat 0 0 / 180px 180px;
+  background: url("../assets/hero/lcp/grain.webp") repeat 0 0 / 180px 180px;
   mix-blend-mode: overlay;
   opacity: calc(var(--scr-grain) * var(--scr-far));
 }

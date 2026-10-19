@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru" data-proto="tri-era">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Три эпохи — ворота языка LTCG</title>
+<meta name="color-scheme" content="light dark">
+
+<!-- Шрифты: подсеты проверены по CSS API 03.09.2026 (curl, Chrome UA):
+     Cormorant Garamond → cyrillic ✓ · Onest → cyrillic ✓ · JetBrains Mono → cyrillic ✓
+     Literata → cyrillic ✓ · Noto Serif Armenian → armenian ✓ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Noto+Serif+Armenian:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="tri-era.css">
+
+<script>
+/* Тема до первого кадра: auto | light | dark. Без JS остаётся системная. */
+(function () {
+  try {
+    var t = localStorage.getItem('ltcg-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) {}
+})();
+</script>
+</head>
+
+<body>
+<a class="skip" href="#gate">Перейти к выбору языка</a>
+
+<!-- Верхняя полоса экрана: знак один раз на весь экран + переключатель темы -->
+<div class="crest">
+  <svg class="crest__mark" viewBox="70 160 875 330" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="ltcg-gold" gradientUnits="userSpaceOnUse" x1="206.69" y1="971.49" x2="903.97" y2="274.21">
+        <stop class="g1" offset="0.32" stop-color="#C4922B"/>
+        <stop class="g2" offset="0.55" stop-color="#F2C249"/>
+        <stop class="g3" offset="0.79" stop-color="#FAE0A2"/>
+        <stop class="g4" offset="1.0"  stop-color="#C4922B"/>
+      </linearGradient>
+    </defs>
+    <g fill="url(#ltcg-gold)">
+      <path d="M395.61 375.61C364.78 346.18 333.98 316.74 303.18 287.31C228.45 351.94 153.72 416.54 78.99 481.16C133.82 479.61 188.66 478.06 243.5 476.5C326.05 475.33 473.76 460.55 618.97 367.65C663.92 338.9 700.76 307.69 730.52 278.1C702.35 250.58 674.18 223.07 646 195.56C635.87 195.35 625.77 195.1 615.66 194.89C605.77 186.38 595.89 177.87 586 169.36C522.53 238.12 459.07 306.85 395.61 375.61Z"/>
+      <path d="M783.7 329.49C771.99 342.4 757.81 356.67 740.94 371.25L632.04 477.59L935.37 477.59Z"/>
+      <path d="M761.04 267.86C624.46 457.56 349.91 477.56 349.91 477.56C647.91 480.32 794.84 296.14 794.84 296.14L780.63 279.04Z"/>
+      <path d="M740.94 371.25C725.94 384.21 708.81 397.41 689.4 410.12C628.82 449.8 570.97 468.36 531.15 477.59L636.33 477.59L743.03 373.39Z"/>
+      <path d="M735.52 244.41L761.04 267.86L794.84 296.14L822.43 318.9L841.75 211.98Z"/>
+    </g>
+    <g class="crest__snow" fill="#FFFFFF">
+      <path d="M305.18 311.52C323.8 329.22 342.43 346.93 361.05 364.63C347.49 358.88 333.92 353.13 320.35 347.38C321.96 352.9 323.57 358.42 325.18 363.94C318.97 358.65 312.76 353.36 306.56 348.08C298.51 360.26 290.46 372.45 282.41 384.63L282.41 348.08C265.63 356.12 248.84 364.17 232.06 372.22C256.43 351.98 280.81 331.75 305.18 311.52Z"/>
+      <path d="M588.69 190.11C596.51 197.24 604.33 204.37 612.14 211.49C621.57 211.72 631 211.95 640.43 212.18C656.75 229.2 673.08 246.21 689.4 263.23C676.3 257.94 663.19 252.65 650.08 247.36L655.6 270.82C643.41 261.62 631.23 252.42 619.04 243.22C605.25 257.94 591.45 272.66 577.65 287.37C576.73 272.43 575.81 257.48 574.89 242.53C554.89 251.96 534.88 261.39 514.88 270.82C539.48 243.91 564.09 217.01 588.69 190.11Z"/>
+    </g>
+  </svg>
+  <h1 class="crest__word">LTCG<span class="sr-only"> — выбор языка</span></h1>
+</div>
+
+
+<main class="gate" id="gate">
+
+  <!-- I · классика — неоклассика с викторианским намёком в деталях -->
+  <a class="part part--hy" href="../hy/" lang="hy" hreflang="hy" style="--p:0">
+    <span class="mat" aria-hidden="true"></span>
+    <span class="num" style="--i:0"><i class="num__rule" aria-hidden="true"></i><span class="num__val">I</span></span>
+    <span class="name" style="--i:1">Հայերեն</span>
+    <!-- ЧЕРНОВИК до вычитки носителем (CLAUDE.md, правило про армянский) -->
+    <span class="line is-draft" data-draft="hy" style="--i:2">Հաշվապահություն և հարկեր</span>
+    <span class="act" style="--i:3">
+      <span class="act__word is-draft" data-draft="hy">Շարունակել</span>
+      <svg class="arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
+
+  <!-- II · современность — тёмный интерфейс + бентосетка -->
+  <a class="part part--ru" href="../" lang="ru" hreflang="ru" data-default="true" style="--p:1">
+    <span class="mat" aria-hidden="true"></span>
+    <span class="num" style="--i:0"><i class="num__rule" aria-hidden="true"></i><span class="num__val">02</span></span>
+    <span class="name" style="--i:1">Русский<span class="sr-only"> — выбран по умолчанию</span></span>
+    <span class="line" style="--i:2">Релокация, ВНЖ и налоги в Армении</span>
+    <span class="act" style="--i:3">
+      <span class="act__word">Продолжить</span>
+      <svg class="arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
+
+  <!-- III · будущее — editorial + эфемерный -->
+  <a class="part part--en" href="../en/" lang="en" hreflang="en" style="--p:2">
+    <span class="mat" aria-hidden="true"></span>
+    <span class="num" style="--i:0"><span class="num__val">№&nbsp;03</span><i class="num__rule" aria-hidden="true"></i></span>
+    <span class="name" style="--i:1">English</span>
+    <span class="line" style="--i:2">Low taxes, an Armenian company, accounting</span>
+    <span class="act" style="--i:3">
+      <span class="act__word">Continue</span>
+      <svg class="arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
+
+</main>
+
+<div class="theme" role="group" aria-label="Тема оформления" hidden>
+  <button class="theme__btn" type="button" data-set="auto" aria-pressed="true">
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+      <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <path d="M10 3a7 7 0 0 0 0 14Z" fill="currentColor"/>
+    </svg>
+    <span class="sr-only">Как в системе</span>
+  </button>
+  <button class="theme__btn" type="button" data-set="light" aria-pressed="false">
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+      <circle cx="10" cy="10" r="3.6" fill="none" stroke="currentColor" stroke-width="1.3"/>
+      <g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <path d="M10 1.6v2.1M10 16.3v2.1M1.6 10h2.1M16.3 10h2.1M4.1 4.1l1.5 1.5M14.4 14.4l1.5 1.5M15.9 4.1l-1.5 1.5M5.6 14.4l-1.5 1.5"/>
+      </g>
+    </svg>
+    <span class="sr-only">Светлая</span>
+  </button>
+  <button class="theme__btn" type="button" data-set="dark" aria-pressed="false">
+    <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+      <path d="M15.6 12.4A6.6 6.6 0 0 1 7.6 4.4a6.6 6.6 0 1 0 8 8Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+    </svg>
+    <span class="sr-only">Тёмная</span>
+  </button>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var box = document.querySelector('.theme');
+  if (!box) return;
+  var btns = box.querySelectorAll('.theme__btn');
+
+  function read() {
+    try { var v = localStorage.getItem('ltcg-theme'); return (v === 'light' || v === 'dark') ? v : 'auto'; }
+    catch (e) { return 'auto'; }
+  }
+  function paint(mode) {
+    if (mode === 'auto') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', mode);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-pressed', String(btns[i].dataset.set === mode));
+    }
+  }
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', function () {
+      var m = this.dataset.set;
+      try { m === 'auto' ? localStorage.removeItem('ltcg-theme') : localStorage.setItem('ltcg-theme', m); }
+      catch (e) {}
+      paint(m);
+    });
+  }
+  paint(read());
+  box.hidden = false;
+})();
+</script>
+</body>
+</html>

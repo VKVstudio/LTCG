@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261019m6" class="no-js">
+<html lang="ru" data-skin="ru" data-site-root="./" data-site data-v="20261019m12" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,27 +13,25 @@
      #triGateBoot ниже); JSON-LD (type="application/ld+json") CSP не проверяет вообще —
      браузер не считает такой тип исполняемым скриптом. img/media получают blob: —
      hero-scroll.js собирает кадр и видео-заготовку через URL.createObjectURL. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<script>
+(function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
+try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}
+if(window.trustedTypes&&window.trustedTypes.createPolicy&&!window.trustedTypes.defaultPolicy){try{window.trustedTypes.createPolicy('default',{createHTML:function(s){return String(s).replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<\/?(?:script|iframe|object|embed)\b[^>]*>/gi,'').replace(/\bon[a-z]+\s*=/gi,'data-blocked=').replace(/javascript\s*:/gi,'blocked:');},createScript:function(){return '';},createScriptURL:function(u){var p=new URL(String(u),location.href);if(p.origin===location.origin||p.origin==='https://static.cloudflareinsights.com')return p.href;throw new TypeError('Blocked script URL');}});}catch(e){}}})();
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self' https://t.me https://wa.me mailto:; img-src 'self' data: blob:; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-FGB6UuDDN3ITvUuuwx2nz16/Cr5IUVaiY9O7NRH8Exs=' 'sha256-PpG18IHQWLZgV8fxP9UuQ/rrlt0GXnicKAge7Ze5i+o=' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com; media-src 'self' blob:; worker-src 'self' blob:; manifest-src 'self'; require-trusted-types-for 'script'">
 <!-- Referrer-Policy заголовком GitHub Pages тоже не отдаёт — фиксируем тем же способом.
      Ничего не меняет практически (браузеры и так по умолчанию strict-origin-when-cross-origin),
      но письменно закрепляет политику, а не полагается на дефолт. -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<script>
-/* Тема и класс js — ДО первой отрисовки: иначе на светлой машине страница мигнёт тёмным,
-   а .no-js-ветки разметки успеют показаться. Единственный инлайновый скрипт на странице,
-   вся остальная логика — во внешних файлах. */
-(function(){var h=document.documentElement;h.className=h.className.replace(/\bno-js\b/,'js');
-try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAttribute('data-theme',t);}catch(e){}})();
-</script>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <title>Легализация, счёт, ИП и бухгалтерия в Армении — LTCG, Ереван</title>
-<meta name="description" content="LTCG, Ереван: ВНЖ, ИП, ООО, счёт в банке, соцкарта, юридический адрес, бухгалтерия. Вход по моменту жизни, цена и сроки — на странице, до начала работы.">
+<meta name="description" content="LTCG, Ереван: ВНЖ, ИП, ООО, счёт в банке, соцкарта, юрадрес, бухгалтерия. Практики и маршруты по задачам бизнеса, цены в драмах и сроки — на странице.">
 <meta name="theme-color" content="#0C1B3A">
 <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 <!-- «Вынести на рабочий стол»: манифест даёт Android и десктопному Chrome
      имя, иконку и запуск без адресной строки; Apple манифест игнорирует и
      читает свои meta — поэтому и то, и другое. -->
-<link rel="manifest" href="manifest.webmanifest?v=20261019m7">
+<link rel="manifest" href="manifest.webmanifest?v=20261019m12">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,7 +49,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="LTCG — Legal and Tax Consulting Group">
-<meta property="og:title" content="Где вы сейчас? — LTCG, Ереван">
+<meta property="og:title" content="Легализация, счёт, ИП и бухгалтерия в Армении — LTCG, Ереван">
 <meta property="og:description" content="ВНЖ, счёт в банке, ИП, адрес и бухгалтерия в Армении по фиксированным ценам в драмах РА: 45 000 ֏ ИП, 110 000 ֏ счёт, 35 000 ֏ ПСН, учёт от 36 000 ֏/мес.">
 <!-- Карточка для мессенджеров. Адрес абсолютный: относительный тут не работает,
      превью собирает робот мессенджера, а не браузер. На своём домене поменять. -->
@@ -79,87 +77,262 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       imagesrcset="assets/hero/m/ararat-540.avif 540w, assets/hero/m/ararat-720.avif 720w, assets/hero/m/ararat-1080.avif 1080w">
 <link rel="preload" as="image" type="image/avif" imagesizes="100vw" media="not ((max-width: 767px) or ((any-pointer: coarse) and (max-width: 1366px)))"
       imagesrcset="assets/hero/lcp/A-1280.avif 1280w, assets/hero/lcp/A-1920.avif 1920w, assets/hero/lcp/A-2560.avif 2560w">
-<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/site.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/hero.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/main-triptych.min.css?v=20261019m7">
-<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m7">
+<link rel="stylesheet" href="css/min/fonts.min.css?v=20261019m12" integrity="sha384-rzS/zBdNzHQYFBWNlx+kmJ5gPGUbSAak9xk0jVTF++8haKAt++v/pcwilUY4AjwQ" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/site.min.css?v=20261019m12" integrity="sha384-JsZXC2x3l8nyAO0Unz71eGyqlQaUPERViMGiNpXIlbqS827gk/891hY55otGqS/R" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/site-ru.min.css?v=20261019m12" integrity="sha384-zWyk15V0r+v2Xu+1zKBSil7xpx2EcR4uIyyFo7Yar+xHoG6BeMTPboUSbFzPDaw4" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/hero.min.css?v=20261019m12" integrity="sha384-2EZh2J+HUyWyTtl1Swf4V3FEC4qvKzjCvB9YkhLXlbFBaklQIBkxGvp6rNpwVIoP" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/main-triptych.min.css?v=20261019m12" integrity="sha384-XAr4GUNgrIq/XFZlF778XCOt0w87s05dACtW3Rwn1hctjnou4fDCJWD7XUrvcUzB" crossorigin="anonymous">
+<link rel="stylesheet" href="css/min/home-ru.min.css?v=20261019m12" integrity="sha384-nqm4pEiev9mie+V56QRcpksH0QsnZSrEj+3enNrwmp9+GPA2wheDh8Yfd7c+u0HT" crossorigin="anonymous">
 <!-- заставка первого экрана на телефоне. media на теге: на десктопе файл
      скачивается с низким приоритетом и рендер не задерживает -->
-<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/hero-mobile.min.css?v=20261019m7">
-<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m7">
+<link rel="stylesheet" media="(max-width: 767px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/hero-mobile.min.css?v=20261019m12" integrity="sha384-f/C2coPnv/jPYyeE2CmfhVmsgUe4Zxd/M6fMRs/28d4rr8InY16gunt8SxXnP0kT" crossorigin="anonymous">
+<link rel="stylesheet" media="(max-width: 1099px), (any-pointer: coarse) and (max-width: 1366px)" href="css/min/menu-mobile.min.css?v=20261019m12" integrity="sha384-GtjUVed82VQRXZ2CX06P2ybdpoW8d7CPvUlx+HQzqoxycYw8D78BWOXQKm4kqmco" crossorigin="anonymous">
 <!-- один загрузчик: гейты reduce / мобильный / указатель → GSAP + Lenis только при движении → хиро → site.js -->
-<script defer src="js/boot.js?v=20261019m7"></script>
-<script defer src="js/home-ru.js?v=20261019m7"></script>
+<script defer src="js/boot.js?v=20261019m12" integrity="sha384-EFOrk4uSPbwKGJbpnPGeoNetapgQo1Yxcjtqm3FiutYc9MhQv5zqo3Qin/37iU8V" crossorigin="anonymous"></script>
+<script defer src="js/home-ru.js?v=20261019m12" integrity="sha384-A8BXZ1pSrsDm7ajY591R/UkAV4MHU5KuEwQV/YpU0xfGwbTAvdIaK3h4h025n565" crossorigin="anonymous"></script>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["LegalService", "ProfessionalService"],
+      "@type": "LegalService",
       "@id": "https://ltcg.am/#org",
-      "name": "Legal and Tax Consulting Group LLC",
-      "alternateName": "LTCG",
+      "name": "LTCG — Legal and Tax Consulting Group LLC",
+      "legalName": "«Լեգալ ընդ Թաքս Կոնսալթինգ Գրուպ» ՍՊԸ",
       "url": "https://ltcg.am/",
-      "logo": { "@type": "ImageObject", "url": "https://ltcg.am/assets/icons/logo-512.png", "width": 512, "height": 512 },
-      "image": "https://ltcg.am/assets/hero/A-dusk-1280.jpg",
-      "telephone": "+374-94-184-014",
-      "sameAs": ["https://t.me/LTCG_Armenia", "https://wa.me/37494184014"],
-      "areaServed": { "@type": "Country", "name": "Armenia" },
-      "address": { "@type": "PostalAddress", "addressLocality": "Yerevan", "addressCountry": "AM" },
-      "availableLanguage": ["ru", "hy", "en"],
-      "knowsAbout": ["Вид на жительство в Армении", "Регистрация ИП в Армении", "Открытие счёта в армянском банке", "Налоговые режимы Армении", "Бухгалтерское сопровождение", "Юридический адрес"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Услуги",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Регистрация ИП" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Регистрация ООО" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Открытие счёта в банке" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Соцкарта и регистрация по адресу" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Юридический адрес и корреспонденция" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Бухгалтерия и налоговый режим" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Налоговое консультирование: резидентство, CRS" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ВНЖ: наём, ИП, семья, корни" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Международные переводы и SWIFT: подготовка" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Справки и закрытие дел" } }
-        ]
-      }
+      "logo": "https://ltcg.am/assets/logo/ltcg-lockup@2x.png?v=20261019m12",
+      "image": "https://ltcg.am/assets/og/ltcg-og.jpg",
+      "telephone": "+37494184014",
+      "email": "info@ltcg.am",
+      "priceRange": "35 000 ֏ · 430 000 ֏",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "пр. Месропа Маштоца",
+        "addressLocality": "Ереван",
+        "addressCountry": "AM"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.1811,
+        "longitude": 44.5136
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Armenia",
+          "identifier": "AM"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia",
+          "identifier": "GE"
+        },
+        {
+          "@type": "Country",
+          "name": "Russia",
+          "identifier": "RU"
+        },
+        {
+          "@type": "Country",
+          "name": "Ukraine",
+          "identifier": "UA"
+        },
+        {
+          "@type": "Country",
+          "name": "Taiwan",
+          "identifier": "TW"
+        },
+        {
+          "@type": "Country",
+          "name": "China",
+          "identifier": "CN"
+        },
+        {
+          "@type": "Country",
+          "name": "Iran",
+          "identifier": "IR"
+        },
+        {
+          "@type": "Country",
+          "name": "India",
+          "identifier": "IN"
+        },
+        {
+          "@type": "Country",
+          "name": "Pakistan",
+          "identifier": "PK"
+        },
+        {
+          "@type": "Country",
+          "name": "Bangladesh",
+          "identifier": "BD"
+        },
+        {
+          "@type": "Country",
+          "name": "Philippines",
+          "identifier": "PH"
+        },
+        {
+          "@type": "Country",
+          "name": "Nepal",
+          "identifier": "NP"
+        },
+        {
+          "@type": "Country",
+          "name": "Egypt",
+          "identifier": "EG"
+        },
+        {
+          "@type": "Country",
+          "name": "Nigeria",
+          "identifier": "NG"
+        },
+        {
+          "@type": "Country",
+          "name": "Kenya",
+          "identifier": "KE"
+        },
+        {
+          "@type": "Country",
+          "name": "South Africa",
+          "identifier": "ZA"
+        },
+        {
+          "@type": "Country",
+          "name": "Morocco",
+          "identifier": "MA"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany",
+          "identifier": "DE"
+        },
+        {
+          "@type": "Country",
+          "name": "United States",
+          "identifier": "US"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada",
+          "identifier": "CA"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia",
+          "identifier": "AU"
+        }
+      ],
+      "availableLanguage": [
+        "ru",
+        "hy",
+        "en"
+      ],
+      "knowsAbout": [
+        "Регистрация ИП (ԱՁ) и ООО (ՍՊԸ) в Армении",
+        "Релокация бизнеса и ИП из Грузии в Армению",
+        "Открытие личных и корпоративных счетов в банках Армении (KYC/AML)",
+        "ВНЖ и ПМЖ в Армении по квоте и электронной платформе с 01.11.2026 (ՀՕ-11-Ն)",
+        "Налоговое сопровождение ИП и ООО в Армении (налог с оборота, НДС, микробизнес)",
+        "Налоговое резидентство 183 дня и автообмен CRS в Армении"
+      ],
+      "sameAs": [
+        "https://t.me/LTCG_Armenia",
+        "https://wa.me/37494184014"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://ltcg.am/#website",
       "url": "https://ltcg.am/",
       "name": "LTCG — Legal & Tax Consulting Group",
-      "publisher": { "@id": "https://ltcg.am/#org" }
+      "publisher": {
+        "@id": "https://ltcg.am/#org"
+      }
     },
     {
-      "@type": ["WebPage", "FAQPage"],
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
       "@id": "https://ltcg.am/#page",
       "url": "https://ltcg.am/",
-      "name": "Где вы сейчас? — LTCG",
+      "name": "Легализация, счёт, ИП и бухгалтерия в Армении — LTCG, Ереван",
       "inLanguage": "ru",
       "datePublished": "2026-09-04",
-      "dateModified": "2026-10-18",
-      "isPartOf": { "@id": "https://ltcg.am/#website" },
-      "about": { "@id": "https://ltcg.am/#org" },
+      "dateModified": "2026-10-19",
+      "isPartOf": {
+        "@id": "https://ltcg.am/#website"
+      },
+      "about": {
+        "@id": "https://ltcg.am/#org"
+      },
       "mainEntity": [
-        { "@type": "Question", "name": "Отказали в открытии счёта — что дальше?", "acceptedAnswer": { "@type": "Answer", "text": "Сначала устанавливаем причину отказа комплаенса по ст. 23 ч. 1 Закона РА ՀՕ-208-Ն. Чаще всего заявка не проходит из-за отсутствия выписки за 1 год, неподтверждённого маршрута средств от 20 000 USD или дистанционной подачи, где невозвратный сбор банка составляет 25 000 ֏ для физлиц, 100 000 ֏ для юрлиц и 50 000 ֏ в Converse Bank. До повторной подачи сверяем пакет и подбираем банк под ваш профиль." } },
-        { "@type": "Question", "name": "Можно ли открыть ИП, не приезжая?", "acceptedAnswer": { "@type": "Answer", "text": "Часть шагов выполняется удалённо по доверенности, но не все: банк и некоторые госорганы хотят видеть человека лично. Что именно можно сделать до приезда в вашем случае — уточняем по вашим документам и гражданству." } },
-        { "@type": "Question", "name": "Какой налоговый режим подходит под доход от зарубежных заказчиков?", "acceptedAnswer": { "@type": "Answer", "text": "Зависит от трёх вещей: кто ваши заказчики, какой годовой оборот ожидается и чем вы занимаетесь. У каждого режима есть порог и список запрещённых видов деятельности. Ошибка обнаруживается только на следующий год, поэтому режим выбирают до регистрации, а не после." } },
-        { "@type": "Question", "name": "Нужно ли уведомлять ФНС о счёте в Армении?", "acceptedAnswer": { "@type": "Answer", "text": "Обязанность зависит от вашего налогового резидентства в РФ на конец года и от того, сколько дней вы провели за границей. Это отдельный расчёт по календарю, а не общее правило — считаем по вашим датам." } },
-        { "@type": "Question", "name": "Что делать, если нет адреса для регистрации?", "acceptedAnswer": { "@type": "Answer", "text": "Для регистрации ИП отдельный юридический адрес по закону не обязателен, но подтверждаемый адрес нужен для ряда банковских анкет, соцкарты и получения официальной корреспонденции. Если аренда без договора или собственник против, используется адрес для регистрации и корреспонденции — 430 000 ֏ в год." } },
-        { "@type": "Question", "name": "Можно ли сделать всё самому?", "acceptedAnswer": { "@type": "Answer", "text": "Да, закон не требует посредника. Пропуск 20 дней по ст. 254 НК РА переводит ИП на общую систему — НДС 20% и налог на прибыль 18%; отказ банка списывает сбор 20 000 ֏ или 100 000 ֏, а отказ по ВНЖ стоит 150 000 ֏ пошлины и 1 года паузы по ст. 20 ч. 4 ՀՕ-11-Ն. Мы закрываем эти риски по фиксированной цене." } },
-        { "@type": "Question", "name": "Берёте ли ВНЖ отдельно?", "acceptedAnswer": { "@type": "Answer", "text": "ВНЖ мы оформляем только в комплексе с регистрацией бизнеса или бухгалтерским сопровождением в LTCG — под ваше основание: ИП, трудовой договор, семья или происхождение. Отдельно без привязки к сопровождаемому основанию заявки на ВНЖ мы не берём." } }
+        {
+          "@type": "Question",
+          "name": "Отказали в открытии счёта — что дальше?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сначала устанавливаем причину отказа комплаенса по ст. 23 ч. 1 Закона РА ՀՕ-208-Ն. Чаще всего заявка не проходит из-за отсутствия выписки за 1 год, неподтверждённого маршрута средств от 20 000 USD или дистанционной подачи, где невозвратный сбор банка составляет 25 000 ֏ для физлиц, 100 000 ֏ для юрлиц и 50 000 ֏ в Converse Bank. До повторной подачи сверяем пакет и подбираем банк под ваш профиль."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли открыть ИП, не приезжая?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Часть шагов выполняется удалённо по доверенности, но не все: банк и некоторые госорганы хотят видеть человека лично. Что именно можно сделать до приезда в вашем случае — уточняем по вашим документам и гражданству."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой налоговый режим подходит под доход от зарубежных заказчиков?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Зависит от трёх вещей: кто ваши заказчики, какой годовой оборот ожидается и чем вы занимаетесь. У каждого режима есть порог и список запрещённых видов деятельности. Ошибка обнаруживается только на следующий год, поэтому режим выбирают до регистрации, а не после."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли уведомлять ФНС о счёте в Армении?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обязанность зависит от вашего налогового резидентства в РФ на конец года и от того, сколько дней вы провели за границей. Это отдельный расчёт по календарю, а не общее правило — считаем по вашим датам."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если нет адреса для регистрации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для регистрации ИП отдельный юридический адрес по закону не обязателен, но подтверждаемый адрес нужен для ряда банковских анкет, соцкарты и получения официальной корреспонденции. Если аренда без договора или собственник против, используется адрес для регистрации и корреспонденции — 430 000 ֏ в год."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли сделать всё самому?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, закон не требует посредника. Пропуск 20 дней по ст. 254 НК РА переводит ИП на общую систему — НДС 20% и налог на прибыль 18%; отказ банка списывает сбор 20 000 ֏ или 100 000 ֏, а отказ по ВНЖ стоит 150 000 ֏ пошлины и 1 года паузы по ст. 20 ч. 4 ՀՕ-11-Ն. Мы закрываем эти риски по фиксированной цене."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Берёте ли ВНЖ отдельно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ВНЖ мы оформляем только в комплексе с регистрацией бизнеса или бухгалтерским сопровождением в LTCG — под ваше основание: ИП, трудовой договор, семья или происхождение. Отдельно без привязки к сопровождаемому основанию заявки на ВНЖ мы не берём. Порядок одинаков для релокантов из Грузии, РФ и Украины, заявителей из Тайваня, Китая, Ирана, Азии и Африки и бизнеса из ЕС, США, Канады и Австралии."
+          }
+        }
       ]
     }
   ]
 }
-</script>
+  </script>
 </head>
 <body>
+<!--email_off-->
 
 <a class="skip" href="#main">К содержанию</a>
 
@@ -207,32 +380,35 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
   <div class="wrap hdr__in">
     <a class="brand" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
       <picture data-logo="gold">
-        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
-        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
-        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.avif?v=20261019m12 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.webp?v=20261019m12 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png?v=20261019m12" width="57" height="38" alt="" decoding="async">
       </picture>
       <picture data-logo="ink">
-        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
-        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
-        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="" decoding="async">
+        <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.avif?v=20261019m12 3x">
+        <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.webp?v=20261019m12 3x">
+        <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png?v=20261019m12" width="57" height="38" alt="" decoding="async">
       </picture>
     </a>
     <div class="hdr__mid">
-      <nav class="hdr__nav" aria-label="Разделы">
-        <a href="./home-ru.html#where">Этапы</a>
-        <a href="./home-ru.html#calc">Калькулятор</a>
-        <a href="./home-ru.html#services">Услуги</a>
-        <a href="./noyabr.html">С 1 ноября</a>
+      <nav class="hdr__nav" aria-label="Практики и разделы">
+        <a href="./home-ru.html#where">Маршруты</a>
+        <a href="./ip-i-nalogi.html">ИП и налоги</a>
+        <a href="./schet-v-banke.html">Банки и KYC</a>
+        <a href="./vnzh.html">ВНЖ и ПМЖ</a>
+        <a href="./rezidentstvo-i-crs.html">Резидентство</a>
+        <a href="./pered-pereezdom.html">Релокация</a>
+        <a href="./spravki-i-zakrytie.html">Закрытие</a>
+        <a href="./noyabr.html">Реформа ВНЖ</a>
         <a href="./home-ru.html#contact">Контакты</a>
       </nav>
-      <span class="hdr__chosen" data-chosen hidden>Вы выбрали: <b data-chosen-name></b> <a href="#contact" data-cta>Обсудить</a></span>
-      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Рассчитать стоимость <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+      <a class="btn btn--primary btn--sm hdr__cta" href="./home-ru.html#calc">Калькулятор <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
     <!-- Меню телефона. Кнопка стоит с hidden и открывается скриптом: без JS
          меню не собирается, и мёртвой кнопки на экране быть не должно.
          Содержимое панели js/menu-mobile.js берёт из самой страницы и из
          подвала — второго списка разделов в разметке нет и разъехаться нечему. -->
-    <button class="hdr__menu" type="button" data-burger aria-expanded="false" aria-controls="mnav" hidden>
+    <button class="hdr__menu" type="button" data-burger aria-expanded="false" hidden>
       <span class="hdr__menu-box" aria-hidden="true"><i></i><i></i><i></i></span>
       <span class="hdr__menu-txt">Меню</span>
     </button>
@@ -250,13 +426,21 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
   <a class="site-head__brand" href="./" data-path="" aria-label="LTCG — на главную">
     <!-- Настоящий знак компании. media у первых трёх <source> ДОСЛОВНО повторяет мобильную
          ветку hero.css: на узком — только эмблема, на широком — эмблема с буквами. -->
-    <picture>
-      <source type="image/avif" media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark@2x.avif 2x, assets/logo/ltcg-mark@3x.avif 3x">
-      <source type="image/webp" media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark@2x.webp 2x, assets/logo/ltcg-mark@3x.webp 3x">
-      <source media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark@2x.png 2x">
-      <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
-      <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
-      <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" decoding="async">
+    <picture data-logo="gold">
+      <source type="image/avif" media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark@2x.avif?v=20261019m12 2x, assets/logo/ltcg-mark@3x.avif?v=20261019m12 3x">
+      <source type="image/webp" media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark@2x.webp?v=20261019m12 2x, assets/logo/ltcg-mark@3x.webp?v=20261019m12 3x">
+      <source media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark@2x.png?v=20261019m12 2x">
+      <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.avif?v=20261019m12 3x">
+      <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.webp?v=20261019m12 3x">
+      <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png?v=20261019m12" width="57" height="38" alt="" decoding="async">
+    </picture>
+    <picture data-logo="ink">
+      <source type="image/avif" media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-mark-ink@3x.avif?v=20261019m12 3x">
+      <source type="image/webp" media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-mark-ink@3x.webp?v=20261019m12 3x">
+      <source media="(max-width: 767px), (max-height: 767px) and (pointer: coarse)" srcset="assets/logo/ltcg-mark-ink@2x.png?v=20261019m12 2x">
+      <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.avif?v=20261019m12 3x">
+      <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.webp?v=20261019m12 3x">
+      <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png?v=20261019m12" width="57" height="38" alt="" decoding="async">
     </picture>
   </a>
 </header>
@@ -393,8 +577,8 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
                Языки идут первыми в табе; переключатель темы — после них.        -->
 
           <!-- I · КЛАССИКА — неоклассика, гравюра по туфу -->
-          <a class="tri__part tri__part--hy is-soon" data-lang="hy" aria-disabled="true" tabindex="-1"
-             lang="hy" hreflang="hy" style="--p:0">
+          <div class="tri__part tri__part--hy is-soon" data-lang="hy" aria-disabled="true" tabindex="-1"
+             lang="hy" hreflang="hy" style="--p:0" role="link">
             <span class="tri__art" aria-hidden="true"></span>
             <span class="tri__scrim" aria-hidden="true"></span>
 
@@ -411,7 +595,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
               <span class="tri__word" data-draft="native-review-pending">Շարունակել</span>
               <svg class="tri__arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-          </a>
+          </div>
 
           <!-- II · СОВРЕМЕННОСТЬ — тёмный прибор со стеклом. Язык по умолчанию:
                помечен золотым квадратом 6 px, золотым швом и aria-current — без
@@ -434,8 +618,8 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           </a>
 
           <!-- III · БУДУЩЕЕ — редакционная бумага, воздух -->
-          <a class="tri__part tri__part--en is-soon" data-lang="en" aria-disabled="true" tabindex="-1"
-             lang="en" hreflang="en" style="--p:2">
+          <div class="tri__part tri__part--en is-soon" data-lang="en" aria-disabled="true" tabindex="-1"
+             lang="en" hreflang="en" style="--p:2" role="link">
             <span class="tri__art" aria-hidden="true"></span>
             <span class="tri__scrim" aria-hidden="true"></span>
 
@@ -448,16 +632,17 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
               <span class="tri__word">Continue</span>
               <svg class="tri__arw" viewBox="0 0 24 12" aria-hidden="true" focusable="false"><path d="M0 6h20.4M15.6 1.2 20.4 6l-4.8 4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-          </a>
+          </div>
 
           <!-- ── полоса хрома: знак один раз на весь экран + переключатель темы.
                Переключатель стоит рядом со знаком, а не в углу английской колонки:
                у него нет владельца-колонки и он ни с чем не сталкивается.
                Без JS он остаётся hidden — мёртвых кнопок на экране нет.        -->
           <div class="tri__crest">
-            <picture class="tri__mark"><source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x"><source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x"><img src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="" aria-hidden="true" decoding="async"></picture>
+            <picture class="tri__mark" data-logo="gold"><source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.avif?v=20261019m12 3x"><source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.webp?v=20261019m12 3x"><img src="assets/logo/ltcg-lockup@2x.png?v=20261019m12" width="57" height="38" alt="" aria-hidden="true" decoding="async"></picture>
+            <picture class="tri__mark" data-logo="ink"><source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.avif?v=20261019m12 3x"><source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.webp?v=20261019m12 3x"><img src="assets/logo/ltcg-lockup-ink@2x.png?v=20261019m12" width="57" height="38" alt="" aria-hidden="true" decoding="async"></picture>
 
-            <span class="tri__theme" role="group" aria-label="Тема оформления · Colour theme · Գունային թեմա" data-theme-toggle hidden>
+<span class="tri__theme" role="group" aria-label="Тема оформления · Colour theme · Գունային թեմա" data-theme-toggle hidden>
               <button class="tri__theme-btn" type="button" data-set="auto" aria-pressed="true">
                 <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
                   <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/>
@@ -499,35 +684,46 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
 <!-- ═══ 01 · Где вы сейчас? ══════════════════════════════════════ -->
 <section class="section section--grid section--art" id="where" aria-labelledby="where-title" data-rail-label="Где вы сейчас">
-  <div class="art art--right" aria-hidden="true">
-    <picture>
-      <source type="image/avif" srcset="assets/bg/bg-dark-glass-1280.avif 1280w, assets/bg/bg-dark-glass.avif 2400w" sizes="100vw">
-      <source type="image/webp" srcset="assets/bg/bg-dark-glass-1280.webp 1280w, assets/bg/bg-dark-glass.webp 2400w" sizes="100vw">
-      <img src="assets/bg/bg-dark-glass-1280.jpg" width="1280" height="853" alt="" loading="lazy" decoding="async">
+    <div class="art art--right" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/bg-where-day-640.avif 640w, assets/scenes/bg-where-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-where-day-640.webp 640w, assets/scenes/bg-where-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-where-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/bg-where-night-640.avif 640w, assets/scenes/bg-where-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-where-night-640.webp 640w, assets/scenes/bg-where-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-where-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
     <div class="section__head section__head--split" data-reveal>
       <div>
-        <p class="kicker"><span class="kicker__no">01</span> Вход по моменту</p>
+        <p class="kicker"><span class="kicker__no">01</span> Практики и маршруты</p>
         <h1 class="h1" id="where-title">Где вы <em>сейчас</em>?</h1>
       </div>
-      <p class="lead">Ошибка в порядке шагов стоит пошлины <b>150 000 ֏</b>, отказа комплаенса или перехода на НДС <b>20%</b>. Выберите свой этап — покажем, где теряют деньги по гайдам и что забираем на себя.</p>
+      <p class="lead">Ошибка в очерёдности шагов стоит пошлины <b>150 000 ֏</b>, отказа комплаенса или перевода бизнеса на НДС <b>20%</b>. Выберите свой этап — покажем, где теряют деньги по общим советам и что закрывают юристы LTCG.</p>
     </div>
 
     <div class="bento" data-stagger>
 
-      <article class="tile tile--hero state" id="arrived" data-span="4" data-state="arrived" data-name="Только приехал" data-preset="account,social,address" aria-labelledby="arrived-h">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/avif" srcset="assets/bg/window-city-1280.avif">
-            <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
-            <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+      <article class="tile tile--hero state" id="arrived" data-span="4" data-state="arrived" data-name="Счёт в банке, НОУ и адрес" data-preset="account,social,address" aria-labelledby="arrived-h">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-02-bank-day-640.avif 640w, assets/scenes/sit-02-bank-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-02-bank-day-640.webp 640w, assets/scenes/sit-02-bank-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-02-bank-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-02-bank-night-640.avif 640w, assets/scenes/sit-02-bank-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-02-bank-night-640.webp 640w, assets/scenes/sit-02-bank-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-02-bank-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">Банки, НОУ и адрес</span>
         </div>
         <span class="state__tab" aria-hidden="true">Выбрано</span>
         <p class="tile__meta"><b>1.1</b> Первые дни в Ереване</p>
-        <h2 class="state__name" id="arrived-h"><a class="state__link" href="./schet-v-banke.html">Только приехал</a></h2>
+        <h2 class="state__name" id="arrived-h"><a class="state__link" href="./schet-v-banke.html">Счёт в банке, НОУ и адрес</a></h2>
         <p class="state__recog">Соцкарту, банковский счёт и адрес нужно выстроить в верном порядке — чтобы пройти комплаенс с первого визита.</p>
         <p class="state__fork"><b>Развилка</b><span>Подача в банк без НОУ, адреса и выписки за <b>1 год</b> ведёт к отказу комплаенса и потере сбора от <b>20 000 ֏</b> до <b>100 000 ֏</b>. <span class="src">ст. 23 ч. 1 ՀՕ-208-Ն</span></span></p>
         <ul class="chips" role="list" aria-label="Темы">
@@ -539,18 +735,25 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </div>
       </article>
 
-      <article class="tile state" id="pre-move" data-span="4" data-state="pre-move" data-name="Ещё не переехал" data-preset="" aria-labelledby="pre-move-h">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
-            <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="720" alt="">
+      <article class="tile state" id="pre-move" data-span="4" data-state="pre-move" data-name="До переезда и удалённый старт" data-preset="" aria-labelledby="pre-move-h">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-01-reloc-day-640.avif 640w, assets/scenes/sit-01-reloc-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-01-reloc-day-640.webp 640w, assets/scenes/sit-01-reloc-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-01-reloc-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-01-reloc-night-640.avif 640w, assets/scenes/sit-01-reloc-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-01-reloc-night-640.webp 640w, assets/scenes/sit-01-reloc-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-01-reloc-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">Выписка и апостиль</span>
         </div>
         <span class="state__tab" aria-hidden="true">Выбрано</span>
         <p class="tile__meta"><b>1.2</b> До переезда</p>
-        <h2 class="state__name" id="pre-move-h"><a class="state__link" href="./pered-pereezdom.html">Ещё не переехал</a></h2>
+        <h2 class="state__name" id="pre-move-h"><a class="state__link" href="./pered-pereezdom.html">До переезда и удалённый старт</a></h2>
         <p class="state__recog">Билет ещё не куплен, но список дел уже длиннее, чем хотелось бы: что закрыть дома, что можно начать отсюда.</p>
-        <p class="state__fork"><b>Развилка</b><span>Часть бумаг проще оформить до отъезда — потом за ними придётся ехать обратно или искать, кому доверить.</span></p>
+        <p class="state__fork"><b>Развилка</b><span>Выписку за <b>1 год</b> и апостили ЗАГС проще подготовить дома. Без них банк РА откажет по ст. 23 ч. 1 Закона РА ՀՕ-208-Ն; потеря невозвратной комиссии составит до <b>100 000 ֏</b>.</span></p>
         <ul class="chips" role="list" aria-label="Темы">
           <li class="chip">доверенности для РФ</li><li class="chip">консульские действия</li><li class="chip">уведомление ФНС</li>
         </ul>
@@ -560,16 +763,23 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </div>
       </article>
 
-      <article class="tile state" id="legalizing" data-span="4" data-state="legalizing" data-name="Легализуюсь" data-preset="ip,address" aria-labelledby="legalizing-h">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/img/ltcg-branch-november-1280.webp">
-            <img src="assets/img/ltcg-branch-november-1280.jpg" width="1280" height="839" alt="">
+      <article class="tile state" id="legalizing" data-span="4" data-state="legalizing" data-name="ВНЖ, ПМЖ и квоты" data-preset="ip,account,social" aria-labelledby="legalizing-h">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-03-vnzh-day-640.avif 640w, assets/scenes/sit-03-vnzh-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-03-vnzh-day-640.webp 640w, assets/scenes/sit-03-vnzh-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-03-vnzh-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-03-vnzh-night-640.avif 640w, assets/scenes/sit-03-vnzh-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-03-vnzh-night-640.webp 640w, assets/scenes/sit-03-vnzh-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-03-vnzh-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">ВНЖ и ПМЖ · ՀՕ-11-Ն</span>
         </div>
         <span class="state__tab" aria-hidden="true">Выбрано</span>
         <p class="tile__meta"><b>1.3</b> Статус и работа</p>
-        <h2 class="state__name" id="legalizing-h"><a class="state__link" href="./vnzh.html">Легализуюсь</a></h2>
+        <h2 class="state__name" id="legalizing-h"><a class="state__link" href="./vnzh.html">ВНЖ, ПМЖ и квоты</a></h2>
         <p class="state__recog">ВНЖ по бизнесу, трудовому договору, семье или корням — в комплексе с регистрацией ИП/ООО или ведением учёта в LTCG.</p>
         <p class="state__fork"><b>Развилка</b><span>С 1 ноября 2026 пошлина ВНЖ — <b>150 000 ֏</b>, а при отказе повторная подача возможна только через <b>1 год</b>. <span class="src">ст. 20 ч. 4 ՀՕ-11-Ն</span></span></p>
         <ul class="chips" role="list" aria-label="Темы">
@@ -581,16 +791,23 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </div>
       </article>
 
-      <article class="tile state" id="working" data-span="4" data-state="working" data-name="Работаю" data-preset="ip,accounting" aria-labelledby="working-h">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
-            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+      <article class="tile state" id="working" data-span="4" data-state="working" data-name="ИП, ООО и налоги" data-preset="ip,accounting" aria-labelledby="working-h">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-04-ip-day-640.avif 640w, assets/scenes/sit-04-ip-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-04-ip-day-640.webp 640w, assets/scenes/sit-04-ip-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-04-ip-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-04-ip-night-640.avif 640w, assets/scenes/sit-04-ip-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-04-ip-night-640.webp 640w, assets/scenes/sit-04-ip-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-04-ip-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">Окно 20 дней · КГД</span>
         </div>
         <span class="state__tab" aria-hidden="true">Выбрано</span>
         <p class="tile__meta"><b>1.4</b> Бизнес и налоги</p>
-        <h2 class="state__name" id="working-h"><a class="state__link" href="./ip-i-nalogi.html">Работаю</a></h2>
+        <h2 class="state__name" id="working-h"><a class="state__link" href="./ip-i-nalogi.html">ИП, ООО и налоги</a></h2>
         <p class="state__recog">Деньги идут из-за рубежа: открываем ИП за <b>45 000 ֏</b>, подаём заявление на спецрежим в 20-дневное окно и ведём учёт от <b>36 000 ֏/мес</b>.</p>
         <p class="state__fork"><b>Развилка</b><span>Пропуск <b>20 дней</b> переводит ИП на НДС <b>20%</b>, а <b>180 дней</b> без налогов в базе КГД лишают ВНЖ по бизнесу. <span class="src">ст. 254 НК РА · ст. 29.4 ч. 5 ՀՕ-11-Ն</span></span></p>
         <ul class="chips" role="list" aria-label="Темы">
@@ -602,18 +819,25 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </div>
       </article>
 
-      <article class="tile state" id="settled" data-span="4" data-state="settled" data-name="Живу и планирую" data-preset="accounting" aria-labelledby="settled-h">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/img/nov-shot-1100.webp">
-            <img src="assets/img/nov-shot-1100.jpg" width="1100" height="721" alt="">
+      <article class="tile state" id="settled" data-span="4" data-state="settled" data-name="Резидентство и CRS" data-preset="accounting" aria-labelledby="settled-h">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-05-crs-day-640.avif 640w, assets/scenes/sit-05-crs-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-05-crs-day-640.webp 640w, assets/scenes/sit-05-crs-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-05-crs-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-05-crs-night-640.avif 640w, assets/scenes/sit-05-crs-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-05-crs-night-640.webp 640w, assets/scenes/sit-05-crs-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-05-crs-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">183 дня · автообмен CRS</span>
         </div>
         <span class="state__tab" aria-hidden="true">Выбрано</span>
         <p class="tile__meta"><b>1.5</b> Резидентство и отчётность</p>
-        <h2 class="state__name" id="settled-h"><a class="state__link" href="./rezidentstvo-i-crs.html">Живу и планирую</a></h2>
+        <h2 class="state__name" id="settled-h"><a class="state__link" href="./rezidentstvo-i-crs.html">Резидентство и CRS</a></h2>
         <p class="state__recog">Быт наладился. Теперь важно, чтобы годовая картина сходилась: налоги здесь, обязанности там, обмен данными между странами.</p>
-        <p class="state__fork"><b>Развилка</b><span>Резидентство считают по дням и обстоятельствам — и две страны могут посчитать по-разному.</span></p>
+        <p class="state__fork"><b>Развилка</b><span>Без анкеты CRS за <b>10 рабочих дней</b> банк заморозит счёт по ст. 80.2 НК РА, а налоги за доход в год переезда потребуют обе страны.</span></p>
         <ul class="chips" role="list" aria-label="Темы">
           <li class="chip">налоги за год</li><li class="chip">декларация ФЛ</li><li class="chip">CRS и СИДН</li>
         </ul>
@@ -623,18 +847,25 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </div>
       </article>
 
-      <article class="tile state" id="moving-on" data-span="4" data-state="moving-on" data-name="Двигаюсь дальше" data-preset="" aria-labelledby="moving-on-h">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/hero/E-1280.webp">
-            <img src="assets/hero/E-1280.jpg" width="1280" height="720" alt="">
+      <article class="tile state" id="moving-on" data-span="4" data-state="moving-on" data-name="Справки и закрытие" data-preset="" aria-labelledby="moving-on-h">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/sit-06-exit-day-640.avif 640w, assets/scenes/sit-06-exit-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-06-exit-day-640.webp 640w, assets/scenes/sit-06-exit-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-06-exit-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/sit-06-exit-night-640.avif 640w, assets/scenes/sit-06-exit-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/sit-06-exit-night-640.webp 640w, assets/scenes/sit-06-exit-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/sit-06-exit-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">МИД РА и ликвидация</span>
         </div>
         <span class="state__tab" aria-hidden="true">Выбрано</span>
         <p class="tile__meta"><b>1.6</b> Справки и выход</p>
-        <h2 class="state__name" id="moving-on-h"><a class="state__link" href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></h2>
+        <h2 class="state__name" id="moving-on-h"><a class="state__link" href="./spravki-i-zakrytie.html">Справки и закрытие</a></h2>
         <p class="state__recog">Армения была ступенью. Следующая страна попросит бумаги отсюда — и их лучше собрать, пока вы ещё здесь.</p>
-        <p class="state__fork"><b>Развилка</b><span>Закрыть ИП и получить справки после отъезда можно, но дольше и дороже, чем до.</span></p>
+        <p class="state__fork"><b>Развилка</b><span>Справка МИД РА с апостилем в Ереване стоит <b>7 000 ֏</b> (за <b>5 рабочих дней</b>) против <b>25 000 ֏</b> в консульстве, а брошенное ИП копит штрафы КГД.</span></p>
         <ul class="chips" role="list" aria-label="Темы">
           <li class="chip">справка о несудимости</li><li class="chip">резидентство</li><li class="chip">закрытие ИП</li><li class="chip">апостиль</li>
         </ul>
@@ -645,12 +876,12 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       </article>
 
       <!-- 1.7 · датированный вход ПОЛОСОЙ -->
-      <a class="tile state state--dated" id="new-rules" href="./noyabr.html" data-span="12" data-state="new-rules" data-name="Подаю после 1 ноября" aria-labelledby="new-rules-h">
+      <a class="tile state state--dated" id="new-rules" href="./noyabr.html" data-span="12" data-state="new-rules" data-name="Реформа ВНЖ (ՀՕ-11-Ն)" aria-labelledby="new-rules-h">
         <span class="dated__no">1.7</span>
-        <span class="dated__when">с 1 ноября 2026</span>
-        <span class="state__name dated__name" id="new-rules-h">Подаю по новым правилам</span>
-        <span class="dated__note">Реформа переписала пятнадцать статей: подача уходит на единую платформу, появляется квота, круг родственников сужается. Разобрали по статьям закона.</span>
-        <span class="dated__go">Что меняется с 1 ноября <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
+        <span class="dated__when">Закон РА ՀՕ-11-Ն</span>
+        <span class="state__name dated__name" id="new-rules-h">Реформа ВНЖ, квот и электронной платформы</span>
+        <span class="dated__note">Реформа переписала пятнадцать статей: подача через единую электронную платформу, годовая квота, пороги 1 млн и 2 млн ֏ для бизнес-ВНЖ и обновлённый круг членов семьи. Разобрали по статьям закона.</span>
+        <span class="dated__go">Разбор реформы ВНЖ <svg aria-hidden="true"><use href="#i-chevron"/></svg></span>
       </a>
 
     </div>
@@ -795,46 +1026,49 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </div>
       </div>
 
-      <aside class="tile tile--hero total" aria-live="polite" data-total>
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/avif" srcset="assets/bg/desk-documents-1280.avif">
-            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
-            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
-          </picture>
-        </div>
-        <p class="tile__meta"><b>2.7</b> Итог расчёта</p>
-        <div class="total__head">
-          <p class="total__title">Состав расчёта</p>
-          <p class="total__asof" data-total-count>0<small>модулей выбрано</small></p>
-        </div>
-        <dl class="total__rows" data-total-rows>
-          <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">—</dd></div>
-          <div class="total__row"><dt>В год</dt><dd data-sum="year">—</dd></div>
-          <div class="total__row"><dt>В месяц</dt><dd data-sum="month">—</dd></div>
-        </dl>
-        <div class="total__list" data-total-list><span class="total__empty">Пока ничего не выбрано — отметьте модули слева.</span></div>
-        <div class="total__meta">
-          <span data-total-note hidden>Отметьте нужные модули слева.</span>
-          <span><b>Цены в драмах РА (֏)</b> на 18.10.2026. Пошлины и тарифы банков — отдельно; решения принимают банк и госорганы РА. <a class="lnk" href="#diy">Что берём на себя</a> · <a class="lnk" href="#services">все услуги</a>.</span>
-        </div>
-        <div class="total__cta">
-          <a class="btn btn--primary" href="#contact" data-cta data-calc-cta>Получить расчёт и план по шагам <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
-          <a class="btn btn--outline" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-tg"/></svg> Спросить в Telegram</a>
-          <a class="btn btn--outline" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa data-wa-calc><svg aria-hidden="true"><use href="#i-wa"/></svg> Открыть в WhatsApp</a>
-        </div>
-      </aside>
+          <aside class="tile tile--hero total" aria-labelledby="total" aria-live="polite" data-total>
+            <div class="total__art" aria-hidden="true"></div>
+            <div class="total__head">
+              <p class="total__title" id="total"><b>2.7</b> · Ваш расчёт</p>
+              <p class="total__asof" data-total-count>0<small>модулей выбрано</small></p>
+            </div>
+
+            <ul class="total__list" role="list" data-total-list>
+              <li class="total__item total__item--empty">Отметьте нужные пункты слева — здесь появится смета</li>
+            </ul>
+
+            <dl class="total__rows" data-total-rows>
+              <div class="total__row"><dt>Единовременно</dt><dd data-sum="once">—</dd></div>
+              <div class="total__row"><dt>В год (адрес)</dt><dd data-sum="year">—</dd></div>
+              <div class="total__row"><dt>Ежемесячно (учёт)</dt><dd data-sum="month">—</dd></div>
+              <div class="total__row total__row--start"><dt>Итого на старте</dt><dd data-sum="start">—</dd></div>
+            </dl>
+
+            <div class="total__meta">
+              <p>Пошлины и тарифы банков — отдельно. Первая отчётность — за 15 раб. дней.</p>
+            </div>
+
+            <div class="total__cta">
+              <a class="btn btn--primary" href="#contact" data-to-form>Обсудить этот набор с юристом</a>
+              <a class="btn btn--ghost" href="https://wa.me/37494184014" target="_blank" rel="noopener noreferrer" data-wa-calc>Отправить расчёт в WhatsApp</a>
+            </div>
+          </aside>
     </div>
   </div>
 </section>
 
 <!-- ═══ 03 · Что будет после того, как вы написали ═══════════════ -->
 <section class="section section--thread section--art" id="roadmap" aria-labelledby="roadmap-title" data-rail-label="Как проходит">
-  <div class="art art--right" aria-hidden="true">
-    <picture>
-      <source type="image/avif" srcset="assets/bg/window-city-1280.avif 1280w, assets/bg/window-city.avif 2400w" sizes="100vw">
-      <source type="image/webp" srcset="assets/bg/window-city-1280.webp 1280w, assets/bg/window-city.webp 2400w" sizes="100vw">
-      <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="" loading="lazy" decoding="async">
+    <div class="art art--right" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/bg-roadmap-day-640.avif 640w, assets/scenes/bg-roadmap-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-roadmap-day-640.webp 640w, assets/scenes/bg-roadmap-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-roadmap-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/bg-roadmap-night-640.avif 640w, assets/scenes/bg-roadmap-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-roadmap-night-640.webp 640w, assets/scenes/bg-roadmap-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-roadmap-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
@@ -931,11 +1165,16 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
 <!-- ═══ 05 · Если вы уже знаете, что вам нужно ═══════════════════ -->
 <section class="section section--deep section--grid section--thread section--light section--art" id="services" aria-labelledby="services-title" data-rail-label="Услуги">
-  <div class="art art--right" aria-hidden="true">
-    <picture>
-      <source type="image/avif" srcset="assets/bg/desk-documents-1280.avif 1280w, assets/bg/desk-documents.avif 2400w" sizes="100vw">
-      <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp 1280w, assets/bg/desk-documents.webp 2400w" sizes="100vw">
-      <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="" loading="lazy" decoding="async">
+    <div class="art art--right" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/svc-01-corp-day-640.avif 640w, assets/scenes/svc-01-corp-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/svc-01-corp-day-640.webp 640w, assets/scenes/svc-01-corp-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/svc-01-corp-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/svc-01-corp-night-640.avif 640w, assets/scenes/svc-01-corp-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/svc-01-corp-night-640.webp 640w, assets/scenes/svc-01-corp-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/svc-01-corp-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
@@ -944,29 +1183,44 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         <p class="kicker"><span class="kicker__no">05</span> Услуги</p>
         <h2 class="h2" id="services-title">Если вы уже знаете, что вам <em>нужно</em></h2>
       </div>
-      <p class="lead">Регистрация бизнеса, бухгалтерия и налоги, открытие счёта, миграционные вопросы — юрист и бухгалтер работают в одной команде.</p>
+      <p class="lead">Регистрация, бухгалтерия, счета и статус — юрист и бухгалтер в одной команде.</p>
     </div>
 
     <div class="bento" data-stagger>
       <article class="tile svc" data-span="4">
         <div class="tile__plate" aria-hidden="true">
-          <img src="assets/img/ltcg-yerevan-tuff.png" width="640" height="360" alt="">
-          <span class="tile__plate-tag">ИП · ООО · 20 дней</span>
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-01-corp-day-640.avif 640w, assets/scenes/svc-01-corp-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-01-corp-day-640.webp 640w, assets/scenes/svc-01-corp-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-01-corp-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-01-corp-night-640.avif 640w, assets/scenes/svc-01-corp-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-01-corp-night-640.webp 640w, assets/scenes/svc-01-corp-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-01-corp-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">Регистрация бизнеса · Ереван</span>
         </div>
         <div class="svc__head">
           <p class="tile__meta"><b>5.1</b> ИП и ООО</p>
           <p class="svc__price" data-price="ip">45 000 <span class="small">֏</span></p>
         </div>
         <h3 class="svc__name">Регистрация ИП и ООО</h3>
-        <p class="svc__for">Открытие ИП или ООО под зарубежные контракты, устав и подача заявления на спецрежим в 20-дневное окно.</p>
-        <div class="tile__foot"><a class="tile__read" href="./ip-i-nalogi.html">ИП и налоги <span aria-hidden="true">→</span></a><a class="btn btn--outline btn--sm" href="#calc" data-preset-link="working">В расчёт</a></div>
+        <p class="svc__for">Открытие ИП или ООО, устав и выбор спецрежима в 20-дневное окно.</p>
+        <div class="tile__foot"><a class="tile__read" href="./ip-i-nalogi.html">ИП, ООО и налоги <span aria-hidden="true">→</span></a><a class="btn btn--outline btn--sm" href="#calc" data-preset-link="working">В расчёт</a></div>
       </article>
 
       <article class="tile svc tile--hero" data-span="4">
         <div class="tile__plate" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/hero/E-1280.webp">
-            <img src="assets/hero/E-1280.jpg" width="640" height="360" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-02-bank-day-640.avif 640w, assets/scenes/svc-02-bank-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-02-bank-day-640.webp 640w, assets/scenes/svc-02-bank-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-02-bank-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-02-bank-night-640.avif 640w, assets/scenes/svc-02-bank-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-02-bank-night-640.webp 640w, assets/scenes/svc-02-bank-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-02-bank-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
           <span class="tile__plate-tag">KYC · выписка 1 год</span>
         </div>
@@ -975,72 +1229,99 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <p class="svc__price" data-price="account">110 000 <span class="small">֏</span></p>
         </div>
         <h3 class="svc__name">Открытие счёта в банке</h3>
-        <p class="svc__for">Личный или бизнес-счёт с предпроверкой выписки за 1 год, договоров и маршрута средств до визита в отделение.</p>
+        <p class="svc__for">Личный или бизнес-счёт с предпроверкой выписки за 1 год и контрактов до визита.</p>
         <div class="tile__foot"><a class="tile__read" href="./schet-v-banke.html">Тарифы банков <span aria-hidden="true">→</span></a><a class="btn btn--primary btn--sm" href="#calc" data-preset-link="arrived">В расчёт</a></div>
       </article>
 
       <article class="tile svc" data-span="4">
         <div class="tile__plate" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/img/ltcg-branch-november-1280.webp">
-            <img src="assets/img/ltcg-branch-november-1280.jpg" width="640" height="360" alt="">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-03-vnzh-day-640.avif 640w, assets/scenes/svc-03-vnzh-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-03-vnzh-day-640.webp 640w, assets/scenes/svc-03-vnzh-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-03-vnzh-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
-          <span class="tile__plate-tag">01.11.2026 · ՀՕ-11-Ն</span>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-03-vnzh-night-640.avif 640w, assets/scenes/svc-03-vnzh-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-03-vnzh-night-640.webp 640w, assets/scenes/svc-03-vnzh-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-03-vnzh-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">ВНЖ в комплексе · ՀՕ-11-Ն</span>
         </div>
         <div class="svc__head">
           <p class="tile__meta"><b>5.3</b> ВНЖ и реформа</p>
           <p class="svc__price"><span>в пакете</span></p>
         </div>
         <h3 class="svc__name">ВНЖ в комплексе с бизнесом</h3>
-        <p class="svc__for">Оформление статуса по ИП, ООО, найму, семье или корням для клиентов на сопровождении LTCG с учётом правил 01.11.2026.</p>
+        <p class="svc__for">Оформление по ИП, ООО, найму, семье или корням на сопровождении LTCG.</p>
         <div class="tile__foot"><a class="tile__read" href="./vnzh.html">Правила ВНЖ <span aria-hidden="true">→</span></a><a class="btn btn--outline btn--sm" href="#contact" data-cta data-state-link="legalizing">Обсудить</a></div>
       </article>
 
       <article class="tile svc" data-span="4">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/bg/desk-documents-1280.webp">
-            <img src="assets/bg/desk-documents-1280.jpg" width="1280" height="853" alt="">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-04-acct-day-640.avif 640w, assets/scenes/svc-04-acct-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-04-acct-day-640.webp 640w, assets/scenes/svc-04-acct-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-04-acct-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-04-acct-night-640.avif 640w, assets/scenes/svc-04-acct-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-04-acct-night-640.webp 640w, assets/scenes/svc-04-acct-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-04-acct-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">Бухгалтерский учёт · КГД</span>
         </div>
         <div class="svc__head">
           <p class="tile__meta"><b>5.4</b> Учёт и КГД</p>
           <p class="svc__price" data-price="accounting"><span>от</span> 36 000 <span class="small">֏ / мес</span></p>
         </div>
         <h3 class="svc__name">Бухгалтерия и налоговый режим</h3>
-        <p class="svc__for">Ежемесячный учёт, отчётность в КГД в срок, контроль порогов 24 млн / 115 млн ֏ и правила 180 дней.</p>
+        <p class="svc__for">Ежемесячный учёт в КГД, контроль порогов 24 млн / 115 млн ֏ и 180 дней.</p>
         <div class="tile__foot"><a class="tile__read" href="./ip-i-nalogi.html">Режимы и учёт <span aria-hidden="true">→</span></a><a class="btn btn--outline btn--sm" href="#calc" data-preset-link="settled">В расчёт</a></div>
       </article>
 
       <article class="tile svc" data-span="4">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
-            <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-05-ssn-day-640.avif 640w, assets/scenes/svc-05-ssn-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-05-ssn-day-640.webp 640w, assets/scenes/svc-05-ssn-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-05-ssn-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-05-ssn-night-640.avif 640w, assets/scenes/svc-05-ssn-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-05-ssn-night-640.webp 640w, assets/scenes/svc-05-ssn-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-05-ssn-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">НОУ и юрадрес · Ереван</span>
         </div>
         <div class="svc__head">
           <p class="tile__meta"><b>5.5</b> НОУ, адрес и старт</p>
           <p class="svc__price"><span data-price="social">35 000 ֏</span></p>
         </div>
         <h3 class="svc__name">Соцкарта (НОУ) и адрес</h3>
-        <p class="svc__for">Получение НОУ (<b>35 000 ֏</b>), адрес для регистрации и писем (<b data-price="address">430 000 ֏ / год</b>) и подготовка до вылета.</p>
+        <p class="svc__for">НОУ (<b>35 000 ֏</b>), юрадрес (<b data-price="address">430 000 ֏ / год</b>) и документы до вылета.</p>
         <div class="tile__foot"><a class="tile__read" href="./pered-pereezdom.html">До переезда <span aria-hidden="true">→</span></a><a class="btn btn--outline btn--sm" href="#calc" data-preset-link="arrived">В расчёт</a></div>
       </article>
 
       <article class="tile svc" data-span="4">
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/webp" srcset="assets/hero/A-dusk-1280.webp">
-            <img src="assets/hero/A-dusk-1280.jpg" width="1280" height="720" alt="">
+        <div class="tile__plate" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/svc-06-closure-day-640.avif 640w, assets/scenes/svc-06-closure-day-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-06-closure-day-640.webp 640w, assets/scenes/svc-06-closure-day-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-06-closure-day-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
           </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/svc-06-closure-night-640.avif 640w, assets/scenes/svc-06-closure-night-1280.avif 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <source type="image/webp" srcset="assets/scenes/svc-06-closure-night-640.webp 640w, assets/scenes/svc-06-closure-night-1280.webp 1280w" sizes="(min-width: 1024px) 30vw, 92vw">
+            <img src="assets/scenes/svc-06-closure-night-1280.jpg" width="640" height="360" alt="" loading="lazy" decoding="async">
+          </picture>
+          <span class="tile__plate-tag">Апостиль и закрытие · РА</span>
         </div>
         <div class="svc__head">
           <p class="tile__meta"><b>5.6</b> CRS и выход</p>
           <p class="svc__price"><span>по задаче</span></p>
         </div>
         <h3 class="svc__name">Резидентство, справки и закрытие</h3>
-        <p class="svc__for">183 дня, сертификат налогового резидента, всеобщая декларация, апостиль и закрытие ИП без налоговых хвостов.</p>
+        <p class="svc__for">Сертификат 183 дня, всеобщая декларация, апостиль и закрытие ИП без долгов.</p>
         <div class="tile__foot"><a class="tile__read" href="./rezidentstvo-i-crs.html">CRS и резидентство <span aria-hidden="true">→</span></a><a class="btn btn--outline btn--sm" href="./spravki-i-zakrytie.html">Закрытие</a></div>
       </article>
     </div>
@@ -1054,11 +1335,16 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 
 <!-- ═══ 06 · Вопросы, с которыми приходят ═══════════════════════ -->
 <section class="section section--thread section--art" id="faq" aria-labelledby="faq-title" data-rail-label="Вопросы">
-  <div class="art art--right" aria-hidden="true">
-    <picture>
-      <source type="image/avif" srcset="assets/bg/bg-stone-tuf-1280.avif 1280w, assets/bg/bg-stone-tuf.avif 2400w" sizes="100vw">
-      <source type="image/webp" srcset="assets/bg/bg-stone-tuf-1280.webp 1280w, assets/bg/bg-stone-tuf.webp 2400w" sizes="100vw">
-      <img src="assets/bg/bg-stone-tuf-1280.jpg" width="1280" height="853" alt="" loading="lazy" decoding="async">
+    <div class="art art--right" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/bg-faq-day-640.avif 640w, assets/scenes/bg-faq-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-faq-day-640.webp 640w, assets/scenes/bg-faq-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-faq-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/bg-faq-night-640.avif 640w, assets/scenes/bg-faq-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-faq-night-640.webp 640w, assets/scenes/bg-faq-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-faq-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
@@ -1071,21 +1357,21 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     </div>
 
     <div class="faq" data-faq data-reveal>
-      <details>
+      <details open>
         <summary>Отказали в открытии счёта — что дальше?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a"><p>Сначала устанавливаем причину отказа комплаенса по ст. 23 ч. 1 Закона РА ՀՕ-208-Ն. Чаще всего заявка не проходит из-за отсутствия выписки за <b>1 год</b>, неподтверждённого маршрута средств от <b>20 000 USD</b> или дистанционной подачи, где невозвратный сбор банка составляет <b>25 000 ֏</b> для физлиц, <b>100 000 ֏</b> для юрлиц и <b>50 000 ֏</b> в Converse Bank. До повторной подачи сверяем пакет и подбираем банк под ваш профиль.</p><p class="small"><a class="lnk" href="./schet-v-banke.html">Счёт в банке</a><a class="lnk" href="#arrived">Только приехал</a></p></div>
+        <div class="faq__a"><p>Сначала устанавливаем причину отказа комплаенса по ст. 23 ч. 1 Закона РА ՀՕ-208-Ն. Чаще всего заявка не проходит из-за отсутствия выписки за <b>1 год</b>, неподтверждённого маршрута средств от <b>20 000 USD</b> или дистанционной подачи, где невозвратный сбор банка составляет <b>25 000 ֏</b> для физлиц, <b>100 000 ֏</b> для юрлиц и <b>50 000 ֏</b> в Converse Bank. До повторной подачи сверяем пакет и подбираем банк под ваш профиль.</p><p class="small"><a class="lnk" href="./schet-v-banke.html">Счёт в банке и KYC</a><a class="lnk" href="#arrived">Маршрут 1.2</a></p></div>
       </details>
-      <details>
+      <details open>
         <summary>Можно ли открыть ИП, не приезжая?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a"><p>Часть шагов выполняется удалённо по доверенности, но не все: банк и некоторые госорганы хотят видеть человека лично. Что именно можно сделать до приезда в вашем случае — уточняем по вашим документам и гражданству.</p><p class="small"><a class="lnk" href="./pered-pereezdom.html">Ещё не переехал</a></p></div>
+        <div class="faq__a"><p>Часть шагов выполняется удалённо по доверенности, но не все: банк и некоторые госорганы хотят видеть человека лично. Что именно можно сделать до приезда в вашем случае — уточняем по вашим документам и гражданству.</p><p class="small"><a class="lnk" href="./pered-pereezdom.html">До переезда и удалённый старт</a></p></div>
       </details>
       <details>
         <summary>Какой налоговый режим подходит под доход от зарубежных заказчиков?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a"><p>Зависит от трёх вещей: кто ваши заказчики, какой годовой оборот ожидается и чем вы занимаетесь. У каждого режима есть порог и список запрещённых видов деятельности. Ошибка обнаруживается только на следующий год, поэтому режим выбирают до регистрации, а не после.</p><p class="small"><a class="lnk" href="./ip-i-nalogi.html">ИП и налоги</a><a class="lnk" href="#working">Работаю</a></p></div>
+        <div class="faq__a"><p>Зависит от трёх вещей: кто ваши заказчики, какой годовой оборот ожидается и чем вы занимаетесь. У каждого режима есть порог и список запрещённых видов деятельности. Ошибка обнаруживается только на следующий год, поэтому режим выбирают до регистрации, а не после.</p><p class="small"><a class="lnk" href="./ip-i-nalogi.html">ИП, ООО и налоги</a><a class="lnk" href="#working">Маршрут 1.4</a></p></div>
       </details>
       <details>
         <summary>Нужно ли уведомлять ФНС о счёте в Армении?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a"><p>Обязанность зависит от вашего налогового резидентства в РФ на конец года и от того, сколько дней вы провели за границей. Это отдельный расчёт по календарю, а не общее правило — считаем по вашим датам.</p><p class="small"><a class="lnk" href="./rezidentstvo-i-crs.html">Живу и планирую</a></p></div>
+        <div class="faq__a"><p>Обязанность зависит от вашего налогового резидентства в РФ на конец года и от того, сколько дней вы провели за границей. Это отдельный расчёт по календарю, а не общее правило — считаем по вашим датам.</p><p class="small"><a class="lnk" href="./rezidentstvo-i-crs.html">Резидентство и CRS</a></p></div>
       </details>
       <details>
         <summary>Что делать, если нет адреса для регистрации?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -1097,30 +1383,35 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       </details>
       <details>
         <summary>Берёте ли ВНЖ отдельно?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div class="faq__a"><p>ВНЖ мы оформляем только в комплексе с регистрацией бизнеса или бухгалтерским сопровождением в LTCG — под ваше основание: ИП, трудовой договор, семья или происхождение. Отдельно без привязки к сопровождаемому основанию заявки на ВНЖ мы не берём.</p><p class="small"><a class="lnk" href="./vnzh.html">Легализуюсь</a></p></div>
+        <div class="faq__a"><p>ВНЖ мы оформляем только в комплексе с регистрацией бизнеса или бухгалтерским сопровождением в LTCG — под ваше основание: ИП, трудовой договор, семья или происхождение. Отдельно без привязки к сопровождаемому основанию заявки на ВНЖ мы не берём. Порядок одинаков для релокантов из Грузии, РФ и Украины, заявителей из Тайваня, Китая, Ирана, Азии и Африки и бизнеса из ЕС, США, Канады и Австралии.</p><p class="small"><a class="lnk" href="./vnzh.html">ВНЖ, ПМЖ и квоты</a></p></div>
       </details>
     </div>
 
     <div class="section__foot" data-reveal>
-      <a class="btn btn--outline" href="#contact" data-cta>Не нашли свой вопрос — напишите, где вы сейчас <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+      <a class="btn btn--outline" href="#contact" data-cta>Не нашли свой вопрос — опишите вашу задачу <svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ═══ 07 · Контакт ═════════════════════════════════════════════ -->
 <section class="section section--art section--contact" id="contact" aria-labelledby="contact-title" data-rail-label="Контакты">
-  <div class="art art--center" aria-hidden="true">
-    <picture>
-      <source type="image/avif" srcset="assets/bg/bg-soft-bokeh-1280.avif 1280w, assets/bg/bg-soft-bokeh.avif 2496w" sizes="100vw">
-      <source type="image/webp" srcset="assets/bg/bg-soft-bokeh-1280.webp 1280w, assets/bg/bg-soft-bokeh.webp 2496w" sizes="100vw">
-      <img src="assets/bg/bg-soft-bokeh-1280.jpg" srcset="assets/bg/bg-soft-bokeh-1280.jpg 1280w, assets/bg/bg-soft-bokeh.jpg 2496w" sizes="100vw" alt="" width="2496" height="1664" loading="lazy" decoding="async">
+    <div class="art art--center" aria-hidden="true">
+    <picture data-scene="day">
+      <source type="image/avif" srcset="assets/scenes/bg-contact-day-640.avif 640w, assets/scenes/bg-contact-day-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-contact-day-640.webp 640w, assets/scenes/bg-contact-day-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-contact-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+    </picture>
+    <picture data-scene="night">
+      <source type="image/avif" srcset="assets/scenes/bg-contact-night-640.avif 640w, assets/scenes/bg-contact-night-1280.avif 1280w" sizes="100vw">
+      <source type="image/webp" srcset="assets/scenes/bg-contact-night-640.webp 640w, assets/scenes/bg-contact-night-1280.webp 1280w" sizes="100vw">
+      <img src="assets/scenes/bg-contact-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
     </picture>
   </div>
   <div class="wrap">
     <div class="section__head section__head--split" data-reveal>
       <div>
         <p class="kicker"><span class="kicker__no">07</span> Контакт</p>
-        <h2 class="h2" id="contact-title">Напишите, где вы <em>сейчас</em></h2>
+        <h2 class="h2" id="contact-title">Опишите <em>вашу задачу</em></h2>
       </div>
       <p class="lead">Разберём вашу ситуацию по документам: скажем, что нужно, что лишнее и где риски до подачи.</p>
     </div>
@@ -1134,29 +1425,29 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
           <a class="way" href="tel:+37494184014"><svg aria-hidden="true"><use href="#i-phone"/></svg>Позвонить<small>+374 94 184 014</small></a>
         </div>
         <hr class="rule">
-        <form class="form" id="lead" method="dialog" data-lead novalidate>
+        <form class="form" id="lead" method="dialog" data-lead novalidate toolname="submit_legal_inquiry" tooldescription="Подготовить заявку юристам LTCG (Ереван) по открытию счёта, регистрации ИП/ООО, бухгалтерии, ВНЖ с 01.11.2026 или резидентству в Армении.">
           <div class="form__row">
             <div class="field">
               <label class="field__label" for="f-name">Как к вам обращаться</label>
-              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя">
+              <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required placeholder="Имя" aria-required="true" toolparamdescription="Имя или название компании заявителя">
             </div>
             <div class="field">
               <label class="field__label" for="f-contact">Телефон или Telegram</label>
-              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник">
+              <input class="field__input" id="f-contact" name="contact" type="text" autocomplete="tel" inputmode="text" required placeholder="+7… или @ник" aria-required="true" toolparamdescription="Контакт для связи: ник в Telegram (@username) или номер телефона WhatsApp">
             </div>
           </div>
           <div class="form__row">
             <div class="field">
-              <label class="field__label" for="f-state">Где вы сейчас?</label>
-              <select id="f-state" name="state" required>
-                <option value="">Выберите момент</option>
-                <option value="pre-move">Ещё не переехал</option>
-                <option value="arrived">Только приехал</option>
-                <option value="legalizing">Легализуюсь</option>
-                <option value="working">Работаю</option>
-                <option value="settled">Живу и планирую</option>
-                <option value="moving-on">Двигаюсь дальше</option>
-                <option value="new-rules">Подаю после 1 ноября</option>
+              <label class="field__label" for="f-state">Профиль задачи</label>
+              <select id="f-state" name="state" required aria-required="true" toolparamdescription="Текущая стадия: до переезда, счёт в банке, ВНЖ, ИП и налоги, резидентство 183 дня, закрытие или реформа 01.11.2026">
+                <option value="">Выберите задачу</option>
+                <option value="pre-move">До переезда и удалённый старт</option>
+                <option value="arrived">Счёт в банке, НОУ и адрес</option>
+                <option value="legalizing">ВНЖ, ПМЖ и квоты</option>
+                <option value="working">ИП, ООО и налоги</option>
+                <option value="settled">Резидентство и CRS</option>
+                <option value="moving-on">Справки и закрытие</option>
+                <option value="new-rules">Реформа ВНЖ (ՀՕ-11-Ն)</option>
               </select>
             </div>
             <div class="field">
@@ -1168,10 +1459,10 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
             <label class="field__label" for="f-msg">Сообщение <small>— необязательно</small></label>
             <textarea id="f-msg" name="message" placeholder="Одной фразой: что уже сделали, что нужно проверить"></textarea>
           </div>
-          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off" toolparamdescription="Служебное антиспам-поле (оставьте пустым)"></label></div>
           <input type="hidden" name="modules" data-f-modules value="">
           <input type="hidden" name="page" value="home-ru">
-          <label class="check"><input type="checkbox" name="consent" required><span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Согласен на обработку персональных данных для связи по заявке</span></label>
+          <label class="check"><input type="checkbox" name="consent" required aria-required="true" toolparamdescription="Согласие на обработку персональных данных для ответа по обращению"><span class="check__box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span>Согласен на обработку персональных данных для связи по заявке</span></label>
           <div class="form__foot">
             <button class="btn btn--primary js-only" type="submit">Собрать заявку <svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
             <span class="small js-only">или сразу <a class="lnk" href="https://t.me/LTCG_Armenia" target="_blank" rel="noopener noreferrer">напишите в Telegram</a></span>
@@ -1197,11 +1488,16 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       </div>
 
       <aside class="tile tile--hero" data-reveal>
-        <div class="tile__art" aria-hidden="true">
-          <picture>
-            <source type="image/avif" srcset="assets/bg/window-city-1280.avif">
-            <source type="image/webp" srcset="assets/bg/window-city-1280.webp">
-            <img src="assets/bg/window-city-1280.jpg" width="1280" height="853" alt="">
+                <div class="tile__art" aria-hidden="true">
+          <picture data-scene="day">
+            <source type="image/avif" srcset="assets/scenes/hero-yerevan-day-640.avif 640w, assets/scenes/hero-yerevan-day-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/hero-yerevan-day-640.webp 640w, assets/scenes/hero-yerevan-day-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/hero-yerevan-day-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
+          </picture>
+          <picture data-scene="night">
+            <source type="image/avif" srcset="assets/scenes/hero-yerevan-night-640.avif 640w, assets/scenes/hero-yerevan-night-1280.avif 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <source type="image/webp" srcset="assets/scenes/hero-yerevan-night-640.webp 640w, assets/scenes/hero-yerevan-night-1280.webp 1280w" sizes="(min-width: 1024px) 38vw, 94vw">
+            <img src="assets/scenes/hero-yerevan-night-1280.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async">
           </picture>
         </div>
         <p class="tile__meta"><b>7.2</b> Что будет дальше</p>
@@ -1222,19 +1518,19 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
 <!-- ═══ Футер ════════════════════════════════════════════════════ -->
 <footer class="ftr" aria-label="Подвал">
   <div class="wrap">
-    <div class="bento ftr__bento" role="list">
+    <div class="bento ftr__bento">
 
-      <section class="tile ftr__tile ftr__tile--brand" data-span="4" role="listitem" aria-labelledby="f-brand">
+      <section class="tile ftr__tile ftr__tile--brand" data-span="4" aria-labelledby="f-brand">
         <a class="brand ftr__brandlink" href="./home-ru.html" data-path="" aria-label="LTCG — на главную">
           <picture data-logo="gold">
-            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif 2x, assets/logo/ltcg-lockup@3x.avif 3x">
-            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp 2x, assets/logo/ltcg-lockup@3x.webp 3x">
-            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.avif?v=20261019m12 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup@3x.webp?v=20261019m12 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup@2x.png?v=20261019m12" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
           </picture>
           <picture data-logo="ink">
-            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif 2x, assets/logo/ltcg-lockup-ink@3x.avif 3x">
-            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp 2x, assets/logo/ltcg-lockup-ink@3x.webp 3x">
-            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
+            <source type="image/avif" srcset="assets/logo/ltcg-lockup-ink@2x.avif?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.avif?v=20261019m12 3x">
+            <source type="image/webp" srcset="assets/logo/ltcg-lockup-ink@2x.webp?v=20261019m12 2x, assets/logo/ltcg-lockup-ink@3x.webp?v=20261019m12 3x">
+            <img class="brand-logo" src="assets/logo/ltcg-lockup-ink@2x.png?v=20261019m12" width="57" height="38" alt="LTCG" loading="lazy" decoding="async">
           </picture>
         </a>
         <h2 class="sr-only" id="f-brand">Контакты</h2>
@@ -1245,20 +1541,20 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         </address>
       </section>
 
-      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" role="listitem" aria-labelledby="f-moments">
-        <h2 class="ftr__h" id="f-moments">По моменту</h2>
+      <nav class="tile ftr__tile ftr__tile--nav" data-span="4" aria-labelledby="f-moments">
+        <h2 class="ftr__h" id="f-moments">Практики и маршруты</h2>
         <ul class="ftr__list" role="list">
-          <li><a href="./pered-pereezdom.html">Ещё не переехал</a></li>
-          <li><a href="./schet-v-banke.html">Только приехал</a></li>
-          <li><a href="./vnzh.html">Легализуюсь</a></li>
-          <li><a href="./ip-i-nalogi.html">Работаю</a></li>
-          <li><a href="./rezidentstvo-i-crs.html">Живу и планирую</a></li>
-          <li><a href="./spravki-i-zakrytie.html">Двигаюсь дальше</a></li>
-          <li><a href="./noyabr.html">Подаю по новым правилам</a></li>
+          <li><a href="./ip-i-nalogi.html">ИП, ООО и налоги</a></li>
+          <li><a href="./schet-v-banke.html">Счёт в банке и KYC</a></li>
+          <li><a href="./vnzh.html">ВНЖ, ПМЖ и квоты</a></li>
+          <li><a href="./rezidentstvo-i-crs.html">Резидентство и CRS</a></li>
+          <li><a href="./pered-pereezdom.html">Релокация и апостиль</a></li>
+          <li><a href="./spravki-i-zakrytie.html">Справки и закрытие</a></li>
+          <li><a href="./noyabr.html">Реформа ВНЖ (ՀՕ-11-Ն)</a></li>
         </ul>
       </nav>
 
-      <section class="tile ftr__tile" data-span="4" role="listitem" aria-labelledby="f-site">
+      <section class="tile ftr__tile" data-span="4" aria-labelledby="f-site">
         <h2 class="ftr__h" id="f-site">Сайт</h2>
         <p class="ftr__quiet"><a href="./home-ru.html#calc">Калькулятор услуг</a> · <a href="#contact">Оставить заявку</a></p>
         <nav class="ftr__langs" aria-label="Язык сайта">
@@ -1269,7 +1565,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
         <p class="ftr__quiet">Армянская и английская версии готовятся.</p>
       </section>
 
-      <section class="tile ftr__tile ftr__tile--legal" data-span="12" role="listitem" aria-labelledby="f-legal">
+      <section class="tile ftr__tile ftr__tile--legal" data-span="12" aria-labelledby="f-legal">
         <h2 class="sr-only" id="f-legal">Правовая оговорка</h2>
         <p class="ftr__note">Услуги носят консультационный и сопроводительный характер; решения о выдаче статуса пребывания, регистрации и открытии счетов принимают компетентные государственные органы и банки Республики Армения.</p>
         <div class="ftr__credit">
@@ -1311,6 +1607,7 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
       var paint = function (m) {
         if (m === 'auto') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', m);
         btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === m)); });
+        d.querySelectorAll('[data-themer] [data-theme-set]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.themeSet === m)); });
       };
       btns.forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation();
         var m = b.dataset.set; try { m === 'auto' ? localStorage.removeItem('ltcg-theme') : localStorage.setItem('ltcg-theme', m); } catch (err) {}
@@ -1319,5 +1616,6 @@ try{var t=localStorage.getItem('ltcg-theme');if(t==='light'||t==='dark')h.setAtt
     }
   })();
   </script>
+<!--/email_off-->
 </body>
 </html>

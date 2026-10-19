@@ -67,9 +67,11 @@
   function unlock() { if (locked)  { locked = false; html.classList.remove('hm-lock'); } }
   html.classList.add('hm-run');
   lock();
-  // Ворота стоят на месте по умолчанию (css/hero-mobile.css) — прячем их
-  // отсюда, раз уж скрипт жив и заставка сейчас пойдёт.
-  html.style.setProperty('--gate', '0');
+  // Ворота остаются на месте с первого кадра (--gate: 1), чтобы выбор языка был
+  // доступен сразу, а LCP и CLS не страдали от выезда панели на 4.7-й секунде.
+  html.style.setProperty('--gate', '1');
+  var earlyHint = document.getElementById('triHint');
+  if (earlyHint) { earlyHint.hidden = false; earlyHint.classList.add('is-in'); }
 
   /* ── 2. Кривые ─────────────────────────────────────────────────────────
      Вход — ease-out, перетекание — ease-in-out: правило скила ui-ux-pro-max,
@@ -229,7 +231,7 @@
     var mLift  = seg(t, 'lift', inOutCubic);
 
     if (mFade < 1) {
-      edge.setAttribute('d', pathD(mMorph, 0));
+      edge.setAttribute('d', pathD(mMorph, 1));
       if (mDraw < 1) {
         var len = edge.getTotalLength();
         edge.style.strokeDasharray = String(len);
@@ -241,11 +243,11 @@
     }
     edge.style.opacity = String(1 - mFade);
 
-    if (mLift !== lastLift) {
-      var o = logoOrigin(mLift);
+    if (lastLift !== 1) {
+      var o = logoOrigin(1);
       gLogo.setAttribute('transform',
         'translate(' + o[0].toFixed(1) + ' ' + o[1].toFixed(1) + ') scale(' + pl.k.toFixed(4) + ')');
-      lastLift = mLift;
+      lastLift = 1;
     }
     gMt.style.opacity = String(mFade);
     gSw.style.opacity = mSw > 0 ? '1' : '0';
@@ -254,9 +256,7 @@
     gTg.style.opacity = String(mTg);
 
     if (veil) veil.style.opacity = String(mVeil);
-    // Переменная выезда живёт на <html>: ворота лежат вне слоя заставки,
-    // на самой секции её никто бы не увидел.
-    html.style.setProperty('--gate', mLift.toFixed(3));
+    html.style.setProperty('--gate', '1');
     if (skip) skip.style.opacity = String(clamp01(1 - mLift * 2));
   }
 

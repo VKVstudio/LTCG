@@ -1,0 +1,143 @@
+/* ============================================================
+   LTCG — canon.css · ХРОМ КАТАЛОГА
+   Только для phase1/canon.html: рама витрины, ярлыки тем, окно разметки.
+   НА ВЕТКИ НЕ КОПИРУЕТСЯ и в них не подключается. Всё, что ветка берёт
+   из каталога, живёт в site.css §21 и §§2–15.
+   Токены те же: кегли --fs-*, отступы --s-*, движение --t-* / --ease.
+   ============================================================ */
+
+/* ── рама страницы ─────────────────────────────────────────── */
+.canon-top {
+  position: sticky; top: 0; z-index: 40;
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+}
+.canon-top__in { display: flex; align-items: center; gap: var(--s-3); min-height: var(--header-h); }
+.canon-top__name { font-family: var(--font-display); font-weight: var(--fw-h); font-size: var(--fs-md); letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-strong); }
+.canon-top__sub { font: 500 var(--fs-xs)/1 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.canon-top .themer { margin-left: auto; }
+
+.canon-hero { padding-block: clamp(3rem, 8vh, 5.5rem) clamp(2rem, 5vh, 3rem); }
+.canon-hero__t { font-family: var(--font-display); font-weight: var(--fw-h1); font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-h1); color: var(--text-strong); max-width: 20ch; text-wrap: balance; }
+.canon-hero__t em { font-style: normal; color: var(--gold-text); }
+.canon-hero__lead { margin-top: var(--s-5); font-size: var(--fs-lg); line-height: 1.55; color: var(--text-2); max-width: 60ch; text-wrap: pretty; }
+
+/* правила приёмки: закрытый список, поэтому нумерованный и плотный */
+.canon-rules { display: grid; gap: var(--s-4); margin-top: var(--s-10); counter-reset: cr; }
+.canon-rules > li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s-3); font-size: var(--fs-md); color: var(--text-2); max-width: 74ch; text-wrap: pretty; }
+.canon-rules > li::before { counter-increment: cr; content: counter(cr, decimal-leading-zero); font: 500 var(--fs-xs)/1.7 var(--font-mono); letter-spacing: 0.1em; color: var(--gold-text); }
+.canon-rules b { font-weight: 500; color: var(--text-strong); }
+
+/* оглавление каталога */
+.canon-toc { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: var(--s-10); border-top: 1px solid var(--line); }
+.canon-toc a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: baseline; gap: var(--s-4); min-height: 3rem; padding: var(--s-3) 0; border-bottom: 1px solid var(--line); color: var(--text); transition: color var(--t-base) var(--ease), padding-left var(--t-base) var(--ease); }
+.canon-toc a:hover { color: var(--gold-text); padding-left: var(--s-2); }
+.canon-toc__n { font: 500 var(--fs-xs)/1.6 var(--font-mono); letter-spacing: 0.12em; color: var(--text-3); }
+.canon-toc__k { font-size: var(--fs-sm); color: var(--text-3); text-align: right; }
+
+/* ── витрина ───────────────────────────────────────────────── */
+/* Воздух разный: внутри главы блоки идут плотно и разделены волосяной линией,
+   между главами открывается большая пауза. Лента без пауз читается как список
+   примеров, а не как каталог. */
+.canon-group { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4em var(--s-4); margin-top: var(--s-24); padding-top: var(--s-5); border-top: 1px solid var(--line-strong); font: 500 var(--fs-xs)/1.5 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+.canon-group__n { color: var(--gold-text); }
+.canon-group b { font-family: var(--font-display); font-weight: var(--fw-h); font-size: var(--fs-h4); letter-spacing: -0.006em; text-transform: none; color: var(--text-strong); }
+.canon-group + .spec { padding-top: var(--s-8); border-top: 0; }
+.canon-toc__g { margin-top: var(--s-5); padding-bottom: var(--s-2); font: 500 var(--fs-xs)/1.5 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+.canon-toc__g:first-child { margin-top: var(--s-3); }
+
+.spec { padding-block: clamp(3rem, 7vh, 5rem); border-top: 1px solid var(--line); }
+.spec:first-of-type { border-top: 0; }
+.spec__hd { display: grid; gap: var(--s-3); margin-bottom: var(--s-6); }
+.spec__no { font: 500 var(--fs-xs)/1 var(--font-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-text); }
+.spec__t { font-family: var(--font-display); font-weight: var(--fw-h); font-size: var(--fs-h2); line-height: 1.08; letter-spacing: var(--ls-h); color: var(--text-strong); max-width: 26ch; text-wrap: balance; }
+.spec__d { font-size: var(--fs-md); color: var(--text-2); max-width: 74ch; text-wrap: pretty; }
+.spec__d code { font-family: var(--font-mono); font-size: 0.92em; color: var(--text); }
+
+/* записка «когда брать / когда не брать» — два разных ответа, не один абзац */
+.spec__use { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
+.spec__use > div { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s-3); align-items: baseline; font-size: var(--fs-md); color: var(--text-2); max-width: 78ch; text-wrap: pretty; }
+.spec__use b { font: 500 var(--fs-xs)/1.7 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+.spec__use .take b { color: var(--gold-text); }
+.spec__use .skip b { color: var(--text-3); }
+
+/* пара тем: обе видны сразу, а не по переключателю */
+.spec__pair { display: grid; grid-template-columns: 1fr; gap: var(--gap); margin-top: var(--s-8); }
+/* minmax(0, 1fr) обязателен: без него колонка грида растягивается по max-content
+   таблицы контраста, и содержимое панели уезжает под overflow: hidden. */
+.pane { display: grid; grid-template-rows: auto 1fr; grid-template-columns: minmax(0, 1fr); min-width: 0; border: 1px solid var(--line); border-radius: var(--r-tile); overflow: hidden; }
+.pane__tag { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4em var(--s-3); padding: var(--s-2) var(--s-4); border-bottom: 1px solid var(--line); background: var(--wash-1); font: 500 var(--fs-xs)/1.6 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.pane__tag b { color: var(--text-2); font-weight: 500; }
+.pane__in { min-width: 0; padding: var(--s-6) var(--s-5); }
+.pane--narrow .pane__in { max-width: 24rem; }
+
+/* окно разметки: закрыто, чтобы каталог листался, открывается одним нажатием */
+.spec__code { margin-top: var(--s-6); border: 1px solid var(--line); border-radius: var(--r-card); background: var(--wash-1); }
+.spec__code > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); min-height: 3rem; padding: var(--s-2) var(--s-4); font: 500 var(--fs-xs)/1.6 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); transition: color var(--t-base) var(--ease); }
+.spec__code > summary::-webkit-details-marker { display: none; }
+.spec__code > summary:hover { color: var(--gold-text); }
+.spec__code > summary svg { width: 0.9rem; height: 0.9rem; color: var(--gold); transition: transform var(--t-slow) var(--ease); }
+.spec__code[open] > summary svg { transform: rotate(90deg); }
+.spec__code[open] > summary { border-bottom: 1px solid var(--line); }
+.code { margin: 0; padding: var(--s-4); overflow-x: auto; font-family: var(--font-mono); font-size: var(--fs-sm); line-height: 1.6; color: var(--text-2); tab-size: 2; }
+.code b { color: var(--text-strong); font-weight: 400; }
+.code i { font-style: normal; color: var(--text-3); }
+.copy { margin-left: auto; }
+
+/* ── легенда: токены и контраст ────────────────────────────── */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: var(--s-2); margin-top: var(--s-5); }
+.sw { display: grid; gap: 0.35rem; padding: var(--s-3); border: 1px solid var(--line); border-radius: var(--r-chip); }
+.sw__chip { height: 2.25rem; border-radius: 4px; border: 1px solid var(--line); }
+.sw__n { font: 500 var(--fs-xs)/1.4 var(--font-mono); letter-spacing: 0.06em; color: var(--text-2); overflow-wrap: anywhere; }
+.sw__v { font: 400 var(--fs-xs)/1.4 var(--font-mono); color: var(--text-3); }
+
+.crt-wrap { overflow-x: auto; margin-top: var(--s-5); }
+.crt { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.crt caption { text-align: left; padding-bottom: var(--s-3); color: var(--text-3); }
+.crt th, .crt td { text-align: left; vertical-align: top; padding: var(--s-3) var(--s-3) var(--s-3) 0; border-top: 1px solid var(--line); }
+.crt thead th { border-top: 0; padding-top: 0; font: 500 var(--fs-xs)/1.5 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.crt tbody th { font-weight: 400; color: var(--text); white-space: nowrap; }
+.crt td.n { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--text-strong); white-space: nowrap; }
+.crt td.v { font-family: var(--font-mono); color: var(--text-3); white-space: nowrap; }
+.crt .ok, .crt .no { font: 500 var(--fs-xs)/1.6 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+.crt .ok { color: var(--text-2); }
+.crt .no { color: var(--gold-text); }
+.crt .no::before { content: '× '; }
+.crt .ok::before { content: '✓ '; }
+
+/* мобильный вид таблицы фактов на широком экране: строки карточками.
+   Правило повторяет базу §11 и стоит ПОСЛЕ медиазапроса 768, поэтому
+   побеждает без !important. Живёт в каталоге: на ветке это делает ширина. */
+.diy--cards thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.diy--cards tr { display: grid; gap: 0.4rem; padding: var(--s-4) 0; border-top: 1px solid var(--line); }
+.diy--cards tr:first-child { border-top: 0; padding-top: 0; }
+.diy--cards th, .diy--cards td { display: block; border: 0; padding: 0; }
+.diy--cards td::before { content: attr(data-l); display: block; font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.15rem; }
+
+/* ── подвал каталога ───────────────────────────────────────── */
+.canon-foot { padding-block: var(--s-12) calc(var(--s-12) + var(--safe-b)); border-top: 1px solid var(--line); }
+.canon-foot p { font-size: var(--fs-sm); color: var(--text-3); max-width: 78ch; text-wrap: pretty; }
+.canon-foot p + p { margin-top: var(--s-3); }
+
+@media (min-width: 768px) {
+  .canon-toc { grid-template-columns: 1fr 1fr; column-gap: var(--s-8); }
+  .pane__in { padding: var(--s-8) var(--s-6); }
+}
+@media (min-width: 1024px) {
+  .spec__pair { grid-template-columns: 1fr 1fr; }
+  .spec__pair--stack { grid-template-columns: 1fr; }
+  .canon-hero__t { font-size: clamp(3rem, 1.4rem + 4.6vw, 4.5rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .canon-toc a, .spec__code > summary, .spec__code > summary svg { transition-duration: 0.01ms; }
+}
+
+/* панель окна разметки: кнопка копирования вне <summary> — вложенных
+   интерактивных элементов в раскрывашке быть не должно */
+.code__bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); padding: var(--s-3) var(--s-4) 0; }
+.code__bar .small { margin: 0; }
+
+/* абзац-послесловие под парой панелей */
+.spec__after { margin-top: var(--s-6); }

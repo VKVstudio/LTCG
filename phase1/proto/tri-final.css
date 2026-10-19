@@ -1,0 +1,50 @@
+/* ============================================================================
+   tri-final.css — только оболочка страницы для просмотра главного экрана.
+   Сам экран живёт в ../css/main-triptych.css и здесь не переопределяется
+   ни одним правилом: что видно тут — то и поедет в прод.
+
+   Ворота: до выбора языка страница не скроллится (overflow: hidden на
+   хозяине, не на фрагменте).
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  block-size: 100%;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  overflow: hidden;                /* ворота: пока язык не выбран — не скролим */
+  background-color: #0C1B3A;       /* navy бренда: виден только в шве в 1 px */
+  overscroll-behavior: none;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* ссылка «пропустить» — только для клавиатуры, поверх ворот */
+.skip {
+  position: absolute;
+  z-index: 30;
+  inset-block-start: 8px;
+  inset-inline-start: 8px;
+  min-block-size: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  font: 500 13px/1 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: .06em;
+  color: #0C1B3A;
+  background-color: #FAE0A2;
+  border-radius: 2px;
+  text-decoration: none;
+  transform: translateY(-180%);
+}
+.skip:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #0C1B3A;
+  outline-offset: 2px;
+}
